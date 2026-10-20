@@ -1,0 +1,18 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "tags": "tags",
+    "status": "text",
+    "priority": "text",
+    "hours": "number",
+    "completed": "number",
+    "due": "date",
+    "reviewed": "checkbox",
+    "owner": "text",
+    "type": "text",
+    "date": "date",
+    "sleep": "number",
+    "energy": "number",
+    "mood": "number"
+  }
+}

@@ -1,0 +1,37 @@
+filters:
+  and:
+    - 'file.inFolder("30 Projects")'
+    - 'type == "project"'
+formulas:
+  remaining: 'hours - completed'
+properties:
+  file.name:
+    displayName: Project
+  formula.remaining:
+    displayName: Hours remaining
+views:
+  - type: table
+    name: All projects
+    order:
+      - file.name
+      - status
+      - priority
+      - hours
+      - completed
+      - formula.remaining
+      - due
+    sort:
+      - property: file.name
+        direction: ASC
+    summaries:
+      formula.remaining: Sum
+  - type: table
+    name: Active projects
+    filters:
+      and:
+        - 'status == "active"'
+    order:
+      - file.name
+      - status
+      - priority
+      - formula.remaining

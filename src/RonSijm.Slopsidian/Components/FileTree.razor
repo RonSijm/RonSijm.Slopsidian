@@ -1,0 +1,52 @@
+@foreach (var folder in Folders())
+{
+    var path = Prefix + folder;
+    <details class="nav-folder" data-folder-path="@path" open @key="path">
+        <summary class="nav-folder-title">
+            <DesktopIcon Name="chevron" />
+            <span>@folder</span>
+        </summary>
+        <div class="nav-folder-children">
+            <FileTree Files="Files" FolderPaths="FolderPaths" Prefix="@(path + "/")" ActivePath="@ActivePath" Disabled="Disabled" OnOpen="OnOpen" />
+        </div>
+    </details>
+}
+@foreach (var file in Files.Where(file => file.Path.StartsWith(Prefix, StringComparison.Ordinal) && !file.Path[Prefix.Length..].Contains('/')))
+{
+    var markdown = file.Extension.Equals("md", StringComparison.OrdinalIgnoreCase);
+    <button data-note-path="@file.Path" data-vault-disabled="@Disabled.ToString().ToLowerInvariant()" class="nav-file-title @(ActivePath == file.Path ? "is-active" : "")" @onclick="args => OnOpen.InvokeAsync(new NoteOpenRequest(file.Path, args.CtrlKey))" disabled="@(Disabled || !markdown)" title="@(markdown ? file.Path : file.Path + " (enable a plugin for preview; right-click for file actions)")" @key="file.Path">
+        <span>@(markdown ? file.Basename : file.Name)</span>
+        @if (!markdown)
+        {
+            <span class="nav-file-tag">@file.Extension</span>
+        }
+    </button>
+}
+
+@code {
+    [Parameter, EditorRequired]
+    public IReadOnlyList<VaultFile> Files { get; set; } = [];
+    [Parameter]
+    public IReadOnlyList<string> FolderPaths { get; set; } = [];
+    [Parameter]
+    public string Prefix { get; set; } = "";
+    [Parameter]
+    public string? ActivePath { get; set; }
+    [Parameter]
+    public bool Disabled { get; set; }
+    [Parameter]
+    public EventCallback<NoteOpenRequest> OnOpen { get; set; }
+
+    private IEnumerable<string> Folders()
+    {
+        var inferred = Files.Where(file => file.Path.StartsWith(Prefix, StringComparison.Ordinal))
+            .Select(file => file.Path[Prefix.Length..])
+            .Where(path => path.Contains('/'))
+            .Select(path => path[..path.IndexOf('/')]);
+        var explicitFolders = FolderPaths.Where(path => path.StartsWith(Prefix, StringComparison.Ordinal) && path.Length > Prefix.Length)
+            .Select(path => path[Prefix.Length..].Split('/')[0]);
+        return inferred.Concat(explicitFolders)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .Order(StringComparer.OrdinalIgnoreCase);
+    }
+}

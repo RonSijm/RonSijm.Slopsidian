@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>RonSijm.Slopsidian</RootNamespace>
+    <Product>Slopsidian</Product>
+    <Title>Slopsidian</Title>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.13" PrivateAssets="all" />
+    <Using Include="Microsoft.Extensions.Logging" />
+    <Compile Include="..\RonSijm.Slopsidian\Services\IVaultHost.cs" Link="Services\IVaultHost.cs" />
+    <Compile Include="..\RonSijm.Slopsidian\Services\VaultModels.cs" Link="Services\VaultModels.cs" />
+    <Compile Include="..\RonSijm.Slopsidian\Services\CorePlugins.cs" Link="Services\CorePlugins.cs" />
+    <Compile Include="..\RonSijm.Slopsidian\Components\Pages\Home.razor.cs" Link="Components\Pages\Home.razor.cs" />
+    <Content Include="..\RonSijm.Slopsidian\Components\_Imports.razor" Link="Components\_Imports.razor" />
+    <Content Include="..\RonSijm.Slopsidian\Components\Pages\Home.razor" Link="Components\Pages\Home.razor" />
+    <Content Include="..\RonSijm.Slopsidian\Components\FileTree.razor" Link="Components\FileTree.razor" />
+    <Content Include="..\RonSijm.Slopsidian\Components\DesktopIcon.razor" Link="Components\DesktopIcon.razor" />
+    <Content Include="..\RonSijm.Slopsidian\Components\Layout\MainLayout.razor" Link="Components\Layout\MainLayout.razor" />
+    <Content Include="..\RonSijm.Slopsidian\wwwroot\app.css" Link="wwwroot\app.css" />
+    <Content Include="..\RonSijm.Slopsidian\wwwroot\icons.svg" Link="wwwroot\icons.svg" />
+    <Content Include="..\RonSijm.Slopsidian\wwwroot\icons-LICENSE.txt" Link="wwwroot\icons-LICENSE.txt" />
+    <Content Include="..\RonSijm.Slopsidian\wwwroot\mermaid-frame.html" Link="wwwroot\mermaid-frame.html" />
+    <Content Include="..\RonSijm.Slopsidian\wwwroot\js\**\*" Link="wwwroot\js\%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="..\..\shared\core-plugins.json" LogicalName="RonSijm.Slopsidian.CorePlugins.json" />
+  </ItemGroup>
+</Project>

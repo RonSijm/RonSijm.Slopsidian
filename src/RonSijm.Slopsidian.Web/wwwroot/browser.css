@@ -1,0 +1,5 @@
+html, body, #app { height: 100%; }
+.web-loading { padding: 32px; color: #bbb; font-family: "Segoe UI", sans-serif; }
+.is-browser .right-sidebar .sidebar-tab-header { padding-right: 14px; }
+.browser-recent-vault { display: block; margin-top: 8px; }
+#blazor-error-ui { display: none; position: fixed; bottom: 0; left: 0; width: 100%; padding: 12px 20px; background: #39272a; color: #fff; z-index: 1000; }

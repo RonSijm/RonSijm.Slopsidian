@@ -1,0 +1,214 @@
+﻿@page "/"
+@inject IVaultHost Vault
+@inject IJSRuntime JavaScript
+@inject ILogger<Home> Logger
+@implements IAsyncDisposable
+
+<PageTitle>Slopsidian</PageTitle>
+
+<main id="desktop-shell" class="shell" data-ready="@initialized.ToString().ToLowerInvariant()" aria-busy="@busy.ToString().ToLowerInvariant()">
+    @if (error is not null)
+    {
+        <div class="error-banner" role="alert">@error</div>
+    }
+    <div id="client-errors" role="alert"></div>
+    <div class="workspace-window">
+        <aside class="workspace-ribbon" aria-label="Application ribbon">
+            <button class="clickable-icon ribbon-collapse" title="Toggle left sidebar" aria-label="Toggle left sidebar" @onclick='() => WorkspaceActionAsync("workspace:toggle-left-sidebar")'><DesktopIcon Name="panel-left" /></button>
+            <button class="clickable-icon" title="Quick switcher (Ctrl+O)" aria-label="Quick switcher" @onclick='() => WorkspaceActionAsync("switcher:open")'><DesktopIcon Name="search" /></button>
+            <button class="clickable-icon" title="Command palette (Ctrl+P)" aria-label="Command palette" @onclick='() => WorkspaceActionAsync("command-palette:open")'><DesktopIcon Name="command" /></button>
+            <div id="core-ribbon" aria-label="Core plugin ribbon"></div>
+            <div id="plugin-ribbon" aria-label="Plugin ribbon"></div>
+            <div class="ribbon-spacer"></div>
+            <button id="open-vault" class="clickable-icon" title="Open or create a vault" aria-label="Open or create a vault" @onclick="ChooseVaultAsync" disabled="@(!initialized || busy)"><DesktopIcon Name="folder" /></button>
+            <button id="open-settings" class="clickable-icon" title="Settings (Ctrl+,)" aria-label="Settings" @onclick="OpenSettingsAsync" disabled="@(!initialized || busy)"><DesktopIcon Name="settings" /></button>
+        </aside>
+        <aside id="left-sidebar" class="workspace-sidedock left-sidebar" aria-label="Left sidebar">
+            <div id="left-view-tabs" class="sidebar-tab-header" role="tablist" aria-label="Left sidebar views"></div>
+            <section id="file-explorer-view">
+            <div class="nav-header">
+                <button id="new-note" class="clickable-icon" title="New note (Ctrl+N)" aria-label="New note" @onclick="ShowNewNoteAsync" disabled="@(!initialized || busy || snapshot.Root is null)"><DesktopIcon Name="new-note" /></button>
+                <button id="new-folder" class="clickable-icon" title="New folder" aria-label="New folder" @onclick='() => WorkspaceActionAsync("file-explorer:new-folder")' disabled="@(!initialized || busy || snapshot.Root is null)"><DesktopIcon Name="folder" /></button>
+                <button id="file-actions" class="clickable-icon" title="Current file actions (or right-click a tree entry)" aria-label="Current file actions" @onclick='() => WorkspaceActionAsync("file-explorer:file-actions")' disabled="@(!initialized || busy || editor.Path is null)"><DesktopIcon Name="more" /></button>
+                <button class="clickable-icon" title="Refresh file list" aria-label="Refresh file list" @onclick='() => WorkspaceActionAsync("file-explorer:refresh")'><DesktopIcon Name="refresh" /></button>
+                <button class="clickable-icon" title="Collapse all folders" aria-label="Collapse all folders" @onclick='() => WorkspaceActionAsync("file-explorer:collapse-all")'><DesktopIcon Name="collapse" /></button>
+            </div>
+            <nav class="file-tree" aria-label="Vault files">
+                <FileTree Files="snapshot.Files" FolderPaths="@(snapshot.Folders ?? [])" ActivePath="@editor.Path" Disabled="@(!initialized || busy)" OnOpen="OpenNoteAsync" />
+                @if (snapshot.Files.Count == 0)
+                {
+                    <p class="empty-outline">Create a note to get started.</p>
+                }
+            </nav>
+            </section>
+            <div id="left-core-views" class="core-side-views"></div>
+            <button id="vault-switcher" class="vault-switcher" title="Open or create a vault" aria-label="Manage vaults" @onclick="ChooseVaultAsync" disabled="@(!initialized || busy)"><DesktopIcon Name="chevron" /><strong>@snapshot.Name</strong><span>Slopsidian</span></button>
+        </aside>
+        <div id="left-sidebar-resizer" class="sidebar-resizer left-resizer" role="separator" aria-label="Resize file explorer"></div>
+        <section id="editor" class="workspace-root" aria-label="Editor workspace" @ref="editorElement"></section>
+        <div id="right-sidebar-resizer" class="sidebar-resizer right-resizer" role="separator" aria-label="Resize outline"></div>
+        <aside id="right-sidebar" class="workspace-sidedock right-sidebar" aria-label="Right sidebar">
+            <div id="right-view-tabs" class="sidebar-tab-header" role="tablist" aria-label="Right sidebar views"></div>
+            <section id="outline-view"><div id="outline-content"></div></section>
+            <div id="right-core-views" class="core-side-views"></div>
+        </aside>
+    </div>
+    <footer class="status-bar">
+        <button class="compatibility-badge" title="Independent compatibility build; use a test vault" @onclick="OpenAboutAsync">@(Vault.IsBrowser ? "WASM / Experimental" : "Experimental")</button>
+        <span id="active-note">@(editor.Path ?? "No file open")@(editor.Dirty ? " *" : "")</span>
+        <div class="status-spacer"></div>
+        <div id="plugin-status-bar"></div>
+        <span id="metadata-status" role="status"></span>
+        <span id="editor-statistics"></span>
+        <button id="reload-note" class="clickable-icon" title="Reload from disk" aria-label="Reload from disk" @onclick="ReloadNoteAsync" disabled="@(!initialized || busy || editor.Path is null)"><DesktopIcon Name="refresh" /></button>
+        <button id="save-note" class="clickable-icon" title="Save (Ctrl+S)" aria-label="Save" @onclick="SaveNoteAsync" disabled="@(!initialized || busy || editor.Path is null)"><DesktopIcon Name="save" /></button>
+        <button class="clickable-icon" title="Toggle right sidebar" aria-label="Toggle right sidebar" @onclick='() => WorkspaceActionAsync("workspace:toggle-right-sidebar")'><DesktopIcon Name="panel-right" /></button>
+    </footer>
+    <dialog id="vault-dialog" class="vault-dialog" aria-labelledby="vault-dialog-title" data-busy="@busy.ToString().ToLowerInvariant()" closedby="@(snapshot.Root is null || busy ? "none" : "closerequest")">
+        <header>
+            <h2 id="vault-dialog-title">Open a vault</h2>
+            <p class="muted">A vault is a folder containing your notes. Open an existing folder or create a new one.</p>
+        </header>
+        @if (Vault.IsBrowser)
+        {
+            <section class="vault-choice">
+                <h3>Open a local vault</h3>
+                <p>Your notes stay on disk. Allow read/write access to the selected folder; nothing is uploaded to the hosting site.</p>
+                @if (!browserVaults.Supported)
+                {
+                    <p class="plugin-error" role="alert">Local folder access requires a supported browser such as Chrome or Edge, using HTTPS or localhost.</p>
+                }
+                <button id="browser-open-vault" class="mod-cta" type="button" @onclick="() => BrowseBrowserVaultAsync(false)" disabled="@(busy || !browserVaults.Supported)">Open a folder</button>
+                @if (browserVaults.Recent.Count > 0)
+                {
+                    <h3>Recent vaults</h3>
+                    @foreach (var recent in browserVaults.Recent)
+                    {
+                        <button class="browser-recent-vault" data-recent-vault="@recent.Id" type="button" @onclick="() => BrowseBrowserVaultAsync(false, recent.Id)" disabled="@(busy || !browserVaults.Supported)">Reconnect @recent.Name</button>
+                    }
+                }
+            </section>
+            <section class="vault-choice">
+                <h3>Create a new vault</h3>
+                <label for="new-vault-name">Vault name</label>
+                <input id="new-vault-name" @bind="newVaultName" @bind:event="oninput" placeholder="My new vault" maxlength="255" autocomplete="off" disabled="@busy" />
+                <p class="muted">Choose a parent folder. A new subfolder is created without overwriting an existing vault.</p>
+                <button id="browser-create-vault" class="mod-cta" type="button" @onclick="() => BrowseBrowserVaultAsync(true)" disabled="@(busy || !browserVaults.Supported || string.IsNullOrWhiteSpace(newVaultName))">Choose location and create</button>
+            </section>
+        }
+        else
+        {
+        <form class="vault-choice" @onsubmit="OpenVaultAsync" @onsubmit:preventDefault>
+            <h3>Open an existing vault</h3>
+            <label for="vault-open-path">Vault folder</label>
+            <div class="vault-path-row">
+                <input id="vault-open-path" @bind="vaultToOpen" @bind:event="oninput" placeholder="D:\Notes\My vault" autocomplete="off" spellcheck="false" disabled="@busy" />
+                <button id="browse-existing-vault" type="button" @onclick="() => BrowseVaultAsync(false)" disabled="@busy">Browse...</button>
+                <button id="confirm-open-vault" class="mod-cta" type="submit" disabled="@(busy || string.IsNullOrWhiteSpace(vaultToOpen))">Open</button>
+            </div>
+        </form>
+        <form class="vault-choice" @onsubmit="CreateVaultAsync" @onsubmit:preventDefault>
+            <h3>Create a new vault</h3>
+            <label for="new-vault-name">Vault name</label>
+            <input id="new-vault-name" @bind="newVaultName" @bind:event="oninput" placeholder="My new vault" maxlength="255" autocomplete="off" disabled="@busy" />
+            <label for="new-vault-location">Location</label>
+            <div class="vault-path-row">
+                <input id="new-vault-location" @bind="newVaultLocation" @bind:event="oninput" placeholder="Choose the parent folder for your new vault" autocomplete="off" spellcheck="false" disabled="@busy" />
+                <button id="browse-vault-location" type="button" @onclick="() => BrowseVaultAsync(true)" disabled="@busy">Browse...</button>
+            </div>
+            <div class="dialog-actions">
+                <button id="confirm-create-vault" class="mod-cta" type="submit" disabled="@(busy || string.IsNullOrWhiteSpace(newVaultName) || string.IsNullOrWhiteSpace(newVaultLocation))">Create vault</button>
+            </div>
+        </form>
+        }
+        @if (error is not null)
+        {
+            <p id="vault-dialog-error" class="plugin-error" role="alert">@error</p>
+        }
+        <footer class="vault-dialog-footer">
+            <p class="muted">Experimental compatibility build. Use a test vault or a copy of your notes.</p>
+            <button id="cancel-vault-selection" type="button" data-close-dialog="vault-dialog" hidden="@(snapshot.Root is null)" disabled="@busy">Back to vault</button>
+        </footer>
+    </dialog>
+    <dialog id="new-note-dialog" class="new-note-dialog" aria-labelledby="new-note-title">
+        <form @onsubmit="CreateNoteAsync" @onsubmit:preventDefault>
+            <h2 id="new-note-title">Create a new note</h2>
+            <p class="muted">Use a relative path to create a note inside a folder.</p>
+            <input id="new-note-name" @bind="newNote" @bind:event="oninput" placeholder="Untitled" aria-label="New note name" autocomplete="off" />
+            @if (error is not null)
+            {
+                <p class="plugin-error" role="alert">@error</p>
+            }
+            <div class="dialog-actions">
+                <button type="button" data-close-dialog="new-note-dialog">Cancel</button>
+                <button id="create-note" class="mod-cta" type="submit" disabled="@busy">Create</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog id="settings-dialog" class="settings-dialog" aria-labelledby="settings-title">
+        <aside class="settings-navigation">
+            <h2 id="settings-title">Settings</h2>
+            <button class="@(settingsSection == "general" ? "is-active" : "")" @onclick='() => SetSettingsSection("general")'>About this build</button>
+            <button id="core-plugins-tab" class="@(settingsSection == "core" ? "is-active" : "")" @onclick='() => SetSettingsSection("core")'>Core plugins</button>
+            <button id="community-plugins-tab" class="@(settingsSection == "community" ? "is-active" : "")" @onclick='() => SetSettingsSection("community")'>Community plugins</button>
+            @foreach (var plugin in snapshot.Plugins.Where(plugin => pluginRuntime.Plugins.Any(status => status.Id == plugin.Id && status.HasSettings)))
+            {
+                <button data-open-plugin-settings="@plugin.Id" class="@(settingsSection == "plugin" && settingsPlugin == plugin.Id ? "is-active" : "")" @onclick="() => ShowSettingsAsync(plugin.Id)">@plugin.Name</button>
+            }
+        </aside>
+        <div class="settings-content">
+            <button class="clickable-icon settings-close" aria-label="Close settings" title="Close settings" data-close-dialog="settings-dialog"><DesktopIcon Name="close" /></button>
+            <section hidden="@(settingsSection != "general")">
+                <h2>Slopsidian</h2>
+                <p>An independent .NET implementation targeting the Obsidian 1.12.7 workflow.</p>
+                <p>The workspace and plugin bridge are still incomplete. Use a copy of your vault; this is not yet a drop-in replacement.</p>
+                <p>Available subsets include Markdown editing and Reading view, guarded file operations, tabs and splits, Search, Backlinks, Tags, Footnotes, organized Bookmarks, named Workspaces, typed Properties, global/local Graph, Canvas, Markdown hover previews, Slash commands, Slides, Format converter, and plugin-owned editable TextFileView panes.</p>
+                <p>Live Preview, continuous Markdown autosave, themes, Bases, recovery, many other core workflows and full API coverage remain incomplete. See Docs/FEATURE-PARITY.md for current evidence and exact host limitations. Official Sync/Publish compatibility still requires implementation and authorized service access.</p>
+                @if (Vault.IsBrowser)
+                {
+                    <p class="muted">This is the standalone Blazor WebAssembly host. Local folders require Chrome or Edge and your permission. External changes are polled, not watched natively. Original file creation times are unavailable in browsers (reported as 0, meaning unknown). Save before closing or refreshing the page.</p>
+                }
+                else
+                {
+                    <p class="muted">Windows desktop host with native filesystem and Node/Electron plugin access.</p>
+                }
+            </section>
+            <section hidden="@(settingsSection != "community")">
+                <h2>Community plugins</h2>
+                @if (Vault.IsBrowser)
+                {
+                    <p class="plugin-trust-warning">Only enable code you trust. Browser plugins can access this vault and page. Desktop-only plugins and Node/Electron modules are unavailable. Existing Obsidian enablement is not imported automatically.</p>
+                }
+                else
+                {
+                    <p class="plugin-trust-warning">Only enable code you trust. Plugins run JavaScript with full native desktop access, not in a sandbox. Existing Obsidian enablement is not imported automatically.</p>
+                }
+                @foreach (var plugin in snapshot.Plugins)
+                {
+                    var status = pluginRuntime.Plugins.FirstOrDefault(item => item.Id == plugin.Id);
+                    <section class="plugin-card" data-plugin-id="@plugin.Id" data-loaded="@(status?.Loaded == true ? "true" : "false")">
+                        <div><strong>@plugin.Name</strong><span class="muted"> @plugin.Version</span><p>@plugin.Description</p></div>
+                        <div class="plugin-card-actions">
+                            <button data-toggle-plugin="@plugin.Id" @onclick="() => TogglePluginAsync(plugin.Id, status?.Loaded == true)" disabled="@(!initialized || busy || plugin.Error is not null)">@(status?.Loaded == true ? "Disable" : "Enable trusted plugin")</button>
+                            <button data-settings-plugin="@plugin.Id" @onclick="() => ShowSettingsAsync(plugin.Id)" disabled="@(!initialized || busy || status?.HasSettings != true)">Settings</button>
+                        </div>
+                        @if ((status?.Error ?? plugin.Error) is { } pluginError)
+                        {
+                            <p class="plugin-error">@pluginError</p>
+                        }
+                    </section>
+                }
+            </section>
+            <section hidden="@(settingsSection != "core")">
+                <h2>Core plugins</h2>
+                <p class="muted">Enable built-in features for this vault. Unimplemented modules remain unavailable rather than claiming compatibility.</p>
+                <div id="core-settings-host"></div>
+            </section>
+            <section hidden="@(settingsSection != "plugin")">
+                <h2>@snapshot.Plugins.FirstOrDefault(plugin => plugin.Id == settingsPlugin)?.Name</h2>
+                <div id="plugin-settings-host"></div>
+            </section>
+        </div>
+    </dialog>
+    <div id="desktop-overlays"></div>
+</main>

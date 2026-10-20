@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+.obsidian/plugins/
+.obsidian/themes/
+.obsidian/workspace*.json
+.obsidian/workspaces.json
+.obsidian/cache/
+.obsidian/graph.json
+.obsidian/hotkeys.json
+.obsidian/vault-dotnet*.json
+.trash/

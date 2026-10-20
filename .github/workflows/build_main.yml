@@ -1,0 +1,38 @@
+name: .NET build and tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Install JavaScript build dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Build JavaScript assets
+        run: npm run build:ui
+      - name: Restore dependencies
+        run: dotnet restore RonSijm.Slopsidian.sln
+      - name: Build desktop and WASM
+        run: dotnet build RonSijm.Slopsidian.sln --configuration Debug --no-restore --nologo
+      - name: Test
+        run: npm test
