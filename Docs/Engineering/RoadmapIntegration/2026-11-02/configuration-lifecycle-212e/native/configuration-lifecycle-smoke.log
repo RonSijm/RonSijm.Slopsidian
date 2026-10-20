@@ -1,0 +1,90 @@
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile-configuration-lifecycle\logs\errors-smoke-3760a859-6c4b-47bf-bde0-f84383b378f6.jsonl
+(node:21536) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:1147/devtools/browser/d2a742f2-b568-47e4-850e-00de01d9d101
+ELECTRON_HOST_PID 21536
+DOTNET_HOST_PID 42088
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-mMAb9y
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:49152
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:49152
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/configuration/app
+      RonSijm.Slopsidian.Services.VaultException: The configuration changed on disk. Reload it before saving; the existing file was retained.
+         at RonSijm.Slopsidian.Services.VaultService.WriteConfigurationAsync(String id, WriteConfigurationRequest request, CancellationToken cancellationToken) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 45
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/core/templates/settings
+      RonSijm.Slopsidian.Services.VaultException: The core settings changed on disk. Reload them before saving; the existing file was retained.
+         at RonSijm.Slopsidian.Services.VaultService.WriteCoreSettingsAsync(String id, CoreSettingsRequest request, CancellationToken cancellationToken) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.Core.cs:line 79
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/core/templates/settings
+      RonSijm.Slopsidian.Services.VaultException: The core settings changed on disk. Reload them before saving; the existing file was retained.
+         at RonSijm.Slopsidian.Services.VaultService.WriteCoreSettingsAsync(String id, CoreSettingsRequest request, CancellationToken cancellationToken) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.Core.cs:line 79
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/core/templates/settings
+      RonSijm.Slopsidian.Services.VaultException: Saving existing core settings requires their last-read version.
+         at RonSijm.Slopsidian.Services.VaultService.WriteCoreSettingsAsync(String id, CoreSettingsRequest request, CancellationToken cancellationToken) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.Core.cs:line 74
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/configuration/app
+      RonSijm.Slopsidian.Services.VaultException: Saving existing configuration requires its last-read version.
+         at RonSijm.Slopsidian.Services.VaultService.WriteConfigurationAsync(String id, WriteConfigurationRequest request, CancellationToken cancellationToken) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 40
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/configuration/app
+      RonSijm.Slopsidian.Services.VaultException: The configuration changed on disk. Reload it before saving; the existing file was retained.
+         at RonSijm.Slopsidian.Services.VaultService.WriteConfigurationAsync(String id, WriteConfigurationRequest request, CancellationToken cancellationToken) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 45
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Program.cs:line 45
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile-configuration-lifecycle\logs\errors-smoke-3760a859-6c4b-47bf-bde0-f84383b378f6.jsonl
+(node:11664) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:42152/devtools/browser/b7ab88d9-5f92-450d-a4c8-90a152a38a0e
+ELECTRON_HOST_PID 11664
+DOTNET_HOST_PID 40608
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-mMAb9y
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:51729
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:51729
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

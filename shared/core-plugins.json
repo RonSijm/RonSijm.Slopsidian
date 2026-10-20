@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Shared core-module catalog and version-pinned acceptance requirements",
+  "reference": {
+    "application": "Obsidian",
+    "version": "1.12.7",
+    "platform": "Windows desktop",
+    "registryCount": 31,
+    "limitations": [
+      "The catalog records comparison requirements, not runtime parity results.",
+      "A null defaultOn records an absent default flag. The manager enables an unconfigured module only when its defaultOn is truthy.",
+      "The older r2 migration list is not the current catalog; obsolete starred is not an additional registered module.",
+      "English labels and workflow requirements are independently authored benchmark descriptions."
+    ]
+  },
+  "commonCases": [
+    {
+      "id": "lifecycle",
+      "description": "Enable/disable through Core plugins settings; remove/restore owned commands, views and hooks; isolate state between vaults."
+    },
+    {
+      "id": "settings",
+      "description": "Match the reference's settings availability and behavior, read existing configuration, round-trip changes and preserve unknown fields; do not invent a settings page for a module without one."
+    },
+    {
+      "id": "restart",
+      "description": "Close and restart the desktop process; retain enablement, configuration and feature data without changing unrelated vault files."
+    }
+  ],
+  "plugins": [
+    {
+      "id": "file-explorer",
+      "name": "Files",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "basic-navigation", "description": "Create a nested note, reveal its folders, highlight it and reopen its exact saved content through the file tree." },
+        { "id": "file-operations", "description": "Create folders and rename/move/delete notes and attachments, including collisions, cancellation and reference updates." }
+      ]
+    },
+    {
+      "id": "global-search",
+      "name": "Search",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "query", "description": "Search note contents with text, Boolean, regex, path/tag/property operators; navigate to the correct matching context." },
+        { "id": "updates", "description": "Refresh results after edits, file operations and external changes; report invalid queries explicitly." }
+      ]
+    },
+    {
+      "id": "switcher",
+      "name": "Quick switcher",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "find-note", "description": "Open with Ctrl+O, fuzzy-filter a nested note and open the selected result with its exact content." },
+        { "id": "new-tab", "description": "Use Ctrl+Enter to open a result in a new tab; handle missing-note creation and empty results consistently." }
+      ]
+    },
+    {
+      "id": "graph",
+      "name": "Graph view",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "global-local", "description": "Show global/local graphs for linked, unresolved and orphan notes; navigate from nodes and update after edits." },
+        { "id": "filter-groups", "description": "Apply filters, groups, local depth and display controls; retain their configuration." }
+      ]
+    },
+    {
+      "id": "backlink",
+      "name": "Backlinks",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "references", "description": "Resolve linked/unlinked mentions, headings and blocks; navigate to source context and update on edit/rename." }
+      ]
+    },
+    {
+      "id": "canvas",
+      "name": "Canvas",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "roundtrip", "description": "Open existing .canvas files with text/file/web cards, groups and edges; edit/save/reopen without losing unknown JSON fields." },
+        { "id": "interaction", "description": "Pan, zoom, select, move and connect cards; exercise keyboard navigation and undo/redo." }
+      ]
+    },
+    {
+      "id": "outgoing-link",
+      "name": "Outgoing links",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "targets", "description": "List resolved/unresolved outgoing links, navigate/create targets, and update after editing or renaming." }
+      ]
+    },
+    {
+      "id": "tag-pane",
+      "name": "Tags view",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "nested-tags", "description": "List inline/property tags with nested groups and counts; click to search and refresh after edits without indexing escaped/code text." }
+      ]
+    },
+    {
+      "id": "footnotes",
+      "name": "Footnotes",
+      "defaultOn": false,
+      "workflows": [
+        { "id": "references", "description": "Open the footnotes side view, list definitions/references and navigate between them as the note changes." }
+      ]
+    },
+    {
+      "id": "properties",
+      "name": "Properties view",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "typed-edit", "description": "View/edit typed YAML properties while preserving the note body, unknown keys and supported existing serialization." },
+        { "id": "catalog", "description": "List vault properties, filter/sort them and apply supported name/type changes consistently across notes." }
+      ]
+    },
+    {
+      "id": "page-preview",
+      "name": "Page preview",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "hover", "description": "Use the configured hover/modifier behavior on links, headings and blocks; render the correct target and clean up dismissed previews." }
+      ]
+    },
+    {
+      "id": "daily-notes",
+      "name": "Daily notes",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "create-today", "description": "Create/open today's note using date format, folder and template settings without duplicating or overwriting an existing note." },
+        { "id": "navigation", "description": "Navigate previous/next daily notes with the reference's date and missing-file behavior." }
+      ]
+    },
+    {
+      "id": "templates",
+      "name": "Templates",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "insert", "description": "Choose a configured template and insert at the selection with title/date/time substitutions without modifying the template." },
+        { "id": "date-time", "description": "Insert current date/time using configured formats and preserve surrounding editor text." }
+      ]
+    },
+    {
+      "id": "note-composer",
+      "name": "Note composer",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "merge", "description": "Merge notes with the chosen source-file handling, update references and avoid data loss on conflicts/cancellation." },
+        { "id": "extract", "description": "Extract a selection into a new/existing note with supported link/embed options and preserve surrounding text." }
+      ]
+    },
+    {
+      "id": "command-palette",
+      "name": "Command palette",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "execute", "description": "Open with Ctrl+P, filter and select a real built-in command; verify its effect and palette dismissal." },
+        { "id": "availability", "description": "Respect command availability/editor context and configured pinned-command behavior." }
+      ]
+    },
+    {
+      "id": "slash-command",
+      "name": "Slash commands",
+      "defaultOn": false,
+      "workflows": [
+        { "id": "picker", "description": "Type slash in a supported editor context, filter/execute a command and remove its query without damaging surrounding Markdown." }
+      ]
+    },
+    {
+      "id": "editor-status",
+      "name": "Editor status",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "modes", "description": "Display and switch reading/source/Live Preview modes per leaf with correct active-file state and configuration." }
+      ]
+    },
+    {
+      "id": "bookmarks",
+      "name": "Bookmarks",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "organize", "description": "Bookmark supported files/folders/headings/blocks/searches, group/reorder/rename/remove them and retain compatible bookmark data." },
+        { "id": "resolve", "description": "Open bookmark targets, update renamed references and handle missing targets explicitly." }
+      ]
+    },
+    {
+      "id": "markdown-importer",
+      "name": "Format converter",
+      "defaultOn": null,
+      "workflows": [
+        { "id": "convert", "description": "Convert the reference-supported legacy Markdown/link formats on fixture copies with correct confirmation, cancellation and preservation of unrelated text." }
+      ]
+    },
+    {
+      "id": "zk-prefixer",
+      "name": "Unique note creator",
+      "defaultOn": null,
+      "workflows": [
+        { "id": "create-unique", "description": "Create timestamp-prefixed notes using configured name/folder/template behavior; handle collisions without overwriting." }
+      ]
+    },
+    {
+      "id": "random-note",
+      "name": "Random note",
+      "defaultOn": null,
+      "workflows": [
+        { "id": "open", "description": "Open only eligible vault notes and report an empty vault rather than selecting an attachment or invalid path." }
+      ]
+    },
+    {
+      "id": "outline",
+      "name": "Outline",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "navigate", "description": "Show the active note's ATX headings and move the editor to the selected source heading." },
+        { "id": "markdown-semantics", "description": "Match heading/fence/Setext handling, hierarchy, folding and active-heading updates for the reference fixtures." }
+      ]
+    },
+    {
+      "id": "word-count",
+      "name": "Word count",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "document", "description": "Display exact word/character counts for a known ASCII document and update them immediately after editing." },
+        { "id": "selection-unicode", "description": "Match reference counts for selection, Unicode/CJK/emoji, punctuation and supported editor/reading modes." }
+      ]
+    },
+    {
+      "id": "slides",
+      "name": "Slides",
+      "defaultOn": null,
+      "workflows": [
+        { "id": "present", "description": "Present Markdown slide separators, rendered content/embeds and navigation; exit back to the intact note." }
+      ]
+    },
+    {
+      "id": "audio-recorder",
+      "name": "Audio recorder",
+      "defaultOn": null,
+      "dependencies": ["Authorized microphone access or a deterministic synthetic input device; do not record private ambient audio."],
+      "workflows": [
+        { "id": "record", "description": "Start/stop with synthetic input, save a playable vault attachment and embed it; handle permission/codec failure and cancellation explicitly." }
+      ]
+    },
+    {
+      "id": "workspaces",
+      "name": "Workspaces",
+      "defaultOn": null,
+      "workflows": [
+        { "id": "layout-roundtrip", "description": "Restore per-vault split/tab/pin/sidebar layout and note contents after renderer reload without rewriting Obsidian workspace.json; this is only a foundation, not named-workspace support." },
+        { "id": "named-workspaces", "description": "Save, load, rename/delete named workspaces with their leaf/view state; preserve dirty notes and compatible workspace configuration." }
+      ]
+    },
+    {
+      "id": "file-recovery",
+      "name": "File recovery",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "restore", "description": "Create persistent snapshots, find/preview versions of modified/deleted notes and restore with explicit conflict handling." },
+        { "id": "retention", "description": "Honor snapshot interval/retention settings across restart without treating normal unsaved buffers as recovery snapshots." }
+      ]
+    },
+    {
+      "id": "publish",
+      "name": "Publish",
+      "defaultOn": null,
+      "dependencies": ["Authorized Obsidian Publish account/site and service access; a local desktop rewrite does not supply the hosted service."],
+      "workflows": [
+        { "id": "publish-site", "description": "On an authorized test site, select/publish/remove notes and attachments, resolve links and report account/network failures; never include credentials in evidence." }
+      ]
+    },
+    {
+      "id": "sync",
+      "name": "Sync",
+      "defaultOn": true,
+      "dependencies": ["Authorized Obsidian Sync account/remote vault and service access; local file persistence is not cloud synchronization."],
+      "workflows": [
+        { "id": "sync-vault", "description": "Exercise authorized remote-vault setup, notes/attachments/configuration, offline reconciliation, conflicts and encryption behavior with a second client." }
+      ]
+    },
+    {
+      "id": "bases",
+      "name": "Bases",
+      "defaultOn": true,
+      "workflows": [
+        { "id": "view", "description": "Open existing .base views with filters, sorts, grouping and formulas against real note properties; navigate results." },
+        { "id": "edit-roundtrip", "description": "Edit supported values/view configuration, preserve note and .base data across restart, and surface formula/type errors." }
+      ]
+    },
+    {
+      "id": "webviewer",
+      "name": "Web viewer",
+      "defaultOn": false,
+      "desktopOnly": true,
+      "workflows": [
+        { "id": "browse", "description": "Open an authorized test page in a web view with navigation/find/link handling, retained view state and correct external-navigation boundaries." }
+      ]
+    }
+  ]
+}

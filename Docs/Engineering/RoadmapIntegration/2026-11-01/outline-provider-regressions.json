@@ -1,0 +1,38 @@
+{
+  "tests": {
+    "skipped": 0,
+    "pass": 1095,
+    "cancelled": 0,
+    "tests": 1095,
+    "todo": 0,
+    "fail": 0
+  },
+  "boundary": "Integrated source-preserving Outline authoring and reviewed draft-provider source/regressions, not actual new UI acceptance or exhaustive Unicode/native equivalence",
+  "sourceBefore": "babc2d42972eabde83c69ce62fb4099843d5e235af8b32d6ec852f033c748743",
+  "completedAt": "2026-11-01T21:27:52.1940658Z",
+  "sourceAfterPairedBuilds": "babc2d42972eabde83c69ce62fb4099843d5e235af8b32d6ec852f033c748743",
+  "sourceAfterTests": "babc2d42972eabde83c69ce62fb4099843d5e235af8b32d6ec852f033c748743",
+  "status": "passed",
+  "commands": [
+    {
+      "exitCode": 0,
+      "command": "npm run build",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\outline-integration-validation-1e99c491-760a-458d-9639-92b0abff251c\\build.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "npm run build:web",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\outline-integration-validation-1e99c491-760a-458d-9639-92b0abff251c\\build-web.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "npm run verify:web",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\outline-integration-validation-1e99c491-760a-458d-9639-92b0abff251c\\verify-web.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "npm run test",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\outline-integration-validation-1e99c491-760a-458d-9639-92b0abff251c\\test.log"
+    }
+  ]
+}

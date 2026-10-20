@@ -1,0 +1,24 @@
+<Configuration>
+  <VGpu>Disable</VGpu>
+  <Networking>Disable</Networking>
+  <AudioInput>Disable</AudioInput>
+  <VideoInput>Disable</VideoInput>
+  <PrinterRedirection>Disable</PrinterRedirection>
+  <ClipboardRedirection>Disable</ClipboardRedirection>
+  <ProtectedClient>Enable</ProtectedClient>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-studious-system\.runtime\original-reference-captures\20261102050418-24d274\input</HostFolder>
+      <SandboxFolder>C:\ReferenceInput</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+    <MappedFolder>
+      <HostFolder>C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-studious-system\.runtime\original-reference-captures\20261102050418-24d274\output</HostFolder>
+      <SandboxFolder>C:\ReferenceOutput</SandboxFolder>
+      <ReadOnly>false</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <LogonCommand>
+    <Command>C:\ReferenceInput\node\node.exe C:\ReferenceInput\guest\guest-capture.mjs --nonce 24d274293412089395e62c3667de9c77</Command>
+  </LogonCommand>
+</Configuration>

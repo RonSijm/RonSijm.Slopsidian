@@ -1,0 +1,22 @@
+2026-10-27T16:23:32.223Z PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+2026-10-27T16:23:34.515Z PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+2026-10-27T16:23:34.736Z PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+2026-10-27T16:23:39.365Z PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+2026-10-27T16:23:39.839Z PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+2026-10-27T16:23:40.183Z PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+2026-10-27T16:23:40.350Z PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+2026-10-27T16:23:41.294Z PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+2026-10-27T16:23:43.042Z PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+2026-10-27T16:23:43.045Z PASS A real page reload is blocked while a buffer has unsaved changes.
+2026-10-27T16:23:45.041Z PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+2026-10-27T16:23:49.050Z PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+2026-10-27T16:23:49.219Z PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+2026-10-27T16:23:49.402Z PASS Outgoing links lists real wiki/Markdown/property links and embeds, deduplicates the same destination/subpath, and explicitly disables unsupported attachment/traversal actions.
+2026-10-27T16:23:49.896Z PASS Outgoing links navigates to exact heading/block context, creates a missing Markdown target without changing its source, and keeps a pinned sidebar on its note.
+2026-10-27T16:23:55.102Z PASS Dirty-buffer edits, undo/redo, external saves and target renames refresh outgoing resolution without overwriting vault files or secretly rewriting links.
+2026-10-27T16:23:56.266Z PASS Unlinked aliases navigate to their source; collapse/follow/pin state survives an actual reload and releasing the pin follows the active note.
+2026-10-27T16:23:56.595Z PASS Disabling Outgoing links removes its commands, view and enabled-instance lookup; re-enabling creates one fresh view with the persisted state.
+2026-10-27T16:23:57.160Z PASS Image Fit stays inside real fractional CSS viewports without feedback scrollbars, including width- and height-constrained images.
+2026-10-27T16:23:57.968Z PASS Outgoing opens real decoded raster/Canvas leaves, honors modified-click tabs, follows provider registration/removal and preserves exact attachment bytes; image fit/zoom/scroll work and closed views release URLs and retained controls.
+2026-10-27T16:24:02.670Z PASS Reading links share registered attachment navigation; live external pixel changes, visible decode errors/recovery and guarded image rename refresh the actual view without writing image bytes or losing opaque state.
+2026-10-27T16:24:03.701Z PASS Actual image leaves, zoom, opaque state and pinned Outgoing restore after full desktop restart/browser reconnect while original workspace absence/bytes, Markdown and exact binary attachments stay preserved.

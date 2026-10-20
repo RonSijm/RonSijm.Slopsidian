@@ -1,0 +1,13 @@
+PASS Real DOM insertion/migration, cross-window node/event types, CSS, Moment previews, settings control ownership and SVG registry behavior pass in the actual renderer.
+PASS The native-shaped Markdown embed registry owns a real renderer/editor and persists an exact physical edit, rather than supplying an empty constructor seam.
+PASS Declarative settings reject held asynchronous validation without saving, persist a valid value physically, navigate nested pages and dispose owned renders.
+PASS An actual confirmation blocks duplicate actions and waits for its physical configuration write before closing.
+PASS Unchanged-plugin workflow: Linter delayed settings persist on owned disable.
+PASS Unchanged-plugin workflow: QuickAdd nested settings and physical persistence.
+PASS Unchanged-plugin workflow: Templater security consent and cancellation.
+PASS Unchanged-plugin workflow: Natural Language Dates owned protocol callback.
+PASS Unchanged-plugin workflow: Kanban board rendering and physical checkbox persistence.
+PASS Unchanged-plugin workflow: Configured restoration and owned disable cleanup.
+PASS All ten exact releases pass desktop startup and real settings; the inherited Git safety-configuration limitation is recorded separately.
+PASS Every loaded release renders its real settings while all supplied manifests, scripts and styles remain byte-identical; Git still has no remotes.
+The ten exact supplied releases passed desktop startup/settings and selected workflows; the recorded Git backend limitation is not full plugin parity.

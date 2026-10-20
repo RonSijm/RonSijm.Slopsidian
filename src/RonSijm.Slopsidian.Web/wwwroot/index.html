@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <title>Slopsidian</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="browser.css" />
+    <link rel="stylesheet" href="js/editor-host.css" />
+</head>
+<body>
+    <div id="app"><p class="web-loading" role="status">Loading Slopsidian...</p></div>
+    <div id="blazor-error-ui" data-nosnippet>
+        The application could not start. Check your connection and browser console.
+        <a href="." class="reload">Reload</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <details id="offline-shell" class="offline-shell" hidden>
+        <summary>Offline app</summary>
+        <p data-offline-status role="status" aria-live="polite">Checking offline status…</p>
+        <progress hidden aria-label="Offline app files saved" value="0" max="1"></progress>
+        <p data-offline-counts></p>
+        <div class="offline-shell-actions">
+            <button type="button" data-offline-prepare>Prepare offline app</button>
+            <button type="button" data-offline-cancel hidden>Cancel</button>
+            <button type="button" data-offline-check>Check for update</button>
+            <button type="button" data-offline-verify>Verify files</button>
+            <button type="button" data-offline-remove>Remove offline copy</button>
+        </div>
+    </details>
+    <script type="module" src="offline-shell-ui.js"></script>
+</body>
+</html>

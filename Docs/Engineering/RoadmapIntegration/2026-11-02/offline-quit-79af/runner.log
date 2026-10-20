@@ -1,0 +1,7 @@
+Offline shell smoke FAILED; diagnostics preserved in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-musical-funicular\.runtime\evidence\offline-shell-web-smoke-failed-2026-11-02T00-44-29-425Z.json
+Error: online: the browser did not exit after quit and was killed (unclean teardown).
+    at Page.close (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:203:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async session (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:254:9)
+    at async scenario (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:243:3)
+    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:295:3

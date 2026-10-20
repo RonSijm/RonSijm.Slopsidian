@@ -1,0 +1,44 @@
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\smoke-profile\logs\errors-smoke-4d16c3ce-f9d9-46bf-a18b-e01571377bf2.jsonl
+(node:41356) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:17598/devtools/browser/6f22399f-13fa-407b-99f2-05bfa6a0cc55
+ELECTRON_HOST_PID 41356
+DOTNET_HOST_PID 45600
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\smoke-vault-WLzoSq
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55068
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:55068
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+[41356:1102/025319.846:ERROR:gpu\ipc\client\command_buffer_proxy_impl.cc:327] GPU state invalid after WaitForGetOffsetInRange.
+[41356:1102/025319.846:ERROR:gpu\ipc\client\command_buffer_proxy_impl.cc:327] GPU state invalid after WaitForGetOffsetInRange.
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\smoke-profile\logs\errors-smoke-4d16c3ce-f9d9-46bf-a18b-e01571377bf2.jsonl
+(node:43124) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:54908/devtools/browser/220b2571-b28f-4f80-ac4a-7119bd82ce1e
+ELECTRON_HOST_PID 43124
+DOTNET_HOST_PID 29616
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\smoke-vault-WLzoSq
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:64130
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:64130
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

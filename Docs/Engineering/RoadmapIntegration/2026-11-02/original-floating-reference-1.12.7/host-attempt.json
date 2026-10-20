@@ -1,0 +1,11 @@
+{
+  "schema": "sandbox-host-attempt/1",
+  "startedAt": "2026-11-02T05:11:30.6972256Z",
+  "configSha256": "a5965c6da03bd8456499498cdab4c2f0b5eaad30200996ae2abd3cbb8fb5f976",
+  "nonce": "24d274293412089395e62c3667de9c77",
+  "hostOriginalExecuted": false,
+  "launcherPid": 31364,
+  "resultAvailable": true,
+  "clients": [],
+  "finishedAt": "2026-11-02T05:11:52.4974939Z"
+}

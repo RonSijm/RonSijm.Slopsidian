@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-30",
+  "scope": "outgoing-workspace-panes-and-dependent-sidebar-regression",
+  "status": "passed",
+  "sourceFingerprint": "e758bdbb68c89cf67be4548777bbc9753a22173868e4a2a863fe2bf061afbbd5",
+  "sourceCount": 426,
+  "archive": {
+    "path": "runtime-evidence.zip",
+    "sha256": "2a96b256106650f524d16687fb6dffc16a85674a6ac7fbf845c4533ac919907b",
+    "contents": "Final reports and complete error audits, focused test output, normalized source manifest, owned source overlays, desktop logs, six captures and retained failed attempts."
+  },
+  "reports": [
+    {
+      "path": "outgoing-panes-smoke.json",
+      "host": "desktop",
+      "checks": 7,
+      "processSessions": 4,
+      "sha256": "32887a4f5b41144f73c4216865067318639a5dfde77933f5ddafc94143e3add7"
+    },
+    {
+      "path": "outgoing-panes-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 19,
+      "sha256": "9960093c6549ad6eed132e32765e49ed7fd813c977c17d0a3215d4714697e10e"
+    },
+    {
+      "path": "outgoing-smoke.json",
+      "host": "desktop",
+      "checks": 10,
+      "processSessions": 2,
+      "sha256": "07639d3119f568ac1193f9ad1bfd26776d870e2fb823892962319a6781595910"
+    },
+    {
+      "path": "outgoing-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 22,
+      "sha256": "ab86a671a60ccca43a89f7a17e7dd63a4d1250047f347c62f275dc92ac001b7c"
+    }
+  ],
+  "focusedTests": {
+    "passed": 167,
+    "failed": 0,
+    "command": "node --test --test-concurrency=1 tests\\outgoing-panes.test.mjs tests\\markdown.test.mjs tests\\workspace-startup.test.mjs tests\\core.test.mjs tests\\workspaces.test.mjs tests\\backlink-panes.test.mjs tests\\discovery-panes.test.mjs tests\\workspace-tabs.test.mjs tests\\workspace-transition.test.mjs",
+    "output": "outgoing-panes-tests.log",
+    "sha256": "4e97097f93ad840ce00a9c7c8ec7e722922379286528c3d17bcf0d63f8c6f97f"
+  },
+  "buildChecks": [
+    "npm run build",
+    "node tools\\publish-web.mjs",
+    "npm run verify:web"
+  ],
+  "errorAudits": {
+    "includesFinalTeardown": true,
+    "unexpectedPersistedRecords": 0,
+    "uncaughtExceptions": 0,
+    "note": "The browser bootstrap's expected stale-save notification remains accounted. Native console transport diagnostics are retained; this is not a clean-console claim."
+  },
+  "reviewedCaptures": [
+    "outgoing-panes-imported-desktop.png",
+    "outgoing-panes-readonly-web.png"
+  ],
+  "retainedFailures": [
+    {
+      "path": "outgoing-panes-navigation-poll-failure-desktop.json",
+      "resolution": "Scenario polling now checks for an actual Markdown view before reading its editor during navigation."
+    },
+    {
+      "path": "outgoing-layout-save-failure-desktop.json",
+      "resolution": "Closing an active tab now repairs selection before recent-history recording can persist a layout."
+    },
+    {
+      "path": "outgoing-layout-save-failure-web.json",
+      "resolution": "The same tab-close ordering fix passes the unchanged actual-folder browser sidebar workflow."
+    }
+  ],
+  "limits": [
+    "Focused tests and four runtime scopes only; no full default/GitHub regression or whole-core badge renewal.",
+    "No original core module or complete native/private grouped view compatibility.",
+    "No one-click mention linkification, full placement preferences or eager remote indexing.",
+    "No publication, deployment or newly accepted third-party plugin corpus."
+  ]
+}

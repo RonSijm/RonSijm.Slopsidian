@@ -1,0 +1,365 @@
+{
+  "wanted": {
+    "x": 160,
+    "y": 120,
+    "width": 723,
+    "height": 603
+  },
+  "electron": "39.8.3",
+  "pid": 2060,
+  "measurements": [
+    {
+      "label": "direct-constructor",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 724,
+        "height": 604
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 712,
+        "height": 569
+      },
+      "size": [
+        724,
+        604
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 160,
+        "y": 120,
+        "outerWidth": 724,
+        "outerHeight": 604,
+        "innerWidth": 712,
+        "innerHeight": 569,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "direct-setBounds",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 724,
+        "height": 604
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 711,
+        "height": 568
+      },
+      "size": [
+        724,
+        604
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 160,
+        "y": 120,
+        "outerWidth": 724,
+        "outerHeight": 604,
+        "innerWidth": 711,
+        "innerHeight": 568,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "direct-setSize",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 724,
+        "height": 604
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 711,
+        "height": 568
+      },
+      "size": [
+        724,
+        604
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 160,
+        "y": 120,
+        "outerWidth": 724,
+        "outerHeight": 604,
+        "innerWidth": 711,
+        "innerHeight": 568,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "pixel-grid-720",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 720,
+        "height": 600
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 708,
+        "height": 565
+      },
+      "size": [
+        720,
+        600
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 160,
+        "y": 120,
+        "outerWidth": 724,
+        "outerHeight": 604,
+        "innerWidth": 711,
+        "innerHeight": 568,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "pixel-grid-721",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 722,
+        "height": 602
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 709,
+        "height": 567
+      },
+      "size": [
+        722,
+        602
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 160,
+        "y": 120,
+        "outerWidth": 724,
+        "outerHeight": 604,
+        "innerWidth": 711,
+        "innerHeight": 568,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "pixel-grid-722",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 723,
+        "height": 603
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 710,
+        "height": 568
+      },
+      "size": [
+        723,
+        603
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 160,
+        "y": 120,
+        "outerWidth": 724,
+        "outerHeight": 604,
+        "innerWidth": 711,
+        "innerHeight": 568,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "pixel-grid-723",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 724,
+        "height": 604
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 711,
+        "height": 568
+      },
+      "size": [
+        724,
+        604
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 160,
+        "y": 120,
+        "outerWidth": 724,
+        "outerHeight": 604,
+        "innerWidth": 711,
+        "innerHeight": 568,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "pixel-grid-724",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 724,
+        "height": 604
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 712,
+        "height": 569
+      },
+      "size": [
+        724,
+        604
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 160,
+        "y": 120,
+        "outerWidth": 724,
+        "outerHeight": 604,
+        "innerWidth": 711,
+        "innerHeight": 568,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "pixel-grid-725",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 726,
+        "height": 606
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 713,
+        "height": 571
+      },
+      "size": [
+        726,
+        606
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 160,
+        "y": 120,
+        "outerWidth": 724,
+        "outerHeight": 604,
+        "innerWidth": 711,
+        "innerHeight": 568,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "window-open",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 724,
+        "height": 604
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 712,
+        "height": 569
+      },
+      "size": [
+        724,
+        604
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 800,
+        "y": 120,
+        "outerWidth": 903,
+        "outerHeight": 703,
+        "innerWidth": 712,
+        "innerHeight": 569,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "window-open-resizeTo",
+      "bounds": {
+        "x": 800,
+        "y": 120,
+        "width": 724,
+        "height": 604
+      },
+      "contentBounds": {
+        "x": 806,
+        "y": 148,
+        "width": 711,
+        "height": 568
+      },
+      "size": [
+        724,
+        604
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 800,
+        "y": 120,
+        "outerWidth": 903,
+        "outerHeight": 703,
+        "innerWidth": 712,
+        "innerHeight": 569,
+        "dpr": 2.25
+      }
+    },
+    {
+      "label": "window-open-setBounds",
+      "bounds": {
+        "x": 160,
+        "y": 120,
+        "width": 724,
+        "height": 604
+      },
+      "contentBounds": {
+        "x": 166,
+        "y": 148,
+        "width": 711,
+        "height": 568
+      },
+      "size": [
+        724,
+        604
+      ],
+      "scale": 2.25,
+      "dom": {
+        "x": 800,
+        "y": 120,
+        "outerWidth": 903,
+        "outerHeight": 703,
+        "innerWidth": 712,
+        "innerHeight": 569,
+        "dpr": 2.25
+      }
+    }
+  ],
+  "childConstructorOptions": {
+    "width": 723,
+    "height": 603
+  },
+  "ok": true
+}

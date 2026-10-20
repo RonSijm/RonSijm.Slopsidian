@@ -1,0 +1,25 @@
+
+> slopsidian@0.1.0 build:web
+> npm run typecheck && npm run build:ui && node tools\publish-web.mjs
+
+
+> slopsidian@0.1.0 typecheck
+> tsc --noEmit
+
+
+> slopsidian@0.1.0 build:ui
+> node tools/build.mjs
+
+GITHUB_PLUGIN_READY D:\RonSijm\RonSijm.Slopsidian\.runtime\github-vault-plugin\
+Built the editor and unchanged upstream sample plugin. Demo vault: D:\RonSijm\RonSijm.Slopsidian\.runtime\DemoVault
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  RonSijm.Slopsidian.Web -> D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian.Web\bin\Release\net10.0\RonSijm.Slopsidian.Web.dll
+  RonSijm.Slopsidian.Web (Blazor output) -> D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian.Web\bin\Release\net10.0\wwwroot
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Publishing without optimizations. Although it's optional for Blazor, we strongly recommend using `wasm-tools` workload! You can install it by running `dotnet workload install wasm-tools` from the command line.
+  RonSijm.Slopsidian.Web -> D:\RonSijm\RonSijm.Slopsidian\.runtime\web\
+Published standalone WASM site: D:\RonSijm\RonSijm.Slopsidian\.runtime\web\wwwroot
+Base path: /
+Offline shell version: 4de873073c6b9e4b7b06433f6be158c4 (277 files, 85981656 bytes)
+No desktop server or vault files are included.

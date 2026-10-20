@@ -1,0 +1,854 @@
+{
+  "status": "failed",
+  "scope": "outline-workspace-panes",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-28T17:24:26.926Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\outline-panes-validation-20261028\\.runtime\\smoke-vault-JpvqKv",
+  "launcherPid": 39992,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "A first-open original layout restores real main/sidebar Outline panes with independent note/filter/follow state, pins and opaque fields, alongside Source and Reading notes; parsed ATX/Setext headings exclude metadata, code and comments without changing BOM/CRLF/Unicode bytes.",
+    "Real filtering retains ancestors and saved ordinary folds, keyboard arrows navigate the hierarchy and Enter reveals the exact Source heading. Active-heading following leaves editor focus and independent pinned-note panes intact.",
+    "Pinned-note navigation activates an existing Reading pane and reveals/highlights its real heading without changing mode or bytes. Follow active note switches targets; turning it off retains an independent note until following resumes."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 39992,
+      "electronPid": 39992,
+      "dotnetPid": 45232,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 14592,
+      "electronPid": 14592,
+      "dotnetPid": 48752,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.14",
+  "sourceFingerprint": "b32bba8fd6a014cecac4aad8a76ae59f3f1c8b895117549b086b2eac74d1e133",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "controlledShutdownConsoleErrors": [],
+  "error": "Error: Timed out waiting for owned headings outline-a\n    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:347:9)\n    at async waitExpression (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:439:3)\n    at async checkOutlinePanes (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/outline-pane-scenarios.mjs:60:3)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:752:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (JSON.stringify(Array.from(document.querySelectorAll(\\\"[data-outline-pane=\\\\\\\"outline-a\\\\\\\"] .outline-heading\\\"),e=>e.textContent))===\\\"[\\\\\\\"Alpha root\\\\\\\",\\\\\\\"Branch\\\\\\\",\\\\\\\"Deep child\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Repeat\\\\\\\",\\\\\\\"Setext root\\\\\\\"]\\\""
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [
+      {
+        "key": "ArrowRight",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "outline-pane-row"
+      },
+      {
+        "key": "ArrowRight",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "outline-pane-row"
+      },
+      {
+        "key": "ArrowRight",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "outline-pane-row"
+      },
+      {
+        "key": "ArrowRight",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "outline-pane-row"
+      },
+      {
+        "key": "ArrowLeft",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "outline-pane-row"
+      },
+      {
+        "key": "ArrowLeft",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "outline-pane-row"
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "outline-pane-row"
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "outline-pane-row"
+      }
+    ],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [
+      {
+        "id": "outline-pane-probe",
+        "loaded": "false"
+      }
+    ],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "outline-a",
+        "type": "outline"
+      },
+      {
+        "id": "outline-b",
+        "type": "outline"
+      },
+      {
+        "id": "outline-alpha",
+        "type": "markdown",
+        "path": "Outline panes/Alpha.md",
+        "text": "Inserted prefix\r\n---\r\ntitle: '# Hidden metadata'\r\n---\r\n# Alpha root\r\n\r\nIntro λ and 中文.\r\n\r\n## Branch\r\n\r\n#### Deep child\r\n\r\n## Repeat\r\nText\r\n## Repeat\r\nText\r\n\r\nSetext root\r\n===\r\n\r\n```md\r\n# Literal code\r\n```\r\n\r\n<!--\r\n# Hidden comment\r\n-->\r\n",
+        "sessionText": "Inserted prefix\r\n---\r\ntitle: '# Hidden metadata'\r\n---\r\n# Alpha root\r\n\r\nIntro λ and 中文.\r\n\r\n## Branch\r\n\r\n#### Deep child\r\n\r\n## Repeat\r\nText\r\n## Repeat\r\nText\r\n\r\nSetext root\r\n===\r\n\r\n```md\r\n# Literal code\r\n```\r\n\r\n<!--\r\n# Hidden comment\r\n-->\r\n",
+        "dirty": true,
+        "selection": 0,
+        "length": 210
+      },
+      {
+        "id": "outline-beta",
+        "type": "markdown",
+        "path": "Outline panes/Beta.md",
+        "text": "# Beta root\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading ",
+        "sessionText": "# Beta root\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading filler before target.\n\nReading ",
+        "dirty": false,
+        "selection": 1005,
+        "length": 2246
+      },
+      {
+        "id": "outline-side",
+        "type": "outline"
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "outline-main",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "outline-tabs",
+            "type": "tabs",
+            "dimension": 40,
+            "children": [
+              {
+                "id": "outline-a",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "Outline panes/Alpha.md",
+                    "followCursor": true,
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "opaque": {
+                      "keep": "outline-a"
+                    },
+                    "followActiveFile": true,
+                    "foldedHeadings": []
+                  },
+                  "pinned": true
+                }
+              },
+              {
+                "id": "outline-b",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "Outline panes/Beta.md",
+                    "followCursor": false,
+                    "showSearch": true,
+                    "searchQuery": "target",
+                    "opaque": {
+                      "keep": "outline-b"
+                    },
+                    "followActiveFile": false,
+                    "foldedHeadings": []
+                  },
+                  "pinned": true
+                }
+              }
+            ],
+            "currentTab": 0
+          },
+          {
+            "id": "outline-note-tabs",
+            "type": "tabs",
+            "dimension": 60,
+            "children": [
+              {
+                "id": "outline-alpha",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Outline panes/Alpha.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "outline-beta",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "preview",
+                    "source": false,
+                    "file": "Outline panes/Beta.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          }
+        ]
+      },
+      "active": "outline-alpha",
+      "left": {
+        "width": 220,
+        "collapsed": true
+      },
+      "right": {
+        "width": 310,
+        "collapsed": false,
+        "root": {
+          "id": "outline-right",
+          "type": "split",
+          "direction": "horizontal",
+          "children": [
+            {
+              "id": "outline-side-tabs",
+              "type": "tabs",
+              "children": [
+                {
+                  "id": "outline-side",
+                  "type": "leaf",
+                  "state": {
+                    "type": "outline",
+                    "state": {
+                      "file": "Outline panes/Beta.md",
+                      "followCursor": true,
+                      "showSearch": false,
+                      "searchQuery": "",
+                      "opaque": {
+                        "keep": "outline-side"
+                      },
+                      "followActiveFile": false,
+                      "foldedHeadings": []
+                    },
+                    "pinned": true
+                  }
+                }
+              ],
+              "currentTab": 0
+            }
+          ]
+        }
+      },
+      "views": {
+        "workspace-startup": {
+          "source": ".obsidian/workspace.json",
+          "version": "cb927e6fda092577c4dec4c19892dfbcf732a791cecb7a073f78d521822f19b7",
+          "warnings": []
+        },
+        "sidebars": {
+          "left": "file-explorer",
+          "right": "workspace-right"
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "outline-alpha",
+          "lastFile": "Outline panes/Alpha.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "consoleErrors": [
+    "[2026-10-28T17:24:29.240Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T17:24:34.246Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T17:24:57.176Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T17:25:02.189Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 48752,
+  "electronPid": 14592,
+  "completedAt": "2026-10-28T17:25:02.354Z",
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\outline-panes-validation-20261028\\.runtime\\evidence\\outline-panes-smoke-errors.jsonl",
+    "nativePaths": [
+      "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\outline-panes-validation-20261028\\.runtime\\smoke-profile\\logs\\errors-smoke-3374b18f-ff9d-4e8f-86d0-7af4080147d2.jsonl"
+    ],
+    "records": 0,
+    "expected": 0,
+    "unexpected": [],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "includesFinalTeardown": true
+  }
+}

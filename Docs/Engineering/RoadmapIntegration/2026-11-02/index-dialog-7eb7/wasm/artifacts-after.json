@@ -1,0 +1,37 @@
+[
+  {
+    "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+    "bytes": 551424,
+    "sha256": "151a345d159796ac6538e23e0e2105ab9a589d803d3f3050c69cf2597363a2ee"
+  },
+  {
+    "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+    "bytes": 4787386,
+    "sha256": "cf1c8070f957ed5292db63e2f78acf7bbc382e0f3953e68b241409cb3c17b199"
+  },
+  {
+    "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+    "bytes": 4787386,
+    "sha256": "cf1c8070f957ed5292db63e2f78acf7bbc382e0f3953e68b241409cb3c17b199"
+  },
+  {
+    "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+    "bytes": 167,
+    "sha256": "639bd8bc2d48d3c59918d8ea7bb40542f0ee700a6fdd534e6af575666915117d"
+  },
+  {
+    "path": ".runtime\\web\\wwwroot\\core-verification.json",
+    "bytes": 167,
+    "sha256": "639bd8bc2d48d3c59918d8ea7bb40542f0ee700a6fdd534e6af575666915117d"
+  },
+  {
+    "path": ".runtime\\web\\wwwroot\\offline-manifest.json",
+    "bytes": 36610,
+    "sha256": "16925594524dd42357a308ca0457f15451170a6b383dad2d197358a214b78916"
+  },
+  {
+    "path": ".runtime\\web\\wwwroot\\service-worker.js",
+    "bytes": 6303,
+    "sha256": "618c9f4a72a70a45eab864b19ea089a91cc4e8a3b7e32a63ab4dae757d103a91"
+  }
+]

@@ -1,0 +1,362 @@
+{
+  "profile": "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\browser-window-control-Cy5PQg",
+  "boundary": "Installed Chrome, fresh owned profile and loopback empty page only; no application/reference/personal profile. Reopen uses authoritative Browser bounds; background about:blank DOM outer metrics can be stale and are diagnostic only.",
+  "controlSha256": "c9eccc0ee1812d09fcbddab00e8ce93da84a4b81ed6f3f29c0c579a91d19c719",
+  "cases": [
+    {
+      "normalize": false,
+      "generation": 0,
+      "requested": {
+        "x": 160,
+        "y": 120,
+        "width": 723,
+        "height": 603
+      },
+      "samples": [
+        {
+          "delay": 100,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 739,
+            "innerHeight": 646,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267022,
+            "bounds": {
+              "left": 160,
+              "top": 120,
+              "width": 752,
+              "height": 716,
+              "windowState": "normal"
+            }
+          }
+        },
+        {
+          "delay": 500,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 739,
+            "innerHeight": 646,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267022,
+            "bounds": {
+              "left": 160,
+              "top": 120,
+              "width": 752,
+              "height": 716,
+              "windowState": "normal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "normalize": false,
+      "generation": 1,
+      "requested": {
+        "x": 160,
+        "y": 120,
+        "width": 752,
+        "height": 716
+      },
+      "samples": [
+        {
+          "delay": 100,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 768,
+            "innerHeight": 760,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267024,
+            "bounds": {
+              "left": 160,
+              "top": 120,
+              "width": 780,
+              "height": 830,
+              "windowState": "normal"
+            }
+          }
+        },
+        {
+          "delay": 500,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 768,
+            "innerHeight": 760,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267024,
+            "bounds": {
+              "left": 160,
+              "top": 120,
+              "width": 780,
+              "height": 830,
+              "windowState": "normal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "normalize": false,
+      "generation": 2,
+      "requested": {
+        "x": 160,
+        "y": 120,
+        "width": 780,
+        "height": 830
+      },
+      "samples": [
+        {
+          "delay": 100,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 796,
+            "innerHeight": 873,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267026,
+            "bounds": {
+              "left": 160,
+              "top": 76,
+              "width": 808,
+              "height": 944,
+              "windowState": "normal"
+            }
+          }
+        },
+        {
+          "delay": 500,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 796,
+            "innerHeight": 873,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267026,
+            "bounds": {
+              "left": 160,
+              "top": 76,
+              "width": 808,
+              "height": 944,
+              "windowState": "normal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "normalize": true,
+      "generation": 0,
+      "requested": {
+        "x": 160,
+        "y": 120,
+        "width": 723,
+        "height": 603
+      },
+      "samples": [
+        {
+          "delay": 100,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 711,
+            "innerHeight": 533,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267028,
+            "bounds": {
+              "left": 160,
+              "top": 120,
+              "width": 724,
+              "height": 604,
+              "windowState": "normal"
+            }
+          }
+        },
+        {
+          "delay": 500,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 711,
+            "innerHeight": 533,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267028,
+            "bounds": {
+              "left": 160,
+              "top": 120,
+              "width": 724,
+              "height": 604,
+              "windowState": "normal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "normalize": true,
+      "generation": 1,
+      "requested": {
+        "x": 160,
+        "y": 120,
+        "width": 724,
+        "height": 604
+      },
+      "samples": [
+        {
+          "delay": 100,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 712,
+            "innerHeight": 534,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267030,
+            "bounds": {
+              "left": 160,
+              "top": 120,
+              "width": 724,
+              "height": 604,
+              "windowState": "normal"
+            }
+          }
+        },
+        {
+          "delay": 500,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 712,
+            "innerHeight": 534,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267030,
+            "bounds": {
+              "left": 160,
+              "top": 120,
+              "width": 724,
+              "height": 604,
+              "windowState": "normal"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "normalize": true,
+      "generation": 2,
+      "requested": {
+        "x": 160,
+        "y": 120,
+        "width": 724,
+        "height": 604
+      },
+      "samples": [
+        {
+          "delay": 100,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 712,
+            "innerHeight": 534,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267032,
+            "bounds": {
+              "left": 160,
+              "top": 120,
+              "width": 724,
+              "height": 604,
+              "windowState": "normal"
+            }
+          }
+        },
+        {
+          "delay": 500,
+          "dom": {
+            "x": 10,
+            "y": 10,
+            "width": 1051,
+            "height": 1000,
+            "innerWidth": 712,
+            "innerHeight": 534,
+            "dpr": 2.25
+          },
+          "native": {
+            "windowId": 1659267032,
+            "bounds": {
+              "left": 160,
+              "top": 120,
+              "width": 724,
+              "height": 604,
+              "windowState": "normal"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "pid": 33960,
+  "version": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.74",
+    "revision": "@d331de35ca8ab1358c7a17e4bd41627d55eaef51",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75.25"
+  },
+  "initialPage": {
+    "url": "http://127.0.0.1:26012/",
+    "ready": "complete"
+  },
+  "ok": true,
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "forced": false
+  },
+  "browserLog": "\r\nDevTools listening on ws://127.0.0.1:26013/devtools/browser/17091447-06ad-40c9-baa2-941209b81ad2\r\n"
+}

@@ -1,0 +1,11 @@
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components
+
+<Router AppAssembly="typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="routeData" DefaultLayout="typeof(RonSijm.Slopsidian.Components.Layout.MainLayout)" />
+    </Found>
+    <NotFound>
+        <p>Page not found. <a href="./">Open Slopsidian</a></p>
+    </NotFound>
+</Router>

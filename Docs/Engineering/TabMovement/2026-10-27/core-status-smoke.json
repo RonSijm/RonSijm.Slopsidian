@@ -1,0 +1,662 @@
+{
+  "status": "passed",
+  "scope": "core-verification-status-ui",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-27T13:43:40.452Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\tab-movement-validation-20261027\\.runtime\\smoke-vault-toMjEh",
+  "launcherPid": 41036,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "All 27 requested core modules showed source-matched, host-specific Verified workflows badges and useful descriptions; unavailable services remained unavailable. Toggling and reconnecting preserved the correct status."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 41036,
+      "electronPid": 41036,
+      "dotnetPid": 21316,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 39548,
+      "electronPid": 39548,
+      "dotnetPid": 34692,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.14",
+  "sourceFingerprint": "323b7e5eb9cc437d25fd453741f0d791930104b659ac974e2b2b8e07ce8f6e35",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "coreVerificationRows": [
+    {
+      "id": "file-explorer",
+      "status": "verified-workflows",
+      "text": "Browse folders, create notes, and manage files and attachments.",
+      "disabled": false
+    },
+    {
+      "id": "global-search",
+      "status": "verified-workflows",
+      "text": "Find notes by text, tags, properties, and search operators.",
+      "disabled": false
+    },
+    {
+      "id": "switcher",
+      "status": "verified-workflows",
+      "text": "Quickly find and open notes, or create a missing note.",
+      "disabled": false
+    },
+    {
+      "id": "graph",
+      "status": "verified-workflows",
+      "text": "Explore relationships between notes in global and local graphs.",
+      "disabled": false
+    },
+    {
+      "id": "backlink",
+      "status": "verified-workflows",
+      "text": "Find links and unlinked mentions that point to the current note.",
+      "disabled": false
+    },
+    {
+      "id": "canvas",
+      "status": "verified-workflows",
+      "text": "Arrange and connect notes, text, images, and web cards.",
+      "disabled": false
+    },
+    {
+      "id": "outgoing-link",
+      "status": "verified-workflows",
+      "text": "Explore links from the current note and create missing targets.",
+      "disabled": false
+    },
+    {
+      "id": "tag-pane",
+      "status": "verified-workflows",
+      "text": "Browse nested tags and open matching notes.",
+      "disabled": false
+    },
+    {
+      "id": "footnotes",
+      "status": "verified-workflows",
+      "text": "List footnotes and jump between references and definitions.",
+      "disabled": false
+    },
+    {
+      "id": "properties",
+      "status": "verified-workflows",
+      "text": "Edit note metadata and manage property names and types across the vault.",
+      "disabled": false
+    },
+    {
+      "id": "page-preview",
+      "status": "verified-workflows",
+      "text": "Preview linked notes, headings, and blocks on hover.",
+      "disabled": false
+    },
+    {
+      "id": "daily-notes",
+      "status": "verified-workflows",
+      "text": "Create and open daily notes using your folders, date format, and template.",
+      "disabled": false
+    },
+    {
+      "id": "templates",
+      "status": "verified-workflows",
+      "text": "Insert reusable text with note, date, and time placeholders.",
+      "disabled": false
+    },
+    {
+      "id": "note-composer",
+      "status": "verified-workflows",
+      "text": "Merge notes or extract selected text and headings into another note.",
+      "disabled": false
+    },
+    {
+      "id": "command-palette",
+      "status": "verified-workflows",
+      "text": "Find and run the commands available in your current context.",
+      "disabled": false
+    },
+    {
+      "id": "slash-command",
+      "status": "verified-workflows",
+      "text": "Open command suggestions by typing a slash in the editor.",
+      "disabled": false
+    },
+    {
+      "id": "editor-status",
+      "status": "verified-workflows",
+      "text": "Switch between Reading, Source, and Live Preview.",
+      "disabled": false
+    },
+    {
+      "id": "bookmarks",
+      "status": "verified-workflows",
+      "text": "Save and organize notes, searches, headings, and other useful locations.",
+      "disabled": false
+    },
+    {
+      "id": "markdown-importer",
+      "status": "verified-workflows",
+      "text": "Convert supported imported note formats to Markdown.",
+      "disabled": false
+    },
+    {
+      "id": "zk-prefixer",
+      "status": "verified-workflows",
+      "text": "Create notes with configurable unique names and templates.",
+      "disabled": false
+    },
+    {
+      "id": "random-note",
+      "status": "verified-workflows",
+      "text": "Open a random Markdown note from this vault.",
+      "disabled": false
+    },
+    {
+      "id": "outline",
+      "status": "verified-workflows",
+      "text": "Browse note headings and jump to their locations.",
+      "disabled": false
+    },
+    {
+      "id": "word-count",
+      "status": "verified-workflows",
+      "text": "Show word and character counts for a note or its selected text.",
+      "disabled": false
+    },
+    {
+      "id": "slides",
+      "status": "verified-workflows",
+      "text": "Present a Markdown note as a sequence of slides.",
+      "disabled": false
+    },
+    {
+      "id": "audio-recorder",
+      "status": "verified-workflows",
+      "text": "Record audio, review it, and attach it to a note.",
+      "disabled": false
+    },
+    {
+      "id": "workspaces",
+      "status": "verified-workflows",
+      "text": "Save and restore named workspace layouts.",
+      "disabled": false
+    },
+    {
+      "id": "file-recovery",
+      "status": "verified-workflows",
+      "text": "Review saved-text snapshots and restore earlier versions of a file.",
+      "disabled": false
+    },
+    {
+      "id": "publish",
+      "text": "Not implemented. Existing vault configuration is preserved.",
+      "disabled": true
+    },
+    {
+      "id": "sync",
+      "text": "Not implemented. Existing vault configuration is preserved.",
+      "disabled": true
+    },
+    {
+      "id": "bases",
+      "status": "available",
+      "text": "Build table views with filters, editable properties, and calculated summaries.",
+      "disabled": false
+    },
+    {
+      "id": "webviewer",
+      "status": "available",
+      "text": "Browse web pages and read or save articles inside the desktop application.",
+      "disabled": false
+    }
+  ],
+  "controlledShutdownConsoleErrors": [],
+  "browserErrors": [],
+  "consoleErrors": [
+    "[2026-10-27T13:43:43.700Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T13:43:48.710Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T13:43:52.118Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "artifacts": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "sha256": "7204dd4681ba12cd4bb29635aba0da5f3dc720b9b8167428a2322e20ca0439aa"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "sha256": "4132ed93fbf61497932e9dc9e2c3b7ebe3e1f3398cab5bac0716e91bf58c7fb3"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.css",
+      "sha256": "71b1c8ea199384cb74866d54b44f6cb5e1472797dd9c1d5b23fc5ffb97a12a65"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\codemirror-license.txt",
+      "sha256": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\hypermd-license.txt",
+      "sha256": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-extract.js",
+      "sha256": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-extract.js.LEGAL.txt",
+      "sha256": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-licenses.txt",
+      "sha256": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\search-worker.js",
+      "sha256": "6b24e0d9f29c3425b36b99efef28bce277c5c55bc93527fd395d5aa0b8765f84"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\graph-worker.js",
+      "sha256": "83b481a7e38ca1bc3e7f88a942400d83aa36449ce23f80edbfeb87e595f0d010"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\bases-worker.js",
+      "sha256": "719be94513c09032762919eb1ae7feae12f202e52d08693ed9aa035f039988c6"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-frame.js",
+      "sha256": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-api.js",
+      "sha256": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-api.js.LEGAL.txt",
+      "sha256": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-licenses.txt",
+      "sha256": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\mermaid-frame.html",
+      "sha256": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333"
+    },
+    {
+      "path": "desktop\\main.cjs",
+      "sha256": "4c06068d894a00e79bd1e8fac3ff595851569dfeefad81d7389ebfda89d767f5"
+    },
+    {
+      "path": "desktop\\draft-rescue.cjs",
+      "sha256": "9892d89d79952681c123f4eabf886489e1cf51122c8ea0dca156e41b88babc2b"
+    },
+    {
+      "path": "desktop\\draft-rescue-catalog.cjs",
+      "sha256": "226cef9e04f8dbe4f031be098a5f1d9fc3a5a6888cf2c5ab5719863c7c0e6a80"
+    },
+    {
+      "path": "desktop\\draft-rescue-inspector.cjs",
+      "sha256": "d74188d01a8f91bed9bd84170aca5261adbdb5566952a18efc5ef681986ed764"
+    },
+    {
+      "path": "desktop\\draft-rescue-review-state.cjs",
+      "sha256": "a29ddf9c87e421a2708a2be553c65178da4fbf6daa93c5115e3af50a3666c959"
+    },
+    {
+      "path": "desktop\\local-storage.cjs",
+      "sha256": "e58bc171ddbbc9f34eaa0bba6e0e8bfbe6913c33a033cd02fc55a13a4097abd3"
+    },
+    {
+      "path": "desktop\\web-viewer.cjs",
+      "sha256": "cbeb3f220955c61849e34e44e4528115d2774f5d28b349d2abbd7cfd1867168d"
+    },
+    {
+      "path": "desktop\\web-viewer-policy.cjs",
+      "sha256": "b05dab72e62df121ec2dda08dfe9ef5e0c1fe6269a4ba8e59c541d694bba4395"
+    },
+    {
+      "path": "desktop\\web-reader.cjs",
+      "sha256": "ba50206513a06a52592f0d3391a26fe48b6b1183f1e129d63c17c53d749dca91"
+    },
+    {
+      "path": "desktop\\web-zoom.cjs",
+      "sha256": "1704e6d131ebb6de7cd3cde16c445470786cf99940016af236044f846da90f41"
+    },
+    {
+      "path": "shared\\web-zoom.cjs",
+      "sha256": "407cce6fd4b61bfb79a909e2c72614e48d9d395dc0079bb4881b44150d0667a6"
+    },
+    {
+      "path": "desktop\\audio-permissions.cjs",
+      "sha256": "6c5f235f7024558593889e6c53c9406cd639841041838ef141aaa4c73cdce5d8"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\app.css",
+      "sha256": "e02d625400b9dc8b66b95fd3037df828f1cf03979bd789d30d76d5e37f85a8ef"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\icons.svg",
+      "sha256": "e659196481c2d85f3e52bed31460946e6b2d6351235b87ce1f87e8526beeab0c"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\icons-LICENSE.txt",
+      "sha256": "c059ec5ba27c5876963f0678f63d2182a6fb6ce97d45ed8b6472ec0c2ec189bf"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\lucide-icons.svg",
+      "sha256": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\lucide-icons-LICENSE.txt",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "tools\\smoke.mjs",
+      "sha256": "0e2c99596e5737fbe807ccab4bd5bc48ba9a44051d112a4ac16f885bb56883a4"
+    },
+    {
+      "path": "tools\\reading-scenarios.mjs",
+      "sha256": "b3cef9a15c8a0bbbec81bcd83f09f5d03aa0f67f42ab843aeacfb1d7af6853f1"
+    },
+    {
+      "path": "tools\\outgoing-scenarios.mjs",
+      "sha256": "68b1b818e783287abe402dd1a0ca30b86203e677e9babdf17c71fe97719354fc"
+    },
+    {
+      "path": "tools\\discovery-scenarios.mjs",
+      "sha256": "916746bd19610c577a46853a723474c80a49d6cdc27180998a4bf0aa2d8e4350"
+    },
+    {
+      "path": "tools\\editor-chrome-scenarios.mjs",
+      "sha256": "580c2f69b378757fbbcae5ae0ed219fe69e2af0047494e4705ed9c5958ab3a19"
+    },
+    {
+      "path": "tools\\view-scenarios.mjs",
+      "sha256": "5486d539b55e48e297034eadbbcbe76ad53bdc9153ae437c1e68390af136511d"
+    },
+    {
+      "path": "tools\\organization-scenarios.mjs",
+      "sha256": "85973b2426615c96fea35ba709597de31765aacaf0e86d1b876805b8e8e1d8c7"
+    },
+    {
+      "path": "tools\\file-scenarios.mjs",
+      "sha256": "d1a4a84690fc5bfad4d49b36fd762902ef8c3aa7ef53ce78c1a9a00ce10cf60a"
+    },
+    {
+      "path": "tools\\graph-scenarios.mjs",
+      "sha256": "50cd7e334239383d403b196d4b2ad16949e92227efb7de019ca4474ee0b9ce18"
+    },
+    {
+      "path": "tools\\canvas-scenarios.mjs",
+      "sha256": "a217415da9322997694f379c46f41e6e2a1165465f03475217461a28b3815268"
+    },
+    {
+      "path": "tools\\preview-scenarios.mjs",
+      "sha256": "16eee75c61ff2c56572c217e9af95b0bd65f0166557c6eaaa575587922f104f2"
+    },
+    {
+      "path": "tools\\editing-tools-scenarios.mjs",
+      "sha256": "7c02dd1493956840958e2c4667c61a7a737afc915401dd54e77d9bfbbc4e36d2"
+    },
+    {
+      "path": "tools\\format-scenarios.mjs",
+      "sha256": "e0c7a1583b6bbbed9e032eab1768ac6942d070c5b8756257b84054c9f56de731"
+    },
+    {
+      "path": "tools\\composer-scenarios.mjs",
+      "sha256": "28893c704bd8067cd1237133f58d5b2ead7eb05a6b2d392a219a77c23b9d47c9"
+    },
+    {
+      "path": "tools\\menu-scenarios.mjs",
+      "sha256": "78aa87f5d89a66ca366e162bcd9a6fa1a7074c9c967a2a7b35125acd81769866"
+    },
+    {
+      "path": "tools\\community-plugin-test-helpers.mjs",
+      "sha256": "a5a42c9e7728fdcee7d8fd61094bd55114cd90df183164d0af6937f482b8e8f9"
+    },
+    {
+      "path": "tools\\suggestion-scenarios.mjs",
+      "sha256": "2324747b28d8f80df89046e57e61d3bb7a1a6b14747babb0899d9c3e4705e054"
+    },
+    {
+      "path": "tools\\renderer-scenarios.mjs",
+      "sha256": "e9946299cc3d4d4ca6b78b2b054a9c514d676bd904c2f8adf7766ed28f0cb32d"
+    },
+    {
+      "path": "tools\\core-foundation-scenarios.mjs",
+      "sha256": "bfe37918fc6723c519fc6f7d2e992b1a49e885a2ae052f8b89ab8e9afd0d4905"
+    },
+    {
+      "path": "tools\\core-verification-scenarios.mjs",
+      "sha256": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539"
+    },
+    {
+      "path": "tools\\tab-movement-scenarios.mjs",
+      "sha256": "ca65db3f8f47a6e8bb920d93876e8420dc36338e8d936b827755f9569bfe0227"
+    },
+    {
+      "path": "tools\\core-verification-targets.mjs",
+      "sha256": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+      "sha256": "9523524fcb3edff7287afcc6a406800d93ad1665ecbb5508cd16e99b709ff462"
+    },
+    {
+      "path": "tools\\render-child-scenarios.mjs",
+      "sha256": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611"
+    },
+    {
+      "path": "tools\\templater-scenarios.mjs",
+      "sha256": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594"
+    },
+    {
+      "path": "tools\\webviewer-scenarios.mjs",
+      "sha256": "aa98957e752ceed3f4abe910e519c458518d6c67178137b420b2cfc775de0b8e"
+    },
+    {
+      "path": "tools\\bases-scenarios.mjs",
+      "sha256": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d"
+    },
+    {
+      "path": "tools\\bases-summary-scenarios.mjs",
+      "sha256": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47"
+    },
+    {
+      "path": "tools\\recovery-scenarios.mjs",
+      "sha256": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472"
+    },
+    {
+      "path": "tools\\audio-scenarios.mjs",
+      "sha256": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c"
+    },
+    {
+      "path": "tools\\mermaid-scenarios.mjs",
+      "sha256": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8"
+    },
+    {
+      "path": "tools\\workspace-import-scenarios.mjs",
+      "sha256": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863"
+    },
+    {
+      "path": "shared\\core-plugins.json",
+      "sha256": "ac192f5c228b9c1888faf0bef5a2c7a00fa6d259b3633b4516d783b0b12046d5"
+    },
+    {
+      "path": "tools\\core-scenarios.mjs",
+      "sha256": "f76d220f95759f03feb6b77502ee55ad02c4329d097d68acc6f22c84c9a69f95"
+    }
+  ],
+  "artifactStability": "verified-through-scenario",
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 34692,
+  "electronPid": 39548,
+  "completedAt": "2026-10-27T13:43:52.347Z"
+}

@@ -1,0 +1,863 @@
+{
+  "status": "failed",
+  "scope": "workspace-groups-popouts-native-os-drag",
+  "communityPluginsTested": false,
+  "startedAt": "2026-11-02T03:55:45.944Z",
+  "vault": "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\smoke-vault-xNyhNH",
+  "launcherPid": 42100,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "two genuine popouts with anchor tabs and unique native titles were created",
+    "the exact owned windows were arranged without overlap inside the monitor work area"
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 42100,
+      "electronPid": 42100,
+      "dotnetPid": 35936,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.0",
+  "sourceFingerprint": "e9185aa83200741d273b770a4b71fdc8e53ef58e0a72c85cc017c803a700d252",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "osDragLayoutDiagnostics": {
+    "workArea": {
+      "x": 0,
+      "y": 0,
+      "width": 3840,
+      "height": 2292
+    },
+    "requested": [
+      {
+        "x": 12,
+        "y": 12,
+        "width": 2194,
+        "height": 2268
+      },
+      {
+        "x": 2218,
+        "y": 12,
+        "width": 799,
+        "height": 2268
+      },
+      {
+        "x": 3029,
+        "y": 12,
+        "width": 799,
+        "height": 2268
+      }
+    ],
+    "placed": [
+      {
+        "title": "slopsidian-osdrag-main-1793591748053",
+        "hwnd": 11079682,
+        "rect": {
+          "x": 12,
+          "y": 12,
+          "width": 2194,
+          "height": 2268
+        },
+        "frame": {
+          "x": 12,
+          "y": 12,
+          "width": 2194,
+          "height": 2268
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      },
+      {
+        "title": "slopsidian-osdrag-pop1-1793591748053",
+        "hwnd": 5836694,
+        "rect": {
+          "x": 2218,
+          "y": 12,
+          "width": 799,
+          "height": 2268
+        },
+        "frame": {
+          "x": 2230,
+          "y": 12,
+          "width": 775,
+          "height": 2256
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      },
+      {
+        "title": "slopsidian-osdrag-pop2-1793591748053",
+        "hwnd": 55774928,
+        "rect": {
+          "x": 3029,
+          "y": 12,
+          "width": 799,
+          "height": 2268
+        },
+        "frame": {
+          "x": 3041,
+          "y": 12,
+          "width": 775,
+          "height": 2256
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      }
+    ],
+    "minima": [
+      {
+        "width": 2115,
+        "height": 1463,
+        "dip": {
+          "width": 940,
+          "height": 650
+        },
+        "dpi": 216,
+        "scale": 2.25
+      },
+      {
+        "width": 720,
+        "height": 540,
+        "dip": {
+          "width": 320,
+          "height": 240
+        },
+        "dpi": 216,
+        "scale": 2.25
+      },
+      {
+        "width": 720,
+        "height": 540,
+        "dip": {
+          "width": 320,
+          "height": 240
+        },
+        "dpi": 216,
+        "scale": 2.25
+      }
+    ],
+    "before": [
+      {
+        "title": "slopsidian-osdrag-main-1793591748053",
+        "hwnd": 11079682,
+        "rect": {
+          "x": 345,
+          "y": 77,
+          "width": 3150,
+          "height": 2138
+        },
+        "frame": {
+          "x": 345,
+          "y": 77,
+          "width": 3150,
+          "height": 2138
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      },
+      {
+        "title": "slopsidian-osdrag-pop1-1793591748053",
+        "hwnd": 5836694,
+        "rect": {
+          "x": 907,
+          "y": 358,
+          "width": 2025,
+          "height": 1575
+        },
+        "frame": {
+          "x": 919,
+          "y": 358,
+          "width": 2001,
+          "height": 1563
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      },
+      {
+        "title": "slopsidian-osdrag-pop2-1793591748053",
+        "hwnd": 55774928,
+        "rect": {
+          "x": 907,
+          "y": 358,
+          "width": 2025,
+          "height": 1575
+        },
+        "frame": {
+          "x": 919,
+          "y": 358,
+          "width": 2001,
+          "height": 1563
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      }
+    ]
+  },
+  "error": "Error: Command failed: powershell.exe -NoProfile -NonInteractive -Command \n$ErrorActionPreference = 'Stop'\nAdd-Type -Namespace Native -Name Drag -MemberDefinition @'\npublic delegate bool EnumProc(System.IntPtr hwnd, System.IntPtr lParam);\npublic struct POINT { public int X; public int Y; }\npublic struct RECT { public int Left; public int Top; public int Right; public int Bottom; }\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern bool EnumWindows(EnumProc proc, System.IntPtr lParam);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern uint GetWindowThreadProcessId(System.IntPtr hwnd, out uint pid);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern bool IsWindowVisible(System.IntPtr hwnd);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\", CharSet = System.Runtime.InteropServices.CharSet.Unicode)] public static extern int GetWindowText(System.IntPtr hwnd, System.Text.StringBuilder text, int count);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern bool ClientToScreen(System.IntPtr hwnd, ref POINT p);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern bool GetClientRect(System.IntPtr hwnd, out RECT r);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern System.IntPtr WindowFromPoint(POINT p);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern System.IntPtr GetAncestor(System.IntPtr hwnd, uint flags);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern bool SetCursorPos(int x, int y);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern bool SetForegroundWindow(System.IntPtr hwnd);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern bool SetProcessDPIAware();\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern void keybd_event(byte vk, byte scan, uint flags, System.UIntPtr extra);\n[System.Runtime.InteropServices.DllImport(\"user32.dll\")] public static extern void mouse_event(uint flags, uint dx, uint dy, uint data, System.UIntPtr extra);\n'@\n[void][Native.Drag]::SetProcessDPIAware()\n$plan = $env:SLOPSIDIAN_DRAG_PLAN | ConvertFrom-Json\n$owned = [uint32]$plan.pid\nfunction Find-Window([string]$title) {\n  $found = New-Object System.Collections.Generic.List[object]\n  $cb = [Native.Drag+EnumProc]{\n    param($hwnd, $l)\n    $p = [uint32]0\n    [void][Native.Drag]::GetWindowThreadProcessId($hwnd, [ref]$p)\n    if ($p -eq $owned -and [Native.Drag]::IsWindowVisible($hwnd)) {\n      $t = New-Object System.Text.StringBuilder 512\n      [void][Native.Drag]::GetWindowText($hwnd, $t, 512)\n      if ($t.ToString() -eq $title) { $found.Add($hwnd) }\n    }\n    return $true\n  }\n  [void][Native.Drag]::EnumWindows($cb, [System.IntPtr]::Zero)\n  if ($found.Count -ne 1) { throw \"Expected exactly one visible window titled '$title' owned by process $owned, found $($found.Count).\" }\n  $found[0]\n}\nfunction Client-Origin($hwnd) {\n  $p = New-Object Native.Drag+POINT\n  [void][Native.Drag]::ClientToScreen($hwnd, [ref]$p)\n  $r = New-Object Native.Drag+RECT\n  [void][Native.Drag]::GetClientRect($hwnd, [ref]$r)\n  [pscustomobject]@{ x = $p.X; y = $p.Y; width = $r.Right - $r.Left; height = $r.Bottom - $r.Top }\n}\nfunction Assert-Over($hwnd, [int]$x, [int]$y) {\n  $pt = New-Object Native.Drag+POINT; $pt.X = $x; $pt.Y = $y\n  $top = [Native.Drag]::GetAncestor([Native.Drag]::WindowFromPoint($pt), 2)\n  if ($top -ne $hwnd) { throw \"Screen point $x,$y is not over the expected owned window (covered or unrelated window).\" }\n}\n$result = [ordered]@{ pid = [int]$owned }\n$down = $false\n$ok = $false\n$cancelPt = $null\ntry {\n  $src = Find-Window $plan.sourceTitle\n  $dst = Find-Window $plan.targetTitle\n  $result.sourceHwnd = $src.ToInt64(); $result.targetHwnd = $dst.ToInt64()\n  $result.sourceClient = Client-Origin $src; $result.targetClient = Client-Origin $dst\n  $dims = @($result.sourceClient, $result.targetClient)\n  $expect = @($plan.sourceInner, $plan.targetInner)\n  for ($i = 0; $i -lt 2; $i++) {\n    $e = $expect[$i]\n    if ([math]::Abs($dims[$i].width - $e.width * $e.dpr) -gt 2 + $e.dpr -or [math]::Abs($dims[$i].height - $e.height * $e.dpr) -gt 2 + $e.dpr) {\n      throw \"Native client size does not match the page's measured innerSize*dpr (DPI/zoom mismatch); refusing to guess coordinates.\"\n    }\n  }\n  [void][Native.Drag]::SetForegroundWindow($src)\n  Start-Sleep -Milliseconds 150\n  $sx = $result.sourceClient.x + [int]$plan.from.x; $sy = $result.sourceClient.y + [int]$plan.from.y\n  $tx = $result.targetClient.x + [int]$plan.to.x; $ty = $result.targetClient.y + [int]$plan.to.y\n  $cancelPt = @($sx, $sy)\n  # both owned endpoints are checked before any button press\n  Assert-Over $src $sx $sy\n  Assert-Over $dst $tx $ty\n  [void][Native.Drag]::SetCursorPos($sx, $sy)\n  Start-Sleep -Milliseconds 80\n  [Native.Drag]::mouse_event(0x0002, 0, 0, 0, [System.UIntPtr]::Zero); $down = $true\n  foreach ($pt in $plan.path) {\n    $px = $result.targetClient.x + [int]$pt.x; $py = $result.targetClient.y + [int]$pt.y\n    if ($pt.local -eq 'source') { $px = $result.sourceClient.x + [int]$pt.x; $py = $result.sourceClient.y + [int]$pt.y }\n    [void][Native.Drag]::SetCursorPos($px, $py)\n    Start-Sleep -Milliseconds ([int]$plan.stepMs)\n  }\n  Assert-Over $dst $tx $ty\n  [void][Native.Drag]::SetCursorPos($tx, $ty)\n  Start-Sleep -Milliseconds 200\n  [Native.Drag]::mouse_event(0x0004, 0, 0, 0, [System.UIntPtr]::Zero); $down = $false\n  $result.dropped = $true\n  $ok = $true\n} finally {\n  if ($down) {\n    # failure path: cancel the OLE drag with Escape and return over the source before releasing, so nothing can drop elsewhere\n    if (-not $ok) {\n      [Native.Drag]::keybd_event(0x1B, 0, 0, [System.UIntPtr]::Zero); [Native.Drag]::keybd_event(0x1B, 0, 2, [System.UIntPtr]::Zero)\n      Start-Sleep -Milliseconds 100\n      if ($cancelPt) { [void][Native.Drag]::SetCursorPos($cancelPt[0], $cancelPt[1]) }\n    }\n    [Native.Drag]::mouse_event(0x0004, 0, 0, 0, [System.UIntPtr]::Zero)\n    $result.releasedInFinally = $true; $result.cancelled = (-not $ok)\n  }\n}\n$result | ConvertTo-Json -Compress -Depth 5\n\nScreen point 1263,62 is not over the expected owned window (covered or unrelated window).\r\nAt line:51 char:25\r\n+ ... ne $hwnd) { throw \"Screen point $x,$y is not over the expected owned  ...\r\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Screen point 12...elated window).:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Screen point 1263,62 is not over the expected owned window (covered or unrelated window) \r\n   .\r\n \r\n\n    at genericNodeError (node:internal/errors:998:15)\n    at wrappedFn (node:internal/errors:543:14)\n    at ChildProcess.exithandler (node:child_process:417:12)\n    at ChildProcess.emit (node:events:508:20)\n    at maybeClose (node:internal/child_process:1084:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:304:5)",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.workspace.getLeafById(\\\"osd-anchor2\\\").parent.id\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n    "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.title=\\\"slopsidian-osdrag-main-1793591748053\\\"\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.workspace.getLeafById(\\\"osd-drag\\\").getRoot().id\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n    "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"JSON.stringify([window,app.workspace.getLeafById(\\\"osd-anchor1\\\").getRoot().surface.window,app.workspace.getLeafById(\\\"osd-anchor2\\\").getRoot().surface.window].map(w=>[w.innerWidth,w.innerHeight,w.devicePixelRatio]))\");\n    if(result&&typeof result.then===\"function\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"JSON.stringify([window,app.workspace.getLeafById(\\\"osd-anchor1\\\").getRoot().surface.window,app.workspace.getLeafById(\\\"osd-anchor2\\\").getRoot().surface.window].map(w=>[w.innerWidth,w.innerHeight,w.devicePixelRatio]))\");\n    if(result&&typeof result.then===\"function\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.workspace.getLeafById(\\\"osd-drag\\\").view.editor.cm.state.doc.toString()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePro"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const e=app.workspace.getLeafById(\\\"osd-drag\\\").view.editor.cm;e.dispatch({changes:{from:e.state.doc.length,insert:\\\" one\\\"},userEvent:\\\"input.type\\\"});return e.state.doc.toString()})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can colle"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const e=app.workspace.getLeafById(\\\"osd-drag\\\").view.editor.cm;e.dispatch({changes:{from:e.state.doc.length,insert:\\\" two\\\"},userEvent:\\\"input.paste\\\"});return e.state.doc.toString()})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can coll"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.getLeafById(\\\"osd-drag\\\").view.isDirty===true)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slop"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(() => {\\n    const leaf = app.workspace.getLeafById(\\\"osd-drag\\\");\\n    if (!leaf) { return JSON.stringify({ error: \\\"leaf not found\\\" }); }\\n    const view = leaf.view, cm = view.editor?.cm ?? null;\\n    app.__osDragProbe = { leaf, view, cm, pinned: leaf.pinned, t"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(() => {\\n    const ws = app.workspace, leaf = ws.getLeafById(\\\"osd-drag\\\"), group = ws.groups().find(item => item.id === \\\"b53f4c3d-a09c-4050-9a7a-7c1390819b34\\\");\\n    if (!leaf || !group) { return JSON.stringify({ error: \\\"leaf or group not found\\\" }); }\\n    con"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const w=app.workspace,l=app.workspace.getLeafById(\\\"osd-drag\\\"),g=l.parent,sel=g.children[g.currentTab];\\n        const target=w.groups().find(x=>x.id===\\\"b53f4c3d-a09c-4050-9a7a-7c1390819b34\\\");\\n        return JSON.stringify({sourceGroup:g.id,selected:sel==="
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(() => { delete app.__osDragProbe; return \\\"ok\\\"; })()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n  "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const ids=[\\\"ba9850f1-abaa-4fd9-b6ff-b073bde8092a\\\",\\\"4bacce5d-6813-4560-aae7-353a0b37f7c9\\\"];for(const w of app.workspace.windows.slice()){if(ids.includes(w.id)){app.workspace.returnWindow(w)}}return true})()\");\n    if(result&&typeof result.then===\"function\")"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.windows.length===0)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new S"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.windows.length===0)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new S"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>{await app.workspace.changeLayout({\\\"version\\\":1,\\\"main\\\":{\\\"id\\\":\\\"preserved-main\\\",\\\"type\\\":\\\"split\\\",\\\"direction\\\":\\\"vertical\\\",\\\"children\\\":[{\\\"id\\\":\\\"preserved-tabs\\\",\\\"type\\\":\\\"tabs\\\",\\\"children\\\":[{\\\"id\\\":\\\"preserved-leaf\\\",\\\"type\\\":\\\"leaf\\\",\\\"state"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (!app.workspace.isChangingLayout)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Se"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.title=\\\"Slopsidian\\\"\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result);"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>{await app.markdownAutosave.setEnabled(false);return true})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromise"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [
+      "Imported Obsidian's saved workspace.",
+      "1 unsaved Markdown draft(s) were recovered from a previous session. Review drafts"
+    ],
+    "buffers": [
+      {
+        "id": "preserved-leaf",
+        "type": "empty"
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "preserved-main",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "preserved-tabs",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "preserved-leaf",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          }
+        ]
+      },
+      "active": "preserved-leaf",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-startup": {
+          "source": ".obsidian/workspace.json",
+          "version": "411ab913939a16585ba07e688bfffc92cce36d2eef51d5f85c94970d78a4854a",
+          "warnings": []
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "preserved-leaf",
+          "lastFile": null
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "controlledShutdownConsoleErrors": [],
+  "consoleErrors": [
+    "[2026-11-02T03:55:52.267Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "TypeError: Failed to fetch\n    at requestJson (http://127.0.0.1:64408/js/editor-host.vf38ix56o1.js:40752:26)\n    at VaultConfiguration.read (http://127.0.0.1:64408/js/editor-host.vf38ix56o1.js:98409:29)\n    at http://127.0.0.1:64408/js/editor-host.vf38ix56o1.js:98349:12",
+    "TypeError: Failed to fetch\n    at requestJson (http://127.0.0.1:64408/js/editor-host.vf38ix56o1.js:40752:26)\n    at VaultConfiguration.read (http://127.0.0.1:64408/js/editor-host.vf38ix56o1.js:98409:29)\n    at http://127.0.0.1:64408/js/editor-host.vf38ix56o1.js:98349:12",
+    "[2026-11-02T03:55:57.273Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 35936,
+  "electronPid": 42100,
+  "completedAt": "2026-11-02T03:55:57.460Z",
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\evidence\\groups-popouts-os-drag-smoke-errors.jsonl",
+    "nativePaths": [
+      "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\smoke-profile\\logs\\errors-smoke-6cf17fc0-5298-4780-b4df-6bda0da25116.jsonl"
+    ],
+    "records": 0,
+    "expected": 0,
+    "unexpected": [],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "includesFinalTeardown": true
+  }
+}

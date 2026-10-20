@@ -1,0 +1,26 @@
+ok - cold online page is unprepared and caches nothing until the user asks
+ok - user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it
+ok - cold restart with the network OFF boots the app, workers and renderer from the cached shell
+ok - a genuine cached GitHub mount is seeded offline in local storage only
+ok - a cold canonical cached remote route boots offline into the read-only mount with the exact note and no API/raw fallback
+ok - explicit complete cached index offline: partial first, missing and corrupt bytes refused, complete after exact cached bytes, zero downloads
+ok - cached index dialog UI: real pointers drive Prepare, held Cancel, Resume, missing and corrupt refusal, then a verified complete index with offline search metadata
+Offline shell smoke FAILED; diagnostics preserved in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-musical-funicular\.runtime\evidence\offline-shell-web-smoke-failed-2026-11-02T03-03-22-577Z.json
+AssertionError [ERR_ASSERTION]: eviction: failed network loads
++ actual - expected
+
++ [
++   {
++     at: 1793588630127,
++     error: 'net::ERR_ABORTED',
++     url: 'http://127.0.0.1:18861/js/browser-host.js'
++   }
++ ]
+- []
+
+    at Page.check (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:194:12)
+    at Page.assertClean (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:184:10)
+    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:448:10
+    at async session (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:274:40)
+    at async scenario (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:266:3)
+    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:432:3

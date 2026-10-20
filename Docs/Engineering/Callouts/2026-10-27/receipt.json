@@ -1,0 +1,195 @@
+{
+  "reviewDate": "2026-10-27",
+  "capturedAt": "2026-10-27T08:15:01.530Z",
+  "candidate": ".runtime/callout-icon-validation-20261027",
+  "scope": "Painted fenced/native custom callouts, dual color formats, CSS-selected host icons and local pinned Lucide coverage; not full themes or exact native visual/catalog equivalence",
+  "tests": {
+    "regressions": 611,
+    "desktopChecks": 13,
+    "wasmChecks": 25,
+    "sharedScenarioGroups": 12,
+    "desktopStableArtifacts": 62,
+    "wasmAssets": 24,
+    "wasmScenarioInputs": 28,
+    "builtinIds": 1558,
+    "upstreamSymbols": 1544,
+    "generatedAliases": 210,
+    "nonConflictingAliasesExercised": 209
+  },
+  "diagnostics": {
+    "desktopUncaught": 0,
+    "wasmUncaught": 0,
+    "desktopConsoleMessages": 14,
+    "desktopWebSocket1006": 11,
+    "unexpectedDesktopMessages": []
+  },
+  "provenance": {
+    "package": "lucide-static",
+    "version": "0.468.0",
+    "url": "https://registry.npmjs.org/lucide-static/-/lucide-static-0.468.0.tgz",
+    "integrity": "sha512-JvpWui2umxRyEVMoETfMzb+qKqibV/sdoqJbKmW1JLdkuhXluJKoO6NqCbvCK/vAbUuH5bTEFD4T6uECsrNcnA==",
+    "license": "ISC",
+    "symbols": 1544,
+    "aliases": 210,
+    "upstreamSha256": {
+      "sprite.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+      "LICENSE": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+      "dist/esm/lucide-static.js": "43b2ee9ff86a847d181bc9c3158bae39bb828363488397261c5498fa87a5cf2d"
+    },
+    "sha256": {
+      "src/RonSijm.Slopsidian/wwwroot/lucide-icons.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+      "src/RonSijm.Slopsidian/wwwroot/lucide-icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+      "client/lucide-icon-aliases.ts": "80a7b2431003264c38ce37596389ea98e4f80ce6ee871f236b118be4cb045354"
+    }
+  },
+  "unchangedPackage": [
+    {
+      "file": "main.js",
+      "sha256": "6a1df01446e9dd3e2165173a1c237707414aa2e92ff0589ab1152921b6404f8b"
+    },
+    {
+      "file": "manifest.json",
+      "sha256": "c05262a4938c5942991eb4fd99e9cda4f80524147f8385b5b35a1ebd0985bcf5"
+    },
+    {
+      "file": "styles.css",
+      "sha256": "09d3328199aba165fc10ac419747bb092ce777867f4431db0d6c7f1c9da8258c"
+    }
+  ],
+  "sources": [
+    {
+      "path": "client/callout-styles.ts",
+      "sha256": "2caeb0be55e6b1cc977bfc2f6ccaa8f83d5b1c81f05c083484ad0d8a2efe5eb2"
+    },
+    {
+      "path": "client/icons.ts",
+      "sha256": "c4089bbe3d1a99e44ac8d00ed138fbc9c862c902dd4c1c4283fd12786cd46593"
+    },
+    {
+      "path": "client/lucide-icon-aliases.ts",
+      "sha256": "80a7b2431003264c38ce37596389ea98e4f80ce6ee871f236b118be4cb045354"
+    },
+    {
+      "path": "client/reading.ts",
+      "sha256": "f813d8133a74bd588860c9fbb0a3bf034750bbe976db4876b6795d3217a8e9f9"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian/wwwroot/app.css",
+      "sha256": "deb024b8843858e5e0d72cc86b887c3209baa0c4fd180e33a51ebfdadce0d913"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian/wwwroot/icons.svg",
+      "sha256": "e659196481c2d85f3e52bed31460946e6b2d6351235b87ce1f87e8526beeab0c"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian/wwwroot/lucide-icons.svg",
+      "sha256": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian/wwwroot/lucide-icons-LICENSE.txt",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian.Web/RonSijm.Slopsidian.Web.csproj",
+      "sha256": "ab960ab2c7e8a62d470ea043b2154e2a85004a690b49deedf15f3ec3c45e18f1"
+    },
+    {
+      "path": "tools/import-lucide-icons.py",
+      "sha256": "303ff21625ef21e16ad1b2dacb03b68b60a697b0ac951e23d1b751b1ea0fff1b"
+    },
+    {
+      "path": "tools/build.mjs",
+      "sha256": "5af4899f9cfdca615a1320566872edcd0db7a2809e654b2e68f0e1994aa2316e"
+    },
+    {
+      "path": "tools/render-child-scenarios.mjs",
+      "sha256": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611"
+    },
+    {
+      "path": "tools/renderer-scenarios.mjs",
+      "sha256": "e9946299cc3d4d4ca6b78b2b054a9c514d676bd904c2f8adf7766ed28f0cb32d"
+    },
+    {
+      "path": "tools/smoke.mjs",
+      "sha256": "805446b62a3b543f476775b4082ec145ba3250e75b0548aa9eb8d7cebf15124d"
+    },
+    {
+      "path": "tools/web-smoke.mjs",
+      "sha256": "4a59d3b432868020508e92faf05e3c1cf2a28513266542c59206ef83605c8797"
+    },
+    {
+      "path": "tools/verify-web.mjs",
+      "sha256": "a769edb35be2fbbdae8b3fa3329cf6eab7d6858faa11b73fc9870849fdd7fc65"
+    },
+    {
+      "path": "vendor/lucide-static/provenance.json",
+      "sha256": "4a220b70e40f9b9a873ac26d0cc587a51d7fef1608e5841a2cd46d888940d372"
+    }
+  ],
+  "sharedArtifactsPreserved": [
+    {
+      "path": "src/RonSijm.Slopsidian/wwwroot/js/editor-host.js",
+      "sha256": "84167352d0f0bb9c50cdcfaf3a4236dfa6a3f5c3c18a4b411cd313865cc0c718"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian/wwwroot/js/editor-host.css",
+      "sha256": "b67b57cc03ad6b9e45eefd40082f08b306a35169b3ce3c1a4ee4c75908f84c14"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian/bin/Debug/net10.0/RonSijm.Slopsidian.dll",
+      "sha256": "27362fdcfedb8b9c976f00c77bbcbb55d224e839f46751153c9dafccdec113a1"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "renderers-desktop.json",
+      "sha256": "3f0badbea92b39d50a3279c4070bc55061d502617da0f16a5f3908b9892cb121",
+      "bytes": 38691
+    },
+    {
+      "path": "renderers-web.json",
+      "sha256": "60babd2b2f44346e43d9c3a741ba76c0b1578a0d29756a87fd3ff8cc1302ba0e",
+      "bytes": 31897
+    },
+    {
+      "path": "admonition-desktop.png",
+      "sha256": "6e536224838c25b40baea46ba28aba16c4c01f46ccf0d1458e7508af2c160197",
+      "bytes": 69552
+    },
+    {
+      "path": "admonition-web.png",
+      "sha256": "dd8f47c33d701422e956220b6aead78452593b92cde3d65a185e085e9e42a4ac",
+      "bytes": 66111
+    },
+    {
+      "path": "native-callouts-desktop.png",
+      "sha256": "18fabc9ca25ed8aab6b55e86606c687eaabd02916bf2661451f7181e5325e3f5",
+      "bytes": 78479
+    },
+    {
+      "path": "native-callouts-web.png",
+      "sha256": "ebe8c2297b5bf03af46b7d26d4b5c80f52aac1fc0eb19440376e7afec0ecec10",
+      "bytes": 77316
+    },
+    {
+      "path": "regressions.log",
+      "sha256": "6e6e064af514cd3ebb80d2980ffa6120c668b4da217d967e6f6eb20ce201b512",
+      "bytes": 79775
+    },
+    {
+      "path": "example-vault.json",
+      "sha256": "466f0227fe130ac9ba3b9d29097c6995cc101d1532e9a68420e67da541f42d27",
+      "bytes": 689
+    },
+    {
+      "path": "inactive-tabs-attempt.json",
+      "sha256": "e015f05b337b42fc27fc647d35fa5429e4352caabfc5b44fc88afdfb973c6365",
+      "bytes": 27984
+    },
+    {
+      "path": "inactive-restored-tabs-attempt.json",
+      "sha256": "c0edd39e21aa2e7c77ca8b4a8d792090ea01fdc66b44fb34b086fda58b42a508",
+      "bytes": 29515
+    }
+  ]
+}

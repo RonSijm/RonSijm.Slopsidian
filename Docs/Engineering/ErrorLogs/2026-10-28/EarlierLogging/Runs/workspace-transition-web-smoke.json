@@ -1,0 +1,304 @@
+{
+  "status": "passed",
+  "scope": "full-shared-runtime",
+  "startedAt": "2026-10-27T16:44:03.426Z",
+  "checks": [
+    "Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.",
+    "The actual OS folder picker grants a live external vault, including binary attachment inventory.",
+    "Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.",
+    "External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.",
+    "The shared note-creation UI creates folders and writes a new Markdown note directly to disk.",
+    "Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.",
+    "Core enablement and the unchanged upstream sample plugin save settings into the selected vault.",
+    "Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.",
+    "External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.",
+    "A real page reload is blocked while a buffer has unsaved changes.",
+    "Cancelling the native folder picker retains the selected vault and dirty buffer.",
+    "Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.",
+    "A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.",
+    "A fixture-held real layout queue delays backend selection; its final source snapshot retains live core-view/opaque state and saves dirty note bytes, with no obsolete cleanup write or selected-vault warning.",
+    "Actual source/target switches restore the original live core view, pin and opaque layout fields; an explicit stale direct API write still receives 409 and cannot change the target layout.",
+    "An explicitly injected final-checkpoint failure keeps both hosts on the source vault and restores editability; normal note/layout saving and a real retry recover without disabling future saves or changing target data.",
+    "An actual dirty Canvas survives source/target/source vault changes: preflight persists its real model before owned unload clears it, no old-root or empty-model write occurs, and a fresh loaded pane restores exact saved data, pin and opaque state.",
+    "Independent source/target layouts, opaque fields, live core views and exact note/Canvas/BOM/CRLF/binary/original settings bytes survive real-folder browser reload/reconnect with clean client and host error banners."
+  ],
+  "rendererNodeIntegration": false,
+  "realExternalDirectoryPicker": true,
+  "pickerStartsInDisposableDocuments": true,
+  "endpoint": "http://127.0.0.1:45710/",
+  "sha256": {
+    "index.html": "c57ea9db00a7384748e5c3493b79b783666233aacaa8e4cb1ef9a9229e4a63f8",
+    "app.css": "d8b5782dd851c2d63b6372ebc5d1c4194a79570d4c2348a68cd7c981c73c1fd0",
+    "browser.css": "cb31285e1f8c3934a1c93e0448f271ceb9156ca4fe5c80deb081c70471404a67",
+    "icons.svg": "e659196481c2d85f3e52bed31460946e6b2d6351235b87ce1f87e8526beeab0c",
+    "icons-LICENSE.txt": "c059ec5ba27c5876963f0678f63d2182a6fb6ce97d45ed8b6472ec0c2ec189bf",
+    "core-verification.json": "678fef8e701c767240fedc2960a2d7cc22e77aa4b305e865f846cfeada05ac69",
+    "lucide-icons.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+    "lucide-icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "mermaid-frame.html": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333",
+    "js/mermaid-frame.js": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62",
+    "js/mermaid-api.js": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a",
+    "js/mermaid-api.js.LEGAL.txt": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1",
+    "js/mermaid-licenses.txt": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735",
+    "js/editor-host.js": "70d11e91b2aef81f5bec998db724a25711702ef8d6637850b55150c0ab1c7f64",
+    "js/editor-host.css": "71b1c8ea199384cb74866d54b44f6cb5e1472797dd9c1d5b23fc5ffb97a12a65",
+    "js/codemirror-license.txt": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07",
+    "js/hypermd-license.txt": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b",
+    "js/web-reader-extract.js": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601",
+    "js/web-reader-extract.js.LEGAL.txt": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a",
+    "js/web-reader-licenses.txt": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b",
+    "js/browser-host.js": "891aac212b2cb712549324f2f5a54bc28f40b3d0336bcc4cb9cad0f740c6a3fb",
+    "js/search-worker.js": "6b24e0d9f29c3425b36b99efef28bce277c5c55bc93527fd395d5aa0b8765f84",
+    "js/graph-worker.js": "83b481a7e38ca1bc3e7f88a942400d83aa36449ce23f80edbfeb87e595f0d010",
+    "js/bases-worker.js": "719be94513c09032762919eb1ae7feae12f202e52d08693ed9aa035f039988c6",
+    "_framework/RonSijm.Slopsidian.Web.fzlqztota6.wasm": "cb4811bb6f20c6962311c3fbdbb4dbd46fe58a37bade9cba5c645bb1fff98428"
+  },
+  "scenarioSha256": {
+    "web-smoke.mjs": "64fa396296dbc7f5a19183d9828c336b83c94efe54b3576de2790c4f8f2b5d02",
+    "web-smoke-host.cjs": "38f2d99a0c1f70a962857c3dc17489e3bacbd913c9fddc7e0008d6c4446ea381",
+    "core-foundation-scenarios.mjs": "bfe37918fc6723c519fc6f7d2e992b1a49e885a2ae052f8b89ab8e9afd0d4905",
+    "core-scenarios.mjs": "b16bdf012477e16953b7d4cc9f0df6a502ae71403f369dbab6c5dda5b4482c3f",
+    "core-verification-targets.mjs": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86",
+    "core-verification-scenarios.mjs": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539",
+    "tab-movement-scenarios.mjs": "ca65db3f8f47a6e8bb920d93876e8420dc36338e8d936b827755f9569bfe0227",
+    "reading-scenarios.mjs": "b3cef9a15c8a0bbbec81bcd83f09f5d03aa0f67f42ab843aeacfb1d7af6853f1",
+    "outgoing-scenarios.mjs": "6a15662333f510e069e014e533eff13b6cb974a0ed7d720cad5e6bd9f4a0b5ca",
+    "discovery-scenarios.mjs": "eb2c3d978e7faab8df02335911a78b5b760416aaaf4f8c3eba80003557d9881c",
+    "editor-chrome-scenarios.mjs": "580c2f69b378757fbbcae5ae0ed219fe69e2af0047494e4705ed9c5958ab3a19",
+    "suggestion-scenarios.mjs": "a2bd9f49ca0261a0ed9316966c579b7df5bfe96f6e5563b38d13e8f2f5ded873",
+    "renderer-scenarios.mjs": "5ea3154e5ea83cf9c3ee93c0269ff974e8c979e52a0129584593126daffb57a6",
+    "render-child-scenarios.mjs": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611",
+    "templater-scenarios.mjs": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594",
+    "organization-scenarios.mjs": "6d356a9471a8ece167567d0e0aaf54e73f7aa4aa31d99563467a2f9f6557932a",
+    "file-scenarios.mjs": "d1a4a84690fc5bfad4d49b36fd762902ef8c3aa7ef53ce78c1a9a00ce10cf60a",
+    "graph-scenarios.mjs": "50cd7e334239383d403b196d4b2ad16949e92227efb7de019ca4474ee0b9ce18",
+    "canvas-scenarios.mjs": "5d389f419dbd99c042176d38669c69bff20fd148ebdd24d710a723b35b51cf6e",
+    "preview-scenarios.mjs": "16eee75c61ff2c56572c217e9af95b0bd65f0166557c6eaaa575587922f104f2",
+    "editing-tools-scenarios.mjs": "7c02dd1493956840958e2c4667c61a7a737afc915401dd54e77d9bfbbc4e36d2",
+    "format-scenarios.mjs": "e0c7a1583b6bbbed9e032eab1768ac6942d070c5b8756257b84054c9f56de731",
+    "composer-scenarios.mjs": "28893c704bd8067cd1237133f58d5b2ead7eb05a6b2d392a219a77c23b9d47c9",
+    "menu-scenarios.mjs": "a2f3232c5e40b17929197b845250c60411cc32420f65eb5d2267785b2d83a8ff",
+    "bases-scenarios.mjs": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d",
+    "bases-summary-scenarios.mjs": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47",
+    "recovery-scenarios.mjs": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472",
+    "view-scenarios.mjs": "5486d539b55e48e297034eadbbcbe76ad53bdc9153ae437c1e68390af136511d",
+    "audio-scenarios.mjs": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c",
+    "mermaid-scenarios.mjs": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8",
+    "workspace-import-scenarios.mjs": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863",
+    "community-plugin-test-helpers.mjs": "a5a42c9e7728fdcee7d8fd61094bd55114cd90df183164d0af6937f482b8e8f9",
+    "select-test-folder.ps1": "9a18d1edcde9b5d252972012ba70bf3810c8bbc72a50958bad469dba164946f0",
+    "workspace-transition-scenarios.mjs": "ac964312ea83b055520496ae0e4e5c1e1b7a084098b0be3bf3ed7b8cb49f5f09"
+  },
+  "sourceSha256": {
+    "client/workspace.ts": "487146e0989e5e461c0da7bb68c90d6c32708463cf5a9a4cf744a623825cfc53",
+    "client/editor-host.ts": "a1d1a6cbbdd58c79a5ac93095a886eb1f4fd0a26e4e567bc65526629095cc23e",
+    "tests/workspace-transition.test.mjs": "8c4bfe641bb71c174193ebdacd8086765ed377a75a74c0bc63a066dafdb146f6"
+  },
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes; production launch is unchanged.",
+  "lastInteraction": {
+    "type": "click",
+    "selector": "[data-recent-vault=\"browser-vault:c57528a2-095f-48ab-817c-973116e849a2\"]"
+  },
+  "expectedDiagnostics": [
+    {
+      "id": "344251ad-0e1c-4638-a0ec-7f8f97e3cc4d:0",
+      "source": "host",
+      "message": "This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.",
+      "reason": "Check browser explicit-save conflict protection"
+    },
+    {
+      "id": "344251ad-0e1c-4638-a0ec-7f8f97e3cc4d:1",
+      "source": "host",
+      "message": "Expected transition checkpoint failure",
+      "reason": "Exercise the owned transition-checkpoint rejection before changing the backend vault"
+    }
+  ],
+  "sourceFingerprint": "aff3e78378308687d34e443e0cbc10d10ee951afc4327e654cf9a3b02014c1a9",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": false,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "workspaceTransitionCanvas": {
+    "id": "3b959d90-f0a3-4907-958c-a317ff9bf3eb",
+    "savedDirtyLiveModel": true,
+    "unloadedAndDetached": true,
+    "noPostUnloadOverwrite": true,
+    "restoredModelAndOpaqueState": true
+  },
+  "workspaceTransition": {
+    "sourceRoot": "browser-vault:c57528a2-095f-48ab-817c-973116e849a2",
+    "targetRoot": "browser-vault:1a9fe270-5c85-40b0-aa1e-aaf83ee9058a",
+    "preservedPendingWrites": true,
+    "explicitStaleApiStatus": 409,
+    "injectedFailure": "Expected transition checkpoint failure",
+    "noObsoleteSaveWarning": true,
+    "fullRestart": false,
+    "realFolderReconnect": true
+  },
+  "artifactStability": "verified-through-scenario",
+  "exceptions": [],
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\evidence\\workspace-transition-web-smoke-errors.jsonl",
+    "nativePaths": [],
+    "records": 2,
+    "expected": 2,
+    "unexpected": [],
+    "sha256": "7ad6664392812c4764a04612f028bb3b09292c04e779e636cc2503f3563af765",
+    "includesFinalTeardown": true
+  },
+  "completedAt": "2026-10-27T16:44:33.055Z"
+}

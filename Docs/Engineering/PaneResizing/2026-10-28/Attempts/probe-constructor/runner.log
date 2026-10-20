@@ -1,0 +1,51 @@
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-5765d8e9-086f-48da-9ec1-d47933e0e981.jsonl
+(node:42008) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:3629/devtools/browser/acf74d03-98e8-415e-984f-709106ff8a32
+ELECTRON_HOST_PID 42008
+DOTNET_HOST_PID 23160
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-vault-jQEG9g
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:54075
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:54075
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: TypeError: Cannot read properties of undefined (reading 'workspace')
+    at new View (http://127.0.0.1:54075/js/editor-host.1mclakplso.js:69608:21)
+    at new ItemView (http://127.0.0.1:54075/js/editor-host.1mclakplso.js:69685:16)
+    at new eval (vault-plugin:pane-resize-probe:7:56)
+    at eval (vault-plugin:pane-resize-probe:7:52)
+    at Object.create (http://127.0.0.1:54075/js/editor-host.1mclakplso.js:68350:119)
+    at Workspace.applyLeafState (http://127.0.0.1:54075/js/editor-host.1mclakplso.js:73480:35)
+    at async load (http://127.0.0.1:54075/js/editor-host.1mclakplso.js:73953:11)
+    at async load (http://127.0.0.1:54075/js/editor-host.1mclakplso.js:73946:13)
+    at async load (http://127.0.0.1:54075/js/editor-host.1mclakplso.js:73946:13)
+    at async Workspace.applyLayout (http://127.0.0.1:54075/js/editor-host.1mclakplso.js:73956:7)
+    at evaluate (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:321:10)
+    at async checkPaneResize (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/pane-resize-scenarios.mjs:51:3)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:736:5
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:1538:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

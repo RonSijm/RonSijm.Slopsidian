@@ -1,0 +1,45 @@
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile\logs\errors-smoke-6cf17fc0-5298-4780-b4df-6bda0da25116.jsonl
+(node:42100) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:59241/devtools/browser/71a7af1f-66d0-4d6f-8dc0-9c8619ee94a3
+ELECTRON_HOST_PID 42100
+DOTNET_HOST_PID 35936
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-xNyhNH
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:64408
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:64408
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Program.cs:line 45
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

@@ -1,0 +1,18 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS A fixture-held real layout queue delays backend selection; its final source snapshot retains live core-view/opaque state and saves dirty note bytes, with no obsolete cleanup write or selected-vault warning.
+PASS Actual source/target switches restore the original live core view, pin and opaque layout fields; an explicit stale direct API write still receives 409 and cannot change the target layout.
+PASS An explicitly injected final-checkpoint failure keeps both hosts on the source vault and restores editability; normal note/layout saving and a real retry recover without disabling future saves or changing target data.
+PASS An actual dirty Canvas survives source/target/source vault changes: preflight persists its real model before owned unload clears it, no old-root or empty-model write occurs, and a fresh loaded pane restores exact saved data, pin and opaque state.
+PASS Independent source/target layouts, opaque fields, live core views and exact note/Canvas/BOM/CRLF/binary/original settings bytes survive real-folder browser reload/reconnect with clean client and host error banners.

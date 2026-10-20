@@ -1,0 +1,198 @@
+PASS Real source selections, edits/undo/redo and Reading mode count frontmatter only when selected, use reference numeric/punctuation/CJK/kana/Korean/Tamil/Tibetan rules and UTF-16 emoji/CRLF lengths without writing the note.
+PASS Outline uses actual ATX/Setext metadata, excludes YAML/comments/indented and nested-length fences, nests skipped levels correctly, folds by pointer/keyboard/all controls and follows real source-cursor navigation.
+PASS Dirty heading edits, undo/redo and external saved replacements refresh the real Outline; Reading heading navigation/scroll changes active highlighting and emits the actual public Markdown scroll event.
+PASS Disable/re-enable removes owned Outline controls and retained listeners, restores counts, and full native restart or real-folder WASM reconnect retains the real files/mode without rewriting original workspace/community configuration.
+PASS The real status control hides for empty/image leaves, honors explicit app.json Live Preview, offers checked keyboard/pointer Source/Reading/Live Preview choices and applies actual in-place Markdown styles without changing native getMode semantics or file bytes.
+PASS Real formatted-text typing and task-checkbox input preserve selections, undo/redo, dirty buffers and community editor extensions across all three modes; only explicit save writes the exact original BOM/CRLF with the intended task marker changed.
+PASS CodeMirror displays an actually decoded local image, rendered table and local Mermaid image; their real Edit buttons reveal original source and revoke resources, detached task controls are inert, and Ctrl-clicking a wiki alias opens the resolved heading in a separate real Reading leaf.
+PASS Real split panes retain independent per-leaf modes with a shared document and community extensions; public same-file setViewState preserves unsaved text/history, rejects malformed source flags without disturbing the view, and retains opaque state.
+PASS Actual external writes refresh clean Source/Live Preview peers, but conflicting saved bytes cannot overwrite a dirty shared buffer; the guarded save rejects visibly to its caller and explicit discard/reload retains the external BOM/CRLF document.
+PASS Disabling Editor status removes its open menu, status button and retained listeners without disabling editing modes; native restart or actual-folder WASM reconnect preserves source flags, opaque leaf state and persisted plugin ownership while leaving app/workspace bytes and other enabled IDs unchanged.
+PASS Actual selection extraction saves previously dirty text, creates a real nested target, resolves source/template links independently, carries image/reference/footnote definitions, and retains BOM/CRLF plus real source undo/redo.
+PASS Cancel and retained closed-dialog controls write nothing; retargeted source views, unresolved relative-link transfers, post-open external/local edits and missing templates reject visibly without losing bytes, creating a target or implicitly saving concurrent local text.
+PASS Heading extraction includes children and blocks, rejects duplicate target anchors, supports Shift+Enter prepend and embed/none replacements, and selectively repairs real Markdown/properties/Canvas while whole-note and remaining-section links stay on the source.
+PASS Merge confirmation is enforced; a real preflight veto and a target changed after planning retain all source/reference files, newer target bytes and restored source panes.
+PASS Confirmed merge combines precise YAML/body data with guarded source trash and Markdown/Canvas reference repair, opens its real target and emits one owned modification/deletion; a real file-menu action also merges a non-active note and Ctrl+Enter creates its new nested target.
+PASS A real modify-event subscriber can edit an open target after commit: Note composer reports the committed-but-unsaved state, retains its text, disables repeat application and permits a normal subsequent save.
+PASS Real select/template/confirmation settings preserve unknown BOM-prefixed configuration, disable removes owned commands/dialog/listeners, and desktop restart or real-folder browser reconnect restores both composed files and enabled runtime.
+PASS An actual CommonJS plugin uses shared Menu/Item/Separator types, rich labels, checked/disabled rows, sections, viewport placement, pointer/keyboard actions and dismissal; real file/editor events carry the current TFile, MarkdownView and CodeMirror editor.
+PASS Actual editor context actions retain copy/cut/select-all, undoable CRLF-aware paste, empty-paste preservation and visible permission/stale/multiple-selection errors using a bounded clipboard API fixture; the system clipboard is never read or changed.
+PASS Closing the actual source view or disabling the plugin removes owned menus and retained button listeners; re-enable has exactly one event subscriber, and only explicit plugin toggles change community enablement.
+ass0_0.<<<Main>$>b__6>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Program.cs:line 45
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-7645c6c7-5338-4763-b5d9-170271f6ab8a.jsonl
+(node:30096) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:26027/devtools/browser/a64e59bd-09e6-4b3d-85bd-d0fae0fb5086
+ELECTRON_HOST_PID 30096
+DOTNET_HOST_PID 29316
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-vault-p3ta83
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:57108
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:57108
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-7645c6c7-5338-4763-b5d9-170271f6ab8a.jsonl
+(node:46324) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:40037/devtools/browser/7110c93e-54a9-4476-8602-443f515daff7
+ELECTRON_HOST_PID 46324
+DOTNET_HOST_PID 5056
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-vault-p3ta83
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:59922
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:59922
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-7645c6c7-5338-4763-b5d9-170271f6ab8a.jsonl
+(node:24952) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:34758/devtools/browser/4c1a3bd4-f2ae-45c5-ba11-92ca4edbbf27
+ELECTRON_HOST_PID 24952
+DOTNET_HOST_PID 46944
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-vault-p3ta83
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:49566
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:49566
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/core/note-composer/settings
+      RonSijm.Slopsidian.Services.VaultException: Invalid replacementText. Choose link, embed, none.
+         at RonSijm.Slopsidian.Services.VaultService.ValidateCoreSetting(CoreSettingField field, JsonElement value) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.Core.cs:line 303
+         at RonSijm.Slopsidian.Services.VaultService.WriteCoreSettingsAsync(String id, CoreSettingsRequest request, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.Core.cs:line 82
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/files/trash
+      RonSijm.Slopsidian.Services.VaultException: A file changed on disk. No file operation was applied; reload the affected notes.
+         at RonSijm.Slopsidian.Services.VaultService.ReadFileOperationInputAsync(String path, String expectedVersion, VaultFileEdit edit, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 530
+         at RonSijm.Slopsidian.Services.VaultService.ExecuteFileOperationAsync(String sourcePath, String destination, String sourceVersion, IReadOnlyList`1 requestedEdits, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 264
+         at RonSijm.Slopsidian.Services.VaultService.ExecuteFileOperationAsync(String sourcePath, String destination, String sourceVersion, IReadOnlyList`1 requestedEdits, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 339
+         at RonSijm.Slopsidian.Services.VaultService.MoveFileOperationAsync(String sourcePath, String destination, String sourceVersion, IReadOnlyList`1 requestedEdits, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 231
+         at RonSijm.Slopsidian.Services.VaultService.TrashFileAsync(TrashVaultFileRequest request, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 132
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian\Program.cs:line 45
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-7645c6c7-5338-4763-b5d9-170271f6ab8a.jsonl
+(node:4880) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:12910/devtools/browser/01b5a331-89e1-4ecd-8e22-3fefa27bbf01
+ELECTRON_HOST_PID 4880
+DOTNET_HOST_PID 42824
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-vault-p3ta83
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:58827
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:58827
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-7645c6c7-5338-4763-b5d9-170271f6ab8a.jsonl
+(node:31056) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:46110/devtools/browser/78d1ef0f-e860-4446-bcea-ea719f5ad5b4
+ELECTRON_HOST_PID 31056
+DOTNET_HOST_PID 47632
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-vault-p3ta83
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:51763
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:51763
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-7645c6c7-5338-4763-b5d9-170271f6ab8a.jsonl
+(node:45528) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:39155/devtools/browser/4df590af-35d7-4074-8d7e-2a922e8dfeb0
+ELECTRON_HOST_PID 45528
+DOTNET_HOST_PID 17692
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\smoke-vault-p3ta83
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:49373
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:49373
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Error: Timed out waiting for #core-plugins-tab
+    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:332:9)
+    at async waitExpression (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:424:3)
+    at async click (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:438:3)
+    at async checkFormatConversion (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/format-scenarios.mjs:83:3)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:1366:5
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:1538:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

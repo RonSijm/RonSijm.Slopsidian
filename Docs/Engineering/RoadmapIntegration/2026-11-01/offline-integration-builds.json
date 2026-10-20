@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "sourceBefore": "01cdbf07019ce7c62ba76d5befb5d32e3c276e9a2667fae684b5dbe6c5ea389a",
+  "boundary": "Reviewed offline app shell and explicit complete cached index integrated with prior main themes/groups/providers/Outline; source/build/unit coverage only. Actual final tail and update activation/adoption failure boundary remain unaccepted.",
+  "commands": [
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\offline-integration-builds-3547cfbd-4e28-4f23-a506-16158b9d578a\\build.log",
+      "exitCode": 0,
+      "command": "npm run build"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\offline-integration-builds-3547cfbd-4e28-4f23-a506-16158b9d578a\\build-web.log",
+      "exitCode": 0,
+      "command": "npm run build:web"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\offline-integration-builds-3547cfbd-4e28-4f23-a506-16158b9d578a\\verify-web.log",
+      "exitCode": 0,
+      "command": "npm run verify:web"
+    }
+  ],
+  "artifacts": [
+    {
+      "bytes": 4898859,
+      "sha256": "5c59073af01701852d167d354d66a946e6fd428b6fc18345903f8ad7c48fb4a8",
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js"
+    },
+    {
+      "bytes": 4898859,
+      "sha256": "5c59073af01701852d167d354d66a946e6fd428b6fc18345903f8ad7c48fb4a8",
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js"
+    },
+    {
+      "bytes": 37676,
+      "sha256": "b664324b387e1d5bea55475532590208140c048dd5344f6ef8d2142ebb6c722c",
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json"
+    },
+    {
+      "bytes": 6303,
+      "sha256": "618c9f4a72a70a45eab864b19ea089a91cc4e8a3b7e32a63ab4dae757d103a91",
+      "path": ".runtime\\web\\wwwroot\\service-worker.js"
+    },
+    {
+      "bytes": 588800,
+      "sha256": "e40da8a0138e692fb1bdea2692dad91391b4c495fa7c00bf93fb44beb33d7260",
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll"
+    }
+  ],
+  "sourceAfter": "01cdbf07019ce7c62ba76d5befb5d32e3c276e9a2667fae684b5dbe6c5ea389a",
+  "completedAt": "2026-11-01T22:59:12.3671614Z"
+}

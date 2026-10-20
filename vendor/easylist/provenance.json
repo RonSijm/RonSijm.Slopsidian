@@ -1,0 +1,15 @@
+{
+  "source": "https://easylist.to/easylist/easylist.txt",
+  "author": "The EasyList authors (https://easylist.to/)",
+  "retrievedAt": "2026-10-22T19:21:13.7685278Z",
+  "version": "202610221912",
+  "commit": "b9b71cbfbb9b3c2d5c68e45f74ab8a3476922c19",
+  "modified": false,
+  "license": "CC-BY-SA-3.0",
+  "licenseSource": "https://creativecommons.org/licenses/by-sa/3.0/legalcode.txt",
+  "licenseOffer": "https://easylist.to/pages/licence.html",
+  "sha256": {
+    "easylist.txt": "2dd4b6b6156a46dd88252e85cadcb1508021314c015a0ea4e3841b21cd8b6706",
+    "LICENSE-CC-BY-SA-3.0.txt": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+  }
+}

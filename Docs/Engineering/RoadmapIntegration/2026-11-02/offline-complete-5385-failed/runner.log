@@ -1,0 +1,15 @@
+ok - cold online page is unprepared and caches nothing until the user asks
+ok - user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it
+ok - cold restart with the network OFF boots the app, workers and renderer from the cached shell
+ok - a genuine cached GitHub mount is seeded offline in local storage only
+ok - a cold canonical cached remote route boots offline into the read-only mount with the exact note and no API/raw fallback
+ok - explicit complete cached index offline: partial first, missing and corrupt bytes refused, complete after exact cached bytes, zero downloads
+ok - cached index dialog UI: real pointers drive Prepare, held Cancel, Resume, missing and corrupt refusal, then a verified complete index with offline search metadata
+ok - an evicted file is reported honestly offline (503, never a network or mixed fallback)   and a real-pointer repair restores it
+Offline shell smoke FAILED; diagnostics preserved in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-musical-funicular\.runtime\evidence\offline-shell-web-smoke-failed-2026-11-02T03-33-00-384Z.json
+ReferenceError: settlePage is not defined
+    at Page.settled (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:179:5)
+    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:472:18
+    at async session (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:279:40)
+    at async scenario (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:271:3)
+    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:470:5

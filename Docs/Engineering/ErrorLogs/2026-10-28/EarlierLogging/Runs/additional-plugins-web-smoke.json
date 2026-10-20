@@ -1,0 +1,1576 @@
+{
+  "status": "passed",
+  "scope": "additional-example-plugin-startup",
+  "startedAt": "2026-10-27T16:42:23.032Z",
+  "checks": [
+    "Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.",
+    "The actual OS folder picker grants a live external vault, including binary attachment inventory.",
+    "Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.",
+    "External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.",
+    "The shared note-creation UI creates folders and writes a new Markdown note directly to disk.",
+    "Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.",
+    "Core enablement and the unchanged upstream sample plugin save settings into the selected vault.",
+    "Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.",
+    "External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.",
+    "A real page reload is blocked while a buffer has unsaved changes.",
+    "Cancelling the native folder picker retains the selected vault and dirty buffer.",
+    "Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.",
+    "A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.",
+    "Real DOM insertion/migration, cross-window node/event types, CSS, Moment previews, settings control ownership and SVG registry behavior pass in the actual renderer.",
+    "The native-shaped Markdown embed registry owns a real renderer/editor and persists an exact physical edit, rather than supplying an empty constructor seam.",
+    "Declarative settings reject held asynchronous validation without saving, persist a valid value physically, navigate nested pages and dispose owned renders.",
+    "An actual confirmation blocks duplicate actions and waits for its physical configuration write before closing.",
+    "Unchanged-plugin workflow: Linter delayed settings persist on owned disable.",
+    "Unchanged-plugin workflow: QuickAdd nested settings and physical persistence.",
+    "Unchanged-plugin workflow: Natural Language Dates owned protocol callback.",
+    "Unchanged-plugin workflow: Kanban board rendering and physical checkbox persistence.",
+    "Unchanged-plugin workflow: Configured restoration and owned disable cleanup.",
+    "Seven exact releases pass browser startup/settings; Omnisearch's HTTP/cleanup and Git/Templater's startup Node boundaries remain explicit, not full compatibility.",
+    "Every loaded release renders its real settings while all supplied manifests, scripts and styles remain byte-identical; Git still has no remotes."
+  ],
+  "rendererNodeIntegration": false,
+  "realExternalDirectoryPicker": true,
+  "pickerStartsInDisposableDocuments": true,
+  "endpoint": "http://127.0.0.1:15848/",
+  "sha256": {
+    "index.html": "c57ea9db00a7384748e5c3493b79b783666233aacaa8e4cb1ef9a9229e4a63f8",
+    "app.css": "d8b5782dd851c2d63b6372ebc5d1c4194a79570d4c2348a68cd7c981c73c1fd0",
+    "browser.css": "cb31285e1f8c3934a1c93e0448f271ceb9156ca4fe5c80deb081c70471404a67",
+    "icons.svg": "e659196481c2d85f3e52bed31460946e6b2d6351235b87ce1f87e8526beeab0c",
+    "icons-LICENSE.txt": "c059ec5ba27c5876963f0678f63d2182a6fb6ce97d45ed8b6472ec0c2ec189bf",
+    "core-verification.json": "678fef8e701c767240fedc2960a2d7cc22e77aa4b305e865f846cfeada05ac69",
+    "lucide-icons.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+    "lucide-icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "mermaid-frame.html": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333",
+    "js/mermaid-frame.js": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62",
+    "js/mermaid-api.js": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a",
+    "js/mermaid-api.js.LEGAL.txt": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1",
+    "js/mermaid-licenses.txt": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735",
+    "js/editor-host.js": "70d11e91b2aef81f5bec998db724a25711702ef8d6637850b55150c0ab1c7f64",
+    "js/editor-host.css": "71b1c8ea199384cb74866d54b44f6cb5e1472797dd9c1d5b23fc5ffb97a12a65",
+    "js/codemirror-license.txt": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07",
+    "js/hypermd-license.txt": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b",
+    "js/web-reader-extract.js": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601",
+    "js/web-reader-extract.js.LEGAL.txt": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a",
+    "js/web-reader-licenses.txt": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b",
+    "js/browser-host.js": "891aac212b2cb712549324f2f5a54bc28f40b3d0336bcc4cb9cad0f740c6a3fb",
+    "js/search-worker.js": "6b24e0d9f29c3425b36b99efef28bce277c5c55bc93527fd395d5aa0b8765f84",
+    "js/graph-worker.js": "83b481a7e38ca1bc3e7f88a942400d83aa36449ce23f80edbfeb87e595f0d010",
+    "js/bases-worker.js": "719be94513c09032762919eb1ae7feae12f202e52d08693ed9aa035f039988c6",
+    "_framework/RonSijm.Slopsidian.Web.fzlqztota6.wasm": "cb4811bb6f20c6962311c3fbdbb4dbd46fe58a37bade9cba5c645bb1fff98428"
+  },
+  "scenarioSha256": {
+    "web-smoke.mjs": "64fa396296dbc7f5a19183d9828c336b83c94efe54b3576de2790c4f8f2b5d02",
+    "web-smoke-host.cjs": "38f2d99a0c1f70a962857c3dc17489e3bacbd913c9fddc7e0008d6c4446ea381",
+    "core-foundation-scenarios.mjs": "bfe37918fc6723c519fc6f7d2e992b1a49e885a2ae052f8b89ab8e9afd0d4905",
+    "core-scenarios.mjs": "b16bdf012477e16953b7d4cc9f0df6a502ae71403f369dbab6c5dda5b4482c3f",
+    "core-verification-targets.mjs": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86",
+    "core-verification-scenarios.mjs": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539",
+    "tab-movement-scenarios.mjs": "ca65db3f8f47a6e8bb920d93876e8420dc36338e8d936b827755f9569bfe0227",
+    "reading-scenarios.mjs": "b3cef9a15c8a0bbbec81bcd83f09f5d03aa0f67f42ab843aeacfb1d7af6853f1",
+    "outgoing-scenarios.mjs": "6a15662333f510e069e014e533eff13b6cb974a0ed7d720cad5e6bd9f4a0b5ca",
+    "discovery-scenarios.mjs": "eb2c3d978e7faab8df02335911a78b5b760416aaaf4f8c3eba80003557d9881c",
+    "editor-chrome-scenarios.mjs": "580c2f69b378757fbbcae5ae0ed219fe69e2af0047494e4705ed9c5958ab3a19",
+    "suggestion-scenarios.mjs": "a2bd9f49ca0261a0ed9316966c579b7df5bfe96f6e5563b38d13e8f2f5ded873",
+    "renderer-scenarios.mjs": "5ea3154e5ea83cf9c3ee93c0269ff974e8c979e52a0129584593126daffb57a6",
+    "render-child-scenarios.mjs": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611",
+    "templater-scenarios.mjs": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594",
+    "organization-scenarios.mjs": "6d356a9471a8ece167567d0e0aaf54e73f7aa4aa31d99563467a2f9f6557932a",
+    "file-scenarios.mjs": "d1a4a84690fc5bfad4d49b36fd762902ef8c3aa7ef53ce78c1a9a00ce10cf60a",
+    "graph-scenarios.mjs": "50cd7e334239383d403b196d4b2ad16949e92227efb7de019ca4474ee0b9ce18",
+    "canvas-scenarios.mjs": "5d389f419dbd99c042176d38669c69bff20fd148ebdd24d710a723b35b51cf6e",
+    "preview-scenarios.mjs": "16eee75c61ff2c56572c217e9af95b0bd65f0166557c6eaaa575587922f104f2",
+    "editing-tools-scenarios.mjs": "7c02dd1493956840958e2c4667c61a7a737afc915401dd54e77d9bfbbc4e36d2",
+    "format-scenarios.mjs": "e0c7a1583b6bbbed9e032eab1768ac6942d070c5b8756257b84054c9f56de731",
+    "composer-scenarios.mjs": "28893c704bd8067cd1237133f58d5b2ead7eb05a6b2d392a219a77c23b9d47c9",
+    "menu-scenarios.mjs": "a2f3232c5e40b17929197b845250c60411cc32420f65eb5d2267785b2d83a8ff",
+    "bases-scenarios.mjs": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d",
+    "bases-summary-scenarios.mjs": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47",
+    "recovery-scenarios.mjs": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472",
+    "view-scenarios.mjs": "5486d539b55e48e297034eadbbcbe76ad53bdc9153ae437c1e68390af136511d",
+    "audio-scenarios.mjs": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c",
+    "mermaid-scenarios.mjs": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8",
+    "workspace-import-scenarios.mjs": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863",
+    "community-plugin-test-helpers.mjs": "a5a42c9e7728fdcee7d8fd61094bd55114cd90df183164d0af6937f482b8e8f9",
+    "tools\\additional-plugin-scenarios.mjs": "40622f40e38671b3368614a6656613b12e9128cb4b8c25061839202ae27f71eb",
+    "tools\\additional-plugin-assets.mjs": "5b6ec7e99cedfec4abf9c2eed789a1a1e40ac7d6dfc0707c78d81f98659fa8ae",
+    "client\\plugin-host.ts": "4024a9c57962d2b77650078806383765e094ac787f0a83ca4ef9afbc2e07ff55",
+    "client\\plugin.ts": "08aab198345ca6a2af60707eee4c1a8332191017280f04870a8a9aeebc4d8d39",
+    "client\\legacy-constructors.ts": "b3b9350d7be5d431cdc94e74f24ce5bb5a3c5fe7700ae4f990f4573ddf3bbdef",
+    "client\\ui.ts": "a95643382cc1d7acb6d1f51f651eb5fd006cec9e5364b5bef9c7c19422f491db",
+    "client\\settings.ts": "5ea54d85ccde1f6eeb0e74eadc75dc20060e90b94e862ea127565a77f9886b86",
+    "client\\icons.ts": "c4089bbe3d1a99e44ac8d00ed138fbc9c862c902dd4c1c4283fd12786cd46593",
+    "client\\dom.ts": "f8a80c6229e5070dd9de0c1bd189d95a0c37dc6e7178b76b22e6ebfdf45b8e49",
+    "client\\menu.ts": "b29cea1d982f37ab74db92ed8a35684b848ca0de59d43d5e553f447b065ae7bd",
+    "client\\suggestions.ts": "13e22ac9bc380cde3c5d65738e501169fdee297f0b0bb8e8a2455af95020975a",
+    "client\\desktop-ui.ts": "d3ef09a044e06917d9dd8e022004729ef83023cd784a4f1305c389a2fb8717b1",
+    "client\\views.ts": "9e1689861c56904315a03eb1f06fea99e10edf30998bc6cae67f17a189a7112d",
+    "client\\workspace.ts": "487146e0989e5e461c0da7bb68c90d6c32708463cf5a9a4cf744a623825cfc53",
+    "client\\app.ts": "f2bac01f18b9f451c8b381578764634ad94b68838918b8734a61fcea61f66848",
+    "client\\editor.ts": "dc1d40aefef0e748c614e8e570bf8c64018277e4a18e5a06ad32962f2c915e2c",
+    "client\\editor-host.ts": "a1d1a6cbbdd58c79a5ac93095a886eb1f4fd0a26e4e567bc65526629095cc23e",
+    "client\\protocol.ts": "5c25f450bf714c07b5e2ca6a40776e892a34e84276282c498850839cca3b3bff",
+    "client\\markdown-embed.ts": "218c129d21e701de9e9a49d370c5ac9057b320ab3f8892536bbd2199b1186379",
+    "client\\markdown.ts": "f446a4b8c3b6efd0a4bf34f5370f286721f4d16bd76e6a7f44e9f02e9b0d7a18",
+    "client\\timers.ts": "7fef242482bd70f39c393bc89755c1ea7b6bc163580a8cd8c5ce922565416ff1",
+    "client\\vault.ts": "5b246ed7df1a7d60a0ff7bb75ba53c9bb2b946795c97a6edcda07cd830dd90ec",
+    "client\\browser-vault.ts": "56c1ba3ef47cca574cf6c0825748549fe3fbfa13c2e9506f8f70294824133156",
+    "select-test-folder.ps1": "9a18d1edcde9b5d252972012ba70bf3810c8bbc72a50958bad469dba164946f0"
+  },
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes; production launch is unchanged.",
+  "consoleWarningDetails": [
+    {
+      "args": [
+        {
+          "type": "string",
+          "value": "%cElectron Security Warning (Insecure Content-Security-Policy)"
+        },
+        {
+          "type": "string",
+          "value": "font-weight: bold;"
+        },
+        {
+          "type": "string",
+          "value": "This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged."
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "warnAboutInsecureCSP",
+            "scriptId": "4",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 124820
+          },
+          {
+            "functionName": "logSecurityWarnings",
+            "scriptId": "4",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 126984
+          },
+          {
+            "functionName": "",
+            "scriptId": "4",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 123159
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "string",
+          "value": "%cElectron Security Warning (Insecure Content-Security-Policy)"
+        },
+        {
+          "type": "string",
+          "value": "font-weight: bold;"
+        },
+        {
+          "type": "string",
+          "value": "This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged."
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "warnAboutInsecureCSP",
+            "scriptId": "4",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 124820
+          },
+          {
+            "functionName": "logSecurityWarnings",
+            "scriptId": "4",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 126984
+          },
+          {
+            "functionName": "",
+            "scriptId": "4",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 123159
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "string",
+          "value": "%cElectron Security Warning (Insecure Content-Security-Policy)"
+        },
+        {
+          "type": "string",
+          "value": "font-weight: bold;"
+        },
+        {
+          "type": "string",
+          "value": "This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged."
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "warnAboutInsecureCSP",
+            "scriptId": "4",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 124820
+          },
+          {
+            "functionName": "logSecurityWarnings",
+            "scriptId": "4",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 126984
+          },
+          {
+            "functionName": "",
+            "scriptId": "4",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 123159
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "string",
+          "value": "%cElectron Security Warning (Insecure Content-Security-Policy)"
+        },
+        {
+          "type": "string",
+          "value": "font-weight: bold;"
+        },
+        {
+          "type": "string",
+          "value": "This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged."
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "warnAboutInsecureCSP",
+            "scriptId": "644",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 124820
+          },
+          {
+            "functionName": "logSecurityWarnings",
+            "scriptId": "644",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 126984
+          },
+          {
+            "functionName": "",
+            "scriptId": "644",
+            "url": "node:electron/js2c/sandbox_bundle",
+            "lineNumber": 1,
+            "columnNumber": 123159
+          }
+        ]
+      }
+    }
+  ],
+  "lastInteraction": {
+    "type": "click",
+    "selector": "[data-toggle-plugin=\"quickadd\"]"
+  },
+  "consoleErrorDetails": [
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Unsupported module without the desktop Node runtime: node:fs\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:node-only:3:1)\n    at PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92757:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+          "objectId": "-8446084992795236642.3.1",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Unsupported module without the desktop Node runtime: node:fs\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:node-only:3:1)\n    at PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92757:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Unsupported module without the desktop Node…ttp://127.0.0.1:15848/js/editor-host.js:92549:16)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Unsupported module without the desktop Node runtime: node:fs"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 94278,
+            "columnNumber": 14
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "string",
+          "value": "fail: RonSijm.Slopsidian.Components.Pages.Home[0]\n      Vault operation failed\nMicrosoft.JSInterop.JSException: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\nError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:15848/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:15848/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:15848/js/editor-host.js:43921:20)\n    at async DocumentSession.persist (http://127.0.0.1:15848/js/editor-host.js:71611:21)\n    at async DocumentSession.save (http://127.0.0.1:15848/js/editor-host.js:71587:7)\n    at async Workspace.saveAll (http://127.0.0.1:15848/js/editor-host.js:73248:7)\n    at async App.saveAll (http://127.0.0.1:15848/js/editor-host.js:91026:5)\n    at async Commands.execute (http://127.0.0.1:15848/js/editor-host.js:90811:7)\n    at async DesktopUI.perform (http://127.0.0.1:15848/js/editor-host.js:93358:5)\n    at async Module.performAction (http://127.0.0.1:15848/js/editor-host.js:95101:3)\n   at Microsoft.JSInterop.JSRuntime.<InvokeAsync>d__23`1[[Microsoft.JSInterop.Infrastructure.IJSVoidResult, Microsoft.JSInterop, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]].MoveNext()\n   at Microsoft.JSInterop.JSObjectReferenceExtensions.InvokeVoidAsync(IJSObjectReference , String , Object[] )\n   at RonSijm.Slopsidian.Components.Pages.Home.<>c__DisplayClass47_0.<<WorkspaceActionAsync>b__0>d.MoveNext()\n--- End of stack trace from previous location ---\n   at RonSijm.Slopsidian.Components.Pages.Home.RunAsync(Func`1 operation)"
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "11",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 175112
+          },
+          {
+            "functionName": "Mc",
+            "scriptId": "11",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 175836
+          },
+          {
+            "functionName": "$func1892",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 654264
+          },
+          {
+            "functionName": "$func298",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 128919
+          },
+          {
+            "functionName": "$func222",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 117400
+          },
+          {
+            "functionName": "$func213",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 60391
+          },
+          {
+            "functionName": "$func256",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 121204
+          },
+          {
+            "functionName": "$func3231",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 989414
+          },
+          {
+            "functionName": "$func2553",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 815504
+          },
+          {
+            "functionName": "$func2558",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 817544
+          },
+          {
+            "functionName": "$func2582",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 827494
+          },
+          {
+            "functionName": "$mono_wasm_invoke_jsexport",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 44188
+          },
+          {
+            "functionName": "Module._mono_wasm_invoke_jsexport",
+            "scriptId": "12",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.native.q38003gvqi.js",
+            "lineNumber": 7,
+            "columnNumber": 113427
+          },
+          {
+            "functionName": "kn",
+            "scriptId": "11",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 29521
+          },
+          {
+            "functionName": "",
+            "scriptId": "11",
+            "url": "http://127.0.0.1:15848/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 38146
+          },
+          {
+            "functionName": "endInvokeJSFromDotNet",
+            "scriptId": "7",
+            "url": "http://127.0.0.1:15848/_framework/blazor.webassembly.js",
+            "lineNumber": 0,
+            "columnNumber": 50484
+          },
+          {
+            "functionName": "beginInvokeJSFromDotNet",
+            "scriptId": "7",
+            "url": "http://127.0.0.1:15848/_framework/blazor.webassembly.js",
+            "lineNumber": 0,
+            "columnNumber": 4325
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Unsupported module without the desktop Node runtime: path\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:obsidian-git:107:9287)\n    at PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92757:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+          "objectId": "-8446084992795236642.7.1",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Unsupported module without the desktop Node runtime: path\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:obsidian-git:107:9287)\n    at PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92757:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Unsupported module without the desktop Node…ttp://127.0.0.1:15848/js/editor-host.js:92549:16)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Unsupported module without the desktop Node runtime: path"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 94278,
+            "columnNumber": 14
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "string",
+          "value": "Omnisearch - Failed to load API server"
+        },
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Unsupported module without the desktop Node runtime: http\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:omnisearch:166:6693)\n    at eval (vault-plugin:omnisearch:8:212)\n    at eval (vault-plugin:omnisearch:166:7882)",
+          "objectId": "-8446084992795236642.7.2",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Unsupported module without the desktop Node runtime: http\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:omnisearch:166:6693)\n    at eval (vault-plugin:omnisearch:8:212)\n    at eval (vault-plugin:omnisearch:166:7882)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Unsupported module without the desktop Node…2)\n    at eval (vault-plugin:omnisearch:166:7882)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Unsupported module without the desktop Node runtime: http"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "eval",
+            "scriptId": "438",
+            "url": "vault-plugin:omnisearch",
+            "lineNumber": 165,
+            "columnNumber": 7955
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "TypeError",
+          "description": "TypeError: Cannot read properties of undefined (reading 'functions_generator')\n    at ta.onunload (vault-plugin:templater-obsidian:60:32839)\n    at http://127.0.0.1:15848/js/editor-host.js:68076:180\n    at http://127.0.0.1:15848/js/editor-host.js:68078:19",
+          "objectId": "-8446084992795236642.7.3",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "TypeError: Cannot read properties of undefined (reading 'functions_generator')\n    at ta.onunload (vault-plugin:templater-obsidian:60:32839)\n    at http://127.0.0.1:15848/js/editor-host.js:68076:180\n    at http://127.0.0.1:15848/js/editor-host.js:68078:19",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "TypeError: Cannot read properties of undefined (re…http://127.0.0.1:15848/js/editor-host.js:68078:19"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Cannot read properties of undefined (reading 'functions_generator')"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 43038,
+            "columnNumber": 10
+          },
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 68079,
+            "columnNumber": 12
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Unsupported module without the desktop Node runtime: util\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at new bn (vault-plugin:templater-obsidian:18:8514)\n    at new kn (vault-plugin:templater-obsidian:19:1656)\n    at new jn (vault-plugin:templater-obsidian:19:2191)\n    at new Wt (vault-plugin:templater-obsidian:20:74754)\n    at ta.onload (vault-plugin:templater-obsidian:60:32173)\n    at async ta.load (http://127.0.0.1:15848/js/editor-host.js:68059:5)\n    at async PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92772:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9",
+          "objectId": "-8446084992795236642.7.4",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Unsupported module without the desktop Node runtime: util\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at new bn (vault-plugin:templater-obsidian:18:8514)\n    at new kn (vault-plugin:templater-obsidian:19:1656)\n    at new jn (vault-plugin:templater-obsidian:19:2191)\n    at new Wt (vault-plugin:templater-obsidian:20:74754)\n    at ta.onload (vault-plugin:templater-obsidian:60:32173)\n    at async ta.load (http://127.0.0.1:15848/js/editor-host.js:68059:5)\n    at async PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92772:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Unsupported module without the desktop Node… http://127.0.0.1:15848/js/editor-host.js:92681:9"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Unsupported module without the desktop Node runtime: util"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 94278,
+            "columnNumber": 14
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "string",
+          "value": "Omnisearch - Failed to load API server"
+        },
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Unsupported module without the desktop Node runtime: http\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:omnisearch:166:6693)\n    at eval (vault-plugin:omnisearch:8:212)\n    at eval (vault-plugin:omnisearch:166:7882)",
+          "objectId": "-8446084992795236642.10.1",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Unsupported module without the desktop Node runtime: http\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:omnisearch:166:6693)\n    at eval (vault-plugin:omnisearch:8:212)\n    at eval (vault-plugin:omnisearch:166:7882)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Unsupported module without the desktop Node…2)\n    at eval (vault-plugin:omnisearch:166:7882)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Unsupported module without the desktop Node runtime: http"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "eval",
+            "scriptId": "438",
+            "url": "vault-plugin:omnisearch",
+            "lineNumber": 165,
+            "columnNumber": 7955
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Could not restore community plugin obsidian-git: Unsupported module without the desktop Node runtime: path\n    at PluginHost.loadConfigured (http://127.0.0.1:15848/js/editor-host.js:92609:21)\n    at async http://127.0.0.1:15848/js/editor-host.js:92623:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+          "objectId": "-8446084992795236642.10.2",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Could not restore community plugin obsidian-git: Unsupported module without the desktop Node runtime: path\n    at PluginHost.loadConfigured (http://127.0.0.1:15848/js/editor-host.js:92609:21)\n    at async http://127.0.0.1:15848/js/editor-host.js:92623:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Could not restore community plugin obsidian…ttp://127.0.0.1:15848/js/editor-host.js:92549:16)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Could not restore community plugin obsidian-git: U…ted module without the desktop Node runtime: path"
+              },
+              {
+                "name": "cause",
+                "type": "object",
+                "value": "Error: Unsupported module without the desktop Node runtime: path\n    at PluginHost.require (http://…",
+                "subtype": "error"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 43038,
+            "columnNumber": 10
+          },
+          {
+            "functionName": "loadConfigured",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 92608,
+            "columnNumber": 8
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "TypeError",
+          "description": "TypeError: Cannot read properties of undefined (reading 'functions_generator')\n    at ta.onunload (vault-plugin:templater-obsidian:60:32839)\n    at http://127.0.0.1:15848/js/editor-host.js:68076:180\n    at http://127.0.0.1:15848/js/editor-host.js:68078:19",
+          "objectId": "-8446084992795236642.10.3",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "TypeError: Cannot read properties of undefined (reading 'functions_generator')\n    at ta.onunload (vault-plugin:templater-obsidian:60:32839)\n    at http://127.0.0.1:15848/js/editor-host.js:68076:180\n    at http://127.0.0.1:15848/js/editor-host.js:68078:19",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "TypeError: Cannot read properties of undefined (re…http://127.0.0.1:15848/js/editor-host.js:68078:19"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Cannot read properties of undefined (reading 'functions_generator')"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 43038,
+            "columnNumber": 10
+          },
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 68079,
+            "columnNumber": 12
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Could not restore community plugin templater-obsidian: Unsupported module without the desktop Node runtime: util\n    at PluginHost.loadConfigured (http://127.0.0.1:15848/js/editor-host.js:92609:21)\n    at async http://127.0.0.1:15848/js/editor-host.js:92623:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+          "objectId": "-8446084992795236642.10.4",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Could not restore community plugin templater-obsidian: Unsupported module without the desktop Node runtime: util\n    at PluginHost.loadConfigured (http://127.0.0.1:15848/js/editor-host.js:92609:21)\n    at async http://127.0.0.1:15848/js/editor-host.js:92623:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Could not restore community plugin template…ttp://127.0.0.1:15848/js/editor-host.js:92549:16)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Could not restore community plugin templater-obsid…ted module without the desktop Node runtime: util"
+              },
+              {
+                "name": "cause",
+                "type": "object",
+                "value": "Error: Unsupported module without the desktop Node runtime: util\n    at PluginHost.require (http://…",
+                "subtype": "error"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 43038,
+            "columnNumber": 10
+          },
+          {
+            "functionName": "loadConfigured",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 92608,
+            "columnNumber": 8
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "TypeError",
+          "description": "TypeError: Cannot read properties of null (reading 'close')\n    at bd.onunload (vault-plugin:omnisearch:166:10239)\n    at async http://127.0.0.1:15848/js/editor-host.js:68078:13\n    at async bd.unload (http://127.0.0.1:15848/js/editor-host.js:68104:7)\n    at async bd.unloadAndWait (http://127.0.0.1:15848/js/editor-host.js:68111:7)\n    at async PluginHost.disable (http://127.0.0.1:15848/js/editor-host.js:92828:5)\n    at async http://127.0.0.1:15848/js/editor-host.js:92684:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+          "objectId": "-8446084992795236642.10.5",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "TypeError: Cannot read properties of null (reading 'close')\n    at bd.onunload (vault-plugin:omnisearch:166:10239)\n    at async http://127.0.0.1:15848/js/editor-host.js:68078:13\n    at async bd.unload (http://127.0.0.1:15848/js/editor-host.js:68104:7)\n    at async bd.unloadAndWait (http://127.0.0.1:15848/js/editor-host.js:68111:7)\n    at async PluginHost.disable (http://127.0.0.1:15848/js/editor-host.js:92828:5)\n    at async http://127.0.0.1:15848/js/editor-host.js:92684:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "TypeError: Cannot read properties of null (reading…ttp://127.0.0.1:15848/js/editor-host.js:92549:16)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Cannot read properties of null (reading 'close')"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 43038,
+            "columnNumber": 10
+          },
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:15848/js/editor-host.js",
+            "lineNumber": 68079,
+            "columnNumber": 12
+          }
+        ]
+      }
+    }
+  ],
+  "expectedDiagnostics": [
+    {
+      "id": "477d1d4f-2e16-4228-b609-1bb86de32f8a:0",
+      "source": "host",
+      "message": "This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.",
+      "reason": "Check browser explicit-save conflict protection"
+    },
+    {
+      "id": "9595041f-e693-412e-9732-c94f34f4307a:0",
+      "source": "notification",
+      "message": "Cannot read properties of undefined (reading 'functions_generator')",
+      "stackIncludes": "vault-plugin:templater-obsidian:",
+      "reason": "Exercise the documented exact Templater 2.26.0 failed-start cleanup without browser Node support"
+    },
+    {
+      "id": "130c449a-f53f-4182-812f-c2755859b12c:0",
+      "source": "notification",
+      "message": "Could not restore community plugin obsidian-git: Unsupported module without the desktop Node runtime: path",
+      "stackIncludes": "PluginHost.loadConfigured",
+      "reason": "Explicitly restore unsupported Git/Templater IDs without rewriting the shared desktop/browser configuration"
+    },
+    {
+      "id": "130c449a-f53f-4182-812f-c2755859b12c:1",
+      "source": "notification",
+      "message": "Cannot read properties of undefined (reading 'functions_generator')",
+      "stackIncludes": "vault-plugin:templater-obsidian:",
+      "reason": "Explicitly restore unsupported Git/Templater IDs without rewriting the shared desktop/browser configuration"
+    },
+    {
+      "id": "130c449a-f53f-4182-812f-c2755859b12c:2",
+      "source": "notification",
+      "message": "Could not restore community plugin templater-obsidian: Unsupported module without the desktop Node runtime: util",
+      "stackIncludes": "PluginHost.loadConfigured",
+      "reason": "Explicitly restore unsupported Git/Templater IDs without rewriting the shared desktop/browser configuration"
+    },
+    {
+      "id": "130c449a-f53f-4182-812f-c2755859b12c:3",
+      "source": "notification",
+      "message": "Cannot read properties of null (reading 'close')",
+      "stackIncludes": "vault-plugin:omnisearch:",
+      "reason": "Exercise the documented Omnisearch cleanup after its unavailable browser HTTP server"
+    }
+  ],
+  "sourceFingerprint": "aff3e78378308687d34e443e0cbc10d10ee951afc4327e654cf9a3b02014c1a9",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": false,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "additionalPlugins": {
+    "scope": "exact operator-provided startup, real settings, selected physical workflows and explicit browser Node limitations; not full plugin parity",
+    "upstreamReleaseProvenanceVerified": false,
+    "referenceRuntimeComparison": "not-performed",
+    "releases": [
+      {
+        "id": "obsidian-admonition",
+        "version": "12.0.11",
+        "sha256": "6a1df01446e9dd3e2165173a1c237707414aa2e92ff0589ab1152921b6404f8b",
+        "directory": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\compatibility\\additional-example-plugins\\obsidian-admonition-12.0.11",
+        "minAppVersion": "1.13.0",
+        "assets": [
+          {
+            "name": "main.js",
+            "bytes": 104755,
+            "sha256": "6a1df01446e9dd3e2165173a1c237707414aa2e92ff0589ab1152921b6404f8b"
+          },
+          {
+            "name": "manifest.json",
+            "bytes": 386,
+            "sha256": "c05262a4938c5942991eb4fd99e9cda4f80524147f8385b5b35a1ebd0985bcf5"
+          },
+          {
+            "name": "styles.css",
+            "bytes": 6121,
+            "sha256": "09d3328199aba165fc10ac419747bb092ce777867f4431db0d6c7f1c9da8258c"
+          }
+        ],
+        "provenance": "operator-provided Example assets; plugin data.json excluded",
+        "status": "startup-and-settings-passed",
+        "unavailableModules": [],
+        "startupError": null,
+        "runtimeWarning": null,
+        "settingsText": "Display and behaviorAdd drop shadowA drop shadow will be added to admonitions.Add copy buttonAdd a 'copy content' button to admonitions & callouts.Hide empty admonitionsAny admonition that does not have content inside it will be hidden.Default collapse typeCollapsible admonitions & callouts will be either opened or closed.OpenClosedCollapsible by defaultAll admonitions & callouts will be collapsible by default. Use collapse: none to prevent.Parse titles as MarkdownAdmonition titles will be rendered as Markdown.CSSUse CSS snippet for custom calloutsInstead of managing it internally, Admonitions will maintain a CSS snippet to enable your custom types for callouts. Required for correct rendering in popout windows.Set admonition colorsDisable this setting to turn off admonition coloring by default. Can be overridden in the admonition definition.Import & exportExport custom types as CSSExport a CSS snippet for custom callout types.\n      \n      \n      \n    Export custom types as JSONChoose custom types to export as a JSON file that you can then share with other users.Download allSelect & downloadImport admonition(s)Import admonitions from a JSON definition.Choose files\n      \n      \n   "
+      },
+      {
+        "id": "obsidian-git",
+        "version": "2.42.0",
+        "sha256": "dae3ecea527725d04f8660fb14b0b720c84aad87b6d51b3afa799091d325a96d",
+        "directory": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\compatibility\\additional-example-plugins\\obsidian-git-2.42.0",
+        "minAppVersion": "1.13.0",
+        "assets": [
+          {
+            "name": "main.js",
+            "bytes": 813570,
+            "sha256": "dae3ecea527725d04f8660fb14b0b720c84aad87b6d51b3afa799091d325a96d"
+          },
+          {
+            "name": "manifest.json",
+            "bytes": 356,
+            "sha256": "7ad98e8cce157e9846b47941c6a7cb9b022bc9d5c6d11782290e7a7a164b470d"
+          },
+          {
+            "name": "styles.css",
+            "bytes": 23414,
+            "sha256": "f30ad2ca42fefe3b704c548f7747d285c2038fa4ce90601e68fe6fd660494052"
+          }
+        ],
+        "provenance": "operator-provided Example assets; plugin data.json excluded",
+        "status": "requires-desktop-node",
+        "unavailableModules": [
+          "path"
+        ],
+        "startupError": "Unsupported module without the desktop Node runtime: path",
+        "runtimeWarning": null
+      },
+      {
+        "id": "obsidian-icon-folder",
+        "version": "2.14.7",
+        "sha256": "b68bcfd318d678892f671736e54396fd72414180736e58f164fb17a3f72a22e1",
+        "directory": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\compatibility\\additional-example-plugins\\obsidian-icon-folder-2.14.7",
+        "minAppVersion": "0.9.12",
+        "assets": [
+          {
+            "name": "main.js",
+            "bytes": 414155,
+            "sha256": "b68bcfd318d678892f671736e54396fd72414180736e58f164fb17a3f72a22e1"
+          },
+          {
+            "name": "manifest.json",
+            "bytes": 311,
+            "sha256": "f524a18d69e990a244173a3595681c39a20bcbc9dc18b59af51e45660fef5ca2"
+          },
+          {
+            "name": "styles.css",
+            "bytes": 2216,
+            "sha256": "56ffeb8349f4af97dab8a14fcadcb0019d3b37b116d7a34aa21e958e98455a89"
+          }
+        ],
+        "provenance": "operator-provided Example assets; plugin data.json excluded",
+        "status": "startup-and-settings-passed",
+        "unavailableModules": [],
+        "startupError": null,
+        "runtimeWarning": null,
+        "settingsText": "GeneralRecently used icons limitChange the limit for the recently used icons displayed in the icon selection modal.Icon packs folder pathChange the default icon packs folder path.SaveIcons background checkCheck in the background on every load of Obsidian, if icons are missing and it will try to add them to the specific icon pack.Emoji styleChange the style of your emojis.NativeTwemojiIcon identifierChange the icon identifier used in notes.SaveEXPERIMENTAL: Use internal pluginsToggles whether to try to add icons to the bookmark and outline internal plugins.Toggle Debug ModeToggle debug mode to see more detailed logs in the console. Do not touch this unless you know what you are doing.Visibility of iconsToggle icon in tabsToggles the visibility of an icon for a file in the tab bar.Toggle icon in titleToggles the visibility of an icon above the title of a file.Above titleNext to titleUse icon in frontmatterToggles whether to set the icon based on the frontmatter property `icon`.Frontmatter icon field nameSets the name of the frontmatter field which contains the icon.SaveFrontmatter icon color field nameSets the name of the frontmatter field which contains the icon color.SaveRefresh ic"
+      },
+      {
+        "id": "obsidian-kanban",
+        "version": "2.0.51",
+        "sha256": "458574296f9c50bf5ac078ad28f37724a2520ae45e8ad2144c6769f4062453e4",
+        "directory": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\compatibility\\additional-example-plugins\\obsidian-kanban-2.0.51",
+        "minAppVersion": "1.0.0",
+        "assets": [
+          {
+            "name": "main.js",
+            "bytes": 990767,
+            "sha256": "458574296f9c50bf5ac078ad28f37724a2520ae45e8ad2144c6769f4062453e4"
+          },
+          {
+            "name": "manifest.json",
+            "bytes": 348,
+            "sha256": "24976787097ead467969e014a35654e7a80e4db49a977689a48afadfa15e1854"
+          },
+          {
+            "name": "styles.css",
+            "bytes": 60802,
+            "sha256": "ecf6dd31f1727c441cce6f54794b0d3916dcfffc87fa17b855c79ba04a85d9a7"
+          }
+        ],
+        "provenance": "operator-provided Example assets; plugin data.json excluded",
+        "status": "startup-and-settings-passed",
+        "unavailableModules": [],
+        "startupError": null,
+        "runtimeWarning": null,
+        "settingsText": "Kanban PluginSet the default Kanban board settings. Settings can be overridden on a board-by-board basis.Display card checkboxWhen toggled, a checkbox will be displayed with each card\n      \n      \n    New line triggerSelect whether Enter or Shift+Enter creates a new line. The opposite of what you choose will create and complete editing of cards and lists.Shift + EnterEnterPrepend / append new cardsThis setting controls whether new cards are added to the beginning or end of the list.PrependPrepend (compact)AppendHide card counts in list titlesWhen toggled, card counts are hidden from the list title\n      \n      \n    List widthEnter a number to set the list width in pixels.Expand lists to full width in list view\n      \n      \n    Maximum number of archived cardsArchived cards can be viewed in markdown mode. This setting will begin removing old cards once the limit is reached. Setting this value to -1 will allow a board's archive to grow infinitely.Note templateThis template will be used when creating new notes from Kanban cards.No templateNo templateNo templateAdditional plugin probeNote folderNotes created from Kanban cards will be placed in this folder. If blank, they will be plac"
+      },
+      {
+        "id": "obsidian-linter",
+        "version": "1.34.2",
+        "sha256": "6a591c50345a5cedc709c1d6a76a03f5f73d690eae74772a5b2afd8a95592008",
+        "directory": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\compatibility\\additional-example-plugins\\obsidian-linter-1.34.2",
+        "minAppVersion": "1.13.0",
+        "assets": [
+          {
+            "name": "main.js",
+            "bytes": 998480,
+            "sha256": "6a591c50345a5cedc709c1d6a76a03f5f73d690eae74772a5b2afd8a95592008"
+          },
+          {
+            "name": "manifest.json",
+            "bytes": 536,
+            "sha256": "e02a5adc53dc71fedec1584135fbd3a024b5698434cbbf6ca1cbb9b129ee76e0"
+          },
+          {
+            "name": "styles.css",
+            "bytes": 2572,
+            "sha256": "aeda3a668070de1e48650d1613a96bd018e0b7b3aa5fabdc85263589f1198634"
+          }
+        ],
+        "provenance": "operator-provided Example assets; plugin data.json excluded",
+        "status": "startup-and-settings-passed",
+        "unavailableModules": [],
+        "startupError": null,
+        "runtimeWarning": null,
+        "settingsText": "Lint on saveLint the file on manual save (when Ctrl + S is pressed or when :w is executed while using vim keybindings)Display message on lintDisplay the number of characters changed after lintingLint on focused file changeWhen a file is closed or a new file is swapped to, the previous file is linted.Display lint on file change messageDisplays a message when Lint on focused file change occursSuppress message when no changeIf enabled, no message will be shown when no actual changes occur.Enable workspace diff previewShow lint preview commands in a dockable workspace view. Turn this off to close the preview view and hide preview commands.Override localeSet this if you want to use a locale different from the defaultSame as system (en-us)enen-usYAML common stylesYAML aliases section styleThe style of the YAML aliases sectionmulti-linesingle-linesingle string comma delimitedsingle string to single-linesingle string to multi-lineYAML tags section styleThe style of the YAML tags sectionmulti-linesingle-linesingle string to single-linesingle string to multi-linesingle-line space delimitedsingle string space delimitedsingle string comma delimitedDefault YAML array section styleThe style of Y"
+      },
+      {
+        "id": "nldates-obsidian",
+        "version": "0.6.4",
+        "sha256": "aa5fcc3163889def1b51e2dd1b89ea937fbb3d5bd366d7e3bd9135f7f3510629",
+        "directory": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\compatibility\\additional-example-plugins\\nldates-obsidian-0.6.4",
+        "minAppVersion": "1.0.0",
+        "assets": [
+          {
+            "name": "main.js",
+            "bytes": 354531,
+            "sha256": "aa5fcc3163889def1b51e2dd1b89ea937fbb3d5bd366d7e3bd9135f7f3510629"
+          },
+          {
+            "name": "manifest.json",
+            "bytes": 349,
+            "sha256": "af72a3303867be4305d876488949beec4a2d153b892e3febbcd103f808cc83df"
+          }
+        ],
+        "provenance": "operator-provided Example assets; plugin data.json excluded",
+        "status": "startup-and-settings-passed",
+        "unavailableModules": [],
+        "startupError": null,
+        "runtimeWarning": null,
+        "settingsText": "Natural Language DatesParser settingsDate formatOutput format for parsed datesWeek starts onWhich day to consider as the start of the weekLocale default (sunday)SundayMondayTuesdayWednesdayThursdayFridaySaturdayHotkey formatting settingsTime formatFormat for the hotkeys that include the current timeSeparatorSeparator between date and time for entries that have bothDate AutosuggestEnable date autosuggestInput dates with natural language. Open the suggest menu with @Add dates as link?If enabled, dates created via autosuggest will be wrapped in [[wikilinks]]Trigger phraseCharacter(s) that will cause the date autosuggest to open"
+      },
+      {
+        "id": "note-refactor-obsidian",
+        "version": "1.8.2",
+        "sha256": "aabda14d29ee42a70b9d7ef8a591e03c48d2f81bd27c470301a1feeb25633b23",
+        "directory": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\compatibility\\additional-example-plugins\\note-refactor-obsidian-1.8.2",
+        "assets": [
+          {
+            "name": "main.js",
+            "bytes": 231235,
+            "sha256": "aabda14d29ee42a70b9d7ef8a591e03c48d2f81bd27c470301a1feeb25633b23"
+          },
+          {
+            "name": "manifest.json",
+            "bytes": 225,
+            "sha256": "73697c533f735c25c858c0e7b0e53963ceb13901ac1a6cce67d645d112d86d5d"
+          },
+          {
+            "name": "styles.css",
+            "bytes": 138,
+            "sha256": "15a2e9cb8ec49ac0da06fab98a7925955ba65f43e25547d1f8887ed61775dbda"
+          }
+        ],
+        "provenance": "operator-provided Example assets; plugin data.json excluded",
+        "status": "startup-and-settings-passed",
+        "unavailableModules": [],
+        "startupError": null,
+        "runtimeWarning": null,
+        "settingsText": "Default location for new notesWhere newly created notes are placed.Vault folderSame folder as current fileIn the folder specified belowFile name prefixNewly created notes will have this prefixDate formats are supported {{date:YYYYMMDDHHmm}}and used with current date and time when note is created.For more syntax, refer to format referenceYour current file name prefix syntax looks like this:Transclude by defaultWhen content has been extracted/split into a new note, include a transclusion of the new noteNote link templateThe template used to generate the link to the extracted note. This overrides the Transclude by Default setting.Supported placeholders:{{date}} {{title}} {{link}} {{new_note_title}} {{new_note_link}} {{new_note_content}}Refactored note templateThe template used to generate the content for the refactored note.Supported placeholders:{{date}} {{title}} {{link}} {{new_note_title}} {{new_note_link}} {{new_note_content}}Exclude First LinePrevent the first line of selected/split note content from being included in the new note (only applies for first line as file name commands)Include HeadingInclude first line of selected/split note content as note heading (applies for both f"
+      },
+      {
+        "id": "omnisearch",
+        "version": "1.31.0",
+        "sha256": "d35f440ac513e057e06f4b32d06960abc1de0bd6feaa7188587feb1b86c428f4",
+        "directory": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\compatibility\\additional-example-plugins\\omnisearch-1.31.0",
+        "minAppVersion": "1.13.3",
+        "assets": [
+          {
+            "name": "main.js",
+            "bytes": 718821,
+            "sha256": "d35f440ac513e057e06f4b32d06960abc1de0bd6feaa7188587feb1b86c428f4"
+          },
+          {
+            "name": "manifest.json",
+            "bytes": 367,
+            "sha256": "26b1ffc250b1d90605f60c132f783e3148dd399e5baf5862040671d86294bc85"
+          },
+          {
+            "name": "styles.css",
+            "bytes": 2750,
+            "sha256": "c6a56b1a18ff867f12ebbb3a139060a249704281e1b449003ff487969621a2e6"
+          }
+        ],
+        "provenance": "operator-provided Example assets; plugin data.json excluded",
+        "status": "startup-and-settings-partial-node-dependency",
+        "unavailableModules": [
+          "http"
+        ],
+        "startupError": null,
+        "runtimeWarning": "Browser limitation: unavailable modules http. Use the desktop application for this plugin's Node-dependent features.",
+        "settingsText": "OmnisearchIndexing⚠️ Changing indexing settings will clear the cache, and requires a restart of Obsidian.\n        ⚠️ Omnisearch requires Text Extractor to index PDFs and images.\n        ⚠️ Omnisearch requires AI Image Analyzer to index images with AI.PDFs content indexing ⚠️ DisabledOmnisearch will use Text Extractor to index the content of your PDFs.Images OCR indexing ⚠️ DisabledOmnisearch will use Text Extractor to OCR your images and index their content.Documents content indexing ⚠️ DisabledOmnisearch will use Text Extractor to index the content of your office documents (currently .docx and .xlsx).Images AI indexing ⚠️ DisabledOmnisearch will use AI Image Analyzer to index the content of your images with AI.\n    ⚠️ If both AI Image Analyzer and Text Extractor are enabled, Text Extractor will only be used as a fallback.Index paths of unsupported files\n      Omnisearch can index filenames of \"unsupported\" files, such as e.g. .mp4\n      or non-extracted PDFs & images.\n      \"Obsidian setting\" will respect the value of \"Files & Links > Detect all file extensions\".YesNoObsidian settingSet frontmatter property key as titleIf you have a custom property in your notes that you want to u"
+      },
+      {
+        "id": "quickadd",
+        "version": "2.32.1",
+        "sha256": "6d6deb67254d1b73999a0dd72490e52086f1adddf9d55026a1a72ae111b827b1",
+        "directory": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\compatibility\\additional-example-plugins\\quickadd-2.32.1",
+        "minAppVersion": "1.13.0",
+        "assets": [
+          {
+            "name": "main.js",
+            "bytes": 1125566,
+            "sha256": "6d6deb67254d1b73999a0dd72490e52086f1adddf9d55026a1a72ae111b827b1"
+          },
+          {
+            "name": "manifest.json",
+            "bytes": 372,
+            "sha256": "b7610b4c1d37c2c73f781c294c1a380e731e797f9858d2d825e7facc1ac3add1"
+          },
+          {
+            "name": "styles.css",
+            "bytes": 42306,
+            "sha256": "9467ef3622cd1137ce5a0148e16de23b9f5be87bc8c204fb6050c48f8f29994d"
+          }
+        ],
+        "provenance": "operator-provided Example assets; plugin data.json excluded",
+        "status": "startup-and-settings-passed",
+        "unavailableModules": [],
+        "startupError": null,
+        "runtimeWarning": null,
+        "settingsText": "Choices & packages\n      \n      \n      \n    \n      \n      \n      \n     No choices yet A choice is an action QuickAdd can run: create a note, capture\n\t\t\t\ttext, or run a macro. Group them with folders. Learn more \n      \n      \n      \n     New folder  New choice  PackagesBundle or import QuickAdd automations as reusable packages. Export becomes available once you have a choice. Learn more about packagesExport package…Import package…InputUse multi-line input promptUse multi-line input prompt instead of single-line input prompt. Submit multi-line prompts with Ctrl/Cmd+Enter; Enter inserts a newline.One-page input for choicesCollect a choice's inputs in one form before it runs, instead of one prompt at a time. Works with Template and Capture choices, and with Macros whose scripts declare inputs. Template and Capture choices can override this individually. Learn more about one-page inputsTemplate foldersAdd folderNo folders yet. QuickAdd suggests templates from the whole vault.NotificationsAnnounce updatesDisplay release notes when a new version is installed. This includes new features, demo videos, and bug fixes.Every releaseFeature releasesNeverShow capture notificationsDisplay a notif"
+      },
+      {
+        "id": "templater-obsidian",
+        "version": "2.26.0",
+        "sha256": "c41ea9f4990934faa8efacabeda12222714d1d4c823e22724c8cc14789fa834e",
+        "directory": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\compatibility\\additional-example-plugins\\templater-obsidian-2.26.0",
+        "minAppVersion": "1.13.0",
+        "assets": [
+          {
+            "name": "main.js",
+            "bytes": 454312,
+            "sha256": "c41ea9f4990934faa8efacabeda12222714d1d4c823e22724c8cc14789fa834e"
+          },
+          {
+            "name": "manifest.json",
+            "bytes": 756,
+            "sha256": "91c9fa8510082fffa0b3d022aac4986e3b392295b1126e847ead7ed7289169b8"
+          },
+          {
+            "name": "styles.css",
+            "bytes": 4201,
+            "sha256": "67a6dd2d1d6dedca1287c334ca884ec4196433f71ca47388a0bd3eac14cf8b5f"
+          }
+        ],
+        "provenance": "operator-provided Example assets; plugin data.json excluded",
+        "status": "requires-desktop-node",
+        "unavailableModules": [
+          "util"
+        ],
+        "startupError": "Unsupported module without the desktop Node runtime: util",
+        "runtimeWarning": null
+      }
+    ],
+    "git": {
+      "automaticRoutinesDisabled": true,
+      "disablePush": true,
+      "remoteCount": 0,
+      "remoteOperationsPermitted": false,
+      "inheritedFsmonitorDisabled": false,
+      "capability": "requires-desktop-node"
+    },
+    "sharedApis": {
+      "insertion": {
+        "once": 1,
+        "repeat": 2,
+        "cancelled": 0
+      },
+      "arrayRemoval": "all-matching-subscribers",
+      "editorSuggestions": "actual-provider-registration-snapshots-and-removal",
+      "classicEditors": "genuine-CM5-without-CM6-substitution",
+      "domTypes": "local-and-cross-window",
+      "migration": "actual-adoption-and-cancellation",
+      "styles": "actual-inline-and-computed",
+      "momentFormat": "preview-and-change-passed",
+      "settingOwnership": "real-disabled-controls",
+      "icons": "catalog-custom-clone-and-removal-passed",
+      "submenus": "real-keyboard-action-and-dismissal"
+    },
+    "markdownEmbed": {
+      "path": "Embedded contract probe.md",
+      "reading": "actual-Markdown",
+      "editor": "owned-CodeMirror",
+      "persistence": "exact-physical-text"
+    },
+    "declarativeSettings": {
+      "openingWrites": 0,
+      "asyncValidation": "visible-rejection-without-write",
+      "validWrites": 1,
+      "renderCleanups": 2,
+      "navigation": "nested-and-back"
+    },
+    "confirmation": {
+      "actions": 1,
+      "duplicateActionsBlocked": true,
+      "closeWaitedForPhysicalAction": true
+    },
+    "workflows": {
+      "Linter delayed settings persist on owned disable": {
+        "status": "passed",
+        "setting": "lintOnSave",
+        "previous": false,
+        "physicalValue": true,
+        "elapsedMs": 163,
+        "disabledBeforeFiveSecondDeadline": true,
+        "reloadedPhysicalValue": true
+      },
+      "QuickAdd nested settings and physical persistence": {
+        "status": "passed",
+        "page": "Advanced",
+        "changed": "showInputCancellationNotification",
+        "physicalValue": true,
+        "offlineProtectionRetained": true
+      },
+      "Templater security consent and cancellation": {
+        "status": "not-run-requires-desktop-node",
+        "reason": "Exact 2.26.0 requests util and child_process during desktop-UI startup. The standalone browser supplies neither a fake process nor altered platform flags."
+      },
+      "Natural Language Dates owned protocol callback": {
+        "status": "passed",
+        "action": "nldates",
+        "path": "2031-03-17.md",
+        "physicalTextPreserved": true,
+        "osUrlAssociation": "not-claimed"
+      },
+      "Kanban board rendering and physical checkbox persistence": {
+        "status": "passed",
+        "view": "kanban",
+        "checkedCardPersisted": true
+      },
+      "Configured restoration and owned disable cleanup": {
+        "status": "passed",
+        "restoredRunning": [
+          "nldates-obsidian",
+          "note-refactor-obsidian",
+          "obsidian-admonition",
+          "obsidian-icon-folder",
+          "obsidian-kanban",
+          "obsidian-linter",
+          "omnisearch",
+          "quickadd"
+        ],
+        "originalConfigurationBytesPreserved": true,
+        "removedOwnedCommandsStylesAndSettings": true,
+        "unsupportedConfiguredIdsRetained": [
+          "obsidian-git",
+          "templater-obsidian"
+        ]
+      }
+    },
+    "kanbanRouting": {
+      "loaded": true,
+      "cache": {
+        "kanban-plugin": "board"
+      }
+    },
+    "kanbanAfterClick": {
+      "errors": [],
+      "cards": [
+        {
+          "title": "Owned compatibility card",
+          "checked": true,
+          "checkChar": "x"
+        }
+      ]
+    },
+    "consoleErrors": [
+      "Error: Unsupported module without the desktop Node runtime: path\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:obsidian-git:107:9287)\n    at PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92757:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+      "Omnisearch - Failed to load API server Error: Unsupported module without the desktop Node runtime: http\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:omnisearch:166:6693)\n    at eval (vault-plugin:omnisearch:8:212)\n    at eval (vault-plugin:omnisearch:166:7882)",
+      "TypeError: Cannot read properties of undefined (reading 'functions_generator')\n    at ta.onunload (vault-plugin:templater-obsidian:60:32839)\n    at http://127.0.0.1:15848/js/editor-host.js:68076:180\n    at http://127.0.0.1:15848/js/editor-host.js:68078:19",
+      "Error: Unsupported module without the desktop Node runtime: util\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at new bn (vault-plugin:templater-obsidian:18:8514)\n    at new kn (vault-plugin:templater-obsidian:19:1656)\n    at new jn (vault-plugin:templater-obsidian:19:2191)\n    at new Wt (vault-plugin:templater-obsidian:20:74754)\n    at ta.onload (vault-plugin:templater-obsidian:60:32173)\n    at async ta.load (http://127.0.0.1:15848/js/editor-host.js:68059:5)\n    at async PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92772:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9",
+      "Omnisearch - Failed to load API server Error: Unsupported module without the desktop Node runtime: http\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:omnisearch:166:6693)\n    at eval (vault-plugin:omnisearch:8:212)\n    at eval (vault-plugin:omnisearch:166:7882)",
+      "Error: Could not restore community plugin obsidian-git: Unsupported module without the desktop Node runtime: path\n    at PluginHost.loadConfigured (http://127.0.0.1:15848/js/editor-host.js:92609:21)\n    at async http://127.0.0.1:15848/js/editor-host.js:92623:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+      "TypeError: Cannot read properties of undefined (reading 'functions_generator')\n    at ta.onunload (vault-plugin:templater-obsidian:60:32839)\n    at http://127.0.0.1:15848/js/editor-host.js:68076:180\n    at http://127.0.0.1:15848/js/editor-host.js:68078:19",
+      "Error: Could not restore community plugin templater-obsidian: Unsupported module without the desktop Node runtime: util\n    at PluginHost.loadConfigured (http://127.0.0.1:15848/js/editor-host.js:92609:21)\n    at async http://127.0.0.1:15848/js/editor-host.js:92623:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+      "TypeError: Cannot read properties of null (reading 'close')\n    at bd.onunload (vault-plugin:omnisearch:166:10239)\n    at async http://127.0.0.1:15848/js/editor-host.js:68078:13\n    at async bd.unload (http://127.0.0.1:15848/js/editor-host.js:68104:7)\n    at async bd.unloadAndWait (http://127.0.0.1:15848/js/editor-host.js:68111:7)\n    at async PluginHost.disable (http://127.0.0.1:15848/js/editor-host.js:92828:5)\n    at async http://127.0.0.1:15848/js/editor-host.js:92684:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)"
+    ],
+    "knownLimitations": [
+      "Error: Unsupported module without the desktop Node runtime: path\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:obsidian-git:107:9287)\n    at PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92757:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+      "Omnisearch - Failed to load API server Error: Unsupported module without the desktop Node runtime: http\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:omnisearch:166:6693)\n    at eval (vault-plugin:omnisearch:8:212)\n    at eval (vault-plugin:omnisearch:166:7882)",
+      "TypeError: Cannot read properties of undefined (reading 'functions_generator')\n    at ta.onunload (vault-plugin:templater-obsidian:60:32839)\n    at http://127.0.0.1:15848/js/editor-host.js:68076:180\n    at http://127.0.0.1:15848/js/editor-host.js:68078:19",
+      "Error: Unsupported module without the desktop Node runtime: util\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at new bn (vault-plugin:templater-obsidian:18:8514)\n    at new kn (vault-plugin:templater-obsidian:19:1656)\n    at new jn (vault-plugin:templater-obsidian:19:2191)\n    at new Wt (vault-plugin:templater-obsidian:20:74754)\n    at ta.onload (vault-plugin:templater-obsidian:60:32173)\n    at async ta.load (http://127.0.0.1:15848/js/editor-host.js:68059:5)\n    at async PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92772:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9",
+      "Omnisearch - Failed to load API server Error: Unsupported module without the desktop Node runtime: http\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:omnisearch:166:6693)\n    at eval (vault-plugin:omnisearch:8:212)\n    at eval (vault-plugin:omnisearch:166:7882)",
+      "Error: Could not restore community plugin obsidian-git: Unsupported module without the desktop Node runtime: path\n    at PluginHost.loadConfigured (http://127.0.0.1:15848/js/editor-host.js:92609:21)\n    at async http://127.0.0.1:15848/js/editor-host.js:92623:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+      "TypeError: Cannot read properties of undefined (reading 'functions_generator')\n    at ta.onunload (vault-plugin:templater-obsidian:60:32839)\n    at http://127.0.0.1:15848/js/editor-host.js:68076:180\n    at http://127.0.0.1:15848/js/editor-host.js:68078:19",
+      "Error: Could not restore community plugin templater-obsidian: Unsupported module without the desktop Node runtime: util\n    at PluginHost.loadConfigured (http://127.0.0.1:15848/js/editor-host.js:92609:21)\n    at async http://127.0.0.1:15848/js/editor-host.js:92623:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+      "TypeError: Cannot read properties of null (reading 'close')\n    at bd.onunload (vault-plugin:omnisearch:166:10239)\n    at async http://127.0.0.1:15848/js/editor-host.js:68078:13\n    at async bd.unload (http://127.0.0.1:15848/js/editor-host.js:68104:7)\n    at async bd.unloadAndWait (http://127.0.0.1:15848/js/editor-host.js:68111:7)\n    at async PluginHost.disable (http://127.0.0.1:15848/js/editor-host.js:92828:5)\n    at async http://127.0.0.1:15848/js/editor-host.js:92684:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)"
+    ],
+    "browserLimitations": [
+      {
+        "plugin": "obsidian-git",
+        "stage": "startup",
+        "requiredModules": [
+          "path"
+        ],
+        "scope": "Not loaded; real Node/Git backend unavailable."
+      },
+      {
+        "plugin": "templater-obsidian",
+        "stage": "startup-and-failed-load-cleanup",
+        "requiredModules": [
+          "util",
+          "child_process"
+        ],
+        "scope": "Not loaded; exact 2.26.0 starts its system-command module in desktop UI mode and its own partial-start cleanup also fails."
+      },
+      {
+        "plugin": "omnisearch",
+        "stage": "optional-http-and-cleanup",
+        "requiredModules": [
+          "http",
+          "url"
+        ],
+        "scope": "Startup/settings run, but the HTTP module cannot construct its server; the plugin's unconditional null-server close fails. Not complete browser compatibility."
+      }
+    ],
+    "expectedShutdownErrors": [],
+    "unexpectedConsoleErrors": [],
+    "uncaughtRuntimeErrors": []
+  },
+  "artifactStability": "verified-through-scenario",
+  "consoleErrors": [
+    "Error: Unsupported module without the desktop Node runtime: node:fs\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:node-only:3:1)\n    at PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92757:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+    "fail: RonSijm.Slopsidian.Components.Pages.Home[0]\n      Vault operation failed\nMicrosoft.JSInterop.JSException: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\nError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:15848/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:15848/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:15848/js/editor-host.js:43921:20)\n    at async DocumentSession.persist (http://127.0.0.1:15848/js/editor-host.js:71611:21)\n    at async DocumentSession.save (http://127.0.0.1:15848/js/editor-host.js:71587:7)\n    at async Workspace.saveAll (http://127.0.0.1:15848/js/editor-host.js:73248:7)\n    at async App.saveAll (http://127.0.0.1:15848/js/editor-host.js:91026:5)\n    at async Commands.execute (http://127.0.0.1:15848/js/editor-host.js:90811:7)\n    at async DesktopUI.perform (http://127.0.0.1:15848/js/editor-host.js:93358:5)\n    at async Module.performAction (http://127.0.0.1:15848/js/editor-host.js:95101:3)\n   at Microsoft.JSInterop.JSRuntime.<InvokeAsync>d__23`1[[Microsoft.JSInterop.Infrastructure.IJSVoidResult, Microsoft.JSInterop, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]].MoveNext()\n   at Microsoft.JSInterop.JSObjectReferenceExtensions.InvokeVoidAsync(IJSObjectReference , String , Object[] )\n   at RonSijm.Slopsidian.Components.Pages.Home.<>c__DisplayClass47_0.<<WorkspaceActionAsync>b__0>d.MoveNext()\n--- End of stack trace from previous location ---\n   at RonSijm.Slopsidian.Components.Pages.Home.RunAsync(Func`1 operation)",
+    "Error: Unsupported module without the desktop Node runtime: path\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:obsidian-git:107:9287)\n    at PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92757:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+    "Omnisearch - Failed to load API server Error: Unsupported module without the desktop Node runtime: http\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:omnisearch:166:6693)\n    at eval (vault-plugin:omnisearch:8:212)\n    at eval (vault-plugin:omnisearch:166:7882)",
+    "TypeError: Cannot read properties of undefined (reading 'functions_generator')\n    at ta.onunload (vault-plugin:templater-obsidian:60:32839)\n    at http://127.0.0.1:15848/js/editor-host.js:68076:180\n    at http://127.0.0.1:15848/js/editor-host.js:68078:19",
+    "Error: Unsupported module without the desktop Node runtime: util\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at new bn (vault-plugin:templater-obsidian:18:8514)\n    at new kn (vault-plugin:templater-obsidian:19:1656)\n    at new jn (vault-plugin:templater-obsidian:19:2191)\n    at new Wt (vault-plugin:templater-obsidian:20:74754)\n    at ta.onload (vault-plugin:templater-obsidian:60:32173)\n    at async ta.load (http://127.0.0.1:15848/js/editor-host.js:68059:5)\n    at async PluginHost.enable (http://127.0.0.1:15848/js/editor-host.js:92772:7)\n    at async http://127.0.0.1:15848/js/editor-host.js:92681:9",
+    "Omnisearch - Failed to load API server Error: Unsupported module without the desktop Node runtime: http\n    at PluginHost.require (http://127.0.0.1:15848/js/editor-host.js:92816:11)\n    at http://127.0.0.1:15848/js/editor-host.js:92757:31\n    at eval (vault-plugin:omnisearch:166:6693)\n    at eval (vault-plugin:omnisearch:8:212)\n    at eval (vault-plugin:omnisearch:166:7882)",
+    "Error: Could not restore community plugin obsidian-git: Unsupported module without the desktop Node runtime: path\n    at PluginHost.loadConfigured (http://127.0.0.1:15848/js/editor-host.js:92609:21)\n    at async http://127.0.0.1:15848/js/editor-host.js:92623:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+    "TypeError: Cannot read properties of undefined (reading 'functions_generator')\n    at ta.onunload (vault-plugin:templater-obsidian:60:32839)\n    at http://127.0.0.1:15848/js/editor-host.js:68076:180\n    at http://127.0.0.1:15848/js/editor-host.js:68078:19",
+    "Error: Could not restore community plugin templater-obsidian: Unsupported module without the desktop Node runtime: util\n    at PluginHost.loadConfigured (http://127.0.0.1:15848/js/editor-host.js:92609:21)\n    at async http://127.0.0.1:15848/js/editor-host.js:92623:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)",
+    "TypeError: Cannot read properties of null (reading 'close')\n    at bd.onunload (vault-plugin:omnisearch:166:10239)\n    at async http://127.0.0.1:15848/js/editor-host.js:68078:13\n    at async bd.unload (http://127.0.0.1:15848/js/editor-host.js:68104:7)\n    at async bd.unloadAndWait (http://127.0.0.1:15848/js/editor-host.js:68111:7)\n    at async PluginHost.disable (http://127.0.0.1:15848/js/editor-host.js:92828:5)\n    at async http://127.0.0.1:15848/js/editor-host.js:92684:9\n    at async run (http://127.0.0.1:15848/js/editor-host.js:92549:16)"
+  ],
+  "exceptions": [],
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\evidence\\additional-plugins-web-smoke-errors.jsonl",
+    "nativePaths": [],
+    "records": 6,
+    "expected": 6,
+    "unexpected": [],
+    "sha256": "c076dbb31132c7602672017a844f2def55001f599e8c673ed25bb7ae1e0cbd76",
+    "includesFinalTeardown": true
+  },
+  "completedAt": "2026-10-27T16:42:59.497Z"
+}

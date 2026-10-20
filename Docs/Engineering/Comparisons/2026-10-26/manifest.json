@@ -1,0 +1,203 @@
+{
+  "status": "passed",
+  "capturedAt": "2026-10-26T08:05:51.417Z",
+  "scope": "Comparison evidence validation, not product test-suite or whole-application parity.",
+  "candidate": ".runtime/attachment-import-validation",
+  "candidateSnapshot": ".runtime/evidence/attachment-import-validation-snapshot.json",
+  "sourceFilesMatched": 523,
+  "fixtures": [
+    {
+      "vault": "obsidian-vault",
+      "path": "Tags.md",
+      "sha256": "3a7bc5d8fa2c2f0daa305081f5081eef95ef83f82d01390ed9ad2e8b13d48775"
+    },
+    {
+      "vault": "obsidian-vault",
+      "path": "Rendering.md",
+      "sha256": "97773449ec32b081176798aa5774732863c1023f44f930ab431943045f058987"
+    },
+    {
+      "vault": "obsidian-vault",
+      "path": "Target.md",
+      "sha256": "d500ebbbb68588aba8b6b8078ed276e05fe21914329f9fc049e28acd945c894a"
+    },
+    {
+      "vault": "obsidian-vault",
+      "path": "Pixel.png",
+      "sha256": "ed40521d499663eedff80ca715a3d70e967a1a65228c019b4e3e52d7e6e47ece"
+    },
+    {
+      "vault": "slopsidian-vault",
+      "path": "Tags.md",
+      "sha256": "3a7bc5d8fa2c2f0daa305081f5081eef95ef83f82d01390ed9ad2e8b13d48775"
+    },
+    {
+      "vault": "slopsidian-vault",
+      "path": "Rendering.md",
+      "sha256": "97773449ec32b081176798aa5774732863c1023f44f930ab431943045f058987"
+    },
+    {
+      "vault": "slopsidian-vault",
+      "path": "Target.md",
+      "sha256": "d500ebbbb68588aba8b6b8078ed276e05fe21914329f9fc049e28acd945c894a"
+    },
+    {
+      "vault": "slopsidian-vault",
+      "path": "Pixel.png",
+      "sha256": "ed40521d499663eedff80ca715a3d70e967a1a65228c019b4e3e52d7e6e47ece"
+    }
+  ],
+  "reading": {
+    "obsidian": {
+      "font-size": "14px",
+      "font-family": "\"??\", \"??\", ui-sans-serif, -apple-system, BlinkMacSystemFont, system-ui, \"Segoe UI\", \"Google Sans Flex\", Roboto, \"Inter Variable\", Inter, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", sans-serif",
+      "font-weight": "400",
+      "font-style": "normal",
+      "line-height": "14px",
+      "color": "rgb(166, 138, 249)",
+      "background-color": "rgba(138, 92, 245, 0.1)",
+      "padding-left": "9.1px",
+      "padding-right": "9.1px",
+      "padding-top": "3.5px",
+      "padding-bottom": "3.5px",
+      "border-radius": "28px",
+      "border-top-left-radius": "28px",
+      "border-top-right-radius": "28px",
+      "border-width": "0px",
+      "text-decoration": "none",
+      "display": "inline"
+    },
+    "slopsidian": {
+      "font-size": "13.125px",
+      "font-family": "\"Segoe UI\", sans-serif",
+      "font-weight": "400",
+      "font-style": "normal",
+      "line-height": "13.125px",
+      "color": "rgb(181, 161, 236)",
+      "background-color": "rgba(138, 92, 245, 0.1)",
+      "padding-left": "8.53125px",
+      "padding-right": "8.53125px",
+      "padding-top": "3.28125px",
+      "padding-bottom": "3.28125px",
+      "border-radius": "26.25px",
+      "border-top-left-radius": "26.25px",
+      "border-top-right-radius": "26.25px",
+      "border-width": "0px",
+      "text-decoration": "none",
+      "display": "inline"
+    }
+  },
+  "historicalReferenceSizeAndColorUnchanged": true,
+  "files": [
+    {
+      "path": "obsidian-tags-reading.json",
+      "bytes": 66759,
+      "sha256": "4387b434469c6d21b7e54b21d4f1f462d34598666cf3164f4c4c84aa8912965b"
+    },
+    {
+      "path": "obsidian-tags-reading.png",
+      "bytes": 50943,
+      "sha256": "8a93e17ae05be14ef6533f28c8fb298f60c33042ba66acb6c1431147524e4daf"
+    },
+    {
+      "path": "slopsidian-tags-reading-1280.json",
+      "bytes": 86685,
+      "sha256": "6297082d5b719f38dee7d44cd8bcb691b9cfe1dec542264236a1d6c2f2b7e6a1"
+    },
+    {
+      "path": "slopsidian-tags-reading-1280.png",
+      "bytes": 52331,
+      "sha256": "721c5a3be6f4e22344c105d0b55c7c7a6521da53a32998efcfc1165f96252ee3"
+    },
+    {
+      "path": "obsidian-tags-live.json",
+      "bytes": 47933,
+      "sha256": "01c098c170362eb99f59f4883eff6886231890965d20823505ba1bde56760097"
+    },
+    {
+      "path": "obsidian-tags-live.png",
+      "bytes": 51967,
+      "sha256": "ce6ab8a50bf296f9bef868eb00dd1848ec4d179b7a411cc8eb5d812d16e26802"
+    },
+    {
+      "path": "slopsidian-tags-live.json",
+      "bytes": 71983,
+      "sha256": "971930a8f8353526f0e1ff1cac1c6d93b967b15baca0f277913d7f8f0801aa47"
+    },
+    {
+      "path": "slopsidian-tags-live.png",
+      "bytes": 56422,
+      "sha256": "523036f58820e781db8aff88d29467ab3b43c4528ea3fe8dbd1add521d4f55d1"
+    },
+    {
+      "path": "obsidian-tags-source.json",
+      "bytes": 48110,
+      "sha256": "aa6fd621873645c55e4d49e9678a875a9820321a45ef2e60434c4112d8122fff"
+    },
+    {
+      "path": "obsidian-tags-source.png",
+      "bytes": 54956,
+      "sha256": "edc99c4a1d98ff6234aeb12685240c6cd1b7098cdd6a5ee89507fb59c9c4fb98"
+    },
+    {
+      "path": "slopsidian-tags-source.json",
+      "bytes": 71499,
+      "sha256": "1b61945e57cea905f9e14783b1d25fad5f9b6421cd9d80c9a83bc232e8a572c3"
+    },
+    {
+      "path": "slopsidian-tags-source.png",
+      "bytes": 49613,
+      "sha256": "02216b05f38005f9228af53032aab373044968a8e9c5fe27867adab868cb298d"
+    },
+    {
+      "path": "obsidian-rendering-and-bracket-search.json",
+      "bytes": 31540,
+      "sha256": "25e7edceef93691d7ae00c775a1f64aabd47d8667fa7b8c37b645b9d0b0b1e2f"
+    },
+    {
+      "path": "obsidian-rendering-and-bracket-search.png",
+      "bytes": 53337,
+      "sha256": "cb08ad8e45391b1767b26ace9ea508ae1f962a6efec80dccb557de36781022f8"
+    },
+    {
+      "path": "slopsidian-rendering.json",
+      "bytes": 51409,
+      "sha256": "16473dec15a36bad3a2bca5ddefbb225150c595a051b0bff9a4e95f91f60322b"
+    },
+    {
+      "path": "slopsidian-rendering.png",
+      "bytes": 50495,
+      "sha256": "6c3cc75459fa76081ddb531206fe995349f132be66beb624abf3379faee502d6"
+    },
+    {
+      "path": "slopsidian-tag-bracket-search-final.json",
+      "bytes": 87310,
+      "sha256": "8afac786c5ee172e0918375edbdf229a1389bd818ef726644ed69ee12b47c13c"
+    },
+    {
+      "path": "slopsidian-tag-bracket-search-final.png",
+      "bytes": 57996,
+      "sha256": "37906e16dceda475fd458c067d4d1d170d781ae3a59bc2858122e48d68c2d5ad"
+    },
+    {
+      "path": "slopsidian-tag-label-search.json",
+      "bytes": 87326,
+      "sha256": "b92d1631c9242f7bcd0ef1da46bfa6e09b3814b689bac97edacc4b0237a60289"
+    },
+    {
+      "path": "slopsidian-tag-label-search.png",
+      "bytes": 57565,
+      "sha256": "25c6f48def03cfd013669c8167da856310add48cc8fa83be561ed63b23395968"
+    },
+    {
+      "path": "slopsidian-tag-project-search.json",
+      "bytes": 87682,
+      "sha256": "01416fdeaffef19e2acbec479ca9cdea4502c3be2498bf80a5fa2678a6bc8348"
+    },
+    {
+      "path": "slopsidian-tag-project-search.png",
+      "bytes": 61162,
+      "sha256": "5456642a0b5a44b23599075ba8c1ac8a6b55f7089f7de4cdee20b564beb88694"
+    }
+  ]
+}

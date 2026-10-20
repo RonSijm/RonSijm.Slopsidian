@@ -1,0 +1,44 @@
+[
+  {
+    "name": "tabs-smoke",
+    "sourceFingerprint": "323b7e5eb9cc437d25fd453741f0d791930104b659ac974e2b2b8e07ce8f6e35",
+    "transport": 4,
+    "intended": 0,
+    "unexpected": []
+  },
+  {
+    "name": "tabs-web-smoke",
+    "sourceFingerprint": "323b7e5eb9cc437d25fd453741f0d791930104b659ac974e2b2b8e07ce8f6e35",
+    "transport": 0,
+    "intended": 2,
+    "unexpected": []
+  },
+  {
+    "name": "core-verification-smoke",
+    "sourceFingerprint": "323b7e5eb9cc437d25fd453741f0d791930104b659ac974e2b2b8e07ce8f6e35",
+    "transport": 37,
+    "intended": 11,
+    "unexpected": []
+  },
+  {
+    "name": "core-verification-web-smoke",
+    "sourceFingerprint": "323b7e5eb9cc437d25fd453741f0d791930104b659ac974e2b2b8e07ce8f6e35",
+    "transport": 0,
+    "intended": 13,
+    "unexpected": []
+  },
+  {
+    "name": "core-status-smoke",
+    "sourceFingerprint": "323b7e5eb9cc437d25fd453741f0d791930104b659ac974e2b2b8e07ce8f6e35",
+    "transport": 3,
+    "intended": 0,
+    "unexpected": []
+  },
+  {
+    "name": "core-status-web-smoke",
+    "sourceFingerprint": "323b7e5eb9cc437d25fd453741f0d791930104b659ac974e2b2b8e07ce8f6e35",
+    "transport": 0,
+    "intended": 2,
+    "unexpected": []
+  }
+]

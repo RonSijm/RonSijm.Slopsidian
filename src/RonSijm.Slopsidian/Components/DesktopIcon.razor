@@ -1,0 +1,24 @@
+<svg class="@($"svg-icon lucide-{IconId}")" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="@($"lucide-icons.svg#{IconId}")"></use></svg>
+
+@code {
+    [Parameter, EditorRequired]
+    public string Name { get; set; } = "";
+
+    private string IconId => Name.StartsWith("lucide-", StringComparison.Ordinal) ? Name[7..] : Name switch
+    {
+        "close" or "cross" => "x",
+        "sync" or "refresh" => "refresh-cw",
+        "chevron" => "chevron-right",
+        "new-note" or "edit" => "square-pen",
+        "command" => "square-terminal",
+        "collapse" => "chevrons-down-up",
+        "more" => "ellipsis-vertical",
+        "outline" => "list",
+        "links" => "link-2",
+        "dice" => "dice-5",
+        "up-chevron-glyph" => "chevron-up",
+        "down-chevron-glyph" => "chevron-down",
+        "any-key" => "keyboard",
+        _ => Name
+    };
+}

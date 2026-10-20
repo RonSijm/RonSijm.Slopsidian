@@ -1,0 +1,440 @@
+{
+  "status": "passed",
+  "scope": "reviewed-theme-management",
+  "startedAt": "2026-11-02T05:20:19.696Z",
+  "checks": [
+    "Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.",
+    "The actual OS folder picker grants a live external vault, including binary attachment inventory.",
+    "Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.",
+    "External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.",
+    "The shared note-creation UI creates folders and writes a new Markdown note directly to disk.",
+    "Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.",
+    "Core enablement and the unchanged upstream sample plugin save settings into the selected vault.",
+    "Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.",
+    "External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.",
+    "A real page reload is blocked while a buffer has unsaved changes.",
+    "Cancelling the native folder picker retains the selected vault and dirty buffer.",
+    "Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.",
+    "A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.",
+    "No community-theme catalog or theme download request was made at startup.",
+    "An external appearance.json theme selection is adopted by the lifecycle-owned watcher without reload, retaining the unsaved editor text, selection and CM instance.",
+    "External theme-CSS edits and newly enabled snippets are re-read and applied while the editor state is retained.",
+    "Malformed external appearance.json and unsupported external CSS are reported, retain the exact accepted styles and editor state, and later valid files are adopted.",
+    "Browsing and reviewing are explicit; installing writes the exact reviewed BOM/CRLF bytes and manifest, does not select the theme and leaves the active styles and editor untouched.",
+    "A stale review is refused by the host version guard and the locally edited theme bytes are retained.",
+    "An external manifest.json edit after review is refused even though the CSS is unchanged, and every installed byte is retained.",
+    "A fresh review updates the installed theme to the exact reviewed bytes, and the external selection adopts it without disturbing the editor.",
+    "Switching the color scheme re-renders an already mounted Mermaid diagram in place (same container, decoded replacement image, no SVG in the application DOM) without touching the editor.",
+    "A selected-folder bundle with a relative image installs the exact CSS, manifest (unknown keys) and image bytes without enabling trusted local resources.",
+    "The original editor leaf, view, file and CodeMirror instance, text and selection were retained through every theme step; real Ctrl+Z removed the seeded edit and Ctrl+Y restored its exact text with CodeMirror's history caret on the same leaf/view/CM.",
+    "Resource-only external changes are watched and adopted; a deleted resource is reported while the accepted styles and editor are retained; restoring it is adopted again.",
+    "A theme with a remote URL is refused at review with an explicit reason and nothing is written.",
+    "A read-only GitHub vault refuses theme install (disabled control and host refusal) with unchanged cached blobs and no API/raw requests."
+  ],
+  "rendererNodeIntegration": false,
+  "realExternalDirectoryPicker": true,
+  "pickerStartsInDisposableDocuments": true,
+  "endpoint": "http://127.0.0.1:44324/",
+  "sha256": {
+    "index.html": "068489725098e797edcd881c07e08b03f0caadd92ee16ff60aa835013e8b75b4",
+    "app.css": "ae1673d19d280d8164803b06abefe297c56ba61be4c643a16b504fd4ad9f2b63",
+    "browser.css": "ed3e394e26d5d6d9d50556f278c1e029ea1bebcd96e911b32c19ed9d89eaf819",
+    "icons.svg": "a080b921f421efcd5d6681e4f52a4e79ca1301c0a1eedbe34d008e4d29a38bfe",
+    "icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "core-verification.json": "28e9d13db355a7fa73ba06ea12e72c0a0054ed956d74e35a7732b94773941dfe",
+    "lucide-icons.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+    "lucide-icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "mermaid-frame.html": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333",
+    "js/mermaid-frame.js": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62",
+    "js/mermaid-api.js": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a",
+    "js/mermaid-api.js.LEGAL.txt": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1",
+    "js/mermaid-licenses.txt": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735",
+    "js/katex-license.txt": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3",
+    "js/pdf-api.js": "31fda904c82df0457d3b22835859127122667a9264bea635d7bc606c578ae6a8",
+    "js/pdf-worker.js": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6",
+    "js/pdf-licenses.txt": "f812858b82bbea82fb78fc8740dad809e676e4d95fe458faaa143959539879ef",
+    "js/pdf/wasm/jbig2.wasm": "466f45c2a61a698152fb5400c27e56ff2ceb73dcb71fde3fc366a502308eaab0",
+    "js/pdf/wasm/openjpeg.wasm": "95e5002597af0824004aa57b1900fe019715db389e37640b1e58395e42f00cc5",
+    "js/pdf/wasm/qcms_bg.wasm": "663d86126d5f5fcb1c61490f94353e2a8375660b8c5498ab3ebab5a34b08800e",
+    "js/pdf/cmaps/Adobe-Japan1-UCS2.bcmap.txt": "66c5d0dc4964f4093e77b194023f3a0f689324028ec8330e1e1d0570bcba7c2f",
+    "js/pdf/standard_fonts/LiberationSans-Regular.ttf.txt": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f",
+    "js/editor-host.js": "43ce13df36eca95d961c8d535c72360168b275191740b4102b93df2ac1d9ddde",
+    "js/editor-host.css": "c890222c40eebe8c8b15549432dc161fac9f93abd81b814623375394952351c1",
+    "js/codemirror-license.txt": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07",
+    "js/hypermd-license.txt": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b",
+    "js/web-reader-extract.js": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601",
+    "js/web-reader-extract.js.LEGAL.txt": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a",
+    "js/web-reader-licenses.txt": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b",
+    "js/browser-host.js": "66ad17b0620627ae0f81c4f67187d037fa8388c175427f9c9997332de8a73791",
+    "js/search-worker.js": "bc67555fe01327add64d94848b1080cf7b8d6f24e8f84a64b68d7443816779ba",
+    "js/graph-worker.js": "2256d2b9e3378b9c5bd07f4193fcec963ff42849a31e7252ad7e951d0fa95d29",
+    "js/bases-worker.js": "d32466512fd6829f7aaed9b4fcfc54f5fde56ca7af136709e26a9a1dee6ffbff",
+    "_framework/RonSijm.Slopsidian.Web.0trwa1ij4i.wasm": "3cddd3e06cc75f7a84c3d5d148744748a0e0ee725baa10166ac9bd465df60442"
+  },
+  "scenarioSha256": {
+    "web-smoke.mjs": "84c7f465fd6edc0fa125e9824555fd1e60eaad5b7ada3ff96f61831a3770a7f2",
+    "web-smoke-host.cjs": "2c8951f8de7187959d217b1da3498eedf937c60f0c02346cc046c3392c045e95",
+    "web-smoke-popup-policy.cjs": "3d64b661b3e8d0deeb67832c6c44bfb37d053e52ce4e89ed25d853401dd819ab",
+    "core-foundation-scenarios.mjs": "d56b06ef4308df338f27d7dab11ea1166eda4c8e19659a9b08f3b7ce3930a13d",
+    "core-scenarios.mjs": "f0dc3a460bef11c0d386a791c9e87a8e52f30f6cf86edcabc7d1de468bce7c90",
+    "core-verification-targets.mjs": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86",
+    "core-verification-scenarios.mjs": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539",
+    "tab-movement-scenarios.mjs": "4c07a8fff96e95c439552e46fd14eb09d6047ae43b9a75a64425ac8a3a069daa",
+    "workspace-docking-scenarios.mjs": "342399fa3bb21a7be54b02f28b36cc7fe30fa56c9a68e40f952af4c8bf2dc98f",
+    "workspace-history-scenarios.mjs": "08090dd6a2fa70d43d8dba2a20f815af2a6b590f0de84a4c65118ea5e7526052",
+    "workspace-popout-scenarios.mjs": "30a82d05356ee0f28e79d888a5f634309ad8c416c7044e7e9b2031ac0ba70af0",
+    "webviewer-scenarios.mjs": "9cdb17cc1af4cc153be71c1e4e8e400ac86f0d1ba8acbf21871d871b2712522f",
+    "pane-resize-scenarios.mjs": "8c6d2f0c6184de5fd21eeb1d977b8737e5bf12f83f07f5a73d1e9e0132d80ac0",
+    "reading-scenarios.mjs": "3fe9027fa9ffafee0f9af8ab25ad66e97b12b76d5d57ca5ea59959e12705e5aa",
+    "outgoing-scenarios.mjs": "435bc89bb05886520623c161fdf104ab9a54543435988ee441516376f3ae3659",
+    "discovery-scenarios.mjs": "ef01d1ed135e3ce426b75f06bfb313922880e115c26bb35b8feaa076a146f16b",
+    "editor-chrome-scenarios.mjs": "85d6db8cde4903c586b37d601e986cc14a853e18dd5f6d39ae1b6ea1c721fdda",
+    "suggestion-scenarios.mjs": "c806e6913e8ac96a4843ed802a20e577e96dd550530c9959de9570a757312bda",
+    "renderer-scenarios.mjs": "a44d423a43febf3a0fafe018027a91470ef289d4af106ee84878536d0599947a",
+    "render-child-scenarios.mjs": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611",
+    "templater-scenarios.mjs": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594",
+    "organization-scenarios.mjs": "cf4fde63a11939dec90b46f6c0e9d8d12dc58bea663ece94ad054d305f4cb09b",
+    "file-scenarios.mjs": "c09e792fc21556a9d06034d2e9f480a29eebddcfd55030494a237ae55163425d",
+    "graph-scenarios.mjs": "8164dba360566a680af5d46259db224c0637ae39308b8a9130e01b62fa5c5abe",
+    "canvas-scenarios.mjs": "7877f819f771b585c5b408a7ae6c669cf6db70d0b51a79c7e15fd2a961abfe1d",
+    "preview-scenarios.mjs": "d04ea8fe3487490711b64a18fdf40a55d01e9abc10834ec182116e86d1d386bc",
+    "editing-tools-scenarios.mjs": "f14df21d0e8f7371bf85d407ba9b759064af82702f08dc6221a692abc0d63a18",
+    "format-scenarios.mjs": "6ae27ec2c609f8e4e9bc5b9563b893b85b08e8b5c29fbfdaf701ae8ec000122d",
+    "composer-scenarios.mjs": "99ff07c7dacedc442ce880e4bc586b31fc78a867a658d3c3da6e23dff2e8ccdd",
+    "menu-scenarios.mjs": "39437ae03d55f2e30ab9311c6aa732885b65fb7914ed2901a4f0945fd09528a5",
+    "bases-scenarios.mjs": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d",
+    "bases-summary-scenarios.mjs": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47",
+    "recovery-scenarios.mjs": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472",
+    "view-scenarios.mjs": "797919b0f5bfecaf187b44abf5abb429891e6a1910758ac2e8f33c6efd5c42f2",
+    "audio-scenarios.mjs": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c",
+    "mermaid-scenarios.mjs": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8",
+    "workspace-import-scenarios.mjs": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863",
+    "community-plugin-test-helpers.mjs": "c492726631a00bd3e6a4a89818d0a4bce10e51a79f3aea6cbd768c25d61802e5",
+    "math-embed-scenarios.mjs": "6cf3f237acbc238a439be49de5f650357c5b06562dd61e8c579f363e8b2eaeae",
+    "tools\\appearance-theme-scenarios.mjs": "85f210ae82b9f4576f4eb7e85ec0b670432003eb072cbd187508e926003319b4",
+    "tools\\appearance-reader-theme-scenarios.mjs": "f6307fef61b6d50b4aa3dec619326b331192706c771fe93db46f310efbca0d29",
+    "tools\\cached-github-fixture.mjs": "b58c9200323e5dece4474354d8096321e4e4a243fbcbd07cffe9f65e924c59c9",
+    "tools\\appearance-live-fetch.mjs": "6ca36665acb4d49c26fc5b2cad05d7c4ef58e8949eca025b78b0055179468798",
+    "tools\\smoke.mjs": "299858c9fc079499480832a0e1777d776c821c1e0405590237043d037d6fd7ed",
+    "tools\\web-smoke.mjs": "84c7f465fd6edc0fa125e9824555fd1e60eaad5b7ada3ff96f61831a3770a7f2",
+    "tools\\error-log-audit.mjs": "fdd46bda7d47fc27e7a19a5521d46b5137fbfe673d10266c514ea9ed91eaed8f",
+    "client\\appearance.ts": "e9834f9a927c209a58ee342412a681b579934f37da3e072286e7bec9f6f04a54",
+    "client\\appearance-catalog.ts": "2cdaefdfcaee77ad62044d1e2bee35115e966c0c0961447d92125554f3a0472e",
+    "client\\appearance-assets.ts": "665b7a2cfd99fde1c1284986a1fab4ca6203119c7675d7e029610ce00c8abe8d",
+    "client\\appearance-model.ts": "22a793b7a23f71ded97179c3cc4016ab07da1a010d08181af48d1bc97672d806",
+    "client\\mermaid-renderer.ts": "bc52c3689b9d21a034b1eaed28f6a90499869e070d53a87e42186026b2fde324",
+    "client\\web-reader-frame.ts": "9e93eacc150fab75fc12b322572ab46ae66c0fcce98e3c8a58c770f93879dcbc",
+    "client\\web-viewer.ts": "09a3fbd7011fe378a7c3189e0f1732dc005894949f676576de7e83a3d8c70317",
+    "client\\browser-vault.ts": "4f2519d5fd929bbddfc873f762c606302a1c88ba7043e0f9cb739ebb13cc3c20",
+    "client\\github-vault.ts": "37b9faa1ada6d5968f5b8be7b91cd4009ca32add979b8ec3bf3c00d52a3c03f4",
+    "src\\RonSijm.Slopsidian\\Program.cs": "a5426f8c0271146b9fbfc86b30df2366d99e3fb9d420e2374ee4b99e42bab041",
+    "src\\RonSijm.Slopsidian\\Services\\VaultService.AppearanceTheme.cs": "7b781ca577b960e59994967657dc282b60aef5a25978115afb2c3c2f3959b096",
+    "src\\RonSijm.Slopsidian\\Services\\AppearanceCssPolicy.cs": "50db8958ebbe398750f96d03ffb9501c96c3a45eaced1f4f925386dabfa6a972",
+    "tests\\appearance.test.mjs": "5b0f565c81e0e410be3729335a6ddc71fd1d074f624cfd755bbadc07a60b496c",
+    "tests\\appearance-watcher.test.mjs": "89f327f404635eb3f9d19a6c5ac47e14f155bdc39134d9418c62131ad9257ef6",
+    "tests\\appearance-catalog.test.mjs": "6761b0f6e8017107f3e790fbdabd74f4d9f5631041bd4ae46381259816619e7d",
+    "tests\\editor-history-selection.test.mjs": "659de1fa838e7bbc144908fe02231c1e7cedff114fee99d406aa3a641b5fd301",
+    "tests\\files.test.mjs": "654891d205b5be9f75a1e4c5cd97c772223509962182d52187523682cdda899e",
+    "tests\\browser-vault.test.mjs": "31ec4e413ca19e45b26633b010a5c0ea8faf6385e3fe9aca321d2a31f0512c31",
+    "tests\\github-vault.test.mjs": "776ecbd808ce2046b7de186df6d6ad84f11cb875c543c090c37201264716d324",
+    "tests\\web-reader-appearance.test.mjs": "0c9548e59f16cc54d362fc14b46c5ed1768f1190236500a7da0faba6d96a89bd",
+    "select-test-folder.ps1": "3e4a39e0648f319462d6a1fa94b1a2793354c29f80e8a68a7e563db4267b29d3"
+  },
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes; production launch is unchanged.",
+  "lastInteraction": {
+    "type": "click",
+    "selector": "[data-recent-vault=\"browser-vault:80966b14-2ad0-487e-9024-a61ec7825eca\"]"
+  },
+  "expectedDiagnostics": [
+    {
+      "id": "024ccbcc-bc5c-40b3-975e-0a03d19e71c9:0",
+      "source": "host",
+      "message": "This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.",
+      "reason": "Check browser explicit-save conflict protection"
+    },
+    {
+      "id": "024ccbcc-bc5c-40b3-975e-0a03d19e71c9:1",
+      "source": "notification",
+      "message": "Host 422: Invalid JSON in .obsidian/appearance.json: Expected property name or '}' in JSON at position 2 (line 1 column 3)",
+      "reason": "an external appearance.json is malformed"
+    },
+    {
+      "id": "024ccbcc-bc5c-40b3-975e-0a03d19e71c9:2",
+      "source": "notification",
+      "message": "Only self-contained appearance CSS is supported. Imports and URL/image resources are not loaded. Enable trusted local resources to use theme-relative fonts and images.",
+      "reason": "an external theme CSS becomes unsupported"
+    },
+    {
+      "id": "024ccbcc-bc5c-40b3-975e-0a03d19e71c9:3",
+      "source": "notification",
+      "message": "Only self-contained appearance CSS is supported. Imports and URL/image resources are not loaded. Enable trusted local resources to use theme-relative fonts and images.",
+      "reason": "a resource theme is selected while trusted local resources are off"
+    },
+    {
+      "id": "024ccbcc-bc5c-40b3-975e-0a03d19e71c9:4",
+      "source": "notification",
+      "message": "Appearance could not check external CSS changes: Host 404: This appearance asset is missing: .obsidian/themes/Picked/img/dot.png",
+      "reason": "a referenced resource is deleted externally"
+    }
+  ],
+  "sourceFingerprint": "238eb82c32cb8141785db7c5b162be3702b7166c338f0578c3ed4068132cc19a",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": false,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "editorPhases": [
+    {
+      "phase": "before activation",
+      "workspaceLeaf": true,
+      "view": true,
+      "file": true,
+      "cm": true,
+      "connected": true,
+      "text": true,
+      "selection": [
+        2,
+        9
+      ],
+      "doc": "Unsaved Keep this text, selection and undo through theme changes.\n"
+    },
+    {
+      "phase": "after focus",
+      "workspaceLeaf": true,
+      "view": true,
+      "file": true,
+      "cm": true,
+      "connected": true,
+      "text": true,
+      "selection": [
+        2,
+        9
+      ],
+      "doc": "Unsaved Keep this text, selection and undo through theme changes.\n"
+    },
+    {
+      "phase": "after undo",
+      "workspaceLeaf": true,
+      "view": true,
+      "file": true,
+      "cm": true,
+      "connected": true,
+      "text": false,
+      "selection": [
+        0,
+        0
+      ],
+      "doc": "Keep this text, selection and undo through theme changes.\n"
+    },
+    {
+      "phase": "after redo",
+      "workspaceLeaf": true,
+      "view": true,
+      "file": true,
+      "cm": true,
+      "connected": true,
+      "text": true,
+      "selection": [
+        8,
+        8
+      ],
+      "doc": "Unsaved Keep this text, selection and undo through theme changes.\n"
+    }
+  ],
+  "artifactStability": "verified-through-scenario",
+  "exceptions": [],
+  "browserShutdown": {
+    "exitCode": 0,
+    "signal": null,
+    "forced": false,
+    "quit": {
+      "drain": {
+        "app": true,
+        "lifecycle": [
+          {
+            "name": "workspace",
+            "idle": true
+          },
+          {
+            "name": "configuration",
+            "idle": true
+          }
+        ],
+        "polls": 0,
+        "drained": true
+      },
+      "committed": true,
+      "acknowledged": true,
+      "exited": true,
+      "forced": false,
+      "early": false,
+      "deadlineHit": false,
+      "requestError": null
+    },
+    "rejected": null,
+    "hostLog": "\r\nWEB_HOST_PID 44580\n\r\nDevTools listening on ws://127.0.0.1:44326/devtools/browser/9b4b2d14-898f-45f3-9a75-da3e95c88e83\r\nWEB_UNSAVED_BLOCKED\nWEB_QUIT_ACK dd2d5b15-2f49-4ecf-8252-219cb192af6d\n"
+  },
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\evidence\\appearance-themes-web-smoke-errors.jsonl",
+    "nativePaths": [],
+    "records": 5,
+    "expected": 5,
+    "unexpected": [],
+    "sha256": "bebb88b464305e0b53eef406ef3de446dcb6b1489dea24b3e8983b76f61257fe",
+    "includesFinalTeardown": true
+  },
+  "completedAt": "2026-11-02T05:21:08.097Z"
+}

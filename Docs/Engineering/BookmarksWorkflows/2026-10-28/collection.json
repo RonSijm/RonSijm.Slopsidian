@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "kind": "local-evidence-location-only",
+  "sourceFingerprint": "1e0874fe2d19a199fd90494d7ba58e5933bc6748ee54f1b47b954214daa77c76",
+  "receiptPath": "C:\\Users\\RonSijmVertimart\\.copilot\\session-state\\08b48340-1f25-4370-baed-c67ca0835cfe\\files\\bookmark-workflows-accepted-20261028T201127757Z\\receipt.json",
+  "limits": "This pointer is not acceptance. Read the referenced complete receipt and verify its payload hashes. No whole-current-worktree or Backlinks build is accepted."
+}

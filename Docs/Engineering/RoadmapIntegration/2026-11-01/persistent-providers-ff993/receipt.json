@@ -1,0 +1,41 @@
+{
+  "status": "isolated-runtime-scopes-passed",
+  "sourceFingerprint": "ff9937c2a88d97d15899230ac758a244c309895d05dc06b937b214cc13729b86",
+  "boundary": "Complete inherited Markdown and extended provider scopes passed on native and actual-folder WASM; not current-main, whole-roadmap, arbitrary-plugin sandboxing or power-loss/eviction acceptance.",
+  "retentionLimit": "The owner observed/printed before-and-after source/catalog equality but did not retain raw before/after input files. This receipt retains the original artifact-stable reports/logs/audits plus a truthful current full-input/catalog/DLL recheck; it does not reconstruct missing earlier files.",
+  "nativeChecks": 15,
+  "webChecks": 27,
+  "providerChecksPerHost": 4,
+  "artifacts": [
+    {
+      "path": "persistent-drafts-smoke.json",
+      "bytes": 26227,
+      "sha256": "134c842346eac3f0cd5dbd558bb5f8cc0795090d541f25c9d946cd15873d989b"
+    },
+    {
+      "path": "persistent-drafts-web-smoke.json",
+      "bytes": 19659,
+      "sha256": "6c98ddcb8c7972d3df7be5d435bf787aff77e1dab75d7dceab80846b1c4185ca"
+    },
+    {
+      "path": "persistent-drafts-smoke-errors.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "persistent-drafts-web-smoke-errors.jsonl",
+      "bytes": 2165,
+      "sha256": "17be92846b6716318f4545765d085914c1fd8478135cb882fc88ca8ed92a8343"
+    },
+    {
+      "path": "desktop-full-attempt4.log",
+      "bytes": 166,
+      "sha256": "e024b65a49a75ba4675d683694da4b2550627c29ef42109033eca74c9c75b098"
+    },
+    {
+      "path": "web-full-attempt4.log",
+      "bytes": 1365,
+      "sha256": "3aae669fa1930cc92b2983b512725e8392315b23e0d511679405948c274eedbc"
+    }
+  ]
+}

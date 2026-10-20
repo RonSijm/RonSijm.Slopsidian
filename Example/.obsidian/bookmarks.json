@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "type": "group",
+      "title": "Explore the vault",
+      "ctime": 1792713600000,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1792713600000,
+          "path": "Start here.md",
+          "title": "Start here"
+        },
+        {
+          "type": "file",
+          "ctime": 1792713600000,
+          "path": "60 Visuals/Project constellation.canvas",
+          "title": "Project canvas"
+        },
+        {
+          "type": "file",
+          "ctime": 1792713600000,
+          "path": "70 Data/Projects.base",
+          "title": "Projects base"
+        }
+      ]
+    }
+  ]
+}

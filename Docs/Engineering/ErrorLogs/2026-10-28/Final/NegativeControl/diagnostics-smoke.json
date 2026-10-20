@@ -1,0 +1,733 @@
+{
+  "status": "failed",
+  "scope": "persistent-error-logging",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-27T23:45:39.921Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\readonly-io-validation-20261028\\.runtime\\smoke-vault-n9rYQA",
+  "launcherPid": 43104,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "DOM helpers allow instance overrides and still deliver an actual same-origin document migration callback.",
+    "Caught notifications, message-only window errors and rejection events persist stacks, origins, browser locations, active view context and causes in the application logfile.",
+    "The error notification's actual Download log button exports the persisted records and original cause stack."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 43104,
+      "electronPid": 43104,
+      "dotnetPid": 12496,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.14",
+  "sourceFingerprint": "9c471c87838261c164d7524d8593bb806b06ed572821580438173f5f19b8632d",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "expectedDiagnostics": [
+    {
+      "id": "3d759b8f-20b1-4e31-8fcf-5018963ae5ae:0",
+      "source": "notification",
+      "message": "Intentional notification logging probe",
+      "reason": "Verify the caught menu-error notification is written with its original cause"
+    },
+    {
+      "id": "3d759b8f-20b1-4e31-8fcf-5018963ae5ae:1",
+      "source": "window-error",
+      "message": "Intentional window handler probe",
+      "reason": "Exercise both global error handlers using controlled events"
+    },
+    {
+      "id": "3d759b8f-20b1-4e31-8fcf-5018963ae5ae:2",
+      "source": "unhandled-rejection",
+      "message": "Intentional rejection handler probe",
+      "reason": "Exercise both global error handlers using controlled events"
+    }
+  ],
+  "downloadedErrorLog": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\readonly-io-validation-20261028\\.runtime\\evidence\\diagnostics-desktop-download\\export-Caedl9\\slopsidian-errors.jsonl",
+  "error": "AssertionError [ERR_ASSERTION]: The desktop emitted an uncaught browser exception\n+ actual - expected\n\n+ [\n+   {\n+     columnNumber: 28,\n+     exception: {\n+       className: 'Error',\n+       description: 'Error: Unaccounted smoke failure control\\n    at <anonymous>:1:29',\n+       objectId: '-4054694548391871357.2.2',\n+       preview: {\n+         description: 'Error: Unaccounted smoke failure control\\n    at <anonymous>:1:29',\n+         overflow: false,\n+         properties: [\n+           {\n+             name: 'stack',\n+             type: 'string',\n+             value: 'Error: Unaccounted smoke failure control\\n    at <anonymous>:1:29'\n+           },\n+           {\n+             name: 'message',\n+             type: 'string',\n+             value: 'Unaccounted smoke failure control'\n+           }\n+         ],\n+         subtype: 'error',\n+         type: 'object'\n+       },\n+       subtype: 'error',\n+       type: 'object'\n+     },\n+     exceptionId: 1,\n+     executionContextId: 2,\n+     lineNumber: 0,\n+     scriptId: '153',\n+     stackTrace: {\n+       callFrames: [\n+         {\n+           columnNumber: 28,\n+           functionName: '',\n+           lineNumber: 0,\n+           scriptId: '153',\n+           url: ''\n+         }\n+       ]\n+     },\n+     text: 'Uncaught'\n+   }\n+ ]\n- []\n\n    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/smoke.mjs:1441:10",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{\\n    const element=document.querySelector(\\\"[data-error-log-probe=\\\\\\\"true\\\\\\\"]\\\");\\n    element.scrollIntoView({block:\\\"nearest\\\",inline:\\\"nearest\\\"});\\n    const bounds=Array.from(element.getClientRects()).find(rect=>rect.width>0&&rect.height>0);\\n    if(!b"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.current()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.current()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.current()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{window.dispatchEvent(new ErrorEvent(\\\"error\\\",{message:\\\"Intentional window handler probe\\\",filename:\\\"error-log-probe.js\\\",lineno:17,colno:9}));window.dispatchEvent(new PromiseRejectionEvent(\\\"unhandledrejection\\\",{reason:new Error(\\\"Intentional rejection han"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.current()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.current()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.flush()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result);"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.read()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result);\n"
+    },
+    {
+      "method": "Browser.setDownloadBehavior"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#client-errors button\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBoun"
+    },
+    {
+      "method": "Page.bringToFront"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{\\n    const element=document.querySelector(\\\"#client-errors button\\\");\\n    element.scrollIntoView({block:\\\"nearest\\\",inline:\\\"nearest\\\"});\\n    const bounds=Array.from(element.getClientRects()).find(rect=>rect.width>0&&rect.height>0);\\n    if(!bounds){throw n"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.getElementById(\\\"client-errors\\\").replaceChildren()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "BODY",
+      "id": ""
+    },
+    "keys": [],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "a226c7a4-870c-4f83-990d-274ba7485ea8",
+        "type": "markdown",
+        "path": "CRLF note.md",
+        "text": "# CRLF preservation\r\n\r\nTODO: Keep the existing encoding.\r\n",
+        "sessionText": "# CRLF preservation\r\n\r\nTODO: Keep the existing encoding.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 55
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "aeeee850-fa80-48ae-8817-035032efa0de",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "8c3f7acd-8a28-4ba5-91f0-44fb3e883b25",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "a226c7a4-870c-4f83-990d-274ba7485ea8",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "CRLF note.md",
+                    "mode": "source",
+                    "source": true
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          }
+        ]
+      },
+      "active": "a226c7a4-870c-4f83-990d-274ba7485ea8",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-navigation": {
+          "lastMainLeaf": "a226c7a4-870c-4f83-990d-274ba7485ea8",
+          "lastFile": "CRLF note.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [
+    {
+      "exceptionId": 1,
+      "text": "Uncaught",
+      "lineNumber": 0,
+      "columnNumber": 28,
+      "scriptId": "153",
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "153",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 28
+          }
+        ]
+      },
+      "exception": {
+        "type": "object",
+        "subtype": "error",
+        "className": "Error",
+        "description": "Error: Unaccounted smoke failure control\n    at <anonymous>:1:29",
+        "objectId": "-4054694548391871357.2.2",
+        "preview": {
+          "type": "object",
+          "subtype": "error",
+          "description": "Error: Unaccounted smoke failure control\n    at <anonymous>:1:29",
+          "overflow": false,
+          "properties": [
+            {
+              "name": "stack",
+              "type": "string",
+              "value": "Error: Unaccounted smoke failure control\n    at <anonymous>:1:29"
+            },
+            {
+              "name": "message",
+              "type": "string",
+              "value": "Unaccounted smoke failure control"
+            }
+          ]
+        }
+      },
+      "executionContextId": 2
+    }
+  ],
+  "controlledShutdownConsoleErrors": [],
+  "consoleErrors": [
+    "Error: Intentional notification logging probe\n    at eval (eval at <anonymous> (:2:26), <anonymous>:1:197)\n    at http://127.0.0.1:65107/js/editor-host.h810rf8ugs.js:70420:34",
+    "[2026-10-27T23:45:42.760Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T23:45:47.766Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 12496,
+  "electronPid": 43104,
+  "completedAt": "2026-10-27T23:45:47.974Z",
+  "errorLogAudit": {
+    "status": "failed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\readonly-io-validation-20261028\\.runtime\\evidence\\diagnostics-smoke-errors.jsonl",
+    "nativePaths": [
+      "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\readonly-io-validation-20261028\\.runtime\\smoke-profile\\logs\\errors-smoke-a96b7418-bd1d-4d23-a8ba-c9bf2f4eaba5.jsonl"
+    ],
+    "records": 4,
+    "expected": 3,
+    "unexpected": [
+      {
+        "schemaVersion": 1,
+        "id": "3d759b8f-20b1-4e31-8fcf-5018963ae5ae:3",
+        "session": "3d759b8f-20b1-4e31-8fcf-5018963ae5ae",
+        "timestamp": "2026-10-27T23:45:42.247Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "Unaccounted smoke failure control",
+          "stack": "Error: Unaccounted smoke failure control\n    at <anonymous>:1:29",
+          "stackOrigin": "original"
+        },
+        "page": "http://127.0.0.1:65107/",
+        "context": {
+          "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\readonly-io-validation-20261028\\.runtime\\smoke-vault-n9rYQA",
+          "file": "CRLF note.md",
+          "view": "markdown",
+          "leafId": "a226c7a4-870c-4f83-990d-274ba7485ea8",
+          "filename": "",
+          "line": 1,
+          "column": 29
+        }
+      }
+    ],
+    "sha256": "8e8665a5adbe8dd5592a828c761cb8ea0289112bca2f06b563ad04261de7372c",
+    "includesFinalTeardown": true
+  }
+}

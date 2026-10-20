@@ -1,0 +1,22 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS Search executes real worker-backed Boolean/regex/path/file/tag/property/case queries and selects exact source context.
+PASS Search waits for actual worker readiness, including a startup longer than two seconds, without charging it against the separate bounded query deadline.
+PASS Search follows dirty edits/undo/redo, real external writes and renames, rejects invalid queries without stale results, and terminates a blocking regex off the UI thread.
+PASS Tags lists nested inline/property tags with counts, excludes escaped/code/comment text, filters/folds/sorts, and uses the actual Search dependency with a visible disabled-dependency error.
+PASS Backlinks resolves heading/block references and unlinked aliases, navigates exact source ranges, follows unsaved/undo/external/rename changes, and renders/removes real in-document backlinks.
+PASS Footnotes shows multiline definitions, repeated references and explicit missing definitions, selects exact source ranges and updates through dirty edits/undo/redo.
+PASS Search/Tags/Backlinks/Footnotes preserve real query/sort/fold/pin state across reload/reconnect; disabling removes owned views/controllers/commands and re-enabling creates one fresh instance.
+PASS Quick switcher settings control actual registered attachments and unresolved references: Canvas opens, hidden attachments/unknown extensions stay out, and existing-only removes unresolved suggestions without implicitly creating a note.
+PASS The unsupported-file toggle follows app.json, all-types overrides attachment filtering, URI-relative targets and explicit creation use real controls, and Boolean/opaque settings plus BOM survive reload/reconnect without rewriting app.json.

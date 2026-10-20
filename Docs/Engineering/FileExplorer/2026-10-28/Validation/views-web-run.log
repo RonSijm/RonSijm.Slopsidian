@@ -1,0 +1,29 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS Real shared ItemView panes open in main/left/right/split sidedocks, own working controls, and coexist with editor extensions without hidden Markdown editors.
+PASS Invalid/throwing view creators and invalid state reject explicitly, preserve the previous real editor and undo stack, and do not partially install extension mappings.
+PASS Real shared TextFileView subclasses debounce actual BOM/CRLF saves, refresh clean external changes, preserve dirty data on save/close conflicts, and flush before owned unload clears the model without writing its cleared data.
+PASS FileView panes load real note bytes, route registered non-Markdown extensions to real files, and restore the previous file after a failed file-load hook.
+PASS A later custom FileView close veto preserves every original pane during layout replacement, trash or permanent Vault.delete; rename collision preflight leaves the same live views and file bytes intact.
+PASS Native close detaches and awaits asynchronous owned unload before onClose, including a void unload override; real transition and tab-close failures reconstruct a new loaded view with exact saved and ephemeral state, retaining file bytes.
+PASS An actual external byte replacement during trash preflight rejects the stale mutation, preserves newer disk bytes and restores all staged custom FileView panes with their opaque state.
+PASS Permanent Vault.delete rejects a real external replacement during close preflight, retains its exact newer bytes and restores both custom FileView panes and opaque state.
+PASS A later post-teardown close failure aborts permanent deletion before file removal and reconstructs every affected custom pane with its saved state and unchanged binary bytes.
+PASS File rename remaps real FileView paths and history while retaining unrelated ItemView data named file, without changing binary contents.
+PASS Actual permanent deletion closes both owned views, invalidates only file history and metadata, preserves incoming-link bytes, emits one identity-correct delete and leaves no trash copy; injected acknowledgement loss still rejects without reopening deleted files or duplicating events.
+PASS A saved-layout replacement that fails after native teardown restores all original leaf IDs, active selection, custom/ephemeral state and live components without changing note or attachment bytes.
+PASS Named profile save/load waits for real pending leaf tasks without awaiting its own operation, and restores actual custom panes before removing the temporary profile.
+PASS A later post-teardown failure during plugin disable restores every earlier owned pane's saved and ephemeral state, keeps the plugin loaded and retains the active leaf and exact disk bytes.
+PASS Plugin unload removes owned timers, handlers, actions, and extension mappings; unavailable panes retain their exact state and re-enable creates fresh real views.
+PASS Custom view state, pins, sidedock groups, and active selection survive real-folder browser reload/reconnect without rewriting Obsidian workspace.json or binary file bytes.

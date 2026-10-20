@@ -1,0 +1,138 @@
+{
+  "version": "1.12.7",
+  "strong": {
+    "found": true,
+    "weight": "600"
+  },
+  "scroll": {
+    "source": true,
+    "reading": true,
+    "events": []
+  },
+  "settings": [
+    {
+      "id": "file-explorer",
+      "present": false
+    },
+    {
+      "id": "global-search",
+      "present": false
+    },
+    {
+      "id": "switcher",
+      "present": true
+    },
+    {
+      "id": "graph",
+      "present": false
+    },
+    {
+      "id": "backlink",
+      "present": true
+    },
+    {
+      "id": "canvas",
+      "present": true
+    },
+    {
+      "id": "outgoing-link",
+      "present": false
+    },
+    {
+      "id": "tag-pane",
+      "present": false
+    },
+    {
+      "id": "footnotes",
+      "present": false
+    },
+    {
+      "id": "properties",
+      "present": false
+    },
+    {
+      "id": "page-preview",
+      "present": true
+    },
+    {
+      "id": "daily-notes",
+      "present": true
+    },
+    {
+      "id": "templates",
+      "present": true
+    },
+    {
+      "id": "note-composer",
+      "present": true
+    },
+    {
+      "id": "command-palette",
+      "present": true
+    },
+    {
+      "id": "slash-command",
+      "present": false
+    },
+    {
+      "id": "editor-status",
+      "present": false
+    },
+    {
+      "id": "bookmarks",
+      "present": false
+    },
+    {
+      "id": "markdown-importer",
+      "present": false
+    },
+    {
+      "id": "zk-prefixer",
+      "present": true
+    },
+    {
+      "id": "random-note",
+      "present": false
+    },
+    {
+      "id": "outline",
+      "present": false
+    },
+    {
+      "id": "word-count",
+      "present": false
+    },
+    {
+      "id": "slides",
+      "present": false
+    },
+    {
+      "id": "audio-recorder",
+      "present": false
+    },
+    {
+      "id": "workspaces",
+      "present": false
+    },
+    {
+      "id": "file-recovery",
+      "present": true
+    },
+    {
+      "id": "publish",
+      "present": false
+    },
+    {
+      "id": "sync",
+      "present": false
+    },
+    {
+      "id": "bases",
+      "present": false
+    },
+    {
+      "id": "webviewer",
+      "present": false
+    }
+  ]
+}

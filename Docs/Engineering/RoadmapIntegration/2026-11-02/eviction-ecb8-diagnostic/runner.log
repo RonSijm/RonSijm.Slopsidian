@@ -1,0 +1,9 @@
+ok - cold online page is unprepared and caches nothing until the user asks
+ok - user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it
+skipped (focus) - cold restart with the network OFF boots the app, workers and renderer from the cached shell
+skipped (focus) - a genuine cached GitHub mount is seeded offline in local storage only
+skipped (focus) - a cold canonical cached remote route boots offline into the read-only mount with the exact note and no API/raw fallback
+skipped (focus) - explicit complete cached index offline: partial first, missing and corrupt bytes refused, complete after exact cached bytes, zero downloads
+skipped (focus) - cached index dialog UI: real pointers drive Prepare, held Cancel, Resume, missing and corrupt refusal, then a verified complete index with offline search metadata
+ok - an evicted file is reported honestly offline (503, never a network or mixed fallback)   and a real-pointer repair restores it
+Focused eviction diagnostic passed (not acceptance evidence).
