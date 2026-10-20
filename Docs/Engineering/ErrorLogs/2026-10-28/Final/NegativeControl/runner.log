@@ -1,0 +1,92 @@
+PASS DOM helpers allow instance overrides and still deliver an actual same-origin document migration callback.
+PASS Caught notifications, message-only window errors and rejection events persist stacks, origins, browser locations, active view context and causes in the application logfile.
+PASS The error notification's actual Download log button exports the persisted records and original cause stack.
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-a96b7418-bd1d-4d23-a8ba-c9bf2f4eaba5.jsonl
+(node:43104) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:48887/devtools/browser/a3d1e8c4-5a0a-4af0-a554-c8a0bf960a58
+ELECTRON_HOST_PID 43104
+DOTNET_HOST_PID 12496
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-vault-n9rYQA
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:65107
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:65107
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: The desktop emitted an uncaught browser exception
++ actual - expected
+
++ [
++   {
++     columnNumber: 28,
++     exception: {
++       className: 'Error',
++       description: 'Error: Unaccounted smoke failure control\n    at <anonymous>:1:29',
++       objectId: '-4054694548391871357.2.2',
++       preview: {
++         description: 'Error: Unaccounted smoke failure control\n    at <anonymous>:1:29',
++         overflow: false,
++         properties: [
++           {
++             name: 'stack',
++             type: 'string',
++             value: 'Error: Unaccounted smoke failure control\n    at <anonymous>:1:29'
++           },
++           {
++             name: 'message',
++             type: 'string',
++             value: 'Unaccounted smoke failure control'
++           }
++         ],
++         subtype: 'error',
++         type: 'object'
++       },
++       subtype: 'error',
++       type: 'object'
++     },
++     exceptionId: 1,
++     executionContextId: 2,
++     lineNumber: 0,
++     scriptId: '153',
++     stackTrace: {
++       callFrames: [
++         {
++           columnNumber: 28,
++           functionName: '',
++           lineNumber: 0,
++           scriptId: '153',
++           url: ''
++         }
++       ]
++     },
++     text: 'Uncaught'
++   }
++ ]
+- []
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/smoke.mjs:1441:10
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/smoke.mjs:1529:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

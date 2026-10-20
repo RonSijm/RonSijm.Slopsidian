@@ -1,0 +1,201 @@
+
+> slopsidian@0.1.0 typecheck
+> tsc --noEmit
+
+✔ the forced-close history diagnostic compiles and records actual text, depths, readonly, focus and captured-history identity (2.3094ms)
+✔ moved Reader readiness needs a real matching capture-progress acknowledgement from the current frame (2276.0721ms)
+✔ enableCorePlugin enables a disabled core plugin through setEnabled, awaits readiness and restores it (0.5277ms)
+✔ enableCorePlugin leaves an already-enabled core plugin untouched and does not disable it afterwards (0.1366ms)
+✔ scenario evaluates return primitives under returnByValue: live-object returns are wrapped and recorded expressions are serializable (3.4654ms)
+✔ the native guest block never calls an Electron-unsupported Browser-domain CDP method (1.1639ms)
+✔ readGuestHost calls the guarded native inspect action through the view's own IPC and requires exactly one owner (0.7401ms)
+✔ the readiness probe reports each predicate and the observed message envelopes, and the failure snapshot survives a broken CDP (459.852ms)
+✔ every shared index UI wait compiles (0.5543ms)
+✔ state waits tolerate absent controls and distinguish partial, refused and complete (4.3235ms)
+✔ hold, cancel, metadata, mount and note waits evaluate against partial page states (3.596ms)
+✔ css points convert by dpr and out-of-viewport points are refused (0.9879ms)
+✔ plan requires an exact pid, distinct titles and measured geometry (0.2372ms)
+✔ the driver surfaces an incomplete drag and passes only the plan (0.2064ms)
+✔ native script source uses real mouse input and releases the button in finally (4.9959ms)
+✔ a hop verifies identity after the real drag and rejects a drag that did not move or swapped the editor (0.6366ms)
+✔ ambiguous or mismatched native titles are refused before any drag (0.1327ms)
+✔ the chain proves main->popout->popout hops, real Undo and Save, and never reports osDragVerified for an injected executor (0.4662ms)
+✔ expressions are primitive-returning and test-only (0.1124ms)
+✔ plan rejects non-finite and out-of-range inputs before any OS action (0.2247ms)
+✔ native script preflights both endpoints before pressing and cancels with Escape before any failure release (0.9905ms)
+✔ the hop waits for delayed ownership, reports the last failure on timeout and needs a dirty editor and a waiter (0.4271ms)
+✔ manifest is deterministic, excludes control files and detects a changed artifact (23.2814ms)
+✔ prepare caches and atomically adopts one complete verified set, then reports ready (27.6687ms)
+✔ a corrupt download or manifest never replaces the adopted version and is reported honestly (15.6771ms)
+✔ update adopts the new set only after it is complete and then removes the old set (14.9221ms)
+✔ cancel and network failure keep verified files for resume without adopting (10.0263ms)
+✔ storage quota failure is explicit, discards the new partial set and keeps the old one (16.1917ms)
+✔ a cache put failure, including a duplicate entry, is never swallowed and names the file being saved (8.8551ms)
+✔ eviction and byte corruption are detected, and repair rehashes in place (10.6713ms)
+✔ the smoke audit rejects a late unexpected error, an unrelated failed URL and an unrelated failed response, and matches only exact declared URLs (0.7883ms)
+✔ remove preserves other bases, nested ':' bases and unrelated caches, and reports a failed worker unregister (9.1118ms)
+✔ two pages sharing one cache cannot prepare different versions or remove during a prepare; the pointer always names a complete retained cache (16.7066ms)
+✔ without Web Locks the offline copy is refused rather than mutated unprotected (6.224ms)
+✔ unsupported contexts and server failures are explicit (0.619ms)
+✔ service worker serves only the adopted manifest set inside its own scope and never mixes the network in (11.4658ms)
+✔ a tampered or unreadable adopted set is refused, never executed and never mixed with the network (13.2197ms)
+✔ a warm worker re-validates the stored manifest on every request instead of trusting a memoized copy (8.7345ms)
+✔ the service worker build is part of the shell version, so a worker-only update is never silently complete (22.9909ms)
+✔ a failed pointer write during a worker-changing update leaves the previous worker and adopted shell runnable offline (16.9352ms)
+✔ a failed worker registration restores the previous adoption record (15.8729ms)
+✔ publish tooling and entry page wire the offline shell without caching vault data (0.899ms)
+✔ the acknowledged quit needs a real ack, shares one deadline and never commits after a failed drain (202.1159ms)
+✔ the fixture host accepts a quit only for the exact nonce from its own main frame and origin (0.487ms)
+✔ desktop --appearance retains its focused report identity (1.1174ms)
+✔ desktop --appearance-resources retains its focused report identity (0.4375ms)
+✔ desktop --appearance-themes retains its focused report identity (0.4015ms)
+✔ desktop --appearance-watch-diagnostic retains its focused report identity (0.3929ms)
+✔ desktop --appearance-catalog-diagnostic retains its focused report identity (0.3467ms)
+✔ desktop --outline-panes retains its focused report identity (0.8992ms)
+✔ desktop --viewers retains its focused report identity (0.396ms)
+✔ desktop --viewer-proofs retains its focused report identity (0.3728ms)
+✔ desktop --configuration-lifecycle retains its focused report identity (0.4336ms)
+✔ desktop --history retains its focused report identity (0.5096ms)
+✔ desktop --github-index-ui retains its focused report identity (0.4795ms)
+✔ desktop --groups-popouts retains its focused report identity (0.3787ms)
+✔ desktop --system-trash retains its focused report identity (0.409ms)
+✔ desktop --attachments retains its focused report identity (0.4635ms)
+✔ desktop --community-install retains its focused report identity (0.4014ms)
+✔ desktop --properties retains its focused report identity (0.4055ms)
+✔ desktop --persistent-drafts retains its focused report identity (0.3734ms)
+✔ desktop --persistent-drafts-text-diagnostic retains its focused report identity (0.3272ms)
+✔ desktop --math-embeds retains its focused report identity (0.3171ms)
+✔ desktop --hotkeys-secrets retains its focused report identity (0.3263ms)
+✔ web --appearance retains its focused report identity (0.8101ms)
+✔ web --appearance-resources retains its focused report identity (0.3511ms)
+✔ web --appearance-themes retains its focused report identity (0.31ms)
+✔ web --appearance-watch-diagnostic retains its focused report identity (0.3121ms)
+✔ web --appearance-catalog-diagnostic retains its focused report identity (0.3186ms)
+✔ web --outline-panes retains its focused report identity (0.2923ms)
+✔ web --viewers retains its focused report identity (0.3215ms)
+✔ web --viewer-proofs retains its focused report identity (0.2763ms)
+✔ web --configuration-lifecycle retains its focused report identity (0.298ms)
+✔ web --history retains its focused report identity (0.3332ms)
+✔ web --github-index-ui retains its focused report identity (0.33ms)
+✔ web --groups-popouts retains its focused report identity (0.3932ms)
+✔ web --system-trash retains its focused report identity (0.4048ms)
+✔ web --attachments retains its focused report identity (0.3646ms)
+✔ web --community-install retains its focused report identity (0.4355ms)
+✔ web --properties retains its focused report identity (1.0089ms)
+✔ web --persistent-drafts retains its focused report identity (0.3768ms)
+✔ web --persistent-drafts-text-diagnostic retains its focused report identity (0.3402ms)
+✔ web --math-embeds retains its focused report identity (0.3921ms)
+✔ web --hotkeys-secrets retains its focused report identity (0.469ms)
+✔ desktop popout diagnostics and refusal controls never share the full collection's report name or scope (2.1056ms)
+✔ web popout diagnostics and refusal controls never share the full collection's report name or scope (1.7213ms)
+✔ group data keeps only live linked leaves, rejects malformed entries and preserves unknown keys (163.793ms)
+✔ group links round-trip prototype-named leaf IDs as own data (0.2308ms)
+✔ the file-mutation barrier freezes every popout and restores prior inert state after success (0.4017ms)
+✔ the file-mutation barrier freezes every popout and restores prior inert state after failure (0.3326ms)
+SLOPSIDIAN_DIAGNOSTIC {"schemaVersion":1,"id":"4963485f-3643-4145-8863-80371922f31f:0","session":"4963485f-3643-4145-8863-80371922f31f","timestamp":"2026-11-02T02:26:19.281Z","source":"notification","error":{"name":"Error","message":"refused","stack":"Error: refused\n    at workspace.openInLeaf (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:171:46)\n    at Workspace.followLinked (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69780:22)\n    at TestContext.<anonymous> (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:182:25)\n    at async Test.run (node:internal/test_runner/test:1125:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)","stackOrigin":"original"},"page":"http://test/","context":{"vault":null,"file":null,"view":null}}
+Error log write failed; local journal retained: TypeError: Cannot read properties of undefined (reading 'getDirectory')
+    at logDirectory (D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:34969:40)
+    at D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:35005:33
+✔ an independent navigation on an in-flight automatic follower reserves its own intent and stops the older run (1.4549ms)
+✔ linked navigation is planned before any follower changes and refuses pinned, busy, deferred and non-following members (0.1538ms)
+✔ a workspace propagates a leaf's file change to followers independently and reports per-follower failure (3.8178ms)
+SLOPSIDIAN_DIAGNOSTIC {"schemaVersion":1,"id":"4963485f-3643-4145-8863-80371922f31f:1","session":"4963485f-3643-4145-8863-80371922f31f","timestamp":"2026-11-02T02:26:19.285Z","source":"notification","error":{"name":"Error","message":"refused","stack":"Error: refused\n    at t.workspace.openInLeaf (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:262:79)\n    at Workspace.followLinked (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69780:22)\n    at Workspace.setLeafState (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69684:18)\n    at async TestContext.<anonymous> (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:263:5)\n    at async Test.run (node:internal/test_runner/test:1125:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)","stackOrigin":"original"},"page":"http://test/","context":{"vault":null,"file":null,"view":null}}
+Error log write failed; local journal retained: TypeError: Cannot read properties of undefined (reading 'getDirectory')
+    at logDirectory (D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:34969:40)
+    at D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:35005:33
+SLOPSIDIAN_DIAGNOSTIC {"schemaVersion":1,"id":"4963485f-3643-4145-8863-80371922f31f:2","session":"4963485f-3643-4145-8863-80371922f31f","timestamp":"2026-11-02T02:26:19.290Z","source":"notification","error":{"name":"Error","message":"approve failed","stack":"Error: approve failed\n    at Object.approveClose (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:478:60)\n    at Workspace.releaseSurface (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69311:27)\n    at TestContext.<anonymous> (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:479:15)\n    at Test.runInAsyncScope (node:async_hooks:226:14)\n    at Test.run (node:internal/test_runner/test:1118:25)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)","stackOrigin":"original"},"page":"http://test/","context":{"vault":null,"file":null,"view":null}}
+Error log write failed; local journal retained: TypeError: Cannot read properties of undefined (reading 'getDirectory')
+    at logDirectory (D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:34969:40)
+    at D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:35005:33
+SLOPSIDIAN_DIAGNOSTIC {"schemaVersion":1,"id":"4963485f-3643-4145-8863-80371922f31f:3","session":"4963485f-3643-4145-8863-80371922f31f","timestamp":"2026-11-02T02:26:19.292Z","source":"notification","error":{"name":"Error","message":"The popout window could not be released: A page hosted in this window could not return to the main window.","stack":"Error: The popout window could not be released: A page hosted in this window could not return to the main window.\n    at Workspace.releaseFailed (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69300:17)\n    at Object.failed (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:567:71)\n    at contents.send (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:551:67)\n    at EventEmitter.<anonymous> (D:\\RonSijm\\RonSijm.Slopsidian\\desktop\\popout-windows.cjs:79:81)\n    at Object.onceWrapper (node:events:623:12)\n    at EventEmitter.emit (node:events:520:22)\n    at EventEmitter.close (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:538:256)\n    at EventEmitter.<anonymous> (D:\\RonSijm\\RonSijm.Slopsidian\\desktop\\popout-windows.cjs:81:11)\n    at EventEmitter.emit (node:events:508:20)\n    at Object.approveClose (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:555:52)","stackOrigin":"original"},"page":"http://test/","context":{"vault":null,"file":null,"view":null}}
+Error log write failed; local journal retained: TypeError: Cannot read properties of undefined (reading 'getDirectory')
+    at logDirectory (D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:34969:40)
+    at D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:35005:33
+SLOPSIDIAN_DIAGNOSTIC {"schemaVersion":1,"id":"4963485f-3643-4145-8863-80371922f31f:4","session":"4963485f-3643-4145-8863-80371922f31f","timestamp":"2026-11-02T02:26:19.293Z","source":"notification","error":{"name":"Error","message":"A popout window closed without the workspace's approval. Its live tabs returned to main, and its saved arrangement can be retried.","stack":"Error: A popout window closed without the workspace's approval. Its live tabs returned to main, and its saved arrangement can be retried.\n    at Workspace.surfaceClosed (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69204:19)\n    at TestContext.<anonymous> (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:653:15)\n    at Test.runInAsyncScope (node:async_hooks:226:14)\n    at Test.run (node:internal/test_runner/test:1118:25)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)","stackOrigin":"original"},"page":"http://test/","context":{"vault":null,"file":null,"view":null}}
+Error log write failed; local journal retained: TypeError: Cannot read properties of undefined (reading 'getDirectory')
+    at logDirectory (D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:34969:40)
+    at D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:35005:33
+SLOPSIDIAN_DIAGNOSTIC {"schemaVersion":1,"id":"4963485f-3643-4145-8863-80371922f31f:5","session":"4963485f-3643-4145-8863-80371922f31f","timestamp":"2026-11-02T02:26:19.294Z","source":"notification","error":{"name":"Error","message":"adoption refused","stack":"Error: adoption refused\n    at workspace.relocateLeaf (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:685:44)\n    at D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69345:16\n    at Workspace.transact (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:68847:7)\n    at Workspace.returnWindow (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69343:12)\n    at Workspace.surfaceClosed (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69196:14)\n    at TestContext.<anonymous> (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:686:15)\n    at Test.runInAsyncScope (node:async_hooks:226:14)\n    at Test.run (node:internal/test_runner/test:1118:25)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)","stackOrigin":"original"},"page":"http://test/","context":{"vault":null,"file":null,"view":null}}
+Error log write failed; local journal retained: TypeError: Cannot read properties of undefined (reading 'getDirectory')
+    at logDirectory (D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:34969:40)
+    at D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:35005:33
+SLOPSIDIAN_DIAGNOSTIC {"schemaVersion":1,"id":"4963485f-3643-4145-8863-80371922f31f:6","session":"4963485f-3643-4145-8863-80371922f31f","timestamp":"2026-11-02T02:26:19.294Z","source":"notification","error":{"name":"Error","message":"The popout window could not be released: guest could not be reclaimed","stack":"Error: The popout window could not be released: guest could not be reclaimed\n    at Workspace.releaseFailed (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69300:17)\n    at held.failed (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:623:43)\n    at TestContext.<anonymous> (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:712:10)\n    at Test.runInAsyncScope (node:async_hooks:226:14)\n    at Test.run (node:internal/test_runner/test:1118:25)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)","stackOrigin":"original"},"page":"http://test/","context":{"vault":null,"file":null,"view":null}}
+Error log write failed; local journal retained: TypeError: Cannot read properties of undefined (reading 'getDirectory')
+    at logDirectory (D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:34969:40)
+    at D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:35005:33
+✔ linked navigation is fenced: older held navigations never redirect a group after newer intent, regroup, unlink, vault switch or a mid-follower change (1.5073ms)
+✔ saved popout windows are validated, keep unknown data and refused entries, and fold into main without losing leaves (0.8269ms)
+✔ the desktop popout manager only allows approved local about:blank windows and lets only the owner approve a close (0.6085ms)
+✔ window entry extras survive parse and serialize, and a broken desktop bridge throws instead of falling back (0.2183ms)
+✔ instanceof checks accept events and nodes from a registered popout realm and reject lookalikes (0.6847ms)
+✔ unavailable popout windows stay in the saved layout, never duplicate leaf ids, and track live edits and closed tabs (0.4874ms)
+✔ Obsidian floating windows are retained verbatim, warned about, and never guessed into popouts or rewritten on export (0.6612ms)
+✔ retrying a pending window rebuilds its nested splits, sizes and selected tabs around the live leaves, and the placeholder never reuses a taken id (1.0088ms)
+✔ a broken desktop bridge disables popouts with its reason and a failed approval never falls back to closing the surface (0.454ms)
+✔ a view that cannot follow into a popout is refused before any window opens, and popoutNameFor only names live hosting surfaces (0.2417ms)
+✔ restoreLeafToMain moves one popped-out leaf into a main group, prunes empty windows and ignores leaves already in main (0.1903ms)
+✔ a native close veto after returnWindow keeps the window owned, moves the staged tabs back and allows a retry that commits only on the real close (0.9521ms)
+✔ an unapproved native close returns the same live tabs to main while preserving retryable nested window intent (1.4015ms)
+✔ an unapproved close that cannot relocate keeps the original saved window and reports failure without dropping tabs (0.5294ms)
+✔ a deferred native return keeps the nested window owned and saved while pending, ignores nothing newer in main on veto, and commits only on the native close (0.6713ms)
+SLOPSIDIAN_DIAGNOSTIC {"schemaVersion":1,"id":"4963485f-3643-4145-8863-80371922f31f:7","session":"4963485f-3643-4145-8863-80371922f31f","timestamp":"2026-11-02T02:26:19.310Z","source":"notification","error":{"name":"Error","message":"The popout window could not be released: The popout window did not confirm that it closed.","stack":"Error: The popout window could not be released: The popout window did not confirm that it closed.\n    at Workspace.releaseFailed (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69300:17)\n    at Timeout._onTimeout (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69376:37)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)","stackOrigin":"original"},"page":"http://test/","context":{"vault":null,"file":null,"view":null}}
+SLOPSIDIAN_DIAGNOSTIC {"schemaVersion":1,"id":"4963485f-3643-4145-8863-80371922f31f:8","session":"4963485f-3643-4145-8863-80371922f31f","timestamp":"2026-11-02T02:26:19.326Z","source":"notification","error":{"name":"Error","message":"The popout window could not be released: The popout window did not confirm that it closed.","stack":"Error: The popout window could not be released: The popout window did not confirm that it closed.\n    at Workspace.releaseFailed (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69300:17)\n    at Timeout._onTimeout (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69376:37)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)","stackOrigin":"original"},"page":"http://test/","context":{"vault":null,"file":null,"view":null}}
+Error log write failed; local journal retained: TypeError: Cannot read properties of undefined (reading 'getDirectory')
+    at logDirectory (D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:34969:40)
+    at D:\RonSijm\RonSijm.Slopsidian\.runtime\workspace-groups-popouts-tests-ftD1iY\bundle.cjs:35005:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+✔ an acknowledged return times out by clearing releasing and its waiters, stays retryable and a late native close still commits (31.2895ms)
+SLOPSIDIAN_DIAGNOSTIC {"schemaVersion":1,"id":"4963485f-3643-4145-8863-80371922f31f:9","session":"4963485f-3643-4145-8863-80371922f31f","timestamp":"2026-11-02T02:26:19.341Z","source":"notification","error":{"name":"Error","message":"The popout window could not be released: guest could not be reclaimed","stack":"Error: The popout window could not be released: guest could not be reclaimed\n    at Workspace.releaseFailed (D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\workspace-groups-popouts-tests-ftD1iY\\bundle.cjs:69300:17)\n    at held.failed (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:623:43)\n    at TestContext.<anonymous> (file:///D:/RonSijm/RonSijm.Slopsidian/tests/workspace-groups-popouts.test.mjs:757:10)\n    at async Test.run (node:internal/test_runner/test:1125:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)","stackOrigin":"original"},"page":"http://test/","context":{"vault":null,"file":null,"view":null}}
+✔ applying a layout waits for the popout's native close: a veto rejects the apply and keeps the old nested window, a confirmed close proceeds (15.8732ms)
+✔ the mutation lock makes real CodeMirror Undo/Redo refuse, retains history, and lets programmatic and synchronised edits through (34.8983ms)
+✔ syncWorkspaceChildren keeps state-preserving moves in one document and adopts across documents (2.8788ms)
+✔ a window that reports pagehide before closed is detected by the short recheck, not the 500ms poll (0.7858ms)
+✔ layout planner tiles inside the work area and refuses insufficient or malformed geometry (1.3847ms)
+✔ the arrangement is verified against the OS-reported rectangles (0.8908ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+PASS injected-driver run of the OS drag scenario (NOT OS-verified)
+✔ the scenario runs main->popout1->popout2->main with identity, pin, link, siblings, real Undo/Redo/Save and full cleanup (mock driver is never OS-verified) (20.2699ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+✔ insufficient work-area geometry fails before any drag and still cleans up (7.5618ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+✔ a drag that breaks the link group or loses the selected sibling is reported and cleanup still runs (8.9398ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+PASS injected-driver run of the OS drag scenario (NOT OS-verified)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+✔ cleanup failures reject and aggregate with the scenario failure (15.8052ms)
+✔ the scenario waits for the live vault inventory and fails boundedly without it (3.9148ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+✔ ambiguous window matches are fatal and not retried (5.9451ms)
+✔ source contract: real driver by default, no DOM event dispatch, exact pid/title use (0.555ms)
+Warning: KaTeX doesn't work in quirks mode. Make sure your website has a suitable doctype.
+✔ canMoveLeaf allows live main<->popout and popout<->popout moves, but refuses closing/closed windows and views that cannot follow into a window (169.8632ms)
+✔ A tab dragged from a popout document is accepted, drops into a main group at the pointer position and moves the live leaf (1.3834ms)
+✔ A main tab dropped on a popout pane body is a realm-safe centre move whose preview is drawn in the popout document, never a dock (0.444ms)
+✔ Popout to popout moves use the same shared drag, a stale token or refused guard drops nothing, and dragend in either window cancels (0.2675ms)
+✔ The real-host tab-drag helper compiles to a primitive-returning expression and rejects partial, recreated or non-moving results without claiming an OS drag (0.6175ms)
+✔ cancelled explicit import never saves buffers, rereads the source or replaces the current layout (193.9323ms)
+✔ confirmed import rechecks the reviewed source before delegating to the guarded layout transition (0.2919ms)
+✔ changed original bytes or vault selection while reviewing cannot import into the current layout (0.6008ms)
+✔ a vault change during the final original read refuses the reviewed import (0.2012ms)
+✔ an imported workspace checkpoints once after handoff without saving note buffers (0.2941ms)
+✔ failed imported checkpoints retain retry ownership and stale completions cannot clear another vault's checkpoint (0.9657ms)
+✔ an obsolete import checkpoint never writes into a newly selected vault (0.1775ms)
+✔ vault transitions never enqueue obsolete automatic layout saves (0.672ms)
+✔ the transition checkpoint drains pending writes before taking and saving the final opaque layout (0.8132ms)
+✔ a failed pending write aborts the checkpoint and normal saves recover after editing resumes (0.2905ms)
+✔ a failed final checkpoint is reported and cannot leave automatic saving permanently disabled (0.1501ms)
+✔ checkpoint persistence retains invalid-restoration protection and requires the transition owner (0.1946ms)
+✔ the checkpoint waits for tracked view work and safely handles the initial vault chooser without a root (0.9743ms)
+✔ a layout save never serializes a Markdown leaf whose view has closed but which is still in the tree (0.7552ms)
+✔ a slow close at an earlier index removes itself, not a sibling, after a faster later close shifts indices (0.6014ms)
+ℹ tests 142
+ℹ suites 0
+ℹ pass 142
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4641.1049

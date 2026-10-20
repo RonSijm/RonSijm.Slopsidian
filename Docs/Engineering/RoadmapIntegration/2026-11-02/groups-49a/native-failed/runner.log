@@ -1,0 +1,50 @@
+PASS linked leaves follow navigation, skip pinned members and keep independent history
+PASS a real popout window hosts the same live leaf, view and owner
+PASS typing, undo and hotkey save work in the real popout document
+PASS menus and modals open in, and cancel from, the popout document
+PASS a held file mutation freezes the popout and real input/undo resume afterwards
+PASS a refused dirty close keeps the window, tab and edit
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\smoke-profile\logs\errors-smoke-95606ab5-4da3-46f4-b14b-a28f82463b52.jsonl
+(node:42032) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:50473/devtools/browser/dcf4cc81-e1ba-4fd5-9a92-52548e362250
+ELECTRON_HOST_PID 42032
+DOTNET_HOST_PID 42884
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\smoke-vault-liSD6J
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:54686
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:54686
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: Unexpected diagnostic count while Record the deliberate native close request vetoed by the owned prepareClose fixture: [{"schemaVersion":1,"id":"9d6c1c1b-0ba7-4ee0-8a10-ccbdbe2c415d:0","session":"9d6c1c1b-0ba7-4ee0-8a10-ccbdbe2c415d","timestamp":"2026-11-02T00:39:06.355Z","source":"notification","error":{"name":"Error","message":"A popout window closed without the workspace's approval. Its tabs were kept in the saved layout.","stack":"Error: A popout window closed without the workspace's approval. Its tabs were kept in the saved layout.\n    at Workspace.surfaceClosed (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:91519:19)\n    at http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:91492:33\n    at finish (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:89403:11)\n    at recheck (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:89436:13)","stackOrigin":"original"},"page":"http://127.0.0.1:54686/","context":{"vault":"C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-liSD6J","file":"Popout nav/C.md","view":"markdown","leafId":"pop-b"}},{"schemaVersion":1,"id":"9d6c1c1b-0ba7-4ee0-8a10-ccbdbe2c415d:1","session":"9d6c1c1b-0ba7-4ee0-8a10-ccbdbe2c415d","timestamp":"2026-11-02T00:39:06.371Z","source":"window-error","error":{"name":"Error","message":"ResizeObserver loop completed with undelivered notifications.","stack":"Error: Reported here\n    at describeError (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:42877:149)\n    at recordError (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:42937:12)\n    at http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:124775:21","stackOrigin":"reported"},"page":"http://127.0.0.1:54686/","context":{"vault":"C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-liSD6J","file":"Popout nav/C.md","view":"markdown","leafId":"pop-b","filename":"http://127.0.0.1:54686/","line":0,"column":0}},{"schemaVersion":1,"id":"9d6c1c1b-0ba7-4ee0-8a10-ccbdbe2c415d:2","session":"9d6c1c1b-0ba7-4ee0-8a10-ccbdbe2c415d","timestamp":"2026-11-02T00:39:06.386Z","source":"window-error","error":{"name":"Error","message":"ResizeObserver loop completed with undelivered notifications.","stack":"Error: Reported here\n    at describeError (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:42877:149)\n    at recordError (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:42937:12)\n    at http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:124775:21","stackOrigin":"reported"},"page":"http://127.0.0.1:54686/","context":{"vault":"C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-liSD6J","file":"Popout nav/C.md","view":"markdown","leafId":"pop-b","filename":"http://127.0.0.1:54686/","line":0,"column":0}},{"schemaVersion":1,"id":"9d6c1c1b-0ba7-4ee0-8a10-ccbdbe2c415d:3","session":"9d6c1c1b-0ba7-4ee0-8a10-ccbdbe2c415d","timestamp":"2026-11-02T00:39:06.397Z","source":"window-error","error":{"name":"Error","message":"ResizeObserver loop completed with undelivered notifications.","stack":"Error: Reported here\n    at describeError (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:42877:149)\n    at recordError (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:42937:12)\n    at http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:124775:21","stackOrigin":"reported"},"page":"http://127.0.0.1:54686/","context":{"vault":"C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-liSD6J","file":"Popout nav/C.md","view":"markdown","leafId":"pop-b","filename":"http://127.0.0.1:54686/","line":0,"column":0}},{"schemaVersion":1,"id":"9d6c1c1b-0ba7-4ee0-8a10-ccbdbe2c415d:4","session":"9d6c1c1b-0ba7-4ee0-8a10-ccbdbe2c415d","timestamp":"2026-11-02T00:39:06.407Z","source":"window-error","error":{"name":"Error","message":"ResizeObserver loop completed with undelivered notifications.","stack":"Error: Reported here\n    at describeError (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:42877:149)\n    at recordError (http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:42937:12)\n    at http://127.0.0.1:54686/js/editor-host.w95yr8kkva.js:124775:21","stackOrigin":"reported"},"page":"http://127.0.0.1:54686/","context":{"vault":"C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-liSD6J","file":"Popout nav/C.md","view":"markdown","leafId":"pop-b","filename":"http://127.0.0.1:54686/","line":0,"column":0}}]
+
+5 !== 1
+
+    at expectErrors (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/error-log-audit.mjs:80:10)
+    at async checkWorkspaceGroupsPopouts (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/workspace-popout-scenarios.mjs:165:3)
+    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:926:5
+
+'failed' !== 'passed'
+
+    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:1828:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v25.6.1

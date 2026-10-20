@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/obsidianmd/obsidian-sample-plugin",
+  "commit": "07ceb81d1fb3384af611ebf665a1ec42a7e5926d",
+  "license": "0BSD",
+  "source_modified": false,
+  "sha256": {
+    "src/main.ts": "0d03217199cbf9341ad08ffeeaa61d9af5c4fed4e773b2262e84a273d52e9f19",
+    "src/settings.ts": "649f7d8975441bfced6dc174134acb9138e4e668e31dd7754addb8134c06fdbe",
+    "manifest.json": "24fe7b13b4c09d38a7cc323e2115b96bf4a201dfd78b89552c9638f917dd2c94",
+    "styles.css": "8764243cae0351ebdbb76e770c4feffcb1956ff42420d4ec159212dc7a8535ed",
+    "LICENSE": "58340ddba3343608dc4835d119861ef8d35f9af8dede9b83dc4c4bdebc4a329c"
+  }
+}

@@ -1,0 +1,4 @@
+PASS A committed deterministic AVIF (AV1 still, no in-page encoder) decodes at 32x16 with left-red/right-blue pixels and unchanged bytes.
+PASS A committed seekable VP9 WebM reports duration 4.00 s with seekable range [0,4]; #t=3 shows the blue frame (currentTime 3.00), #t=1 the red frame (1.00), and a fresh load honours #t=3 (3.00).
+PASS A real cache-only GitHub mount (readOnly=true) serves AVIF and seekable WebM from cached blobs with the same pixels/frames, binary writes rejected, zero api/raw requests and every cached blob byte-identical.
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

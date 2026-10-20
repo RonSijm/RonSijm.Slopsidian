@@ -1,0 +1,45 @@
+PASS Real desktop pane, persisted homepage/search settings and a sandboxed remote page without Node or an opener
+PASS Switching tabs hides the native surface; Reading links open Web viewer and separate panes do not share website cookies
+PASS Pointer navigation, native back/forward and reload, Ctrl+F and actual find-in-page matches
+PASS New-window links stay contained; file links, vault-service navigation and redirects are blocked; no vault token reaches pages
+PASS Configured search safely encodes input; a full Electron/.NET restart restores URL, title, settings and unknown nested leaf state
+PASS Disable/enable and disabled process restart preserve unavailable leaf state, remove owned commands/ribbon and release browser contents; original workspace/settings data survive
+PASS History records successful main-frame and same-document visits, skips consecutive reloads, subframes, blank/error pages and redirect intermediates
+PASS History pane searches titles and URLs, reopens a saved address in an isolated browser tab and is reused by toolbar Ctrl+H
+PASS Record visits control durably pauses and resumes automatic history without deleting saved visits
+PASS Per-visit removal works; a real external edit invalidates a reviewed clear and its exact bytes survive
+PASS History, paused recording, search and opaque pane state survive full process restarts; disable removes commands and restores the retained pane on re-enable
+PASS Cancel leaves history untouched; confirmed clear removes visits while preserving the recording preference, BOM and opaque configuration fields
+PASS Unsupported externally written history is retained during reads and automatic visits; original workspace and Web viewer settings remain byte-identical
+PASS Reader extracts the loaded article in an isolated world, retains Unicode/headings/code/tables/captions, omits navigation/active content and returns to identical source DOM, input, scroll, cookies and history
+PASS Reader has an opaque sandbox without Node/editor access, enforces its script CSP, ignores page-world prototype spoofing and preserves native URL/token boundaries
+PASS Find searches the displayed reader text with previous/next selection; safe links navigate and re-extract, and the owned reader command toggles the actual view
+PASS Short/non-article and oversized pages fail visibly without losing browsing; strict source CSP is supported and rapid cancellation/return leaves no reader frame
+PASS Reader mode and opaque leaf state persist through a full Electron/.NET restart and rebuild from the newly loaded source page
+PASS Disable/disabled restart/re-enable retains reader intent, removes owned command/frames, closes native source contents and preserves original settings/workspace bytes
+PASS Clipping previews the isolated loaded article as literal Markdown with headings/lists/quotes/code/tables/links/Unicode/source metadata; Cancel writes nothing and retains original DOM/input/cookies/history without refetching images or sending vault tokens
+PASS The save-to-vault command works from Reader, honors an edited nested Unicode path, creates the exact reviewed UTF-8 Markdown, emits one vault create event and opens the saved note
+PASS External BOM/CRLF file and folder collisions never overwrite; invalid/traversal/configuration/reserved paths fail with the preview retained, a corrected destination succeeds and new suggestions avoid existing paths
+PASS Same-URL navigation invalidates the reviewed clip and disables Save; actual vault switches discard the preview and a retained obsolete dialog cannot create a note in either vault
+PASS Short/non-article, oversized source and excessive table pages explain failure with Save disabled and browsing restored; strict website CSP still permits isolated clipping
+PASS Previews are transient across full process restarts; disable/disabled restart/re-enable cleans up dialogs, commands and native contents while retaining saved notes, external bytes, clipping settings and original workspace data
+PASS Real toolbar zoom changes the native page's device-pixel ratio and viewport to 130% while preserving source DOM/input/cookies/load count/history and the editor shell scale
+PASS Independent same-origin tabs keep separate native zoom; owned commands change only the active tab, and returning to a tab retains its percentage
+PASS Native zoom reapplies across same-origin and cross-origin navigation, reload, back and forward without changing a second tab's scale
+PASS Reader zoom changes actual heading geometry, retains opaque-frame/token isolation and Find, handles Reader/toolbar keyboard input once, clamps rapid commands at 50–300% and resets both surfaces without scaling the editor
+PASS Per-tab native/Reader zoom and opaque leaf fields survive full enabled/disabled process restarts; disable removes all three commands/controls and releases native contents before re-enable restores the actual scales
+PASS Invalid persisted factors leave the current view untouched, modals release native zoom accelerators, and real vault switches preserve per-tab zoom without leaking commands/state or rewriting original settings/workspace bytes
+PASS Real Block ads settings and bundled EasyList cancel both native script requests before they reach the server; normal scripts and the same ad URL as XHR still load, with exactly two blocked requests and no vault access
+PASS Saving the setting updates both visible and hidden native sessions for future requests, without reloading or removing existing scripts; per-tab counts and unknown vault settings remain independent and intact
+PASS Counts retain blocked requests across hash changes and reset for actual document loads, reload, back and forward without treating denied vault requests as advertisements
+PASS Full enabled and disabled process restarts restore the saved Boolean before loading page resources, preserve opaque tab fields and ignore an unrelated leaf field with the same name
+PASS Invalid native IPC cannot mutate protection; disabling releases every page and counter, and re-enabling restores filtering with fresh ephemeral storage and no page access to Node
+PASS Real vault switches replace each native session's filtering setting, restore the original enabled tabs, preserve both vaults' settings/note/original-workspace bytes and never expose a vault token to fixture requests
+PASS Real keyboard-operated font/width settings change computed fonts and article geometry in place, retain article/frame identity and opaque settings, and preserve source DOM/input/scroll/cookies/history without requests or materializing defaults on open
+PASS Saved preferences update hidden and visible Reader frames, and a held real native extraction uses the latest saved preferences when its presentation becomes ready
+PASS An external appearance.json color-scheme change re-themes the already open native Reader in place: same iframe element/name, article DOM and scroll retained, original scheme restored
+PASS Reader rejects invalid or wrong-session appearance messages, retains opaque-origin/Node/editor isolation, and keeps actual Find and zoom working with custom fonts and widths
+PASS A full Electron/.NET restart restores both readers with vault preferences before presentation, retaining opaque leaf fields without letting unrelated leaf values override the saved settings
+PASS Disable and disabled-process restart remove all Reader frames/native pages; re-enable, pane close and a new Reader all retain the saved preferences with fresh owned resources
+PASS Actual vault switches replace Reader preferences and restore the original readers cleanly, preserving both settings files, BOM/CRLF/Unicode note bytes and original workspace bytes without leaking tokens or stale saves
+Desktop Web viewer workflows passed in an isolated test profile.

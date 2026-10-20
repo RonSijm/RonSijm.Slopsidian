@@ -1,0 +1,1846 @@
+{
+  "status": "passed",
+  "scope": "core-verification-targets",
+  "startedAt": "2026-10-27T23:24:02.738Z",
+  "checks": [
+    "Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.",
+    "The actual OS folder picker grants a live external vault, including binary attachment inventory.",
+    "Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.",
+    "External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.",
+    "The shared note-creation UI creates folders and writes a new Markdown note directly to disk.",
+    "Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.",
+    "Core enablement and the unchanged upstream sample plugin save settings into the selected vault.",
+    "Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.",
+    "External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.",
+    "A real page reload is blocked while a buffer has unsaved changes.",
+    "Cancelling the native folder picker retains the selected vault and dirty buffer.",
+    "Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.",
+    "A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.",
+    "Core foundations exercised real file-tree creation/navigation, filtered command execution, fuzzy switching, heading navigation, live counts, and split/pin/sidebar layout restoration with no community plugins installed or enabled.",
+    "Core controls removed/restored actual commands, ribbon/view resources and keyboard access, isolated state between vaults, retained unknown configuration fields, and survived disabled/enabled browser reloads with directory-handle reconnection. Templates, dated notes, unique collision handling and random-note empty/attachment cases ran through real UI.",
+    "Command palette settings added/reordered/removed real pinned commands and respected editor/conditional availability. Quick switcher opened a result with Ctrl+Enter, cancelled and created a missing nested note, and handled an empty vault without creating a file.",
+    "Real source selections, edits/undo/redo and Reading mode count frontmatter only when selected, use reference numeric/punctuation/CJK/kana/Korean/Tamil/Tibetan rules and UTF-16 emoji/CRLF lengths without writing the note.",
+    "Outline uses actual ATX/Setext metadata, excludes YAML/comments/indented and nested-length fences, nests skipped levels correctly, folds by pointer/keyboard/all controls and follows real source-cursor navigation.",
+    "Dirty heading edits, undo/redo and external saved replacements refresh the real Outline; Reading heading navigation/scroll changes active highlighting and emits the actual public Markdown scroll event.",
+    "Disable/re-enable removes owned Outline controls and retained listeners, restores counts, and full native restart or real-folder WASM reconnect retains the real files/mode without rewriting original workspace/community configuration.",
+    "The real status control hides for empty/image leaves, honors explicit app.json Live Preview, offers checked keyboard/pointer Source/Reading/Live Preview choices and applies actual in-place Markdown styles without changing native getMode semantics or file bytes.",
+    "Real formatted-text typing and task-checkbox input preserve selections, undo/redo, dirty buffers and community editor extensions across all three modes; only explicit save writes the exact original BOM/CRLF with the intended task marker changed.",
+    "CodeMirror displays an actually decoded local image, rendered table and local Mermaid image; their real Edit buttons reveal original source and revoke resources, detached task controls are inert, and Ctrl-clicking a wiki alias opens the resolved heading in a separate real Reading leaf.",
+    "Real split panes retain independent per-leaf modes with a shared document and community extensions; public same-file setViewState preserves unsaved text/history, rejects malformed source flags without disturbing the view, and retains opaque state.",
+    "Actual external writes refresh clean Source/Live Preview peers, but conflicting saved bytes cannot overwrite a dirty shared buffer; the guarded save rejects visibly to its caller and explicit discard/reload retains the external BOM/CRLF document.",
+    "Disabling Editor status removes its open menu, status button and retained listeners without disabling editing modes; native restart or actual-folder WASM reconnect preserves source flags, opaque leaf state and persisted plugin ownership while leaving app/workspace bytes and other enabled IDs unchanged.",
+    "Real open/save events record durable saved-text snapshots with exact BOM/CRLF/Unicode, numeric settings, deduplication, searchable versions and history previews; expired history is pruned.",
+    "Restore review/cancel, stale external-version rejection and dirty-buffer refusal preserve disk and editor text; confirmed restore refreshes the real note and keeps its replaced saved version in history.",
+    "Markdown, Canvas and Bases restore their real saved files; deleted text files recreate missing parents and BOMs, while unsupported recovery-store versions fail visibly without clearing stored data.",
+    "History, settings and opaque data survive full host restarts/reconnects; disable/re-enable cleans up commands/dialogs, cancelled or detached actions cannot restore/clear, and confirmed clear removes only recovery snapshots.",
+    "Actual selection extraction saves previously dirty text, creates a real nested target, resolves source/template links independently, carries image/reference/footnote definitions, and retains BOM/CRLF plus real source undo/redo.",
+    "Cancel and retained closed-dialog controls write nothing; retargeted source views, unresolved relative-link transfers, post-open external/local edits and missing templates reject visibly without losing bytes, creating a target or implicitly saving concurrent local text.",
+    "Heading extraction includes children and blocks, rejects duplicate target anchors, supports Shift+Enter prepend and embed/none replacements, and selectively repairs real Markdown/properties/Canvas while whole-note and remaining-section links stay on the source.",
+    "Merge confirmation is enforced; a real preflight veto and a target changed after planning retain all source/reference files, newer target bytes and restored source panes.",
+    "Confirmed merge combines precise YAML/body data with guarded source trash and Markdown/Canvas reference repair, opens its real target and emits one owned modification/deletion; a real file-menu action also merges a non-active note and Ctrl+Enter creates its new nested target.",
+    "A real modify-event subscriber can edit an open target after commit: Note composer reports the committed-but-unsaved state, retains its text, disables repeat application and permits a normal subsequent save.",
+    "Real select/template/confirmation settings preserve unknown BOM-prefixed configuration, disable removes owned commands/dialog/listeners, and desktop restart or real-folder browser reconnect restores both composed files and enabled runtime.",
+    "An actual CommonJS plugin uses shared Menu/Item/Separator types, rich labels, checked/disabled rows, sections, viewport placement, pointer/keyboard actions and dismissal; real file/editor events carry the current TFile, MarkdownView and CodeMirror editor.",
+    "Actual editor context actions retain copy/cut/select-all, undoable CRLF-aware paste, empty-paste preservation and visible permission/stale/multiple-selection errors using a bounded clipboard API fixture; the system clipboard is never read or changed.",
+    "Closing the actual source view or disabling the plugin removes owned menus and retained button listeners; re-enable has exactly one event subscriber, and only explicit plugin toggles change community enablement.",
+    "The actual opt-in converter previews Roam/Bear/tasks/numeric links and legacy frontmatter in real vault files; Cancel and a retained closed-dialog button write no notes.",
+    "Confirmed legacy conversion rewrites the actual BOM/CRLF note with lossless unknown numeric/YAML data and refreshes its real clean editor; version-guarded Undo restores every original Markdown file byte-for-byte.",
+    "Newer external versions, ambiguous numeric destinations and post-preview dirty edits reject visibly without partial note writes, implicit saves or loss of local text; generated link text disambiguates real files.",
+    "Readable numeric aliases are a separate working conversion; disable removes real converter UI/ribbon/commands/listeners, and restart/reconnect restores enablement without altering unknown settings or original note bytes.",
+    "Outgoing links lists real wiki/Markdown/property links and embeds, deduplicates the same destination/subpath, and explicitly disables unsupported attachment/traversal actions.",
+    "Outgoing links navigates to exact heading/block context, creates a missing Markdown target without changing its source, and keeps a pinned sidebar on its note.",
+    "Dirty-buffer edits, undo/redo, external saves and target renames refresh outgoing resolution without overwriting vault files or secretly rewriting links.",
+    "Unlinked aliases navigate to their source; collapse/follow/pin state survives an actual reload and releasing the pin follows the active note.",
+    "Disabling Outgoing links removes its commands, view and enabled-instance lookup; re-enabling creates one fresh view with the persisted state.",
+    "Image Fit stays inside real fractional CSS viewports without feedback scrollbars, including width- and height-constrained images.",
+    "Outgoing opens real decoded raster/Canvas leaves, honors modified-click tabs, follows provider registration/removal and preserves exact attachment bytes; image fit/zoom/scroll work and closed views release URLs and retained controls.",
+    "Reading links share registered attachment navigation; live external pixel changes, visible decode errors/recovery and guarded image rename refresh the actual view without writing image bytes or losing opaque state.",
+    "Actual image leaves, zoom, opaque state and pinned Outgoing restore after full desktop restart/browser reconnect while original workspace absence/bytes, Markdown and exact binary attachments stay preserved.",
+    "Search executes real worker-backed Boolean/regex/path/file/tag/property/case queries and selects exact source context.",
+    "Search waits for actual worker readiness, including a startup longer than two seconds, without charging it against the separate bounded query deadline.",
+    "Search follows dirty edits/undo/redo, real external writes and renames, rejects invalid queries without stale results, and terminates a blocking regex off the UI thread.",
+    "Tags lists nested inline/property tags with counts, excludes escaped/code/comment text, filters/folds/sorts, and uses the actual Search dependency with a visible disabled-dependency error.",
+    "Backlinks resolves heading/block references and unlinked aliases, navigates exact source ranges, follows unsaved/undo/external/rename changes, and renders/removes real in-document backlinks.",
+    "Footnotes shows multiline definitions, repeated references and explicit missing definitions, selects exact source ranges and updates through dirty edits/undo/redo.",
+    "Search/Tags/Backlinks/Footnotes preserve real query/sort/fold/pin state across reload/reconnect; disabling removes owned views/controllers/commands and re-enabling creates one fresh instance.",
+    "Quick switcher settings control actual registered attachments and unresolved references: Canvas opens, hidden attachments/unknown extensions stay out, and existing-only removes unresolved suggestions without implicitly creating a note.",
+    "The unsupported-file toggle follows app.json, all-types overrides attachment filtering, URI-relative targets and explicit creation use real controls, and Boolean/opaque settings plus BOM survive reload/reconnect without rewriting app.json.",
+    "Bookmarks opens actual heading/block, empty-folder and saved-search targets; distant Reading blocks scroll precisely and missing/unsupported targets reject without discarding data.",
+    "Actual Bookmarks controls add groups/files, rename, reorder, move into groups, remove and filter; BOM, unknown data and note bytes survive, and obsolete controls cannot mutate newer data.",
+    "The async core lifecycle honors an actual Bookmarks preflight veto without unloading its original view, removes owned controls/providers on disable, restores unavailable panes with their filters, and rejects concurrent reloads.",
+    "Organized Bookmarks data and actual per-pane filter state survive a fresh runtime without modifying original note bytes.",
+    "The actual Workspaces manager saves and loads real split/tab/pin/Reading/sidebar and core-view state, without hidden editors or rewriting original Obsidian profiles.",
+    "Saved-layout preflight and staged view loading retain the actual previous editor/DOM on factory failures, explicit preflight vetoes and dirty-save conflicts; external note bytes are not overwritten.",
+    "Named layouts can be renamed and deleted without deleting notes; guarded profiles, unknown configuration, UTF-8 BOM and the active layout survive a fresh runtime.",
+    "Actual local Properties controls edit source/Reading notes, typed numbers, checkboxes and lists; body selections and existing undo/redo survive while exact numeric literals, comments, anchors, unknown structured/type data and BOM/CRLF are retained.",
+    "Properties rejects unsafe numeric input, obsolete dialogs and dirty external-save conflicts without overwriting newer file bytes or discarding the original unsaved buffer.",
+    "The real vault property catalog filters/sorts/counts, assigns case-insensitive types and renames a property in both notes and types.json; all-note collision preflight, unknown types/configuration and precise YAML/body bytes are preserved.",
+    "Actual Properties owned views, filters, sort, pinned file and assigned types survive disable/re-enable and a fresh runtime; unsupported providers retain their saved states without hidden editors or note rewrites.",
+    "The actual file explorer and native-shaped root actions create nested empty folders, retain root identity and reject occupied paths without replacing them or prefilling an absolute root.",
+    "Real rename cancellation and destination collisions retain source/reference bytes, file identity and public event state.",
+    "Pending file mutations cannot be dismissed with Escape or the dialog close button; a later failure stays visible and retains the source bytes.",
+    "Rename/move preserves the actual TFile, shared sessions, Reading mode, pinned discovery/Properties panes and history while saving dirty text and rewriting real wiki/Markdown/reference/property links without changing exact YAML numbers or CRLF/BOM.",
+    "Bookmarking an unmarked paragraph generates and saves a real block ID; a Windows case-only rename updates physical filenames and persists both heading and generated-block targets.",
+    "Disabled attachment previews still expose real tree actions: binary move retains every byte and updates references; cancelled trash changes nothing and committed vault trash preserves a colliding folder.",
+    "Trash saves dirty shared notes, honors a later pane's explicit preflight veto before disposing any editor, preserves undo/redo after rejection, and closes all associated sessions only when the note is actually trashed.",
+    "Renamed files, split sessions, pinned properties and updated bookmarks reopen after a fresh runtime without changing original workspace.json; missing targets still reject explicitly.",
+    "Global Graph uses actual Markdown/property links, missing and orphan notes; node clicks open/create real files and dirty edits, undo and external changes update the rendered graph.",
+    "Local Graph has real directed depth and neighbor-edge controls, follows files unless pinned, and global/local nodes and file state follow an actual guarded rename.",
+    "Actual Graph controls filter nodes, show attachments/tags, navigate to Search, reorder overlapping color groups and change visible sizes/arrows/physics while preserving BOM and unknown configuration fields.",
+    "The real SVG graph supports camera zoom/pan, pointer node dragging and keyboard node activation without using a hidden editor.",
+    "Malformed and excessive Graph queries fail visibly off the UI thread; stale configuration writes retain external bytes and Reload controls permits guarded subsequent saves.",
+    "Graph disable/re-enable removes and restores owned commands/ribbon/views; global controls, local depth/pin/file and both cameras survive a full restart or folder-handle reconnect without rewriting the original Obsidian workspace.",
+    "Existing Canvas text/file/web/group/unknown cards and edges open through the file explorer, render real Markdown/images and live dirty/undo/external file previews, and navigate actual headings without modifying original BOM/CRLF data or implicitly loading websites.",
+    "Actual Canvas inspector typing autosaves the original versioned UTF-8 file; keyboard undo/redo works across saves while preserving BOM, CRLF and unknown JSON fields.",
+    "Real Canvas pointer/keyboard input selects and grid-snaps cards, resizes, connects by toolbar and handle drag, edits edge labels, moves groups with contained cards, rejects invalid geometry and retains deletion undo.",
+    "Stale Canvas autosaves retain external disk bytes and the dirty board; actual native reload confirmations honor cancellation and explicit discard before installing a clean document.",
+    "Guarded note and binary renames update stored Canvas file cards, real text-card Markdown and group backgrounds together, retaining unknown card data and every attachment byte.",
+    "Canvas commands create collision-safe files in the configured folder; actual wheel/modifier/Shift, label and snapping settings apply while BOM and future configuration survive.",
+    "Actual Canvas selects and slider cover folder/current/root placement, retained conditional folder values, detail thresholds at both bounds and Restore default without modifying the existing board.",
+    "All six modifier-drag preferences run through real rectangle input, including reverse geometry, shared menu, note/media selection, safe website errors, cancel/detached controls and saved undo without writing referenced files.",
+    "Canvas disable/re-enable and a fresh runtime restore its actual file, camera DOM transform, settings and unknown JSON without hidden editors, leaked providers or original workspace rewrites.",
+    "Page preview uses real note/heading/block targets and encoded links, scrolls the actual target inside an unclipped popover, retains pointer entry and cleans up dismissal without opening hidden leaves, executing note HTML or changing source bytes.",
+    "An open hover preview follows the real target's unsaved shared buffer and external file changes without saving a dirty target, replacing a source pane or changing its bytes.",
+    "Real editor mouse coordinates and a later Control key show previews; actual settings switch Reading/editor modifier behavior, code spans remain excluded and UTF-8 BOM plus unknown settings survive.",
+    "A real CommonJS probe registers a dynamic hover source and uses the public HoverPopover constructor; disabling removes owned popovers and hooks, and modifier settings/unknown configuration survive an actual restart or folder reconnect.",
+    "Real slash typing filters available commands, Enter executes a workspace action or editor callback, and query removal has an isolated undo/redo transaction without damaging surrounding BOM/CRLF Markdown.",
+    "Code/frontmatter never trigger slash commands; Escape retains the query, disable removes the actual editor extension, and re-enabled pointer selection runs an available command in the original note.",
+    "Slides render real Markdown separators and document-wide references without splitting nested rules or fences; pointer/keyboard navigation displays a vault image and dirty text, links open real notes, and Exit preserves the original editor, leaf count and file bytes.",
+    "Slides and Slash commands match the absence of general settings pages, remove their live UI/hooks on disable, restore after an actual desktop restart or real-folder reconnect, and leave unknown configuration and original Markdown bytes untouched.",
+    "Explicit synthetic microphone start/stop releases tracks; real preview decoding, note-relative attachment saving, exact binary bytes, guarded CRLF/BOM/Unicode note insertion and both Reading/file-pane playback work.",
+    "Codec/permission failures are visible without live tracks; collision saves retain both existing bytes and the new draft, and a concurrent note edit keeps the saved clip for a safe insertion retry without duplicate attachments.",
+    "Actual reload and discard confirmations can retain a live/unsaved clip; accepted discard creates no file, detached controls cannot reacquire the microphone, and disabling is vetoable before complete track/command/ribbon/dialog cleanup.",
+    "Full host restarts/reconnects retain playable attachments, opaque pane state and disabled-provider restoration without microphone acquisition; unknown module/app configuration and the original workspace stay unchanged."
+  ],
+  "rendererNodeIntegration": false,
+  "realExternalDirectoryPicker": true,
+  "pickerStartsInDisposableDocuments": true,
+  "verificationTargets": [
+    "file-explorer",
+    "global-search",
+    "switcher",
+    "graph",
+    "backlink",
+    "canvas",
+    "outgoing-link",
+    "tag-pane",
+    "footnotes",
+    "properties",
+    "page-preview",
+    "daily-notes",
+    "templates",
+    "note-composer",
+    "command-palette",
+    "slash-command",
+    "editor-status",
+    "bookmarks",
+    "markdown-importer",
+    "zk-prefixer",
+    "random-note",
+    "outline",
+    "word-count",
+    "slides",
+    "audio-recorder",
+    "workspaces",
+    "file-recovery"
+  ],
+  "syntheticAudioOnly": true,
+  "physicalMicrophoneTested": false,
+  "endpoint": "http://127.0.0.1:63971/",
+  "sha256": {
+    "index.html": "c57ea9db00a7384748e5c3493b79b783666233aacaa8e4cb1ef9a9229e4a63f8",
+    "app.css": "d8b5782dd851c2d63b6372ebc5d1c4194a79570d4c2348a68cd7c981c73c1fd0",
+    "browser.css": "cb31285e1f8c3934a1c93e0448f271ceb9156ca4fe5c80deb081c70471404a67",
+    "icons.svg": "e659196481c2d85f3e52bed31460946e6b2d6351235b87ce1f87e8526beeab0c",
+    "icons-LICENSE.txt": "c059ec5ba27c5876963f0678f63d2182a6fb6ce97d45ed8b6472ec0c2ec189bf",
+    "core-verification.json": "a5fef9232d93e31af73d0bf9073ec6e6ccaab16f6dbfb2654f781fb5c714b042",
+    "lucide-icons.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+    "lucide-icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "mermaid-frame.html": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333",
+    "js/mermaid-frame.js": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62",
+    "js/mermaid-api.js": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a",
+    "js/mermaid-api.js.LEGAL.txt": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1",
+    "js/mermaid-licenses.txt": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735",
+    "js/editor-host.js": "9f91526bed225c74dd686c0b58704940f4d027c0581f06b04f0f1bf7fd9d8d46",
+    "js/editor-host.css": "71b1c8ea199384cb74866d54b44f6cb5e1472797dd9c1d5b23fc5ffb97a12a65",
+    "js/codemirror-license.txt": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07",
+    "js/hypermd-license.txt": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b",
+    "js/web-reader-extract.js": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601",
+    "js/web-reader-extract.js.LEGAL.txt": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a",
+    "js/web-reader-licenses.txt": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b",
+    "js/browser-host.js": "891aac212b2cb712549324f2f5a54bc28f40b3d0336bcc4cb9cad0f740c6a3fb",
+    "js/search-worker.js": "6b24e0d9f29c3425b36b99efef28bce277c5c55bc93527fd395d5aa0b8765f84",
+    "js/graph-worker.js": "83b481a7e38ca1bc3e7f88a942400d83aa36449ce23f80edbfeb87e595f0d010",
+    "js/bases-worker.js": "719be94513c09032762919eb1ae7feae12f202e52d08693ed9aa035f039988c6",
+    "_framework/RonSijm.Slopsidian.Web.u9g8histbu.wasm": "623d8f57a98aebaa6ffda6efc55e11305fc8b945e6bc1877457641108c3f965f"
+  },
+  "scenarioSha256": {
+    "web-smoke.mjs": "64fa396296dbc7f5a19183d9828c336b83c94efe54b3576de2790c4f8f2b5d02",
+    "web-smoke-host.cjs": "38f2d99a0c1f70a962857c3dc17489e3bacbd913c9fddc7e0008d6c4446ea381",
+    "core-foundation-scenarios.mjs": "bfe37918fc6723c519fc6f7d2e992b1a49e885a2ae052f8b89ab8e9afd0d4905",
+    "core-scenarios.mjs": "b16bdf012477e16953b7d4cc9f0df6a502ae71403f369dbab6c5dda5b4482c3f",
+    "core-verification-targets.mjs": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86",
+    "core-verification-scenarios.mjs": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539",
+    "tab-movement-scenarios.mjs": "ca65db3f8f47a6e8bb920d93876e8420dc36338e8d936b827755f9569bfe0227",
+    "reading-scenarios.mjs": "b3cef9a15c8a0bbbec81bcd83f09f5d03aa0f67f42ab843aeacfb1d7af6853f1",
+    "outgoing-scenarios.mjs": "6a15662333f510e069e014e533eff13b6cb974a0ed7d720cad5e6bd9f4a0b5ca",
+    "discovery-scenarios.mjs": "eb2c3d978e7faab8df02335911a78b5b760416aaaf4f8c3eba80003557d9881c",
+    "editor-chrome-scenarios.mjs": "580c2f69b378757fbbcae5ae0ed219fe69e2af0047494e4705ed9c5958ab3a19",
+    "suggestion-scenarios.mjs": "a2bd9f49ca0261a0ed9316966c579b7df5bfe96f6e5563b38d13e8f2f5ded873",
+    "renderer-scenarios.mjs": "5ea3154e5ea83cf9c3ee93c0269ff974e8c979e52a0129584593126daffb57a6",
+    "render-child-scenarios.mjs": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611",
+    "templater-scenarios.mjs": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594",
+    "organization-scenarios.mjs": "6d356a9471a8ece167567d0e0aaf54e73f7aa4aa31d99563467a2f9f6557932a",
+    "file-scenarios.mjs": "d1a4a84690fc5bfad4d49b36fd762902ef8c3aa7ef53ce78c1a9a00ce10cf60a",
+    "graph-scenarios.mjs": "50cd7e334239383d403b196d4b2ad16949e92227efb7de019ca4474ee0b9ce18",
+    "canvas-scenarios.mjs": "5d389f419dbd99c042176d38669c69bff20fd148ebdd24d710a723b35b51cf6e",
+    "preview-scenarios.mjs": "16eee75c61ff2c56572c217e9af95b0bd65f0166557c6eaaa575587922f104f2",
+    "editing-tools-scenarios.mjs": "7c02dd1493956840958e2c4667c61a7a737afc915401dd54e77d9bfbbc4e36d2",
+    "format-scenarios.mjs": "e0c7a1583b6bbbed9e032eab1768ac6942d070c5b8756257b84054c9f56de731",
+    "composer-scenarios.mjs": "28893c704bd8067cd1237133f58d5b2ead7eb05a6b2d392a219a77c23b9d47c9",
+    "menu-scenarios.mjs": "a2f3232c5e40b17929197b845250c60411cc32420f65eb5d2267785b2d83a8ff",
+    "bases-scenarios.mjs": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d",
+    "bases-summary-scenarios.mjs": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47",
+    "recovery-scenarios.mjs": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472",
+    "view-scenarios.mjs": "5486d539b55e48e297034eadbbcbe76ad53bdc9153ae437c1e68390af136511d",
+    "audio-scenarios.mjs": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c",
+    "mermaid-scenarios.mjs": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8",
+    "workspace-import-scenarios.mjs": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863",
+    "community-plugin-test-helpers.mjs": "a5a42c9e7728fdcee7d8fd61094bd55114cd90df183164d0af6937f482b8e8f9",
+    "select-test-folder.ps1": "9a18d1edcde9b5d252972012ba70bf3810c8bbc72a50958bad469dba164946f0"
+  },
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes; production launch is unchanged.",
+  "lastInteraction": {
+    "type": "click",
+    "selector": ".settings-close"
+  },
+  "consoleErrorDetails": [
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Unsupported module without the desktop Node runtime: node:fs\n    at PluginHost.require (http://127.0.0.1:63971/js/editor-host.js:92931:11)\n    at http://127.0.0.1:63971/js/editor-host.js:92871:31\n    at eval (vault-plugin:node-only:3:1)\n    at PluginHost.enable (http://127.0.0.1:63971/js/editor-host.js:92871:7)\n    at async http://127.0.0.1:63971/js/editor-host.js:92795:9\n    at async run (http://127.0.0.1:63971/js/editor-host.js:92663:16)",
+          "objectId": "-6328163006685800386.3.1",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Unsupported module without the desktop Node runtime: node:fs\n    at PluginHost.require (http://127.0.0.1:63971/js/editor-host.js:92931:11)\n    at http://127.0.0.1:63971/js/editor-host.js:92871:31\n    at eval (vault-plugin:node-only:3:1)\n    at PluginHost.enable (http://127.0.0.1:63971/js/editor-host.js:92871:7)\n    at async http://127.0.0.1:63971/js/editor-host.js:92795:9\n    at async run (http://127.0.0.1:63971/js/editor-host.js:92663:16)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Unsupported module without the desktop Node…ttp://127.0.0.1:63971/js/editor-host.js:92663:16)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Unsupported module without the desktop Node runtime: node:fs"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 94393,
+            "columnNumber": 14
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "string",
+          "value": "fail: RonSijm.Slopsidian.Components.Pages.Home[0]\n      Vault operation failed\nMicrosoft.JSInterop.JSException: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\nError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:63971/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:63971/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:63971/js/editor-host.js:43956:20)\n    at async DocumentSession.persist (http://127.0.0.1:63971/js/editor-host.js:71717:21)\n    at async DocumentSession.save (http://127.0.0.1:63971/js/editor-host.js:71693:7)\n    at async Workspace.saveAll (http://127.0.0.1:63971/js/editor-host.js:73354:7)\n    at async App.saveAll (http://127.0.0.1:63971/js/editor-host.js:91140:5)\n    at async Commands.execute (http://127.0.0.1:63971/js/editor-host.js:90925:7)\n    at async DesktopUI.perform (http://127.0.0.1:63971/js/editor-host.js:93473:5)\n    at async Module.performAction (http://127.0.0.1:63971/js/editor-host.js:95216:3)\n   at Microsoft.JSInterop.JSRuntime.<InvokeAsync>d__23`1[[Microsoft.JSInterop.Infrastructure.IJSVoidResult, Microsoft.JSInterop, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]].MoveNext()\n   at Microsoft.JSInterop.JSObjectReferenceExtensions.InvokeVoidAsync(IJSObjectReference , String , Object[] )\n   at RonSijm.Slopsidian.Components.Pages.Home.<>c__DisplayClass47_0.<<WorkspaceActionAsync>b__0>d.MoveNext()\n--- End of stack trace from previous location ---\n   at RonSijm.Slopsidian.Components.Pages.Home.RunAsync(Func`1 operation)"
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "12",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 175112
+          },
+          {
+            "functionName": "Mc",
+            "scriptId": "12",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 175836
+          },
+          {
+            "functionName": "$func1892",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 654264
+          },
+          {
+            "functionName": "$func298",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 128919
+          },
+          {
+            "functionName": "$func222",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 117400
+          },
+          {
+            "functionName": "$func213",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 60391
+          },
+          {
+            "functionName": "$func256",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 121204
+          },
+          {
+            "functionName": "$func3231",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 989414
+          },
+          {
+            "functionName": "$func2553",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 815504
+          },
+          {
+            "functionName": "$func2558",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 817544
+          },
+          {
+            "functionName": "$func2582",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 827494
+          },
+          {
+            "functionName": "$mono_wasm_invoke_jsexport",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 44188
+          },
+          {
+            "functionName": "Module._mono_wasm_invoke_jsexport",
+            "scriptId": "11",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.native.q38003gvqi.js",
+            "lineNumber": 7,
+            "columnNumber": 113427
+          },
+          {
+            "functionName": "kn",
+            "scriptId": "12",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 29521
+          },
+          {
+            "functionName": "",
+            "scriptId": "12",
+            "url": "http://127.0.0.1:63971/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 38146
+          },
+          {
+            "functionName": "endInvokeJSFromDotNet",
+            "scriptId": "7",
+            "url": "http://127.0.0.1:63971/_framework/blazor.webassembly.js",
+            "lineNumber": 0,
+            "columnNumber": 50484
+          },
+          {
+            "functionName": "beginInvokeJSFromDotNet",
+            "scriptId": "7",
+            "url": "http://127.0.0.1:63971/_framework/blazor.webassembly.js",
+            "lineNumber": 0,
+            "columnNumber": 4325
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: The configured unique prefix format cannot produce an unused note name.\n    at CoreNotes.uniqueName (http://127.0.0.1:63971/js/editor-host.js:74029:11)\n    at CoreNotes.createUnique (http://127.0.0.1:63971/js/editor-host.js:74037:26)\n    at async CorePlugins.run (http://127.0.0.1:63971/js/editor-host.js:74282:7)\n    at async Commands.execute (http://127.0.0.1:63971/js/editor-host.js:90925:7)\n    at async Object.action (http://127.0.0.1:63971/js/editor-host.js:93532:9)\n    at async DesktopUI.choose (http://127.0.0.1:63971/js/editor-host.js:93690:5)",
+          "objectId": "-6328163006685800386.9.1",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: The configured unique prefix format cannot produce an unused note name.\n    at CoreNotes.uniqueName (http://127.0.0.1:63971/js/editor-host.js:74029:11)\n    at CoreNotes.createUnique (http://127.0.0.1:63971/js/editor-host.js:74037:26)\n    at async CorePlugins.run (http://127.0.0.1:63971/js/editor-host.js:74282:7)\n    at async Commands.execute (http://127.0.0.1:63971/js/editor-host.js:90925:7)\n    at async Object.action (http://127.0.0.1:63971/js/editor-host.js:93532:9)\n    at async DesktopUI.choose (http://127.0.0.1:63971/js/editor-host.js:93690:5)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: The configured unique prefix format cannot …http://127.0.0.1:63971/js/editor-host.js:93690:5)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "The configured unique prefix format cannot produce an unused note name."
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: The editor or selection changed during clipboard access. No text was replaced.\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71900:13)",
+          "objectId": "-6328163006685800386.31.1",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: The editor or selection changed during clipboard access. No text was replaced.\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71900:13)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: The editor or selection changed during clip…ttp://127.0.0.1:63971/js/editor-host.js:71900:13)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "The editor or selection changed during clipboard access. No text was replaced."
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Clipboard actions with multiple selections are not supported. Select a single range first.\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71881:13)\n    at http://127.0.0.1:63971/js/editor-host.js:71829:132\n    at http://127.0.0.1:63971/js/editor-host.js:70420:34",
+          "objectId": "-6328163006685800386.31.2",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Clipboard actions with multiple selections are not supported. Select a single range first.\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71881:13)\n    at http://127.0.0.1:63971/js/editor-host.js:71829:132\n    at http://127.0.0.1:63971/js/editor-host.js:70420:34",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Clipboard actions with multiple selections …http://127.0.0.1:63971/js/editor-host.js:70420:34"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Clipboard actions with multiple selections are not supported. Select a single range first."
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: The editor or selection changed during clipboard access. No text was replaced.\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71900:13)",
+          "objectId": "-6328163006685800386.31.3",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: The editor or selection changed during clipboard access. No text was replaced.\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71900:13)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: The editor or selection changed during clip…ttp://127.0.0.1:63971/js/editor-host.js:71900:13)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "The editor or selection changed during clipboard access. No text was replaced."
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Expected clipboard permission rejection\n    at Object.writeText (vault-plugin:menu-host-probe:73:58)\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71894:23)\n    at http://127.0.0.1:63971/js/editor-host.js:71829:132\n    at http://127.0.0.1:63971/js/editor-host.js:70420:34",
+          "objectId": "-6328163006685800386.31.4",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Expected clipboard permission rejection\n    at Object.writeText (vault-plugin:menu-host-probe:73:58)\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71894:23)\n    at http://127.0.0.1:63971/js/editor-host.js:71829:132\n    at http://127.0.0.1:63971/js/editor-host.js:70420:34",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Expected clipboard permission rejection\n   …http://127.0.0.1:63971/js/editor-host.js:70420:34"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Expected clipboard permission rejection"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Enable Search to open tag results.\n    at http://127.0.0.1:63971/js/editor-host.js:75673:19\n    at async CorePlugins.run (http://127.0.0.1:63971/js/editor-host.js:74282:7)",
+          "objectId": "-6328163006685800386.39.1",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Enable Search to open tag results.\n    at http://127.0.0.1:63971/js/editor-host.js:75673:19\n    at async CorePlugins.run (http://127.0.0.1:63971/js/editor-host.js:74282:7)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Enable Search to open tag results.\n    at h…http://127.0.0.1:63971/js/editor-host.js:74282:7)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Enable Search to open tag results."
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Enter a finite number that JavaScript can represent safely.\n    at parsePropertyValue (http://127.0.0.1:63971/js/editor-host.js:70510:13)\n    at http://127.0.0.1:63971/js/editor-host.js:71163:41\n    at async CorePlugins.run (http://127.0.0.1:63971/js/editor-host.js:74282:7)",
+          "objectId": "-6328163006685800386.49.1",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Enter a finite number that JavaScript can represent safely.\n    at parsePropertyValue (http://127.0.0.1:63971/js/editor-host.js:70510:13)\n    at http://127.0.0.1:63971/js/editor-host.js:71163:41\n    at async CorePlugins.run (http://127.0.0.1:63971/js/editor-host.js:74282:7)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Enter a finite number that JavaScript can r…http://127.0.0.1:63971/js/editor-host.js:74282:7)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Enter a finite number that JavaScript can represent safely."
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          },
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 71179,
+            "columnNumber": 8
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: The property changed while this dialog was open. Close it and reopen its current value.\n    at http://127.0.0.1:63971/js/editor-host.js:71169:19\n    at http://127.0.0.1:63971/js/editor-host.js:78193:24\n    at updateFrontmatter (http://127.0.0.1:63971/js/editor-host.js:65158:3)\n    at action (http://127.0.0.1:63971/js/editor-host.js:78192:23)",
+          "objectId": "-6328163006685800386.49.2",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: The property changed while this dialog was open. Close it and reopen its current value.\n    at http://127.0.0.1:63971/js/editor-host.js:71169:19\n    at http://127.0.0.1:63971/js/editor-host.js:78193:24\n    at updateFrontmatter (http://127.0.0.1:63971/js/editor-host.js:65158:3)\n    at action (http://127.0.0.1:63971/js/editor-host.js:78192:23)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: The property changed while this dialog was …ttp://127.0.0.1:63971/js/editor-host.js:78192:23)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "The property changed while this dialog was open. Close it and reopen its current value."
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          },
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 71179,
+            "columnNumber": 8
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "HostError",
+          "description": "HostError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:63971/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:63971/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:63971/js/editor-host.js:43956:20)\n    at async DocumentSession.persist (http://127.0.0.1:63971/js/editor-host.js:71717:21)\n    at async DocumentSession.save (http://127.0.0.1:63971/js/editor-host.js:71693:7)\n    at async action (http://127.0.0.1:63971/js/editor-host.js:78187:9)",
+          "objectId": "-6328163006685800386.49.3",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "HostError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:63971/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:63971/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:63971/js/editor-host.js:43956:20)\n    at async DocumentSession.persist (http://127.0.0.1:63971/js/editor-host.js:71717:21)\n    at async DocumentSession.save (http://127.0.0.1:63971/js/editor-host.js:71693:7)\n    at async action (http://127.0.0.1:63971/js/editor-host.js:78187:9)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "status",
+                "type": "number",
+                "value": "409"
+              },
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Host 409: This file changed on disk. Your u…http://127.0.0.1:63971/js/editor-host.js:78187:9)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Host 409: This file changed on disk. Your unsaved … is retained; resolve the conflict before saving."
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          },
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 71179,
+            "columnNumber": 8
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: The destination property already exists in this note: collision\n    at renameFrontmatterProperty (http://127.0.0.1:63971/js/editor-host.js:65309:11)\n    at http://127.0.0.1:63971/js/editor-host.js:78267:26\n    at Array.flatMap (<anonymous>)\n    at action (http://127.0.0.1:63971/js/editor-host.js:78266:133)",
+          "objectId": "-6328163006685800386.49.4",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: The destination property already exists in this note: collision\n    at renameFrontmatterProperty (http://127.0.0.1:63971/js/editor-host.js:65309:11)\n    at http://127.0.0.1:63971/js/editor-host.js:78267:26\n    at Array.flatMap (<anonymous>)\n    at action (http://127.0.0.1:63971/js/editor-host.js:78266:133)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: The destination property already exists in …tp://127.0.0.1:63971/js/editor-host.js:78266:133)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "The destination property already exists in this note: collision"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "HostError",
+          "description": "HostError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:63971/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:63971/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:63971/js/editor-host.js:43956:20)\n    at async persist (http://127.0.0.1:63971/js/editor-host.js:69932:25)\n    at async CanvasView.save (http://127.0.0.1:63971/js/editor-host.js:69953:7)\n    at async CanvasView.save (http://127.0.0.1:63971/js/editor-host.js:80529:7)",
+          "objectId": "-6328163006685800386.60.1",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "HostError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:63971/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:63971/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:63971/js/editor-host.js:43956:20)\n    at async persist (http://127.0.0.1:63971/js/editor-host.js:69932:25)\n    at async CanvasView.save (http://127.0.0.1:63971/js/editor-host.js:69953:7)\n    at async CanvasView.save (http://127.0.0.1:63971/js/editor-host.js:80529:7)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "status",
+                "type": "number",
+                "value": "409"
+              },
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Host 409: This file changed on disk. Your u…http://127.0.0.1:63971/js/editor-host.js:80529:7)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Host 409: This file changed on disk. Your unsaved … is retained; resolve the conflict before saving."
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "reportError",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:63971/js/editor-host.js",
+            "lineNumber": 43044,
+            "columnNumber": 10
+          }
+        ]
+      }
+    }
+  ],
+  "expectedDiagnostics": [
+    {
+      "id": "e78b728c-9859-496b-8c8a-1e38028b7e0a:0",
+      "source": "host",
+      "message": "This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.",
+      "reason": "Check browser explicit-save conflict protection"
+    },
+    {
+      "id": "60f73f60-5c21-4619-a9ab-b2e0d7730b2a:0",
+      "source": "notification",
+      "message": "The configured unique prefix format cannot produce an unused note name.",
+      "reason": "Check unique-note format exhaustion without overwriting an existing file"
+    },
+    {
+      "id": "b4b58528-f0b8-4440-902b-c2a5129ed8a9:0",
+      "source": "notification",
+      "message": "The editor or selection changed during clipboard access. No text was replaced.",
+      "reason": "Reject an obsolete clipboard result"
+    },
+    {
+      "id": "b4b58528-f0b8-4440-902b-c2a5129ed8a9:1",
+      "source": "notification",
+      "message": "Clipboard actions with multiple selections are not supported. Select a single range first.",
+      "reason": "Reject unsupported clipboard multi-selection"
+    },
+    {
+      "id": "b4b58528-f0b8-4440-902b-c2a5129ed8a9:2",
+      "source": "notification",
+      "message": "The editor or selection changed during clipboard access. No text was replaced.",
+      "reason": "Reject a paste after selection changes"
+    },
+    {
+      "id": "b4b58528-f0b8-4440-902b-c2a5129ed8a9:3",
+      "source": "notification",
+      "message": "Expected clipboard permission rejection",
+      "reason": "Check the owned clipboard permission-denial fixture"
+    },
+    {
+      "id": "2f813d7e-54db-4024-8d4f-49ff7335ffaf:0",
+      "source": "notification",
+      "message": "Enable Search to open tag results.",
+      "reason": "Check the disabled Search dependency"
+    },
+    {
+      "id": "4a1d595d-5de6-41e0-b112-a287e85f13db:0",
+      "source": "notification",
+      "message": "Enter a finite number that JavaScript can represent safely.",
+      "reason": "Reject a lossy Properties number"
+    },
+    {
+      "id": "4a1d595d-5de6-41e0-b112-a287e85f13db:1",
+      "source": "notification",
+      "message": "The property changed while this dialog was open. Close it and reopen its current value.",
+      "reason": "Reject a stale Properties dialog"
+    },
+    {
+      "id": "4a1d595d-5de6-41e0-b112-a287e85f13db:2",
+      "source": "notification",
+      "message": "Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.",
+      "reason": "Reject an external edit during a dirty Properties save"
+    },
+    {
+      "id": "4a1d595d-5de6-41e0-b112-a287e85f13db:3",
+      "source": "notification",
+      "message": "The destination property already exists in this note: collision",
+      "reason": "Check vault-wide Properties rename collision preflight"
+    },
+    {
+      "id": "7e2c05e1-14e7-47b2-a5d5-8aa5acaaa191:0",
+      "source": "notification",
+      "message": "Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.",
+      "reason": "Check Canvas autosave conflict without losing dirty text"
+    }
+  ],
+  "sourceFingerprint": "3a3ee9432cb96d036638f2703609037b8b1791f94cce86544834570db36d0f31",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": false,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "coreChecks": [
+    {
+      "id": "file-explorer:basic-navigation",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:execute",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:find-note",
+      "status": "passed"
+    },
+    {
+      "id": "outline:navigate",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:document",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:layout-roundtrip",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:settings",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:availability",
+      "status": "passed"
+    },
+    {
+      "id": "templates:settings",
+      "status": "passed"
+    },
+    {
+      "id": "templates:insert",
+      "status": "passed"
+    },
+    {
+      "id": "templates:date-time",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:settings",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:create-today",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:navigation",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:create-unique",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:settings",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "outline:settings",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:settings",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:settings",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:settings",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:settings",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:settings",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:settings",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:settings",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:open",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:new-tab",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "graph:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "properties:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "page-preview:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "templates:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "slash-command:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "outline:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "slides:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "audio-recorder:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:restart",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:restart",
+      "status": "passed"
+    },
+    {
+      "id": "graph:restart",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:restart",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:restart",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:restart",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:restart",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:restart",
+      "status": "passed"
+    },
+    {
+      "id": "properties:restart",
+      "status": "passed"
+    },
+    {
+      "id": "page-preview:restart",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:restart",
+      "status": "passed"
+    },
+    {
+      "id": "templates:restart",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:restart",
+      "status": "passed"
+    },
+    {
+      "id": "slash-command:restart",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:restart",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:restart",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:restart",
+      "status": "passed"
+    },
+    {
+      "id": "outline:restart",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:restart",
+      "status": "passed"
+    },
+    {
+      "id": "slides:restart",
+      "status": "passed"
+    },
+    {
+      "id": "audio-recorder:restart",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:restart",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:restart",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:selection-unicode",
+      "status": "passed"
+    },
+    {
+      "id": "outline:markdown-semantics",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:modes",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:restore",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:retention",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:settings",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:extract",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:merge",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:convert",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:targets",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:query",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:updates",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:nested-tags",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:references",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:references",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:settings",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:settings",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:organize",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:settings",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:named-workspaces",
+      "status": "passed"
+    },
+    {
+      "id": "properties:settings",
+      "status": "passed"
+    },
+    {
+      "id": "properties:typed-edit",
+      "status": "passed"
+    },
+    {
+      "id": "properties:catalog",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:file-operations",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:resolve",
+      "status": "passed"
+    },
+    {
+      "id": "graph:global-local",
+      "status": "passed"
+    },
+    {
+      "id": "graph:filter-groups",
+      "status": "passed"
+    },
+    {
+      "id": "graph:settings",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:interaction",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:settings",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:roundtrip",
+      "status": "passed"
+    },
+    {
+      "id": "page-preview:settings",
+      "status": "passed"
+    },
+    {
+      "id": "page-preview:hover",
+      "status": "passed"
+    },
+    {
+      "id": "slash-command:settings",
+      "status": "passed"
+    },
+    {
+      "id": "slides:settings",
+      "status": "passed"
+    },
+    {
+      "id": "slash-command:picker",
+      "status": "passed"
+    },
+    {
+      "id": "slides:present",
+      "status": "passed"
+    },
+    {
+      "id": "audio-recorder:record",
+      "status": "passed"
+    },
+    {
+      "id": "audio-recorder:settings",
+      "status": "passed"
+    }
+  ],
+  "note": "Folder/Core benchmark.md",
+  "exactSavedContent": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+  "restoredWorkspaceLayout": {
+    "version": 1,
+    "main": {
+      "id": "7fb430d5-85d1-4c37-8168-c1638f6df48e",
+      "type": "split",
+      "direction": "vertical",
+      "children": [
+        {
+          "id": "6fa9f3ea-1474-4de0-91aa-216630601e17",
+          "type": "tabs",
+          "children": [
+            {
+              "id": "c2d11af2-9ae8-480e-af27-19febb572036",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 0
+        },
+        {
+          "id": "1babb4bc-c86a-4736-b4d9-e508fe45ec08",
+          "type": "tabs",
+          "children": [
+            {
+              "id": "4ee2364a-d1e7-47f5-bf76-7aca0ac43523",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": true
+              }
+            }
+          ],
+          "currentTab": 0
+        }
+      ]
+    },
+    "active": "4ee2364a-d1e7-47f5-bf76-7aca0ac43523",
+    "left": {
+      "width": 260,
+      "collapsed": false
+    },
+    "right": {
+      "width": 260,
+      "collapsed": false
+    },
+    "views": {
+      "sidebars": {
+        "left": "file-explorer",
+        "right": "outline"
+      },
+      "workspace-navigation": {
+        "lastMainLeaf": "4ee2364a-d1e7-47f5-bf76-7aca0ac43523",
+        "lastFile": "Folder/Core benchmark.md"
+      }
+    }
+  },
+  "existingObsidianPluginConfigurationUnchanged": true,
+  "existingObsidianWorkspaceUnchanged": true,
+  "coreBrowserReloads": 2,
+  "coreFeatureFiles": {
+    "Template target.md": "Before # Template target\n2026.10.28 / 00:24:28 / 2026\n after",
+    "Clock.md": "Start 2026.10.28 / 00:24:28",
+    "Folder/Switcher created.md": "Created through quick switcher.\n",
+    "Journal/2026/10/28.md": "# 2026/10/28\nDay 2026-10-28\nKept edits.\n",
+    "Unique/Unique-2026-10-28.md": "# Unique-2026-10-28\nCreated 2026-10-28\n",
+    "Unique/Unique-2026-10-29.md": "# Unique-2026-10-29\nCreated 2026-10-28\n",
+    "Link target.md": "[[Unique-2026-10-28 Linked title]]"
+  },
+  "finalWorkspaceLayout": {
+    "version": 1,
+    "main": {
+      "id": "7fb430d5-85d1-4c37-8168-c1638f6df48e",
+      "type": "split",
+      "direction": "vertical",
+      "children": [
+        {
+          "id": "6fa9f3ea-1474-4de0-91aa-216630601e17",
+          "type": "tabs",
+          "children": [
+            {
+              "id": "c2d11af2-9ae8-480e-af27-19febb572036",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 0
+        },
+        {
+          "id": "1babb4bc-c86a-4736-b4d9-e508fe45ec08",
+          "type": "tabs",
+          "children": [
+            {
+              "id": "4ee2364a-d1e7-47f5-bf76-7aca0ac43523",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": true
+              }
+            },
+            {
+              "id": "227f34cc-ba09-49cf-9700-abd8a4efd943",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Clock.md"
+                },
+                "pinned": false
+              }
+            },
+            {
+              "id": "c1557ef4-1034-4ff6-8371-be54fe9a4568",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Journal/2026/10/31.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 2
+        }
+      ]
+    },
+    "active": "c1557ef4-1034-4ff6-8371-be54fe9a4568",
+    "left": {
+      "width": 260,
+      "collapsed": false
+    },
+    "right": {
+      "width": 260,
+      "collapsed": false
+    },
+    "views": {
+      "sidebars": {
+        "left": "file-explorer",
+        "right": "outline"
+      },
+      "workspace-navigation": {
+        "lastMainLeaf": "c1557ef4-1034-4ff6-8371-be54fe9a4568",
+        "lastFile": "Journal/2026/10/31.md"
+      }
+    }
+  },
+  "noteComposer": {
+    "implementation": "independent guarded merge/selection/heading subset",
+    "originalModuleLoaded": false,
+    "sourceDeletion": "vault trash only after a combined guarded commit",
+    "targets": "new and existing Markdown",
+    "references": "Markdown/property/Canvas whole-file merge or fully moved heading/block extraction",
+    "unsafeDefinitionsAndAnchors": "explicitly refused",
+    "originalRuntimeEquivalence": "not established"
+  },
+  "menuApi": {
+    "fixture": "menu-host-probe",
+    "sha256": "195bd239ff76d6ee3b8dae3d76e92ead89a58e2ae4c9ddd32e93c65455405f5f",
+    "thirdPartyPlugin": false,
+    "clipboard": "bounded API fixture only; OS clipboard and permission prompts not accessed",
+    "nativeElectronMenus": "explicitly unsupported",
+    "originalRuntimeEquivalence": "not established"
+  },
+  "formatConverter": {
+    "implementation": "independent seven-format subset",
+    "originalModuleLoaded": false,
+    "ambiguousIds": "refused",
+    "apply": "root/version-guarded batch of at most 256 changed notes",
+    "undo": "guarded contents restoration while the dialog remains open",
+    "originalRuntimeEquivalence": "not established"
+  },
+  "outgoingLinks": {
+    "implementation": "independent-feature-subset",
+    "originalModuleLoaded": false,
+    "attachmentNavigation": "registered file views; bounded built-in raster subset",
+    "nativeGroupedMainPaneViews": "unavailable",
+    "automaticReferenceRewriting": "guarded FileManager operations; external OS renames do not rewrite references",
+    "unlinkedMentionLinking": "unavailable",
+    "configuredNewNoteLocation": "not-imported; bare missing links create root notes"
+  },
+  "discovery": {
+    "implementation": "independent-feature-subset",
+    "originalModulesLoaded": false,
+    "genericWorkspaceViews": "not-implemented",
+    "fullReferenceRuntimeComparison": "not-performed"
+  },
+  "pagePreview": {
+    "implementation": "independent Markdown subset",
+    "originalModuleLoaded": false,
+    "arbitraryCustomFilePreviews": "unavailable",
+    "privateNativePreviewViews": "unavailable"
+  },
+  "editingTools": {
+    "implementation": "independent shared editor/presentation subset",
+    "originalModulesLoaded": false,
+    "revealJsRuntime": false,
+    "publicEditorSuggestApi": "not implemented",
+    "fullMarkdownRendererParity": "not established"
+  },
+  "artifactStability": "verified-through-scenario",
+  "consoleErrors": [
+    "Error: Unsupported module without the desktop Node runtime: node:fs\n    at PluginHost.require (http://127.0.0.1:63971/js/editor-host.js:92931:11)\n    at http://127.0.0.1:63971/js/editor-host.js:92871:31\n    at eval (vault-plugin:node-only:3:1)\n    at PluginHost.enable (http://127.0.0.1:63971/js/editor-host.js:92871:7)\n    at async http://127.0.0.1:63971/js/editor-host.js:92795:9\n    at async run (http://127.0.0.1:63971/js/editor-host.js:92663:16)",
+    "fail: RonSijm.Slopsidian.Components.Pages.Home[0]\n      Vault operation failed\nMicrosoft.JSInterop.JSException: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\nError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:63971/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:63971/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:63971/js/editor-host.js:43956:20)\n    at async DocumentSession.persist (http://127.0.0.1:63971/js/editor-host.js:71717:21)\n    at async DocumentSession.save (http://127.0.0.1:63971/js/editor-host.js:71693:7)\n    at async Workspace.saveAll (http://127.0.0.1:63971/js/editor-host.js:73354:7)\n    at async App.saveAll (http://127.0.0.1:63971/js/editor-host.js:91140:5)\n    at async Commands.execute (http://127.0.0.1:63971/js/editor-host.js:90925:7)\n    at async DesktopUI.perform (http://127.0.0.1:63971/js/editor-host.js:93473:5)\n    at async Module.performAction (http://127.0.0.1:63971/js/editor-host.js:95216:3)\n   at Microsoft.JSInterop.JSRuntime.<InvokeAsync>d__23`1[[Microsoft.JSInterop.Infrastructure.IJSVoidResult, Microsoft.JSInterop, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]].MoveNext()\n   at Microsoft.JSInterop.JSObjectReferenceExtensions.InvokeVoidAsync(IJSObjectReference , String , Object[] )\n   at RonSijm.Slopsidian.Components.Pages.Home.<>c__DisplayClass47_0.<<WorkspaceActionAsync>b__0>d.MoveNext()\n--- End of stack trace from previous location ---\n   at RonSijm.Slopsidian.Components.Pages.Home.RunAsync(Func`1 operation)",
+    "Error: The configured unique prefix format cannot produce an unused note name.\n    at CoreNotes.uniqueName (http://127.0.0.1:63971/js/editor-host.js:74029:11)\n    at CoreNotes.createUnique (http://127.0.0.1:63971/js/editor-host.js:74037:26)\n    at async CorePlugins.run (http://127.0.0.1:63971/js/editor-host.js:74282:7)\n    at async Commands.execute (http://127.0.0.1:63971/js/editor-host.js:90925:7)\n    at async Object.action (http://127.0.0.1:63971/js/editor-host.js:93532:9)\n    at async DesktopUI.choose (http://127.0.0.1:63971/js/editor-host.js:93690:5)",
+    "Error: The editor or selection changed during clipboard access. No text was replaced.\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71900:13)",
+    "Error: Clipboard actions with multiple selections are not supported. Select a single range first.\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71881:13)\n    at http://127.0.0.1:63971/js/editor-host.js:71829:132\n    at http://127.0.0.1:63971/js/editor-host.js:70420:34",
+    "Error: The editor or selection changed during clipboard access. No text was replaced.\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71900:13)",
+    "Error: Expected clipboard permission rejection\n    at Object.writeText (vault-plugin:menu-host-probe:73:58)\n    at MarkdownView.editClipboard (http://127.0.0.1:63971/js/editor-host.js:71894:23)\n    at http://127.0.0.1:63971/js/editor-host.js:71829:132\n    at http://127.0.0.1:63971/js/editor-host.js:70420:34",
+    "Error: Enable Search to open tag results.\n    at http://127.0.0.1:63971/js/editor-host.js:75673:19\n    at async CorePlugins.run (http://127.0.0.1:63971/js/editor-host.js:74282:7)",
+    "Error: Enter a finite number that JavaScript can represent safely.\n    at parsePropertyValue (http://127.0.0.1:63971/js/editor-host.js:70510:13)\n    at http://127.0.0.1:63971/js/editor-host.js:71163:41\n    at async CorePlugins.run (http://127.0.0.1:63971/js/editor-host.js:74282:7)",
+    "Error: The property changed while this dialog was open. Close it and reopen its current value.\n    at http://127.0.0.1:63971/js/editor-host.js:71169:19\n    at http://127.0.0.1:63971/js/editor-host.js:78193:24\n    at updateFrontmatter (http://127.0.0.1:63971/js/editor-host.js:65158:3)\n    at action (http://127.0.0.1:63971/js/editor-host.js:78192:23)",
+    "HostError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:63971/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:63971/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:63971/js/editor-host.js:43956:20)\n    at async DocumentSession.persist (http://127.0.0.1:63971/js/editor-host.js:71717:21)\n    at async DocumentSession.save (http://127.0.0.1:63971/js/editor-host.js:71693:7)\n    at async action (http://127.0.0.1:63971/js/editor-host.js:78187:9)",
+    "Error: The destination property already exists in this note: collision\n    at renameFrontmatterProperty (http://127.0.0.1:63971/js/editor-host.js:65309:11)\n    at http://127.0.0.1:63971/js/editor-host.js:78267:26\n    at Array.flatMap (<anonymous>)\n    at action (http://127.0.0.1:63971/js/editor-host.js:78266:133)",
+    "HostError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:63971/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:63971/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:63971/js/editor-host.js:43956:20)\n    at async persist (http://127.0.0.1:63971/js/editor-host.js:69932:25)\n    at async CanvasView.save (http://127.0.0.1:63971/js/editor-host.js:69953:7)\n    at async CanvasView.save (http://127.0.0.1:63971/js/editor-host.js:80529:7)"
+  ],
+  "exceptions": [],
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\readonly-io-validation-20261028\\.runtime\\evidence\\core-verification-web-smoke-errors.jsonl",
+    "nativePaths": [],
+    "records": 12,
+    "expected": 12,
+    "unexpected": [],
+    "sha256": "90e0e5a5ffda17f8e15f84d4460f095f8720ca3ce3a6b27b9f9eaed383c4755e",
+    "includesFinalTeardown": true
+  },
+  "completedAt": "2026-10-27T23:30:18.169Z"
+}

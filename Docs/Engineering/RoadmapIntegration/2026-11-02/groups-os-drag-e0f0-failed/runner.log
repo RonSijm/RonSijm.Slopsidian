@@ -1,0 +1,45 @@
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile\logs\errors-smoke-7ed4bcb5-61cb-495a-8921-c569aa12016c.jsonl
+(node:35212) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:43450/devtools/browser/ac8eb838-79d7-4290-a066-5751b03a7fe4
+ELECTRON_HOST_PID 35212
+DOTNET_HOST_PID 36196
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-1mwyuT
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:60945
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:60945
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Error: main -> popout1: The native drag refused before completing: Screen point 1263,62 (source) is not over the expected owned window: expected hwnd 75697720, hit root hwnd 17172566 pid 30032.
+    at osDragHop (file:///D:/RonSijm/RonSijm.Slopsidian/tools/native-os-drag-scenario.mjs:84:21)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async runOsDragChain (file:///D:/RonSijm/RonSijm.Slopsidian/tools/native-os-drag-scenario.mjs:115:27)
+    at async checkWorkspaceOsTabDrag (file:///D:/RonSijm/RonSijm.Slopsidian/tools/workspace-os-tab-drag-scenario.mjs:143:20)
+    at async file:///D:/RonSijm/RonSijm.Slopsidian/tools/smoke.mjs:956:7
+
+'failed' !== 'passed'
+
+    at file:///D:/RonSijm/RonSijm.Slopsidian/tools/smoke.mjs:1870:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v25.6.1

@@ -1,0 +1,962 @@
+{
+  "status": "failed",
+  "scope": "workspace-groups-popouts-native-os-drag",
+  "communityPluginsTested": false,
+  "startedAt": "2026-11-02T04:11:27.644Z",
+  "vault": "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\smoke-vault-1mwyuT",
+  "launcherPid": 35212,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "two genuine popouts with anchor tabs and unique native titles were created",
+    "the exact owned windows were arranged without overlap inside the monitor work area"
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 35212,
+      "electronPid": 35212,
+      "dotnetPid": 36196,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.0",
+  "sourceFingerprint": "e0f003ae959bbd673e5f89666db6a7f3132915cbae90540e9dd8ac7f96ca4fd3",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "osDragLayoutDiagnostics": {
+    "workArea": {
+      "x": 0,
+      "y": 0,
+      "width": 3840,
+      "height": 2292
+    },
+    "requested": [
+      {
+        "x": 12,
+        "y": 12,
+        "width": 2194,
+        "height": 2268
+      },
+      {
+        "x": 2218,
+        "y": 12,
+        "width": 799,
+        "height": 2268
+      },
+      {
+        "x": 3029,
+        "y": 12,
+        "width": 799,
+        "height": 2268
+      }
+    ],
+    "placed": [
+      {
+        "title": "slopsidian-osdrag-main-1793592689634",
+        "hwnd": 75697720,
+        "rect": {
+          "x": 12,
+          "y": 12,
+          "width": 2194,
+          "height": 2268
+        },
+        "frame": {
+          "x": 12,
+          "y": 12,
+          "width": 2194,
+          "height": 2268
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      },
+      {
+        "title": "slopsidian-osdrag-pop1-1793592689634",
+        "hwnd": 14749496,
+        "rect": {
+          "x": 2218,
+          "y": 12,
+          "width": 799,
+          "height": 2268
+        },
+        "frame": {
+          "x": 2230,
+          "y": 12,
+          "width": 775,
+          "height": 2256
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      },
+      {
+        "title": "slopsidian-osdrag-pop2-1793592689634",
+        "hwnd": 7606146,
+        "rect": {
+          "x": 3029,
+          "y": 12,
+          "width": 799,
+          "height": 2268
+        },
+        "frame": {
+          "x": 3041,
+          "y": 12,
+          "width": 775,
+          "height": 2256
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      }
+    ],
+    "minima": [
+      {
+        "width": 2115,
+        "height": 1463,
+        "dip": {
+          "width": 940,
+          "height": 650
+        },
+        "dpi": 216,
+        "scale": 2.25
+      },
+      {
+        "width": 720,
+        "height": 540,
+        "dip": {
+          "width": 320,
+          "height": 240
+        },
+        "dpi": 216,
+        "scale": 2.25
+      },
+      {
+        "width": 720,
+        "height": 540,
+        "dip": {
+          "width": 320,
+          "height": 240
+        },
+        "dpi": 216,
+        "scale": 2.25
+      }
+    ],
+    "before": [
+      {
+        "title": "slopsidian-osdrag-main-1793592689634",
+        "hwnd": 75697720,
+        "rect": {
+          "x": 345,
+          "y": 77,
+          "width": 3150,
+          "height": 2138
+        },
+        "frame": {
+          "x": 345,
+          "y": 77,
+          "width": 3150,
+          "height": 2138
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      },
+      {
+        "title": "slopsidian-osdrag-pop1-1793592689634",
+        "hwnd": 14749496,
+        "rect": {
+          "x": 907,
+          "y": 358,
+          "width": 2025,
+          "height": 1575
+        },
+        "frame": {
+          "x": 919,
+          "y": 358,
+          "width": 2001,
+          "height": 1563
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      },
+      {
+        "title": "slopsidian-osdrag-pop2-1793592689634",
+        "hwnd": 7606146,
+        "rect": {
+          "x": 907,
+          "y": 358,
+          "width": 2025,
+          "height": 1575
+        },
+        "frame": {
+          "x": 919,
+          "y": 358,
+          "width": 2001,
+          "height": 1563
+        },
+        "dpi": 216,
+        "zoomed": false,
+        "iconic": false,
+        "workArea": {
+          "x": 0,
+          "y": 0,
+          "width": 3840,
+          "height": 2292
+        }
+      }
+    ]
+  },
+  "osDragFailure": {
+    "message": "main -> popout1: The native drag refused before completing: Screen point 1263,62 (source) is not over the expected owned window: expected hwnd 75697720, hit root hwnd 17172566 pid 30032.",
+    "label": "main -> popout1",
+    "sourceTitle": "slopsidian-osdrag-main-1793592689634",
+    "targetTitle": "slopsidian-osdrag-pop1-1793592689634",
+    "geometry": {
+      "sourceRoot": "osd-main",
+      "targetRoot": "42e66f70-9da6-4e66-84cb-37574617987b",
+      "source": {
+        "x": 555.5,
+        "y": 22,
+        "width": 161,
+        "height": 36,
+        "inner": {
+          "width": 976,
+          "height": 1008,
+          "dpr": 2.25
+        },
+        "title": "slopsidian-osdrag-main-1793592689634"
+      },
+      "target": {
+        "x": 171.55555725097656,
+        "y": 20,
+        "width": 343.1111145019531,
+        "height": 40,
+        "inner": {
+          "width": 343,
+          "height": 973,
+          "dpr": 2.25
+        },
+        "title": "slopsidian-osdrag-pop1-1793592689634"
+      }
+    },
+    "native": {
+      "pid": 35212,
+      "sourceHwnd": 75697720,
+      "targetHwnd": 14749496,
+      "sourceClient": {
+        "x": 12,
+        "y": 12,
+        "width": 2194,
+        "height": 2268
+      },
+      "targetClient": {
+        "x": 2232,
+        "y": 77,
+        "width": 771,
+        "height": 2189
+      },
+      "focusReturn": false,
+      "measurements": {
+        "sourcePoint": [
+          1263,
+          62
+        ],
+        "targetPoint": [
+          2619,
+          122
+        ],
+        "sourceInner": {
+          "width": 976,
+          "height": 1008,
+          "dpr": 2.25
+        },
+        "targetInner": {
+          "width": 343,
+          "height": 973,
+          "dpr": 2.25
+        },
+        "from": {
+          "x": 1251,
+          "y": 50
+        },
+        "to": {
+          "x": 387,
+          "y": 45
+        }
+      },
+      "failed": true,
+      "error": "Screen point 1263,62 (source) is not over the expected owned window: expected hwnd 75697720, hit root hwnd 17172566 pid 30032.",
+      "overChecks": [
+        {
+          "label": "source",
+          "point": [
+            1263,
+            62
+          ],
+          "expectedHwnd": 75697720,
+          "expectedPid": 35212,
+          "hitHwnd": 17172566,
+          "hitPid": 30032,
+          "rootHwnd": 17172566,
+          "rootPid": 30032,
+          "foregroundHwnd": 17172566,
+          "foregroundPid": 30032,
+          "focusReturn": false
+        }
+      ]
+    }
+  },
+  "error": "Error: main -> popout1: The native drag refused before completing: Screen point 1263,62 (source) is not over the expected owned window: expected hwnd 75697720, hit root hwnd 17172566 pid 30032.\n    at osDragHop (file:///D:/RonSijm/RonSijm.Slopsidian/tools/native-os-drag-scenario.mjs:84:21)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async runOsDragChain (file:///D:/RonSijm/RonSijm.Slopsidian/tools/native-os-drag-scenario.mjs:115:27)\n    at async checkWorkspaceOsTabDrag (file:///D:/RonSijm/RonSijm.Slopsidian/tools/workspace-os-tab-drag-scenario.mjs:143:20)\n    at async file:///D:/RonSijm/RonSijm.Slopsidian/tools/smoke.mjs:956:7",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.workspace.getLeafById(\\\"osd-anchor2\\\").parent.id\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n    "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.title=\\\"slopsidian-osdrag-main-1793592689634\\\"\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.workspace.getLeafById(\\\"osd-drag\\\").getRoot().id\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n    "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"JSON.stringify([window,app.workspace.getLeafById(\\\"osd-anchor1\\\").getRoot().surface.window,app.workspace.getLeafById(\\\"osd-anchor2\\\").getRoot().surface.window].map(w=>[w.innerWidth,w.innerHeight,w.devicePixelRatio]))\");\n    if(result&&typeof result.then===\"function\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"JSON.stringify([window,app.workspace.getLeafById(\\\"osd-anchor1\\\").getRoot().surface.window,app.workspace.getLeafById(\\\"osd-anchor2\\\").getRoot().surface.window].map(w=>[w.innerWidth,w.innerHeight,w.devicePixelRatio]))\");\n    if(result&&typeof result.then===\"function\""
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.workspace.getLeafById(\\\"osd-drag\\\").view.editor.cm.state.doc.toString()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePro"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const e=app.workspace.getLeafById(\\\"osd-drag\\\").view.editor.cm;e.dispatch({changes:{from:e.state.doc.length,insert:\\\" one\\\"},userEvent:\\\"input.type\\\"});return e.state.doc.toString()})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can colle"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const e=app.workspace.getLeafById(\\\"osd-drag\\\").view.editor.cm;e.dispatch({changes:{from:e.state.doc.length,insert:\\\" two\\\"},userEvent:\\\"input.paste\\\"});return e.state.doc.toString()})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can coll"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.getLeafById(\\\"osd-drag\\\").view.isDirty===true)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slop"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(() => {\\n    const leaf = app.workspace.getLeafById(\\\"osd-drag\\\");\\n    if (!leaf) { return JSON.stringify({ error: \\\"leaf not found\\\" }); }\\n    const view = leaf.view, cm = view.editor?.cm ?? null;\\n    app.__osDragProbe = { leaf, view, cm, pinned: leaf.pinned, t"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(() => {\\n    const ws = app.workspace, leaf = ws.getLeafById(\\\"osd-drag\\\"), group = ws.groups().find(item => item.id === \\\"1c61dbe1-04bc-4f8f-9af7-54b02add4f1a\\\");\\n    if (!leaf || !group) { return JSON.stringify({ error: \\\"leaf or group not found\\\" }); }\\n    con"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const w=app.workspace,l=app.workspace.getLeafById(\\\"osd-drag\\\"),g=l.parent,sel=g.children[g.currentTab];\\n        const target=w.groups().find(x=>x.id===\\\"1c61dbe1-04bc-4f8f-9af7-54b02add4f1a\\\");\\n        return JSON.stringify({sourceGroup:g.id,selected:sel==="
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(() => { delete app.__osDragProbe; return \\\"ok\\\"; })()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n  "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const ids=[\\\"42e66f70-9da6-4e66-84cb-37574617987b\\\",\\\"0f5e94fa-cda8-4fd0-ba0c-736a2473b9e8\\\"];for(const w of app.workspace.windows.slice()){if(ids.includes(w.id)){app.workspace.returnWindow(w)}}return true})()\");\n    if(result&&typeof result.then===\"function\")"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.windows.length===0)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new S"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.windows.length===0)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new S"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>{await app.workspace.changeLayout({\\\"version\\\":1,\\\"main\\\":{\\\"id\\\":\\\"preserved-main\\\",\\\"type\\\":\\\"split\\\",\\\"direction\\\":\\\"vertical\\\",\\\"children\\\":[{\\\"id\\\":\\\"preserved-tabs\\\",\\\"type\\\":\\\"tabs\\\",\\\"children\\\":[{\\\"id\\\":\\\"preserved-leaf\\\",\\\"type\\\":\\\"leaf\\\",\\\"state"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (!app.workspace.isChangingLayout)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Se"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.title=\\\"Slopsidian\\\"\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result);"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>{await app.markdownAutosave.setEnabled(false);return true})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromise"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [
+      "Imported Obsidian's saved workspace.",
+      "2 unsaved Markdown draft(s) were recovered from a previous session. Review drafts"
+    ],
+    "buffers": [
+      {
+        "id": "preserved-leaf",
+        "type": "empty"
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "preserved-main",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "preserved-tabs",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "preserved-leaf",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          }
+        ]
+      },
+      "active": "preserved-leaf",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-startup": {
+          "source": ".obsidian/workspace.json",
+          "version": "411ab913939a16585ba07e688bfffc92cce36d2eef51d5f85c94970d78a4854a",
+          "warnings": []
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "preserved-leaf",
+          "lastFile": null
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "controlledShutdownConsoleErrors": [],
+  "consoleErrors": [
+    "[2026-11-02T04:11:33.753Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "TypeError: Failed to fetch\n    at requestJson (http://127.0.0.1:60945/js/editor-host.4101zzfdw5.js:40752:26)\n    at VaultConfiguration.read (http://127.0.0.1:60945/js/editor-host.4101zzfdw5.js:98409:29)\n    at http://127.0.0.1:60945/js/editor-host.4101zzfdw5.js:98349:12",
+    "[2026-11-02T04:11:38.760Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 36196,
+  "electronPid": 35212,
+  "completedAt": "2026-11-02T04:11:38.957Z",
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\evidence\\groups-popouts-os-drag-smoke-errors.jsonl",
+    "nativePaths": [
+      "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\smoke-profile\\logs\\errors-smoke-7ed4bcb5-61cb-495a-8921-c569aa12016c.jsonl"
+    ],
+    "records": 0,
+    "expected": 0,
+    "unexpected": [],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "includesFinalTeardown": true
+  }
+}

@@ -1,0 +1,60 @@
+
+> slopsidian@0.1.0 test:github
+> npm run typecheck && node --test tests/github-vault.test.mjs
+
+
+> slopsidian@0.1.0 typecheck
+> tsc --noEmit
+
+✔ the installable plugin loads using public Obsidian APIs without native dependencies or startup downloads (76.0336ms)
+✔ GitHub original workspace remains a read-only repository source beside independent local and cache-only layouts (44.328ms)
+✔ installed appearance CSS is commit-pinned and cache-only with guarded reads and independent local preference overlays (15.6288ms)
+✔ GitHub URLs support subfolders and explicit slash-containing refs, and reject other hosts and traversal (0.4089ms)
+✔ discovery creates file references with exactly two API calls and no raw downloads or hidden configuration (1.5404ms)
+✔ the default fetch transport retains its browser Window receiver (1.4587ms)
+✔ raw reads are pinned, byte-exact, deduplicated, and persist across reader instances (1.8757ms)
+✔ SVG and WAV bodies are preserved and corrupted cache entries are rejected or repaired (1.8334ms)
+✔ incorrect raw content is never cached as the discovered Git blob (1.4994ms)
+✔ rate-limit failures preserve the previous offline inventory (1.9785ms)
+✔ truncated trees fall back to the selected subtree instead of silently losing files (5.0062ms)
+✔ native vault inventories, stat/list, file info, and metadata polling stay lazy (3.2134ms)
+✔ all repository mutation routes are rejected before downloading files or performing network writes (1.8792ms)
+✔ personal preferences persist locally with optimistic concurrency and do not alter repository files (1.4424ms)
+✔ late file responses cannot populate another selected vault (1.597ms)
+✔ public Vault write and processing APIs refuse read-only sources without reading or invoking callbacks (3.1765ms)
+✔ explicit offline download persists every exact blob without eager metadata indexing or new discovery requests (4.4322ms)
+✔ offline downloads bound concurrency to four and keep a fixed snapshot while the caller changes its inventory (3.775ms)
+✔ cancellation aborts outstanding offline requests, keeps completed files, and resumes from persistent cache (4.0445ms)
+✔ cancelling an offline subscriber does not abort the same download used by an open note (1.6252ms)
+✔ a cancelled snapshot can be retried before its abandoned request settles (2.0138ms)
+✔ download failures and browser quota errors never report a complete offline snapshot (3.3874ms)
+✔ oversized files are identified before any offline download, and pre-cancelled runs make no requests (1.3122ms)
+✔ offline source descriptors cannot mutate the selected mount, and selection/refresh announce lifecycle changes (1.9444ms)
+✔ GitHub configuration is discovered separately and only plugin manifests load when mounting (2.837ms)
+✔ repository app/core settings seed local overlays and version conflicts cannot modify their original bytes (4.7297ms)
+✔ GitHub core settings writes carry the last-read local version and never fall back to unconditional writes (3.1408ms)
+✔ GitHub core snapshots derive every plugin's settings and version from one preference document (3.859ms)
+✔ desktop remote enabled IDs start restricted, explicit enablement loads pinned code/CSS, and trust persists locally (6.268ms)
+✔ plugin data seeds from GitHub, persists falsy and array values locally, and is isolated by vault (3.3021ms)
+✔ malformed remote configuration and mismatched manifests remain explicit errors without fetching code (3.5702ms)
+✔ late plugin source responses are refused after either a vault switch or snapshot refresh (6.4813ms)
+✔ older cache inventories remain readable and reject configuration paths outside the vault (1.1875ms)
+✔ truncated-tree walking includes the vault-root .obsidian directory and excludes other hidden directories (2.5277ms)
+✔ an incomplete cache-only mount reports missing plugin/settings bytes without falling back to GitHub (1.5604ms)
+✔ WASM GitHub mounts default to unrestricted after platform initialization and preserve an explicit restricted choice (10.3875ms)
+✔ installed appearance assets are commit-pinned, cache-only and verified without a raw download for oversized files (50.8702ms)
+✔ complete index verifies a fixed cached inventory with zero API/raw traffic and flips partial to complete (3.3966ms)
+✔ complete index refuses missing or corrupt bytes and never falls back to the network (2.3253ms)
+✔ complete index cancel keeps verified progress and resume detects content changed since (3.1392ms)
+✔ complete index is fenced against vault selection, refresh and a different snapshot (2.8011ms)
+✔ complete index refuses to adopt after the root changes at the held final-save boundary (1.6718ms)
+✔ a failed compensation after a held root change is surfaced, not swallowed (1.8076ms)
+✔ online lazy sessions can build a complete index only from cached bytes (1.81ms)
+ℹ tests 44
+ℹ suites 0
+ℹ pass 44
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 409.2821

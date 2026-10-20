@@ -1,0 +1,69 @@
+{
+  "status": "scoped-isolated-acceptance",
+  "sourceFingerprint": "59a76a2fc3313e554022405611006926b6a64901ab78594449d0f0ce2af01141",
+  "boundary": "Outline heading authoring and retained pane workflows on native and actual-folder WASM; no current-main, full private/native/visual/IME/scale/Unicode equivalence or whole-core promotion.",
+  "nativeChecks": 15,
+  "webChecks": 27,
+  "nativeAudit": {
+    "records": 1,
+    "expected": 1,
+    "unexpected": 0
+  },
+  "webAudit": {
+    "records": 2,
+    "expected": 2,
+    "unexpected": 0
+  },
+  "artifacts": [
+    {
+      "path": "inputs-before-native4.json",
+      "bytes": 74234,
+      "sha256": "84c872d0d68a141d53fcbb515cdc683a5013aef2b0e3c9d53f9ba1a1e53b0755"
+    },
+    {
+      "path": "inputs-after-native4.json",
+      "bytes": 74234,
+      "sha256": "84c872d0d68a141d53fcbb515cdc683a5013aef2b0e3c9d53f9ba1a1e53b0755"
+    },
+    {
+      "path": "inputs-before-wasm.json",
+      "bytes": 74234,
+      "sha256": "84c872d0d68a141d53fcbb515cdc683a5013aef2b0e3c9d53f9ba1a1e53b0755"
+    },
+    {
+      "path": "inputs-after-wasm.json",
+      "bytes": 74234,
+      "sha256": "84c872d0d68a141d53fcbb515cdc683a5013aef2b0e3c9d53f9ba1a1e53b0755"
+    },
+    {
+      "path": "native-run4.log",
+      "bytes": 2807,
+      "sha256": "09563c68499a116eda03de82ed15791d4e88778acdc5b789dd1dd2d4c211a787"
+    },
+    {
+      "path": "wasm-run.log",
+      "bytes": 4006,
+      "sha256": "7a01e7d9542b748aabeecc3d334edd7a4b9f7b7db5cb036a409079823b99ecc8"
+    },
+    {
+      "path": "native4-outline-panes-smoke.json",
+      "bytes": 25540,
+      "sha256": "baa3f82ba9f89a05fd08688bbc138a30abf4e708370806b65d3f9491aab4eaec"
+    },
+    {
+      "path": "native4-outline-panes-smoke-errors.jsonl",
+      "bytes": 842,
+      "sha256": "052ea290bb50423eec7d10b69d5e0e83a04130229ef0428b101e05ee91e7e1f8"
+    },
+    {
+      "path": "wasm-outline-panes-web-smoke.json",
+      "bytes": 18618,
+      "sha256": "a381df1feb54565504cf1d9cfbebb1d64b56516ca55aa5d6a884e3422e17ffac"
+    },
+    {
+      "path": "wasm-outline-panes-web-smoke-errors.jsonl",
+      "bytes": 2921,
+      "sha256": "e10ac96bfdc7139681cdef0be3ec8bc029344c33708d72b0c21161f171d06631"
+    }
+  ]
+}

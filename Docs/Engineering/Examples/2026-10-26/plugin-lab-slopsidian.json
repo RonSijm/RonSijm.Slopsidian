@@ -1,0 +1,130 @@
+{
+  "status": "passed",
+  "base": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\deep-plugin-slopsidian-1793053027535",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\deep-plugin-slopsidian-1793053027535\\vault",
+  "host": "Existing isolated Slopsidian desktop build; supplied plugin packages unchanged",
+  "pluginIds": [
+    "homepage",
+    "obsidian-admonition",
+    "obsidian-linter",
+    "omnisearch",
+    "obsidian-git"
+  ],
+  "checks": [
+    {
+      "plugin": "homepage",
+      "label": "open the prepared cockpit while preserving another note",
+      "status": "passed",
+      "value": {
+        "destination": "30 Projects/Project cockpit.md",
+        "manualMode": "Keep open notes",
+        "priorNoteRetained": true,
+        "startup": false
+      }
+    },
+    {
+      "plugin": "obsidian-admonition",
+      "label": "style the three prepared native custom-callout types",
+      "status": "passed",
+      "value": {
+        "styled": [
+          {
+            "type": "workshop-decision",
+            "color": "rgb(52, 168, 83)",
+            "icons": 1
+          },
+          {
+            "type": "workshop-risk",
+            "color": "rgb(218, 83, 83)",
+            "icons": 1
+          },
+          {
+            "type": "workshop-experiment",
+            "color": "rgb(124, 107, 214)",
+            "icons": 1
+          }
+        ],
+        "fencedBlockLimitation": "Observed in previous run; documented; this check uses native callouts"
+      }
+    },
+    {
+      "plugin": "obsidian-linter",
+      "label": "clean actual draft metadata, spacing and table source",
+      "status": "passed",
+      "value": {
+        "physicalResult": "lint-result.md",
+        "trailingSpacesRemoved": true,
+        "duplicateArraysRemoved": true
+      }
+    },
+    {
+      "plugin": "omnisearch",
+      "label": "find the prepared phrase, alias and accent variants",
+      "status": "passed",
+      "value": [
+        {
+          "query": "amber comet lantern",
+          "target": "Visitor briefing.md",
+          "matches": 4
+        },
+        {
+          "query": "Welcome script",
+          "target": "Visitor briefing.md",
+          "matches": 14
+        },
+        {
+          "query": "Cafe",
+          "target": "Visitor briefing.md",
+          "matches": 3
+        },
+        {
+          "query": "seedling labels",
+          "target": "Garden handover.md",
+          "matches": 14
+        }
+      ]
+    },
+    {
+      "plugin": "obsidian-git",
+      "label": "load source control against the separate local history lab",
+      "status": "passed",
+      "value": {
+        "command": "obsidian-git:open-git-view",
+        "localBranches": [
+          "main",
+          "indoor-route"
+        ],
+        "remoteCount": 0,
+        "pushDisabled": true
+      }
+    }
+  ],
+  "exceptions": [
+    "Uncaught"
+  ],
+  "consoleErrors": [
+    "Omnisearch 60 Visuals/Room plan review.md cannot be read",
+    "Omnisearch 80 Sandbox/Editing playground.md cannot be read",
+    "Omnisearch Start here.md cannot be read"
+  ],
+  "endpoint": "http://127.0.0.1:49398",
+  "loaded": [
+    "homepage",
+    "obsidian-admonition",
+    "obsidian-linter",
+    "omnisearch",
+    "obsidian-git"
+  ],
+  "processExit": {
+    "code": 0,
+    "signal": null
+  },
+  "cleanupVerifiedAfterRun": {
+    "ownedProcessIds": [
+      37500,
+      21508
+    ],
+    "observedRunning": [],
+    "observation": "Both owned processes were absent after the run; immediate exit codes were not captured."
+  }
+}

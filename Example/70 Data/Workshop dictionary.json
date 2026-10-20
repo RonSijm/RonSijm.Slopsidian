@@ -1,0 +1,54 @@
+{
+  "caretSymbol": "¦",
+  "ignoreSpaceAfterCompletion": true,
+  "words": [
+    {
+      "value": "constellation",
+      "description": "A pattern or region of the sky",
+      "aliases": [
+        "constell"
+      ]
+    },
+    {
+      "value": "spectroheliograph",
+      "description": "Technical vocabulary for the fictional telescope handover",
+      "aliases": [
+        "spectro"
+      ]
+    },
+    {
+      "value": "seedling",
+      "description": "A young plant for the garden station",
+      "aliases": [
+        "seedl"
+      ]
+    },
+    {
+      "value": "Welcome! Choose something to discover at the telescope or seedling station.",
+      "displayed": "Workshop welcome",
+      "description": "Insert the complete visitor welcome",
+      "aliases": [
+        "wswelcome",
+        "welcome-script"
+      ]
+    },
+    {
+      "value": "Decision: ¦\nReason: \nOwner: [[70 Data/People/Alex]]",
+      "displayed": "Workshop decision",
+      "description": "Insert a decision outline and position the cursor",
+      "aliases": [
+        "wsdecision",
+        "decision-record"
+      ]
+    },
+    {
+      "value": "What is one thing you noticed tonight?",
+      "displayed": "Workshop closing question",
+      "description": "Insert the closing prompt",
+      "aliases": [
+        "wsclosing",
+        "one-discovery"
+      ]
+    }
+  ]
+}

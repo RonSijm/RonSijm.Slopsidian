@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-31",
+  "testedAt": "2026-10-31",
+  "scope": "shared-appearance-self-contained-css-and-dependent-runtime-renewal",
+  "status": "passed",
+  "sourceFingerprint": "51c2d8077524b32c7f4bb864a216d3ecc2dd261479a410ef4c8622c4f4e93b6d",
+  "sourceCount": 436,
+  "archive": {
+    "path": "runtime-evidence.zip",
+    "bytes": 5903055,
+    "entries": 520,
+    "sha256": "cd18e94d6d00f24b4bae08a5360bcbdb033d57dcb489dc8e2f4c7084d4d6271c",
+    "contents": "All fingerprinted sources, key runtime binaries, raw artifact bindings, eight final reports/audits, complete logs, six reviewed captures, retention code and seven unaccepted diagnostic attempts."
+  },
+  "reports": [
+    {
+      "path": "reports/appearance-smoke.json",
+      "host": "desktop",
+      "checks": 16,
+      "sha256": "86c99a8544892c763fb08cabc783a9db4e9e86b7e24e6768fc9503120dbff50d",
+      "completedAt": "2026-10-31T10:28:49.437Z",
+      "errorAudit": {
+        "path": "reports/appearance-smoke-errors.jsonl",
+        "sha256": "3f8604c334e08ef73a5bf455c58ba40fec8868da358d011896bd61a0e8798d09",
+        "records": 7,
+        "expected": 7,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      },
+      "processSessions": 3
+    },
+    {
+      "path": "reports/appearance-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 28,
+      "sha256": "9c357a538736b81bc1b71611e146e785af489a015273bcf6150a93dcfcaec040",
+      "completedAt": "2026-10-31T10:29:17.401Z",
+      "errorAudit": {
+        "path": "reports/appearance-web-smoke-errors.jsonl",
+        "sha256": "d2d4e98921240e7b1e92bddcabe49d39c52a620290a86b95853ff39bfb961450",
+        "records": 8,
+        "expected": 8,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      }
+    },
+    {
+      "path": "reports/editor-chrome-smoke.json",
+      "host": "desktop",
+      "checks": 11,
+      "sha256": "09b3305203993faa3ef22864a67e0fdb6ba0b33a94716206a9b0b2513758d5da",
+      "completedAt": "2026-10-31T10:31:07.533Z",
+      "errorAudit": {
+        "path": "reports/editor-chrome-smoke-errors.jsonl",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0,
+        "expected": 0,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      },
+      "processSessions": 5
+    },
+    {
+      "path": "reports/editor-chrome-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 23,
+      "sha256": "79315880d45f08b2afaeef156f51bffe5bf4bad13743c6277afb482abf27623f",
+      "completedAt": "2026-10-31T10:31:39.843Z",
+      "errorAudit": {
+        "path": "reports/editor-chrome-web-smoke-errors.jsonl",
+        "sha256": "3c6c3040c725d7cedba285151794b272e413889e9fb848a37edc4969d7042356",
+        "records": 1,
+        "expected": 1,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      }
+    },
+    {
+      "path": "reports/tags-smoke.json",
+      "host": "desktop",
+      "checks": 13,
+      "sha256": "57bb6dba054d294badc9bc09865653240b84d9f1dadc54b0fcec0408543d6197",
+      "completedAt": "2026-10-31T10:31:49.423Z",
+      "errorAudit": {
+        "path": "reports/tags-smoke-errors.jsonl",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0,
+        "expected": 0,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      },
+      "processSessions": 1
+    },
+    {
+      "path": "reports/tags-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 25,
+      "sha256": "e86ae2ded9785ef56fdae670d5cf79abbe2efbae14cb096f2f82a8e376c9feed",
+      "completedAt": "2026-10-31T10:32:18.157Z",
+      "errorAudit": {
+        "path": "reports/tags-web-smoke-errors.jsonl",
+        "sha256": "187daec7fb8f3f92a189513fd38b1d2497a695bb705d64880568d60d2f15d81a",
+        "records": 1,
+        "expected": 1,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      }
+    },
+    {
+      "path": "reports/properties-smoke.json",
+      "host": "desktop",
+      "checks": 12,
+      "sha256": "7acd75a0e17b77b9d1f88355e6cd16481bee591a2fef7a7454923605c5c197f7",
+      "completedAt": "2026-10-31T10:28:32.859Z",
+      "errorAudit": {
+        "path": "reports/properties-smoke-errors.jsonl",
+        "sha256": "dc55c2932cc1a039f91de71db0cb5e6cffe2337ddf196ee5ecbde261354ec937",
+        "records": 5,
+        "expected": 5,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      },
+      "processSessions": 5
+    },
+    {
+      "path": "reports/properties-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 24,
+      "sha256": "9dcb5ce68c0b0088048e094df409ae8a6c4294ad59101ade985b0d965ea39066",
+      "completedAt": "2026-10-31T10:28:03.805Z",
+      "errorAudit": {
+        "path": "reports/properties-web-smoke-errors.jsonl",
+        "sha256": "619a31526c813ee69015641300c683ad595bec3c7046d5b49e8d2e60a8bc41de",
+        "records": 6,
+        "expected": 6,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      }
+    }
+  ],
+  "regressions": [
+    {
+      "scope": "default",
+      "command": "npm test",
+      "passed": 787,
+      "failed": 0,
+      "skipped": 0,
+      "output": "logs/appearance-default-tests.log"
+    },
+    {
+      "scope": "Appearance/native/browser/GitHub",
+      "command": "npm run test:appearance",
+      "passed": 100,
+      "failed": 0,
+      "skipped": 0,
+      "output": "logs/appearance-focused-tests.log"
+    }
+  ],
+  "buildChecks": [
+    "npm run build",
+    "npm run build:web",
+    "npm run verify:web"
+  ],
+  "environment": {
+    "node": "v25.6.1",
+    "dotnetSdk": "10.0.100",
+    "electronPackage": "39.8.3",
+    "browserInput": "Actual-folder WASM uses the owned browser and real OS pickers recorded in each report; rendererNodeIntegration is false."
+  },
+  "errorAudits": {
+    "includesFinalTeardown": true,
+    "unexpectedPersistedRecords": 0,
+    "uncaughtExceptions": 0,
+    "note": "Deliberate CSS/configuration/conflict/stale-owner notifications and browser bootstrap are exactly accounted. Retained native transport/GPU diagnostics are not a clean-console claim."
+  },
+  "reviewedCaptures": [
+    "captures/appearance-light-desktop.png",
+    "captures/appearance-light-web.png",
+    "captures/appearance-theme-snippets-desktop.png",
+    "captures/appearance-theme-snippets-web.png",
+    "captures/appearance-readonly-desktop.png",
+    "captures/appearance-readonly-web.png"
+  ],
+  "retainedFailures": [
+    {
+      "path": "failures/appearance-native-attempt-1-appearance-smoke.json",
+      "sourceFingerprint": "6ec0e8fd284b822d07b877869c6be064b1dac30e0caf56934a349abadd463720",
+      "resolution": "The fixture now checks the actual CodeMirror darkTheme facet and computed colors, not nonexistent cm-light/cm-dark classes.",
+      "status": "unaccepted-diagnostic-attempt"
+    },
+    {
+      "path": "failures/appearance-native-attempt-2-appearance-smoke.json",
+      "sourceFingerprint": "23fb6d8482f8d309c74903bcd39b79bda6e9f6d6ab42ebf702811049a4de164a",
+      "resolution": "Authored fixtures use equal-specificity selectors to exercise normal theme/snippet cascade order, without forced overrides.",
+      "status": "unaccepted-diagnostic-attempt"
+    },
+    {
+      "path": "failures/appearance-properties-native-attempt-1-properties-smoke.json",
+      "sourceFingerprint": "02515fcc0caad6862d336cbb7d9558989ef3b0b2bdc4df02d93c12ec00c07fcf",
+      "resolution": "Final dialog type selection uses actual Tab/Home/arrows on the closed form select, not JavaScript value assignment. The pointer-open native popup timeout is retained.",
+      "status": "unaccepted-diagnostic-attempt"
+    },
+    {
+      "path": "failures/appearance-properties-native-attempt-2-properties-smoke.json",
+      "sourceFingerprint": "02515fcc0caad6862d336cbb7d9558989ef3b0b2bdc4df02d93c12ec00c07fcf",
+      "resolution": "The isolated unchanged-source pointer-open dropdown sequence also timed out. Final dialog types use actual closed-select keyboard navigation.",
+      "status": "unaccepted-diagnostic-attempt"
+    },
+    {
+      "path": "failures/appearance-properties-native-attempt-3-properties-smoke.json",
+      "sourceFingerprint": "67184c2191d4ab5c00619fb57dd8505ba5357851c9e18eca7de7e0fd85d6535c",
+      "resolution": "Removing per-key Page.bringToFront did not resolve the dropdown timeout; that hypothesis was reverted. Final dialog selection uses actual Tab/Home/arrows; the popup cause is unestablished.",
+      "status": "unaccepted-diagnostic-attempt"
+    },
+    {
+      "path": "failures/appearance-properties-web-attempt-1-properties-web-smoke.json",
+      "sourceFingerprint": "2a6515113e47e1ee9bbb49ac79c82d4119350d4321fc285822d668f6142c1a2a",
+      "resolution": "The scenario now waits for an editable, non-busy input: cache readiness can precede a previous inline commit's readonly/row-refresh completion. Draft/conflict assertions remain unchanged.",
+      "status": "unaccepted-diagnostic-attempt"
+    },
+    {
+      "path": "failures/appearance-editor-native-attempt-1-editor-chrome-smoke.json",
+      "sourceFingerprint": "51c2d8077524b32c7f4bb864a216d3ecc2dd261479a410ef4c8622c4f4e93b6d",
+      "resolution": "Native settings opening timed out once. An isolated unchanged-source retry passed, as did the remaining matched scopes; its cause is unestablished and no assertion/application fix is claimed.",
+      "status": "unaccepted-diagnostic-attempt"
+    }
+  ],
+  "limits": [
+    "Self-contained trusted whole-interface CSS only, not sandboxed themes, full native DOM/CSS equivalence or new third-party theme/plugin-corpus acceptance.",
+    "Imports and resource functions (including escaped names) refuse; lexical validation is not complete CSS syntax validation.",
+    "One MiB raw UTF-8 per CSS file, four MiB per selected set, 128 configured snippet names, 256 theme folders plus snippet files, literal safe names up to 200 characters.",
+    "No theme catalog/install/update, font-file/image resources, complete font/default controls or automatic external appearance watching.",
+    "Existing Mermaid jobs, Web Reader frames and native window chrome are not dynamically rethemed by this tranche.",
+    "A failed CSS Reload can already adopt new preferences/base mode while retaining previously accepted CSS; inventory failures survive unrelated successful mode/style-disable saves.",
+    "Versioned preference writes preserve unknown values/BOM but may reformat JSON; no cross-file/cross-app/crash transaction is established.",
+    "Cached GitHub CSS uses verified readonly blobs and local preference overlays, not an offline app shell or eager full-vault indexing.",
+    "The fixed 31-module/140-case contract and historical whole-core badges remain unchanged.",
+    "Earlier accepted Properties/Outgoing collections are immutable historical epochs; retained failed attempts are not combined into final acceptance.",
+    "No commits, pushes or deployment were performed."
+  ]
+}

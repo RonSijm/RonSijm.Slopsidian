@@ -1,0 +1,800 @@
+{
+  "status": "failed",
+  "scope": "workspace-tab-movement",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-27T12:23:12.679Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\tab-movement-validation-20261027\\.runtime\\smoke-vault-Y1yJXm",
+  "launcherPid": 31640,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 31640,
+      "electronPid": 31640,
+      "dotnetPid": 45224,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.14",
+  "sourceFingerprint": "572c6fd5059c26a45b56c6d66f45b8b0a9761ee5227fc2826b41dd370b1c173a",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "rendererReloads": [
+    {
+      "previousLoader": "D9005E8CF476A55192A0D555C5B85763",
+      "loader": "BE9B3B2F684363B409C5E1D8FEBC14FB"
+    }
+  ],
+  "error": "Error: Timed out waiting for trusted tab dragstart payload\n    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/tab-movement-validation-20261027/tools/smoke.mjs:324:9)\n    at async waitExpression (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/tab-movement-validation-20261027/tools/smoke.mjs:416:3)\n    at async beginDrag (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/tab-movement-validation-20261027/tools/tab-movement-scenarios.mjs:46:5)\n    at async drag (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/tab-movement-validation-20261027/tools/tab-movement-scenarios.mjs:59:67)\n    at async checkTabMovement (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/tab-movement-validation-20261027/tools/tab-movement-scenarios.mjs:110:3)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/tab-movement-validation-20261027/tools/smoke.mjs:725:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(tabMovementDrag?.items.some(item=>item.mimeType===\\\"application/x-slopsidian-workspace-tab\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [
+      "workspace-tab-probe"
+    ],
+    "cards": [
+      {
+        "id": "workspace-tab-probe",
+        "loaded": "true"
+      }
+    ],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "tab-alpha",
+        "type": "markdown",
+        "path": "Tab movement/Alpha.md",
+        "text": "# Alpha\r\n\r\nAlpha unsaved λ Line 0: kept λ and 中文.\r\nLine 1: kept λ and 中文.\r\nLine 2: kept λ and 中文.\r\nLine 3: kept λ and 中文.\r\nLine 4: kept λ and 中文.\r\nLine 5: kept λ and 中文.\r\nLine 6: kept λ and 中文.\r\nLine 7: kept λ and 中文.\r\nLine 8: kept λ and 中文.\r\nLine 9: kept λ and 中文.\r\nLine 10: kept λ and 中文.\r\nLine 11:",
+        "sessionText": "# Alpha\r\n\r\nAlpha unsaved λ Line 0: kept λ and 中文.\r\nLine 1: kept λ and 中文.\r\nLine 2: kept λ and 中文.\r\nLine 3: kept λ and 中文.\r\nLine 4: kept λ and 中文.\r\nLine 5: kept λ and 中文.\r\nLine 6: kept λ and 中文.\r\nLine 7: kept λ and 中文.\r\nLine 8: kept λ and 中文.\r\nLine 9: kept λ and 中文.\r\nLine 10: kept λ and 中文.\r\nLine 11:",
+        "dirty": true,
+        "selection": 55,
+        "length": 2175
+      },
+      {
+        "id": "tab-beta",
+        "type": "markdown",
+        "path": "Tab movement/Beta.md",
+        "text": "# Beta\r\n\r\nBeta unsaved Line 0: kept λ and 中文.\r\nLine 1: kept λ and 中文.\r\nLine 2: kept λ and 中文.\r\nLine 3: kept λ and 中文.\r\nLine 4: kept λ and 中文.\r\nLine 5: kept λ and 中文.\r\nLine 6: kept λ and 中文.\r\nLine 7: kept λ and 中文.\r\nLine 8: kept λ and 中文.\r\nLine 9: kept λ and 中文.\r\nLine 10: kept λ and 中文.\r\nLine 11: kep",
+        "sessionText": "# Beta\r\n\r\nBeta unsaved Line 0: kept λ and 中文.\r\nLine 1: kept λ and 中文.\r\nLine 2: kept λ and 中文.\r\nLine 3: kept λ and 中文.\r\nLine 4: kept λ and 中文.\r\nLine 5: kept λ and 中文.\r\nLine 6: kept λ and 中文.\r\nLine 7: kept λ and 中文.\r\nLine 8: kept λ and 中文.\r\nLine 9: kept λ and 中文.\r\nLine 10: kept λ and 中文.\r\nLine 11: kep",
+        "dirty": true,
+        "selection": 21,
+        "length": 2171
+      },
+      {
+        "id": "tab-gamma",
+        "type": "markdown",
+        "path": "Tab movement/Gamma.md",
+        "text": "# Gamma\r\n\r\nLine 0: kept λ and 中文.\r\nLine 1: kept λ and 中文.\r\nLine 2: kept λ and 中文.\r\nLine 3: kept λ and 中文.\r\nLine 4: kept λ and 中文.\r\nLine 5: kept λ and 中文.\r\nLine 6: kept λ and 中文.\r\nLine 7: kept λ and 中文.\r\nLine 8: kept λ and 中文.\r\nLine 9: kept λ and 中文.\r\nLine 10: kept λ and 中文.\r\nLine 11: kept λ and 中文.\r",
+        "sessionText": "# Gamma\r\n\r\nLine 0: kept λ and 中文.\r\nLine 1: kept λ and 中文.\r\nLine 2: kept λ and 中文.\r\nLine 3: kept λ and 中文.\r\nLine 4: kept λ and 中文.\r\nLine 5: kept λ and 中文.\r\nLine 6: kept λ and 中文.\r\nLine 7: kept λ and 中文.\r\nLine 8: kept λ and 中文.\r\nLine 9: kept λ and 中文.\r\nLine 10: kept λ and 中文.\r\nLine 11: kept λ and 中文.\r",
+        "dirty": false,
+        "selection": 0,
+        "length": 2159
+      },
+      {
+        "id": "tab-delta",
+        "type": "markdown",
+        "path": "Tab movement/Delta.md",
+        "text": "# Delta\r\n\r\nLine 0: kept λ and 中文.\r\nLine 1: kept λ and 中文.\r\nLine 2: kept λ and 中文.\r\nLine 3: kept λ and 中文.\r\nLine 4: kept λ and 中文.\r\nLine 5: kept λ and 中文.\r\nLine 6: kept λ and 中文.\r\nLine 7: kept λ and 中文.\r\nLine 8: kept λ and 中文.\r\nLine 9: kept λ and 中文.\r\nLine 10: kept λ and 中文.\r\nLine 11: kept λ and 中文.\r",
+        "sessionText": "# Delta\r\n\r\nLine 0: kept λ and 中文.\r\nLine 1: kept λ and 中文.\r\nLine 2: kept λ and 中文.\r\nLine 3: kept λ and 中文.\r\nLine 4: kept λ and 中文.\r\nLine 5: kept λ and 中文.\r\nLine 6: kept λ and 中文.\r\nLine 7: kept λ and 中文.\r\nLine 8: kept λ and 中文.\r\nLine 9: kept λ and 中文.\r\nLine 10: kept λ and 中文.\r\nLine 11: kept λ and 中文.\r",
+        "dirty": false,
+        "selection": 0,
+        "length": 2159
+      },
+      {
+        "id": "tab-reading",
+        "type": "markdown",
+        "path": "Tab movement/Alpha.md",
+        "text": "# Alpha\r\n\r\nAlpha unsaved λ Line 0: kept λ and 中文.\r\nLine 1: kept λ and 中文.\r\nLine 2: kept λ and 中文.\r\nLine 3: kept λ and 中文.\r\nLine 4: kept λ and 中文.\r\nLine 5: kept λ and 中文.\r\nLine 6: kept λ and 中文.\r\nLine 7: kept λ and 中文.\r\nLine 8: kept λ and 中文.\r\nLine 9: kept λ and 中文.\r\nLine 10: kept λ and 中文.\r\nLine 11:",
+        "sessionText": "# Alpha\r\n\r\nAlpha unsaved λ Line 0: kept λ and 中文.\r\nLine 1: kept λ and 中文.\r\nLine 2: kept λ and 中文.\r\nLine 3: kept λ and 中文.\r\nLine 4: kept λ and 中文.\r\nLine 5: kept λ and 中文.\r\nLine 6: kept λ and 中文.\r\nLine 7: kept λ and 中文.\r\nLine 8: kept λ and 中文.\r\nLine 9: kept λ and 中文.\r\nLine 10: kept λ and 中文.\r\nLine 11:",
+        "dirty": true,
+        "selection": 0,
+        "length": 2175
+      },
+      {
+        "id": "tab-probe",
+        "type": "workspace-tab-probe-view"
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "tab-main",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "tab-left",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "tab-alpha",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "futureTab": {
+                      "keep": [
+                        "tab-alpha"
+                      ]
+                    },
+                    "file": "Tab movement/Alpha.md"
+                  },
+                  "pinned": true
+                }
+              },
+              {
+                "id": "tab-beta",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "futureTab": {
+                      "keep": [
+                        "tab-beta"
+                      ]
+                    },
+                    "file": "Tab movement/Beta.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "tab-gamma",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "futureTab": {
+                      "keep": [
+                        "tab-gamma"
+                      ]
+                    },
+                    "file": "Tab movement/Gamma.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          },
+          {
+            "id": "tab-nested",
+            "type": "split",
+            "direction": "horizontal",
+            "children": [
+              {
+                "id": "tab-right",
+                "type": "tabs",
+                "children": [
+                  {
+                    "id": "tab-delta",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "mode": "source",
+                        "source": true,
+                        "futureTab": {
+                          "keep": [
+                            "tab-delta"
+                          ]
+                        },
+                        "file": "Tab movement/Delta.md"
+                      },
+                      "pinned": false
+                    }
+                  },
+                  {
+                    "id": "tab-reading",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "mode": "preview",
+                        "source": true,
+                        "futureTab": {
+                          "keep": [
+                            "tab-reading"
+                          ]
+                        },
+                        "file": "Tab movement/Alpha.md"
+                      },
+                      "pinned": false
+                    }
+                  },
+                  {
+                    "id": "tab-probe",
+                    "type": "leaf",
+                    "state": {
+                      "type": "workspace-tab-probe-view",
+                      "state": {
+                        "value": "Plugin state λ",
+                        "opaque": {
+                          "keep": [
+                            true,
+                            42
+                          ]
+                        }
+                      },
+                      "pinned": true
+                    }
+                  }
+                ],
+                "currentTab": 0
+              }
+            ]
+          }
+        ]
+      },
+      "active": "tab-alpha",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-navigation": {
+          "lastMainLeaf": "tab-alpha",
+          "lastFile": "Tab movement/Alpha.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "controlledShutdownConsoleErrors": [],
+  "consoleErrors": [
+    "[2026-10-27T12:23:35.867Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T12:23:40.876Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 45224,
+  "electronPid": 31640,
+  "completedAt": "2026-10-27T12:23:41.038Z"
+}

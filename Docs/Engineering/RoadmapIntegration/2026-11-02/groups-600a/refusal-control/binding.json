@@ -1,0 +1,16 @@
+{
+  "status": "runner-passed-binding-stable",
+  "workspace": "D:\\RonSijm\\RonSijm.Slopsidian",
+  "script": "web-smoke.mjs",
+  "args": [
+    "--groups-popouts"
+  ],
+  "environment": {},
+  "startedAt": "2026-11-02T03:14:00.525Z",
+  "boundary": "Raw source/artifact binding only. Inspect the runner's full feature report, scope, error audit and helper teardown separately; diagnostics are not acceptance.",
+  "sourceFingerprint": "600ab1b298e33e442e816d720298118b882aaf431e6ea3338c5dceafa5644001",
+  "runnerPid": 40184,
+  "exitCode": 0,
+  "exitSignal": null,
+  "completedAt": "2026-11-02T03:14:54.475Z"
+}

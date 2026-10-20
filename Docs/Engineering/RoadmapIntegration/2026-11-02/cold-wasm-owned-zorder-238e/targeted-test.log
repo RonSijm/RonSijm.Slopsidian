@@ -1,0 +1,94 @@
+✔ css points convert by dpr and out-of-viewport points are refused (1.0324ms)
+✔ plan requires an exact pid, distinct titles and measured geometry (0.2419ms)
+✔ structured diagnostics are retained when the driver refuses or the exec rejects (4.0855ms)
+✔ the driver surfaces an incomplete drag and passes only the plan (0.2404ms)
+✔ native script source uses real mouse input and releases the button in finally (0.6703ms)
+✔ a hop verifies identity after the real drag and rejects a drag that did not move or swapped the editor (0.6462ms)
+✔ ambiguous or mismatched native titles are refused before any drag (0.1462ms)
+✔ the chain proves main->popout->popout hops, real Undo and Save, and never reports osDragVerified for an injected executor (0.5022ms)
+✔ expressions are primitive-returning and test-only (0.13ms)
+✔ plan rejects non-finite and out-of-range inputs before any OS action (0.2482ms)
+✔ native script preflights both endpoints before pressing and cancels with Escape before any failure release (0.8495ms)
+✔ the hop waits for delayed ownership, reports the last failure on timeout and needs a dirty editor and a waiter (0.422ms)
+✔ the runtime WASM is the required dotnet.native file, never an arbitrary first assembly (0.9763ms)
+✔ the serialized page expression compiles and runs against a cache storage (17.1521ms)
+✔ the SDK boot cache is cleared only for the exact app base, recording matching copies, and failures are explicit (1.3338ms)
+✔ the smoke harness imports every audit helper it uses (1.0889ms)
+✔ page settling waits for in-flight requests, app readiness and a quiet interval, and reports what is pending (721.9378ms)
+✔ the panel probe records open, inert, dialog, hit target and status for each state, and tolerates a missing panel (1.3759ms)
+✔ manifest is deterministic, excludes control files and detects a changed artifact (19.2115ms)
+✔ prepare caches and atomically adopts one complete verified set, then reports ready (11.5728ms)
+✔ a corrupt download or manifest never replaces the adopted version and is reported honestly (15.1562ms)
+✔ update adopts the new set only after it is complete and then removes the old set (18.3116ms)
+✔ cancel and network failure keep verified files for resume without adopting (11.3797ms)
+✔ storage quota failure is explicit, discards the new partial set and keeps the old one (18.0371ms)
+✔ a cache put failure, including a duplicate entry, is never swallowed and names the file being saved (10.7852ms)
+✔ eviction and byte corruption are detected, and repair rehashes in place (12.119ms)
+✔ the smoke audit rejects a late unexpected error, an unrelated failed URL and an unrelated failed response, and matches only exact declared URLs (1.0938ms)
+✔ remove preserves other bases, nested ':' bases and unrelated caches, and reports a failed worker unregister (10.0392ms)
+✔ two pages sharing one cache cannot prepare different versions or remove during a prepare; the pointer always names a complete retained cache (14.5488ms)
+✔ without Web Locks the offline copy is refused rather than mutated unprotected (6.6926ms)
+✔ unsupported contexts and server failures are explicit (0.4342ms)
+✔ service worker serves only the adopted manifest set inside its own scope and never mixes the network in (9.8731ms)
+✔ a tampered or unreadable adopted set is refused, never executed and never mixed with the network (12.1759ms)
+✔ a warm worker re-validates the stored manifest on every request instead of trusting a memoized copy (8.6902ms)
+✔ the service worker build is part of the shell version, so a worker-only update is never silently complete (18.1525ms)
+✔ a failed pointer write during a worker-changing update leaves the previous worker and adopted shell runnable offline (15.0528ms)
+✔ a failed worker registration restores the previous adoption record (12.8268ms)
+✔ an unusable service worker registration never reports adoption or replaces the previous record (23.7554ms)
+✔ a worker is admitted only while the adoption record names its build: installed, readiness-failed and late activation (49.1442ms)
+✔ publish tooling and entry page wire the offline shell without caching vault data (0.7903ms)
+✔ fixture exit acceptance requires an actual zero exit without a signal or forced cleanup (1.3339ms)
+✔ the shared fixture drain waits for owned lifecycles and shell locks and propagates failures (85.9709ms)
+✔ the acknowledged quit needs a real ack, shares one deadline and never commits after a failed drain (200.5287ms)
+✔ the fixture host accepts a quit only for the exact nonce from its own main frame and origin (0.4564ms)
+✔ layout planner tiles inside the work area and refuses insufficient or malformed geometry (0.9086ms)
+✔ constrained layout honors main 940x650 and popout 320x240 minima (0.5579ms)
+✔ layout failures retain structured diagnostics and minima scale by measured DPI (3.5616ms)
+✔ missing, duplicate or invalid measured DPI refuses before placement with diagnostics (364.2003ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+PASS the exact owned windows were raised above unrelated windows (prior topmost state recorded for restore)
+PASS injected-driver run of the OS drag scenario (NOT OS-verified)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+PASS the exact owned windows were raised above unrelated windows (prior topmost state recorded for restore)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+✔ z-order preparation raises only exact owned windows, records prior state and restores, including on failure (26.278ms)
+✔ the arrangement is verified against the OS-reported rectangles (0.4896ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+PASS injected-driver run of the OS drag scenario (NOT OS-verified)
+✔ the scenario runs main->popout1->popout2->main with identity, pin, link, siblings, real Undo/Redo/Save and full cleanup (mock driver is never OS-verified) (8.3601ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+✔ insufficient work-area geometry fails before any drag and still cleans up (5.8851ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+✔ a drag that breaks the link group or loses the selected sibling is reported and cleanup still runs (8.2524ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+PASS injected-driver run of the OS drag scenario (NOT OS-verified)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+✔ cleanup failures reject and aggregate with the scenario failure (16.4054ms)
+✔ the scenario waits for the live vault inventory and fails boundedly without it (5.3781ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS two genuine popouts with anchor tabs and unique native titles were created
+✔ ambiguous windows and invalid native DPI/rectangle measurements are fatal and not retried (30.5772ms)
+✔ source contract: real driver by default, no DOM event dispatch, exact pid/title use (1.0337ms)
+Warning: KaTeX doesn't work in quirks mode. Make sure your website has a suitable doctype.
+✔ canMoveLeaf allows live main<->popout and popout<->popout moves, but refuses closing/closed windows and views that cannot follow into a window (157.5712ms)
+✔ A tab dragged from a popout document is accepted, drops into a main group at the pointer position and moves the live leaf (1.9813ms)
+✔ A main tab dropped on a popout pane body is a realm-safe centre move whose preview is drawn in the popout document, never a dock (0.5469ms)
+✔ Popout to popout moves use the same shared drag, a stale token or refused guard drops nothing, and dragend in either window cancels (0.3324ms)
+✔ The real-host tab-drag helper compiles to a primitive-returning expression and rejects partial, recreated or non-moving results without claiming an OS drag (0.8459ms)
+ℹ tests 62
+ℹ suites 0
+ℹ pass 62
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2234.5821

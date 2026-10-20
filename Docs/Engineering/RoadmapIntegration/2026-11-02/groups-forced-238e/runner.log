@@ -1,0 +1,6 @@
+PASS linked leaves follow navigation, skip pinned members and keep independent history
+PASS a real popout window hosts the same live leaf, view and owner
+PASS an unapproved native close recovers the same live dirty editor and keeps original retryable window intent without rewinding main
+PASS real Undo, Redo and hotkey Save resume in the recovered main-window editor
+PASS saved-window retry and acknowledged normal return keep the recovered live editor
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

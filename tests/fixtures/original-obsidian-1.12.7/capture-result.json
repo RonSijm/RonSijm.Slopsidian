@@ -1,0 +1,292 @@
+{
+  "schema": "original-reference-capture/1",
+  "nonce": "24d274293412089395e62c3667de9c77",
+  "startedAt": "2026-11-02T05:11:44.215Z",
+  "steps": [
+    {
+      "name": "input-verified",
+      "at": "2026-11-02T05:11:45.141Z",
+      "detail": {
+        "files": 83
+      }
+    },
+    {
+      "name": "payload-copied-and-reverified",
+      "at": "2026-11-02T05:11:46.129Z",
+      "detail": {
+        "to": "C:\\ReferenceApp"
+      }
+    },
+    {
+      "name": "disposable-vault-created",
+      "at": "2026-11-02T05:11:46.130Z",
+      "detail": {
+        "vault": "C:\\Users\\WDAGUtilityAccount\\CaptureVault"
+      }
+    },
+    {
+      "name": "launched",
+      "at": "2026-11-02T05:11:46.761Z",
+      "detail": {
+        "pid": 21552
+      }
+    },
+    {
+      "name": "identity-verified",
+      "at": "2026-11-02T05:11:49.802Z",
+      "detail": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) obsidian/1.12.7 Chrome/142.0.7444.265 Electron/39.8.3 Safari/537.36"
+      }
+    },
+    {
+      "name": "popout-created-through-supported-api",
+      "at": "2026-11-02T05:11:49.984Z"
+    },
+    {
+      "name": "workspace-captured-while-popout-open",
+      "at": "2026-11-02T05:11:51.740Z"
+    },
+    {
+      "name": "app-closed",
+      "at": "2026-11-02T05:11:51.904Z",
+      "detail": {
+        "method": "Browser.close",
+        "forced": false,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "errors": [
+          "Browser.close: cdp socket error"
+        ]
+      }
+    }
+  ],
+  "ok": true,
+  "provenance": {
+    "manifestSha256": "9e81a0f5ef1d1d9f2562b47279d94c63367f656f76cc61f703f400ce4bad5001",
+    "guestScriptSha256": "886026e4e48260d26695515ee9d469ec77c790e3b56b1de6e777353fffdd7726",
+    "nodeSha256": "677507a667c7fc0be6162312a260eb996202f127255f72357708cdb6f412429b",
+    "nodeVersion": "v25.6.1",
+    "reference": {
+      "tag": "v1.12.7",
+      "installerSha256": "f35d2a35061098400a3fafc1bfd38d8bd33f1ad76df8b78b62ccdf20b0a30d26",
+      "asarSha256": "2b2483b2e1246772e0d25367ec055cbc5047ea2f0091b667c35656678f86d712"
+    },
+    "appFileCount": 83,
+    "asarSha256": "2b2483b2e1246772e0d25367ec055cbc5047ea2f0091b667c35656678f86d712",
+    "capturedBy": "tools/original-reference/guest-capture.mjs"
+  },
+  "pid": 21552,
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) obsidian/1.12.7 Chrome/142.0.7444.265 Electron/39.8.3 Safari/537.36",
+  "popout": {
+    "isSeparateWindow": true,
+    "viewState": {
+      "type": "markdown",
+      "state": {
+        "file": "Popout note.md",
+        "mode": "source",
+        "source": false
+      },
+      "icon": "lucide-file",
+      "title": "Popout note"
+    },
+    "requested": {
+      "x": 160,
+      "y": 120,
+      "width": 720,
+      "height": 520
+    },
+    "native": {
+      "screenX": 160,
+      "screenY": 120,
+      "outerWidth": 723,
+      "outerHeight": 603,
+      "innerWidth": 723,
+      "innerHeight": 603,
+      "devicePixelRatio": 2.25
+    }
+  },
+  "targetsWhileOpen": [
+    {
+      "type": "page",
+      "url": "about:blank",
+      "title": "Popout note - CaptureVault - Obsidian 1.12.7"
+    },
+    {
+      "type": "page",
+      "url": "app://obsidian.md/index.html",
+      "title": "New tab - CaptureVault - Obsidian 1.12.7"
+    },
+    {
+      "type": "worker",
+      "url": "",
+      "title": ""
+    },
+    {
+      "type": "worker",
+      "url": "",
+      "title": ""
+    }
+  ],
+  "floatingOpen": {
+    "sha256": "f082d04a790f104f195e849a59ba81e13547eb8a75875c3a09e81d1c4c02fdf9",
+    "bytes": 5797,
+    "topLevelKeys": [
+      "main",
+      "left",
+      "right",
+      "left-ribbon",
+      "floating",
+      "active",
+      "lastOpenFiles"
+    ],
+    "keysByNodeType": {
+      "(untyped)": [
+        "active",
+        "autoReveal",
+        "backlinkCollapsed",
+        "bases:Create new base",
+        "canvas:Create new canvas",
+        "collapseAll",
+        "command-palette:Open command palette",
+        "daily-notes:Open today's daily note",
+        "explainSearch",
+        "extraContext",
+        "file",
+        "floating",
+        "followCursor",
+        "graph:Open graph view",
+        "hiddenItems",
+        "lastOpenFiles",
+        "left",
+        "left-ribbon",
+        "linksCollapsed",
+        "main",
+        "matchingCase",
+        "mode",
+        "query",
+        "right",
+        "searchQuery",
+        "showSearch",
+        "sortOrder",
+        "source",
+        "switcher:Open quick switcher",
+        "templates:Insert template",
+        "unlinkedCollapsed",
+        "useHierarchy"
+      ],
+      "split": [
+        "children",
+        "collapsed",
+        "direction",
+        "id",
+        "type",
+        "width"
+      ],
+      "tabs": [
+        "children",
+        "id",
+        "type"
+      ],
+      "leaf": [
+        "id",
+        "state",
+        "type"
+      ],
+      "empty": [
+        "icon",
+        "state",
+        "title",
+        "type"
+      ],
+      "file-explorer": [
+        "icon",
+        "state",
+        "title",
+        "type"
+      ],
+      "search": [
+        "icon",
+        "state",
+        "title",
+        "type"
+      ],
+      "bookmarks": [
+        "icon",
+        "state",
+        "title",
+        "type"
+      ],
+      "backlink": [
+        "icon",
+        "state",
+        "title",
+        "type"
+      ],
+      "outgoing-link": [
+        "icon",
+        "state",
+        "title",
+        "type"
+      ],
+      "tag": [
+        "icon",
+        "state",
+        "title",
+        "type"
+      ],
+      "all-properties": [
+        "icon",
+        "state",
+        "title",
+        "type"
+      ],
+      "outline": [
+        "icon",
+        "state",
+        "title",
+        "type"
+      ],
+      "floating": [
+        "children",
+        "id",
+        "type"
+      ],
+      "window": [
+        "children",
+        "direction",
+        "height",
+        "id",
+        "maximize",
+        "type",
+        "width",
+        "x",
+        "y",
+        "zoom"
+      ],
+      "markdown": [
+        "icon",
+        "state",
+        "title",
+        "type"
+      ]
+    }
+  },
+  "close": {
+    "method": "Browser.close",
+    "forced": false,
+    "exit": {
+      "code": 0,
+      "signal": null
+    },
+    "errors": [
+      "Browser.close: cdp socket error"
+    ]
+  },
+  "afterClose": {
+    "sha256": "f082d04a790f104f195e849a59ba81e13547eb8a75875c3a09e81d1c4c02fdf9",
+    "bytes": 5797
+  },
+  "finishedAt": "2026-11-02T05:11:51.916Z"
+}

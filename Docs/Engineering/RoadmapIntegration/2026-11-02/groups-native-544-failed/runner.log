@@ -1,0 +1,55 @@
+PASS linked leaves follow navigation, skip pinned members and keep independent history
+PASS a real popout window hosts the same live leaf, view and owner
+PASS typing, undo and hotkey save work in the real popout document
+PASS menus and modals open in, and cancel from, the popout document
+PASS a held file mutation freezes the popout and real input/undo resume afterwards
+PASS a refused dirty close keeps the window, tab and edit
+PASS a real native close request is vetoed while the tab is dirty
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\smoke-profile\logs\errors-smoke-df6287cf-9643-4e9f-96cf-b6f9cd9708ec.jsonl
+(node:5048) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:26374/devtools/browser/83a8e98b-cb46-49ae-8002-af410d78b8ca
+ELECTRON_HOST_PID 5048
+DOTNET_HOST_PID 44216
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\smoke-vault-KVNjKU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:64904
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:64904
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Error: {"code":-32000,"message":"Object reference chain is too long"}
+    at WebSocket.<anonymous> (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:674:20)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:843:20)
+    at WebSocket.dispatchEvent (node:internal/event_target:776:26)
+    at fireEvent (node:internal/deps/undici/undici:13343:14)
+    at #onMessage (node:internal/deps/undici/undici:14573:9)
+    at Object.onMessage (node:internal/deps/undici/undici:14286:76)
+    at websocketMessageReceived (node:internal/deps/undici/undici:13347:15)
+    at node:internal/deps/undici/undici:14005:19
+    at node:internal/deps/undici/undici:13825:11
+    at afterWrite (node:internal/streams/writable:708:5)
+
+'failed' !== 'passed'
+
+    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:1830:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v25.6.1

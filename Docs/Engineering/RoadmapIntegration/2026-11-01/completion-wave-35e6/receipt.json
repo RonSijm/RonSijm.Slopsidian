@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "sourceBefore": "35e6b281054a8e0d48070d18c28db6e68456dba0dae6d03b81dc131e1c8a00c6",
+  "sourceCount": 565,
+  "startedAt": "2026-11-01T23:09:13.2520623Z",
+  "boundary": "All five reviewed local completion-wave sources combined with prior integrations: themes/watcher, linked groups/popouts/Reader/native deferred close, text drafts, Outline, offline shell/cached index. Source/regression evidence, not combined feature GUI acceptance or whole-roadmap/native/private/service completion.",
+  "commands": [
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\completion-wave-integrated-validation-3849a5d9-99b0-4484-a1a9-5708cb00298d\\build.log"
+    },
+    {
+      "command": "npm run build:web",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\completion-wave-integrated-validation-3849a5d9-99b0-4484-a1a9-5708cb00298d\\build-web.log"
+    },
+    {
+      "command": "npm run verify:web",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\completion-wave-integrated-validation-3849a5d9-99b0-4484-a1a9-5708cb00298d\\verify-web.log"
+    },
+    {
+      "command": "npm run test",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\completion-wave-integrated-validation-3849a5d9-99b0-4484-a1a9-5708cb00298d\\test.log"
+    },
+    {
+      "command": "npm run test:github",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\completion-wave-integrated-validation-3849a5d9-99b0-4484-a1a9-5708cb00298d\\github-test.log"
+    }
+  ],
+  "sourceAfter": "35e6b281054a8e0d48070d18c28db6e68456dba0dae6d03b81dc131e1c8a00c6",
+  "artifacts": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "sha256": "e40da8a0138e692fb1bdea2692dad91391b4c495fa7c00bf93fb44beb33d7260",
+      "bytes": 588800
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "sha256": "fe57815bf1e17986d1f8a18dd6a101bc436fb1721e5b111adf5e8c5b73964246",
+      "bytes": 4910471
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+      "sha256": "fe57815bf1e17986d1f8a18dd6a101bc436fb1721e5b111adf5e8c5b73964246",
+      "bytes": 4910471
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json",
+      "sha256": "fc84ceae3e473a106d4f7258b93b77de4272de6f48e1b8dc0840968e58850e40",
+      "bytes": 37676
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\service-worker.js",
+      "sha256": "618c9f4a72a70a45eab864b19ea089a91cc4e8a3b7e32a63ab4dae757d103a91",
+      "bytes": 6303
+    }
+  ],
+  "defaultTests": {
+    "tests": 1160,
+    "pass": 1160,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "githubTests": {
+    "tests": 44,
+    "pass": 44,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "completedAt": "2026-11-01T23:13:04.4211348Z"
+}

@@ -1,0 +1,28 @@
+
+> slopsidian@0.1.0 build:ui
+> node tools/build.mjs
+
+GITHUB_PLUGIN_READY D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\.runtime\github-vault-plugin\
+X [ERROR] Failed to write to output file: write D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\src\RonSijm.Slopsidian\wwwroot\js\mermaid-api.js.map: There is not enough space on the disk.
+
+D:\source\DecomTest\RonSijm.Slopsidian\node_modules\esbuild\lib\main.js:1752
+  let error = new Error(text);
+              ^
+
+Error: Build failed with 1 error:
+error: Failed to write to output file: write D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\src\RonSijm.Slopsidian\wwwroot\js\mermaid-api.js.map: There is not enough space on the disk.
+    at failureErrorWithLog (D:\source\DecomTest\RonSijm.Slopsidian\node_modules\esbuild\lib\main.js:1752:15)
+    at D:\source\DecomTest\RonSijm.Slopsidian\node_modules\esbuild\lib\main.js:1211:25
+    at D:\source\DecomTest\RonSijm.Slopsidian\node_modules\esbuild\lib\main.js:1163:52
+    at buildResponseToResult (D:\source\DecomTest\RonSijm.Slopsidian\node_modules\esbuild\lib\main.js:1209:7)
+    at D:\source\DecomTest\RonSijm.Slopsidian\node_modules\esbuild\lib\main.js:1236:16
+    at responseCallbacks.<computed> (D:\source\DecomTest\RonSijm.Slopsidian\node_modules\esbuild\lib\main.js:886:9)
+    at handleIncomingPacket (D:\source\DecomTest\RonSijm.Slopsidian\node_modules\esbuild\lib\main.js:941:12)
+    at Socket.readFromStdout (D:\source\DecomTest\RonSijm.Slopsidian\node_modules\esbuild\lib\main.js:864:7)
+    at Socket.emit (node:events:514:20)
+    at addChunk (node:internal/streams/readable:605:12) {
+  errors: [Getter/Setter],
+  warnings: [Getter/Setter]
+}
+
+Node.js v26.12.1

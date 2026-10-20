@@ -1,0 +1,38 @@
+{
+  "completedAt": "2026-11-01T20:25:39.6730666Z",
+  "commands": [
+    {
+      "command": "npm run build",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\activation-outcome-validation-b57309b7-1381-4c1d-bb33-f5e88202eb09\\build.log",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build:web",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\activation-outcome-validation-b57309b7-1381-4c1d-bb33-f5e88202eb09\\build-web.log",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run verify:web",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\activation-outcome-validation-b57309b7-1381-4c1d-bb33-f5e88202eb09\\verify-web.log",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run test",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\activation-outcome-validation-b57309b7-1381-4c1d-bb33-f5e88202eb09\\test.log",
+      "exitCode": 0
+    }
+  ],
+  "status": "passed",
+  "tests": {
+    "tests": 1077,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "pass": 1077,
+    "fail": 0
+  },
+  "sourceAfterPairedBuilds": "5e4a79b68f72084fc49f06551ad91dc6c8f16d990b8fe758d02d583d5ea38d56",
+  "sourceAfterTests": "5e4a79b68f72084fc49f06551ad91dc6c8f16d990b8fe758d02d583d5ea38d56",
+  "sourceBefore": "5e4a79b68f72084fc49f06551ad91dc6c8f16d990b8fe758d02d583d5ea38d56",
+  "boundary": "Late-load activation/background-password focus and unconfirmed trash-outcome source/build/regression renewal; actual viewer rerun still pending"
+}

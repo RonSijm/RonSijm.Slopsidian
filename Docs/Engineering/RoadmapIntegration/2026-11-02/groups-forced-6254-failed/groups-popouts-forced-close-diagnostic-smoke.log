@@ -1,0 +1,22 @@
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile\logs\errors-smoke-bf1ac20e-1ee1-4149-8537-e0c4344404da.jsonl
+(node:35320) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:3243/devtools/browser/c4924646-7c7c-4540-b233-66f720242332
+ELECTRON_HOST_PID 35320
+DOTNET_HOST_PID 42692
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-iarldq
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:64096
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:64096
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+[35320:1102/031620.020:ERROR:gpu\ipc\client\command_buffer_proxy_impl.cc:327] GPU state invalid after WaitForGetOffsetInRange.

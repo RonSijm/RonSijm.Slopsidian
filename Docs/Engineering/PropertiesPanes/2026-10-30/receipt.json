@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-31",
+  "testedAt": "2026-10-30",
+  "scope": "properties-workspace-panes-files-and-links-and-dependent-runtime-renewal",
+  "status": "passed",
+  "sourceFingerprint": "d38a50c56101be24bd0c72bfe8ba1617a0d54d439894ec91f39bd864cbd211de",
+  "sourceCount": 431,
+  "archive": {
+    "path": "runtime-evidence.zip",
+    "bytes": 3914618,
+    "entries": 505,
+    "sha256": "004c39e45a734c631afe562e02dcd5c61d5fbf9a29dc40a436692be02b000c6f",
+    "contents": "All fingerprinted source inputs, final reports/audits, key runtime binaries, raw artifact manifest, complete build/test/application logs, eight captures and retained failed attempts."
+  },
+  "reports": [
+    {
+      "path": "reports/properties-smoke.json",
+      "host": "desktop",
+      "checks": 12,
+      "sha256": "3af1948341fc08520dd06bb51825b53e417d89d5e613c24552162d7d05613e73",
+      "completedAt": "2026-10-30T21:15:03.622Z",
+      "errorAudit": {
+        "path": "reports/properties-smoke-errors.jsonl",
+        "sha256": "512892812bf00be4de0df2abc1b2227d337c48d790aad30db05d59f0d30f7bf8",
+        "records": 5,
+        "expected": 5,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      },
+      "processSessions": 5
+    },
+    {
+      "path": "reports/properties-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 24,
+      "sha256": "d927f677a9fd2242428c7f8bf7cc06329eb2ac26b7e7d8d0dc72049432c91496",
+      "completedAt": "2026-10-30T21:15:37.641Z",
+      "errorAudit": {
+        "path": "reports/properties-web-smoke-errors.jsonl",
+        "sha256": "439d29cdf3d499d6353923668a958084134e5351840db6b7974a6678ac78d179",
+        "records": 6,
+        "expected": 6,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      }
+    },
+    {
+      "path": "reports/discovery-smoke.json",
+      "host": "desktop",
+      "checks": 20,
+      "sha256": "a06374dffab73d3bb3e1dd5f35e1c3ed4fbde2d210467c09a677c68a11da7f60",
+      "completedAt": "2026-10-30T21:16:11.533Z",
+      "errorAudit": {
+        "path": "reports/discovery-smoke-errors.jsonl",
+        "sha256": "82e513f663691f1da9765ebb2214a2ec8628a9d188415f84d980baf720a5fa15",
+        "records": 1,
+        "expected": 1,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      },
+      "processSessions": 2
+    },
+    {
+      "path": "reports/discovery-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 32,
+      "sha256": "538133c6ee6c2fe1f63a24f014115e92a2daf6ba19786954bacd1de440fa806b",
+      "completedAt": "2026-10-30T21:17:09.618Z",
+      "errorAudit": {
+        "path": "reports/discovery-web-smoke-errors.jsonl",
+        "sha256": "1904772be5847bfa8fc62d949da1dcd61a133fe5e3ef47d7085247b046409de2",
+        "records": 2,
+        "expected": 2,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      }
+    },
+    {
+      "path": "reports/outgoing-panes-smoke.json",
+      "host": "desktop",
+      "checks": 7,
+      "sha256": "f262d4b0d85c4b641581b2214c5be5be666619e65b23ad8d6f020009a0c2ccff",
+      "completedAt": "2026-10-30T21:17:24.062Z",
+      "errorAudit": {
+        "path": "reports/outgoing-panes-smoke-errors.jsonl",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0,
+        "expected": 0,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      },
+      "processSessions": 4
+    },
+    {
+      "path": "reports/outgoing-panes-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 19,
+      "sha256": "3564ee6a04b4ecdf0ffdb1910a6bb50e7544f2f2992edfd89555cdc19f51bd86",
+      "completedAt": "2026-10-30T21:17:49.462Z",
+      "errorAudit": {
+        "path": "reports/outgoing-panes-web-smoke-errors.jsonl",
+        "sha256": "20b2c47121c9cbe7910c67d1dc857fc937c1ddcb7170b7098bbcfc997ad793b4",
+        "records": 1,
+        "expected": 1,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      }
+    },
+    {
+      "path": "reports/outgoing-smoke.json",
+      "host": "desktop",
+      "checks": 10,
+      "sha256": "9ad6fcdc18de47ac138adff9ae447afd1c2a15e038971866cd06bed96189ee2d",
+      "completedAt": "2026-10-30T21:17:59.747Z",
+      "errorAudit": {
+        "path": "reports/outgoing-smoke-errors.jsonl",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0,
+        "expected": 0,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      },
+      "processSessions": 2
+    },
+    {
+      "path": "reports/outgoing-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 22,
+      "sha256": "4f10c7fffa2a05536e2f47799d5a2c8ab54fd7136ea421e768e09e6815ab6973",
+      "completedAt": "2026-10-30T21:18:32.199Z",
+      "errorAudit": {
+        "path": "reports/outgoing-web-smoke-errors.jsonl",
+        "sha256": "13e22bf0c33d2f006f1aefe9c1e6f5c35485b335e5f09626cf4fbb89028493f3",
+        "records": 1,
+        "expected": 1,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      }
+    },
+    {
+      "path": "reports/tags-smoke.json",
+      "host": "desktop",
+      "checks": 13,
+      "sha256": "faa4569365f08ff04a7913b42543a2aba72756ba8135e7aaa725aebf7565115b",
+      "completedAt": "2026-10-30T21:18:39.555Z",
+      "errorAudit": {
+        "path": "reports/tags-smoke-errors.jsonl",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0,
+        "expected": 0,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      },
+      "processSessions": 1
+    },
+    {
+      "path": "reports/tags-web-smoke.json",
+      "host": "actual-folder-wasm",
+      "checks": 25,
+      "sha256": "615e9011717c46de53e3ba5d990fc83dce072cc9c21b81920997113570afe66a",
+      "completedAt": "2026-10-30T21:19:05.188Z",
+      "errorAudit": {
+        "path": "reports/tags-web-smoke-errors.jsonl",
+        "sha256": "15a80bbe07563d26cfd465ea85813cd01cba199643d5d3792aa261bf659c7002",
+        "records": 1,
+        "expected": 1,
+        "unexpected": 0,
+        "includesFinalTeardown": true
+      }
+    }
+  ],
+  "regressions": [
+    {
+      "scope": "default",
+      "command": "npm test",
+      "passed": 781,
+      "failed": 0,
+      "skipped": 0,
+      "output": "logs/properties-default-tests.log"
+    },
+    {
+      "scope": "GitHub",
+      "command": "node --test --test-concurrency=1 tests\\github-vault.test.mjs",
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "output": "logs/properties-github-tests.log"
+    },
+    {
+      "scope": "focused",
+      "command": "node --test --test-concurrency=1 tests\\properties-panes.test.mjs tests\\file-settings.test.mjs tests\\outgoing-panes.test.mjs tests\\browser-vault-navigation.test.mjs",
+      "passed": 28,
+      "failed": 0,
+      "skipped": 0,
+      "output": "logs/properties-targeted-tests.log"
+    }
+  ],
+  "buildChecks": [
+    "npm run build",
+    "node tools\\publish-web.mjs",
+    "npm run verify:web"
+  ],
+  "errorAudits": {
+    "includesFinalTeardown": true,
+    "unexpectedPersistedRecords": 0,
+    "uncaughtExceptions": 0,
+    "note": "Deliberate invalid-input/conflict notifications remain exactly accounted; retained native console transport/GPU diagnostics are not a clean-console claim."
+  },
+  "reviewedCaptures": [
+    "captures/properties-imported-desktop.png",
+    "captures/properties-preferences-web.png",
+    "captures/properties-readonly-web.png"
+  ],
+  "retainedFailures": [
+    {
+      "path": "failures/properties-invalid-import-fixture-desktop.json",
+      "resolution": "Imported fixture now supplies valid sidebar widths and Boolean collapse state."
+    },
+    {
+      "path": "failures/properties-toggle-selector-desktop.json",
+      "resolution": "Scenario locates actual role=switch buttons, not checkbox inputs."
+    },
+    {
+      "path": "failures/properties-unsupported-getter-desktop.json",
+      "resolution": "Readonly proof uses the actual CodeMirror contentEditable state, not the inherited getter."
+    },
+    {
+      "path": "failures/properties-duplicate-reconnect-web.json",
+      "resolution": "Reload helper leaves reconnect ownership with the existing scenario callback."
+    },
+    {
+      "path": "failures/properties-cache-mode-loss-web.json",
+      "resolution": "Application routes and restoration preserve cached=true; final reload has no GitHub fallback."
+    },
+    {
+      "path": "failures/properties-outgoing-startup-planning-desktop.json",
+      "resolution": "Legacy Outgoing waits for vault restoration and refreshes through its owned core listener."
+    },
+    {
+      "path": "failures/properties-deferred-filter-desktop.json",
+      "resolution": "Properties captures control values before deferred execution and retains merged forced renders."
+    }
+  ],
+  "limits": [
+    "Bounded shared application and fixture-plugin host workflows, not original native/private core execution or a newly accepted third-party plugin corpus.",
+    "Complete Properties types/serialization/FileView providers, lossless numeric presentation, keyboard/IME/group/scale behavior remain unaccepted.",
+    "No generic settings setter/watcher, every specialized creator, complete native resolver/encoding or crash-durable cross-app transactions.",
+    "Cache-only content restoration does not install an offline app shell or eagerly index all remote notes.",
+    "The fixed 31-module/140-case contract and historical whole-core settings badges are not renewed.",
+    "No commits, publication deployment or remote repository changes."
+  ]
+}

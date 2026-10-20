@@ -1,0 +1,14 @@
+{
+  "status": "runner-failed-binding-stable",
+  "workspace": "D:\\RonSijm\\RonSijm.Slopsidian",
+  "script": "offline-shell-smoke.mjs",
+  "args": [],
+  "environment": {},
+  "startedAt": "2026-11-02T04:13:37.015Z",
+  "boundary": "Raw source/artifact binding only. Inspect the runner's full feature report, scope, error audit and helper teardown separately; diagnostics are not acceptance.",
+  "sourceFingerprint": "e0f003ae959bbd673e5f89666db6a7f3132915cbae90540e9dd8ac7f96ca4fd3",
+  "runnerPid": 44444,
+  "exitCode": 1,
+  "exitSignal": null,
+  "completedAt": "2026-11-02T04:14:21.026Z"
+}

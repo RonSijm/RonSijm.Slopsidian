@@ -1,0 +1,33 @@
+{
+  "status": "failed",
+  "scope": "markdown-postprocessors-runtime",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-27T01:08:13.007Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\render-child-validation-20261026\\.runtime\\smoke-vault-zqhhH2",
+  "launcherPid": 26304,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 26304,
+      "electronPid": 26304,
+      "dotnetPid": 43260,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": true
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "error": "TypeError: fetch failed",
+  "pendingDialogs": [],
+  "recentCommands": [],
+  "browserErrors": [],
+  "consoleErrors": [],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 43260,
+  "electronPid": 26304,
+  "completedAt": "2026-10-27T01:09:44.614Z"
+}

@@ -1,0 +1,8 @@
+PASS An original first-open layout restores real main/sidebar Search views with independent query/case/fold/context state, pins and opaque fields; worker results render literal note content safely alongside a BOM/CRLF Source note.
+PASS Actual result clicks select exact source text without replacing the pinned Search pane or writing notes. Per-file/global folds, exceptions, extra context, syntax help and real keyboard sorting remain independent across panes.
+PASS Workspace queries execute real file/property/tag syntax, reject invalid regex inline with no stale results, and replace rapidly superseded queries without affecting another pane.
+PASS Search follows genuine dirty text, undo/redo, external byte replacement and guarded rename, preserving original disk bytes until explicit save and updating the actual result paths.
+PASS An enabled fixture plugin uses real ItemView/App/input/factory contracts and setQuery through its actual palette command. Malformed state refuses atomically without changing live query/state or reporting an unhandled error.
+PASS Disabling Search terminates actual pending workers, unloads views/handlers and retains exact unavailable state. Detached controls and stale API calls cannot act; re-enable creates fresh owners and delayed old callbacks cannot replace their results.
+PASS Native process restart or actual-folder browser reconnection restores independent Search state, results and original workspace bytes. Explicit legacy sidebar choice wins later, and the palette creates a fresh Search tab.
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

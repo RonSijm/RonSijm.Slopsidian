@@ -1,0 +1,160 @@
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile\logs\errors-smoke-6cf17fc0-5298-4780-b4df-6bda0da25116.jsonl
+(node:42100) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:59241/devtools/browser/71a7af1f-66d0-4d6f-8dc0-9c8619ee94a3
+ELECTRON_HOST_PID 42100
+DOTNET_HOST_PID 35936
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-xNyhNH
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:64408
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:64408
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Error: Command failed: powershell.exe -NoProfile -NonInteractive -Command 
+$ErrorActionPreference = 'Stop'
+Add-Type -Namespace Native -Name Drag -MemberDefinition @'
+public delegate bool EnumProc(System.IntPtr hwnd, System.IntPtr lParam);
+public struct POINT { public int X; public int Y; }
+public struct RECT { public int Left; public int Top; public int Right; public int Bottom; }
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool EnumWindows(EnumProc proc, System.IntPtr lParam);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern uint GetWindowThreadProcessId(System.IntPtr hwnd, out uint pid);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool IsWindowVisible(System.IntPtr hwnd);
+[System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Unicode)] public static extern int GetWindowText(System.IntPtr hwnd, System.Text.StringBuilder text, int count);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool ClientToScreen(System.IntPtr hwnd, ref POINT p);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool GetClientRect(System.IntPtr hwnd, out RECT r);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern System.IntPtr WindowFromPoint(POINT p);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern System.IntPtr GetAncestor(System.IntPtr hwnd, uint flags);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool SetCursorPos(int x, int y);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool SetForegroundWindow(System.IntPtr hwnd);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool SetProcessDPIAware();
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern void keybd_event(byte vk, byte scan, uint flags, System.UIntPtr extra);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern void mouse_event(uint flags, uint dx, uint dy, uint data, System.UIntPtr extra);
+'@
+[void][Native.Drag]::SetProcessDPIAware()
+$plan = $env:SLOPSIDIAN_DRAG_PLAN | ConvertFrom-Json
+$owned = [uint32]$plan.pid
+function Find-Window([string]$title) {
+  $found = New-Object System.Collections.Generic.List[object]
+  $cb = [Native.Drag+EnumProc]{
+    param($hwnd, $l)
+    $p = [uint32]0
+    [void][Native.Drag]::GetWindowThreadProcessId($hwnd, [ref]$p)
+    if ($p -eq $owned -and [Native.Drag]::IsWindowVisible($hwnd)) {
+      $t = New-Object System.Text.StringBuilder 512
+      [void][Native.Drag]::GetWindowText($hwnd, $t, 512)
+      if ($t.ToString() -eq $title) { $found.Add($hwnd) }
+    }
+    return $true
+  }
+  [void][Native.Drag]::EnumWindows($cb, [System.IntPtr]::Zero)
+  if ($found.Count -ne 1) { throw "Expected exactly one visible window titled '$title' owned by process $owned, found $($found.Count)." }
+  $found[0]
+}
+function Client-Origin($hwnd) {
+  $p = New-Object Native.Drag+POINT
+  [void][Native.Drag]::ClientToScreen($hwnd, [ref]$p)
+  $r = New-Object Native.Drag+RECT
+  [void][Native.Drag]::GetClientRect($hwnd, [ref]$r)
+  [pscustomobject]@{ x = $p.X; y = $p.Y; width = $r.Right - $r.Left; height = $r.Bottom - $r.Top }
+}
+function Assert-Over($hwnd, [int]$x, [int]$y) {
+  $pt = New-Object Native.Drag+POINT; $pt.X = $x; $pt.Y = $y
+  $top = [Native.Drag]::GetAncestor([Native.Drag]::WindowFromPoint($pt), 2)
+  if ($top -ne $hwnd) { throw "Screen point $x,$y is not over the expected owned window (covered or unrelated window)." }
+}
+$result = [ordered]@{ pid = [int]$owned }
+$down = $false
+$ok = $false
+$cancelPt = $null
+try {
+  $src = Find-Window $plan.sourceTitle
+  $dst = Find-Window $plan.targetTitle
+  $result.sourceHwnd = $src.ToInt64(); $result.targetHwnd = $dst.ToInt64()
+  $result.sourceClient = Client-Origin $src; $result.targetClient = Client-Origin $dst
+  $dims = @($result.sourceClient, $result.targetClient)
+  $expect = @($plan.sourceInner, $plan.targetInner)
+  for ($i = 0; $i -lt 2; $i++) {
+    $e = $expect[$i]
+    if ([math]::Abs($dims[$i].width - $e.width * $e.dpr) -gt 2 + $e.dpr -or [math]::Abs($dims[$i].height - $e.height * $e.dpr) -gt 2 + $e.dpr) {
+      throw "Native client size does not match the page's measured innerSize*dpr (DPI/zoom mismatch); refusing to guess coordinates."
+    }
+  }
+  [void][Native.Drag]::SetForegroundWindow($src)
+  Start-Sleep -Milliseconds 150
+  $sx = $result.sourceClient.x + [int]$plan.from.x; $sy = $result.sourceClient.y + [int]$plan.from.y
+  $tx = $result.targetClient.x + [int]$plan.to.x; $ty = $result.targetClient.y + [int]$plan.to.y
+  $cancelPt = @($sx, $sy)
+  # both owned endpoints are checked before any button press
+  Assert-Over $src $sx $sy
+  Assert-Over $dst $tx $ty
+  [void][Native.Drag]::SetCursorPos($sx, $sy)
+  Start-Sleep -Milliseconds 80
+  [Native.Drag]::mouse_event(0x0002, 0, 0, 0, [System.UIntPtr]::Zero); $down = $true
+  foreach ($pt in $plan.path) {
+    $px = $result.targetClient.x + [int]$pt.x; $py = $result.targetClient.y + [int]$pt.y
+    if ($pt.local -eq 'source') { $px = $result.sourceClient.x + [int]$pt.x; $py = $result.sourceClient.y + [int]$pt.y }
+    [void][Native.Drag]::SetCursorPos($px, $py)
+    Start-Sleep -Milliseconds ([int]$plan.stepMs)
+  }
+  Assert-Over $dst $tx $ty
+  [void][Native.Drag]::SetCursorPos($tx, $ty)
+  Start-Sleep -Milliseconds 200
+  [Native.Drag]::mouse_event(0x0004, 0, 0, 0, [System.UIntPtr]::Zero); $down = $false
+  $result.dropped = $true
+  $ok = $true
+} finally {
+  if ($down) {
+    # failure path: cancel the OLE drag with Escape and return over the source before releasing, so nothing can drop elsewhere
+    if (-not $ok) {
+      [Native.Drag]::keybd_event(0x1B, 0, 0, [System.UIntPtr]::Zero); [Native.Drag]::keybd_event(0x1B, 0, 2, [System.UIntPtr]::Zero)
+      Start-Sleep -Milliseconds 100
+      if ($cancelPt) { [void][Native.Drag]::SetCursorPos($cancelPt[0], $cancelPt[1]) }
+    }
+    [Native.Drag]::mouse_event(0x0004, 0, 0, 0, [System.UIntPtr]::Zero)
+    $result.releasedInFinally = $true; $result.cancelled = (-not $ok)
+  }
+}
+$result | ConvertTo-Json -Compress -Depth 5
+
+Screen point 1263,62 is not over the expected owned window (covered or unrelated window).
+At line:51 char:25
++ ... ne $hwnd) { throw "Screen point $x,$y is not over the expected owned  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Screen point 12...elated window).:String) [], RuntimeException
+    + FullyQualifiedErrorId : Screen point 1263,62 is not over the expected owned window (covered or unrelated window) 
+   .
+ 
+
+    at genericNodeError (node:internal/errors:998:15)
+    at wrappedFn (node:internal/errors:543:14)
+    at ChildProcess.exithandler (node:child_process:417:12)
+    at ChildProcess.emit (node:events:508:20)
+    at maybeClose (node:internal/child_process:1084:16)
+    at ChildProcess._handle.onexit (node:internal/child_process:304:5)
+
+'failed' !== 'passed'
+
+    at file:///D:/RonSijm/RonSijm.Slopsidian/tools/smoke.mjs:1870:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v25.6.1

@@ -1,0 +1,762 @@
+{
+  "status": "failed",
+  "scope": "workspace-groups-popouts",
+  "communityPluginsTested": false,
+  "startedAt": "2026-11-02T01:12:19.322Z",
+  "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-KVNjKU",
+  "launcherPid": 5048,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "linked leaves follow navigation, skip pinned members and keep independent history",
+    "a real popout window hosts the same live leaf, view and owner",
+    "typing, undo and hotkey save work in the real popout document",
+    "menus and modals open in, and cancel from, the popout document",
+    "a held file mutation freezes the popout and real input/undo resume afterwards",
+    "a refused dirty close keeps the window, tab and edit",
+    "a real native close request is vetoed while the tab is dirty"
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 5048,
+      "electronPid": 5048,
+      "dotnetPid": 44216,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.0",
+  "sourceFingerprint": "544a0dc8b8d20211ebfd311139aa667253db707c9f2d66f0323fb572a3f090d0",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "rendererReloads": [
+    {
+      "previousLoader": "B80A2CE52950E6E394B6B8891C530684",
+      "loader": "D4E0DE61F11DAD0CEB468B962252015A"
+    }
+  ],
+  "nativeUserClose": {
+    "pid": 5048,
+    "hwnd": 12193770,
+    "title": "slopsidian-veto-probe-1793581943035",
+    "message": "WM_CLOSE"
+  },
+  "expectedDiagnostics": [
+    {
+      "id": "d4b0f918-bbda-446e-b344-11c0b16a9a36:0",
+      "source": "notification",
+      "message": "refused",
+      "reason": "Record the deliberate native close request vetoed by the owned prepareClose fixture"
+    }
+  ],
+  "guestHostInspection": {
+    "guestWebContentsId": 3,
+    "mainWindowId": 1
+  },
+  "error": "Error: {\"code\":-32000,\"message\":\"Object reference chain is too long\"}\n    at WebSocket.<anonymous> (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:674:20)\n    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:843:20)\n    at WebSocket.dispatchEvent (node:internal/event_target:776:26)\n    at fireEvent (node:internal/deps/undici/undici:13343:14)\n    at #onMessage (node:internal/deps/undici/undici:14573:9)\n    at Object.onMessage (node:internal/deps/undici/undici:14286:76)\n    at websocketMessageReceived (node:internal/deps/undici/undici:13347:15)\n    at node:internal/deps/undici/undici:14005:19\n    at node:internal/deps/undici/undici:13825:11\n    at afterWrite (node:internal/streams/writable:708:5)",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.current()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.workspace.windows.length\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result);\n"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.workspace.getLeafById(\\\"pop-b\\\").view.editor.getValue()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set("
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"delete app.workspace.getLeafById(\\\"pop-b\\\").view.prepareClose\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Se"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"location.origin\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result);\n      result."
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.core.isEnabled(\\\"webviewer\\\")\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(resu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.core.setEnabled(\\\"webviewer\\\",true)\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.ad"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (!app.core.busy&&app.core.isEnabled(\\\"webviewer\\\")&&Boolean(app.core.getEnabledPluginById(\\\"webviewer\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until set"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>{await app.core.getEnabledPluginById(\\\"webviewer\\\").openUrl(\\\"http://127.0.0.1:21282/reader-story\\\",true);window.__webLeaf=app.workspace.activeLeaf.id})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.getLeafById(window.__webLeaf).view.getViewType()===\\\"webviewer\\\"&&app.workspace.getLeafById(window.__webLeaf).view.contentEl.dataset.webviewerLoading===\\\"false\\\"&&app.workspace.getLeafById(window.__webLeaf).view.created)))()\");"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.getLeafById(window.__webLeaf).view.getViewType()===\\\"webviewer\\\"&&app.workspace.getLeafById(window.__webLeaf).view.contentEl.dataset.webviewerLoading===\\\"false\\\"&&app.workspace.getLeafById(window.__webLeaf).view.created)))()\");"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>JSON.stringify(await app.workspace.getLeafById(window.__webLeaf).view.ipc.invoke(\\\"webviewer:request\\\",{id:app.workspace.getLeafById(window.__webLeaf).view.id,action:\\\"inspect\\\"})))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can col"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.workspace.getLeafById(window.__webLeaf).view.contentEl.querySelector('[data-webviewer-action=\\\"reader\\\"]').click()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      c"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.getLeafById(window.__webLeaf).view.contentEl.dataset.webviewerReaderMode===\\\"reader\\\"&&app.workspace.getLeafById(window.__webLeaf).view.reader.progressReady)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.getLeafById(window.__webLeaf).view.contentEl.dataset.webviewerReaderMode===\\\"reader\\\"&&app.workspace.getLeafById(window.__webLeaf).view.reader.progressReady)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (app.workspace.getLeafById(window.__webLeaf).view.contentEl.dataset.webviewerReaderMode===\\\"reader\\\"&&app.workspace.getLeafById(window.__webLeaf).view.reader.progressReady)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"window.__webReader=app.workspace.getLeafById(window.__webLeaf).view.reader\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokeProm"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>{window.__restoreIpc?.();const l=window.__webLeaf&&app.workspace.getLeafById(window.__webLeaf);if(l)await app.workspace.closeLeaf(l)})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.core.setEnabled(\\\"webviewer\\\",false)\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.a"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (!app.core.busy&&app.core.isEnabled(\\\"webviewer\\\")===false)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsi"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [],
+    "clientError": "refused Download log",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "pop-a",
+        "type": "markdown",
+        "path": "Popout nav/C.md",
+        "text": "dirty popout edit",
+        "sessionText": "dirty popout edit",
+        "dirty": false,
+        "selection": 0,
+        "length": 17
+      },
+      {
+        "id": "pop-pinned",
+        "type": "markdown",
+        "path": "Popout nav/C.md",
+        "text": "dirty popout edit",
+        "sessionText": "dirty popout edit",
+        "dirty": false,
+        "selection": 0,
+        "length": 17
+      },
+      {
+        "id": "pop-b",
+        "type": "markdown",
+        "path": "Popout nav/C.md",
+        "text": "dirty popout edit",
+        "sessionText": "dirty popout edit",
+        "dirty": false,
+        "selection": 17,
+        "length": 17
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "pop-main",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "pop-tabs",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "pop-a",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Popout nav/C.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "pop-pinned",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Popout nav/C.md"
+                  },
+                  "pinned": true
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ]
+      },
+      "active": "pop-pinned",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-startup": {
+          "source": ".obsidian/workspace.json",
+          "version": "411ab913939a16585ba07e688bfffc92cce36d2eef51d5f85c94970d78a4854a",
+          "warnings": []
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "pop-pinned",
+          "lastFile": "Popout nav/C.md"
+        },
+        "workspace-groups": {
+          "links": {
+            "pop-a": "g5a212b7973dd4b0f",
+            "pop-b": "g5a212b7973dd4b0f",
+            "pop-pinned": "g5a212b7973dd4b0f"
+          }
+        },
+        "workspace-windows": {
+          "windows": [
+            {
+              "root": {
+                "id": "219f7772-491d-415b-8867-848bb18115f7",
+                "type": "split",
+                "direction": "vertical",
+                "children": [
+                  {
+                    "id": "b3214342-aeda-4932-90c3-0aa1e49a3ce0",
+                    "type": "tabs",
+                    "children": [
+                      {
+                        "id": "pop-b",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "mode": "source",
+                            "source": true,
+                            "file": "Popout nav/C.md"
+                          },
+                          "pinned": false
+                        }
+                      }
+                    ],
+                    "currentTab": 0
+                  }
+                ]
+              },
+              "bounds": {
+                "x": 403,
+                "y": 159,
+                "width": 901,
+                "height": 701
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "controlledShutdownConsoleErrors": [],
+  "consoleErrors": [
+    "Error: refused\n    at l.view.prepareClose (eval at <anonymous> (:2:26), <anonymous>:1:86)\n    at Workspace.closeWindow (http://127.0.0.1:64904/js/editor-host.6cuxl32qol.js:91735:27)",
+    "[2026-11-02T01:12:26.366Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 44216,
+  "electronPid": 5048,
+  "completedAt": "2026-11-02T01:12:26.680Z",
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\evidence\\groups-popouts-smoke-errors.jsonl",
+    "nativePaths": [
+      "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-profile\\logs\\errors-smoke-df6287cf-9643-4e9f-96cf-b6f9cd9708ec.jsonl"
+    ],
+    "records": 1,
+    "expected": 1,
+    "unexpected": [],
+    "sha256": "13877bfb753d8db78257b873715ec7a2f690e8527caf2ceb7226cadf9ec87087",
+    "includesFinalTeardown": true
+  }
+}

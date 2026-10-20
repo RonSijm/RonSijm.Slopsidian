@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "boundary": "Unchanged-source paired build/static/targeted regression record; no restamped full suite or runtime acceptance.",
+  "commands": [
+    {
+      "command": "C:\\Program Files\\nodejs\\node.exe --test --test-concurrency=1 tests\\original-floating-import.test.mjs tests\\original-floating-import-scenario.test.mjs tests\\smoke-scopes.test.mjs",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\original-floating-geometry-pair-5K4miR\\targeted-test.log"
+    },
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run build; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\original-floating-geometry-pair-5K4miR\\build.log"
+    },
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run build:web; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\original-floating-geometry-pair-5K4miR\\build-web.log"
+    },
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run verify:web; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\original-floating-geometry-pair-5K4miR\\verify-web.log"
+    }
+  ],
+  "tests": {
+    "targeted-test": {
+      "tests": 68,
+      "pass": 68,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    }
+  },
+  "artifacts": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "bytes": 593408,
+      "sha256": "7ed242577684a149a1210736fe48fa1c4e6989651c282383cef958c36b1a8f0d"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "bytes": 4928863,
+      "sha256": "0afd9e9215513e2992f3ce0f74a9bbc8f0b3187157e8706075a4fc56609e5528"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+      "bytes": 4928863,
+      "sha256": "0afd9e9215513e2992f3ce0f74a9bbc8f0b3187157e8706075a4fc56609e5528"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json",
+      "bytes": 37827,
+      "sha256": "e3c34b77d5bb13ab621f542e0feeebd738bcaf51ef9eb840233cb1acc6e17d78"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\service-worker.js",
+      "bytes": 6863,
+      "sha256": "493fb798976751a6eaca93d2ca519fa08e4a646776790555738fa49e598c256b"
+    }
+  ],
+  "sourceBefore": "7efd23b2b738ec88d55967ea3a124fe902bea7cea37e1c4eabaf7017832c6be0",
+  "sourceAfter": "7efd23b2b738ec88d55967ea3a124fe902bea7cea37e1c4eabaf7017832c6be0",
+  "completedAt": "2026-11-02T05:49:59.736Z"
+}

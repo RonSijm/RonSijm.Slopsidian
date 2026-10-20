@@ -1,0 +1,16 @@
+D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\RonSijm.Slopsidian.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://pkgs.dev.azure.com/vertimart/_packaging/Vertimart.Api.Clients/nuget/v3/index.json.
+D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\RonSijm.Slopsidian.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://pkgs.dev.azure.com/vertimart/_packaging/DevelopmentPlatform/nuget/v3/index.json.
+D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\RonSijm.Slopsidian.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://pkgs.dev.azure.com/vertimart/Intelly/_packaging/Intelly/nuget/v3/index.json.
+D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\RonSijm.Slopsidian.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.
+  RonSijm.Slopsidian -> D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\bin\Debug\net10.0\RonSijm.Slopsidian.dll
+
+Build succeeded.
+
+D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\RonSijm.Slopsidian.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://pkgs.dev.azure.com/vertimart/_packaging/Vertimart.Api.Clients/nuget/v3/index.json.
+D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\RonSijm.Slopsidian.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://pkgs.dev.azure.com/vertimart/_packaging/DevelopmentPlatform/nuget/v3/index.json.
+D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\RonSijm.Slopsidian.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://pkgs.dev.azure.com/vertimart/Intelly/_packaging/Intelly/nuget/v3/index.json.
+D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\RonSijm.Slopsidian.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.
+    4 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.30

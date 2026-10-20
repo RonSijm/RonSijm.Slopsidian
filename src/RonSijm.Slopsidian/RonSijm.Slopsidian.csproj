@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>RonSijm.Slopsidian</RootNamespace>
+    <Product>Slopsidian</Product>
+    <Title>Slopsidian</Title>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\shared\core-plugins.json" LogicalName="RonSijm.Slopsidian.CorePlugins.json" />
+  </ItemGroup>
+
+</Project>

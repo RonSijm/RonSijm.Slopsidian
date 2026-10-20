@@ -1,0 +1,11 @@
+.github-vault-browser form, .github-vault-browser label { display: grid; gap: 8px; margin-bottom: 12px; }
+.github-vault-browser input[type=url] { width: 100%; }
+.github-vault-browser .github-vault-layout { display: grid; grid-template-columns: minmax(170px, 1fr) minmax(0, 2fr); gap: 16px; }
+.github-vault-browser nav { max-height: 65vh; overflow: auto; }
+.github-vault-browser nav button { display: block; width: 100%; text-align: left; white-space: normal; margin: 3px 0; }
+.github-vault-browser img, .github-vault-browser audio { max-width: 100%; }
+.github-vault-browser pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.github-offline-controls { overflow-wrap: anywhere; }
+.github-offline-controls progress { display: block; width: 100%; }
+.github-offline-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+@media (max-width: 650px) { .github-vault-browser .github-vault-layout { grid-template-columns: 1fr; } }

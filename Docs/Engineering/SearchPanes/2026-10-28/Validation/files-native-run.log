@@ -1,0 +1,8 @@
+PASS A first-open original layout restores real, pinned Files views in main tabs and a visible sidebar, independent folding/filter/sort and opaque state, alongside an intact Source note.
+PASS Real pointer and keyboard navigation unfolds folders, filters paths case-insensitively without changing another pane, opens files without replacing a pinned explorer, and reveals the active note without stealing editor focus.
+PASS Unsupported attachments remain browsable without errors; enabling an actual fixture plugin updates existing panes and opens its FileView through Ctrl-click. Keyboard context menus deliver the real file-menu event.
+PASS Files creates a real folder through the guarded dialog, re-enables controls after mutation, observes an external file on Refresh, and leaves a live unsaved editor and its disk bytes intact while folding panes.
+PASS Unchanged Iconize 2.14.7 renders configured folder/file emoji on real materialized rows and retains them through folding with clean diagnostics; broader private tree and assignment workflows remain unverified.
+PASS Disabling Files closes and unloads its real views, retains exact saved/opaque state in unavailable panes and removes commands. Detached controls are inert; re-enabling creates fresh live owners with restored state.
+PASS A full restart/reconnect restores independent states, pins, late providers and original source bytes; an explicit legacy sidebar choice wins on later reconnect. The command palette opens a fresh Files tab.
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

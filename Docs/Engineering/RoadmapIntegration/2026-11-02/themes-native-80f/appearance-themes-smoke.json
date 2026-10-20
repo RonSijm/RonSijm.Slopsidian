@@ -1,0 +1,807 @@
+{
+  "status": "failed",
+  "scope": "reviewed-theme-management",
+  "communityPluginsTested": false,
+  "startedAt": "2026-11-02T00:08:23.325Z",
+  "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine\\.runtime\\smoke-vault-QCWH9o",
+  "launcherPid": 35712,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "No community-theme catalog or theme download request was made at startup.",
+    "An external appearance.json theme selection is adopted by the lifecycle-owned watcher without reload, retaining the unsaved editor text, selection and CM instance.",
+    "External theme-CSS edits and newly enabled snippets are re-read and applied while the editor state is retained.",
+    "Malformed external appearance.json and unsupported external CSS are reported, retain the exact accepted styles and editor state, and later valid files are adopted.",
+    "Browsing and reviewing are explicit; installing writes the exact reviewed BOM/CRLF bytes and manifest, does not select the theme and leaves the active styles and editor untouched.",
+    "A stale review is refused by the host version guard and the locally edited theme bytes are retained.",
+    "An external manifest.json edit after review is refused even though the CSS is unchanged, and every installed byte is retained.",
+    "A fresh review updates the installed theme to the exact reviewed bytes, and the external selection adopts it without disturbing the editor.",
+    "Switching the color scheme re-renders an already mounted Mermaid diagram in place (same container, decoded replacement image, no SVG in the application DOM) without touching the editor.",
+    "A selected-folder bundle with a relative image installs the exact CSS, manifest (unknown keys) and image bytes without enabling trusted local resources.",
+    "The original editor leaf, view, file and CodeMirror instance, text and selection were retained through every theme step; real Ctrl+Z removed the seeded edit and Ctrl+Y restored its exact text with CodeMirror's history caret on the same leaf/view/CM.",
+    "Resource-only external changes are watched and adopted; a deleted resource is reported while the accepted styles and editor are retained; restoring it is adopted again.",
+    "A theme with a remote URL is refused at review with an explicit reason and nothing is written.",
+    "A read-only GitHub vault refuses theme install (disabled control and host refusal) with unchanged cached blobs and no API/raw requests."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 35712,
+      "electronPid": 35712,
+      "dotnetPid": 45156,
+      "exitCode": 1,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.0",
+  "sourceFingerprint": "80f04c3acec815f9af8fcea887a61629ba0a4022e95f39351e21508575f3e7d5",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "expectedDiagnostics": [
+    {
+      "id": "ad00afb3-ec36-4cc3-867f-1faf913f3ee0:0",
+      "source": "notification",
+      "message": "Host 422: {\"error\":\"The requested JSON file is invalid: 'n' is an invalid start of a property name. Expected a '\\\"'. LineNumber: 0 | BytePositionInLine: 2.\"}",
+      "reason": "an external appearance.json is malformed"
+    },
+    {
+      "id": "ad00afb3-ec36-4cc3-867f-1faf913f3ee0:1",
+      "source": "notification",
+      "message": "Only self-contained appearance CSS is supported. Imports and URL/image resources are not loaded. Enable trusted local resources to use theme-relative fonts and images.",
+      "reason": "an external theme CSS becomes unsupported"
+    },
+    {
+      "id": "ad00afb3-ec36-4cc3-867f-1faf913f3ee0:2",
+      "source": "notification",
+      "message": "Only self-contained appearance CSS is supported. Imports and URL/image resources are not loaded. Enable trusted local resources to use theme-relative fonts and images.",
+      "reason": "a resource theme is selected while trusted local resources are off"
+    },
+    {
+      "id": "ad00afb3-ec36-4cc3-867f-1faf913f3ee0:3",
+      "source": "notification",
+      "message": "Appearance could not check external CSS changes: Host 404: {\"error\":\"This appearance asset is missing: .obsidian/themes/Picked/img/dot.png\"}",
+      "reason": "a referenced resource is deleted externally"
+    }
+  ],
+  "editorPhases": [
+    {
+      "phase": "before activation",
+      "workspaceLeaf": true,
+      "view": true,
+      "file": true,
+      "cm": true,
+      "connected": true,
+      "text": true,
+      "selection": [
+        2,
+        9
+      ],
+      "doc": "Unsaved Keep this text, selection and undo through theme changes.\n"
+    },
+    {
+      "phase": "after focus",
+      "workspaceLeaf": true,
+      "view": true,
+      "file": true,
+      "cm": true,
+      "connected": true,
+      "text": true,
+      "selection": [
+        2,
+        9
+      ],
+      "doc": "Unsaved Keep this text, selection and undo through theme changes.\n"
+    },
+    {
+      "phase": "after undo",
+      "workspaceLeaf": true,
+      "view": true,
+      "file": true,
+      "cm": true,
+      "connected": true,
+      "text": false,
+      "selection": [
+        0,
+        0
+      ],
+      "doc": "Keep this text, selection and undo through theme changes.\n"
+    },
+    {
+      "phase": "after redo",
+      "workspaceLeaf": true,
+      "view": true,
+      "file": true,
+      "cm": true,
+      "connected": true,
+      "text": true,
+      "selection": [
+        8,
+        8
+      ],
+      "doc": "Unsaved Keep this text, selection and undo through theme changes.\n"
+    }
+  ],
+  "browserErrors": [],
+  "consoleErrors": [
+    "HostError: Host 422: {\"error\":\"The requested JSON file is invalid: 'n' is an invalid start of a property name. Expected a '\\\"'. LineNumber: 0 | BytePositionInLine: 2.\"}\n    at requestJson (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:40759:11)\n    at async VaultConfiguration.read (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:96606:23)",
+    "AppearanceError: Only self-contained appearance CSS is supported. Imports and URL/image resources are not loaded. Enable trusted local resources to use theme-relative fonts and images.\n    at validateAppearanceCss (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:114492:15)\n    at Appearance.prepareStyles (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:115273:11)\n    at async Appearance.checkAssets (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:115067:24)",
+    "AppearanceError: Only self-contained appearance CSS is supported. Imports and URL/image resources are not loaded. Enable trusted local resources to use theme-relative fonts and images.\n    at validateAppearanceCss (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:114492:15)\n    at Appearance.prepareStyles (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:115273:11)\n    at async Appearance.adopt (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:114997:24)",
+    "AppearanceError: Appearance could not check external CSS changes: Host 404: {\"error\":\"This appearance asset is missing: .obsidian/themes/Picked/img/dot.png\"}\n    at Appearance.reportAssetFailure (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:115090:67)\n    at Appearance.checkAssets (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:115079:12)",
+    "HostError: Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}\n    at writeJson (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:40782:11)",
+    "HostError: Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}\n    at writeJson (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:40782:11)",
+    "HostError: Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}\n    at writeJson (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:40782:11)",
+    "[2026-11-02T00:08:56.375Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "artifacts": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "sha256": "6d0efff1b1ef9587c33ab01afc827dc9fba74eed93e352fa1ac79587ccd92dbd"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "sha256": "2f17e361157506ecdaab8ae5b66bbaf738ad203ddf07d65d9ffb6a8212f4b3e2"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.css",
+      "sha256": "39bc32a24ef18d35bd3f68caa95e1273255394beab9aa2b707fbcb0a32f4ea18"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\codemirror-license.txt",
+      "sha256": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\hypermd-license.txt",
+      "sha256": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-extract.js",
+      "sha256": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-extract.js.LEGAL.txt",
+      "sha256": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-licenses.txt",
+      "sha256": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\search-worker.js",
+      "sha256": "89b9c0d72b4b901cfe80887fcc7f926efd40cfde315870d9f2496ce86c62eec5"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\graph-worker.js",
+      "sha256": "65cd48b19bcf5e773b9868e219c067cfc47cd79cb305b6661f8dbf885e6e0390"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\bases-worker.js",
+      "sha256": "4cc1ea06210c62f5ba6957312ccdfc0e34b9cffa475460e7bb91709fcf2b6938"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-frame.js",
+      "sha256": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-api.js",
+      "sha256": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-api.js.LEGAL.txt",
+      "sha256": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-licenses.txt",
+      "sha256": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\katex-license.txt",
+      "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-api.js",
+      "sha256": "31fda904c82df0457d3b22835859127122667a9264bea635d7bc606c578ae6a8"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-worker.js",
+      "sha256": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-licenses.txt",
+      "sha256": "f812858b82bbea82fb78fc8740dad809e676e4d95fe458faaa143959539879ef"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\wasm\\jbig2.wasm",
+      "sha256": "466f45c2a61a698152fb5400c27e56ff2ceb73dcb71fde3fc366a502308eaab0"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\wasm\\openjpeg.wasm",
+      "sha256": "95e5002597af0824004aa57b1900fe019715db389e37640b1e58395e42f00cc5"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\wasm\\qcms_bg.wasm",
+      "sha256": "663d86126d5f5fcb1c61490f94353e2a8375660b8c5498ab3ebab5a34b08800e"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\cmaps\\Adobe-Japan1-UCS2.bcmap.txt",
+      "sha256": "66c5d0dc4964f4093e77b194023f3a0f689324028ec8330e1e1d0570bcba7c2f"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\standard_fonts\\LiberationSans-Regular.ttf.txt",
+      "sha256": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\mermaid-frame.html",
+      "sha256": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333"
+    },
+    {
+      "path": "desktop\\main.cjs",
+      "sha256": "5c30bd35c3b2afba19077193dd23e0742ebc7ec6ddda42da5753ade76b550a9a"
+    },
+    {
+      "path": "desktop\\draft-rescue.cjs",
+      "sha256": "9892d89d79952681c123f4eabf886489e1cf51122c8ea0dca156e41b88babc2b"
+    },
+    {
+      "path": "desktop\\draft-rescue-catalog.cjs",
+      "sha256": "226cef9e04f8dbe4f031be098a5f1d9fc3a5a6888cf2c5ab5719863c7c0e6a80"
+    },
+    {
+      "path": "desktop\\draft-rescue-inspector.cjs",
+      "sha256": "d74188d01a8f91bed9bd84170aca5261adbdb5566952a18efc5ef681986ed764"
+    },
+    {
+      "path": "desktop\\draft-rescue-review-state.cjs",
+      "sha256": "a29ddf9c87e421a2708a2be553c65178da4fbf6daa93c5115e3af50a3666c959"
+    },
+    {
+      "path": "desktop\\persistent-draft-storage.cjs",
+      "sha256": "0603b07363221b782d6cf99318e1c330dac7cc00a91d9acf287b0b9f2cc50d59"
+    },
+    {
+      "path": "desktop\\local-storage.cjs",
+      "sha256": "1e2442f44ae6951ba92f4b67022e0e9ffe0560ae27ab643e6dc42c62836a8c95"
+    },
+    {
+      "path": "desktop\\secret-storage.cjs",
+      "sha256": "f794025937f8be2705d4d406f1562e58d2345029e4e198718736671de352cbe0"
+    },
+    {
+      "path": "desktop\\web-viewer.cjs",
+      "sha256": "8279af1a3d33952482eb3fe0cd04fba3f84b21986cd696e58fe7326808168ec9"
+    },
+    {
+      "path": "desktop\\web-viewer-policy.cjs",
+      "sha256": "b05dab72e62df121ec2dda08dfe9ef5e0c1fe6269a4ba8e59c541d694bba4395"
+    },
+    {
+      "path": "desktop\\web-reader.cjs",
+      "sha256": "ba50206513a06a52592f0d3391a26fe48b6b1183f1e129d63c17c53d749dca91"
+    },
+    {
+      "path": "desktop\\web-zoom.cjs",
+      "sha256": "1704e6d131ebb6de7cd3cde16c445470786cf99940016af236044f846da90f41"
+    },
+    {
+      "path": "shared\\web-zoom.cjs",
+      "sha256": "407cce6fd4b61bfb79a909e2c72614e48d9d395dc0079bb4881b44150d0667a6"
+    },
+    {
+      "path": "desktop\\audio-permissions.cjs",
+      "sha256": "6c5f235f7024558593889e6c53c9406cd639841041838ef141aaa4c73cdce5d8"
+    },
+    {
+      "path": "desktop\\attachment-source.cjs",
+      "sha256": "00f422d8cd4f989b7ec060c8acc4cfb806b2a3f01fd04274108a46da0389d523"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\app.css",
+      "sha256": "f2beb1528174ece9b4a5602bdd4dd4f34c30b64cf9f574f228be316bb4a5f4d6"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\icons.svg",
+      "sha256": "a080b921f421efcd5d6681e4f52a4e79ca1301c0a1eedbe34d008e4d29a38bfe"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\icons-LICENSE.txt",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\lucide-icons.svg",
+      "sha256": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\lucide-icons-LICENSE.txt",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "tools\\smoke.mjs",
+      "sha256": "3bcd44e69e0a2bc6ca7b8bf7fa68bd7a951caa0ab11dd0481bb72986f45ae208"
+    },
+    {
+      "path": "tools\\reading-scenarios.mjs",
+      "sha256": "3fe9027fa9ffafee0f9af8ab25ad66e97b12b76d5d57ca5ea59959e12705e5aa"
+    },
+    {
+      "path": "tools\\outgoing-scenarios.mjs",
+      "sha256": "435bc89bb05886520623c161fdf104ab9a54543435988ee441516376f3ae3659"
+    },
+    {
+      "path": "tools\\discovery-scenarios.mjs",
+      "sha256": "ef01d1ed135e3ce426b75f06bfb313922880e115c26bb35b8feaa076a146f16b"
+    },
+    {
+      "path": "tools\\editor-chrome-scenarios.mjs",
+      "sha256": "85d6db8cde4903c586b37d601e986cc14a853e18dd5f6d39ae1b6ea1c721fdda"
+    },
+    {
+      "path": "tools\\view-scenarios.mjs",
+      "sha256": "797919b0f5bfecaf187b44abf5abb429891e6a1910758ac2e8f33c6efd5c42f2"
+    },
+    {
+      "path": "tools\\organization-scenarios.mjs",
+      "sha256": "cf4fde63a11939dec90b46f6c0e9d8d12dc58bea663ece94ad054d305f4cb09b"
+    },
+    {
+      "path": "tools\\appearance-theme-scenarios.mjs",
+      "sha256": "fac815956ad86a5668f30308d17fd9937da37bfb2d3ab2c5101d93884e7c3378"
+    },
+    {
+      "path": "tools\\appearance-reader-theme-scenarios.mjs",
+      "sha256": "b8358246455f86b714082c79e03a5ac6dfcc18fe5d7f5bf79127ecde40942038"
+    },
+    {
+      "path": "tools\\cached-github-fixture.mjs",
+      "sha256": "b58c9200323e5dece4474354d8096321e4e4a243fbcbd07cffe9f65e924c59c9"
+    },
+    {
+      "path": "tools\\appearance-live-fetch.mjs",
+      "sha256": "6ca36665acb4d49c26fc5b2cad05d7c4ef58e8949eca025b78b0055179468798"
+    },
+    {
+      "path": "tools\\smoke.mjs",
+      "sha256": "3bcd44e69e0a2bc6ca7b8bf7fa68bd7a951caa0ab11dd0481bb72986f45ae208"
+    },
+    {
+      "path": "tools\\web-smoke.mjs",
+      "sha256": "5007d644138d63939dfb93916c4d832213550c00cd1d7af527f113fbd2a642cf"
+    },
+    {
+      "path": "tools\\error-log-audit.mjs",
+      "sha256": "fdd46bda7d47fc27e7a19a5521d46b5137fbfe673d10266c514ea9ed91eaed8f"
+    },
+    {
+      "path": "client\\appearance.ts",
+      "sha256": "e9834f9a927c209a58ee342412a681b579934f37da3e072286e7bec9f6f04a54"
+    },
+    {
+      "path": "client\\appearance-catalog.ts",
+      "sha256": "2cdaefdfcaee77ad62044d1e2bee35115e966c0c0961447d92125554f3a0472e"
+    },
+    {
+      "path": "client\\appearance-assets.ts",
+      "sha256": "665b7a2cfd99fde1c1284986a1fab4ca6203119c7675d7e029610ce00c8abe8d"
+    },
+    {
+      "path": "client\\appearance-model.ts",
+      "sha256": "22a793b7a23f71ded97179c3cc4016ab07da1a010d08181af48d1bc97672d806"
+    },
+    {
+      "path": "client\\mermaid-renderer.ts",
+      "sha256": "bc52c3689b9d21a034b1eaed28f6a90499869e070d53a87e42186026b2fde324"
+    },
+    {
+      "path": "client\\web-reader-frame.ts",
+      "sha256": "aaf3832dd14cac8ba3a27cb5f1c6eab47671fcf422ff246685e23d3cae187ac6"
+    },
+    {
+      "path": "client\\web-viewer.ts",
+      "sha256": "77be6c37bc606f0389a2f17cc1305d87800e521edf70703f8326e25be577d77c"
+    },
+    {
+      "path": "client\\browser-vault.ts",
+      "sha256": "4f2519d5fd929bbddfc873f762c606302a1c88ba7043e0f9cb739ebb13cc3c20"
+    },
+    {
+      "path": "client\\github-vault.ts",
+      "sha256": "fcd92a5a7008a9a8c8ea817e50f6d220ef0449cb6c53241e87432f298149df06"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\Program.cs",
+      "sha256": "a5426f8c0271146b9fbfc86b30df2366d99e3fb9d420e2374ee4b99e42bab041"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\Services\\VaultService.AppearanceTheme.cs",
+      "sha256": "7b781ca577b960e59994967657dc282b60aef5a25978115afb2c3c2f3959b096"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\Services\\AppearanceCssPolicy.cs",
+      "sha256": "50db8958ebbe398750f96d03ffb9501c96c3a45eaced1f4f925386dabfa6a972"
+    },
+    {
+      "path": "tests\\appearance.test.mjs",
+      "sha256": "5b0f565c81e0e410be3729335a6ddc71fd1d074f624cfd755bbadc07a60b496c"
+    },
+    {
+      "path": "tests\\appearance-watcher.test.mjs",
+      "sha256": "03c9d6b0dd6db15eb2cd0b26c93d264dc4f2d5d10b9068ec57191f724e6d36ed"
+    },
+    {
+      "path": "tests\\appearance-catalog.test.mjs",
+      "sha256": "6761b0f6e8017107f3e790fbdabd74f4d9f5631041bd4ae46381259816619e7d"
+    },
+    {
+      "path": "tests\\files.test.mjs",
+      "sha256": "654891d205b5be9f75a1e4c5cd97c772223509962182d52187523682cdda899e"
+    },
+    {
+      "path": "tests\\browser-vault.test.mjs",
+      "sha256": "31ec4e413ca19e45b26633b010a5c0ea8faf6385e3fe9aca321d2a31f0512c31"
+    },
+    {
+      "path": "tests\\github-vault.test.mjs",
+      "sha256": "caf3d94ae72fa61bd7e8764993bd8e3cd0fc5a7ba4905940a89cf0cb0b9a7d43"
+    },
+    {
+      "path": "tests\\web-reader-appearance.test.mjs",
+      "sha256": "5dee45544e367ca2b2cfc2697e1e9bddc64d98bd0991baba33a59159c6d3bafd"
+    },
+    {
+      "path": "tools\\file-scenarios.mjs",
+      "sha256": "c09e792fc21556a9d06034d2e9f480a29eebddcfd55030494a237ae55163425d"
+    },
+    {
+      "path": "tools\\graph-scenarios.mjs",
+      "sha256": "8164dba360566a680af5d46259db224c0637ae39308b8a9130e01b62fa5c5abe"
+    },
+    {
+      "path": "tools\\canvas-scenarios.mjs",
+      "sha256": "7877f819f771b585c5b408a7ae6c669cf6db70d0b51a79c7e15fd2a961abfe1d"
+    },
+    {
+      "path": "tools\\preview-scenarios.mjs",
+      "sha256": "d04ea8fe3487490711b64a18fdf40a55d01e9abc10834ec182116e86d1d386bc"
+    },
+    {
+      "path": "tools\\editing-tools-scenarios.mjs",
+      "sha256": "f14df21d0e8f7371bf85d407ba9b759064af82702f08dc6221a692abc0d63a18"
+    },
+    {
+      "path": "tools\\format-scenarios.mjs",
+      "sha256": "6ae27ec2c609f8e4e9bc5b9563b893b85b08e8b5c29fbfdaf701ae8ec000122d"
+    },
+    {
+      "path": "tools\\composer-scenarios.mjs",
+      "sha256": "99ff07c7dacedc442ce880e4bc586b31fc78a867a658d3c3da6e23dff2e8ccdd"
+    },
+    {
+      "path": "tools\\menu-scenarios.mjs",
+      "sha256": "39437ae03d55f2e30ab9311c6aa732885b65fb7914ed2901a4f0945fd09528a5"
+    },
+    {
+      "path": "tools\\community-plugin-test-helpers.mjs",
+      "sha256": "c492726631a00bd3e6a4a89818d0a4bce10e51a79f3aea6cbd768c25d61802e5"
+    },
+    {
+      "path": "tools\\suggestion-scenarios.mjs",
+      "sha256": "c806e6913e8ac96a4843ed802a20e577e96dd550530c9959de9570a757312bda"
+    },
+    {
+      "path": "tools\\renderer-scenarios.mjs",
+      "sha256": "a44d423a43febf3a0fafe018027a91470ef289d4af106ee84878536d0599947a"
+    },
+    {
+      "path": "tools\\core-foundation-scenarios.mjs",
+      "sha256": "d56b06ef4308df338f27d7dab11ea1166eda4c8e19659a9b08f3b7ce3930a13d"
+    },
+    {
+      "path": "tools\\core-verification-scenarios.mjs",
+      "sha256": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539"
+    },
+    {
+      "path": "tools\\tab-movement-scenarios.mjs",
+      "sha256": "4c07a8fff96e95c439552e46fd14eb09d6047ae43b9a75a64425ac8a3a069daa"
+    },
+    {
+      "path": "tools\\workspace-docking-scenarios.mjs",
+      "sha256": "342399fa3bb21a7be54b02f28b36cc7fe30fa56c9a68e40f952af4c8bf2dc98f"
+    },
+    {
+      "path": "tools\\workspace-history-scenarios.mjs",
+      "sha256": "08090dd6a2fa70d43d8dba2a20f815af2a6b590f0de84a4c65118ea5e7526052"
+    },
+    {
+      "path": "tools\\core-verification-targets.mjs",
+      "sha256": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+      "sha256": "f72fda879c771b51b221b5bed52d876106fa2de8027465a2265472bb014940e6"
+    },
+    {
+      "path": "tools\\render-child-scenarios.mjs",
+      "sha256": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611"
+    },
+    {
+      "path": "tools\\templater-scenarios.mjs",
+      "sha256": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594"
+    },
+    {
+      "path": "tools\\webviewer-scenarios.mjs",
+      "sha256": "9cdb17cc1af4cc153be71c1e4e8e400ac86f0d1ba8acbf21871d871b2712522f"
+    },
+    {
+      "path": "tools\\bases-scenarios.mjs",
+      "sha256": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d"
+    },
+    {
+      "path": "tools\\bases-summary-scenarios.mjs",
+      "sha256": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47"
+    },
+    {
+      "path": "tools\\recovery-scenarios.mjs",
+      "sha256": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472"
+    },
+    {
+      "path": "tools\\audio-scenarios.mjs",
+      "sha256": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c"
+    },
+    {
+      "path": "tools\\mermaid-scenarios.mjs",
+      "sha256": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8"
+    },
+    {
+      "path": "tools\\math-embed-scenarios.mjs",
+      "sha256": "6cf3f237acbc238a439be49de5f650357c5b06562dd61e8c579f363e8b2eaeae"
+    },
+    {
+      "path": "tools\\workspace-import-scenarios.mjs",
+      "sha256": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863"
+    },
+    {
+      "path": "shared\\core-plugins.json",
+      "sha256": "ac192f5c228b9c1888faf0bef5a2c7a00fa6d259b3633b4516d783b0b12046d5"
+    },
+    {
+      "path": "tools\\core-scenarios.mjs",
+      "sha256": "f0dc3a460bef11c0d386a791c9e87a8e52f30f6cf86edcabc7d1de468bce7c90"
+    }
+  ],
+  "artifactStability": "verified-through-scenario",
+  "exitCode": 1,
+  "exitSignal": null,
+  "dotnetPid": 45156,
+  "electronPid": 35712,
+  "completedAt": "2026-11-02T00:08:56.721Z",
+  "errorLogAudit": {
+    "status": "failed",
+    "path": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine\\.runtime\\evidence\\appearance-themes-smoke-errors.jsonl",
+    "nativePaths": [
+      "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine\\.runtime\\smoke-profile-appearance-1793578103257\\logs\\errors-smoke-ed8164f5-2d9b-45b8-b102-5ababb608dcc.jsonl"
+    ],
+    "records": 7,
+    "expected": 4,
+    "unexpected": [
+      {
+        "schemaVersion": 1,
+        "id": "5e1553a6-faf3-469c-a01a-44a90247bb2b:0",
+        "session": "5e1553a6-faf3-469c-a01a-44a90247bb2b",
+        "timestamp": "2026-11-02T00:08:56.325Z",
+        "source": "notification",
+        "error": {
+          "name": "Error",
+          "message": "Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}",
+          "stack": "Error: Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}\n    at writeJson (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:40782:11)",
+          "stackOrigin": "original"
+        },
+        "page": "http://127.0.0.1:59356/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine\\.runtime\\smoke-vault-QCWH9o",
+          "file": null,
+          "view": "markdown",
+          "leafId": "5e03d38f-78a8-48da-b271-8b4845077268"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "5e1553a6-faf3-469c-a01a-44a90247bb2b:1",
+        "session": "5e1553a6-faf3-469c-a01a-44a90247bb2b",
+        "timestamp": "2026-11-02T00:08:56.334Z",
+        "source": "notification",
+        "error": {
+          "name": "Error",
+          "message": "Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}",
+          "stack": "Error: Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}\n    at writeJson (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:40782:11)",
+          "stackOrigin": "original"
+        },
+        "page": "http://127.0.0.1:59356/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine\\.runtime\\smoke-vault-QCWH9o",
+          "file": null,
+          "view": "markdown",
+          "leafId": "5e03d38f-78a8-48da-b271-8b4845077268"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "5e1553a6-faf3-469c-a01a-44a90247bb2b:2",
+        "session": "5e1553a6-faf3-469c-a01a-44a90247bb2b",
+        "timestamp": "2026-11-02T00:08:56.343Z",
+        "source": "notification",
+        "error": {
+          "name": "Error",
+          "message": "Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}",
+          "stack": "Error: Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}\n    at writeJson (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:40782:11)",
+          "stackOrigin": "original"
+        },
+        "page": "http://127.0.0.1:59356/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine\\.runtime\\smoke-vault-QCWH9o",
+          "file": null,
+          "view": "markdown",
+          "leafId": "5e03d38f-78a8-48da-b271-8b4845077268"
+        }
+      }
+    ],
+    "sha256": "fbfbd54d17cdd60399a947e5f9d1e6821646fc2f9d93fbc610d05b514fd9b9af",
+    "includesFinalTeardown": true
+  },
+  "error": "AssertionError [ERR_ASSERTION]: Unexpected reported/unhandled errors occurred; inspect C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine\\.runtime\\evidence\\appearance-themes-smoke-errors.jsonl\n+ actual - expected\n\n+ [\n+   {\n+     context: {\n+       file: null,\n+       leafId: '5e03d38f-78a8-48da-b271-8b4845077268',\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-fluffy-engine\\\\.runtime\\\\smoke-vault-QCWH9o',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}',\n+       name: 'Error',\n+       stack: 'Error: Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}\\n' +\n+         '    at writeJson (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:40782:11)',\n+       stackOrigin: 'original'\n+     },\n+     id: '5e1553a6-faf3-469c-a01a-44a90247bb2b:0',\n+     page: 'http://127.0.0.1:59356/',\n+     schemaVersion: 1,\n+     session: '5e1553a6-faf3-469c-a01a-44a90247bb2b',\n+     source: 'notification',\n+     timestamp: '2026-11-02T00:08:56.325Z'\n+   },\n+   {\n+     context: {\n+       file: null,\n+       leafId: '5e03d38f-78a8-48da-b271-8b4845077268',\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-fluffy-engine\\\\.runtime\\\\smoke-vault-QCWH9o',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}',\n+       name: 'Error',\n+       stack: 'Error: Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}\\n' +\n+         '    at writeJson (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:40782:11)',\n+       stackOrigin: 'original'\n+     },\n+     id: '5e1553a6-faf3-469c-a01a-44a90247bb2b:1',\n+     page: 'http://127.0.0.1:59356/',\n+     schemaVersion: 1,\n+     session: '5e1553a6-faf3-469c-a01a-44a90247bb2b',\n+     source: 'notification',\n+     timestamp: '2026-11-02T00:08:56.334Z'\n+   },\n+   {\n+     context: {\n+       file: null,\n+       leafId: '5e03d38f-78a8-48da-b271-8b4845077268',\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-fluffy-engine\\\\.runtime\\\\smoke-vault-QCWH9o',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}',\n+       name: 'Error',\n+       stack: 'Error: Host 400: {\"error\":\"A Markdown leaf needs a vault file path.\"}\\n' +\n+         '    at writeJson (http://127.0.0.1:59356/js/editor-host.hsd8tpjib3.js:40782:11)',\n+       stackOrigin: 'original'\n+     },\n+     id: '5e1553a6-faf3-469c-a01a-44a90247bb2b:2',\n+     page: 'http://127.0.0.1:59356/',\n+     schemaVersion: 1,\n+     session: '5e1553a6-faf3-469c-a01a-44a90247bb2b',\n+     source: 'notification',\n+     timestamp: '2026-11-02T00:08:56.343Z'\n+   }\n+ ]\n- []\n\n    at Object.finish (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-fluffy-engine/tools/error-log-audit.mjs:58:16)\n    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-fluffy-engine/tools/smoke.mjs:1815:14\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}

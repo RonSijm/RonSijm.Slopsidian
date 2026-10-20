@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub vault browser probe</title>
+<style>
+  :root { color-scheme: light dark; font: 15px/1.5 system-ui, sans-serif; }
+  body { max-width: 1200px; margin: 32px auto; padding: 0 24px; }
+  h1 { margin-bottom: 6px; font-size: 26px; }
+  p { margin: 6px 0 16px; }
+  form, .actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; }
+  label { display: grid; gap: 4px; }
+  input, button { font: inherit; padding: 7px 10px; border: 1px solid #8888; border-radius: 5px; }
+  input { width: 310px; } #ref, #folder { width: 140px; }
+  button { cursor: pointer; } button:disabled { cursor: wait; opacity: .6; }
+  .actions { margin: 16px 0; align-items: center; }
+  .actions label { display: flex; align-items: center; } input[type=checkbox] { width: auto; }
+  #status { padding: 12px; background: #8881; border-radius: 5px; }
+  #status[data-state=failed] { background: #d3333322; }
+  #status[data-state=passed] { background: #22994422; }
+  .workspace { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr); gap: 24px; }
+  #files { max-height: 390px; overflow: auto; border: 1px solid #8885; border-radius: 5px; }
+  #files button { display: block; border: 0; border-radius: 0; width: 100%; text-align: left; background: transparent; overflow-wrap: anywhere; }
+  #files button:hover, #files button[aria-current=true] { background: #8882; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; font: 12px/1.5 ui-monospace, monospace; background: #8881; padding: 12px; max-height: 450px; overflow: auto; }
+  #preview img { display: block; max-width: 100%; max-height: 300px; } audio { max-width: 100%; }
+  #preview pre { font-size: 13px; }
+  #checks { padding-left: 24px; } #checks li { margin: 5px 0; }
+  @media (max-width: 700px) { .workspace { grid-template-columns: 1fr; } input { max-width: 80vw; } }
+</style>
+<h1>GitHub vault browser probe</h1>
+<p>Standalone experiment: discover a public vault, then download file bodies only when opened. Requests go directly from this browser to GitHub.</p>
+<form id="mount-form">
+  <label>Repository <input id="repository" value="RonSijm/RonSijm.Slopsidian" required></label>
+  <label>Branch / commit <input id="ref" value="main" required></label>
+  <label>Vault subfolder <input id="folder" value="Example"></label>
+  <button type="submit">Mount from GitHub</button>
+  <button type="button" id="cached-mount">Reopen cached mount</button>
+</form>
+<div class="actions">
+  <button id="run-checks">Run Example checks</button>
+  <label><input type="checkbox" id="cache-only">Cache-only: never contact GitHub</label>
+</div>
+<p id="status" role="status" aria-live="polite">Ready. Mounting lists paths without downloading file bodies.</p>
+<p id="counts">0 files listed · 0 GitHub API requests · 0 raw downloads · 0 file cache hits</p>
+<ol id="checks" aria-label="Test results"></ol>
+<div class="workspace">
+  <section><h2>Vault files</h2><div id="files">Mount a vault to list files.</div></section>
+  <section><h2 id="preview-title">File preview</h2><div id="preview">Choose a file. Markdown is displayed as text; SVG and audio get a media preview.</div></section>
+</div>
+<details open><summary>Browser request and cache evidence</summary><pre id="evidence"></pre></details>
+<script type="module">
+  const $ = selector => document.querySelector(selector);
+  const cacheName = "slopsidian-github-probe-files-v1";
+  const databaseName = "slopsidian-github-probe-v1";
+  const requests = [];
+  const checks = [];
+  const counts = { api: 0, raw: 0, cacheHits: 0 };
+  let mount = null;
+  let previewUrl = null;
+  const database = new Promise((resolve, reject) => {
+    const request = indexedDB.open(databaseName, 1);
+    request.onupgradeneeded = () => request.result.createObjectStore("mounts", { keyPath: "key" });
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+  // Observe rejection even before a user opens the cache controls.
+  database.catch(() => {});
+
+  function settings() {
+    const repository = $("#repository").value.trim();
+    const ref = $("#ref").value.trim();
+    const folder = $("#folder").value.trim().replace(/^\/+|\/+$/g, "");
+    if (!/^[\w.-]+\/[\w.-]+$/.test(repository) || !ref || folder.split("/").some(part => part === ".." || part === ".")) {
+      throw new Error("Enter owner/repository, a branch or commit, and a relative subfolder.");
+    }
+    return { repository, ref, folder, key: JSON.stringify([repository, ref, folder]) };
+  }
+  async function storedMount(value) {
+    const db = await database;
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction("mounts", value ? "readwrite" : "readonly");
+      const request = value ? transaction.objectStore("mounts").put(value) : transaction.objectStore("mounts").get(settings().key);
+      transaction.oncomplete = () => resolve(value ?? request.result);
+      transaction.onerror = () => reject(transaction.error);
+      transaction.onabort = () => reject(transaction.error ?? new Error("Mount cache transaction aborted."));
+    });
+  }
+  function evidence() {
+    $("#counts").textContent = `${mount?.files.length ?? 0} files listed · ${counts.api} GitHub API requests · ${counts.raw} raw downloads · ${counts.cacheHits} file cache hits`;
+    $("#evidence").textContent = JSON.stringify({
+      origin: location.origin, browser: navigator.userAgent, secureContext: isSecureContext,
+      mode: "cors", credentials: "omit", cacheOnly: $("#cache-only").checked,
+      mountedCommit: mount?.commit ?? null, filesListed: mount?.files.length ?? 0,
+      counts, checks, requests,
+    }, null, 2);
+  }
+  function status(message, state = "") {
+    $("#status").textContent = message;
+    $("#status").dataset.state = state;
+    evidence();
+  }
+  async function run(action) {
+    for (const button of document.querySelectorAll("button")) button.disabled = true;
+    try { await action(); }
+    catch (error) { status(error.message, "failed"); }
+    finally { for (const button of document.querySelectorAll("button")) button.disabled = false; evidence(); }
+  }
+  async function download(url, kind) {
+    if ($("#cache-only").checked) throw new Error("Cache-only mode refused a network request: " + url);
+    const record = { kind, url, state: "pending" };
+    requests.push(record);
+    counts[kind]++;
+    evidence();
+    try {
+      // Readable CORS responses are required. No credentials or custom headers.
+      const response = await fetch(url, { mode: "cors", credentials: "omit", signal: AbortSignal.timeout(25000) });
+      Object.assign(record, {
+        status: response.status, responseType: response.type,
+        contentType: response.headers.get("content-type"),
+        apiRemaining: response.headers.get("x-ratelimit-remaining"), state: "received",
+      });
+      if (!response.ok) throw new Error(`${response.status} from ${new URL(url).hostname}: ${(await response.text()).slice(0, 400)}`);
+      if (response.type !== "cors") throw new Error("Expected a readable cross-origin response, got " + response.type);
+      return response;
+    } catch (error) {
+      Object.assign(record, { state: "failed", error: error.message });
+      throw new Error(`${kind} request failed: ${error.message}. A generic fetch failure may be CORS, connectivity, or a browser policy; inspect DevTools for the exact cause.`);
+    } finally { evidence(); }
+  }
+  function showFiles(value) {
+    mount = value;
+    const list = $("#files");
+    list.replaceChildren();
+    for (const file of mount.files) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = file.path;
+      button.dataset.path = file.path;
+      button.addEventListener("click", () => run(() => openFile(file.path)));
+      list.append(button);
+    }
+    evidence();
+  }
+  async function mountFromGitHub() {
+    const chosen = settings();
+    status("Discovering the pinned repository tree…");
+    const api = `https://api.github.com/repos/${chosen.repository}`;
+    const commit = await (await download(`${api}/commits/${encodeURIComponent(chosen.ref)}`, "api")).json();
+    const tree = await (await download(`${api}/git/trees/${commit.commit.tree.sha}?recursive=1`, "api")).json();
+    if (tree.truncated) throw new Error("The repository tree was truncated; this small probe does not implement subtree pagination.");
+    const prefix = chosen.folder ? chosen.folder + "/" : "";
+    const files = tree.tree.filter(entry => entry.type === "blob" && ["100644", "100755"].includes(entry.mode) && entry.path.startsWith(prefix))
+      .map(entry => ({ path: entry.path.slice(prefix.length), repositoryPath: entry.path, sha: entry.sha, size: entry.size }))
+      .filter(entry => entry.path && !entry.path.split("/").some(segment => segment.startsWith(".")))
+      .sort((left, right) => left.path.localeCompare(right.path));
+    if (!files.length) throw new Error("No visible files found in the selected vault subfolder.");
+    const value = { ...chosen, commit: commit.sha, mountedAt: new Date().toISOString(), files };
+    await storedMount(value);
+    showFiles(value);
+    status(`Mounted ${chosen.folder || chosen.repository}: ${files.length} file references. No file content was requested during discovery.`, "passed");
+    return value;
+  }
+  async function reopenCachedMount() {
+    const value = await storedMount();
+    if (!value) throw new Error("No cached mount found for these settings. Mount it from GitHub once first.");
+    showFiles(value);
+    status(`Reopened ${value.files.length} cached file references without contacting GitHub.`, "passed");
+  }
+  async function readFile(file) {
+    const url = `https://raw.githubusercontent.com/${mount.repository}/${mount.commit}/${file.repositoryPath.split("/").map(encodeURIComponent).join("/")}`;
+    const cache = await caches.open(cacheName);
+    let response = await cache.match(url);
+    if (response) {
+      counts.cacheHits++;
+      requests.push({ kind: "cache", url, status: response.status, responseType: response.type });
+    } else {
+      response = await download(url, "raw");
+      await cache.put(url, response.clone());
+    }
+    const bytes = await response.arrayBuffer();
+    if (bytes.byteLength !== file.size) throw new Error(`Unexpected file size for ${file.path}: ${bytes.byteLength} instead of ${file.size}.`);
+    // Verify Git's blob identity, so the cache contains the exact discovered bytes.
+    const header = new TextEncoder().encode(`blob ${bytes.byteLength}\0`);
+    const blob = new Uint8Array(header.length + bytes.byteLength);
+    blob.set(header); blob.set(new Uint8Array(bytes), header.length);
+    const sha = [...new Uint8Array(await crypto.subtle.digest("SHA-1", blob))].map(byte => byte.toString(16).padStart(2, "0")).join("");
+    if (sha !== file.sha) { await cache.delete(url); throw new Error("File content does not match the tree hash: " + file.path); }
+    evidence();
+    return bytes;
+  }
+  async function openFile(path) {
+    const file = mount?.files.find(file => file.path === path);
+    if (!file) throw new Error("File is not in the mounted tree: " + path);
+    status("Loading " + path + "…");
+    const bytes = await readFile(file);
+    if (previewUrl) { URL.revokeObjectURL(previewUrl); previewUrl = null; }
+    const preview = $("#preview");
+    preview.replaceChildren();
+    $("#preview-title").textContent = path;
+    for (const button of $("#files").querySelectorAll("button")) button.setAttribute("aria-current", String(button.dataset.path === path));
+    const extension = path.split(".").at(-1).toLowerCase();
+    const imageTypes = { svg: "image/svg+xml", png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", gif: "image/gif", webp: "image/webp" };
+    if (imageTypes[extension]) {
+      const image = document.createElement("img"); image.alt = path;
+      previewUrl = URL.createObjectURL(new Blob([bytes], { type: imageTypes[extension] }));
+      image.src = previewUrl;
+      preview.append(image);
+      await image.decode();
+    } else if (extension === "wav") {
+      const audio = document.createElement("audio"); audio.controls = true;
+      previewUrl = URL.createObjectURL(new Blob([bytes], { type: "audio/wav" }));
+      audio.src = previewUrl; preview.append(audio);
+      await Promise.race([
+        new Promise((resolve, reject) => { audio.onloadedmetadata = resolve; audio.onerror = () => reject(new Error("The downloaded audio could not be decoded.")); }),
+        new Promise((_, reject) => setTimeout(() => reject(new Error("Audio metadata timed out.")), 10000)),
+      ]);
+    } else {
+      const text = document.createElement("pre"); text.textContent = new TextDecoder("utf-8", { fatal: true }).decode(bytes); preview.append(text);
+    }
+    status(`Opened ${path} (${bytes.byteLength} bytes, verified against the tree hash).`, "passed");
+    return bytes;
+  }
+  function check(name, condition) {
+    const item = document.createElement("li"); item.textContent = `${condition ? "PASS" : "FAIL"}: ${name}`;
+    $("#checks").append(item); checks.push({ name, passed: Boolean(condition) }); evidence();
+    if (!condition) throw new Error("Check failed: " + name);
+  }
+  $("#mount-form").addEventListener("submit", event => { event.preventDefault(); run(mountFromGitHub); });
+  $("#cached-mount").addEventListener("click", () => run(reopenCachedMount));
+  $("#cache-only").addEventListener("change", evidence);
+  $("#run-checks").addEventListener("click", () => run(async () => {
+    checks.length = 0; $("#checks").replaceChildren();
+    $("#repository").value = "RonSijm/RonSijm.Slopsidian"; $("#ref").value = "main"; $("#folder").value = "Example";
+    $("#cache-only").checked = false;
+    const before = { ...counts };
+    await mountFromGitHub();
+    check("Anonymous API discovery returns readable CORS JSON", counts.api - before.api === 2 && requests.filter(request => request.kind === "api").every(request => request.status === 200 && request.responseType === "cors"));
+    check("Discovery creates lazy references without fetching any raw file bodies", counts.raw === before.raw);
+    const note = await openFile("Start here.md");
+    check("Raw Markdown is readable and matches the discovered Git blob", new TextDecoder().decode(note).includes("# An Obsidian vault you can explore"));
+    await openFile("90 Attachments/Vault map.svg");
+    check("Raw SVG can be read, verified, and decoded by an image element", $("#preview img")?.naturalWidth > 0);
+    const audio = await openFile("90 Attachments/Synthetic tone.wav");
+    check("Raw WAV can be read, verified, and decoded by an audio element", new TextDecoder().decode(audio.slice(0, 4)) === "RIFF" && $("#preview audio")?.duration > 0);
+    const rawCount = counts.raw, apiCount = counts.api, hits = counts.cacheHits;
+    $("#cache-only").checked = true;
+    mount = null;
+    await reopenCachedMount();
+    await openFile("Start here.md");
+    check("Persisted mount and file caches reopen in cache-only mode with no GitHub requests", counts.raw === rawCount && counts.api === apiCount && counts.cacheHits === hits + 1);
+    $("#cache-only").checked = false;
+    status(`All ${checks.length} Example checks passed. Raw responses are readable in this browser; files load lazily and cached content needs no GitHub request.`, "passed");
+  }));
+  evidence();
+</script>
+</html>

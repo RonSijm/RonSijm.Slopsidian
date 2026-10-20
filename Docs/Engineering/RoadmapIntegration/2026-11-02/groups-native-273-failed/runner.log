@@ -1,0 +1,53 @@
+PASS linked leaves follow navigation, skip pinned members and keep independent history
+PASS a real popout window hosts the same live leaf, view and owner
+PASS typing, undo and hotkey save work in the real popout document
+PASS menus and modals open in, and cancel from, the popout document
+PASS a held file mutation freezes the popout and real input/undo resume afterwards
+PASS a refused dirty close keeps the window, tab and edit
+PASS a real native close request is vetoed while the tab is dirty
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\smoke-profile\logs\errors-smoke-f46ea44f-2fb5-48e9-9a73-73b2b860ccaf.jsonl
+(node:40244) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:27382/devtools/browser/167340dc-ad5f-4591-89ba-2fd37b70e967
+ELECTRON_HOST_PID 40244
+DOTNET_HOST_PID 24168
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\smoke-vault-hDjorB
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:63974
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:63974
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: TypeError: Cannot read properties of null (reading 'openUrl')
+    at eval (eval at <anonymous> (:2:26), <anonymous>:1:60)
+    at eval (eval at <anonymous> (:2:26), <anonymous>:1:159)
+    at eval (<anonymous>)
+    at <anonymous>:2:26
+    at <anonymous>:10:5
+    at evaluate (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:396:10)
+    at async checkWorkspaceGroupsPopouts (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/workspace-popout-scenarios.mjs:189:7)
+    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:927:5
+
+'failed' !== 'passed'
+
+    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:1830:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v25.6.1

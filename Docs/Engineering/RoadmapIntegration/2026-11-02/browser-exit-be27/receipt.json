@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "boundary": "Unchanged-source paired build/static/targeted regression record; no restamped full suite or runtime acceptance.",
+  "commands": [
+    {
+      "command": "C:\\Program Files\\nodejs\\node.exe --test --test-concurrency=1 tests\\offline-shell.test.mjs tests\\smoke-scopes.test.mjs tests\\core-plugin-fixture.test.mjs tests\\web-reader-popout.test.mjs tests\\native-os-drag.test.mjs tests\\workspace-os-tab-drag-scenario.test.mjs tests\\workspace-groups-popouts.test.mjs",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\browser-exit-pair-bf9Y6K\\targeted-test.log"
+    },
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run build; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\browser-exit-pair-bf9Y6K\\build.log"
+    },
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run build:web; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\browser-exit-pair-bf9Y6K\\build-web.log"
+    },
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run verify:web; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\browser-exit-pair-bf9Y6K\\verify-web.log"
+    }
+  ],
+  "tests": {
+    "targeted-test": {
+      "tests": 139,
+      "pass": 139,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    }
+  },
+  "artifacts": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "bytes": 588800,
+      "sha256": "c2fab4b096fb591b8bed4bab0c1c0fecf55497e2c2ca55a3d5fe6ca88369666b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "bytes": 4916745,
+      "sha256": "9dbdf1028e501ee9fdaf5ef963462ce4da81bdf39ec47bbd525d894b743fce08"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+      "bytes": 4916745,
+      "sha256": "9dbdf1028e501ee9fdaf5ef963462ce4da81bdf39ec47bbd525d894b743fce08"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json",
+      "bytes": 37676,
+      "sha256": "ad1fe5b70ee9f97c50ef61f024e237c626e40a7951b3f7ab2d06d2f297bc13ef"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\service-worker.js",
+      "bytes": 6303,
+      "sha256": "618c9f4a72a70a45eab864b19ea089a91cc4e8a3b7e32a63ab4dae757d103a91"
+    }
+  ],
+  "sourceBefore": "be27616d4b0c9ede95ece1ad282f6cb56840ebb57bf2c58806b6b500a0c28e8d",
+  "sourceAfter": "be27616d4b0c9ede95ece1ad282f6cb56840ebb57bf2c58806b6b500a0c28e8d",
+  "completedAt": "2026-11-02T03:19:41.415Z"
+}

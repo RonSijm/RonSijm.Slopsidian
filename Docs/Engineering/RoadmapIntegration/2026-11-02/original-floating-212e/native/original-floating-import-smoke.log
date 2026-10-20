@@ -1,0 +1,42 @@
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile-original-floating-1793602043401\logs\errors-smoke-7acb94a9-c5d8-45a8-905c-1ae0d4127c2a.jsonl
+(node:36800) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:63431/devtools/browser/a1a1d563-e572-432f-a8a9-421db8e8f17a
+ELECTRON_HOST_PID 36800
+DOTNET_HOST_PID 17908
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-37VkW7
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:49423
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:49423
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile-original-floating-1793602043401\logs\errors-smoke-7acb94a9-c5d8-45a8-905c-1ae0d4127c2a.jsonl
+(node:42304) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:1639/devtools/browser/66055674-b3d3-4238-ad9f-46c31413c784
+ELECTRON_HOST_PID 42304
+DOTNET_HOST_PID 44116
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-37VkW7
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:62726
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:62726
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

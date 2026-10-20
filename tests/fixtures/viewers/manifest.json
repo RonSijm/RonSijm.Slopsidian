@@ -1,0 +1,11 @@
+{
+  "Seek.webm": {
+    "bytes": 1702,
+    "sha256": "95c06698569dcc4040a590cfffacb7f96a69c2c51847f73f2d4abb23a6e40667"
+  },
+  "Split.avif": {
+    "bytes": 322,
+    "sha256": "26475de2db26046070399cc40c8865c13c3511861eb54a2a8e286b71dccac505"
+  },
+  "_provenance": "Synthetic: Split.avif 32x16 red|blue halves (AV1 still, libavif via pillow-avif-plugin 1.6.0); Seek.webm 64x48 VP9 4s, 10fps, red for t<2s then blue, keyframe every 5 frames, with Cues (PyAV 19.0.2 / libvpx)."
+}

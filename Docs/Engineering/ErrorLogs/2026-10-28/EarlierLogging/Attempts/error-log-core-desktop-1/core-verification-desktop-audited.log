@@ -1,0 +1,234 @@
+PASS Real source selections, edits/undo/redo and Reading mode count frontmatter only when selected, use reference numeric/punctuation/CJK/kana/Korean/Tamil/Tibetan rules and UTF-16 emoji/CRLF lengths without writing the note.
+PASS Outline uses actual ATX/Setext metadata, excludes YAML/comments/indented and nested-length fences, nests skipped levels correctly, folds by pointer/keyboard/all controls and follows real source-cursor navigation.
+PASS Dirty heading edits, undo/redo and external saved replacements refresh the real Outline; Reading heading navigation/scroll changes active highlighting and emits the actual public Markdown scroll event.
+PASS Disable/re-enable removes owned Outline controls and retained listeners, restores counts, and full native restart or real-folder WASM reconnect retains the real files/mode without rewriting original workspace/community configuration.
+PASS The real status control hides for empty/image leaves, honors explicit app.json Live Preview, offers checked keyboard/pointer Source/Reading/Live Preview choices and applies actual in-place Markdown styles without changing native getMode semantics or file bytes.
+PASS Real formatted-text typing and task-checkbox input preserve selections, undo/redo, dirty buffers and community editor extensions across all three modes; only explicit save writes the exact original BOM/CRLF with the intended task marker changed.
+PASS CodeMirror displays an actually decoded local image, rendered table and local Mermaid image; their real Edit buttons reveal original source and revoke resources, detached task controls are inert, and Ctrl-clicking a wiki alias opens the resolved heading in a separate real Reading leaf.
+PASS Real split panes retain independent per-leaf modes with a shared document and community extensions; public same-file setViewState preserves unsaved text/history, rejects malformed source flags without disturbing the view, and retains opaque state.
+PASS Actual external writes refresh clean Source/Live Preview peers, but conflicting saved bytes cannot overwrite a dirty shared buffer; the guarded save rejects visibly to its caller and explicit discard/reload retains the external BOM/CRLF document.
+PASS Disabling Editor status removes its open menu, status button and retained listeners without disabling editing modes; native restart or actual-folder WASM reconnect preserves source flags, opaque leaf state and persisted plugin ownership while leaving app/workspace bytes and other enabled IDs unchanged.
+PASS Actual selection extraction saves previously dirty text, creates a real nested target, resolves source/template links independently, carries image/reference/footnote definitions, and retains BOM/CRLF plus real source undo/redo.
+PASS Cancel and retained closed-dialog controls write nothing; retargeted source views, unresolved relative-link transfers, post-open external/local edits and missing templates reject visibly without losing bytes, creating a target or implicitly saving concurrent local text.
+PASS Heading extraction includes children and blocks, rejects duplicate target anchors, supports Shift+Enter prepend and embed/none replacements, and selectively repairs real Markdown/properties/Canvas while whole-note and remaining-section links stay on the source.
+PASS Merge confirmation is enforced; a real preflight veto and a target changed after planning retain all source/reference files, newer target bytes and restored source panes.
+PASS Confirmed merge combines precise YAML/body data with guarded source trash and Markdown/Canvas reference repair, opens its real target and emits one owned modification/deletion; a real file-menu action also merges a non-active note and Ctrl+Enter creates its new nested target.
+PASS A real modify-event subscriber can edit an open target after commit: Note composer reports the committed-but-unsaved state, retains its text, disables repeat application and permits a normal subsequent save.
+PASS Real select/template/confirmation settings preserve unknown BOM-prefixed configuration, disable removes owned commands/dialog/listeners, and desktop restart or real-folder browser reconnect restores both composed files and enabled runtime.
+PASS An actual CommonJS plugin uses shared Menu/Item/Separator types, rich labels, checked/disabled rows, sections, viewport placement, pointer/keyboard actions and dismissal; real file/editor events carry the current TFile, MarkdownView and CodeMirror editor.
+PASS Actual editor context actions retain copy/cut/select-all, undoable CRLF-aware paste, empty-paste preservation and visible permission/stale/multiple-selection errors using a bounded clipboard API fixture; the system clipboard is never read or changed.
+PASS Closing the actual source view or disabling the plugin removes owned menus and retained button listeners; re-enable has exactly one event subscriber, and only explicit plugin toggles change community enablement.
+PASS The actual opt-in converter previews Roam/Bear/tasks/numeric links and legacy frontmatter in real vault files; Cancel and a retained closed-dialog button write no notes.
+PASS Confirmed legacy conversion rewrites the actual BOM/CRLF note with lossless unknown numeric/YAML data and refreshes its real clean editor; version-guarded Undo restores every original Markdown file byte-for-byte.
+PASS Newer external versions, ambiguous numeric destinations and post-preview dirty edits reject visibly without partial note writes, implicit saves or loss of local text; generated link text disambiguates real files.
+PASS Readable numeric aliases are a separate working conversion; disable removes real converter UI/ribbon/commands/listeners, and restart/reconnect restores enablement without altering unknown settings or original note bytes.
+PASS Outgoing links lists real wiki/Markdown/property links and embeds, deduplicates the same destination/subpath, and explicitly disables unsupported attachment/traversal actions.
+PASS Outgoing links navigates to exact heading/block context, creates a missing Markdown target without changing its source, and keeps a pinned sidebar on its note.
+PASS Dirty-buffer edits, undo/redo, external saves and target renames refresh outgoing resolution without overwriting vault files or secretly rewriting links.
+PASS Unlinked aliases navigate to their source; collapse/follow/pin state survives an actual reload and releasing the pin follows the active note.
+PASS Disabling Outgoing links removes its commands, view and enabled-instance lookup; re-enabling creates one fresh view with the persisted state.
+PASS Outgoing opens real decoded raster/Canvas leaves, honors modified-click tabs, follows provider registration/removal and preserves exact attachment bytes; image fit/zoom/scroll work and closed views release URLs and retained controls.
+PASS Reading links share registered attachment navigation; live external pixel changes, visible decode errors/recovery and guarded image rename refresh the actual view without writing image bytes or losing opaque state.
+PASS Actual image leaves, zoom, opaque state and pinned Outgoing restore after full desktop restart/browser reconnect while original workspace absence/bytes, Markdown and exact binary attachments stay preserved.
+PASS Search executes real worker-backed Boolean/regex/path/file/tag/property/case queries and selects exact source context.
+PASS Search waits for actual worker readiness, including a startup longer than two seconds, without charging it against the separate bounded query deadline.
+PASS Search follows dirty edits/undo/redo, real external writes and renames, rejects invalid queries without stale results, and terminates a blocking regex off the UI thread.
+PASS Tags lists nested inline/property tags with counts, excludes escaped/code/comment text, filters/folds/sorts, and uses the actual Search dependency with a visible disabled-dependency error.
+PASS Backlinks resolves heading/block references and unlinked aliases, navigates exact source ranges, follows unsaved/undo/external/rename changes, and renders/removes real in-document backlinks.
+PASS Footnotes shows multiline definitions, repeated references and explicit missing definitions, selects exact source ranges and updates through dirty edits/undo/redo.
+PASS Search/Tags/Backlinks/Footnotes preserve real query/sort/fold/pin state across reload/reconnect; disabling removes owned views/controllers/commands and re-enabling creates one fresh instance.
+PASS Quick switcher settings control actual registered attachments and unresolved references: Canvas opens, hidden attachments/unknown extensions stay out, and existing-only removes unresolved suggestions without implicitly creating a note.
+PASS The unsupported-file toggle follows app.json, all-types overrides attachment filtering, URI-relative targets and explicit creation use real controls, and Boolean/opaque settings plus BOM survive reload/reconnect without rewriting app.json.
+PASS Bookmarks opens actual heading/block, empty-folder and saved-search targets; distant Reading blocks scroll precisely and missing/unsupported targets reject without discarding data.
+PASS Actual Bookmarks controls add groups/files, rename, reorder, move into groups, remove and filter; BOM, unknown data and note bytes survive, and obsolete controls cannot mutate newer data.
+PASS The async core lifecycle honors an actual Bookmarks preflight veto without unloading its original view, removes owned controls/providers on disable, restores unavailable panes with their filters, and rejects concurrent reloads.
+PASS Organized Bookmarks data and actual per-pane filter state survive a fresh runtime without modifying original note bytes.
+PASS The actual Workspaces manager saves and loads real split/tab/pin/Reading/sidebar and core-view state, without hidden editors or rewriting original Obsidian profiles.
+PASS Saved-layout preflight and staged view loading retain the actual previous editor/DOM on factory failures, explicit preflight vetoes and dirty-save conflicts; external note bytes are not overwritten.
+PASS Named layouts can be renamed and deleted without deleting notes; guarded profiles, unknown configuration, UTF-8 BOM and the active layout survive a fresh runtime.
+PASS Actual local Properties controls edit source/Reading notes, typed numbers, checkboxes and lists; body selections and existing undo/redo survive while exact numeric literals, comments, anchors, unknown structured/type data and BOM/CRLF are retained.
+PASS Properties rejects unsafe numeric input, obsolete dialogs and dirty external-save conflicts without overwriting newer file bytes or discarding the original unsaved buffer.
+PASS The real vault property catalog filters/sorts/counts, assigns case-insensitive types and renames a property in both notes and types.json; all-note collision preflight, unknown types/configuration and precise YAML/body bytes are preserved.
+c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-profile\logs\errors-smoke-48b9682f-c5bd-47b3-bcf3-2c4766a74058.jsonl
+(node:27848) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:51275/devtools/browser/0ba3e714-4031-4496-8f5e-adee5f9675e6
+ELECTRON_HOST_PID 27848
+DOTNET_HOST_PID 46256
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-vault-EpjC5C
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:62236
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:62236
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/resource
+      RonSijm.Slopsidian.Services.VaultException: Reading view supports local raster images and M4A, WebM, Ogg, MP3 and WAV audio.
+         at RonSijm.Slopsidian.Services.VaultService.ReadResourceAsync(String path, String expectedRoot, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 161
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-profile\logs\errors-smoke-48b9682f-c5bd-47b3-bcf3-2c4766a74058.jsonl
+(node:27560) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:29668/devtools/browser/653b1ffd-765a-4af1-8f48-d9933c70172d
+ELECTRON_HOST_PID 27560
+DOTNET_HOST_PID 42236
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-vault-EpjC5C
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:61971
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:61971
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-profile\logs\errors-smoke-48b9682f-c5bd-47b3-bcf3-2c4766a74058.jsonl
+(node:46920) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:40316/devtools/browser/fa992789-2456-41ef-8e0b-cc08bc370104
+ELECTRON_HOST_PID 46920
+DOTNET_HOST_PID 40664
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-vault-EpjC5C
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:61033
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:61033
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-profile\logs\errors-smoke-48b9682f-c5bd-47b3-bcf3-2c4766a74058.jsonl
+(node:43416) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:18852/devtools/browser/5763b4c8-6206-4aef-87f3-a8dedfd2e660
+ELECTRON_HOST_PID 43416
+DOTNET_HOST_PID 45556
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-vault-EpjC5C
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:53512
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:53512
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: This file changed on disk. Your unsaved text is retained; reopen the file after resolving the conflict.
+         at RonSijm.Slopsidian.Services.VaultService.WriteAsync(WriteFileRequest request, Boolean create, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 212
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-profile\logs\errors-smoke-48b9682f-c5bd-47b3-bcf3-2c4766a74058.jsonl
+(node:33848) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:51071/devtools/browser/15d22133-97d7-4cfd-84d9-18f7dddb0e78
+ELECTRON_HOST_PID 33848
+DOTNET_HOST_PID 43624
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-vault-EpjC5C
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:50971
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:50971
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-profile\logs\errors-smoke-48b9682f-c5bd-47b3-bcf3-2c4766a74058.jsonl
+(node:22592) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:31428/devtools/browser/4b065f73-4232-413e-b0bc-985b28c28a42
+ELECTRON_HOST_PID 22592
+DOTNET_HOST_PID 34912
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-vault-EpjC5C
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:53883
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:53883
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: This file changed on disk. Your unsaved text is retained; reopen the file after resolving the conflict.
+         at RonSijm.Slopsidian.Services.VaultService.WriteAsync(WriteFileRequest request, Boolean create, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 212
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: Cannot reach [data-type="file-properties"] [aria-label="Pin or follow file properties"]: <div id="client-errors" role="alert">The destination property already exists in this note: collision <button>Download log</button></div>
+    at click (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/error-log-validation-20261027/tools/smoke.mjs:446:10)
+    at async checkProperties (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/error-log-validation-20261027/tools/organization-scenarios.mjs:510:3)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/error-log-validation-20261027/tools/smoke.mjs:1386:5
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/error-log-validation-20261027/tools/smoke.mjs:1528:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

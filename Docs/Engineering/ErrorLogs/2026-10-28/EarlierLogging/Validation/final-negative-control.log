@@ -1,0 +1,1 @@
+Negative control passed: an actual unhandled renderer exception was logged and caused smoke acceptance to fail.

@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "sha256": "14d492e2e03c5990b735f017b5945ed077fb94df57de9426f4141aaedce9c5b4"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "sha256": "cb6ec6d68c42f4c3298eff7439e609452d809a3e391c87094328154caf31843d"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+      "sha256": "cb6ec6d68c42f4c3298eff7439e609452d809a3e391c87094328154caf31843d"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-api.js",
+      "sha256": "31fda904c82df0457d3b22835859127122667a9264bea635d7bc606c578ae6a8"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-worker.js",
+      "sha256": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6"
+    }
+  ],
+  "boundary": "Source-stable combined builds/regressions; actual-host collection and wider roadmap still pending",
+  "sourceAfterPairedBuilds": "4868685be691086051f7424f12cde218fce73ae646d18c89d7ca22e87d4e156e",
+  "completedAt": "2026-11-01T13:01:42.1946716Z",
+  "status": "passed",
+  "commands": [
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\connected-proof-watch-validation-74d85996-a194-494b-91df-781214299ba7\\build.log",
+      "exitCode": 0,
+      "command": "npm run build"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\connected-proof-watch-validation-74d85996-a194-494b-91df-781214299ba7\\build-web.log",
+      "exitCode": 0,
+      "command": "npm run build:web"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\connected-proof-watch-validation-74d85996-a194-494b-91df-781214299ba7\\verify-web.log",
+      "exitCode": 0,
+      "command": "npm run verify:web"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\connected-proof-watch-validation-74d85996-a194-494b-91df-781214299ba7\\test.log",
+      "exitCode": 0,
+      "command": "npm run test"
+    }
+  ],
+  "tests": {
+    "pass": 1008,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "tests": 1008,
+    "fail": 0
+  },
+  "sourceBefore": "4868685be691086051f7424f12cde218fce73ae646d18c89d7ca22e87d4e156e",
+  "sourceAfterTests": "4868685be691086051f7424f12cde218fce73ae646d18c89d7ca22e87d4e156e"
+}

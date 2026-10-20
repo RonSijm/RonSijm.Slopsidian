@@ -1,0 +1,17 @@
+ok - cold online page is unprepared and caches nothing until the user asks
+skipped (focus) - user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it
+skipped (focus) - cold restart with the network OFF boots the app, workers and renderer from the cached shell
+skipped (focus) - a genuine cached GitHub mount is seeded offline in local storage only
+skipped (focus) - a cold canonical cached remote route boots offline into the read-only mount with the exact note and no API/raw fallback
+skipped (focus) - explicit complete cached index offline: partial first, missing and corrupt bytes refused, complete after exact cached bytes, zero downloads
+skipped (focus) - an evicted file is reported honestly offline (503, never a network or mixed fallback)   and a real-pointer repair restores it
+skipped (focus) - tampered JavaScript is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+skipped (focus) - tampered WebAssembly is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+skipped (focus) - tampered HTML is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+skipped (focus) - tampered manifest metadata is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+skipped (focus) - tampered adoption record is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+skipped (focus) - a worker-only update is never served as the adopted shell: offline shows an explicit error until the matching set is prepared
+skipped (focus) - an update keeps the old shell until the new complete set is adopted,   then boots only the new version
+skipped (focus) - cache put probe: identical bytes, cache names, throttle and concurrency in a long versus a short owned profile path
+ok - cancel keeps verified files without adopting, resume reuses them, and remove deletes the copy and worker (real pointer)
+Focused cancel diagnostic passed (not acceptance evidence).

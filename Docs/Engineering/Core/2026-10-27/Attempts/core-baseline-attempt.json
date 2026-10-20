@@ -1,0 +1,1267 @@
+{
+  "status": "failed",
+  "scope": "implemented-core-foundations",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-27T10:13:06.191Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\core-verification-validation-20261027\\.runtime\\smoke-vault-3A37ed",
+  "launcherPid": 31368,
+  "launchMode": "electron",
+  "startupMode": "vault-chooser",
+  "checks": [
+    "A no-argument launch showed the vault chooser rather than the demo; Escape/shortcuts could not bypass it, and missing/existing-folder errors preserved the chooser and existing notes.",
+    "Create vault made a fresh folder; cancelling kept its dirty buffer, and opening an existing vault saved those notes before replacing the workspace without retaining foreign buffers.",
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "Core foundations exercised real file-tree creation/navigation, filtered command execution, fuzzy switching, heading navigation, live counts, and split/pin/sidebar layout restoration with no community plugins installed or enabled.",
+    "Core controls removed/restored actual commands, ribbon/view resources and keyboard access, isolated state between vaults, retained unknown configuration fields, and survived full disabled/enabled desktop process restarts. Templates, dated notes, unique collision handling and random-note empty/attachment cases ran through real UI.",
+    "Command palette settings added/reordered/removed real pinned commands and respected editor/conditional availability. Quick switcher opened a result with Ctrl+Enter, cancelled and created a missing nested note, and handled an empty vault without creating a file.",
+    "Real desktop pane, persisted homepage/search settings and a sandboxed remote page without Node or an opener",
+    "Switching tabs hides the native surface; Reading links open Web viewer and separate panes do not share website cookies",
+    "Pointer navigation, native back/forward and reload, Ctrl+F and actual find-in-page matches",
+    "New-window links stay contained; file links, vault-service navigation and redirects are blocked; no vault token reaches pages",
+    "Configured search safely encodes input; a full Electron/.NET restart restores URL, title, settings and unknown nested leaf state",
+    "Disable/enable and disabled process restart preserve unavailable leaf state, remove owned commands/ribbon and release browser contents; original workspace/settings data survive",
+    "Real source selections, edits/undo/redo and Reading mode count frontmatter only when selected, use reference numeric/punctuation/CJK/kana/Korean/Tamil/Tibetan rules and UTF-16 emoji/CRLF lengths without writing the note.",
+    "Outline uses actual ATX/Setext metadata, excludes YAML/comments/indented and nested-length fences, nests skipped levels correctly, folds by pointer/keyboard/all controls and follows real source-cursor navigation."
+  ],
+  "coreChecks": [
+    {
+      "id": "file-explorer:basic-navigation",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:execute",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:find-note",
+      "status": "passed"
+    },
+    {
+      "id": "outline:navigate",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:document",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:layout-roundtrip",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:settings",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:availability",
+      "status": "passed"
+    },
+    {
+      "id": "templates:settings",
+      "status": "passed"
+    },
+    {
+      "id": "templates:insert",
+      "status": "passed"
+    },
+    {
+      "id": "templates:date-time",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:settings",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:create-today",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:navigation",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:create-unique",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:settings",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "outline:settings",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:settings",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:settings",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:settings",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:settings",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:settings",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:settings",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:settings",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:open",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:new-tab",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "graph:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "properties:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "page-preview:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "templates:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "slash-command:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "outline:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "slides:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "audio-recorder:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "bases:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "webviewer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:restart",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:restart",
+      "status": "passed"
+    },
+    {
+      "id": "graph:restart",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:restart",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:restart",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:restart",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:restart",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:restart",
+      "status": "passed"
+    },
+    {
+      "id": "properties:restart",
+      "status": "passed"
+    },
+    {
+      "id": "page-preview:restart",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:restart",
+      "status": "passed"
+    },
+    {
+      "id": "templates:restart",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:restart",
+      "status": "passed"
+    },
+    {
+      "id": "slash-command:restart",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:restart",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:restart",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:restart",
+      "status": "passed"
+    },
+    {
+      "id": "outline:restart",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:restart",
+      "status": "passed"
+    },
+    {
+      "id": "slides:restart",
+      "status": "passed"
+    },
+    {
+      "id": "audio-recorder:restart",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:restart",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:restart",
+      "status": "passed"
+    },
+    {
+      "id": "bases:restart",
+      "status": "passed"
+    },
+    {
+      "id": "webviewer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "webviewer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "webviewer:browse",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:selection-unicode",
+      "status": "passed"
+    }
+  ],
+  "processes": [
+    {
+      "launcherPid": 31368,
+      "electronPid": 31368,
+      "dotnetPid": 3512,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 44888,
+      "electronPid": 44888,
+      "dotnetPid": 34124,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 46896,
+      "electronPid": 46896,
+      "dotnetPid": 47008,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 30004,
+      "electronPid": 30004,
+      "dotnetPid": 4648,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 46500,
+      "electronPid": 46500,
+      "dotnetPid": 33412,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "syntheticAudioOnly": true,
+  "physicalMicrophoneTested": false,
+  "createdVault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\core-verification-validation-20261027\\.runtime\\smoke-vault-3A37ed\\.startup-vaults\\Created vault",
+  "runtime": ".NET 10.0.14",
+  "rendererReloads": [
+    {
+      "previousLoader": "61222F83F8383C7E5B3A9923F9583C94",
+      "loader": "E2B730C1620B21594146B47FB0539D59"
+    }
+  ],
+  "note": "Folder/Core benchmark.md",
+  "exactSavedContent": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+  "restoredWorkspaceLayout": {
+    "version": 1,
+    "main": {
+      "id": "42d00c21-ad2e-45cf-92ba-039d57348acd",
+      "type": "split",
+      "direction": "vertical",
+      "children": [
+        {
+          "id": "48be13e7-7bc7-4885-9d10-1183dad50789",
+          "type": "tabs",
+          "children": [
+            {
+              "id": "af36897d-2f82-4972-96d3-9444a96e2472",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 0
+        },
+        {
+          "id": "2acb926c-1d61-4410-9832-c7382a3c4cce",
+          "type": "tabs",
+          "children": [
+            {
+              "id": "84eb343e-177d-4cc6-b0e8-4bb584e8e386",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": true
+              }
+            }
+          ],
+          "currentTab": 0
+        }
+      ]
+    },
+    "active": "84eb343e-177d-4cc6-b0e8-4bb584e8e386",
+    "left": {
+      "width": 260,
+      "collapsed": false
+    },
+    "right": {
+      "width": 260,
+      "collapsed": false
+    },
+    "views": {
+      "sidebars": {
+        "left": "file-explorer",
+        "right": "outline"
+      },
+      "workspace-navigation": {
+        "lastMainLeaf": "84eb343e-177d-4cc6-b0e8-4bb584e8e386",
+        "lastFile": "Folder/Core benchmark.md"
+      }
+    }
+  },
+  "existingObsidianPluginConfigurationUnchanged": true,
+  "existingObsidianWorkspaceUnchanged": true,
+  "controlledShutdownConsoleErrors": [],
+  "coreProcessRestarts": 4,
+  "coreFeatureFiles": {
+    "Template target.md": "Before # Template target\n2026.10.27 / 11:13:14 / 2026\n after",
+    "Clock.md": "Start 2026.10.27 / 11:13:15",
+    "Folder/Switcher created.md": "Created through quick switcher.\n",
+    "Journal/2026/10/27.md": "# 2026/10/27\nDay 2026-10-27\nKept edits.\n",
+    "Unique/Unique-2026-10-27.md": "# Unique-2026-10-27\nCreated 2026-10-27\n",
+    "Unique/Unique-2026-10-28.md": "# Unique-2026-10-28\nCreated 2026-10-27\n",
+    "Link target.md": "[[Unique-2026-10-27 Linked title]]"
+  },
+  "finalWorkspaceLayout": {
+    "version": 1,
+    "main": {
+      "id": "42d00c21-ad2e-45cf-92ba-039d57348acd",
+      "type": "split",
+      "direction": "vertical",
+      "children": [
+        {
+          "id": "48be13e7-7bc7-4885-9d10-1183dad50789",
+          "type": "tabs",
+          "children": [
+            {
+              "id": "af36897d-2f82-4972-96d3-9444a96e2472",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 0
+        },
+        {
+          "id": "2acb926c-1d61-4410-9832-c7382a3c4cce",
+          "type": "tabs",
+          "children": [
+            {
+              "id": "84eb343e-177d-4cc6-b0e8-4bb584e8e386",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": true
+              }
+            },
+            {
+              "id": "21639435-4ce0-4817-a3b9-d3139323a23a",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Clock.md"
+                },
+                "pinned": false
+              }
+            },
+            {
+              "id": "95ad84c1-581d-472d-ac5b-65e10802bd66",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Template target.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 2
+        }
+      ]
+    },
+    "active": "95ad84c1-581d-472d-ac5b-65e10802bd66",
+    "left": {
+      "width": 260,
+      "collapsed": false
+    },
+    "right": {
+      "width": 260,
+      "collapsed": false
+    },
+    "views": {
+      "sidebars": {
+        "left": "file-explorer",
+        "right": "outline"
+      },
+      "workspace-navigation": {
+        "lastMainLeaf": "95ad84c1-581d-472d-ac5b-65e10802bd66",
+        "lastFile": "Template target.md"
+      }
+    }
+  },
+  "error": "Error: Timed out waiting for active heading: Deep child\n    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/core-verification-validation-20261027/tools/smoke.mjs:311:9)\n    at async waitExpression (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/core-verification-validation-20261027/tools/smoke.mjs:403:3)\n    at async active (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/core-verification-validation-20261027/tools/editor-chrome-scenarios.mjs:420:5)\n    at async checkEditorChrome (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/core-verification-validation-20261027/tools/editor-chrome-scenarios.mjs:541:5)\n    at async checkEditorChromeWorkflows (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/core-verification-validation-20261027/tools/smoke.mjs:367:3)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/core-verification-validation-20261027/tools/smoke.mjs:1386:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\".outline-heading.is-active\\\")?.textContent===\\\"Deep child\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"globalThis.chromeEventRefs?.forEach(ref=>ref.emitter.offref(ref));delete globalThis.chromeEventRefs;delete globalThis.chromeEvents;delete globalThis.retainedOutlineButton\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise "
+    }
+  ],
+  "audio": {
+    "capture": "idle",
+    "tracks": 0,
+    "saved": null
+  },
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [
+      {
+        "key": "End",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 2698,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "End",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 2698,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 2698,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 2698,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "z",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": true,
+        "length": 2714,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "z",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": true,
+        "length": 2714,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "y",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 2698,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "y",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 2698,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "s",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": true,
+        "length": 2714,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "s",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": true,
+        "length": 2714,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "e",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 2723,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "e",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 2723,
+        "focus": "cm-content cm-lineWrapping"
+      }
+    ],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": true
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "af36897d-2f82-4972-96d3-9444a96e2472",
+        "type": "markdown",
+        "path": "Folder/Core benchmark.md",
+        "text": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "sessionText": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 74
+      },
+      {
+        "id": "84eb343e-177d-4cc6-b0e8-4bb584e8e386",
+        "type": "markdown",
+        "path": "Folder/Core benchmark.md",
+        "text": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "sessionText": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 74
+      },
+      {
+        "id": "21639435-4ce0-4817-a3b9-d3139323a23a",
+        "type": "markdown",
+        "path": "Clock.md",
+        "text": "Start 2026.10.27 / 11:13:15",
+        "sessionText": "Start 2026.10.27 / 11:13:15",
+        "dirty": false,
+        "selection": 0,
+        "length": 27
+      },
+      {
+        "id": "95ad84c1-581d-472d-ac5b-65e10802bd66",
+        "type": "markdown",
+        "path": "Editor chrome/Headings.md",
+        "text": "---\r\nnotes: |\r\n  # Hidden YAML\r\n---\r\n# External root\r\n\r\nRoot paragraph.\r\n\r\n````md\r\n# Hidden fence\r\n```\r\n## Still fenced\r\n````\r\n\r\n~~~md\r\n# Hidden tilde\r\n~~~\r\n\r\n    # Hidden indentation\r\n\r\n<!--\r\n# Hidden comment\r\n-->\r\n\r\nUnderlined section\r\n------------------\r\n\r\n#### Deep child\r\n\r\nLong paragraph 1 keep",
+        "sessionText": "---\r\nnotes: |\r\n  # Hidden YAML\r\n---\r\n# External root\r\n\r\nRoot paragraph.\r\n\r\n````md\r\n# Hidden fence\r\n```\r\n## Still fenced\r\n````\r\n\r\n~~~md\r\n# Hidden tilde\r\n~~~\r\n\r\n    # Hidden indentation\r\n\r\n<!--\r\n# Hidden comment\r\n-->\r\n\r\nUnderlined section\r\n------------------\r\n\r\n#### Deep child\r\n\r\nLong paragraph 1 keep",
+        "dirty": false,
+        "selection": 233,
+        "length": 2723
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "42d00c21-ad2e-45cf-92ba-039d57348acd",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "48be13e7-7bc7-4885-9d10-1183dad50789",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "af36897d-2f82-4972-96d3-9444a96e2472",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Folder/Core benchmark.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          },
+          {
+            "id": "2acb926c-1d61-4410-9832-c7382a3c4cce",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "84eb343e-177d-4cc6-b0e8-4bb584e8e386",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Folder/Core benchmark.md"
+                  },
+                  "pinned": true
+                }
+              },
+              {
+                "id": "21639435-4ce0-4817-a3b9-d3139323a23a",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Clock.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "95ad84c1-581d-472d-ac5b-65e10802bd66",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "preview",
+                    "source": true,
+                    "file": "Editor chrome/Headings.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 2
+          }
+        ]
+      },
+      "active": "95ad84c1-581d-472d-ac5b-65e10802bd66",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": false
+      },
+      "views": {
+        "sidebars": {
+          "left": "file-explorer",
+          "right": "outline"
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "95ad84c1-581d-472d-ac5b-65e10802bd66",
+          "lastFile": "Editor chrome/Headings.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "consoleErrors": [
+    "Error: The configured unique prefix format cannot produce an unused note name.\n    at CoreNotes.uniqueName (http://127.0.0.1:59409/js/editor-host.a6gwsy1sfc.js:73193:11)\n    at CoreNotes.createUnique (http://127.0.0.1:59409/js/editor-host.a6gwsy1sfc.js:73201:26)\n    at async CorePlugins.run (http://127.0.0.1:59409/js/editor-host.a6gwsy1sfc.js:73445:7)\n    at async Commands.execute (http://127.0.0.1:59409/js/editor-host.a6gwsy1sfc.js:89972:7)\n    at async Object.action (http://127.0.0.1:59409/js/editor-host.a6gwsy1sfc.js:92537:9)\n    at async DesktopUI.choose (http://127.0.0.1:59409/js/editor-host.a6gwsy1sfc.js:92695:5)",
+    "[2026-10-27T10:13:47.833Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T10:13:58.082Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T10:14:03.096Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T10:14:09.236Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T10:14:14.238Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T10:14:17.462Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T10:14:22.478Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T10:14:48.916Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 33412,
+  "electronPid": 46500,
+  "completedAt": "2026-10-27T10:14:49.104Z"
+}

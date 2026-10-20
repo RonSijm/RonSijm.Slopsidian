@@ -1,0 +1,26 @@
+{
+  "$comment": "Regression gates set with headroom over the first local measurements (Windows x64, i9-13980HX). They are NOT accepted performance targets.",
+  "bundles": {
+    "portableZipBytes": 290000000,
+    "setupBytes": 240000000,
+    "desktopTreeBytes": 520000000,
+    "uiAssetsBytes": 20000000,
+    "webFrameworkBrotliBytes": 3200000,
+    "webJsBrotliBytes": 3700000,
+    "webWasmBrotliBytes": 2400000
+  },
+  "largeVault": {
+    "notes": 5000,
+    "clientParseAllMs": 8000,
+    "clientSearchMaxMs": 500,
+    "hostReadyMs": 8000,
+    "hostVaultCallMs": 3000,
+    "hostMetadataCallMs": 90000,
+    "hostWorkingSetBytes": 300000000
+  },
+  "startup": {
+    "coldInteractiveMs": 20000,
+    "warmInteractiveMedianMs": 12000,
+    "workingSetBytes": 1200000000
+  }
+}

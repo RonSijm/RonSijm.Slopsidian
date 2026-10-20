@@ -1,0 +1,6 @@
+PASS A fixture-held real layout queue delays backend selection; its final source snapshot retains live core-view/opaque state and saves dirty note bytes, with no obsolete cleanup write or selected-vault warning.
+PASS Actual source/target switches restore the original live core view, pin and opaque layout fields; an explicit stale direct API write still receives 409 and cannot change the target layout.
+PASS An explicitly injected final-checkpoint failure keeps both hosts on the source vault and restores editability; normal note/layout saving and a real retry recover without disabling future saves or changing target data.
+PASS An actual dirty Canvas survives source/target/source vault changes: preflight persists its real model before owned unload clears it, no old-root or empty-model write occurs, and a fresh loaded pane restores exact saved data, pin and opaque state.
+PASS Independent source/target layouts, opaque fields, live core views and exact note/Canvas/BOM/CRLF/binary/original settings bytes survive a full desktop-process restart with clean client and host error banners.
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

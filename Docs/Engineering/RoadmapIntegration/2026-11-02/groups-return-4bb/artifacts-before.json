@@ -1,0 +1,27 @@
+[
+  {
+    "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+    "bytes": 551424,
+    "sha256": "bc549ba11ac45468283b25fe2e4ba4d665982a91d1c2453c22f3f9af4a20fc20"
+  },
+  {
+    "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+    "bytes": 4843237,
+    "sha256": "5d092bdd429f7a5d5761ebdb11d3df015dd91e3ab87ba668c549d01b5fc2c59b"
+  },
+  {
+    "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+    "bytes": 4843237,
+    "sha256": "5d092bdd429f7a5d5761ebdb11d3df015dd91e3ab87ba668c549d01b5fc2c59b"
+  },
+  {
+    "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+    "bytes": 167,
+    "sha256": "5bd25eb6455f39ec06240d8836a40f7afc620c52ce4dcb7af8b9be188080f007"
+  },
+  {
+    "path": ".runtime\\web\\wwwroot\\core-verification.json",
+    "bytes": 167,
+    "sha256": "5bd25eb6455f39ec06240d8836a40f7afc620c52ce4dcb7af8b9be188080f007"
+  }
+]

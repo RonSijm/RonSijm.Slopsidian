@@ -1,0 +1,10 @@
+{
+  "status": "focus-diagnostic-only",
+  "focus": "cancel",
+  "sourceFingerprint": "922c10d580ccca98d6f01739b8039549880c0159ca92737cffe4f8354d2e4b70",
+  "scenarios": [
+    "cold online page is unprepared and caches nothing until the user asks",
+    "cancel keeps verified files without adopting, resume reuses them, and remove deletes the copy and worker (real pointer)"
+  ],
+  "note": "Not acceptance evidence; the full run is still required."
+}

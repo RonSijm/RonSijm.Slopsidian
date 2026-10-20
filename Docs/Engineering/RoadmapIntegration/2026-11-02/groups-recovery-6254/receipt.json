@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "sourceBefore": "6254dce620bd9f6ae4461741d1534465cae1efc1c92bb694884f96fcf717d7f1",
+  "boundary": "Combined Reader channel/real-close/popup-policy integration, parent unexpected-close recovery and source-only cross-window tab moves. Build/regression evidence only; no common-main GUI or OS drag acceptance.",
+  "commands": [
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\groups-recovery-integrated-validation-51456086-2e15-4c17-9899-cd375100f255\\build.log",
+      "exitCode": 0,
+      "command": "npm run build"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\groups-recovery-integrated-validation-51456086-2e15-4c17-9899-cd375100f255\\build-web.log",
+      "exitCode": 0,
+      "command": "npm run build:web"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\groups-recovery-integrated-validation-51456086-2e15-4c17-9899-cd375100f255\\verify-web.log",
+      "exitCode": 0,
+      "command": "npm run verify:web"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\groups-recovery-integrated-validation-51456086-2e15-4c17-9899-cd375100f255\\test.log",
+      "exitCode": 0,
+      "command": "npm run test"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\groups-recovery-integrated-validation-51456086-2e15-4c17-9899-cd375100f255\\test-github.log",
+      "exitCode": 0,
+      "command": "npm run test:github"
+    }
+  ],
+  "tests": {
+    "test": {
+      "pass": 1230,
+      "fail": 0,
+      "tests": 1230,
+      "cancelled": 0,
+      "skipped": 0
+    },
+    "test:github": {
+      "pass": 44,
+      "fail": 0,
+      "tests": 44,
+      "cancelled": 0,
+      "skipped": 0
+    }
+  },
+  "artifacts": [
+    {
+      "sha256": "c2fab4b096fb591b8bed4bab0c1c0fecf55497e2c2ca55a3d5fe6ca88369666b",
+      "bytes": 588800,
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll"
+    },
+    {
+      "sha256": "2f885e1231143b45ec16fef858c07470059d5bcb9db9285f3b3a1ba69189d87c",
+      "bytes": 4916572,
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js"
+    },
+    {
+      "sha256": "2f885e1231143b45ec16fef858c07470059d5bcb9db9285f3b3a1ba69189d87c",
+      "bytes": 4916572,
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js"
+    },
+    {
+      "sha256": "1651d836b8b7e626c8edf736e3c2fa67f144332bcf7227998b1db0380a2ce231",
+      "bytes": 37676,
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json"
+    },
+    {
+      "sha256": "618c9f4a72a70a45eab864b19ea089a91cc4e8a3b7e32a63ab4dae757d103a91",
+      "bytes": 6303,
+      "path": ".runtime\\web\\wwwroot\\service-worker.js"
+    }
+  ],
+  "sourceAfter": "6254dce620bd9f6ae4461741d1534465cae1efc1c92bb694884f96fcf717d7f1",
+  "completedAt": "2026-11-02T02:14:55.5299599Z"
+}

@@ -1,0 +1,9 @@
+PASS An external app.json edit is detected by the lifecycle-owned poll and reaches the open Files and links controls and vault.getConfig without a manual Reload or any write.
+PASS A focused Files and links control keeps its original conflict baseline when an external edit lands: the pending write is refused with an explicit 409, the external file is untouched, and only explicit Reload rebases. Unknown keys and the BOM survive the rebased write.
+PASS Core settings: external JSON edits are adopted while subscribed, a focused draft is kept with a stale notice, its stale save is refused without touching disk, and the next versioned save preserves unknown keys and the BOM.
+PASS A stale core or configuration version is refused with an explicit error; a missing version is refused (428) on the desktop wire; disk bytes are unchanged.
+PASS Held queued and mid-read updates are rejected explicitly after same-root clear/re-entry (never replayed under the new generation) while ordinary queued writes still all apply in order.
+PASS vault.setConfigAsync writes supported keys and rejects unsupported or invalid ones; the saved preference drives the real New note creator while a live editor keeps its identity, text and undo history and existing notes are not rewritten.
+PASS App and core configuration, their versions and unknown data survive a full desktop restart.
+PASS Cache-only GitHub vaults poll and write only the local overlay: stale versions are refused, versioned overlay saves persist across reload, there are zero API/raw requests and cached repository blobs are unchanged.
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

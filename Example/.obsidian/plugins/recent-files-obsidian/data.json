@@ -1,0 +1,72 @@
+{
+  "recentFiles": [
+    {
+      "basename": "Start here",
+      "path": "Start here.md"
+    },
+    {
+      "basename": "File recovery",
+      "path": "10 Core/File recovery.md"
+    },
+    {
+      "basename": "Vault map",
+      "path": "90 Attachments/Vault map.svg"
+    },
+    {
+      "basename": "Synthetic tone",
+      "path": "90 Attachments/Synthetic tone.wav"
+    },
+    {
+      "basename": "Isolated thought",
+      "path": "98 Archive/Isolated thought.md"
+    },
+    {
+      "basename": "Alex",
+      "path": "70 Data/People/Alex.md"
+    },
+    {
+      "basename": "Base record",
+      "path": "70 Data/File classes/Base record.md"
+    },
+    {
+      "basename": "Workshop workflow",
+      "path": "60 Visuals/Workshop workflow.md"
+    },
+    {
+      "basename": "Sketch",
+      "path": "60 Visuals/Sketch.excalidraw"
+    },
+    {
+      "basename": "Project constellation",
+      "path": "60 Visuals/Project constellation.canvas"
+    },
+    {
+      "basename": "Project board",
+      "path": "60 Visuals/Project board.md"
+    },
+    {
+      "basename": "A tiny presentation",
+      "path": "60 Visuals/A tiny presentation.md"
+    },
+    {
+      "basename": "Iconize",
+      "path": "20 Community/Iconize.md"
+    },
+    {
+      "basename": "Garden",
+      "path": "30 Projects/Garden.md"
+    },
+    {
+      "basename": "Community workshop",
+      "path": "30 Projects/Community workshop.md"
+    },
+    {
+      "basename": "Various Complements",
+      "path": "20 Community/Various Complements.md"
+    }
+  ],
+  "omittedPaths": [],
+  "omittedTags": [],
+  "updateOn": "file-open",
+  "omitBookmarks": false
+}

@@ -1,0 +1,16 @@
+{
+  "observation": "A prior full run timed out on a native filesystem revision assertion; unchanged isolated metadata5test suite passed. This unchanged full run records only observed success, not a proven fix or dismissal of that watch-delivery observation.",
+  "status": "passed",
+  "hostBinarySha256": "da1e39f7f25e02e443a860524250dc85b4d3755ae20ab67653e3e9fc33faac7b",
+  "completedAt": "2026-11-01T21:09:30.8655520Z",
+  "sourceBefore": "8d9113cffacfa9ca2ecc6313eb0295b47ef94eba00960b62476ed530721ddde4",
+  "tests": {
+    "todo": 0,
+    "pass": 1089,
+    "skipped": 0,
+    "fail": 0,
+    "tests": 1089,
+    "cancelled": 0
+  },
+  "sourceAfter": "8d9113cffacfa9ca2ecc6313eb0295b47ef94eba00960b62476ed530721ddde4"
+}

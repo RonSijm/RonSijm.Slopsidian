@@ -1,0 +1,60 @@
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile-native-recents-1793591469299\logs\errors-smoke-255cee6c-f4a9-49c3-a129-400ce223c1da.jsonl
+(node:42832) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:23642/devtools/browser/348242c2-ebff-4e7f-a8b5-601d7f89d2b2
+ELECTRON_HOST_PID 42832
+DOTNET_HOST_PID 44120
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-DhM1Ku
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55745
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:55745
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\native-recents-vaults-f75xSs\Recent Alpha
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\native-recents-vaults-f75xSs\Recent Beta
+fail: RonSijm.Slopsidian.Components.Pages.Home[0]
+      Vault operation failed
+      RonSijm.Slopsidian.Services.VaultException: The selected folder does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ExistingDirectory(String path) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.cs:line 706
+         at RonSijm.Slopsidian.Services.VaultService.OpenAsync(String path, CancellationToken cancellationToken) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Services\VaultService.cs:line 20
+         at RonSijm.Slopsidian.Components.Pages.Home.ChangeVaultAsync(Func`1 open, Boolean remember) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Components\Pages\Home.razor.cs:line 188
+         at RonSijm.Slopsidian.Components.Pages.Home.ChangeVaultAsync(Func`1 open, Boolean remember) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Components\Pages\Home.razor.cs:line 206
+         at RonSijm.Slopsidian.Components.Pages.Home.RunAsync(Func`1 operation) in D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian\Components\Pages\Home.razor.cs:line 385
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\native-recents-vaults-f75xSs\Recent Alpha
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RONSIJM\RONSIJM.SLOPSIDIAN\.RUNTIME\NATIVE-RECENTS-VAULTS-F75XSS\RECENT BETA
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Created vault D:\RonSijm\RonSijm.Slopsidian\.runtime\native-recents-vaults-f75xSs\Recent Gamma Created
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile-native-recents-1793591469299\logs\errors-smoke-255cee6c-f4a9-49c3-a129-400ce223c1da.jsonl
+(node:716) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:59822/devtools/browser/30ed837e-a064-4fdf-806b-88097e4184b5
+ELECTRON_HOST_PID 716
+DOTNET_HOST_PID 45388
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-DhM1Ku
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:64437
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:64437
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

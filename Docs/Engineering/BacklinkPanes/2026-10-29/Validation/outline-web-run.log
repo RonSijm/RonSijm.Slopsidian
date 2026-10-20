@@ -1,0 +1,20 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS A first-open original layout restores real main/sidebar Outline panes with independent note/filter/follow state, pins and opaque fields, alongside Source and Reading notes; parsed ATX/Setext headings exclude metadata, code and comments without changing BOM/CRLF/Unicode bytes.
+PASS Real filtering retains ancestors and saved ordinary folds, keyboard arrows navigate the hierarchy and Enter reveals the exact Source heading. Active-heading following leaves editor focus and independent pinned-note panes intact.
+PASS Pinned-note navigation activates an existing Reading pane and reveals/highlights its real heading without changing mode or bytes. Follow active note switches targets; turning it off retains an independent note until following resumes.
+PASS An immediate stale heading click after a real editor transaction refuses obsolete navigation. Dirty undo/redo and inserted lines retain fold identity; genuine external writes refresh headings and guarded rename remaps fixed-note panes without touching the original workspace.
+PASS An enabled fixture plugin uses real ItemView/App/file/factory contracts and the guarded setFile method through its palette command. Malformed state refuses atomically without changing the live pane or reporting an unhandled error.
+PASS Disabling Outline unloads owners/handlers and retains exact unavailable state without waiting on a held real read. Fresh owners use newer physical content after re-enable; releasing the old read, detached controls and stale API calls cannot replace or retarget them.
+PASS Full restart or actual-folder reconnection restores independent targets/filters/folds and original workspace bytes. An explicit legacy sidebar choice wins on later reopen; the command palette creates another real Outline tab.

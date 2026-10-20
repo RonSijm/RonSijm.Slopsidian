@@ -1,0 +1,311 @@
+{
+  "status": "passed",
+  "scope": "file-explorer-workspace-panes",
+  "startedAt": "2026-10-28T16:31:47.177Z",
+  "checks": [
+    "Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.",
+    "The actual OS folder picker grants a live external vault, including binary attachment inventory.",
+    "Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.",
+    "External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.",
+    "The shared note-creation UI creates folders and writes a new Markdown note directly to disk.",
+    "Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.",
+    "Core enablement and the unchanged upstream sample plugin save settings into the selected vault.",
+    "Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.",
+    "External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.",
+    "A real page reload is blocked while a buffer has unsaved changes.",
+    "Cancelling the native folder picker retains the selected vault and dirty buffer.",
+    "Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.",
+    "A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.",
+    "A first-open original layout restores real, pinned Files views in main tabs and a visible sidebar, independent folding/filter/sort and opaque state, alongside an intact Source note.",
+    "Real pointer and keyboard navigation unfolds folders, filters paths case-insensitively without changing another pane, opens files without replacing a pinned explorer, and reveals the active note without stealing editor focus.",
+    "Unsupported attachments remain browsable without errors; enabling an actual fixture plugin updates existing panes and opens its FileView through Ctrl-click. Keyboard context menus deliver the real file-menu event.",
+    "Files creates a real folder through the guarded dialog, re-enables controls after mutation, observes an external file on Refresh, and leaves a live unsaved editor and its disk bytes intact while folding panes.",
+    "Unchanged Iconize 2.14.7 renders configured folder/file emoji on real materialized rows and retains them through folding with clean diagnostics; broader private tree and assignment workflows remain unverified.",
+    "Disabling Files closes and unloads its real views, retains exact saved/opaque state in unavailable panes and removes commands. Detached controls are inert; re-enabling creates fresh live owners with restored state.",
+    "A full restart/reconnect restores independent states, pins, late providers and original source bytes; an explicit legacy sidebar choice wins on later reconnect. The command palette opens a fresh Files tab.",
+    "A genuine cache-only GitHub vault imports a live Files pane, opens cached Markdown read-only, disables mutations, saves folder preferences independently with zero network requests, and preserves every remote blob through return to the local vault."
+  ],
+  "rendererNodeIntegration": false,
+  "realExternalDirectoryPicker": true,
+  "pickerStartsInDisposableDocuments": true,
+  "endpoint": "http://127.0.0.1:48223/",
+  "sha256": {
+    "index.html": "1bddf781d7a183c544cde5c9962c29170eab2e3d18feb06e8f414a3e28c67cb6",
+    "app.css": "addf6e1f86f5ea0f9cdae5f255c2cf5404adb39210d9ea87521379187caabef6",
+    "browser.css": "cb31285e1f8c3934a1c93e0448f271ceb9156ca4fe5c80deb081c70471404a67",
+    "icons.svg": "e659196481c2d85f3e52bed31460946e6b2d6351235b87ce1f87e8526beeab0c",
+    "icons-LICENSE.txt": "c059ec5ba27c5876963f0678f63d2182a6fb6ce97d45ed8b6472ec0c2ec189bf",
+    "core-verification.json": "82689c50ca573f7959cea7de555d5afb07b6b364ba50299a675b74f262ea7879",
+    "lucide-icons.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+    "lucide-icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "mermaid-frame.html": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333",
+    "js/mermaid-frame.js": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62",
+    "js/mermaid-api.js": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a",
+    "js/mermaid-api.js.LEGAL.txt": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1",
+    "js/mermaid-licenses.txt": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735",
+    "js/editor-host.js": "49670899d8654f6e0685110b5e1beccbc8a7d377afc5a1be51438454a518d1a3",
+    "js/editor-host.css": "a1722e5be597e95ca83efa44391bcf9f525fe74522423a3075d5db6d087f00f6",
+    "js/codemirror-license.txt": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07",
+    "js/hypermd-license.txt": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b",
+    "js/web-reader-extract.js": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601",
+    "js/web-reader-extract.js.LEGAL.txt": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a",
+    "js/web-reader-licenses.txt": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b",
+    "js/browser-host.js": "40f3f90bcd526272cc6fe79eb47a7ae34a16922e4d01b7ddfa1d80fd2ddc3c48",
+    "js/search-worker.js": "6b24e0d9f29c3425b36b99efef28bce277c5c55bc93527fd395d5aa0b8765f84",
+    "js/graph-worker.js": "83b481a7e38ca1bc3e7f88a942400d83aa36449ce23f80edbfeb87e595f0d010",
+    "js/bases-worker.js": "719be94513c09032762919eb1ae7feae12f202e52d08693ed9aa035f039988c6",
+    "_framework/RonSijm.Slopsidian.Web.ixfs9cwbf5.wasm": "a6588c2f8bb36dda5d6fd95503af4541b185f3acc34007c5e39fda70f05e03fa"
+  },
+  "scenarioSha256": {
+    "web-smoke.mjs": "4ad656ec74ffe1f06fa41f437c564441437fc2ac88659ccd9d9bd07deec5a82c",
+    "web-smoke-host.cjs": "38f2d99a0c1f70a962857c3dc17489e3bacbd913c9fddc7e0008d6c4446ea381",
+    "core-foundation-scenarios.mjs": "bfe37918fc6723c519fc6f7d2e992b1a49e885a2ae052f8b89ab8e9afd0d4905",
+    "core-scenarios.mjs": "b16bdf012477e16953b7d4cc9f0df6a502ae71403f369dbab6c5dda5b4482c3f",
+    "core-verification-targets.mjs": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86",
+    "core-verification-scenarios.mjs": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539",
+    "tab-movement-scenarios.mjs": "ca65db3f8f47a6e8bb920d93876e8420dc36338e8d936b827755f9569bfe0227",
+    "pane-resize-scenarios.mjs": "8c6d2f0c6184de5fd21eeb1d977b8737e5bf12f83f07f5a73d1e9e0132d80ac0",
+    "reading-scenarios.mjs": "b3cef9a15c8a0bbbec81bcd83f09f5d03aa0f67f42ab843aeacfb1d7af6853f1",
+    "outgoing-scenarios.mjs": "6a15662333f510e069e014e533eff13b6cb974a0ed7d720cad5e6bd9f4a0b5ca",
+    "discovery-scenarios.mjs": "eb2c3d978e7faab8df02335911a78b5b760416aaaf4f8c3eba80003557d9881c",
+    "editor-chrome-scenarios.mjs": "580c2f69b378757fbbcae5ae0ed219fe69e2af0047494e4705ed9c5958ab3a19",
+    "suggestion-scenarios.mjs": "a2bd9f49ca0261a0ed9316966c579b7df5bfe96f6e5563b38d13e8f2f5ded873",
+    "renderer-scenarios.mjs": "5ea3154e5ea83cf9c3ee93c0269ff974e8c979e52a0129584593126daffb57a6",
+    "render-child-scenarios.mjs": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611",
+    "templater-scenarios.mjs": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594",
+    "organization-scenarios.mjs": "6d356a9471a8ece167567d0e0aaf54e73f7aa4aa31d99563467a2f9f6557932a",
+    "file-scenarios.mjs": "d1a4a84690fc5bfad4d49b36fd762902ef8c3aa7ef53ce78c1a9a00ce10cf60a",
+    "graph-scenarios.mjs": "50cd7e334239383d403b196d4b2ad16949e92227efb7de019ca4474ee0b9ce18",
+    "canvas-scenarios.mjs": "527b53ef071670b5254974625f6dd410bfdac1ae21e6e84db8f4c7e17acb40ad",
+    "preview-scenarios.mjs": "e569ff60187a0306903d5ba47fc6e9133454d929b3d49a560ce88e49f41e5ad1",
+    "editing-tools-scenarios.mjs": "7c02dd1493956840958e2c4667c61a7a737afc915401dd54e77d9bfbbc4e36d2",
+    "format-scenarios.mjs": "e0c7a1583b6bbbed9e032eab1768ac6942d070c5b8756257b84054c9f56de731",
+    "composer-scenarios.mjs": "28893c704bd8067cd1237133f58d5b2ead7eb05a6b2d392a219a77c23b9d47c9",
+    "menu-scenarios.mjs": "a2f3232c5e40b17929197b845250c60411cc32420f65eb5d2267785b2d83a8ff",
+    "bases-scenarios.mjs": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d",
+    "bases-summary-scenarios.mjs": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47",
+    "recovery-scenarios.mjs": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472",
+    "view-scenarios.mjs": "5486d539b55e48e297034eadbbcbe76ad53bdc9153ae437c1e68390af136511d",
+    "audio-scenarios.mjs": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c",
+    "mermaid-scenarios.mjs": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8",
+    "workspace-import-scenarios.mjs": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863",
+    "community-plugin-test-helpers.mjs": "a5a42c9e7728fdcee7d8fd61094bd55114cd90df183164d0af6937f482b8e8f9",
+    "tools/file-explorer-scenarios.mjs": "c4d19025a541f836cba35e4d7e05ac246ed6448410080325ed8b4c511bcc54ad",
+    "client/file-explorer-model.ts": "5f8ccfed4ac92d0c1d35618ec2583340069befdbf65ed3285e70ea61d965f16b",
+    "client/file-explorer-view.ts": "c26459e3a4c7efc5cfee998852e11ef1b6298b315a1ae507eba09fc40cdf926c",
+    "client/desktop-ui.ts": "0b9da547ba0b52d5fea011f89f09a8014eac0f328b0d1bbe75306414ec7783ce",
+    "client/sidebars.ts": "730c5e0c7341105c81470b542a343bcb97ab2e3cc5eee14df457bb367075e52f",
+    "tests/file-explorer.test.mjs": "88c67984807583a68f7f303883c4a62bb421ab3ade5858d139db95a0a9f9ce66",
+    "src/RonSijm.Slopsidian/wwwroot/app.css": "addf6e1f86f5ea0f9cdae5f255c2cf5404adb39210d9ea87521379187caabef6",
+    "select-test-folder.ps1": "9a18d1edcde9b5d252972012ba70bf3810c8bbc72a50958bad469dba164946f0"
+  },
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes; production launch is unchanged.",
+  "lastInteraction": {
+    "type": "click",
+    "selector": "[data-recent-vault=\"browser-vault:6641c0d0-cd1f-4975-a79d-e110a51a3dc5\"]"
+  },
+  "expectedDiagnostics": [
+    {
+      "id": "f57b39fa-b8da-41c9-82dd-670d105eb66d:0",
+      "source": "host",
+      "message": "This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.",
+      "reason": "Check browser explicit-save conflict protection"
+    }
+  ],
+  "sourceFingerprint": "bbf5f0e4aa2b5890779d1c8e1c3d1c4c8f87b4772b71c84be14b6c497782aed6",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": false,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "fileExplorer": {
+    "iconize": {
+      "version": "2.14.7",
+      "sha256": {
+        "main.js": "b68bcfd318d678892f671736e54396fd72414180736e58f164fb17a3f72a22e1",
+        "manifest.json": "f524a18d69e990a244173a3595681c39a20bcbc9dc18b59af51e45660fef5ca2",
+        "styles.css": "56ffeb8349f4af97dab8a14fcadcb0019d3b37b116d7a34aa21e958e98455a89"
+      },
+      "scope": "unchanged package startup and configured file/folder emoji retained through fold/expand; broader private tree, rule and icon-assignment workflows remain unverified"
+    },
+    "readOnly": {
+      "genuineCacheOnlyMount": true,
+      "importedFilesPane": true,
+      "noteOpened": true,
+      "mutationControlsDisabled": true,
+      "viewPreferencesPersisted": true,
+      "allBlobsUnchanged": true,
+      "counters": {
+        "api": 0,
+        "raw": 0,
+        "cacheHits": 4
+      },
+      "returnedToLocal": true
+    }
+  },
+  "artifactStability": "verified-through-scenario",
+  "exceptions": [],
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\file-explorer-validation-20261028\\.runtime\\evidence\\file-explorer-web-smoke-errors.jsonl",
+    "nativePaths": [],
+    "records": 1,
+    "expected": 1,
+    "unexpected": [],
+    "sha256": "5d8d72cae73a28d7c20cd3ed25ece67953902fd5e3312c9db4516302d1faa656",
+    "includesFinalTeardown": true
+  },
+  "completedAt": "2026-10-28T16:32:24.723Z"
+}

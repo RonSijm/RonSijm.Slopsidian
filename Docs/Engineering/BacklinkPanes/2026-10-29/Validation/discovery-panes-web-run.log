@@ -1,0 +1,21 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS An original workspace imports real main/sidebar Tags and FileView-backed Footnotes, retaining independent state, unknown fields, native nested defaults and pinned-note targeting. Numbered Markdown previews follow first references; missing/duplicate/unused definitions are explicit and original BOM/CRLF bytes stay exact.
+PASS Real tag controls preserve independent ordinary/temporary folds, expose all four sort choices and switch flat/nested layout. Arrow/Home/End keys traverse the actual tree while another pane's filter remains unchanged.
+PASS Pointer and Ctrl+Enter activation drive an actual registered, worker-backed Search pane rather than stale legacy query state. Modified activation appends or removes the first literal fragment without normalizing the remaining query or changing notes.
+PASS Footnote definition/reference buttons reveal exact Source ranges in existing note panes, including an explicit Reading-to-Source transition. Follow controls switch or retain a note independently; a pinned sidebar keeps its file and browsing never writes note bytes.
+PASS An enabled fixture plugin exercises real ItemView/FileView/App/file identities, actual provider factories, showSearch/setFile and leaf.openFile retaining the Footnotes provider. Malformed state refuses atomically without replacing a pane.
+PASS Immediate obsolete controls after a real editor transaction cannot select an old footnote range or search a removed tag. Dirty edits, actual undo/redo/save, external physical writes and guarded rename refresh both provider types while keeping fixed-note identities.
+PASS Real provider disable/re-enable unloads owners and handlers without waiting for held file reads. Fresh owners render newer physical content; releasing every old read, detached controls and stale public API calls cannot replace them.
+PASS Full restart or actual-folder reconnection restores independent targets, sorts, filters, folds, opaque state and pinned notes. Explicit legacy sidebar preference wins on reopen; real palette commands create additional providers without rewriting the original workspace or per-module configuration.

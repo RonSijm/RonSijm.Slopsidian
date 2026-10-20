@@ -1,0 +1,579 @@
+{
+  "status": "focus-diagnostic-only",
+  "focus": "eviction",
+  "sourceFingerprint": "ecb81c79c6306a4c25756e20f62f155231d53a4a70c85257c1f2afb0f239237e",
+  "scenarios": [
+    {
+      "name": "cold online page is unprepared and caches nothing until the user asks",
+      "ms": 1913,
+      "pages": [
+        {
+          "page": "online",
+          "url": "http://127.0.0.1:8083/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 47,
+          "policy": "online cold page",
+          "actions": [],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it",
+      "ms": 4221,
+      "pages": [
+        {
+          "page": "prepare",
+          "url": "http://127.0.0.1:8083/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 365,
+          "policy": "prepared page",
+          "actions": [
+            {
+              "control": "prepare",
+              "stage": "before-summary-click",
+              "at": 1793588535275,
+              "present": true,
+              "open": false,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-summary-click",
+              "at": 1793588535291,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "before-control-click",
+              "at": 1793588535294,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-control-click",
+              "at": 1793588535438,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "busy",
+              "error": "",
+              "status": "Preparing the offline app…"
+            }
+          ],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "an evicted file is reported honestly offline (503, never a network or mixed fallback)   and a real-pointer repair restores it",
+      "ms": 3751,
+      "pages": [
+        {
+          "page": "evicted",
+          "url": "http://127.0.0.1:8083/",
+          "errors": [
+            {
+              "kind": "log",
+              "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+              "url": "http://127.0.0.1:8083/browser.css"
+            },
+            {
+              "kind": "log",
+              "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+              "url": "http://127.0.0.1:8083/browser.css"
+            }
+          ],
+          "failedLoads": [
+            {
+              "url": "http://127.0.0.1:8083/browser.css",
+              "error": "net::ERR_ABORTED",
+              "at": 1793588539413
+            }
+          ],
+          "badResponses": [
+            {
+              "url": "http://127.0.0.1:8083/browser.css",
+              "status": 503
+            },
+            {
+              "url": "http://127.0.0.1:8083/browser.css",
+              "status": 503
+            }
+          ],
+          "requests": 95,
+          "policy": "eviction",
+          "actions": [
+            {
+              "control": "verify",
+              "stage": "before-summary-click",
+              "at": 1793588540224,
+              "present": true,
+              "open": false,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": null,
+              "state": "incomplete",
+              "error": "",
+              "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+            },
+            {
+              "control": "verify",
+              "stage": "after-summary-click",
+              "at": 1793588540265,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "incomplete",
+              "error": "",
+              "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+            },
+            {
+              "control": "verify",
+              "stage": "before-control-click",
+              "at": 1793588540272,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "incomplete",
+              "error": "",
+              "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+            },
+            {
+              "control": "verify",
+              "stage": "after-control-click",
+              "at": 1793588540310,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "busy",
+              "error": "",
+              "status": "Verifying every saved file…"
+            },
+            {
+              "control": "prepare",
+              "stage": "panel-already-open",
+              "at": 1793588541102,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "corrupt",
+              "error": "",
+              "status": "0 damaged and 1 missing files. Repair the offline app while online."
+            },
+            {
+              "control": "prepare",
+              "stage": "before-control-click",
+              "at": 1793588541103,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "corrupt",
+              "error": "",
+              "status": "0 damaged and 1 missing files. Repair the offline app while online."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-control-click",
+              "at": 1793588541107,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "busy",
+              "error": "",
+              "status": "Preparing the offline app…"
+            }
+          ],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    }
+  ],
+  "pageDiagnostics": [
+    {
+      "page": "online",
+      "url": "http://127.0.0.1:8083/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 47,
+      "policy": "online cold page",
+      "actions": [],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": false,
+          "lifecycle": [],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 37164\n\r\nDevTools listening on ws://127.0.0.1:8084/devtools/browser/bd0dd0a8-8c95-4fdc-aaea-ca5c382bd083\r\nWEB_QUIT_ACK 17c6511d-6950-4f35-b6c2-9cb2d40b35ef\n"
+    },
+    {
+      "page": "prepare",
+      "url": "http://127.0.0.1:8083/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 365,
+      "policy": "prepared page",
+      "actions": [
+        {
+          "control": "prepare",
+          "stage": "before-summary-click",
+          "at": 1793588535275,
+          "present": true,
+          "open": false,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-summary-click",
+          "at": 1793588535291,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "before-control-click",
+          "at": 1793588535294,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-control-click",
+          "at": 1793588535438,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "busy",
+          "error": "",
+          "status": "Preparing the offline app…"
+        }
+      ],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": "The DevTools socket failed.",
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 44112\n\r\nDevTools listening on ws://127.0.0.1:7453/devtools/browser/5e6e044d-ebc3-4bdb-90f5-343c09a26744\r\nWEB_QUIT_ACK ef947cae-c00b-4c6a-949a-9d81d02070ca\n"
+    },
+    {
+      "page": "evicted",
+      "url": "http://127.0.0.1:8083/",
+      "errors": [
+        {
+          "kind": "log",
+          "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+          "url": "http://127.0.0.1:8083/browser.css"
+        },
+        {
+          "kind": "log",
+          "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+          "url": "http://127.0.0.1:8083/browser.css"
+        }
+      ],
+      "failedLoads": [
+        {
+          "url": "http://127.0.0.1:8083/browser.css",
+          "error": "net::ERR_ABORTED",
+          "at": 1793588539413
+        }
+      ],
+      "badResponses": [
+        {
+          "url": "http://127.0.0.1:8083/browser.css",
+          "status": 503
+        },
+        {
+          "url": "http://127.0.0.1:8083/browser.css",
+          "status": 503
+        }
+      ],
+      "requests": 95,
+      "policy": "eviction",
+      "actions": [
+        {
+          "control": "verify",
+          "stage": "before-summary-click",
+          "at": 1793588540224,
+          "present": true,
+          "open": false,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": null,
+          "state": "incomplete",
+          "error": "",
+          "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+        },
+        {
+          "control": "verify",
+          "stage": "after-summary-click",
+          "at": 1793588540265,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "incomplete",
+          "error": "",
+          "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+        },
+        {
+          "control": "verify",
+          "stage": "before-control-click",
+          "at": 1793588540272,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "incomplete",
+          "error": "",
+          "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+        },
+        {
+          "control": "verify",
+          "stage": "after-control-click",
+          "at": 1793588540310,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "busy",
+          "error": "",
+          "status": "Verifying every saved file…"
+        },
+        {
+          "control": "prepare",
+          "stage": "panel-already-open",
+          "at": 1793588541102,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "corrupt",
+          "error": "",
+          "status": "0 damaged and 1 missing files. Repair the offline app while online."
+        },
+        {
+          "control": "prepare",
+          "stage": "before-control-click",
+          "at": 1793588541103,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "corrupt",
+          "error": "",
+          "status": "0 damaged and 1 missing files. Repair the offline app while online."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-control-click",
+          "at": 1793588541107,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "busy",
+          "error": "",
+          "status": "Preparing the offline app…"
+        }
+      ],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": "The DevTools socket failed.",
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 26760\n\r\nDevTools listening on ws://127.0.0.1:1755/devtools/browser/8cf5ce9b-7801-4974-ab8b-a19db085d871\r\nWEB_QUIT_ACK 5d0197fe-ebf5-4906-a29a-b0bc9a12f5fc\n"
+    }
+  ],
+  "githubIndexUi": null,
+  "workerOnly": null,
+  "quota": null,
+  "limits": [
+    "A damaged index.html or adoption/manifest record leaves the offline shell unable to repair itself from the page; recovery is clearing site data (exercised with Storage.clearDataForOrigin) and preparing again.",
+    "Worker update rollback is not atomic: a new worker is only admitted while the adoption record names it, but if it finished activating before a rollback write, it stays active against the restored record and fails closed (network online, explicit 503 offline) until the user prepares again. The harness exercises the rejected-install and successful A-to-B paths, not that race."
+  ],
+  "note": "Not acceptance evidence; the full run is still required."
+}

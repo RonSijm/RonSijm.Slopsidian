@@ -1,0 +1,9 @@
+{
+  "format": "YYYY-MM-DD",
+  "timeFormat": "HH:mm",
+  "separator": " ",
+  "weekStart": "monday",
+  "autocompleteTriggerPhrase": "@",
+  "isAutosuggestEnabled": true,
+  "autosuggestToggleLink": true
+}

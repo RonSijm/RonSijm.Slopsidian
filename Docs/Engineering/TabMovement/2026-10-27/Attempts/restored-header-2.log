@@ -1,0 +1,20 @@
+
+(node:31640) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:58227/devtools/browser/a6dfc929-7340-47b0-ae7f-0a9387d9c427
+ELECTRON_HOST_PID 31640
+DOTNET_HOST_PID 45224
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-Y1yJXm
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:64431
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:64431
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

@@ -1,0 +1,14 @@
+{
+  "highlighterStyle": "none",
+  "highlighterMethods": "inline-styles",
+  "highlighters": {
+    "Evidence": "#BBFABBA6",
+    "Question": "#FFF3A3A6",
+    "Risk": "#FF5582A6"
+  },
+  "highlighterOrder": [
+    "Evidence",
+    "Question",
+    "Risk"
+  ]
+}

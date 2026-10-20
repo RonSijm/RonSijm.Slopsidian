@@ -1,0 +1,13 @@
+{
+  "schema": "sandbox-host-cleanup/1",
+  "checkedAt": "2026-11-02T05:15:00.280Z",
+  "launcherPid": 31364,
+  "ownedRemoteSessionPid": 25616,
+  "ownedServerPid": 45476,
+  "ownedVmMemoryPid": 1684,
+  "method": "CloseMainWindow then exact-owned UIAutomation discard confirmation",
+  "allOwnedProcessesExited": true,
+  "hostForcedKill": false,
+  "hostOriginalExecuted": false,
+  "personalProfileAccessed": false
+}

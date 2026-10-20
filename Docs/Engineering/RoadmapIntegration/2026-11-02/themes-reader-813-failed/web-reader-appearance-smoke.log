@@ -1,0 +1,340 @@
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:41480) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:56807/devtools/browser/0a089037-04c6-4a4a-8ad6-7bf4adbdadcf
+ELECTRON_HOST_PID 41480
+DOTNET_HOST_PID 37932
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:61053
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:61053
+Error occurred in handler for 'webviewer:request': Error: Web viewer cannot access the local application or vault service.
+    at webUrl (C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-viewer-policy.cjs:16:11)
+    at C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-viewer.cjs:251:21
+    at Session.<anonymous> (node:electron/js2c/browser_init:2:113107)
+    at Session.emit (node:events:519:28)
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:37668) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:49447/devtools/browser/6d1404d4-254b-4e4a-9116-4fe550df463c
+ELECTRON_HOST_PID 37668
+DOTNET_HOST_PID 41040
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:49461
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:49461
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:38300) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:62537/devtools/browser/8a75b9fb-6681-41f2-8f30-474ef561fd04
+ELECTRON_HOST_PID 38300
+DOTNET_HOST_PID 39276
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:59070
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:59070
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/configuration/vault-dotnet-web-history
+      RonSijm.Slopsidian.Services.VaultException: The configuration changed on disk. Reload it before saving; the existing file was retained.
+         at RonSijm.Slopsidian.Services.VaultService.WriteConfigurationAsync(String id, WriteConfigurationRequest request, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 45
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:35584) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:57910/devtools/browser/32ff3916-8b05-4d4d-beba-8962f0a2277d
+ELECTRON_HOST_PID 35584
+DOTNET_HOST_PID 7616
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:62762
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:62762
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:41688) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:64884/devtools/browser/6e9c8eb5-778f-432f-bfa5-923791cc7aaf
+ELECTRON_HOST_PID 41688
+DOTNET_HOST_PID 44144
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:49482
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:49482
+Error occurred in handler for 'webviewer:request': Error: Web viewer cannot access the local application or vault service.
+    at webUrl (C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-viewer-policy.cjs:16:11)
+    at C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-viewer.cjs:251:21
+    at Session.<anonymous> (node:electron/js2c/browser_init:2:113107)
+    at Session.emit (node:events:519:28)
+Error occurred in handler for 'webviewer:request': Error: No readable article was found on this page. The original page is still available.
+    at readWebArticle (C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-reader.cjs:34:58)
+    at async Session.<anonymous> (node:electron/js2c/browser_init:2:113091)
+Error occurred in handler for 'webviewer:request': Error: This page is too large for Reader. The original page is still available.
+    at readWebArticle (C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-reader.cjs:34:58)
+    at async Session.<anonymous> (node:electron/js2c/browser_init:2:113091)
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:40116) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:59059/devtools/browser/cc1faf02-a2e3-4479-9713-abb0bf132904
+ELECTRON_HOST_PID 40116
+DOTNET_HOST_PID 42128
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:52592
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:52592
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:32920) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:55096/devtools/browser/1ab20221-78b2-48be-bec6-67c0ebeb694a
+ELECTRON_HOST_PID 32920
+DOTNET_HOST_PID 44908
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:61782
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:61782
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: A file already exists at that path.
+         at RonSijm.Slopsidian.Services.VaultService.WriteAsync(WriteFileRequest request, Boolean create, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.cs:line 193
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: A file already exists at that path.
+         at RonSijm.Slopsidian.Services.VaultService.WriteAsync(WriteFileRequest request, Boolean create, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.cs:line 193
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU\.clip-other-vault
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+Error occurred in handler for 'webviewer:request': Error: No readable article was found on this page. The original page is still available.
+    at readWebArticle (C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-reader.cjs:34:58)
+    at async Session.<anonymous> (node:electron/js2c/browser_init:2:113091)
+Error occurred in handler for 'webviewer:request': Error: This page is too large for Reader. The original page is still available.
+    at readWebArticle (C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-reader.cjs:34:58)
+    at async Session.<anonymous> (node:electron/js2c/browser_init:2:113091)
+Error occurred in handler for 'webviewer:request': Error: An article table is too large to save as Markdown.
+    at readWebArticle (C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-reader.cjs:34:58)
+    at async Session.<anonymous> (node:electron/js2c/browser_init:2:113091)
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:40768) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:53324/devtools/browser/0a408f28-378f-495b-bcee-80e96ed9b7a0
+ELECTRON_HOST_PID 40768
+DOTNET_HOST_PID 7616
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:56901
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:56901
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:33272) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:59160/devtools/browser/d7530ea0-5f47-4458-ae67-2303157c97b3
+ELECTRON_HOST_PID 33272
+DOTNET_HOST_PID 43452
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:61872
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:61872
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:10776) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:52401/devtools/browser/7402a284-5754-47d7-b798-9c698cd9d806
+ELECTRON_HOST_PID 10776
+DOTNET_HOST_PID 41040
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:62810
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:62810
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:29656) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:63648/devtools/browser/1da12f61-e9d5-4ce5-bd6f-f0d4f6424c20
+ELECTRON_HOST_PID 29656
+DOTNET_HOST_PID 31804
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:51560
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:51560
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU\.zoom-other-vault
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:42788) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:61183/devtools/browser/d423c332-8802-4f46-88a5-281153fdf22f
+ELECTRON_HOST_PID 42788
+DOTNET_HOST_PID 30648
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:58182
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:58182
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-web-reader-appearance-1793579509607\logs\errors-smoke-f093dd6a-b66b-4a22-a140-6d5fdc742c8a.jsonl
+(node:15528) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:65078/devtools/browser/523e6541-a205-4660-884b-2a6d18c64377
+ELECTRON_HOST_PID 15528
+DOTNET_HOST_PID 35456
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:51644
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:51644
+Error occurred in handler for 'webviewer:request': Error: Ad blocking must be a Boolean.
+    at adBlockingFlag (C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-adblock.cjs:28:43)
+    at WebAdBlock.configure (C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-adblock.cjs:46:5)
+    at C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\desktop\web-viewer.cjs:226:33
+    at Session.<anonymous> (node:electron/js2c/browser_init:2:113107)
+    at Session.emit (node:events:519:28)
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU\.adblock-other-vault
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\webviewer-vault-yspckU
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

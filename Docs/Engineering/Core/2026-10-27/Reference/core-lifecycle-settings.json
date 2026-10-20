@@ -1,0 +1,714 @@
+{
+  "version": "1.12.7",
+  "scope": "Original core registration, real settings UI availability/fields and disable/re-enable command ownership in a disposable example vault; functional cases remain separate",
+  "results": [
+    {
+      "id": "file-explorer",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "file-explorer:new-folder",
+        "file-explorer:open",
+        "file-explorer:reveal-active-file"
+      ]
+    },
+    {
+      "id": "global-search",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "global-search:open"
+      ]
+    },
+    {
+      "id": "switcher",
+      "status": "passed",
+      "settings": {
+        "present": true,
+        "fields": [
+          {
+            "label": "Show existing only",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Show attachments",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Show all file types",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          }
+        ],
+        "text": "Show existing onlyOnly show results from existing files. Links to files that are not yet created will be hidden.Show attachmentsShow attachment files like images, videos, and PDFs.Show all file typesShow all files including ones that Obsidian can't open. The file will be opened with the default app for that file type."
+      },
+      "commands": [
+        "switcher:open"
+      ]
+    },
+    {
+      "id": "graph",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "graph:animate",
+        "graph:open",
+        "graph:open-local"
+      ]
+    },
+    {
+      "id": "backlink",
+      "status": "passed",
+      "settings": {
+        "present": true,
+        "fields": [
+          {
+            "label": "Show backlinks at the bottom of notes",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          }
+        ],
+        "text": "Show backlinks at the bottom of notesMake backlinks visible in new tabs by default."
+      },
+      "commands": [
+        "backlink:open",
+        "backlink:open-backlinks",
+        "backlink:toggle-backlinks-in-document"
+      ]
+    },
+    {
+      "id": "canvas",
+      "status": "passed",
+      "settings": {
+        "present": true,
+        "fields": [
+          {
+            "label": "Default location for new canvas files",
+            "inputs": [
+              {
+                "tag": "SELECT",
+                "type": "select-one",
+                "value": "root"
+              }
+            ]
+          },
+          {
+            "label": "Folder to create new canvas files in",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": ""
+              }
+            ]
+          },
+          {
+            "label": "Default mouse wheel behavior",
+            "inputs": [
+              {
+                "tag": "SELECT",
+                "type": "select-one",
+                "value": "pan"
+              }
+            ]
+          },
+          {
+            "label": "Default Ctrl + Drag behavior",
+            "inputs": [
+              {
+                "tag": "SELECT",
+                "type": "select-one",
+                "value": "menu"
+              }
+            ]
+          },
+          {
+            "label": "Show card names",
+            "inputs": [
+              {
+                "tag": "SELECT",
+                "type": "select-one",
+                "value": "always"
+              }
+            ]
+          },
+          {
+            "label": "Snap to grid",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Snap to objects",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Zoom threshold for hiding card content",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "range",
+                "value": "0"
+              }
+            ]
+          }
+        ],
+        "text": "Default location for new canvas filesVault folderSame folder as current fileIn the folder specified belowFolder to create new canvas files inNewly created canvas files will appear under this folder.Default mouse wheel behaviorPanZoomDefault Ctrl + Drag behaviorShow menuAdd cardAdd note from vaultAdd media from vaultAdd web pageCreate groupShow card namesAlwaysOn hoverNeverSnap to gridSnap cards to the background grid when moving and resizing.Snap to objectsSnap cards to nearby objects when moving and resizing.Zoom threshold for hiding card contentLower values will increase performance but hide card content sooner when zooming out."
+      },
+      "commands": [
+        "canvas:convert-to-file",
+        "canvas:export-as-image",
+        "canvas:jump-to-group",
+        "canvas:new-file"
+      ]
+    },
+    {
+      "id": "outgoing-link",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "outgoing-links:open",
+        "outgoing-links:open-for-current"
+      ]
+    },
+    {
+      "id": "tag-pane",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "tag-pane:open"
+      ]
+    },
+    {
+      "id": "footnotes",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "footnotes:open"
+      ]
+    },
+    {
+      "id": "properties",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "properties:open",
+        "properties:open-local"
+      ]
+    },
+    {
+      "id": "page-preview",
+      "status": "passed",
+      "settings": {
+        "present": true,
+        "fields": [
+          {
+            "label": "Require Ctrl to trigger page preview on hover",
+            "inputs": []
+          },
+          {
+            "label": "Search, Backlinks, and Outgoing links",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Reading view",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Editing view",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Tab header",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Bookmarks",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Outline",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Bases",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Files",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Graph view",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          },
+          {
+            "label": "Properties view",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          }
+        ],
+        "text": "Require Ctrl to trigger page preview on hoverSearch, Backlinks, and Outgoing linksReading viewEditing viewTab headerBookmarksOutlineBasesFilesGraph viewProperties view"
+      },
+      "commands": []
+    },
+    {
+      "id": "daily-notes",
+      "status": "passed",
+      "settings": {
+        "present": true,
+        "fields": [
+          {
+            "label": "Date format",
+            "inputs": [
+              {
+                "tag": "SELECT",
+                "type": "select-one",
+                "value": "YYYY-MM-DD"
+              }
+            ]
+          },
+          {
+            "label": "Custom format",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "YYYY-MM-DD"
+              }
+            ]
+          },
+          {
+            "label": "New file location",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "40 Journal/Daily"
+              }
+            ]
+          },
+          {
+            "label": "Template file location",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "50 Templates/Core/Daily"
+              }
+            ]
+          }
+        ],
+        "text": "Date formatChoose how daily note are named in your vault.2026-10-272026.10.272026/10/272026/10/2026-10-27CustomCustom formatFor more syntax, refer to format referenceYour current syntax looks like this: 2026-10-27New file locationNew daily notes will be placed here.Template file locationChoose the file to use as a template."
+      },
+      "commands": [
+        "daily-notes",
+        "daily-notes:goto-next",
+        "daily-notes:goto-prev"
+      ]
+    },
+    {
+      "id": "templates",
+      "status": "passed",
+      "settings": {
+        "present": true,
+        "fields": [
+          {
+            "label": "Template folder location",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "50 Templates/Core"
+              }
+            ]
+          },
+          {
+            "label": "Date format",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "YYYY-MM-DD"
+              }
+            ]
+          },
+          {
+            "label": "Time format",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "HH:mm"
+              }
+            ]
+          }
+        ],
+        "text": "Template folder locationFiles in this folder will be available as templates.Date format{{date}} in the template file will be replaced with this value.You can also use {{date:YYYY-MM-DD}} to override the format once.For more syntax, refer to format referenceYour current syntax looks like this: 2026-10-27Time format{{time}} in the template file will be replaced with this value.You can also use {{time:HH:mm}} to override the format once.For more syntax, refer to format referenceYour current syntax looks like this: 11:26"
+      },
+      "commands": [
+        "insert-current-date",
+        "insert-current-time",
+        "insert-template"
+      ]
+    },
+    {
+      "id": "note-composer",
+      "status": "passed",
+      "settings": {
+        "present": true,
+        "fields": [
+          {
+            "label": "Text after extraction",
+            "inputs": [
+              {
+                "tag": "SELECT",
+                "type": "select-one",
+                "value": "link"
+              }
+            ]
+          },
+          {
+            "label": "Template file location",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": ""
+              }
+            ]
+          },
+          {
+            "label": "Confirm file merge",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "checkbox",
+                "value": false
+              }
+            ]
+          }
+        ],
+        "text": "Text after extractionWhat to show in place of the selected text after extracting it.Link to new fileEmbed new fileNoneTemplate file locationTemplate file to use when merging or extracting. Available variables: {{content}}, {{fromTitle}}, {{newTitle}}, {{date:FORMAT}}, e.g. {{date:YYYY-MM-DD}}.Confirm file mergePrompt before merge two files."
+      },
+      "commands": [
+        "note-composer:extract-heading",
+        "note-composer:merge-file",
+        "note-composer:split-file"
+      ]
+    },
+    {
+      "id": "command-palette",
+      "status": "passed",
+      "settings": {
+        "present": true,
+        "fields": [
+          {
+            "label": "Pinned commands",
+            "inputs": []
+          }
+        ],
+        "text": "Pinned commandsNo commands found."
+      },
+      "commands": [
+        "command-palette:open"
+      ]
+    },
+    {
+      "id": "slash-command",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": []
+    },
+    {
+      "id": "editor-status",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": []
+    },
+    {
+      "id": "bookmarks",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "bookmarks:bookmark-all-tabs",
+        "bookmarks:bookmark-current-heading",
+        "bookmarks:bookmark-current-search",
+        "bookmarks:bookmark-current-section",
+        "bookmarks:bookmark-current-view",
+        "bookmarks:open",
+        "bookmarks:unbookmark-current-view"
+      ]
+    },
+    {
+      "id": "markdown-importer",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "markdown-importer:open"
+      ]
+    },
+    {
+      "id": "zk-prefixer",
+      "status": "passed",
+      "settings": {
+        "present": true,
+        "fields": [
+          {
+            "label": "New file location",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "80 Sandbox"
+              }
+            ]
+          },
+          {
+            "label": "Template file location",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "50 Templates/Core/Unique"
+              }
+            ]
+          },
+          {
+            "label": "Unique prefix format",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "YYYYMMDDHHmmss"
+              }
+            ]
+          }
+        ],
+        "text": "New file locationThe folder path to create the new unique note in.Template file locationThe file path to use as template.Unique prefix formatFor more syntax, refer to format referenceYour current syntax looks like this: 20261027112655"
+      },
+      "commands": [
+        "insert-unique-link",
+        "zk-prefixer"
+      ]
+    },
+    {
+      "id": "random-note",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "random-note"
+      ]
+    },
+    {
+      "id": "outline",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "outline:open",
+        "outline:open-for-current"
+      ]
+    },
+    {
+      "id": "word-count",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": []
+    },
+    {
+      "id": "slides",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "slides:start"
+      ]
+    },
+    {
+      "id": "audio-recorder",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "audio-recorder:start",
+        "audio-recorder:stop"
+      ]
+    },
+    {
+      "id": "workspaces",
+      "status": "passed",
+      "settings": {
+        "present": false
+      },
+      "commands": [
+        "workspaces:load",
+        "workspaces:open-modal",
+        "workspaces:save",
+        "workspaces:save-and-load"
+      ]
+    },
+    {
+      "id": "file-recovery",
+      "status": "passed",
+      "settings": {
+        "present": true,
+        "fields": [
+          {
+            "label": "Snapshot interval",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "5"
+              }
+            ]
+          },
+          {
+            "label": "History length",
+            "inputs": [
+              {
+                "tag": "INPUT",
+                "type": "text",
+                "value": "7"
+              }
+            ]
+          },
+          {
+            "label": "Snapshots",
+            "inputs": []
+          },
+          {
+            "label": "Clear history",
+            "inputs": []
+          }
+        ],
+        "text": "Snapshot intervalMinimal interval in minutes between two snapshots.History lengthNumber of days the snapshots are kept for.SnapshotsView and restore saved snapshots.ViewClear historyDelete all snapshots.Clear"
+      },
+      "commands": [
+        "file-recovery:open"
+      ]
+    }
+  ],
+  "failures": []
+}

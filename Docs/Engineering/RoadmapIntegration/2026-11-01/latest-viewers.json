@@ -1,0 +1,60 @@
+{
+  "sourceBefore": "681aada8251ac9dd380d717d913eda7bbf46fb038b0edb4dc6295bf7dc529759",
+  "testCounts": {
+    "todo": 0,
+    "skipped": 0,
+    "tests": 25,
+    "pass": 25,
+    "cancelled": 0,
+    "fail": 0
+  },
+  "boundary": "Latest viewer runtime fixes and focused regressions; combined actual-host GUI acceptance still pending",
+  "status": "passed",
+  "sourceAfterPairedBuilds": "681aada8251ac9dd380d717d913eda7bbf46fb038b0edb4dc6295bf7dc529759",
+  "artifacts": [
+    {
+      "sha256": "14d492e2e03c5990b735f017b5945ed077fb94df57de9426f4141aaedce9c5b4",
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll"
+    },
+    {
+      "sha256": "2ae99698961338bce28f58a8c366c2434ac669ca89ca788cbbc1ecfdc7718aa8",
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js"
+    },
+    {
+      "sha256": "2ae99698961338bce28f58a8c366c2434ac669ca89ca788cbbc1ecfdc7718aa8",
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js"
+    },
+    {
+      "sha256": "31fda904c82df0457d3b22835859127122667a9264bea635d7bc606c578ae6a8",
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-api.js"
+    },
+    {
+      "sha256": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6",
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-worker.js"
+    }
+  ],
+  "completedAt": "2026-11-01T12:30:57.4682651Z",
+  "sourceAfterValidation": "681aada8251ac9dd380d717d913eda7bbf46fb038b0edb4dc6295bf7dc529759",
+  "commands": [
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\latest-viewer-validation-f26970aa-28e7-4fff-b482-52e63baa0fb4\\build-native.log",
+      "exitCode": 0,
+      "command": "build-native"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\latest-viewer-validation-f26970aa-28e7-4fff-b482-52e63baa0fb4\\build-wasm.log",
+      "exitCode": 0,
+      "command": "build-wasm"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\latest-viewer-validation-f26970aa-28e7-4fff-b482-52e63baa0fb4\\verify-wasm.log",
+      "exitCode": 0,
+      "command": "verify-wasm"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\latest-viewer-validation-f26970aa-28e7-4fff-b482-52e63baa0fb4\\focused-viewers-packaging.log",
+      "exitCode": 0,
+      "command": "focused-viewers-packaging"
+    }
+  ]
+}

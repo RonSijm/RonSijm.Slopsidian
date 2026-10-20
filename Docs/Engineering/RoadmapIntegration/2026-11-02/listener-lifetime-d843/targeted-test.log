@@ -1,0 +1,90 @@
+✔ the forced-close history diagnostic compiles and records actual text, depths, readonly, focus and captured-history identity (2.7844ms)
+✔ moved Reader readiness needs a real matching capture-progress acknowledgement from the current frame (2310.1432ms)
+✔ enableCorePlugin enables a disabled core plugin through setEnabled, awaits readiness and restores it (0.4653ms)
+✔ enableCorePlugin leaves an already-enabled core plugin untouched and does not disable it afterwards (0.1379ms)
+✔ scenario evaluates return primitives under returnByValue: live-object returns are wrapped and recorded expressions are serializable (3.233ms)
+✔ the native guest block never calls an Electron-unsupported Browser-domain CDP method (1.2201ms)
+✔ readGuestHost calls the guarded native inspect action through the view's own IPC and requires exactly one owner (0.7779ms)
+✔ the readiness probe reports each predicate and the observed message envelopes, and the failure snapshot survives a broken CDP (461.8541ms)
+✔ css points convert by dpr and out-of-viewport points are refused (1.1357ms)
+✔ plan requires an exact pid, distinct titles and measured geometry (0.2588ms)
+✔ the driver surfaces an incomplete drag and passes only the plan (0.2333ms)
+✔ native script source uses real mouse input and releases the button in finally (4.8988ms)
+✔ a hop verifies identity after the real drag and rejects a drag that did not move or swapped the editor (0.8537ms)
+✔ ambiguous or mismatched native titles are refused before any drag (0.1557ms)
+✔ the chain proves main->popout->popout hops, real Undo and Save, and never reports osDragVerified for an injected executor (0.5417ms)
+✔ expressions are primitive-returning and test-only (0.1218ms)
+✔ plan rejects non-finite and out-of-range inputs before any OS action (0.2609ms)
+✔ native script preflights both endpoints before pressing and cancels with Escape before any failure release (1.1642ms)
+✔ the hop waits for delayed ownership, reports the last failure on timeout and needs a dirty editor and a waiter (0.4644ms)
+✔ desktop --appearance retains its focused report identity (1.1353ms)
+✔ desktop --appearance-resources retains its focused report identity (0.428ms)
+✔ desktop --appearance-themes retains its focused report identity (0.4211ms)
+✔ desktop --appearance-watch-diagnostic retains its focused report identity (0.3717ms)
+✔ desktop --appearance-catalog-diagnostic retains its focused report identity (0.3461ms)
+✔ desktop --outline-panes retains its focused report identity (0.7607ms)
+✔ desktop --viewers retains its focused report identity (0.37ms)
+✔ desktop --viewer-proofs retains its focused report identity (0.3348ms)
+✔ desktop --configuration-lifecycle retains its focused report identity (0.3611ms)
+✔ desktop --history retains its focused report identity (0.3883ms)
+✔ desktop --github-index-ui retains its focused report identity (0.3605ms)
+✔ desktop --groups-popouts retains its focused report identity (0.3419ms)
+✔ desktop --system-trash retains its focused report identity (0.3262ms)
+✔ desktop --attachments retains its focused report identity (0.3406ms)
+✔ desktop --community-install retains its focused report identity (0.2991ms)
+✔ desktop --properties retains its focused report identity (0.329ms)
+✔ desktop --persistent-drafts retains its focused report identity (0.3278ms)
+✔ desktop --persistent-drafts-text-diagnostic retains its focused report identity (0.2932ms)
+✔ desktop --math-embeds retains its focused report identity (0.3463ms)
+✔ desktop --hotkeys-secrets retains its focused report identity (0.3353ms)
+✔ web --appearance retains its focused report identity (0.9811ms)
+✔ web --appearance-resources retains its focused report identity (0.4116ms)
+✔ web --appearance-themes retains its focused report identity (0.3489ms)
+✔ web --appearance-watch-diagnostic retains its focused report identity (0.3439ms)
+✔ web --appearance-catalog-diagnostic retains its focused report identity (0.374ms)
+✔ web --outline-panes retains its focused report identity (0.4204ms)
+✔ web --viewers retains its focused report identity (0.3756ms)
+✔ web --viewer-proofs retains its focused report identity (0.3145ms)
+✔ web --configuration-lifecycle retains its focused report identity (0.3705ms)
+✔ web --history retains its focused report identity (0.4445ms)
+✔ web --github-index-ui retains its focused report identity (0.3289ms)
+✔ web --groups-popouts retains its focused report identity (0.3222ms)
+✔ web --system-trash retains its focused report identity (0.3376ms)
+✔ web --attachments retains its focused report identity (0.3091ms)
+✔ web --community-install retains its focused report identity (0.3437ms)
+✔ web --properties retains its focused report identity (0.9856ms)
+✔ web --persistent-drafts retains its focused report identity (0.3531ms)
+✔ web --persistent-drafts-text-diagnostic retains its focused report identity (0.3216ms)
+✔ web --math-embeds retains its focused report identity (0.3298ms)
+✔ web --hotkeys-secrets retains its focused report identity (0.3247ms)
+✔ desktop popout diagnostics and refusal controls never share the full collection's report name or scope (1.9132ms)
+✔ web popout diagnostics and refusal controls never share the full collection's report name or scope (1.4992ms)
+✔ layout planner tiles inside the work area and refuses insufficient or malformed geometry (1.0625ms)
+✔ constrained layout honors main 940x650 and popout 320x240 minima (0.5383ms)
+✔ the arrangement is verified against the OS-reported rectangles (0.4395ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+PASS injected-driver run of the OS drag scenario (NOT OS-verified)
+✔ the scenario runs main->popout1->popout2->main with identity, pin, link, siblings, real Undo/Redo/Save and full cleanup (mock driver is never OS-verified) (17.7271ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+✔ insufficient work-area geometry fails before any drag and still cleans up (7.3341ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+✔ a drag that breaks the link group or loses the selected sibling is reported and cleanup still runs (10.0956ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+PASS injected-driver run of the OS drag scenario (NOT OS-verified)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+✔ cleanup failures reject and aggregate with the scenario failure (16.8107ms)
+✔ the scenario waits for the live vault inventory and fails boundedly without it (3.8183ms)
+PASS two genuine popouts with anchor tabs and unique native titles were created
+✔ ambiguous window matches are fatal and not retried (6.4181ms)
+✔ source contract: real driver by default, no DOM event dispatch, exact pid/title use (0.6808ms)
+ℹ tests 71
+ℹ suites 0
+ℹ pass 71
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3150.9371

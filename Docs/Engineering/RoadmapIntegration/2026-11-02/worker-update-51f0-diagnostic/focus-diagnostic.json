@@ -1,0 +1,403 @@
+{
+  "status": "focus-diagnostic-only",
+  "focus": "workerupdate",
+  "sourceFingerprint": "51f0959a6343c83531870c9636d47f903a45f7fc350337f2d77e43d05a81cfb3",
+  "scenarios": [
+    {
+      "name": "cold online page is unprepared and caches nothing until the user asks",
+      "ms": 1952,
+      "pages": [
+        {
+          "page": "online",
+          "url": "http://127.0.0.1:64002/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 47,
+          "policy": "online cold page",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it",
+      "ms": 3970,
+      "pages": [
+        {
+          "page": "prepare",
+          "url": "http://127.0.0.1:64002/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 365,
+          "policy": "prepared page",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "a worker-only update is never installed ahead of its adoption record: the unadopted new worker is rejected and the adopted shell keeps serving offline",
+      "ms": 2884,
+      "pages": [
+        {
+          "page": "worker-only",
+          "url": "http://127.0.0.1:64002/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 44,
+          "policy": "worker-only update",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        },
+        {
+          "page": "worker-restored",
+          "url": "http://127.0.0.1:64002/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 43,
+          "policy": "worker restored",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "a real worker update adopts B after its record is written and boots only B offline",
+      "ms": 8680,
+      "pages": [
+        {
+          "page": "worker-a",
+          "url": "http://127.0.0.1:64002/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 315,
+          "policy": "worker A adoption",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        },
+        {
+          "page": "worker-b",
+          "url": "http://127.0.0.1:64002/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 365,
+          "policy": "worker B adoption",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    }
+  ],
+  "pageDiagnostics": [
+    {
+      "page": "online",
+      "url": "http://127.0.0.1:64002/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 47,
+      "policy": "online cold page",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": false,
+          "lifecycle": [],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 6248\n\r\nDevTools listening on ws://127.0.0.1:64003/devtools/browser/703d66b1-f4a6-425e-8c85-a8658b0a1f0b\r\nWEB_QUIT_ACK 9268804d-0889-4b68-adc4-ee23aab60443\n"
+    },
+    {
+      "page": "prepare",
+      "url": "http://127.0.0.1:64002/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 365,
+      "policy": "prepared page",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 15804\n\r\nDevTools listening on ws://127.0.0.1:37769/devtools/browser/3e02c841-a427-4138-807e-fdfe647ba8e6\r\nWEB_QUIT_ACK cd8a2306-34a9-4c3e-adf1-35685bcf31f7\n"
+    },
+    {
+      "page": "worker-only",
+      "url": "http://127.0.0.1:64002/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 44,
+      "policy": "worker-only update",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 42132\n\r\nDevTools listening on ws://127.0.0.1:58263/devtools/browser/764cfbbc-c04e-41dd-9fd7-0e210182139c\r\nWEB_QUIT_ACK 913374d9-d2b1-4027-88db-8683c3ebfb43\n"
+    },
+    {
+      "page": "worker-restored",
+      "url": "http://127.0.0.1:64002/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 43,
+      "policy": "worker restored",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 37800\n\r\nDevTools listening on ws://127.0.0.1:5225/devtools/browser/8e073773-cbf8-4fcd-9a10-5590e0761a1b\r\nWEB_QUIT_ACK ef13bd4d-05ff-4710-ad7f-0960b2eead1c\n[37800:1102/033642.067:ERROR:gpu\\ipc\\client\\command_buffer_proxy_impl.cc:327] GPU state invalid after WaitForGetOffsetInRange.\r\n[37800:1102/033642.067:ERROR:gpu\\ipc\\client\\command_buffer_proxy_impl.cc:327] GPU state invalid after WaitForGetOffsetInRange.\r\n"
+    },
+    {
+      "page": "worker-a",
+      "url": "http://127.0.0.1:64002/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 315,
+      "policy": "worker A adoption",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": "The DevTools socket failed.",
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 33696\n\r\nDevTools listening on ws://127.0.0.1:20092/devtools/browser/72369564-c8ca-408b-bd6b-c38bdefb274c\r\n[33696:1102/033642.302:ERROR:content\\browser\\devtools\\devtools_http_handler.cc:304] Error writing DevTools active port to file C:\\Users\\Ron\\AppData\\Local\\Temp\\oss-jv3YAJ\\w\\DevToolsActivePort: The system cannot find the path specified. (0x3)\r\nWEB_QUIT_ACK a2d286ca-ce46-4080-813e-22b0c49fb24a\n"
+    },
+    {
+      "page": "worker-b",
+      "url": "http://127.0.0.1:64002/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 365,
+      "policy": "worker B adoption",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 13696\n\r\nDevTools listening on ws://127.0.0.1:32687/devtools/browser/becf5bca-46e7-48a3-b3b8-c07b0dc2f1ad\r\nWEB_QUIT_ACK 2159cb2e-0cfc-46d8-b736-f20bcdae11fd\n"
+    }
+  ],
+  "githubIndexUi": null,
+  "workerOnly": {
+    "state": "redundant",
+    "active": true,
+    "waiting": false,
+    "installing": false
+  },
+  "quota": null,
+  "limits": [
+    "A damaged index.html or adoption/manifest record leaves the offline shell unable to repair itself from the page; recovery is clearing site data (exercised with Storage.clearDataForOrigin) and preparing again.",
+    "Worker update rollback is not atomic: a new worker is only admitted while the adoption record names it, but if it finished activating before a rollback write, it stays active against the restored record and fails closed (network online, explicit 503 offline) until the user prepares again. The harness exercises the rejected-install and successful A-to-B paths, not that race."
+  ],
+  "note": "Not acceptance evidence; the full run is still required."
+}

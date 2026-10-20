@@ -1,0 +1,42 @@
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile\logs\errors-smoke-54645946-b24b-4954-bace-a28c5c0e738c.jsonl
+(node:34472) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:18345/devtools/browser/14fc3368-2492-4858-8e2b-79bc79860409
+ELECTRON_HOST_PID 34472
+DOTNET_HOST_PID 35072
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-nogFmI
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:56510
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:56510
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile\logs\errors-smoke-54645946-b24b-4954-bace-a28c5c0e738c.jsonl
+(node:12720) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:31474/devtools/browser/a5e48e7f-580e-427e-b398-36a3e697ce3c
+ELECTRON_HOST_PID 12720
+DOTNET_HOST_PID 29224
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-nogFmI
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:63280
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:63280
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

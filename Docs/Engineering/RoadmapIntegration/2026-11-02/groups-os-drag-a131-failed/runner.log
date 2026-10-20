@@ -1,0 +1,46 @@
+PASS two genuine popouts with anchor tabs and unique native titles were created
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile\logs\errors-smoke-c1b158a6-ae5d-464f-995c-6dd495c6662f.jsonl
+(node:21636) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:27262/devtools/browser/20de2baa-3ae8-46ec-84e0-919657f8a2a1
+ELECTRON_HOST_PID 21636
+DOTNET_HOST_PID 43724
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-MFYFcT
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:62036
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:62036
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Error: Windows 'slopsidian-osdrag-main-1793588015328' and 'slopsidian-osdrag-pop1-1793588015328' overlap after placement.
+    at assertArrangement (file:///D:/RonSijm/RonSijm.Slopsidian/tools/native-window-layout.mjs:132:63)
+    at arrangeOwnedWindows (file:///D:/RonSijm/RonSijm.Slopsidian/tools/native-window-layout.mjs:163:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async file:///D:/RonSijm/RonSijm.Slopsidian/tools/workspace-os-tab-drag-scenario.mjs:88:29
+    at async waitFor (file:///D:/RonSijm/RonSijm.Slopsidian/tools/smoke.mjs:413:9)
+    at async checkWorkspaceOsTabDrag (file:///D:/RonSijm/RonSijm.Slopsidian/tools/workspace-os-tab-drag-scenario.mjs:87:7)
+    at async file:///D:/RonSijm/RonSijm.Slopsidian/tools/smoke.mjs:946:7
+
+'failed' !== 'passed'
+
+    at file:///D:/RonSijm/RonSijm.Slopsidian/tools/smoke.mjs:1860:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v25.6.1

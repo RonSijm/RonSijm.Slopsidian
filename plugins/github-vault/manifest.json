@@ -1,0 +1,9 @@
+{
+  "id": "github-vault",
+  "name": "GitHub Vault",
+  "version": "0.3.0",
+  "minAppVersion": "1.12.0",
+  "description": "Browse public GitHub vaults read-only, with lazy loading, persistent caching and resumable offline downloads.",
+  "author": "RonSijm",
+  "isDesktopOnly": false
+}

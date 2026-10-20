@@ -1,0 +1,23 @@
+{
+  "version": 4,
+  "separateMobile": false,
+  "homepages": {
+    "Main Homepage": {
+      "value": "30 Projects/Project cockpit",
+      "kind": "File",
+      "openOnStartup": false,
+      "openMode": "Keep open notes",
+      "manualOpenMode": "Keep open notes",
+      "view": "Reading view",
+      "openWhenEmpty": false,
+      "commands": [],
+      "autoCreate": false,
+      "alwaysApply": false,
+      "revertView": true,
+      "refreshDataview": false,
+      "autoScroll": false,
+      "pin": false,
+      "hideReleaseNotes": false
+    }
+  }
+}

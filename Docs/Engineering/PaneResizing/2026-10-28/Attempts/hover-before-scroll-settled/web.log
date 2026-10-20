@@ -1,0 +1,105 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS Real source selections, edits/undo/redo and Reading mode count frontmatter only when selected, use reference numeric/punctuation/CJK/kana/Korean/Tamil/Tibetan rules and UTF-16 emoji/CRLF lengths without writing the note.
+PASS Outline uses actual ATX/Setext metadata, excludes YAML/comments/indented and nested-length fences, nests skipped levels correctly, folds by pointer/keyboard/all controls and follows real source-cursor navigation.
+PASS Dirty heading edits, undo/redo and external saved replacements refresh the real Outline; Reading heading navigation/scroll changes active highlighting and emits the actual public Markdown scroll event.
+PASS Disable/re-enable removes owned Outline controls and retained listeners, restores counts, and full native restart or real-folder WASM reconnect retains the real files/mode without rewriting original workspace/community configuration.
+PASS The real status control hides for empty/image leaves, honors explicit app.json Live Preview, offers checked keyboard/pointer Source/Reading/Live Preview choices and applies actual in-place Markdown styles without changing native getMode semantics or file bytes.
+PASS Real formatted-text typing and task-checkbox input preserve selections, undo/redo, dirty buffers and community editor extensions across all three modes; only explicit save writes the exact original BOM/CRLF with the intended task marker changed.
+PASS CodeMirror displays an actually decoded local image, rendered table and local Mermaid image; their real Edit buttons reveal original source and revoke resources, detached task controls are inert, and Ctrl-clicking a wiki alias opens the resolved heading in a separate real Reading leaf.
+PASS Real split panes retain independent per-leaf modes with a shared document and community extensions; public same-file setViewState preserves unsaved text/history, rejects malformed source flags without disturbing the view, and retains opaque state.
+PASS Actual external writes refresh clean Source/Live Preview peers, but conflicting saved bytes cannot overwrite a dirty shared buffer; the guarded save rejects visibly to its caller and explicit discard/reload retains the external BOM/CRLF document.
+PASS Disabling Editor status removes its open menu, status button and retained listeners without disabling editing modes; native restart or actual-folder WASM reconnect preserves source flags, opaque leaf state and persisted plugin ownership while leaving app/workspace bytes and other enabled IDs unchanged.
+PASS Real open/save events record durable saved-text snapshots with exact BOM/CRLF/Unicode, numeric settings, deduplication, searchable versions and history previews; expired history is pruned.
+PASS Restore review/cancel, stale external-version rejection and dirty-buffer refusal preserve disk and editor text; confirmed restore refreshes the real note and keeps its replaced saved version in history.
+PASS Markdown, Canvas and Bases restore their real saved files; deleted text files recreate missing parents and BOMs, while unsupported recovery-store versions fail visibly without clearing stored data.
+PASS History, settings and opaque data survive full host restarts/reconnects; disable/re-enable cleans up commands/dialogs, cancelled or detached actions cannot restore/clear, and confirmed clear removes only recovery snapshots.
+PASS Actual selection extraction saves previously dirty text, creates a real nested target, resolves source/template links independently, carries image/reference/footnote definitions, and retains BOM/CRLF plus real source undo/redo.
+PASS Cancel and retained closed-dialog controls write nothing; retargeted source views, unresolved relative-link transfers, post-open external/local edits and missing templates reject visibly without losing bytes, creating a target or implicitly saving concurrent local text.
+PASS Heading extraction includes children and blocks, rejects duplicate target anchors, supports Shift+Enter prepend and embed/none replacements, and selectively repairs real Markdown/properties/Canvas while whole-note and remaining-section links stay on the source.
+PASS Merge confirmation is enforced; a real preflight veto and a target changed after planning retain all source/reference files, newer target bytes and restored source panes.
+PASS Confirmed merge combines precise YAML/body data with guarded source trash and Markdown/Canvas reference repair, opens its real target and emits one owned modification/deletion; a real file-menu action also merges a non-active note and Ctrl+Enter creates its new nested target.
+PASS A real modify-event subscriber can edit an open target after commit: Note composer reports the committed-but-unsaved state, retains its text, disables repeat application and permits a normal subsequent save.
+PASS Real select/template/confirmation settings preserve unknown BOM-prefixed configuration, disable removes owned commands/dialog/listeners, and desktop restart or real-folder browser reconnect restores both composed files and enabled runtime.
+PASS An actual CommonJS plugin uses shared Menu/Item/Separator types, rich labels, checked/disabled rows, sections, viewport placement, pointer/keyboard actions and dismissal; real file/editor events carry the current TFile, MarkdownView and CodeMirror editor.
+PASS Actual editor context actions retain copy/cut/select-all, undoable CRLF-aware paste, empty-paste preservation and visible permission/stale/multiple-selection errors using a bounded clipboard API fixture; the system clipboard is never read or changed.
+PASS Closing the actual source view or disabling the plugin removes owned menus and retained button listeners; re-enable has exactly one event subscriber, and only explicit plugin toggles change community enablement.
+PASS The actual opt-in converter previews Roam/Bear/tasks/numeric links and legacy frontmatter in real vault files; Cancel and a retained closed-dialog button write no notes.
+PASS Confirmed legacy conversion rewrites the actual BOM/CRLF note with lossless unknown numeric/YAML data and refreshes its real clean editor; version-guarded Undo restores every original Markdown file byte-for-byte.
+PASS Newer external versions, ambiguous numeric destinations and post-preview dirty edits reject visibly without partial note writes, implicit saves or loss of local text; generated link text disambiguates real files.
+PASS Readable numeric aliases are a separate working conversion; disable removes real converter UI/ribbon/commands/listeners, and restart/reconnect restores enablement without altering unknown settings or original note bytes.
+PASS Outgoing links lists real wiki/Markdown/property links and embeds, deduplicates the same destination/subpath, and explicitly disables unsupported attachment/traversal actions.
+PASS Outgoing links navigates to exact heading/block context, creates a missing Markdown target without changing its source, and keeps a pinned sidebar on its note.
+PASS Dirty-buffer edits, undo/redo, external saves and target renames refresh outgoing resolution without overwriting vault files or secretly rewriting links.
+PASS Unlinked aliases navigate to their source; collapse/follow/pin state survives an actual reload and releasing the pin follows the active note.
+PASS Disabling Outgoing links removes its commands, view and enabled-instance lookup; re-enabling creates one fresh view with the persisted state.
+PASS Image Fit stays inside real fractional CSS viewports without feedback scrollbars, including width- and height-constrained images.
+PASS Outgoing opens real decoded raster/Canvas leaves, honors modified-click tabs, follows provider registration/removal and preserves exact attachment bytes; image fit/zoom/scroll work and closed views release URLs and retained controls.
+PASS Reading links share registered attachment navigation; live external pixel changes, visible decode errors/recovery and guarded image rename refresh the actual view without writing image bytes or losing opaque state.
+PASS Actual image leaves, zoom, opaque state and pinned Outgoing restore after full desktop restart/browser reconnect while original workspace absence/bytes, Markdown and exact binary attachments stay preserved.
+PASS Search executes real worker-backed Boolean/regex/path/file/tag/property/case queries and selects exact source context.
+PASS Search waits for actual worker readiness, including a startup longer than two seconds, without charging it against the separate bounded query deadline.
+PASS Search follows dirty edits/undo/redo, real external writes and renames, rejects invalid queries without stale results, and terminates a blocking regex off the UI thread.
+PASS Tags lists nested inline/property tags with counts, excludes escaped/code/comment text, filters/folds/sorts, and uses the actual Search dependency with a visible disabled-dependency error.
+PASS Backlinks resolves heading/block references and unlinked aliases, navigates exact source ranges, follows unsaved/undo/external/rename changes, and renders/removes real in-document backlinks.
+PASS Footnotes shows multiline definitions, repeated references and explicit missing definitions, selects exact source ranges and updates through dirty edits/undo/redo.
+PASS Search/Tags/Backlinks/Footnotes preserve real query/sort/fold/pin state across reload/reconnect; disabling removes owned views/controllers/commands and re-enabling creates one fresh instance.
+PASS Quick switcher settings control actual registered attachments and unresolved references: Canvas opens, hidden attachments/unknown extensions stay out, and existing-only removes unresolved suggestions without implicitly creating a note.
+PASS The unsupported-file toggle follows app.json, all-types overrides attachment filtering, URI-relative targets and explicit creation use real controls, and Boolean/opaque settings plus BOM survive reload/reconnect without rewriting app.json.
+PASS Bookmarks opens actual heading/block, empty-folder and saved-search targets; distant Reading blocks scroll precisely and missing/unsupported targets reject without discarding data.
+PASS Actual Bookmarks controls add groups/files, rename, reorder, move into groups, remove and filter; BOM, unknown data and note bytes survive, and obsolete controls cannot mutate newer data.
+PASS The async core lifecycle honors an actual Bookmarks preflight veto without unloading its original view, removes owned controls/providers on disable, restores unavailable panes with their filters, and rejects concurrent reloads.
+PASS Organized Bookmarks data and actual per-pane filter state survive a fresh runtime without modifying original note bytes.
+PASS The actual Workspaces manager saves and loads real split/tab/pin/Reading/sidebar and core-view state, without hidden editors or rewriting original Obsidian profiles.
+PASS Saved-layout preflight and staged view loading retain the actual previous editor/DOM on factory failures, explicit preflight vetoes and dirty-save conflicts; external note bytes are not overwritten.
+PASS Named layouts can be renamed and deleted without deleting notes; guarded profiles, unknown configuration, UTF-8 BOM and the active layout survive a fresh runtime.
+PASS Actual local Properties controls edit source/Reading notes, typed numbers, checkboxes and lists; body selections and existing undo/redo survive while exact numeric literals, comments, anchors, unknown structured/type data and BOM/CRLF are retained.
+PASS Properties rejects unsafe numeric input, obsolete dialogs and dirty external-save conflicts without overwriting newer file bytes or discarding the original unsaved buffer.
+PASS The real vault property catalog filters/sorts/counts, assigns case-insensitive types and renames a property in both notes and types.json; all-note collision preflight, unknown types/configuration and precise YAML/body bytes are preserved.
+PASS Actual Properties owned views, filters, sort, pinned file and assigned types survive disable/re-enable and a fresh runtime; unsupported providers retain their saved states without hidden editors or note rewrites.
+PASS The actual file explorer and native-shaped root actions create nested empty folders, retain root identity and reject occupied paths without replacing them or prefilling an absolute root.
+PASS Real rename cancellation and destination collisions retain source/reference bytes, file identity and public event state.
+PASS Pending file mutations cannot be dismissed with Escape or the dialog close button; a later failure stays visible and retains the source bytes.
+PASS Rename/move preserves the actual TFile, shared sessions, Reading mode, pinned discovery/Properties panes and history while saving dirty text and rewriting real wiki/Markdown/reference/property links without changing exact YAML numbers or CRLF/BOM.
+PASS Bookmarking an unmarked paragraph generates and saves a real block ID; a Windows case-only rename updates physical filenames and persists both heading and generated-block targets.
+PASS Disabled attachment previews still expose real tree actions: binary move retains every byte and updates references; cancelled trash changes nothing and committed vault trash preserves a colliding folder.
+PASS Trash saves dirty shared notes, honors a later pane's explicit preflight veto before disposing any editor, preserves undo/redo after rejection, and closes all associated sessions only when the note is actually trashed.
+PASS Renamed files, split sessions, pinned properties and updated bookmarks reopen after a fresh runtime without changing original workspace.json; missing targets still reject explicitly.
+PASS Global Graph uses actual Markdown/property links, missing and orphan notes; node clicks open/create real files and dirty edits, undo and external changes update the rendered graph.
+PASS Local Graph has real directed depth and neighbor-edge controls, follows files unless pinned, and global/local nodes and file state follow an actual guarded rename.
+PASS Actual Graph controls filter nodes, show attachments/tags, navigate to Search, reorder overlapping color groups and change visible sizes/arrows/physics while preserving BOM and unknown configuration fields.
+PASS The real SVG graph supports camera zoom/pan, pointer node dragging and keyboard node activation without using a hidden editor.
+PASS Malformed and excessive Graph queries fail visibly off the UI thread; stale configuration writes retain external bytes and Reload controls permits guarded subsequent saves.
+PASS Graph disable/re-enable removes and restores owned commands/ribbon/views; global controls, local depth/pin/file and both cameras survive a full restart or folder-handle reconnect without rewriting the original Obsidian workspace.
+PASS Existing Canvas text/file/web/group/unknown cards and edges open through the file explorer, render real Markdown/images and live dirty/undo/external file previews, and navigate actual headings without modifying original BOM/CRLF data or implicitly loading websites.
+PASS Actual Canvas inspector typing autosaves the original versioned UTF-8 file; keyboard undo/redo works across saves while preserving BOM, CRLF and unknown JSON fields.
+PASS Real Canvas pointer/keyboard input selects and grid-snaps cards, resizes, connects by toolbar and handle drag, edits edge labels, moves groups with contained cards, rejects invalid geometry and retains deletion undo.
+PASS Stale Canvas autosaves retain external disk bytes and the dirty board; actual native reload confirmations honor cancellation and explicit discard before installing a clean document.
+PASS Guarded note and binary renames update stored Canvas file cards, real text-card Markdown and group backgrounds together, retaining unknown card data and every attachment byte.
+PASS Canvas commands create collision-safe files in the configured folder; actual wheel/modifier/Shift, label and snapping settings apply while BOM and future configuration survive.
+PASS Actual Canvas selects and slider cover folder/current/root placement, retained conditional folder values, detail thresholds at both bounds and Restore default without modifying the existing board.
+PASS All six modifier-drag preferences run through real rectangle input, including reverse geometry, shared menu, note/media selection, safe website errors, cancel/detached controls and saved undo without writing referenced files.
+PASS Canvas disable/re-enable and a fresh runtime restore its actual file, camera DOM transform, settings and unknown JSON without hidden editors, leaked providers or original workspace rewrites.
+Error: Timed out waiting for missing target is explicit without creating a note
+    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/web-smoke.mjs:148:9)
+    at async wait (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/web-smoke.mjs:151:3)
+    at async checkPagePreviews (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/preview-scenarios.mjs:110:3)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/web-smoke.mjs:885:5 
+  
+ 
+WEB_HOST_PID 37848
+
+DevTools listening on ws://127.0.0.1:28823/devtools/browser/9bc801df-631a-4655-9f39-352b65bed7f4
+WEB_UNSAVED_BLOCKED
+

@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "sourceBefore": "d8436547bb8f63d02bbe62ecde7a7c2999a4ab97e2afe3046aa3e2e7d5dd3a9a",
+  "boundary": "Native/WASM/static pair for listener-lifetime forced-close diagnosis and native minimum-aware OS layout. Includes71 exact targeted fixture regressions, not a new full1230+44 suite and not runtime acceptance.",
+  "commands": [
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\listener-lifetime-pair-96dbb5ab-27cb-45ef-a0bc-87662c6fd868\\targeted-test.log",
+      "command": "node --test core-plugin-fixture native-os-drag workspace-os-tab-drag-scenario smoke-scopes",
+      "exitCode": 0
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\listener-lifetime-pair-96dbb5ab-27cb-45ef-a0bc-87662c6fd868\\build.log",
+      "command": "npm run build",
+      "exitCode": 0
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\listener-lifetime-pair-96dbb5ab-27cb-45ef-a0bc-87662c6fd868\\build-web.log",
+      "command": "npm run build:web",
+      "exitCode": 0
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\listener-lifetime-pair-96dbb5ab-27cb-45ef-a0bc-87662c6fd868\\verify-web.log",
+      "command": "npm run verify:web",
+      "exitCode": 0
+    }
+  ],
+  "tests": {
+    "skipped": 0,
+    "tests": 71,
+    "fail": 0,
+    "cancelled": 0,
+    "pass": 71
+  },
+  "artifacts": [
+    {
+      "sha256": "c2fab4b096fb591b8bed4bab0c1c0fecf55497e2c2ca55a3d5fe6ca88369666b",
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "bytes": 588800
+    },
+    {
+      "sha256": "6290fe88255f95933bef53fe2e115a6533bc1747ddc55f7a405f60fd6b865359",
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "bytes": 4916572
+    },
+    {
+      "sha256": "6290fe88255f95933bef53fe2e115a6533bc1747ddc55f7a405f60fd6b865359",
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+      "bytes": 4916572
+    },
+    {
+      "sha256": "f93f2dd180cc5a9095193884420b7263448ff2bf725d3bab8090717de91c19cd",
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json",
+      "bytes": 37676
+    },
+    {
+      "sha256": "618c9f4a72a70a45eab864b19ea089a91cc4e8a3b7e32a63ab4dae757d103a91",
+      "path": ".runtime\\web\\wwwroot\\service-worker.js",
+      "bytes": 6303
+    }
+  ],
+  "sourceAfter": "d8436547bb8f63d02bbe62ecde7a7c2999a4ab97e2afe3046aa3e2e7d5dd3a9a",
+  "completedAt": "2026-11-02T02:36:43.1890648Z"
+}

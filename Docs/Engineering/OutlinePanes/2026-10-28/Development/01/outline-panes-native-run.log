@@ -1,0 +1,66 @@
+PASS A first-open original layout restores real main/sidebar Outline panes with independent note/filter/follow state, pins and opaque fields, alongside Source and Reading notes; parsed ATX/Setext headings exclude metadata, code and comments without changing BOM/CRLF/Unicode bytes.
+PASS Real filtering retains ancestors and saved ordinary folds, keyboard arrows navigate the hierarchy and Enter reveals the exact Source heading. Active-heading following leaves editor focus and independent pinned-note panes intact.
+PASS Pinned-note navigation activates an existing Reading pane and reveals/highlights its real heading without changing mode or bytes. Follow active note switches targets; turning it off retains an independent note until following resumes.
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-3374b18f-ff9d-4e8f-86d0-7af4080147d2.jsonl
+(node:39992) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:31496/devtools/browser/41fe7934-e261-4b31-b681-2a4a33280770
+ELECTRON_HOST_PID 39992
+DOTNET_HOST_PID 45232
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-vault-JpvqKv
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:54745
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:54745
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-3374b18f-ff9d-4e8f-86d0-7af4080147d2.jsonl
+(node:14592) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:23790/devtools/browser/8cc9afca-8694-4392-adcf-f3cfd1e1a741
+ELECTRON_HOST_PID 14592
+DOTNET_HOST_PID 48752
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-vault-JpvqKv
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:51063
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:51063
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Error: Timed out waiting for owned headings outline-a
+    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:347:9)
+    at async waitExpression (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:439:3)
+    at async checkOutlinePanes (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/outline-pane-scenarios.mjs:60:3)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:752:5
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:1587:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

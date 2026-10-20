@@ -1,0 +1,347 @@
+{
+  "status": "passed",
+  "scope": "outline-workspace-panes",
+  "startedAt": "2026-11-01T22:57:28.741Z",
+  "checks": [
+    "Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.",
+    "The actual OS folder picker grants a live external vault, including binary attachment inventory.",
+    "Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.",
+    "External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.",
+    "The shared note-creation UI creates folders and writes a new Markdown note directly to disk.",
+    "Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.",
+    "Core enablement and the unchanged upstream sample plugin save settings into the selected vault.",
+    "Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.",
+    "External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.",
+    "A real page reload is blocked while a buffer has unsaved changes.",
+    "Cancelling the native folder picker retains the selected vault and dirty buffer.",
+    "Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.",
+    "A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.",
+    "A first-open original layout restores real main/sidebar Outline panes with independent note/filter/follow state, pins and opaque fields, alongside Source and Reading notes; parsed ATX/Setext headings exclude metadata, code and comments without changing BOM/CRLF/Unicode bytes.",
+    "Real filtering retains ancestors and saved ordinary folds, keyboard arrows navigate the hierarchy and Enter reveals the exact Source heading. Active-heading following leaves editor focus and independent pinned-note panes intact.",
+    "Pinned-note navigation activates an existing Reading pane and reveals/highlights its real heading without changing mode or bytes. Follow active note switches targets; turning it off retains an independent note until following resumes.",
+    "An immediate stale heading click after a real editor transaction refuses obsolete navigation. Dirty undo/redo and inserted lines retain fold identity; genuine external writes refresh headings and guarded rename remaps fixed-note panes without touching the original workspace.",
+    "An enabled fixture plugin uses real ItemView/App/file/factory contracts and the guarded setFile method through its palette command. Malformed state refuses atomically without changing the live pane or reporting an unhandled error.",
+    "Disabling Outline unloads owners/handlers and retains exact unavailable state without waiting on a held real read. Fresh owners use newer physical content after re-enable; releasing the old read, detached controls and stale API calls cannot replace or retarget them.",
+    "Full restart or actual-folder reconnection restores independent targets/filters/folds and original workspace bytes. An explicit legacy sidebar choice wins on later reopen; the command palette creates another real Outline tab.",
+    "A trusted pointer drag reorders a Setext section before an ATX section with its content, code and comments intact in one editor edit, keeps fold identity and leaves the file unsaved.",
+    "One Undo restores the exact original text and one Redo repeats the whole subtree move.",
+    "Alt+ArrowDown/Alt+ArrowUp move a heading among its siblings with keyboard focus retained, and the first sibling reports a boundary without editing.",
+    "The Outline context menu moves one duplicate heading section past another; Undo restores the exact bytes.",
+    "A reorder updates every peer editor, parsed headings and the explicit save writes exactly the moved BOM/CRLF bytes (BOM is physical file bytes; the editor text has none).",
+    "A renamed note remains the Outline target; a dirty note changed on disk refuses the move before any text or disk byte changes.",
+    "A genuine cache-only GitHub vault imports a real Outline, reveals an exact read-only heading and saves view folds independently, with zero network requests and every content/configuration blob unchanged through return to the local vault."
+  ],
+  "rendererNodeIntegration": false,
+  "realExternalDirectoryPicker": true,
+  "pickerStartsInDisposableDocuments": true,
+  "endpoint": "http://127.0.0.1:17741/",
+  "sha256": {
+    "index.html": "18d12303783df26915be08cd1beb5cf6ded2c64ca162dbfb3a4b87cd4e0189f7",
+    "app.css": "ae1673d19d280d8164803b06abefe297c56ba61be4c643a16b504fd4ad9f2b63",
+    "browser.css": "8572b2889c885b4660e2cb96774b0ab3cc98507e80f26ab3eae544d28a9af3f9",
+    "icons.svg": "a080b921f421efcd5d6681e4f52a4e79ca1301c0a1eedbe34d008e4d29a38bfe",
+    "icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "core-verification.json": "d598582ba23ce3b219f8044ec3984992fbe73204dce8ae14200562f7ba60e577",
+    "lucide-icons.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+    "lucide-icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "mermaid-frame.html": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333",
+    "js/mermaid-frame.js": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62",
+    "js/mermaid-api.js": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a",
+    "js/mermaid-api.js.LEGAL.txt": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1",
+    "js/mermaid-licenses.txt": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735",
+    "js/katex-license.txt": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3",
+    "js/pdf-api.js": "31fda904c82df0457d3b22835859127122667a9264bea635d7bc606c578ae6a8",
+    "js/pdf-worker.js": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6",
+    "js/pdf-licenses.txt": "f812858b82bbea82fb78fc8740dad809e676e4d95fe458faaa143959539879ef",
+    "js/pdf/wasm/jbig2.wasm": "466f45c2a61a698152fb5400c27e56ff2ceb73dcb71fde3fc366a502308eaab0",
+    "js/pdf/wasm/openjpeg.wasm": "95e5002597af0824004aa57b1900fe019715db389e37640b1e58395e42f00cc5",
+    "js/pdf/wasm/qcms_bg.wasm": "663d86126d5f5fcb1c61490f94353e2a8375660b8c5498ab3ebab5a34b08800e",
+    "js/pdf/cmaps/Adobe-Japan1-UCS2.bcmap.txt": "66c5d0dc4964f4093e77b194023f3a0f689324028ec8330e1e1d0570bcba7c2f",
+    "js/pdf/standard_fonts/LiberationSans-Regular.ttf.txt": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f",
+    "js/editor-host.js": "508a8b19dabdc7c159c7b69be4625b481fc166b2e47749c0ec70b64ae3c0e4d4",
+    "js/editor-host.css": "39bc32a24ef18d35bd3f68caa95e1273255394beab9aa2b707fbcb0a32f4ea18",
+    "js/codemirror-license.txt": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07",
+    "js/hypermd-license.txt": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b",
+    "js/web-reader-extract.js": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601",
+    "js/web-reader-extract.js.LEGAL.txt": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a",
+    "js/web-reader-licenses.txt": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b",
+    "js/browser-host.js": "76c51edce1588d6b47c507272b5e18208cfc1d5dd61a726bc7df9c3b73c696dc",
+    "js/search-worker.js": "ff626c9c78d09c8a43eac5f222f3c84034ebbd6fd4ab363253f54d55df32f19a",
+    "js/graph-worker.js": "073f95acc0f6f06a73b3d8cc0d693d9194f57885c2595d2877ae46df6f731ea3",
+    "js/bases-worker.js": "4cc1ea06210c62f5ba6957312ccdfc0e34b9cffa475460e7bb91709fcf2b6938",
+    "_framework/RonSijm.Slopsidian.Web.h8ttejsriv.wasm": "bf4ca50b3ef19112926ff049ad3cc937eb9383dc5a3a597380e02bf91703efbb"
+  },
+  "scenarioSha256": {
+    "web-smoke.mjs": "88c77273f20ec0690f909c6cddea24156b83b69009e2e973562c8d6718a449ce",
+    "web-smoke-host.cjs": "1128e776820c780a2d9711079575e7bf368a43d810dcd14450d2c403b2bba138",
+    "core-foundation-scenarios.mjs": "d56b06ef4308df338f27d7dab11ea1166eda4c8e19659a9b08f3b7ce3930a13d",
+    "core-scenarios.mjs": "f0dc3a460bef11c0d386a791c9e87a8e52f30f6cf86edcabc7d1de468bce7c90",
+    "core-verification-targets.mjs": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86",
+    "core-verification-scenarios.mjs": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539",
+    "tab-movement-scenarios.mjs": "4c07a8fff96e95c439552e46fd14eb09d6047ae43b9a75a64425ac8a3a069daa",
+    "workspace-docking-scenarios.mjs": "342399fa3bb21a7be54b02f28b36cc7fe30fa56c9a68e40f952af4c8bf2dc98f",
+    "workspace-history-scenarios.mjs": "08090dd6a2fa70d43d8dba2a20f815af2a6b590f0de84a4c65118ea5e7526052",
+    "pane-resize-scenarios.mjs": "8c6d2f0c6184de5fd21eeb1d977b8737e5bf12f83f07f5a73d1e9e0132d80ac0",
+    "reading-scenarios.mjs": "3fe9027fa9ffafee0f9af8ab25ad66e97b12b76d5d57ca5ea59959e12705e5aa",
+    "outgoing-scenarios.mjs": "435bc89bb05886520623c161fdf104ab9a54543435988ee441516376f3ae3659",
+    "discovery-scenarios.mjs": "ef01d1ed135e3ce426b75f06bfb313922880e115c26bb35b8feaa076a146f16b",
+    "editor-chrome-scenarios.mjs": "85d6db8cde4903c586b37d601e986cc14a853e18dd5f6d39ae1b6ea1c721fdda",
+    "suggestion-scenarios.mjs": "c806e6913e8ac96a4843ed802a20e577e96dd550530c9959de9570a757312bda",
+    "renderer-scenarios.mjs": "a44d423a43febf3a0fafe018027a91470ef289d4af106ee84878536d0599947a",
+    "render-child-scenarios.mjs": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611",
+    "templater-scenarios.mjs": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594",
+    "organization-scenarios.mjs": "cf4fde63a11939dec90b46f6c0e9d8d12dc58bea663ece94ad054d305f4cb09b",
+    "file-scenarios.mjs": "c09e792fc21556a9d06034d2e9f480a29eebddcfd55030494a237ae55163425d",
+    "graph-scenarios.mjs": "8164dba360566a680af5d46259db224c0637ae39308b8a9130e01b62fa5c5abe",
+    "canvas-scenarios.mjs": "7877f819f771b585c5b408a7ae6c669cf6db70d0b51a79c7e15fd2a961abfe1d",
+    "preview-scenarios.mjs": "d04ea8fe3487490711b64a18fdf40a55d01e9abc10834ec182116e86d1d386bc",
+    "editing-tools-scenarios.mjs": "f14df21d0e8f7371bf85d407ba9b759064af82702f08dc6221a692abc0d63a18",
+    "format-scenarios.mjs": "6ae27ec2c609f8e4e9bc5b9563b893b85b08e8b5c29fbfdaf701ae8ec000122d",
+    "composer-scenarios.mjs": "99ff07c7dacedc442ce880e4bc586b31fc78a867a658d3c3da6e23dff2e8ccdd",
+    "menu-scenarios.mjs": "39437ae03d55f2e30ab9311c6aa732885b65fb7914ed2901a4f0945fd09528a5",
+    "bases-scenarios.mjs": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d",
+    "bases-summary-scenarios.mjs": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47",
+    "recovery-scenarios.mjs": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472",
+    "view-scenarios.mjs": "797919b0f5bfecaf187b44abf5abb429891e6a1910758ac2e8f33c6efd5c42f2",
+    "audio-scenarios.mjs": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c",
+    "mermaid-scenarios.mjs": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8",
+    "workspace-import-scenarios.mjs": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863",
+    "community-plugin-test-helpers.mjs": "c492726631a00bd3e6a4a89818d0a4bce10e51a79f3aea6cbd768c25d61802e5",
+    "math-embed-scenarios.mjs": "6cf3f237acbc238a439be49de5f650357c5b06562dd61e8c579f363e8b2eaeae",
+    "tools/outline-pane-scenarios.mjs": "68dbdcaba19fdf231e079773ef2cf7f62359844c90d7ba264222ef80399e764c",
+    "tools/outline-reorder-scenarios.mjs": "c3bb782b11e6d0afc64bf4be69f4912dfae16b65a21d079cefaa49fffc33d6bd",
+    "tools/cached-github-fixture.mjs": "b58c9200323e5dece4474354d8096321e4e4a243fbcbd07cffe9f65e924c59c9",
+    "client/outline-view.ts": "a00ab4b2e6f8b163a00565491a2c07f2569dd2c589378c9a0b3da075d1040f30",
+    "client/outline-model.ts": "0f5a9f267eddd40170064372244ed1e50ba5953d312c86307bdc782de88f5af9",
+    "client/outline-reorder.ts": "36033a81679f1e1af2721da2b68f3b1820b60dee1e7c378b5093d4742acb24f0",
+    "client/editor.ts": "38fa249c988156a3f07b9cfeae09954c8fba446a46e2cdf450b84fc9952d0079",
+    "client/workspace.ts": "b68fc4cdacc62924d731619cbf9a49581c2fd2d1cfaa7b68fbadb8f13737e367",
+    "client/markdown.ts": "d03f2854338cbd33875f3ce29835e3b438a87081c7b9a1865a49a5dc66a6fba5",
+    "client/desktop-ui.ts": "0bf49dadd7c2fd0bddc11992d3bdcf7da7550808bfc709832843ede6985bb9ab",
+    "client/sidebars.ts": "d1d1bfa7fff92e72959ea156e32681b29276c448510e1e258d0344694a814351",
+    "tests/outline-panes.test.mjs": "9e5cc23045a45c1513f9f5a0bd8d9106c373666e7b83e64a8a61272cb71406c5",
+    "src/RonSijm.Slopsidian/wwwroot/app.css": "ae1673d19d280d8164803b06abefe297c56ba61be4c643a16b504fd4ad9f2b63",
+    "select-test-folder.ps1": "3e4a39e0648f319462d6a1fa94b1a2793354c29f80e8a68a7e563db4267b29d3"
+  },
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes; production launch is unchanged.",
+  "lastInteraction": {
+    "type": "click",
+    "selector": "[data-recent-vault=\"browser-vault:5c7ace3c-48ca-49a3-8dd7-2937e6c40b97\"]"
+  },
+  "expectedDiagnostics": [
+    {
+      "id": "4a5ce1b5-5b4a-4b89-8c01-4eb0864434d9:0",
+      "source": "host",
+      "message": "This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.",
+      "reason": "Check browser explicit-save conflict protection"
+    },
+    {
+      "id": "c5a72fdf-a277-445c-b6d5-63441d7d24ca:0",
+      "source": "notification",
+      "message": "The note changed, was renamed or has a save conflict. Save or reload it before reordering; no heading was moved.",
+      "stackIncludes": "OutlineView.reorder",
+      "reason": "Alt+ArrowDown on a dirty, externally changed note must reach the reorder guard and refuse"
+    }
+  ],
+  "sourceFingerprint": "59a76a2fc3313e554022405611006926b6a64901ab78594449d0f0ce2af01141",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": false,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "outlinePanes": {
+    "fixturePlugin": "outline-pane-probe 1.0.0; host contracts only",
+    "originalBytesPreserved": true,
+    "actualReadOwnership": true,
+    "independentStateRestored": true,
+    "reorder": {
+      "trustedPointerDrag": true,
+      "keyboard": true,
+      "contextMenu": true,
+      "singleUndo": true,
+      "peers": true,
+      "renameAndConflict": true,
+      "readOnlyGitHub": "see outlinePanes.readOnly.reorderRefused",
+      "privateTreeOriginalVisualPhysicalImeScale": "not claimed"
+    },
+    "readOnly": {
+      "genuineCacheOnlyMount": true,
+      "exactHeadingNavigation": true,
+      "preferencesIndependent": true,
+      "zeroNetwork": true,
+      "allBlobsUnchanged": true,
+      "returnedToLocal": true,
+      "reorderRefused": {
+        "rowsNotDraggable": true,
+        "keyboardRefused": true,
+        "noEnabledMenuMove": true,
+        "textUnchanged": true
+      }
+    }
+  },
+  "artifactStability": "verified-through-scenario",
+  "exceptions": [],
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-shiny-invention\\.runtime\\evidence\\outline-panes-web-smoke-errors.jsonl",
+    "nativePaths": [],
+    "records": 2,
+    "expected": 2,
+    "unexpected": [],
+    "sha256": "e10ac96bfdc7139681cdef0be3ec8bc029344c33708d72b0c21161f171d06631",
+    "includesFinalTeardown": true
+  },
+  "completedAt": "2026-11-01T22:58:09.563Z"
+}

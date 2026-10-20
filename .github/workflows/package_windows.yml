@@ -1,0 +1,43 @@
+name: Package Windows desktop (unsigned, manual)
+
+# Builds the unsigned portable ZIP and installer plus measurement evidence as workflow artifacts.
+# It never publishes a release, signs, deploys or registers anything.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Install JavaScript build dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install Electron runtime
+        run: pwsh -NoProfile -File tools/install-electron.ps1
+      - name: Package
+        run: node tools/package-desktop.mjs
+      - name: Measure bundles
+        run: node tools/measure-bundles.mjs --build-web
+      - name: Benchmark bounded large vault
+        run: node tools/benchmark-large-vault.mjs
+      - name: Check regression budgets
+        run: node tools/check-release-budgets.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: slopsidian-windows-unsigned
+          path: |
+            .runtime/package/out/*
+            .runtime/package/evidence/*.json
+          if-no-files-found: error

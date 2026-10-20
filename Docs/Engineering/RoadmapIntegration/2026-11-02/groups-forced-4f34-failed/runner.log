@@ -1,0 +1,48 @@
+PASS linked leaves follow navigation, skip pinned members and keep independent history
+PASS a real popout window hosts the same live leaf, view and owner
+PASS an unapproved native close recovers the same live dirty editor and keeps original retryable window intent without rewinding main
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile\logs\errors-smoke-d6ac4cef-608d-4585-8fec-6632226f1056.jsonl
+(node:45308) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:23218/devtools/browser/e67afa11-fb0d-418a-909c-13bc0e46a6fd
+ELECTRON_HOST_PID 45308
+DOTNET_HOST_PID 7540
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-CvXLQz
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:52978
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:52978
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: saving the recovered note leaves unrelated main work dirty
++ actual - expected
+
++ 'newer main work'
+- '# A\n\nA body λ\n'
+
+    at checkWorkspaceGroupsPopouts (file:///D:/RonSijm/RonSijm.Slopsidian/tools/workspace-popout-scenarios.mjs:230:12)
+    at async file:///D:/RonSijm/RonSijm.Slopsidian/tools/smoke.mjs:949:7
+
+'failed' !== 'passed'
+
+    at file:///D:/RonSijm/RonSijm.Slopsidian/tools/smoke.mjs:1860:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v25.6.1

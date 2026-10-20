@@ -1,0 +1,42 @@
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\.runtime\smoke-profile\logs\errors-smoke-808fe1b5-523b-4b5b-b2aa-a635a4d3907b.jsonl
+(node:36968) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:14892/devtools/browser/c7a1b194-fcf2-47ae-bb61-f328814c96f8
+ELECTRON_HOST_PID 36968
+DOTNET_HOST_PID 26956
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\.runtime\smoke-vault-CIOuvT
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:63695
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:63695
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\.runtime\smoke-profile\logs\errors-smoke-808fe1b5-523b-4b5b-b2aa-a635a4d3907b.jsonl
+(node:40452) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:6712/devtools/browser/db516e4e-180a-4e15-9d6c-36d48fd1c3cb
+ELECTRON_HOST_PID 40452
+DOTNET_HOST_PID 50148
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\.runtime\smoke-vault-CIOuvT
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:57534
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:57534
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

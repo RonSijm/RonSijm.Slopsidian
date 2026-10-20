@@ -1,0 +1,18 @@
+{
+  "package": "hypermd",
+  "version": "0.3.11",
+  "license": "MIT",
+  "source": "https://registry.npmjs.org/hypermd/-/hypermd-0.3.11.tgz",
+  "integrity": "sha512-EGgnNgyh2WCJU+emez+X7OHKnV36xKIdmcs9EnrWIaa1Wx//wBetr9xSYhEFeXzD/qSYjezzH1lzDQh1LZIirw==",
+  "scope": "Unmodified standalone Markdown tokenizer and its CSS only. This is public upstream HyperMD, not Obsidian's private fork or the full HyperMD renderer.",
+  "members": {
+    "hypermd.js": "package/mode/hypermd.js",
+    "hypermd.css": "package/mode/hypermd.css",
+    "LICENSE": "package/LICENSE"
+  },
+  "sha256": {
+    "hypermd.js": "dde71fb753d7d23761dffa939e65f07d779f82f444eb8566e87a1d10bed01418",
+    "hypermd.css": "6a798793b9533bbcabc68de6a2203a44d8e259b7ac19bf3446632111ee28c666",
+    "LICENSE": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b"
+  }
+}

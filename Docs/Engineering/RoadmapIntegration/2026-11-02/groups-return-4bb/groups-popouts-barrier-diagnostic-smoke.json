@@ -1,0 +1,1735 @@
+{
+  "status": "failed",
+  "scope": "workspace-groups-popouts-barrier-diagnostic",
+  "communityPluginsTested": false,
+  "startedAt": "2026-11-02T00:03:45.265Z",
+  "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+  "launcherPid": 37444,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "linked leaves follow navigation, skip pinned members and keep independent history",
+    "a real popout window hosts the same live leaf, view and owner",
+    "a held file mutation freezes the popout and real input/undo resume afterwards"
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 37444,
+      "electronPid": 37444,
+      "dotnetPid": 44940,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.0",
+  "sourceFingerprint": "4bb2162768f5b1b4f44e51f9f7ab04e1b86d7fd4451706b36fea651802f15bf1",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "rendererReloads": [
+    {
+      "previousLoader": "9EF559C8D6D5CA8F6BA8AA54169569D5",
+      "loader": "4BBD840986EF9DF89F4E25D5F1F7DBE7"
+    }
+  ],
+  "resizeObserverDiagnostic": [
+    {
+      "label": "main",
+      "at": 1793577827246,
+      "data": {
+        "observers": [],
+        "errors": [],
+        "realm": "http://127.0.0.1:52844/"
+      }
+    },
+    {
+      "label": "popout",
+      "at": 1793577828319,
+      "data": {
+        "observers": [],
+        "errors": [],
+        "realm": "about:blank"
+      }
+    },
+    {
+      "label": "main",
+      "at": 1793577830262,
+      "data": {
+        "observers": [
+          {
+            "id": 0,
+            "stack": [
+              "at new DOMObserver (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:15399:31)",
+              "at new _EditorView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16052:25)",
+              "at new _Editor (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85097:15)",
+              "at new MarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89620:19)",
+              "at Workspace.applyLeafState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92139:20)",
+              "at async load (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92830:11)",
+              "at async load (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92823:13)"
+            ],
+            "created": 1793577827476,
+            "callbacks": 3,
+            "targets": [
+              {
+                "tag": "DIV",
+                "className": "cm-scroller",
+                "doc": "own",
+                "connected": false,
+                "at": 1793577827476
+              }
+            ],
+            "last": 1793577827702
+          },
+          {
+            "id": 1,
+            "stack": [
+              "at new D:/RonSijm/RonSijm.Slopsidian/node_modules/@codemirror/view/dist/index.js.ViewPlugin.fromClass.eventObservers.scroll (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:17591:69)",
+              "at _ViewPlugin.create (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11063:50)",
+              "at PluginInstance.update (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11079:45)",
+              "at _EditorView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16192:21)",
+              "at new _Editor (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85099:15)",
+              "at new MarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89620:19)",
+              "at Workspace.applyLeafState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92139:20)"
+            ],
+            "created": 1793577827481,
+            "callbacks": 0,
+            "targets": []
+          },
+          {
+            "id": 2,
+            "stack": [
+              "at new D:/RonSijm/RonSijm.Slopsidian/node_modules/@codemirror/view/dist/index.js.ViewPlugin.fromClass.eventObservers.scroll (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:17591:69)",
+              "at _ViewPlugin.create (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11063:50)",
+              "at PluginInstance.update (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11079:45)",
+              "at _EditorView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16192:21)",
+              "at _Editor.setDocument (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85176:13)",
+              "at Workspace.loadMarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:91949:19)",
+              "at async MarkdownView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89865:22)"
+            ],
+            "created": 1793577827495,
+            "callbacks": 0,
+            "targets": []
+          },
+          {
+            "id": 3,
+            "stack": [
+              "at new DOMObserver (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:15399:31)",
+              "at new _EditorView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16052:25)",
+              "at new _Editor (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85097:15)",
+              "at new MarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89620:19)",
+              "at Workspace.applyLeafState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92139:20)",
+              "at async load (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92830:11)",
+              "at async load (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92823:13)"
+            ],
+            "created": 1793577827515,
+            "callbacks": 5,
+            "targets": [
+              {
+                "tag": "DIV",
+                "className": "cm-scroller",
+                "doc": "own",
+                "connected": false,
+                "at": 1793577827515
+              }
+            ],
+            "last": 1793577828676
+          },
+          {
+            "id": 4,
+            "stack": [
+              "at new D:/RonSijm/RonSijm.Slopsidian/node_modules/@codemirror/view/dist/index.js.ViewPlugin.fromClass.eventObservers.scroll (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:17591:69)",
+              "at _ViewPlugin.create (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11063:50)",
+              "at PluginInstance.update (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11079:45)",
+              "at _EditorView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16192:21)",
+              "at new _Editor (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85099:15)",
+              "at new MarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89620:19)",
+              "at Workspace.applyLeafState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92139:20)"
+            ],
+            "created": 1793577827516,
+            "callbacks": 0,
+            "targets": []
+          },
+          {
+            "id": 5,
+            "stack": [
+              "at new D:/RonSijm/RonSijm.Slopsidian/node_modules/@codemirror/view/dist/index.js.ViewPlugin.fromClass.eventObservers.scroll (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:17591:69)",
+              "at _ViewPlugin.create (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11063:50)",
+              "at PluginInstance.update (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11079:45)",
+              "at _EditorView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16192:21)",
+              "at _Editor.setDocument (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85176:13)",
+              "at Workspace.loadMarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:91949:19)",
+              "at async MarkdownView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89865:22)"
+            ],
+            "created": 1793577827522,
+            "callbacks": 0,
+            "targets": []
+          },
+          {
+            "id": 6,
+            "stack": [
+              "at new DOMObserver (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:15399:31)",
+              "at new _EditorView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16052:25)",
+              "at new _Editor (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85097:15)",
+              "at new MarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89620:19)",
+              "at Workspace.applyLeafState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92139:20)",
+              "at async load (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92830:11)",
+              "at async load (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92823:13)"
+            ],
+            "created": 1793577827530,
+            "callbacks": 4,
+            "targets": [
+              {
+                "tag": "DIV",
+                "className": "cm-scroller",
+                "doc": "own",
+                "connected": false,
+                "at": 1793577827530
+              }
+            ],
+            "last": 1793577828676
+          },
+          {
+            "id": 7,
+            "stack": [
+              "at new D:/RonSijm/RonSijm.Slopsidian/node_modules/@codemirror/view/dist/index.js.ViewPlugin.fromClass.eventObservers.scroll (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:17591:69)",
+              "at _ViewPlugin.create (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11063:50)",
+              "at PluginInstance.update (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11079:45)",
+              "at _EditorView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16192:21)",
+              "at new _Editor (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85099:15)",
+              "at new MarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89620:19)",
+              "at Workspace.applyLeafState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:92139:20)"
+            ],
+            "created": 1793577827531,
+            "callbacks": 0,
+            "targets": []
+          },
+          {
+            "id": 8,
+            "stack": [
+              "at new D:/RonSijm/RonSijm.Slopsidian/node_modules/@codemirror/view/dist/index.js.ViewPlugin.fromClass.eventObservers.scroll (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:17591:69)",
+              "at _ViewPlugin.create (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11063:50)",
+              "at PluginInstance.update (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11079:45)",
+              "at _EditorView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16192:21)",
+              "at _Editor.setDocument (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85176:13)",
+              "at Workspace.loadMarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:91949:19)",
+              "at async MarkdownView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89865:22)"
+            ],
+            "created": 1793577827536,
+            "callbacks": 0,
+            "targets": []
+          },
+          {
+            "id": 9,
+            "stack": [
+              "at new D:/RonSijm/RonSijm.Slopsidian/node_modules/@codemirror/view/dist/index.js.ViewPlugin.fromClass.eventObservers.scroll (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:17591:69)",
+              "at _ViewPlugin.create (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11063:50)",
+              "at PluginInstance.update (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11079:45)",
+              "at _EditorView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16192:21)",
+              "at _Editor.setDocument (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85176:13)",
+              "at Workspace.loadMarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:91949:19)",
+              "at async MarkdownView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89865:22)"
+            ],
+            "created": 1793577827569,
+            "callbacks": 0,
+            "targets": []
+          },
+          {
+            "id": 10,
+            "stack": [
+              "at new D:/RonSijm/RonSijm.Slopsidian/node_modules/@codemirror/view/dist/index.js.ViewPlugin.fromClass.eventObservers.scroll (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:17591:69)",
+              "at _ViewPlugin.create (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11063:50)",
+              "at PluginInstance.update (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:11079:45)",
+              "at _EditorView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:16192:21)",
+              "at _Editor.setDocument (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:85176:13)",
+              "at Workspace.loadMarkdownView (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:91949:19)",
+              "at async MarkdownView.setState (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:89865:22)"
+            ],
+            "created": 1793577827584,
+            "callbacks": 0,
+            "targets": []
+          }
+        ],
+        "errors": [
+          {
+            "at": 1793577828341,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828359,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828375,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828392,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828408,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828425,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828441,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828458,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828475,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828491,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828508,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828524,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828541,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828558,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828574,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828591,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828608,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828625,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828641,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          },
+          {
+            "at": 1793577828658,
+            "callbacks": [
+              {
+                "id": 0,
+                "callbacks": 3,
+                "last": 1793577827702
+              },
+              {
+                "id": 3,
+                "callbacks": 4,
+                "last": 1793577827806
+              },
+              {
+                "id": 6,
+                "callbacks": 3,
+                "last": 1793577827806
+              }
+            ]
+          }
+        ],
+        "realm": "http://127.0.0.1:52844/"
+      }
+    }
+  ],
+  "browserErrors": [],
+  "consoleErrors": [
+    "[2026-11-02T00:03:50.351Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "artifacts": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "sha256": "bc549ba11ac45468283b25fe2e4ba4d665982a91d1c2453c22f3f9af4a20fc20"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "sha256": "5d092bdd429f7a5d5761ebdb11d3df015dd91e3ab87ba668c549d01b5fc2c59b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.css",
+      "sha256": "39bc32a24ef18d35bd3f68caa95e1273255394beab9aa2b707fbcb0a32f4ea18"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\codemirror-license.txt",
+      "sha256": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\hypermd-license.txt",
+      "sha256": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-extract.js",
+      "sha256": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-extract.js.LEGAL.txt",
+      "sha256": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-licenses.txt",
+      "sha256": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\search-worker.js",
+      "sha256": "89b9c0d72b4b901cfe80887fcc7f926efd40cfde315870d9f2496ce86c62eec5"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\graph-worker.js",
+      "sha256": "65cd48b19bcf5e773b9868e219c067cfc47cd79cb305b6661f8dbf885e6e0390"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\bases-worker.js",
+      "sha256": "4cc1ea06210c62f5ba6957312ccdfc0e34b9cffa475460e7bb91709fcf2b6938"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-frame.js",
+      "sha256": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-api.js",
+      "sha256": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-api.js.LEGAL.txt",
+      "sha256": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-licenses.txt",
+      "sha256": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\katex-license.txt",
+      "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-api.js",
+      "sha256": "31fda904c82df0457d3b22835859127122667a9264bea635d7bc606c578ae6a8"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-worker.js",
+      "sha256": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-licenses.txt",
+      "sha256": "f812858b82bbea82fb78fc8740dad809e676e4d95fe458faaa143959539879ef"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\wasm\\jbig2.wasm",
+      "sha256": "466f45c2a61a698152fb5400c27e56ff2ceb73dcb71fde3fc366a502308eaab0"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\wasm\\openjpeg.wasm",
+      "sha256": "95e5002597af0824004aa57b1900fe019715db389e37640b1e58395e42f00cc5"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\wasm\\qcms_bg.wasm",
+      "sha256": "663d86126d5f5fcb1c61490f94353e2a8375660b8c5498ab3ebab5a34b08800e"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\cmaps\\Adobe-Japan1-UCS2.bcmap.txt",
+      "sha256": "66c5d0dc4964f4093e77b194023f3a0f689324028ec8330e1e1d0570bcba7c2f"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\standard_fonts\\LiberationSans-Regular.ttf.txt",
+      "sha256": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\mermaid-frame.html",
+      "sha256": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333"
+    },
+    {
+      "path": "desktop\\main.cjs",
+      "sha256": "d277a642ae151fdc2a47ec1fd43bec160bc3f56724ed2501ea462cfe49b7e46d"
+    },
+    {
+      "path": "desktop\\draft-rescue.cjs",
+      "sha256": "9892d89d79952681c123f4eabf886489e1cf51122c8ea0dca156e41b88babc2b"
+    },
+    {
+      "path": "desktop\\draft-rescue-catalog.cjs",
+      "sha256": "226cef9e04f8dbe4f031be098a5f1d9fc3a5a6888cf2c5ab5719863c7c0e6a80"
+    },
+    {
+      "path": "desktop\\draft-rescue-inspector.cjs",
+      "sha256": "d74188d01a8f91bed9bd84170aca5261adbdb5566952a18efc5ef681986ed764"
+    },
+    {
+      "path": "desktop\\draft-rescue-review-state.cjs",
+      "sha256": "a29ddf9c87e421a2708a2be553c65178da4fbf6daa93c5115e3af50a3666c959"
+    },
+    {
+      "path": "desktop\\persistent-draft-storage.cjs",
+      "sha256": "0603b07363221b782d6cf99318e1c330dac7cc00a91d9acf287b0b9f2cc50d59"
+    },
+    {
+      "path": "desktop\\local-storage.cjs",
+      "sha256": "1e2442f44ae6951ba92f4b67022e0e9ffe0560ae27ab643e6dc42c62836a8c95"
+    },
+    {
+      "path": "desktop\\secret-storage.cjs",
+      "sha256": "f794025937f8be2705d4d406f1562e58d2345029e4e198718736671de352cbe0"
+    },
+    {
+      "path": "desktop\\web-viewer.cjs",
+      "sha256": "0c72d34340a5b7126f3ea6a7aa7d1fd4af6f7c1ed4ce1d4b071e0e3b3d3b8366"
+    },
+    {
+      "path": "desktop\\web-viewer-policy.cjs",
+      "sha256": "b05dab72e62df121ec2dda08dfe9ef5e0c1fe6269a4ba8e59c541d694bba4395"
+    },
+    {
+      "path": "desktop\\web-reader.cjs",
+      "sha256": "ba50206513a06a52592f0d3391a26fe48b6b1183f1e129d63c17c53d749dca91"
+    },
+    {
+      "path": "desktop\\web-zoom.cjs",
+      "sha256": "1704e6d131ebb6de7cd3cde16c445470786cf99940016af236044f846da90f41"
+    },
+    {
+      "path": "shared\\web-zoom.cjs",
+      "sha256": "407cce6fd4b61bfb79a909e2c72614e48d9d395dc0079bb4881b44150d0667a6"
+    },
+    {
+      "path": "desktop\\audio-permissions.cjs",
+      "sha256": "6c5f235f7024558593889e6c53c9406cd639841041838ef141aaa4c73cdce5d8"
+    },
+    {
+      "path": "desktop\\attachment-source.cjs",
+      "sha256": "00f422d8cd4f989b7ec060c8acc4cfb806b2a3f01fd04274108a46da0389d523"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\app.css",
+      "sha256": "f2beb1528174ece9b4a5602bdd4dd4f34c30b64cf9f574f228be316bb4a5f4d6"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\icons.svg",
+      "sha256": "a080b921f421efcd5d6681e4f52a4e79ca1301c0a1eedbe34d008e4d29a38bfe"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\icons-LICENSE.txt",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\lucide-icons.svg",
+      "sha256": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\lucide-icons-LICENSE.txt",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "tools\\smoke.mjs",
+      "sha256": "5b913ccd119daab08036a391c870e0669062ab399e2a53d7ff50785f6a8f0274"
+    },
+    {
+      "path": "tools\\reading-scenarios.mjs",
+      "sha256": "3fe9027fa9ffafee0f9af8ab25ad66e97b12b76d5d57ca5ea59959e12705e5aa"
+    },
+    {
+      "path": "tools\\outgoing-scenarios.mjs",
+      "sha256": "435bc89bb05886520623c161fdf104ab9a54543435988ee441516376f3ae3659"
+    },
+    {
+      "path": "tools\\discovery-scenarios.mjs",
+      "sha256": "ef01d1ed135e3ce426b75f06bfb313922880e115c26bb35b8feaa076a146f16b"
+    },
+    {
+      "path": "tools\\editor-chrome-scenarios.mjs",
+      "sha256": "85d6db8cde4903c586b37d601e986cc14a853e18dd5f6d39ae1b6ea1c721fdda"
+    },
+    {
+      "path": "tools\\view-scenarios.mjs",
+      "sha256": "797919b0f5bfecaf187b44abf5abb429891e6a1910758ac2e8f33c6efd5c42f2"
+    },
+    {
+      "path": "tools\\organization-scenarios.mjs",
+      "sha256": "cf4fde63a11939dec90b46f6c0e9d8d12dc58bea663ece94ad054d305f4cb09b"
+    },
+    {
+      "path": "tools\\file-scenarios.mjs",
+      "sha256": "c09e792fc21556a9d06034d2e9f480a29eebddcfd55030494a237ae55163425d"
+    },
+    {
+      "path": "tools\\graph-scenarios.mjs",
+      "sha256": "8164dba360566a680af5d46259db224c0637ae39308b8a9130e01b62fa5c5abe"
+    },
+    {
+      "path": "tools\\canvas-scenarios.mjs",
+      "sha256": "7877f819f771b585c5b408a7ae6c669cf6db70d0b51a79c7e15fd2a961abfe1d"
+    },
+    {
+      "path": "tools\\preview-scenarios.mjs",
+      "sha256": "d04ea8fe3487490711b64a18fdf40a55d01e9abc10834ec182116e86d1d386bc"
+    },
+    {
+      "path": "tools\\editing-tools-scenarios.mjs",
+      "sha256": "f14df21d0e8f7371bf85d407ba9b759064af82702f08dc6221a692abc0d63a18"
+    },
+    {
+      "path": "tools\\format-scenarios.mjs",
+      "sha256": "6ae27ec2c609f8e4e9bc5b9563b893b85b08e8b5c29fbfdaf701ae8ec000122d"
+    },
+    {
+      "path": "tools\\composer-scenarios.mjs",
+      "sha256": "99ff07c7dacedc442ce880e4bc586b31fc78a867a658d3c3da6e23dff2e8ccdd"
+    },
+    {
+      "path": "tools\\menu-scenarios.mjs",
+      "sha256": "39437ae03d55f2e30ab9311c6aa732885b65fb7914ed2901a4f0945fd09528a5"
+    },
+    {
+      "path": "tools\\community-plugin-test-helpers.mjs",
+      "sha256": "c492726631a00bd3e6a4a89818d0a4bce10e51a79f3aea6cbd768c25d61802e5"
+    },
+    {
+      "path": "tools\\suggestion-scenarios.mjs",
+      "sha256": "c806e6913e8ac96a4843ed802a20e577e96dd550530c9959de9570a757312bda"
+    },
+    {
+      "path": "tools\\renderer-scenarios.mjs",
+      "sha256": "a44d423a43febf3a0fafe018027a91470ef289d4af106ee84878536d0599947a"
+    },
+    {
+      "path": "tools\\core-foundation-scenarios.mjs",
+      "sha256": "d56b06ef4308df338f27d7dab11ea1166eda4c8e19659a9b08f3b7ce3930a13d"
+    },
+    {
+      "path": "tools\\core-verification-scenarios.mjs",
+      "sha256": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539"
+    },
+    {
+      "path": "tools\\tab-movement-scenarios.mjs",
+      "sha256": "4c07a8fff96e95c439552e46fd14eb09d6047ae43b9a75a64425ac8a3a069daa"
+    },
+    {
+      "path": "tools\\workspace-docking-scenarios.mjs",
+      "sha256": "342399fa3bb21a7be54b02f28b36cc7fe30fa56c9a68e40f952af4c8bf2dc98f"
+    },
+    {
+      "path": "tools\\workspace-history-scenarios.mjs",
+      "sha256": "08090dd6a2fa70d43d8dba2a20f815af2a6b590f0de84a4c65118ea5e7526052"
+    },
+    {
+      "path": "tools\\workspace-popout-scenarios.mjs",
+      "sha256": "9fe63755020f394d22de227489e0758a6faa894333cea2f678e8789640beb773"
+    },
+    {
+      "path": "client/workspace.ts",
+      "sha256": "57d6c4d55c0d599a1a464ac8e53c9388265f44babaf7cd1f77fc928900d0dcd3"
+    },
+    {
+      "path": "client/workspace-dom.ts",
+      "sha256": "f8227446fd9712ea933519b627478d296e5e55b3b9e70110aba732c0160e3f5d"
+    },
+    {
+      "path": "client/workspace-tab-drag.ts",
+      "sha256": "d7ca42c23f732b535596433862623f982fb5b05182709fb542b2a548e86dbf4c"
+    },
+    {
+      "path": "client/workspace-dock.ts",
+      "sha256": "3e92c2bc762468da8f4223a43bd63f1ba71e763100992f6bc314043c09adb0fe"
+    },
+    {
+      "path": "client/desktop-ui.ts",
+      "sha256": "d375f3974a851d26b063e03ab9f805e94fc1129d4792bae18a4d6b4eba46cc97"
+    },
+    {
+      "path": "tests/workspace-tabs.test.mjs",
+      "sha256": "42f742412bf7dd5c028048b6242d6b618d8db71f304d343a564f3243644e6fde"
+    },
+    {
+      "path": "client/workspace-groups.ts",
+      "sha256": "2b8f2873c5f9802a817b12ccdf5d9587b725da970d12e6b2921715b72ac4e656"
+    },
+    {
+      "path": "client/workspace-window.ts",
+      "sha256": "1b04a839322245b0a9ae0a3c8fb9454aca22cd590073741cbb5f11e1583e4330"
+    },
+    {
+      "path": "client/realm.ts",
+      "sha256": "4e8e8834edcd68bc1298a936d5e98533d481402c761a0acc8465a12f214b67cc"
+    },
+    {
+      "path": "client/menu.ts",
+      "sha256": "63d4944480f17db83311cae21500b79c4d21c6def08f7b3e9e068ae57ea5eca8"
+    },
+    {
+      "path": "client/ui.ts",
+      "sha256": "de96b47dcf1ab7667e56086d2c49bb614cddd1795db53c89df0be35377b87ab5"
+    },
+    {
+      "path": "client/editor.ts",
+      "sha256": "ba9bc4e04fba9be39501af8e980153a6d3709e38ea1aee5c6977abf7e4e8bb66"
+    },
+    {
+      "path": "client/views.ts",
+      "sha256": "d5f1d7c046fa6a2f26e6a23bd1ece3214c660b464aacb48bc9098d7522e9226b"
+    },
+    {
+      "path": "desktop/popout-windows.cjs",
+      "sha256": "27c8190451392d2fc4baaa28a69395275eeaf7b416ee8a68fd119b2e3a8af57a"
+    },
+    {
+      "path": "desktop/main.cjs",
+      "sha256": "d277a642ae151fdc2a47ec1fd43bec160bc3f56724ed2501ea462cfe49b7e46d"
+    },
+    {
+      "path": "tools/workspace-popout-scenarios.mjs",
+      "sha256": "9fe63755020f394d22de227489e0758a6faa894333cea2f678e8789640beb773"
+    },
+    {
+      "path": "tools/resize-observer-diagnostic.mjs",
+      "sha256": "5c04fb2a75f489fb592a1046c5e8d4ae953d39256c382dceacb79c39da49e9c8"
+    },
+    {
+      "path": "tests/resize-observer-diagnostic.test.mjs",
+      "sha256": "1c04cf38ebb53b2592b389ea2f1d845c13881ba7106ae8b08b8b62c908a0accf"
+    },
+    {
+      "path": "tools/webviewer-scenarios.mjs",
+      "sha256": "9cdb17cc1af4cc153be71c1e4e8e400ac86f0d1ba8acbf21871d871b2712522f"
+    },
+    {
+      "path": "tests/workspace-groups-popouts.test.mjs",
+      "sha256": "dc3a0e2fa31b6993f92e2b426b773dac001b9b0c8894607fd8dcf47e9d0e51e7"
+    },
+    {
+      "path": "client/web-viewer.ts",
+      "sha256": "bb9a40a5de83fa33ace58d8fdafeac66874b2b0e547f00038f83a5f1c0d05125"
+    },
+    {
+      "path": "client/web-reader-frame.ts",
+      "sha256": "15ff548d6a6fd46731cdd25c2c068d70c73a87b6adc14ba280810310ae7cf48c"
+    },
+    {
+      "path": "desktop/web-viewer.cjs",
+      "sha256": "0c72d34340a5b7126f3ea6a7aa7d1fd4af6f7c1ed4ce1d4b071e0e3b3d3b8366"
+    },
+    {
+      "path": "tests/web-reader-popout.test.mjs",
+      "sha256": "6f88cbe24319dfa6b69e73363a526d680c1787afc16b4e582c623ca9561f1c4a"
+    },
+    {
+      "path": "tests/web-viewer-popout-host.test.mjs",
+      "sha256": "036680960bb10a18d296e5dffa80dd20538c2915fd7b7e8f4d3487deac00b61a"
+    },
+    {
+      "path": "tools\\core-verification-targets.mjs",
+      "sha256": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+      "sha256": "5bd25eb6455f39ec06240d8836a40f7afc620c52ce4dcb7af8b9be188080f007"
+    },
+    {
+      "path": "tools\\render-child-scenarios.mjs",
+      "sha256": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611"
+    },
+    {
+      "path": "tools\\templater-scenarios.mjs",
+      "sha256": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594"
+    },
+    {
+      "path": "tools\\webviewer-scenarios.mjs",
+      "sha256": "9cdb17cc1af4cc153be71c1e4e8e400ac86f0d1ba8acbf21871d871b2712522f"
+    },
+    {
+      "path": "tools\\bases-scenarios.mjs",
+      "sha256": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d"
+    },
+    {
+      "path": "tools\\bases-summary-scenarios.mjs",
+      "sha256": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47"
+    },
+    {
+      "path": "tools\\recovery-scenarios.mjs",
+      "sha256": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472"
+    },
+    {
+      "path": "tools\\audio-scenarios.mjs",
+      "sha256": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c"
+    },
+    {
+      "path": "tools\\mermaid-scenarios.mjs",
+      "sha256": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8"
+    },
+    {
+      "path": "tools\\math-embed-scenarios.mjs",
+      "sha256": "6cf3f237acbc238a439be49de5f650357c5b06562dd61e8c579f363e8b2eaeae"
+    },
+    {
+      "path": "tools\\workspace-import-scenarios.mjs",
+      "sha256": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863"
+    },
+    {
+      "path": "shared\\core-plugins.json",
+      "sha256": "ac192f5c228b9c1888faf0bef5a2c7a00fa6d259b3633b4516d783b0b12046d5"
+    },
+    {
+      "path": "tools\\core-scenarios.mjs",
+      "sha256": "f0dc3a460bef11c0d386a791c9e87a8e52f30f6cf86edcabc7d1de468bce7c90"
+    }
+  ],
+  "artifactStability": "verified-through-scenario",
+  "controlledShutdownConsoleErrors": [],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 44940,
+  "electronPid": 37444,
+  "completedAt": "2026-11-02T00:03:50.589Z",
+  "errorLogAudit": {
+    "status": "failed",
+    "path": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\evidence\\groups-popouts-barrier-diagnostic-smoke-errors.jsonl",
+    "nativePaths": [
+      "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-profile\\logs\\errors-smoke-4c0fe507-e86a-4d47-9778-2c1277a043d8.jsonl"
+    ],
+    "records": 20,
+    "expected": 0,
+    "unexpected": [
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:0",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.342Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:1",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.359Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:2",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.375Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:3",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.392Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:4",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.408Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:5",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.425Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:6",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.441Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:7",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.458Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:8",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.475Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:9",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.491Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:10",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.508Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:11",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.524Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:12",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.541Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:13",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.558Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:14",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.574Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:15",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.591Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:16",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.608Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:17",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.625Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:18",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.641Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4d2770a9-66ad-4030-801b-1f5ba1d62827:19",
+        "session": "4d2770a9-66ad-4030-801b-1f5ba1d62827",
+        "timestamp": "2026-11-02T00:03:48.658Z",
+        "source": "window-error",
+        "error": {
+          "name": "Error",
+          "message": "ResizeObserver loop completed with undelivered notifications.",
+          "stack": "Error: Reported here\n    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\n    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\n    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21",
+          "stackOrigin": "reported"
+        },
+        "page": "http://127.0.0.1:52844/",
+        "context": {
+          "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-4aarp7",
+          "file": "Popout nav/C.md",
+          "view": "markdown",
+          "leafId": "pop-b",
+          "filename": "http://127.0.0.1:52844/",
+          "line": 0,
+          "column": 0
+        }
+      }
+    ],
+    "sha256": "09a256b085c4c18475d69e27104c36cf6bec26e6fe38e8831a9b6d6e96c2d2a1",
+    "includesFinalTeardown": true
+  },
+  "error": "AssertionError [ERR_ASSERTION]: Unexpected reported/unhandled errors occurred; inspect C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\evidence\\groups-popouts-barrier-diagnostic-smoke-errors.jsonl\n+ actual - expected\n\n+ [\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:0',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.342Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:1',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.359Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:2',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.375Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:3',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.392Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:4',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.408Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:5',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.425Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:6',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.441Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:7',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.458Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:8',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.475Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:9',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.491Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:10',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.508Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:11',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.524Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:12',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.541Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:13',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.558Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:14',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.574Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:15',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.591Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:16',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.608Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:17',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.625Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:18',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.641Z'\n+   },\n+   {\n+     context: {\n+       column: 0,\n+       file: 'Popout nav/C.md',\n+       filename: 'http://127.0.0.1:52844/',\n+       leafId: 'pop-b',\n+       line: 0,\n+       vault: 'C:\\\\Users\\\\Ron\\\\.copilot\\\\repos\\\\copilot-worktrees\\\\RonSijm.Slopsidian\\\\ronsijm-stunning-sniffle\\\\.runtime\\\\smoke-vault-4aarp7',\n+       view: 'markdown'\n+     },\n+     error: {\n+       message: 'ResizeObserver loop completed with undelivered notifications.',\n+       name: 'Error',\n+       stack: 'Error: Reported here\\n' +\n+         '    at describeError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42877:149)\\n' +\n+         '    at recordError (http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:42937:12)\\n' +\n+         '    at http://127.0.0.1:52844/js/editor-host.hvzbb5qnk8.js:124756:21',\n+       stackOrigin: 'reported'\n+     },\n+     id: '4d2770a9-66ad-4030-801b-1f5ba1d62827:19',\n+     page: 'http://127.0.0.1:52844/',\n+     schemaVersion: 1,\n+     session: '4d2770a9-66ad-4030-801b-1f5ba1d62827',\n+     source: 'window-error',\n+     timestamp: '2026-11-02T00:03:48.658Z'\n+   }\n+ ]\n- []\n\n    at Object.finish (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/error-log-audit.mjs:58:16)\n    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:1820:14\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+    "catalog": {
+      "schemaVersion": 1,
+      "sourceFingerprint": "212ef2f3c8301fa94614d80aed186a8fb51ce444fd0c716e454c1adcb09a6d7e",
+      "hosts": {
+        "desktop": {},
+        "web": {}
+      }
+    }
+  },
+  {
+    "path": ".runtime\\web\\wwwroot\\core-verification.json",
+    "catalog": {
+      "schemaVersion": 1,
+      "sourceFingerprint": "212ef2f3c8301fa94614d80aed186a8fb51ce444fd0c716e454c1adcb09a6d7e",
+      "hosts": {
+        "desktop": {},
+        "web": {}
+      }
+    }
+  }
+]

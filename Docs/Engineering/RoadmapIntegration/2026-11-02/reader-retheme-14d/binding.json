@@ -1,0 +1,16 @@
+{
+  "status": "runner-passed-binding-stable",
+  "workspace": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine",
+  "script": "webviewer-smoke.mjs",
+  "args": [
+    "--reader-appearance"
+  ],
+  "environment": {},
+  "startedAt": "2026-11-02T00:48:14.763Z",
+  "boundary": "Raw source/artifact binding only. Inspect the runner's full feature report, scope, error audit and helper teardown separately; diagnostics are not acceptance.",
+  "sourceFingerprint": "14d2b64175a260406a1f963947b19d34ea9ea310246469f9e9b141b631155461",
+  "runnerPid": 17244,
+  "exitCode": 0,
+  "exitSignal": null,
+  "completedAt": "2026-11-02T00:50:16.999Z"
+}

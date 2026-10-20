@@ -1,0 +1,40 @@
+ok - cold online page is unprepared and caches nothing until the user asks
+ok - user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it
+ok - cold restart with the network OFF boots the app, workers and renderer from the cached shell
+ok - a genuine cached GitHub mount is seeded offline in local storage only
+ok - a cold canonical cached remote route boots offline into the read-only mount with the exact note and no API/raw fallback
+ok - explicit complete cached index offline: partial first, missing and corrupt bytes refused, complete after exact cached bytes, zero downloads
+ok - cached index dialog UI: real pointers drive Prepare, held Cancel, Resume, missing and corrupt refusal, then a verified complete index with offline search metadata
+ok - an evicted file is reported honestly offline (503, never a network or mixed fallback)   and a real-pointer repair restores it
+ok - tampered JavaScript is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+ok - tampered WebAssembly is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+ok - tampered HTML is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+Offline shell smoke FAILED; diagnostics preserved in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-musical-funicular\.runtime\evidence\offline-shell-web-smoke-failed-2026-11-02T03-16-40-037Z.json
+AssertionError [ERR_ASSERTION]: tampered manifest metadata: unhandled page errors
++ actual - expected
+
++ [
++   {
++     kind: 'log',
++     text: 'Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)',
++     url: 'http://127.0.0.1:46692/icons.svg#plus'
++   },
++   {
++     kind: 'log',
++     text: 'Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)',
++     url: 'http://127.0.0.1:46692/core-verification.json'
++   },
++   {
++     kind: 'log',
++     text: 'Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)',
++     url: 'http://127.0.0.1:46692/icons.svg#book'
++   }
++ ]
+- []
+
+    at Page.check (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:193:12)
+    at Page.assertClean (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:184:10)
+    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:514:12
+    at async session (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:274:40)
+    at async scenario (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:266:3)
+    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:465:5

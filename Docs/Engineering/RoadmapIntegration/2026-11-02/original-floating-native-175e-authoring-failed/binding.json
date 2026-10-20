@@ -1,0 +1,16 @@
+{
+  "status": "runner-failed-binding-stable",
+  "workspace": "D:\\RonSijm\\RonSijm.Slopsidian",
+  "script": "smoke.mjs",
+  "args": [
+    "--original-floating-import"
+  ],
+  "environment": {},
+  "startedAt": "2026-11-02T06:02:51.505Z",
+  "boundary": "Raw source/artifact binding only. Inspect the runner's full feature report, scope, error audit and helper teardown separately; diagnostics are not acceptance.",
+  "sourceFingerprint": "175e66511e1f27d28a987088af36fe2dd597a467e8a52d2037726e4721d66f1f",
+  "runnerPid": 34592,
+  "exitCode": 1,
+  "exitSignal": null,
+  "completedAt": "2026-11-02T06:03:00.770Z"
+}

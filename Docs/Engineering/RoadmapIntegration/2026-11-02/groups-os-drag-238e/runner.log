@@ -1,0 +1,5 @@
+PASS two genuine popouts with anchor tabs and unique native titles were created
+PASS the exact owned windows were arranged without overlap inside the monitor work area
+PASS the exact owned windows were raised above unrelated windows (prior topmost state recorded for restore)
+PASS real OS mouse drags moved one dirty live leaf main->popout1->popout2->main with identity, pin, link group and siblings retained, plus real Undo/Redo/Save
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

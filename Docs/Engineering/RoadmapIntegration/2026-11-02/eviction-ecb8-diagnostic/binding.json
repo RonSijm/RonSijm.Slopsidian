@@ -1,0 +1,16 @@
+{
+  "status": "runner-passed-binding-stable",
+  "workspace": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-musical-funicular",
+  "script": "offline-shell-smoke.mjs",
+  "args": [],
+  "environment": {
+    "SMOKE_FOCUS": "eviction"
+  },
+  "startedAt": "2026-11-02T03:02:09.143Z",
+  "boundary": "Raw source/artifact binding only. Inspect the runner's full feature report, scope, error audit and helper teardown separately; diagnostics are not acceptance.",
+  "sourceFingerprint": "ecb81c79c6306a4c25756e20f62f155231d53a4a70c85257c1f2afb0f239237e",
+  "runnerPid": 38668,
+  "exitCode": 0,
+  "exitSignal": null,
+  "completedAt": "2026-11-02T03:02:22.756Z"
+}

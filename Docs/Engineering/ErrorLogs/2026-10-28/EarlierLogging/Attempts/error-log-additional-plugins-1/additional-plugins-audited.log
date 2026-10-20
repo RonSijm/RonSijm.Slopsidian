@@ -1,0 +1,113 @@
+PASS Real DOM insertion/migration, cross-window node/event types, CSS, Moment previews, settings control ownership and SVG registry behavior pass in the actual renderer.
+PASS The native-shaped Markdown embed registry owns a real renderer/editor and persists an exact physical edit, rather than supplying an empty constructor seam.
+PASS Declarative settings reject held asynchronous validation without saving, persist a valid value physically, navigate nested pages and dispose owned renders.
+PASS An actual confirmation blocks duplicate actions and waits for its physical configuration write before closing.
+PASS Unchanged-plugin workflow: Linter delayed settings persist on owned disable.
+PASS Unchanged-plugin workflow: QuickAdd nested settings and physical persistence.
+PASS Unchanged-plugin workflow: Templater security consent and cancellation.
+PASS Unchanged-plugin workflow: Natural Language Dates owned protocol callback.
+PASS Unchanged-plugin workflow: Kanban board rendering and physical checkbox persistence.
+PASS Unchanged-plugin workflow: Configured restoration and owned disable cleanup.
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-profile\logs\errors-smoke-5b6c2497-bbf9-4942-97ce-af37bfc9f257.jsonl
+(node:18680) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:24020/devtools/browser/1432e575-50bc-4a30-8cba-2a34c1a345e3
+ELECTRON_HOST_PID 18680
+DOTNET_HOST_PID 31252
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-vault-uzZCda
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:58272
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:58272
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-profile\logs\errors-smoke-5b6c2497-bbf9-4942-97ce-af37bfc9f257.jsonl
+(node:34980) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:13551/devtools/browser/4b88106d-5187-46b9-9520-98d4573b2411
+ELECTRON_HOST_PID 34980
+DOTNET_HOST_PID 44624
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-vault-uzZCda
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:57736
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:57736
+(node:34980) electron: Failed to load URL: https://github.com/sponsors/scambier/button with error: ERR_BLOCKED_BY_CSP
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-profile\logs\errors-smoke-5b6c2497-bbf9-4942-97ce-af37bfc9f257.jsonl
+(node:45104) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:44520/devtools/browser/1b6dafd4-384f-43bd-902e-d7c8be0ec572
+ELECTRON_HOST_PID 45104
+DOTNET_HOST_PID 5108
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\smoke-vault-uzZCda
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:49267
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:49267
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: Unexpected asynchronous plugin errors must fail acceptance rather than being cleared by Settings.
++ actual - expected
+
++ [
++   "Error while adding askpass script to exclude file: Error: ENOENT: no such file or directory, open 'D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\smoke-vault-uzZCda\\.git\\info\\exclude'\n" +
++     '    at async open (node:internal/fs/promises:636:25)\n' +
++     '    at async Object.readFile (node:internal/fs/promises:1235:14)\n' +
++     '    at async Ye.addAskPassScriptToExclude (vault-plugin:obsidian-git:159:4758)\n' +
++     '    at async Ye.startAskpass (vault-plugin:obsidian-git:159:4040)\n' +
++     '    at async Ye.setGitInstance (vault-plugin:obsidian-git:159:2586)\n' +
++     '    at async lg.init (vault-plugin:obsidian-git:373:13140)',
++   "Error while adding askpass script to exclude file: Error: ENOENT: no such file or directory, open 'D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\error-log-validation-20261027\\.runtime\\smoke-vault-uzZCda\\.git\\info\\exclude'\n" +
++     '    at async open (node:internal/fs/promises:636:25)\n' +
++     '    at async Object.readFile (node:internal/fs/promises:1235:14)\n' +
++     '    at async Ye.addAskPassScriptToExclude (vault-plugin:obsidian-git:159:4758)\n' +
++     '    at async Ye.startAskpass (vault-plugin:obsidian-git:159:4040)\n' +
++     '    at async Ye.setGitInstance (vault-plugin:obsidian-git:159:2586)\n' +
++     '    at async lg.init (vault-plugin:obsidian-git:373:13140)'
++ ]
+- []
+
+    at checkAdditionalPlugins (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/error-log-validation-20261027/tools/additional-plugin-scenarios.mjs:415:10)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/error-log-validation-20261027/tools/smoke.mjs:1109:7
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/error-log-validation-20261027/tools/smoke.mjs:1528:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

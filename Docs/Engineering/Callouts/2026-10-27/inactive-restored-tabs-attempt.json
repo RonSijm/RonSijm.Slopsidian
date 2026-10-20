@@ -1,0 +1,689 @@
+{
+  "status": "failed",
+  "scope": "markdown-postprocessors-runtime",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-27T08:03:06.988Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\callout-icon-validation-20261027\\.runtime\\smoke-vault-YojRoB",
+  "launcherPid": 5696,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "Real shared Markdown postprocessors run in async sort order with matching document/source/frontmatter/section context and owned interactive controls; genuine classic HyperMD and the modern bridge agree before and after a following-line edit without changing source bytes.",
+    "Render-child removal and Reading/Source transitions unload actual component events; an asynchronous onload that finishes after removal is still cleaned up and its retained button cannot act.",
+    "Superseded asynchronous processors can only change their detached render section, stale section queries return null, and current processor errors are visible without rewriting or poisoning the next render.",
+    "Register/unregister and real plugin disable refresh unchanged Reading views and remove owned controls; a persisted disable survives restart/reconnect, re-enable works, and original Markdown BOM/CRLF plus other configured plugin IDs remain unchanged.",
+    "Actual plugin and factory code-block processors replace real fenced/nested code, await async handlers, preserve raw Unicode/HTML-like text and trailing blank lines, expose exact source/section context and own working controls; duplicate/invalid registrations reject without reserving a failed language.",
+    "Real MarkdownRenderer.render and deprecated renderMarkdown append independently owned formatted fragments without replacing prior DOM or opening hidden leaves, await actual handlers, provide null fragment-section context, sanitize note HTML and resolve a decoded vault image plus working source-relative link.",
+    "Static rendering waits for real asynchronous render-child loads; removing its DOM unloads controls, owner unload revokes the actual image URL, and a late processor can only mutate its detached section while a new render and disposed retained controls remain correct.",
+    "Async code-block failures reject and visibly retain original code while another block renders; invalid owners write no DOM, disable restores plain fences, re-enable/restart/reconnect removes language registrations correctly, and original Markdown/image bytes plus other enabled IDs remain unchanged.",
+    "Real detached title/wrapper children survive async construction and mutation delivery, become owned after replacement, unload if never inserted, and dispose waits for observer-started async native-style teardown; retained controls stop acting.",
+    "Unchanged Admonition 12.0.11 renders fenced titles/body Markdown, distinct painted backgrounds/titles and nonempty colored icon geometry, working collapse and source-relative links; Source/Reading and disable/re-enable rebuild output. Full visual equivalence remains separate."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 5696,
+      "electronPid": 5696,
+      "dotnetPid": 42984,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 39396,
+      "electronPid": 39396,
+      "dotnetPid": 5852,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 18512,
+      "electronPid": 18512,
+      "dotnetPid": 35296,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 30808,
+      "electronPid": 30808,
+      "dotnetPid": 35960,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 19260,
+      "electronPid": 19260,
+      "dotnetPid": 27144,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.14",
+  "controlledShutdownConsoleErrors": [],
+  "classicTokenizer": {
+    "sameRuntime": true,
+    "before": {
+      "mismatches": [],
+      "styledCharacters": 31,
+      "headingClasses": "cm-header cm-header-2 cm-line-HyperMD-header cm-line-HyperMD-header-2"
+    },
+    "after": {
+      "mismatches": [],
+      "styledCharacters": 17,
+      "headingClasses": ""
+    }
+  },
+  "markdownProcessors": {
+    "fixture": "markdown-host-probe",
+    "sha256": "7a5c0e398d63afef3f173cc69bc532f4a7028afafb54e625edf2e0c0cefa21d3",
+    "thirdPartyPlugin": false,
+    "privateRendererEquivalence": "not established",
+    "classicTokenizerReference": "unchanged public HyperMD and CodeMirror 5, not the private Obsidian fork",
+    "staticRenderer": {
+      "actualApi": true,
+      "fragmentSections": null,
+      "fullInstanceAbi": "not established"
+    },
+    "codeBlocks": {
+      "actualHandlers": true,
+      "livePreviewWidgets": "not implemented",
+      "privateReplaceCode": "not implemented"
+    }
+  },
+  "error": "Error: Timed out waiting for unchanged Admonition fenced title/body rendering\n    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/callout-icon-validation-20261027/tools/smoke.mjs:311:9)\n    at async waitExpression (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/callout-icon-validation-20261027/tools/smoke.mjs:403:3)\n    at async checkCalloutStyles (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/callout-icon-validation-20261027/tools/render-child-scenarios.mjs:204:89)\n    at async checkRenderChildOwnership (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/callout-icon-validation-20261027/tools/render-child-scenarios.mjs:135:25)\n    at async checkMarkdownProcessors (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/callout-icon-validation-20261027/tools/renderer-scenarios.mjs:402:3)\n    at async checkMarkdownProcessorWorkflows (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/callout-icon-validation-20261027/tools/smoke.mjs:385:3)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/callout-icon-validation-20261027/tools/smoke.mjs:1202:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\".view-content .admonition\\\").length===2&&Boolean(document.querySelector(\\\".view-content .admonition-title strong\\\")))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [
+      "obsidian-admonition"
+    ],
+    "cards": [
+      {
+        "id": "obsidian-admonition",
+        "loaded": "true"
+      },
+      {
+        "id": "markdown-host-probe",
+        "loaded": "false"
+      },
+      {
+        "id": "render-child-lifecycle-probe",
+        "loaded": "false"
+      }
+    ],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "7eada3cb-11bb-413f-bfb7-693b82bf2fb8",
+        "type": "markdown",
+        "path": "CRLF note.md",
+        "text": "# CRLF preservation\r\n\r\nTODO: Keep the existing encoding.\r\n",
+        "sessionText": "# CRLF preservation\r\n\r\nTODO: Keep the existing encoding.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 55
+      },
+      {
+        "id": "1ce94656-4ac6-4f92-a4aa-0ec475759280",
+        "type": "markdown",
+        "path": "Render ownership/Target.md",
+        "text": "# Source context\n\nA linked source note.\n",
+        "sessionText": "# Source context\n\nA linked source note.\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 40
+      },
+      {
+        "id": "b2688f13-2ab0-43db-90fa-06ea469379cd",
+        "type": "markdown",
+        "path": "Render ownership/Target.md",
+        "text": "# Source context\n\nA linked source note.\n",
+        "sessionText": "# Source context\n\nA linked source note.\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 40
+      },
+      {
+        "id": "1f082ed6-8e15-4ca0-ac23-7067aa720fb3",
+        "type": "markdown",
+        "path": "Render ownership/Admonition.md",
+        "text": "# Fenced admonitions\r\n\r\n```ad-workshop-decision\r\ntitle: Choose **the route**\r\ncollapse: open\r\n\r\nA **recorded decision** with [[Target|source context]].\r\n```\r\n\r\n```ad-workshop-risk\r\ntitle: Risk review\r\ncollapse: closed\r\n\r\nTrack the courtyard condition.\r\n```\r\n",
+        "sessionText": "# Fenced admonitions\r\n\r\n```ad-workshop-decision\r\ntitle: Choose **the route**\r\ncollapse: open\r\n\r\nA **recorded decision** with [[Target|source context]].\r\n```\r\n\r\n```ad-workshop-risk\r\ntitle: Risk review\r\ncollapse: closed\r\n\r\nTrack the courtyard condition.\r\n```\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 243
+      },
+      {
+        "id": "1ead60eb-c9d2-4dde-bd77-27181e8e89b0",
+        "type": "markdown",
+        "path": "Render ownership/Callout styles.md",
+        "text": "# Callout styles\r\n\r\n> [!workshop-decision] Decision\r\n> A green decision.\r\n\r\n> [!workshop-risk] Risk\r\n> A red risk.\r\n\r\n> [!workshop-experiment] Experiment\r\n> A purple experiment.\r\n\r\n> [!warning] Legacy warning\r\n> Existing orange components.\r\n\r\n> [!note] Default note\r\n> Existing blue components.\r\n",
+        "sessionText": "# Callout styles\r\n\r\n> [!workshop-decision] Decision\r\n> A green decision.\r\n\r\n> [!workshop-risk] Risk\r\n> A red risk.\r\n\r\n> [!workshop-experiment] Experiment\r\n> A purple experiment.\r\n\r\n> [!warning] Legacy warning\r\n> Existing orange components.\r\n\r\n> [!note] Default note\r\n> Existing blue components.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 280
+      },
+      {
+        "id": "4f1c8845-4b36-42aa-84af-9785afb09c93",
+        "type": "markdown",
+        "path": "Render ownership/Admonition.md",
+        "text": "# Fenced admonitions\r\n\r\n```ad-workshop-decision\r\ntitle: Choose **the route**\r\ncollapse: open\r\n\r\nA **recorded decision** with [[Target|source context]].\r\n```\r\n\r\n```ad-workshop-risk\r\ntitle: Risk review\r\ncollapse: closed\r\n\r\nTrack the courtyard condition.\r\n```\r\n",
+        "sessionText": "# Fenced admonitions\r\n\r\n```ad-workshop-decision\r\ntitle: Choose **the route**\r\ncollapse: open\r\n\r\nA **recorded decision** with [[Target|source context]].\r\n```\r\n\r\n```ad-workshop-risk\r\ntitle: Risk review\r\ncollapse: closed\r\n\r\nTrack the courtyard condition.\r\n```\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 243
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "d6d0be2b-5273-428f-b597-48b457ce8cf7",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "ba0ad2f9-89c0-410c-9e27-15c4a585093e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "7eada3cb-11bb-413f-bfb7-693b82bf2fb8",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "CRLF note.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "1ce94656-4ac6-4f92-a4aa-0ec475759280",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "preview",
+                    "source": true,
+                    "file": "Render ownership/Target.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "b2688f13-2ab0-43db-90fa-06ea469379cd",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Render ownership/Target.md",
+                    "mode": "preview",
+                    "source": true
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "1f082ed6-8e15-4ca0-ac23-7067aa720fb3",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "preview",
+                    "source": true,
+                    "file": "Render ownership/Admonition.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "1ead60eb-c9d2-4dde-bd77-27181e8e89b0",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "preview",
+                    "source": true,
+                    "file": "Render ownership/Callout styles.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "4f1c8845-4b36-42aa-84af-9785afb09c93",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "preview",
+                    "source": true,
+                    "file": "Render ownership/Admonition.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 5
+          }
+        ]
+      },
+      "active": "4f1c8845-4b36-42aa-84af-9785afb09c93",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-navigation": {
+          "lastMainLeaf": "4f1c8845-4b36-42aa-84af-9785afb09c93",
+          "lastFile": "Render ownership/Admonition.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "consoleErrors": [
+    "[2026-10-27T08:03:09.204Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T08:03:14.207Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "Error: Expected Markdown processor failure\n    at eval (vault-plugin:markdown-host-probe:31:29)\n    at http://127.0.0.1:53521/js/editor-host.a6gwsy1sfc.js:67488:17",
+    "[2026-10-27T08:03:17.271Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T08:03:22.281Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "Error: The linked file does not exist: Missing renderer target\n    at openMarkdownLink (http://127.0.0.1:51270/js/editor-host.a6gwsy1sfc.js:67992:11)\n    at ReadingView.follow (http://127.0.0.1:51270/js/editor-host.a6gwsy1sfc.js:68320:11)\n    at HTMLDivElement.follow (http://127.0.0.1:51270/js/editor-host.a6gwsy1sfc.js:68126:14)",
+    "Error: Expected code block failure\n    at eval (vault-plugin:markdown-host-probe:65:57)\n    at http://127.0.0.1:51270/js/editor-host.a6gwsy1sfc.js:67347:17\n    at Array.map (<anonymous>)\n    at http://127.0.0.1:51270/js/editor-host.a6gwsy1sfc.js:67333:32\n    at http://127.0.0.1:51270/js/editor-host.a6gwsy1sfc.js:67488:17",
+    "[2026-10-27T08:03:27.253Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T08:03:32.267Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T08:03:34.937Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T08:03:39.943Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T08:04:04.728Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 27144,
+  "electronPid": 19260,
+  "completedAt": "2026-10-27T08:04:04.904Z"
+}

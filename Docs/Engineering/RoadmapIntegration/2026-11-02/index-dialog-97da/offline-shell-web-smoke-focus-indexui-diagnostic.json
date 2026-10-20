@@ -1,0 +1,356 @@
+{
+  "status": "focus-diagnostic-only",
+  "focus": "indexui",
+  "sourceFingerprint": "97da214c683849d38325d48d17154fae958de6ccc4b70ef97a00c191e5d75e2c",
+  "scenarios": [
+    {
+      "name": "cold online page is unprepared and caches nothing until the user asks",
+      "ms": 1959,
+      "pages": [
+        {
+          "page": "online",
+          "url": "http://127.0.0.1:37015/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 47,
+          "policy": "online cold page",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it",
+      "ms": 3506,
+      "pages": [
+        {
+          "page": "prepare",
+          "url": "http://127.0.0.1:37015/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 365,
+          "policy": "prepared page",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "cold restart with the network OFF boots the app, workers and renderer from the cached shell",
+      "ms": 2411,
+      "pages": [
+        {
+          "page": "cold-offline",
+          "url": "http://127.0.0.1:37015/",
+          "errors": [
+            {
+              "kind": "log",
+              "text": "Failed to load resource: net::ERR_FAILED",
+              "url": "http://127.0.0.1:37015/not-in-the-manifest.txt"
+            }
+          ],
+          "failedLoads": [
+            {
+              "url": "http://127.0.0.1:37015/not-in-the-manifest.txt",
+              "error": "net::ERR_FAILED",
+              "at": 1793584703966
+            }
+          ],
+          "badResponses": [],
+          "requests": 46,
+          "policy": "cold offline boot",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "cached index dialog UI: real pointers drive Prepare, held Cancel, Resume, missing and corrupt refusal, then a verified complete index with offline search metadata",
+      "ms": 5130,
+      "pages": [
+        {
+          "page": "index-ui-seed",
+          "url": "http://127.0.0.1:37015/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 48,
+          "policy": "index dialog seeding",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        },
+        {
+          "page": "index-ui",
+          "url": "http://127.0.0.1:37015/remote-vault/github.com/slopsidian-fixtures/index-ui-1793584705174/tree/main?cached=true&file=Index%20A.md",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 52,
+          "policy": "cached index dialog",
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    }
+  ],
+  "pageDiagnostics": [
+    {
+      "page": "online",
+      "url": "http://127.0.0.1:37015/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 47,
+      "policy": "online cold page",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": false,
+          "lifecycle": [],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 42048\n\r\nDevTools listening on ws://127.0.0.1:37016/devtools/browser/ea2fc69c-099f-4d62-a87f-e6f3eb903f8c\r\nWEB_QUIT_ACK a3420f8b-73cf-49c7-bb5f-1cd88cf7ca20\n"
+    },
+    {
+      "page": "prepare",
+      "url": "http://127.0.0.1:37015/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 365,
+      "policy": "prepared page",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 16984\n\r\nDevTools listening on ws://127.0.0.1:36718/devtools/browser/21e190bf-1205-4be1-b8b6-bef4fce36640\r\nWEB_QUIT_ACK 51e9d3bc-d55a-45d5-a6ff-ffaf15ccea11\n"
+    },
+    {
+      "page": "cold-offline",
+      "url": "http://127.0.0.1:37015/",
+      "errors": [
+        {
+          "kind": "log",
+          "text": "Failed to load resource: net::ERR_FAILED",
+          "url": "http://127.0.0.1:37015/not-in-the-manifest.txt"
+        }
+      ],
+      "failedLoads": [
+        {
+          "url": "http://127.0.0.1:37015/not-in-the-manifest.txt",
+          "error": "net::ERR_FAILED",
+          "at": 1793584703966
+        }
+      ],
+      "badResponses": [],
+      "requests": 46,
+      "policy": "cold offline boot",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": "The DevTools socket failed.",
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 34608\n\r\nDevTools listening on ws://127.0.0.1:43493/devtools/browser/f53b78ac-3df0-481a-94cf-24e1e6412ad2\r\nWEB_QUIT_ACK dc41d49c-b0b8-4152-a348-e88c5f8aba8c\n"
+    },
+    {
+      "page": "index-ui-seed",
+      "url": "http://127.0.0.1:37015/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 48,
+      "policy": "index dialog seeding",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 45420\n\r\nDevTools listening on ws://127.0.0.1:53348/devtools/browser/94ec8345-ce34-4342-b782-e253808a92f7\r\nWEB_QUIT_ACK 54c76732-8133-4664-b140-254d90d60e8e\n"
+    },
+    {
+      "page": "index-ui",
+      "url": "http://127.0.0.1:37015/remote-vault/github.com/slopsidian-fixtures/index-ui-1793584705174/tree/main?cached=true&file=Index%20A.md",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 52,
+      "policy": "cached index dialog",
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 26764\n\r\nDevTools listening on ws://127.0.0.1:53352/devtools/browser/d5a6f5d9-87a1-4b8c-83e2-06f47881acc4\r\nWEB_QUIT_ACK 1a56b5e5-11ef-45b2-ba6d-39a430511aa6\n"
+    }
+  ],
+  "quota": null,
+  "limits": [],
+  "note": "Not acceptance evidence; the full run is still required."
+}

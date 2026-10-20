@@ -1,0 +1,62 @@
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-e916d7b6-96a8-4983-8435-9c029796b434.jsonl
+(node:44368) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:36150/devtools/browser/88b4d4a0-2be6-4f3a-89bd-41643afed5fc
+ELECTRON_HOST_PID 44368
+DOTNET_HOST_PID 33904
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-vault-DxjoB0
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:58594
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:58594
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-e916d7b6-96a8-4983-8435-9c029796b434.jsonl
+(node:33316) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:51402/devtools/browser/dcfc6517-5c64-4424-a891-45abadbaaf55
+ELECTRON_HOST_PID 33316
+DOTNET_HOST_PID 30384
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-vault-DxjoB0
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:53562
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:53562
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: Cannot reach .settings-close: <div class="modal-container excalidraw-release"><div class="modal" tabindex="-1" role="dialog" aria-modal="true" aria-label="Plugin dialog" aria-labelledby="modal-title-ad40fe96-102e-4bdf-8176-090806df8d67"><button class="modal-close-button">Close</button><h2 id="modal-title-ad40fe96-102e-4bdf-8176-
+    at click (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/smoke.mjs:446:10)
+    at async checkExcalidraw (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/excalidraw-scenarios.mjs:61:5)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/smoke.mjs:1139:7
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/smoke.mjs:1529:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

@@ -1,0 +1,70 @@
+PASS A first-open original layout restores real, pinned Files views in main tabs and a visible sidebar, independent folding/filter/sort and opaque state, alongside an intact Source note.
+PASS Real pointer and keyboard navigation unfolds folders, filters paths case-insensitively without changing another pane, opens files without replacing a pinned explorer, and reveals the active note without stealing editor focus.
+PASS Unsupported attachments remain browsable without errors; enabling an actual fixture plugin updates existing panes and opens its FileView through Ctrl-click. Keyboard context menus deliver the real file-menu event.
+PASS Files creates a real folder through the guarded dialog, re-enables controls after mutation, observes an external file on Refresh, and leaves a live unsaved editor and its disk bytes intact while folding panes.
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-65a3e85a-f981-4171-892d-ae30075dfd43.jsonl
+(node:46428) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:64165/devtools/browser/844bea96-1885-4e87-aa3c-8ba831aba07d
+ELECTRON_HOST_PID 46428
+DOTNET_HOST_PID 29256
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-vault-LVJ1LT
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:56305
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:56305
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-65a3e85a-f981-4171-892d-ae30075dfd43.jsonl
+(node:25052) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:2635/devtools/browser/02673424-5913-4c2b-b5b7-e03fb1683f11
+ELECTRON_HOST_PID 25052
+DOTNET_HOST_PID 47936
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-vault-LVJ1LT
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:50257
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:50257
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ "Cannot read properties of undefined (reading 'settings') Download log"
+- ''
+
+    at checkFileExplorer (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/file-explorer-validation-20261028/tools/file-explorer-scenarios.mjs:122:10)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/file-explorer-validation-20261028/tools/smoke.mjs:746:5
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/file-explorer-validation-20261028/tools/smoke.mjs:1567:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

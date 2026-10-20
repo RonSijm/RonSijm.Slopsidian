@@ -1,0 +1,15 @@
+{
+  "scope": "Controlled invocation of original MarkdownView.syncScroll in Source and Reading; not a trusted wheel-input test",
+  "events": [
+    {
+      "mode": "source",
+      "sameView": true,
+      "path": "80 Sandbox/Core reference verification.md"
+    },
+    {
+      "mode": "preview",
+      "sameView": true,
+      "path": "80 Sandbox/Core reference verification.md"
+    }
+  ]
+}

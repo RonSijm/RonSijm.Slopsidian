@@ -1,0 +1,40 @@
+
+(node:38680) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:32531/devtools/browser/515ec44f-facd-46f1-8c33-aee4330622b5
+ELECTRON_HOST_PID 38680
+DOTNET_HOST_PID 45880
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-2zBykw
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:51913
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:51913
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:45780) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:50466/devtools/browser/11166fbd-cb1b-4682-be36-51b0315fa61b
+ELECTRON_HOST_PID 45780
+DOTNET_HOST_PID 46068
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-2zBykw
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:57621
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:57621
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

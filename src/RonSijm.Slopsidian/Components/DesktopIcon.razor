@@ -1,0 +1,6 @@
+<svg class="svg-icon" aria-hidden="true"><use href="@($"icons.svg#{Name}")"></use></svg>
+
+@code {
+    [Parameter, EditorRequired]
+    public string Name { get; set; } = "";
+}

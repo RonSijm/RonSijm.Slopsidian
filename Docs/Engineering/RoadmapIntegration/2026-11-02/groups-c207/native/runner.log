@@ -1,0 +1,12 @@
+PASS linked leaves follow navigation, skip pinned members and keep independent history
+PASS a real popout window hosts the same live leaf, view and owner
+PASS typing, undo and hotkey save work in the real popout document
+PASS menus and modals open in, and cancel from, the popout document
+PASS a held file mutation freezes the popout and real input/undo resume afterwards
+PASS a refused dirty close keeps the window, tab and edit
+PASS a real native close request is vetoed while the tab is dirty
+PASS a web viewer popout moves the native guest, rebinds the live Reader and delivers its progress
+PASS a refused native guest relocation returns the tab to main, keeps the guest in place and shows the error
+PASS restart reopens the native window, or explicitly folds it with a reason
+PASS return moves the live tab back to the main area and closes the window
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

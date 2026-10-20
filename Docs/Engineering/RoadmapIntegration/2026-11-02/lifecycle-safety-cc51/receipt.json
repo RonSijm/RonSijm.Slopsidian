@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "sourceBefore": "cc5196271e047d7ac6a834256f25b0ebf077d5c401d0992f5f896f6d2b8bb4a8",
+  "boundary": "Combined source build/static/default/GitHub regressions only, including history/DOM guards, concurrent-close serialization/current-index safety, owned-cache cleanup, exact manifest reads and controlled watcher drain. Full combined UI, popout observer fix, complete themes and offline quota/teardown acceptance remain unaccepted.",
+  "commands": [
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\lifecycle-safety-validation-a52a0047-9ef6-4112-9396-b5ab894db870\\build.log",
+      "exitCode": 0,
+      "command": "npm run build"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\lifecycle-safety-validation-a52a0047-9ef6-4112-9396-b5ab894db870\\build-web.log",
+      "exitCode": 0,
+      "command": "npm run build:web"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\lifecycle-safety-validation-a52a0047-9ef6-4112-9396-b5ab894db870\\verify-web.log",
+      "exitCode": 0,
+      "command": "npm run verify:web"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\lifecycle-safety-validation-a52a0047-9ef6-4112-9396-b5ab894db870\\test.log",
+      "exitCode": 0,
+      "command": "npm run test"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\lifecycle-safety-validation-a52a0047-9ef6-4112-9396-b5ab894db870\\test-github.log",
+      "exitCode": 0,
+      "command": "npm run test:github"
+    }
+  ],
+  "tests": {
+    "test:github": {
+      "tests": 44,
+      "skipped": 0,
+      "fail": 0,
+      "pass": 44,
+      "cancelled": 0
+    },
+    "test": {
+      "tests": 1197,
+      "skipped": 0,
+      "fail": 0,
+      "pass": 1197,
+      "cancelled": 0
+    }
+  },
+  "artifacts": [
+    {
+      "bytes": 588800,
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "sha256": "c2fab4b096fb591b8bed4bab0c1c0fecf55497e2c2ca55a3d5fe6ca88369666b"
+    },
+    {
+      "bytes": 4913385,
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "sha256": "0afd37256f1b0fd4f18420777a4fe3e52e77faee1c98c69708353968ca88a89b"
+    },
+    {
+      "bytes": 4913385,
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+      "sha256": "0afd37256f1b0fd4f18420777a4fe3e52e77faee1c98c69708353968ca88a89b"
+    },
+    {
+      "bytes": 37676,
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json",
+      "sha256": "bf37f14c22e6082b6f1110915d748ca45a4cc39cfa1103aec0b7b3c3c818664f"
+    },
+    {
+      "bytes": 6303,
+      "path": ".runtime\\web\\wwwroot\\service-worker.js",
+      "sha256": "618c9f4a72a70a45eab864b19ea089a91cc4e8a3b7e32a63ab4dae757d103a91"
+    }
+  ],
+  "sourceAfter": "cc5196271e047d7ac6a834256f25b0ebf077d5c401d0992f5f896f6d2b8bb4a8",
+  "completedAt": "2026-11-02T00:32:47.5670062Z"
+}

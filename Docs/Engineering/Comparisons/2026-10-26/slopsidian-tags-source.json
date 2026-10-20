@@ -1,0 +1,2716 @@
+{
+  "source": "Read-only CDP DOM/computed-style and metadata observation; no page input or application mutation.",
+  "target": {
+    "description": "",
+    "devtoolsFrontendUrl": "https://chrome-devtools-frontend.appspot.com/serve_rev/@073842048568f4be1312009828fd1f961fbf92e1/inspector.html?ws=127.0.0.1:27427/devtools/page/298D900BB20438C7F3ECDF65132CA42C",
+    "id": "298D900BB20438C7F3ECDF65132CA42C",
+    "title": "Slopsidian",
+    "type": "page",
+    "url": "http://127.0.0.1:62088/",
+    "webSocketDebuggerUrl": "ws://127.0.0.1:27427/devtools/page/298D900BB20438C7F3ECDF65132CA42C"
+  },
+  "capturedAt": "2026-10-26T07:58:44.784Z",
+  "title": "Slopsidian",
+  "url": "http://127.0.0.1:62088/",
+  "viewport": {
+    "width": 1280,
+    "height": 900,
+    "dpr": 1
+  },
+  "bodyClass": "theme-dark is-desktop is-win",
+  "bodyText": "Pixel.png\nPNG\nRendering\nTags\nTarget\nslopsidian-vault\nSlopsidian\nTags\nTags\nTags\n---\ntags: [project, project/nested, École]\nstatus: review\n---\n# Tags\nPlain #project and #project/nested plus #hello-world and #under_score.\n\n\nUnicode #日本語 #école #café; numeric #123 #123abc.\n\n\nBoundaries foo#word \\#escaped `#code` [#label](https://example.invalid/#fragment).\n\n\n**#bold** *#italic* (#bracket) ##double #trailing/ #double//slash #_ #a-b.\n\n\n## Code stays literal\n```text\n#fenced\n```\n\n\nExperimental\nTags.md\nAutosave on\nAttach files\n0 backlinks\n2 properties\nSource mode\n44 words   344 characters",
+  "markdown": {
+    "text": "99123456789101112131415161718›⌄⌄⌄⌄---tags: [project, project/nested, École]status: review---# TagsPlain #project and #project/nested plus #hello-world and #under_score.Unicode #日本語 #école #café; numeric #123 #123abc.Boundaries foo#word \\#escaped `#code` [#label](https://example.invalid/#fragment).**#bold** *#italic* (#bracket) ##double #trailing/ #double//slash #_ #a-b.## Code stays literal```text#fenced```",
+    "html": "<div class=\"markdown-source-view mod-cm6\"><div class=\"cm-editor cm-focused ͼ1 ͼ3 ͼ4 ͼp\"><div class=\"cm-announced\" aria-live=\"polite\"></div><div tabindex=\"-1\" class=\"cm-scroller\"><div class=\"cm-gutters cm-gutters-before\" aria-hidden=\"true\" style=\"min-height: 386px; position: sticky;\"><div class=\"cm-gutter cm-lineNumbers\"><div class=\"cm-gutterElement\" style=\"height: 0px; visibility: hidden; pointer-events: none;\">99</div><div class=\"cm-gutterElement cm-activeLineGutter\" style=\"height: 21px; margin-top: 4px;\">1</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">2</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">3</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">4</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">5</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">6</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">7</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">8</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">9</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">10</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">11</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">12</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">13</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">14</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">15</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">16</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">17</div><div class=\"cm-gutterElement\" style=\"height: 21px;\">18</div></div><div class=\"cm-gutter cm-foldGutter\"><div class=\"cm-gutterElement\" style=\"height: 0px; visibility: hidden; pointer-events: none;\"><span title=\"Unfold line\">›</span></div><div class=\"cm-gutterElement cm-activeLineGutter\" style=\"height: 21px; margin-top: 4px;\"></div><div class=\"cm-gutterElement\" style=\"height: 21px;\"><span title=\"Fold line\">⌄</span></div><div class=\"cm-gutterElement\" style=\"height: 21px; margin-top: 42px;\"><span title=\"Fold line\">⌄</span></div><div class=\"cm-gutterElement\" style=\"height: 21px; margin-top: 168px;\"><span title=\"Fold line\">⌄</span></div><div class=\"cm-gutterElement\" style=\"height: 21px;\"><span title=\"Fold line\">⌄</span></div></div></div><div spellcheck=\"false\" autocorrect=\"off\" autocapitalize=\"off\" writingsuggestions=\"false\" translate=\"no\" contenteditable=\"true\" class=\"cm-content cm-lineWrapping\" role=\"textbox\" aria-multiline=\"true\" aria-label=\"Markdown editor\" data-language=\"markdown\" style=\"tab-size: 4;\" aria-autocompl",
+    "style": {
+      "font-size": "14px",
+      "font-family": "\"Segoe UI\", sans-serif",
+      "font-weight": "400",
+      "font-style": "normal",
+      "line-height": "normal",
+      "color": "rgb(218, 218, 218)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "padding-left": "0px",
+      "padding-right": "0px",
+      "padding-top": "0px",
+      "padding-bottom": "0px",
+      "border-radius": "0px",
+      "border-top-left-radius": "0px",
+      "border-top-right-radius": "0px",
+      "border-width": "0px",
+      "text-decoration": "none",
+      "display": "block"
+    },
+    "rect": {
+      "x": 305,
+      "y": 162.390625,
+      "width": 975,
+      "height": 712.609375
+    }
+  },
+  "tags": [
+    {
+      "text": "project",
+      "html": "<a class=\"multi-select-pill metadata-tag\" href=\"#project\"><span class=\"multi-select-pill-content\">project</span></a>",
+      "style": {
+        "font-size": "14px",
+        "font-family": "\"Segoe UI\", sans-serif",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "14px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "9.1px",
+        "padding-right": "9.1px",
+        "padding-top": "3.5px",
+        "padding-bottom": "3.5px",
+        "border-radius": "28px",
+        "border-top-left-radius": "28px",
+        "border-top-right-radius": "28px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "flex"
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "text": "project/nested",
+      "html": "<a class=\"multi-select-pill metadata-tag\" href=\"#project/nested\"><span class=\"multi-select-pill-content\">project/nested</span></a>",
+      "style": {
+        "font-size": "14px",
+        "font-family": "\"Segoe UI\", sans-serif",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "14px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "9.1px",
+        "padding-right": "9.1px",
+        "padding-top": "3.5px",
+        "padding-bottom": "3.5px",
+        "border-radius": "28px",
+        "border-top-left-radius": "28px",
+        "border-top-right-radius": "28px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "flex"
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "text": "École",
+      "html": "<a class=\"multi-select-pill metadata-tag\" href=\"#École\"><span class=\"multi-select-pill-content\">École</span></a>",
+      "style": {
+        "font-size": "14px",
+        "font-family": "\"Segoe UI\", sans-serif",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "14px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "9.1px",
+        "padding-right": "9.1px",
+        "padding-top": "3.5px",
+        "padding-bottom": "3.5px",
+        "border-radius": "28px",
+        "border-top-left-radius": "28px",
+        "border-top-right-radius": "28px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "flex"
+      },
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-project\" data-markdown-tag=\"#project\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 408.484375,
+        "y": 271.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "project",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-project\" data-markdown-tag=\"#project\" spellcheck=\"false\">project</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 424.234375,
+        "y": 271.109375,
+        "width": 59.03125,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-projectnested\" data-markdown-tag=\"#project/nested\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 524.515625,
+        "y": 271.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "project/nested",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-projectnested\" data-markdown-tag=\"#project/nested\" spellcheck=\"false\">project/nested</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 540.265625,
+        "y": 271.109375,
+        "width": 109.53125,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-hello-world\" data-markdown-tag=\"#hello-world\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 699.28125,
+        "y": 271.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "hello-world",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-hello-world\" data-markdown-tag=\"#hello-world\" spellcheck=\"false\">hello-world</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 715.03125,
+        "y": 271.109375,
+        "width": 87.890625,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-under_score\" data-markdown-tag=\"#under_score\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 844.171875,
+        "y": 271.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "under_score",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-under_score\" data-markdown-tag=\"#under_score\" spellcheck=\"false\">under_score</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 859.921875,
+        "y": 271.109375,
+        "width": 87.890625,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-\" data-markdown-tag=\"#日本語\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 424.984375,
+        "y": 313.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "日本語",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-\" data-markdown-tag=\"#日本語\" spellcheck=\"false\">日本語</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 440.734375,
+        "y": 313.109375,
+        "width": 47.90625,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-cole\" data-markdown-tag=\"#école\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 496.890625,
+        "y": 313.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "école",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-cole\" data-markdown-tag=\"#école\" spellcheck=\"false\">école</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 512.640625,
+        "y": 313.109375,
+        "width": 44.609375,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-caf\" data-markdown-tag=\"#café\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 565.5,
+        "y": 313.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "café",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-caf\" data-markdown-tag=\"#café\" spellcheck=\"false\">café</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 581.25,
+        "y": 313.109375,
+        "width": 37.390625,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-123abc\" data-markdown-tag=\"#123abc\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 742.359375,
+        "y": 313.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "123abc",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-123abc\" data-markdown-tag=\"#123abc\" spellcheck=\"false\">123abc</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 758.109375,
+        "y": 313.109375,
+        "width": 51.8125,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-trailing\" data-markdown-tag=\"#trailing/\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 688.9375,
+        "y": 397.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "trailing/",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-trailing\" data-markdown-tag=\"#trailing/\" spellcheck=\"false\">trailing/</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 704.6875,
+        "y": 397.109375,
+        "width": 73.453125,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-doubleslash\" data-markdown-tag=\"#double//slash\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 786.390625,
+        "y": 397.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "double//slash",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-doubleslash\" data-markdown-tag=\"#double//slash\" spellcheck=\"false\">double//slash</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 802.140625,
+        "y": 397.109375,
+        "width": 102.3125,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-_\" data-markdown-tag=\"#_\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 912.703125,
+        "y": 397.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "_",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-_\" data-markdown-tag=\"#_\" spellcheck=\"false\">_</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 928.453125,
+        "y": 397.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "#",
+      "html": "<span class=\"cm-formatting cm-formatting-hashtag cm-hashtag cm-hashtag-begin cm-meta cm-tag-a-b\" data-markdown-tag=\"#a-b\" spellcheck=\"false\">#</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "8.53125px",
+        "padding-right": "0px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "26.25px 0px 0px 26.25px",
+        "border-top-left-radius": "26.25px",
+        "border-top-right-radius": "0px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 952.453125,
+        "y": 397.109375,
+        "width": 15.75,
+        "height": 21.5625
+      }
+    },
+    {
+      "text": "a-b",
+      "html": "<span class=\"cm-hashtag cm-hashtag-end cm-meta cm-tag-a-b\" data-markdown-tag=\"#a-b\" spellcheck=\"false\">a-b</span>",
+      "style": {
+        "font-size": "13.125px",
+        "font-family": "monospace",
+        "font-weight": "400",
+        "font-style": "normal",
+        "line-height": "18.375px",
+        "color": "rgb(181, 161, 236)",
+        "background-color": "rgba(138, 92, 245, 0.1)",
+        "padding-left": "0px",
+        "padding-right": "8.53125px",
+        "padding-top": "3.28125px",
+        "padding-bottom": "3.28125px",
+        "border-radius": "0px 26.25px 26.25px 0px",
+        "border-top-left-radius": "0px",
+        "border-top-right-radius": "26.25px",
+        "border-width": "0px",
+        "text-decoration": "none",
+        "display": "inline"
+      },
+      "rect": {
+        "x": 968.203125,
+        "y": 397.109375,
+        "width": 30.171875,
+        "height": 21.5625
+      }
+    }
+  ],
+  "properties": [
+    "<div class=\"property-row metadata-property\" data-property-key=\"tags\"><strong class=\"metadata-property-key\">tags</strong><span class=\"property-value metadata-property-value metadata-tags\" data-metadata-property-value=\"\" data-property-type=\"tags\"><a class=\"multi-select-pill metadata-tag\" href=\"#project\"><span class=\"multi-select-pill-content\">project</span></a><a class=\"multi-select-pill metadata-tag\" href=\"#project/nested\"><span class=\"multi-select-pill-content\">project/nested</span></a><a class=\"multi-select-pill metadata-tag\" href=\"#École\"><span class=\"multi-select-pill-content\">École</span></a></span><button type=\"button\" data-metadata-property-action=\"edit\">Edit tags</button><button type=\"button\" data-metadata-property-action=\"remove\">Remove</button></div>",
+    "<div class=\"property-row metadata-property\" data-property-key=\"status\"><strong class=\"metadata-property-key\">status</strong><span class=\"property-value metadata-property-value\" data-metadata-property-value=\"\" data-property-type=\"text\">review</span><button type=\"button\" data-metadata-property-action=\"edit\">Edit text</button><button type=\"button\" data-metadata-property-action=\"remove\">Remove</button></div>"
+  ],
+  "controls": [
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon ribbon-collapse",
+      "aria": "Toggle left sidebar",
+      "title": "Toggle left sidebar",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Quick switcher",
+      "title": "Quick switcher (Ctrl+O)",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Command palette",
+      "title": "Command palette (Ctrl+P)",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Open graph view",
+      "title": "Open graph view",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Create new canvas",
+      "title": "Create new canvas",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Open today's daily note",
+      "title": "Open today's daily note",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Insert template",
+      "title": "Insert template",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Show bookmarks",
+      "title": "Show bookmarks",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Create new base",
+      "title": "Create new base",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "open-vault",
+      "class": "clickable-icon",
+      "aria": "Open or create a vault",
+      "title": "Open or create a vault",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "open-settings",
+      "class": "clickable-icon",
+      "aria": "Settings",
+      "title": "Settings (Ctrl+,)",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "side-view-tab clickable-icon is-active",
+      "aria": "Files",
+      "title": "Files",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "side-view-tab clickable-icon",
+      "aria": "Search",
+      "title": "Search",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "new-note",
+      "class": "clickable-icon",
+      "aria": "New note",
+      "title": "New note (Ctrl+N)",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "new-folder",
+      "class": "clickable-icon",
+      "aria": "New folder",
+      "title": "New folder",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "file-actions",
+      "class": "clickable-icon",
+      "aria": "Current file actions",
+      "title": "Current file actions (or right-click a tree entry)",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Refresh file list",
+      "title": "Refresh file list",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Collapse all folders",
+      "title": "Collapse all folders",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Pixel.pngpng",
+      "id": "",
+      "class": "nav-file-title ",
+      "aria": null,
+      "title": "Pixel.png",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Rendering",
+      "id": "",
+      "class": "nav-file-title ",
+      "aria": null,
+      "title": "Rendering.md",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Tags",
+      "id": "",
+      "class": "nav-file-title is-active",
+      "aria": null,
+      "title": "Tags.md",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Target",
+      "id": "",
+      "class": "nav-file-title ",
+      "aria": null,
+      "title": "Target.md",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "id": "",
+      "class": "",
+      "aria": "Search in all files",
+      "title": null,
+      "path": null,
+      "type": "search",
+      "placeholder": "Search notes..."
+    },
+    {
+      "tag": "BUTTON",
+      "text": "slopsidian-vaultSlopsidian",
+      "id": "vault-switcher",
+      "class": "vault-switcher",
+      "aria": "Manage vaults",
+      "title": "Open or create a vault",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "DIV",
+      "text": "Tags*",
+      "id": "",
+      "class": "workspace-tab-header is-active",
+      "aria": null,
+      "title": "Tags.md",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon workspace-tab-header-inner-close-button",
+      "aria": "Close tab (Ctrl+W)",
+      "title": "Close tab (Ctrl+W)",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "New tab (Ctrl+T)",
+      "title": "New tab (Ctrl+T)",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Back (Alt+Left)",
+      "title": "Back (Alt+Left)",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Forward (Alt+Right)",
+      "title": "Forward (Alt+Right)",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Reading view (Ctrl+E)",
+      "title": "Reading view (Ctrl+E)",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Pane options",
+      "title": "Pane options",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Edit tags",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Remove",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Edit text",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Remove",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Add property",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "side-view-tab clickable-icon",
+      "aria": "Backlinks",
+      "title": "Backlinks",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "side-view-tab clickable-icon",
+      "aria": "Outgoing links",
+      "title": "Outgoing links",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "side-view-tab clickable-icon",
+      "aria": "Tags",
+      "title": "Tags",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "side-view-tab clickable-icon is-active",
+      "aria": "Outline",
+      "title": "Outline",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Collapse all",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Expand all",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "outline-collapse clickable-icon",
+      "aria": "Toggle child headings: Tags",
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Tags",
+      "id": "",
+      "class": "outline-heading",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "outline-collapse clickable-icon",
+      "aria": "Toggle child headings: Code stays literal",
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Code stays literal",
+      "id": "",
+      "class": "outline-heading",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Pin to this note",
+      "title": "Pin to this note",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Pin outgoing links to this note",
+      "title": "Pin outgoing links to this note",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "id": "",
+      "class": "",
+      "aria": "Filter tags",
+      "title": null,
+      "path": null,
+      "type": "search",
+      "placeholder": "Filter tags..."
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Toggle #project",
+      "title": "Toggle #project",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#project4",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "nested2",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#_1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#123abc1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#a-b1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#bold1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#bracket1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#café1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#comparison1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Toggle #double",
+      "title": "Toggle #double",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#double1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Toggle #double/",
+      "title": "Toggle #double/",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "slash1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#école1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#École1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#hello-world1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#italic1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#label1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Toggle #trailing",
+      "title": "Toggle #trailing",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#trailing1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#under_score1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "#日本語1",
+      "id": "",
+      "class": "discovery-tag",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Experimental",
+      "id": "",
+      "class": "compatibility-badge",
+      "aria": null,
+      "title": "Independent compatibility build; use a test vault",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Autosave on",
+      "id": "markdown-autosave-toggle",
+      "class": "",
+      "aria": "Autosave on",
+      "title": "Pause automatic Markdown saves. Explicit Save remains available.",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "0 save issue(s)",
+      "id": "markdown-autosave-errors",
+      "class": "",
+      "aria": null,
+      "title": "Review unsaved notes and retry failed saves",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Attach files",
+      "id": "attach-files",
+      "class": "",
+      "aria": null,
+      "title": "Attach files to the current note",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "0 backlinks",
+      "id": "",
+      "class": "backlink-status",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "2 properties",
+      "id": "",
+      "class": "properties-status",
+      "aria": "Show file properties",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Source mode",
+      "id": "",
+      "class": "status-bar-item editor-status-control",
+      "aria": "Editor mode: Source mode",
+      "title": "Source mode",
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "reload-note",
+      "class": "clickable-icon",
+      "aria": "Reload from disk",
+      "title": "Reload from disk",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "save-note",
+      "class": "clickable-icon",
+      "aria": "Save",
+      "title": "Save (Ctrl+S)",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon",
+      "aria": "Toggle right sidebar",
+      "title": "Toggle right sidebar",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "id": "vault-open-path",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": "D:\\Notes\\My vault"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Browse...",
+      "id": "browse-existing-vault",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Open",
+      "id": "confirm-open-vault",
+      "class": "mod-cta",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "submit",
+      "placeholder": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "id": "new-vault-name",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": "My new vault"
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "id": "new-vault-location",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": "Choose the parent folder for your new vault"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Browse...",
+      "id": "browse-vault-location",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Create vault",
+      "id": "confirm-create-vault",
+      "class": "mod-cta",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "submit",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Back to vault",
+      "id": "cancel-vault-selection",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "id": "new-note-name",
+      "class": "",
+      "aria": "New note name",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": "Untitled"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Cancel",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Create",
+      "id": "create-note",
+      "class": "mod-cta",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "submit",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "About this build",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Core plugins",
+      "id": "core-plugins-tab",
+      "class": "is-active",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Community plugins",
+      "id": "community-plugins-tab",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "",
+      "id": "",
+      "class": "clickable-icon settings-close",
+      "aria": "Close settings",
+      "title": "Close settings",
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Turn on restricted mode",
+      "id": "community-restricted-toggle",
+      "class": "",
+      "aria": "Restricted mode",
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "INPUT",
+      "text": "",
+      "id": "community-plugin-search",
+      "class": "",
+      "aria": "Search installed plugins",
+      "title": null,
+      "path": null,
+      "type": "search",
+      "placeholder": "Search installed plugins"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Reload plugins",
+      "id": "community-plugin-reload",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": "button",
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Files",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Search",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Quick switcher",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Graph view",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Backlinks",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Canvas",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Outgoing links",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Tags view",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Footnotes",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Properties view",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Page preview",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Daily notes",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Templates",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Note composer",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Command palette",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Slash commands",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Editor status",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Bookmarks",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Format converter",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Unique note creator",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Random note",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Outline",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Word count",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Slides",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Audio recorder",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Workspaces",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "File recovery",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Publish",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Sync",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Disable",
+      "id": "",
+      "class": "",
+      "aria": "Bases",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Enable",
+      "id": "",
+      "class": "",
+      "aria": "Web viewer",
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Settings",
+      "id": "",
+      "class": "",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Retry",
+      "id": "components-reconnect-button",
+      "class": "components-reconnect-failed-visible",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Resume",
+      "id": "components-resume-button",
+      "class": "components-pause-visible components-resume-failed-visible",
+      "aria": null,
+      "title": null,
+      "path": null,
+      "type": null,
+      "placeholder": null
+    }
+  ],
+  "cache": {
+    "tags": [
+      {
+        "tag": "#project",
+        "position": {
+          "start": {
+            "line": 5,
+            "ch": 6,
+            "offset": 80
+          },
+          "end": {
+            "line": 5,
+            "ch": 14,
+            "offset": 88
+          }
+        }
+      },
+      {
+        "tag": "#project/nested",
+        "position": {
+          "start": {
+            "line": 5,
+            "ch": 19,
+            "offset": 93
+          },
+          "end": {
+            "line": 5,
+            "ch": 34,
+            "offset": 108
+          }
+        }
+      },
+      {
+        "tag": "#hello-world",
+        "position": {
+          "start": {
+            "line": 5,
+            "ch": 40,
+            "offset": 114
+          },
+          "end": {
+            "line": 5,
+            "ch": 52,
+            "offset": 126
+          }
+        }
+      },
+      {
+        "tag": "#under_score",
+        "position": {
+          "start": {
+            "line": 5,
+            "ch": 57,
+            "offset": 131
+          },
+          "end": {
+            "line": 5,
+            "ch": 69,
+            "offset": 143
+          }
+        }
+      },
+      {
+        "tag": "#日本語",
+        "position": {
+          "start": {
+            "line": 7,
+            "ch": 8,
+            "offset": 156
+          },
+          "end": {
+            "line": 7,
+            "ch": 12,
+            "offset": 160
+          }
+        }
+      },
+      {
+        "tag": "#école",
+        "position": {
+          "start": {
+            "line": 7,
+            "ch": 13,
+            "offset": 161
+          },
+          "end": {
+            "line": 7,
+            "ch": 19,
+            "offset": 167
+          }
+        }
+      },
+      {
+        "tag": "#café",
+        "position": {
+          "start": {
+            "line": 7,
+            "ch": 20,
+            "offset": 168
+          },
+          "end": {
+            "line": 7,
+            "ch": 25,
+            "offset": 173
+          }
+        }
+      },
+      {
+        "tag": "#123abc",
+        "position": {
+          "start": {
+            "line": 7,
+            "ch": 40,
+            "offset": 188
+          },
+          "end": {
+            "line": 7,
+            "ch": 47,
+            "offset": 195
+          }
+        }
+      },
+      {
+        "tag": "#label",
+        "position": {
+          "start": {
+            "line": 9,
+            "ch": 39,
+            "offset": 239
+          },
+          "end": {
+            "line": 9,
+            "ch": 45,
+            "offset": 245
+          }
+        }
+      },
+      {
+        "tag": "#bold",
+        "position": {
+          "start": {
+            "line": 11,
+            "ch": 2,
+            "offset": 288
+          },
+          "end": {
+            "line": 11,
+            "ch": 7,
+            "offset": 293
+          }
+        }
+      },
+      {
+        "tag": "#italic",
+        "position": {
+          "start": {
+            "line": 11,
+            "ch": 11,
+            "offset": 297
+          },
+          "end": {
+            "line": 11,
+            "ch": 18,
+            "offset": 304
+          }
+        }
+      },
+      {
+        "tag": "#bracket",
+        "position": {
+          "start": {
+            "line": 11,
+            "ch": 21,
+            "offset": 307
+          },
+          "end": {
+            "line": 11,
+            "ch": 29,
+            "offset": 315
+          }
+        }
+      },
+      {
+        "tag": "#trailing/",
+        "position": {
+          "start": {
+            "line": 11,
+            "ch": 40,
+            "offset": 326
+          },
+          "end": {
+            "line": 11,
+            "ch": 50,
+            "offset": 336
+          }
+        }
+      },
+      {
+        "tag": "#double//slash",
+        "position": {
+          "start": {
+            "line": 11,
+            "ch": 51,
+            "offset": 337
+          },
+          "end": {
+            "line": 11,
+            "ch": 65,
+            "offset": 351
+          }
+        }
+      },
+      {
+        "tag": "#_",
+        "position": {
+          "start": {
+            "line": 11,
+            "ch": 66,
+            "offset": 352
+          },
+          "end": {
+            "line": 11,
+            "ch": 68,
+            "offset": 354
+          }
+        }
+      },
+      {
+        "tag": "#a-b",
+        "position": {
+          "start": {
+            "line": 11,
+            "ch": 69,
+            "offset": 355
+          },
+          "end": {
+            "line": 11,
+            "ch": 73,
+            "offset": 359
+          }
+        }
+      }
+    ],
+    "frontmatter": {
+      "tags": [
+        "project",
+        "project/nested",
+        "École"
+      ],
+      "status": "review"
+    }
+  },
+  "activeViewState": {
+    "type": "markdown",
+    "state": {
+      "mode": "source",
+      "source": true,
+      "file": "Tags.md"
+    },
+    "pinned": false
+  },
+  "rendered": {
+    "headings": [],
+    "tables": 0,
+    "callouts": 0,
+    "images": [],
+    "mermaid": []
+  }
+}

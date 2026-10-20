@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "notes": 162,
+  "jsonFiles": 56,
+  "fileClasses": 5,
+  "fieldDefinitions": 22,
+  "classRecords": {
+    "Base record": 0,
+    "Journal": 7,
+    "Meeting": 1,
+    "Project": 4,
+    "Resource": 2
+  },
+  "pathIcons": 205,
+  "quickAddChoices": 4,
+  "wikiLinks": 789,
+  "newUnresolvedLinks": [],
+  "existingIntentionalMissingLinks": [
+    [
+      "80 Sandbox/Format conversion.md",
+      "shared garden"
+    ],
+    [
+      "80 Sandbox/Link playground.md",
+      "A future idea"
+    ]
+  ],
+  "installedGuides": 24,
+  "additionalGuides": 6,
+  "pluginAndPreferenceFilesUnchanged": 73,
+  "mutableVisitHistoryExcluded": true,
+  "errors": []
+}

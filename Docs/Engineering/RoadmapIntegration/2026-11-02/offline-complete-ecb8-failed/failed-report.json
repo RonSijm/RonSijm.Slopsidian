@@ -1,0 +1,1320 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "startedAt": "2026-11-02T03:03:22.577Z",
+  "scenarios": [
+    {
+      "name": "cold online page is unprepared and caches nothing until the user asks",
+      "ms": 2107,
+      "pages": [
+        {
+          "page": "online",
+          "url": "http://127.0.0.1:18861/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 47,
+          "policy": "online cold page",
+          "actions": [],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it",
+      "ms": 5160,
+      "pages": [
+        {
+          "page": "prepare",
+          "url": "http://127.0.0.1:18861/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 365,
+          "policy": "prepared page",
+          "actions": [
+            {
+              "control": "prepare",
+              "stage": "before-summary-click",
+              "at": 1793588610398,
+              "present": true,
+              "open": false,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-summary-click",
+              "at": 1793588610416,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "before-control-click",
+              "at": 1793588610419,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-control-click",
+              "at": 1793588610450,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "busy",
+              "error": "",
+              "status": "Preparing the offline app…"
+            }
+          ],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "cold restart with the network OFF boots the app, workers and renderer from the cached shell",
+      "ms": 2487,
+      "pages": [
+        {
+          "page": "cold-offline",
+          "url": "http://127.0.0.1:18861/",
+          "errors": [
+            {
+              "kind": "log",
+              "text": "Failed to load resource: net::ERR_FAILED",
+              "url": "http://127.0.0.1:18861/not-in-the-manifest.txt"
+            }
+          ],
+          "failedLoads": [
+            {
+              "url": "http://127.0.0.1:18861/not-in-the-manifest.txt",
+              "error": "net::ERR_FAILED",
+              "at": 1793588616884
+            }
+          ],
+          "badResponses": [],
+          "requests": 46,
+          "policy": "cold offline boot",
+          "actions": [],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "a genuine cached GitHub mount is seeded offline in local storage only",
+      "ms": 1628,
+      "pages": [
+        {
+          "page": "seed",
+          "url": "http://127.0.0.1:18861/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 48,
+          "policy": "seeding",
+          "actions": [],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "a cold canonical cached remote route boots offline into the read-only mount with the exact note and no API/raw fallback",
+      "ms": 1904,
+      "pages": [
+        {
+          "page": "remote-route",
+          "url": "http://127.0.0.1:18861/remote-vault/github.com/slopsidian-fixtures/offline-route-1793588618310/tree/main?cached=true&file=Index%20A.md",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 51,
+          "policy": "cold cached remote route",
+          "actions": [],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "explicit complete cached index offline: partial first, missing and corrupt bytes refused, complete after exact cached bytes, zero downloads",
+      "ms": 2990,
+      "pages": [
+        {
+          "page": "index",
+          "url": "http://127.0.0.1:18861/remote-vault/github.com/slopsidian-fixtures/offline-route-1793588618310/tree/main?cached=true&file=Index%20A.md",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 51,
+          "policy": "cached complete index",
+          "actions": [],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "cached index dialog UI: real pointers drive Prepare, held Cancel, Resume, missing and corrupt refusal, then a verified complete index with offline search metadata",
+      "ms": 5541,
+      "pages": [
+        {
+          "page": "index-ui-seed",
+          "url": "http://127.0.0.1:18861/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 48,
+          "policy": "index dialog seeding",
+          "actions": [],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        },
+        {
+          "page": "index-ui",
+          "url": "http://127.0.0.1:18861/remote-vault/github.com/slopsidian-fixtures/index-ui-1793588625002/tree/main?cached=true&file=Index%20A.md",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 52,
+          "policy": "cached index dialog",
+          "actions": [],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    }
+  ],
+  "limits": [],
+  "sourceFingerprint": "ecb81c79c6306a4c25756e20f62f155231d53a4a70c85257c1f2afb0f239237e",
+  "published": {
+    "tree": {
+      "files": 819,
+      "sha256": "d49552ebfac34d257c912b329d746b02261a658de0ada28fe90716e669697401"
+    },
+    "site": {
+      "offlineVersion": "f6d8cdfecd004ce4f87bcfc99f0945f5",
+      "manifestSha256": "2490f5022c72e7377117696c02dbcd19b9aa871d118a347c62b006c05a612461",
+      "workerBuild": "e451f8777f5506e1b346038b3e3f4e2b",
+      "workerSha256": "493fb798976751a6eaca93d2ca519fa08e4a646776790555738fa49e598c256b",
+      "files": 269,
+      "embeddedSourceFingerprint": "ecb81c79c6306a4c25756e20f62f155231d53a4a70c85257c1f2afb0f239237e",
+      "compiledUi": {
+        "core-verification.json": "92376850c9335928fa09a90fdddcb3b70709062345315dd92166259ce4ea9c21",
+        "index.html": "068489725098e797edcd881c07e08b03f0caadd92ee16ff60aa835013e8b75b4",
+        "js/bases-worker.js": "4cc1ea06210c62f5ba6957312ccdfc0e34b9cffa475460e7bb91709fcf2b6938",
+        "js/bases-worker.js.LEGAL.txt": "d88d3bded96bc88f8739fb9aed6e507a1c8fbcefc3ff6eaf402890755081b1b4",
+        "js/bases-worker.js.map": "c40eef249c3eaf890e5a2fb3eead8e56047cd384ac9776ccea9a8c4f8fa2a733",
+        "js/browser-host.js": "76c51edce1588d6b47c507272b5e18208cfc1d5dd61a726bc7df9c3b73c696dc",
+        "js/browser-host.js.map": "1662bcd4c4bc5d50a20b86c6b611d19af9cb9518971127f4c8c15f1509621e5f",
+        "js/codemirror-license.txt": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07",
+        "js/editor-host.css": "39bc32a24ef18d35bd3f68caa95e1273255394beab9aa2b707fbcb0a32f4ea18",
+        "js/editor-host.css.map": "aeaa7614332a94a1ecad42eea06ab0292df9deba9ae42d4ee416d961f017154b",
+        "js/editor-host.js": "8a5beb47d5e673373b02dc7e08241daf7fddde20beb7853fe85aa6a709163abc",
+        "js/editor-host.js.LEGAL.txt": "dcfe601310dda6c23bd8d218fb4ba7be115e11f29e60bd3efaaa6fab450e8263",
+        "js/editor-host.js.map": "92d4ad42addebe55d2ea75c0a803d01b3bfb616542a5cd0ee9e94432a19e8528",
+        "js/graph-worker.js": "65cd48b19bcf5e773b9868e219c067cfc47cd79cb305b6661f8dbf885e6e0390",
+        "js/graph-worker.js.map": "b97fa7234c0a029716fd7615992ba124bf1036530c329457acacc4dc966ee403",
+        "js/hypermd-license.txt": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b",
+        "js/katex-license.txt": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3",
+        "js/mermaid-api.js": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a",
+        "js/mermaid-api.js.LEGAL.txt": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1",
+        "js/mermaid-api.js.map": "4d4c5065922581d322c92c401bed7223d8583689a9d379296dee9b138acb8656",
+        "js/mermaid-frame.js": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62",
+        "js/mermaid-frame.js.LEGAL.txt": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1",
+        "js/mermaid-frame.js.map": "b66f8fdbef58513cc8a5e3a5af994162731bbe41d35340495be7d4f041187072",
+        "js/mermaid-licenses.txt": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735",
+        "js/pdf-api.js": "31fda904c82df0457d3b22835859127122667a9264bea635d7bc606c578ae6a8",
+        "js/pdf-api.js.map": "60d8315760598b8fa5b86af73ca7443f60424f9e5d3f83b711e72c1ccb905abd",
+        "js/pdf-licenses.txt": "f812858b82bbea82fb78fc8740dad809e676e4d95fe458faaa143959539879ef",
+        "js/pdf-worker.js": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6",
+        "js/pdf/cmaps/78-EUC-H.bcmap.txt": "d92a261336dc18b8c03a46eb4d462382d33f4338fa195d303256b2031434c874",
+        "js/pdf/cmaps/78-EUC-V.bcmap.txt": "61670bebc4e4827b67230c054fd0d820d6e30c3584d02e386804e62bbedc032a",
+        "js/pdf/cmaps/78-H.bcmap.txt": "ece6415b853d61e1b2560165151407d35cf16e6556932b85a13ea75276b77402",
+        "js/pdf/cmaps/78-RKSJ-H.bcmap.txt": "696b1f973c97623496703809eaaa5f9b40696c77540057413f4b826a08edfa7b",
+        "js/pdf/cmaps/78-RKSJ-V.bcmap.txt": "53cb6d560ab377da48cf65d6dcacb0bdb31f13fab7066c580de38c12a73a7ff9",
+        "js/pdf/cmaps/78-V.bcmap.txt": "289000f02fd34872b6975503217f33abae6bee676e7d28f640473a67c8db1712",
+        "js/pdf/cmaps/78ms-RKSJ-H.bcmap.txt": "a2442595218f5f8bd8e1b42188e368587d876cfe0cc4cd87196f077c878f72e2",
+        "js/pdf/cmaps/78ms-RKSJ-V.bcmap.txt": "f8ddceba96bfd9d3740bd1789ee30d1f47c78371520a8084f71f7df58f19be0b",
+        "js/pdf/cmaps/83pv-RKSJ-H.bcmap.txt": "44040051ec818fe09b9703472bea72efd2759d5eeb5ff0d77c718d6bb5e6d1df",
+        "js/pdf/cmaps/90ms-RKSJ-H.bcmap.txt": "c13e043e85ff715b75bb03801e8fd0fb8f3a75e4a48496faa6baaf92b5b48ba1",
+        "js/pdf/cmaps/90ms-RKSJ-V.bcmap.txt": "499bb916ce1adbe4289b6e5811f4dc20eb238cdc2ffad20cf26ae56716885bab",
+        "js/pdf/cmaps/90msp-RKSJ-H.bcmap.txt": "7b8b3b8bbf821702e9a4df9f3596ce292380c8c1b0925dedadbb4e4b2d80498b",
+        "js/pdf/cmaps/90msp-RKSJ-V.bcmap.txt": "6296c2b5c07dca8128e96d5296d621a3268803d4fa0e5812a21e52fe2802aacb",
+        "js/pdf/cmaps/90pv-RKSJ-H.bcmap.txt": "fb5103f03d3a34547e18d316e52b6d9b26e485c662999222f84d2ba54c2e4fa8",
+        "js/pdf/cmaps/90pv-RKSJ-V.bcmap.txt": "7bcb5ad2ba55b9662ce379e16c2d9cc2b82d621a579807353741172e4af615c2",
+        "js/pdf/cmaps/Add-H.bcmap.txt": "a2ffab28b990998181bcca9b0e914bb2207820f100ae31d5c469444892e5ad8e",
+        "js/pdf/cmaps/Add-RKSJ-H.bcmap.txt": "b29f4b52e2465d0485856d5e69f1ba69927deb2848d8fd328c8035583b35bb7e",
+        "js/pdf/cmaps/Add-RKSJ-V.bcmap.txt": "2aa2232c283a3f5d0997c2834a36cead0b79ce2657944cfeed08140c293460ff",
+        "js/pdf/cmaps/Add-V.bcmap.txt": "25125d3b1be64e86b2df5b3344170b45a42bcaa0b46e43a34314ef73c166e542",
+        "js/pdf/cmaps/Adobe-CNS1-0.bcmap.txt": "8c65be9d51a9f269a547dc12460707aaf4031ab67ebe8a2900f4b4cc6b3e450e",
+        "js/pdf/cmaps/Adobe-CNS1-1.bcmap.txt": "73152bc1a59cc594b414ac6068be48e5512b96ae85920c40e32a99269fdb0c04",
+        "js/pdf/cmaps/Adobe-CNS1-2.bcmap.txt": "a1b8d353bdef9584c820464e8f1c9e2013d64ebf433cba0aa831dddf515818c2",
+        "js/pdf/cmaps/Adobe-CNS1-3.bcmap.txt": "2ffc0c75c79fafde506163d3c08c390d183251009f3fbf6ae50d1167d14b9570",
+        "js/pdf/cmaps/Adobe-CNS1-4.bcmap.txt": "98a1f470c878c6b9691a4d7aef776af8ac9b55f5587c9fafa00547f3bf655716",
+        "js/pdf/cmaps/Adobe-CNS1-5.bcmap.txt": "ddd6e29955eb8cb545f2ebd09c628c3bbda5023256eda1b728f743c75fb77829",
+        "js/pdf/cmaps/Adobe-CNS1-6.bcmap.txt": "317bb2db71e0e5b7b0c47b75de1da915c2e22f65f0c0861507f9ca7ba238f8a2",
+        "js/pdf/cmaps/Adobe-CNS1-UCS2.bcmap.txt": "e665837f2197c6bd08cd8955ad4d6932cee2398e2e328b25b00e6bfb3bd72af9",
+        "js/pdf/cmaps/Adobe-GB1-0.bcmap.txt": "8b81cce8a11d510e505704953cfa4e4ab080c1a0cab991145a3512ee433946b9",
+        "js/pdf/cmaps/Adobe-GB1-1.bcmap.txt": "0426983081788ec7202703e71f1efa4b860f75b936994236010b39d89251a81e",
+        "js/pdf/cmaps/Adobe-GB1-2.bcmap.txt": "e67b37a83b160ab3831306a71a605893b24454ee81ac9b6123bf2d3984d268d5",
+        "js/pdf/cmaps/Adobe-GB1-3.bcmap.txt": "aa299afc3e12a28726147305f191be28c7498078c8b182ece7886ac79cd99078",
+        "js/pdf/cmaps/Adobe-GB1-4.bcmap.txt": "8fbd7d74c2ddb1350c1cecce54a73fde3f5453093d4bed445283ec0033d2097f",
+        "js/pdf/cmaps/Adobe-GB1-5.bcmap.txt": "c22cb2fcff24112fa31dab2111bdc51957006576d31aad5a25e67793ac01428c",
+        "js/pdf/cmaps/Adobe-GB1-UCS2.bcmap.txt": "20507620260c0c935c35afc1e70e5888aa7125d5ec7ffc03cef1959feb2c1641",
+        "js/pdf/cmaps/Adobe-Japan1-0.bcmap.txt": "464f08905236f5703b1f5cf8358767c8b18e6bcc808840d081f1de2c7ab38134",
+        "js/pdf/cmaps/Adobe-Japan1-1.bcmap.txt": "4c823848722187d1ffe75ae3f5f9126ccd2d7895a05fad14c919fb119e037008",
+        "js/pdf/cmaps/Adobe-Japan1-2.bcmap.txt": "7810fb808e367e70429e90a9478fe6a3fdc3e214f25c7582ce9c2da6a242315c",
+        "js/pdf/cmaps/Adobe-Japan1-3.bcmap.txt": "84deb1828711ad3d390c9899c38abce1bf619d65ff7bf1a326ec95acc45f08f8",
+        "js/pdf/cmaps/Adobe-Japan1-4.bcmap.txt": "3f8a4f974919c2b8bae5d10175ffa2673be140481e00840542c85d48ef184067",
+        "js/pdf/cmaps/Adobe-Japan1-5.bcmap.txt": "1d3ce4ff28d977f8cf37a912ae4ec811f4175c3167b1ec0b2567feec3e79e1db",
+        "js/pdf/cmaps/Adobe-Japan1-6.bcmap.txt": "5609797b9401b30be72ef9645da62a87829f058c3be4b5c623383119f584b1d9",
+        "js/pdf/cmaps/Adobe-Japan1-UCS2.bcmap.txt": "66c5d0dc4964f4093e77b194023f3a0f689324028ec8330e1e1d0570bcba7c2f",
+        "js/pdf/cmaps/Adobe-Korea1-0.bcmap.txt": "dfb8c3874f0e5a8c3acf597d2c12d2b63e90bc5e4f0fce990ec4c56077d80b32",
+        "js/pdf/cmaps/Adobe-Korea1-1.bcmap.txt": "62f277b7b1c441c007797ae707d5c37258d029ce4661a2b911e2e1ee35e6adc1",
+        "js/pdf/cmaps/Adobe-Korea1-2.bcmap.txt": "1d77068af462f96d7ad28ad7e7d43eef6423c685b479d7dc25ff5df38db0380d",
+        "js/pdf/cmaps/Adobe-Korea1-UCS2.bcmap.txt": "857b723088be97255053562bfa41bd1075a7f7910d3bab59a0645c8bbc7060ff",
+        "js/pdf/cmaps/B5-H.bcmap.txt": "718ad0ffbef4c34f8f3f31292c462e519cd567a5511fc8b346c60010d64f4ef9",
+        "js/pdf/cmaps/B5-V.bcmap.txt": "b5c37383517477620ced927b6b4ffd4f4cc6230d8051b5b46a21d6768e07f7d8",
+        "js/pdf/cmaps/B5pc-H.bcmap.txt": "bab6028aead1d6149400e904ab10cfd319082d826473ed4c582c8eeed920f17e",
+        "js/pdf/cmaps/B5pc-V.bcmap.txt": "41543142b9767f3b76133899fc8453282b01ad3c653acaeea42d78c5a7d08c63",
+        "js/pdf/cmaps/CNS-EUC-H.bcmap.txt": "e8f89cd61e6486b948205da46499d659ed0aed949b7095fd3c8e95ffe2b0e7a9",
+        "js/pdf/cmaps/CNS-EUC-V.bcmap.txt": "cae422bec2ac6dbe86bf921cec942bacd2d0b733ffcca5f91b3ba14e917025a0",
+        "js/pdf/cmaps/CNS1-H.bcmap.txt": "e8487971ab20cd16f3de3e8ac56ec994b72b658ad113f2818239dfd5108f501a",
+        "js/pdf/cmaps/CNS1-V.bcmap.txt": "42df8076aaa7574505e7304af83a3323ec032c4177d64b1309db8c043d594a8a",
+        "js/pdf/cmaps/CNS2-H.bcmap.txt": "bc6024d274d440f0625c69e25f37036ef6cb6689432ceaa160d3432a2a716ca7",
+        "js/pdf/cmaps/CNS2-V.bcmap.txt": "2e4f70a8afd23a121030fc2e5b5f3816e903b11e7ba8b8c09654b31c80399c38",
+        "js/pdf/cmaps/ETHK-B5-H.bcmap.txt": "d2f10fa519336bc4efcc7b6deb9604b75429946b40d82e311cb3a97a1994c89a",
+        "js/pdf/cmaps/ETHK-B5-V.bcmap.txt": "1fea3fd0d9f0f679f80505800851ef2e4131d81127e18c006938ffa2f4c8b247",
+        "js/pdf/cmaps/ETen-B5-H.bcmap.txt": "87ee6b3f5bfda5fe26fa35431264c7d73070d10dbbf398a75185d63ae322c18d",
+        "js/pdf/cmaps/ETen-B5-V.bcmap.txt": "47dc0d2c21e3bde317947aec1675ceabc1d5460a60bf9c24334b8c407a17172c",
+        "js/pdf/cmaps/ETenms-B5-H.bcmap.txt": "d5f5a73da4173b7da9a3a20e16f26f9cd5d12deb1553409919e0cec6fd37fdee",
+        "js/pdf/cmaps/ETenms-B5-V.bcmap.txt": "18252fca90f472f479af1bddd60d6ab51c8e1b55dcf6845951426504934543e0",
+        "js/pdf/cmaps/EUC-H.bcmap.txt": "f9939cd57fccdc65c5d9f4c205fd497ebdbd283643308da5663801a8c1d9c595",
+        "js/pdf/cmaps/EUC-V.bcmap.txt": "1283a50a706507c4436da83ede9ad7a4440be25378f2e96f6c81a430081426a3",
+        "js/pdf/cmaps/Ext-H.bcmap.txt": "4000ed4e61a1c668ef453bbd0603cfa383defa793abd46a57ed870d7f527350b",
+        "js/pdf/cmaps/Ext-RKSJ-H.bcmap.txt": "e0d2f0df337660e73813238dd4a725f11f0621b90f3273857db253d0e7694caa",
+        "js/pdf/cmaps/Ext-RKSJ-V.bcmap.txt": "f617a22b6d67febb187990952006c91a9f5a4db21155d268c656252d0c21985d",
+        "js/pdf/cmaps/Ext-V.bcmap.txt": "c2087fb845a9e3acea0c2922cd40e6af67e11957bec74dcd597f1285edd490ce",
+        "js/pdf/cmaps/GB-EUC-H.bcmap.txt": "928bad06fd84a48f5ba7150d7716609119fb660f2aaa73eccad81ddab9b9d203",
+        "js/pdf/cmaps/GB-EUC-V.bcmap.txt": "a9ad88ac2479da529b16dc48abc5952332e27bc355335f91df5729a587533324",
+        "js/pdf/cmaps/GB-H.bcmap.txt": "1018c777a8910b5bb46d7d54a4aee9d51ca5cff8addb2b41c969d9101cb3fd1c",
+        "js/pdf/cmaps/GB-V.bcmap.txt": "0b96789143c0bbf9f1641ae7165b3456dccd14dabffcbb0bd654d5bf6f94f863",
+        "js/pdf/cmaps/GBK-EUC-H.bcmap.txt": "2103fed28650ede096a2281104a1a8a4304dae0db414342c636867522307123b",
+        "js/pdf/cmaps/GBK-EUC-V.bcmap.txt": "a7fd35dd14d9dbdb955f34e6c0630618b6620dfd09d4283b2f65a65ce77fcaea",
+        "js/pdf/cmaps/GBK2K-H.bcmap.txt": "3d919ae72af16c5cc6846ec87a4326a9f125e493c59d3628429d35c2c95fe8c4",
+        "js/pdf/cmaps/GBK2K-V.bcmap.txt": "b927fdfd595c07ce9158bf2ec13f4641b2e83b01c70989dadfabd6ed7c6ac2dc",
+        "js/pdf/cmaps/GBKp-EUC-H.bcmap.txt": "d15ebd8e81fb4fe8a244f1b1e877922e03500ac69eddf5001093e502430451d2",
+        "js/pdf/cmaps/GBKp-EUC-V.bcmap.txt": "fdc736d46e642625dccc8ad8c59f2c69fc7db7a13f2e799c6c6b779e707bb97a",
+        "js/pdf/cmaps/GBT-EUC-H.bcmap.txt": "dc5f44e48a39f3367ae28665027d8ab1d8cedb5a9dcc5068a900acd6709f60f9",
+        "js/pdf/cmaps/GBT-EUC-V.bcmap.txt": "a1ad24e63653b8aa388c18fa5e498f007564e43dde699a9f91ccb4645c999be8",
+        "js/pdf/cmaps/GBT-H.bcmap.txt": "8afda745a505763f3ff54c8126eeb48ef376ea9ed07d9f42ff9a22c5c547ec57",
+        "js/pdf/cmaps/GBT-V.bcmap.txt": "cdc2ec5c3c7c7033290c9a8894878202f08674eb9b1ae7d36218430326768771",
+        "js/pdf/cmaps/GBTpc-EUC-H.bcmap.txt": "7b23e2f7bfdb6c918f567b7324bf858f398bd8cd5f268d74ece19a3c91bf4f32",
+        "js/pdf/cmaps/GBTpc-EUC-V.bcmap.txt": "d7a1b13ead9ab511cf2cd01de6ce8b02aa8e8767e84895337d7a3b67f039f93b",
+        "js/pdf/cmaps/GBpc-EUC-H.bcmap.txt": "3c4a4eb82f05abe51f6650985c630e180438bfdd491318f5d20d2ec29236e1c3",
+        "js/pdf/cmaps/GBpc-EUC-V.bcmap.txt": "215bdfa2842705624b4cf4cd29b8e3c720f1e192365e0305c11030a424c84d7c",
+        "js/pdf/cmaps/H.bcmap.txt": "a0233e21047ec00b852125b243cbcf30abee511155b6d8159c24f944384bc9ee",
+        "js/pdf/cmaps/HKdla-B5-H.bcmap.txt": "5242bce18fb13ab4cc59b146a03eba36e4ce42667eeff09e10981a9d2aa4996b",
+        "js/pdf/cmaps/HKdla-B5-V.bcmap.txt": "2e0537f786c0791d41a925f72bad2d4e7268aa6cbf15a1400a722672cec38e2c",
+        "js/pdf/cmaps/HKdlb-B5-H.bcmap.txt": "fdc8159984bf5dbe475c0d5dfcb621ecee4dea07c38c668bd77f4c679e23b9b3",
+        "js/pdf/cmaps/HKdlb-B5-V.bcmap.txt": "b249eb9dcb915ab45057c5d4d7aa55ef88d0efbb092af6bae0b2d4705d139abf",
+        "js/pdf/cmaps/HKgccs-B5-H.bcmap.txt": "ab64c7fc5e9b2e97750cc4f269b0da14fd8649e49151b7598c8df86599bac591",
+        "js/pdf/cmaps/HKgccs-B5-V.bcmap.txt": "02ebdf7cdffb5395fb21091cd58a013a18ae5388922822f9dc6292ef16b98956",
+        "js/pdf/cmaps/HKm314-B5-H.bcmap.txt": "bfd8bbde6b36a9da4c1c902c74121a30d9807a7079a00eeea218be6adc223cef",
+        "js/pdf/cmaps/HKm314-B5-V.bcmap.txt": "2a64a815cfb6fdd480674a868762e3d161fda17543b20c9209978559f0667164",
+        "js/pdf/cmaps/HKm471-B5-H.bcmap.txt": "49d7c037758826b5b6c0fa329c35bbf25d3943197754e72ecd30c6fb04d745e6",
+        "js/pdf/cmaps/HKm471-B5-V.bcmap.txt": "be24c109e78aa4fe3c1f27d30aab3ed0741e783fa1b6b6c2719741072b54b132",
+        "js/pdf/cmaps/HKscs-B5-H.bcmap.txt": "08599378f41d96b40537adef6e6edcc4a787bc63f5accf47c026df4905a13914",
+        "js/pdf/cmaps/HKscs-B5-V.bcmap.txt": "d073542b7dad1c4cbf01c1af5f0cd13218d1281a491956e310c55702fc8705c4",
+        "js/pdf/cmaps/Hankaku.bcmap.txt": "b454701f7aecd7856769016dfd04ca64280a060f2c67a2466d50b4395d24974e",
+        "js/pdf/cmaps/Hiragana.bcmap.txt": "2ed669394756dd9458651cd9995ab29ab691ecb7686659003306cdf22767a414",
+        "js/pdf/cmaps/KSC-EUC-H.bcmap.txt": "6784e16dbc5861c036c23d3e55f0d4ba0975a3e464da0ee8e49bcfff0be070c4",
+        "js/pdf/cmaps/KSC-EUC-V.bcmap.txt": "fdb36bad85e9924823d49db374067988e024cf80fc894711f2c9178951cbbe95",
+        "js/pdf/cmaps/KSC-H.bcmap.txt": "c1f6d61f1d3304fd539a65ae72624fa567ecc3853bf52e283958a7a2515b3eee",
+        "js/pdf/cmaps/KSC-Johab-H.bcmap.txt": "939993d213f68db763bf156217c217ae23af082b91a0eacecf3d11eb4ff8ef8c",
+        "js/pdf/cmaps/KSC-Johab-V.bcmap.txt": "5d61967aac0e666def721e8b8d0fed8f95a879a14f2e76ce516c3d11c621e519",
+        "js/pdf/cmaps/KSC-V.bcmap.txt": "d7da5afd9f1fe74816d79c9325f0139a4efb6438664ebfdf9a7aa92f3034360f",
+        "js/pdf/cmaps/KSCms-UHC-H.bcmap.txt": "5b70d8f6a4fa9e2283dc649f0ff95d906d56efbee50a20e8d2faec3a8fed078e",
+        "js/pdf/cmaps/KSCms-UHC-HW-H.bcmap.txt": "a5e6ba22aceb02fdedee11bfb9ed138463d89e85b87810b9f075b469d936f8ec",
+        "js/pdf/cmaps/KSCms-UHC-HW-V.bcmap.txt": "890332a6a26880d463a12f2a6ff048bf9cf7e45077cfb1ca8815b89baa7bf411",
+        "js/pdf/cmaps/KSCms-UHC-V.bcmap.txt": "1631b531c9a40c8cbe24c2317dba107362e49fa6e18af620414d627c111d570c",
+        "js/pdf/cmaps/KSCpc-EUC-H.bcmap.txt": "709480682c55cedbb0124b9960d78e28febeee0df2e34607d61aac6601647ec7",
+        "js/pdf/cmaps/KSCpc-EUC-V.bcmap.txt": "031707887d6fc2378a36cdb6775334fd7a236c3f95048d8436abf43fe26fc49d",
+        "js/pdf/cmaps/Katakana.bcmap.txt": "3b6ca6642fbf8822da00d5e58a8aa275216d5c32dbf2bd73e934197fc9fc5c53",
+        "js/pdf/cmaps/NWP-H.bcmap.txt": "286c6c9e335da330928a01edc3c97a3a623f1f7f3c42762b0a7dc2f651b1a78f",
+        "js/pdf/cmaps/NWP-V.bcmap.txt": "3a75fb7b59adfb172710758c425d8ac6c93fd5360a64dd4afd5dd04e60ab4b4d",
+        "js/pdf/cmaps/RKSJ-H.bcmap.txt": "a70de61a22a898f693f02cc011c3e3cff2e10aaa7cddb4661e456a21ae859f78",
+        "js/pdf/cmaps/RKSJ-V.bcmap.txt": "68c1a64506471a524ea5cfc3b3a9f8f70031989a6bd95427b1351f33ccf50b06",
+        "js/pdf/cmaps/Roman.bcmap.txt": "1c6b3ef9d9e5cb1aa329142ce9414b90f9b6d7f9182a2a9e927378dab8f0d43f",
+        "js/pdf/cmaps/UniCNS-UCS2-H.bcmap.txt": "779428116752f34e2490a1941d24e4634c71e3c22d053b811d2090ae2fb3c704",
+        "js/pdf/cmaps/UniCNS-UCS2-V.bcmap.txt": "1e5cc184b850ea44abc2df8ae5674279df668e8edf5e2a1a2ea2bd77adbd280f",
+        "js/pdf/cmaps/UniCNS-UTF16-H.bcmap.txt": "32ff139b3c7b91d6ad25f994701f3ce7b242906022c418fd73e6493fc228bfe5",
+        "js/pdf/cmaps/UniCNS-UTF16-V.bcmap.txt": "278eb1e68d1a236c60ef59472cf0176ee0d45f364285e76ca12419a08d46fb9a",
+        "js/pdf/cmaps/UniCNS-UTF32-H.bcmap.txt": "bf26eb67fe19ee5ba915799e80ca72408400aa8342fdf6a244a4f44de8f97336",
+        "js/pdf/cmaps/UniCNS-UTF32-V.bcmap.txt": "f7da3caf83ceb1cb37936fa10700d9ba6e9c3f72c5bc9724e3ac79bff0c0179e",
+        "js/pdf/cmaps/UniCNS-UTF8-H.bcmap.txt": "2f2a742bcd1a84a148a4a518b9eed51a8f9c6ca5ed3bc5e2e41fff97de5dc2d8",
+        "js/pdf/cmaps/UniCNS-UTF8-V.bcmap.txt": "b7c3f10780a8c62dd1c8ff6c30dc1e4e23b6cdc87c3a96fcd514cc98ffd3af9d",
+        "js/pdf/cmaps/UniGB-UCS2-H.bcmap.txt": "9201569b402e81ad8860650bd86350c4fa28e5dd5971f05fcacaf40f51de18ed",
+        "js/pdf/cmaps/UniGB-UCS2-V.bcmap.txt": "f10282335e4d64203bc2a653a3a47d745ec76c8ae04549f4d50180c1899be216",
+        "js/pdf/cmaps/UniGB-UTF16-H.bcmap.txt": "386fd39581245c034da016a92d23f3df1117d169f996100050b264fc09a84e35",
+        "js/pdf/cmaps/UniGB-UTF16-V.bcmap.txt": "0473cfbba612b92dd9918f0ff8aee9112897c48e0ffdc0eb82da3144ed8ea84a",
+        "js/pdf/cmaps/UniGB-UTF32-H.bcmap.txt": "f48a145dc4e3ed1dca1dde7111716a72306a2a4191ab05c6bae3a5c3a961cd2f",
+        "js/pdf/cmaps/UniGB-UTF32-V.bcmap.txt": "106acc49b7118bdef944e32107b4f348238f3929a0a15d3b7aab7b9101535993",
+        "js/pdf/cmaps/UniGB-UTF8-H.bcmap.txt": "f217b439c80ee5fa1bc2cf6d1defcc319f8d84483d166a00ee199e05a68588df",
+        "js/pdf/cmaps/UniGB-UTF8-V.bcmap.txt": "a64df947632878eacc532fa193c735c92a383b7d66e6f8374ac193af7c64fc63",
+        "js/pdf/cmaps/UniJIS-UCS2-H.bcmap.txt": "ad2352f40870880fbf7f8ee5abadff743fbd025fbf9830b8ada472d1c5e4da0b",
+        "js/pdf/cmaps/UniJIS-UCS2-HW-H.bcmap.txt": "16e87edca954177c0881c874859d6783220925d821b5cdfb8755b61ebd93f9ce",
+        "js/pdf/cmaps/UniJIS-UCS2-HW-V.bcmap.txt": "1973457e2c0192819947e56068625b34fb9a72ecc8a476ce6d7eaae5f73e2e5c",
+        "js/pdf/cmaps/UniJIS-UCS2-V.bcmap.txt": "42a133d8e2ce9dd6d2288018e01592d2bf2435b326d39b94ea0b6e6a44ac33d3",
+        "js/pdf/cmaps/UniJIS-UTF16-H.bcmap.txt": "f6a89c5688978548c83fcee990e205bc63c74274d5c69b49032a3bd4c49a05ee",
+        "js/pdf/cmaps/UniJIS-UTF16-V.bcmap.txt": "c67126fc7c73850855186bb0d6482ac0a365057e0b58778c4ab9f234683fef53",
+        "js/pdf/cmaps/UniJIS-UTF32-H.bcmap.txt": "96195950ce0fe24443d8eb426fa6b88534ec421d7bef9046f0b2362809cfba73",
+        "js/pdf/cmaps/UniJIS-UTF32-V.bcmap.txt": "ed4dafda402bdd19c4d5d8bf2ab41473c0f86f384552b4c7b963d6627daedeb1",
+        "js/pdf/cmaps/UniJIS-UTF8-H.bcmap.txt": "798fb0bf06ab0788d1f6a91c2db7de581612eef03c628f10e8f7ecd8f70ab448",
+        "js/pdf/cmaps/UniJIS-UTF8-V.bcmap.txt": "1021611424f913b2df0bfdbe94bd327c04e224ec89d8e821c6501ea3d21f4265",
+        "js/pdf/cmaps/UniJIS2004-UTF16-H.bcmap.txt": "710a32d7cb43fd6bd9dbf30da5971f8c941590f74441e208d852c2be0e74cc97",
+        "js/pdf/cmaps/UniJIS2004-UTF16-V.bcmap.txt": "3b149aff5c5707b57fb3215d1775852c8b1f413ec0f679ea628f25cf87fe098d",
+        "js/pdf/cmaps/UniJIS2004-UTF32-H.bcmap.txt": "8d2658e18741af7937d586a57c89729a6fec0d86121197c1f8518aa58b29cdfb",
+        "js/pdf/cmaps/UniJIS2004-UTF32-V.bcmap.txt": "6dd475782f2897648a683c48b2fa015a15b8f06856760bddc8a17a63f418bacb",
+        "js/pdf/cmaps/UniJIS2004-UTF8-H.bcmap.txt": "691c614ce432b3e62486efb54e5c84c6da5afe9b51b21253bde4758feb484183",
+        "js/pdf/cmaps/UniJIS2004-UTF8-V.bcmap.txt": "40a8c7ea2d46711c5f78fc9a878a7db68b1543ba5cd60ecf14f519a2deb829b7",
+        "js/pdf/cmaps/UniJISPro-UCS2-HW-V.bcmap.txt": "6826f94d789d7bf1960668c1c5819c34c9585c1b23152fbc19ee81c7df08524b",
+        "js/pdf/cmaps/UniJISPro-UCS2-V.bcmap.txt": "493de9fd1a08f7946065d8ab58f0c3c9fe489f5a0f109f2d05a3169b4bd5789f",
+        "js/pdf/cmaps/UniJISPro-UTF8-V.bcmap.txt": "6181d382cf736c5e09492e8be9f26f31fa25b7462253f23ab16646af432cad81",
+        "js/pdf/cmaps/UniJISX0213-UTF32-H.bcmap.txt": "692044e1fb33445668632bc9fe7386805c624864be1ddeb29d65bb0c99fc630c",
+        "js/pdf/cmaps/UniJISX0213-UTF32-V.bcmap.txt": "dd54e16ca7bffb3a886242549b2bf7d78a277087f7c60d2636f118c21a5b0646",
+        "js/pdf/cmaps/UniJISX02132004-UTF32-H.bcmap.txt": "f80ea5a989be30ccda5a8804baef6d3b4b044d2b339bf8b31c671b2466171cf6",
+        "js/pdf/cmaps/UniJISX02132004-UTF32-V.bcmap.txt": "94c22bd99e771c5fbe0dd8dc39850570d4db0075074aca13e272813edd7cc57f",
+        "js/pdf/cmaps/UniKS-UCS2-H.bcmap.txt": "a1081396ab4adb6f4a5b6c15f896963c244c1c9bcb65ce5616d06096a1b9811c",
+        "js/pdf/cmaps/UniKS-UCS2-V.bcmap.txt": "6cab547431958fbdc1d401d06ebd4dd61a73f5509a10f974df32bcbca11a2e43",
+        "js/pdf/cmaps/UniKS-UTF16-H.bcmap.txt": "42d35b396286499dfae1737a07adb3a64500df37b426580bfb1d3ea872938519",
+        "js/pdf/cmaps/UniKS-UTF16-V.bcmap.txt": "5bdb7390c80dcc136cb47d41dc7460082560969c17322ee739fe3020fb642410",
+        "js/pdf/cmaps/UniKS-UTF32-H.bcmap.txt": "3a01ec51ed1b828101351e337ffb8250abe11880032e5210f881170fed2588de",
+        "js/pdf/cmaps/UniKS-UTF32-V.bcmap.txt": "dfda895eceaed081af030dbbb962b49629eea817fc3c02bae15db93d0c68acd7",
+        "js/pdf/cmaps/UniKS-UTF8-H.bcmap.txt": "3fac9c65145f72d7d42157a3b9c5ed6904632184e6a0888f2b828699afd2002f",
+        "js/pdf/cmaps/UniKS-UTF8-V.bcmap.txt": "9ecc6cf30dd354b9778ddba163b6cc7302b087ce9f39d1ba73472d2b75ed13ca",
+        "js/pdf/cmaps/V.bcmap.txt": "b9ad1c0c09ff14bca52f9a28a9767eb857ad0e8946e64ba14c7387a7eb69866a",
+        "js/pdf/cmaps/WP-Symbol.bcmap.txt": "543923bead225732aba30976690ee89095a19628277b5863efecc2c728d5d7bf",
+        "js/pdf/standard_fonts/FoxitDingbats.pfb.txt": "845c752392b6c914fb989c75a08b7792b88f542d2499042ef2889f8c814a16ed",
+        "js/pdf/standard_fonts/FoxitFixed.pfb.txt": "b6c8fe53f134b8b6d4578cd2d544df4cee9624c4efa8d51a560fb40ea296101b",
+        "js/pdf/standard_fonts/FoxitFixedBold.pfb.txt": "f1b7159702973f54fc86254ea38bcf3712b2a736eb3a0995751e9f4bb45ad603",
+        "js/pdf/standard_fonts/FoxitFixedBoldItalic.pfb.txt": "8a000945843bd31add06aee63bf9fd41b7578b4f3242a4b7cd46349ad9d24d4d",
+        "js/pdf/standard_fonts/FoxitFixedItalic.pfb.txt": "5007faf8320fa1fcc08b8894b356ad976f60b992ba29ee5272578bbdebaf3876",
+        "js/pdf/standard_fonts/FoxitSerif.pfb.txt": "4f57d2b9d884af8f907bf22df6019b52d86cbf6214fdbd02b1ae05472a543f35",
+        "js/pdf/standard_fonts/FoxitSerifBold.pfb.txt": "0bdf4b04e964139818d51eda03d566ba999fc3ba2421b1c6c51f9dc969022e80",
+        "js/pdf/standard_fonts/FoxitSerifBoldItalic.pfb.txt": "a406cac82583bf98175cb62c87ed5e95c45fbb34eece63a10b0a13e793cb2e10",
+        "js/pdf/standard_fonts/FoxitSerifItalic.pfb.txt": "610ae0687198045c4db5d1a6650fd5e92536631706382eb8b72e38df578d0ae9",
+        "js/pdf/standard_fonts/FoxitSymbol.pfb.txt": "47967d055530e7357088a08403115425643ec2cdfd6201ba8af0fbd7116c1539",
+        "js/pdf/standard_fonts/LiberationSans-Bold.ttf.txt": "361c61b82d575c5c35fd9157fda8b0194bcfcd0d88ea8521a4fb5dd53d33dddc",
+        "js/pdf/standard_fonts/LiberationSans-BoldItalic.ttf.txt": "a224075ac17495ad0a3af3bc0a419ac0704a8b3fd1095456201fb9b095fc281d",
+        "js/pdf/standard_fonts/LiberationSans-Italic.ttf.txt": "832b4406dbef23628800d3aaad21048534ac84d7e3ad955be83b8172ed8ef512",
+        "js/pdf/standard_fonts/LiberationSans-Regular.ttf.txt": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f",
+        "js/pdf/wasm/jbig2.wasm": "466f45c2a61a698152fb5400c27e56ff2ceb73dcb71fde3fc366a502308eaab0",
+        "js/pdf/wasm/openjpeg.wasm": "95e5002597af0824004aa57b1900fe019715db389e37640b1e58395e42f00cc5",
+        "js/pdf/wasm/qcms_bg.wasm": "663d86126d5f5fcb1c61490f94353e2a8375660b8c5498ab3ebab5a34b08800e",
+        "js/search-worker.js": "89b9c0d72b4b901cfe80887fcc7f926efd40cfde315870d9f2496ce86c62eec5",
+        "js/search-worker.js.map": "94828160523a9713eb1d3927214a319f7438a253cb1ddf1aeae9258161a5ae38",
+        "js/web-reader-extract.js": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601",
+        "js/web-reader-extract.js.LEGAL.txt": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a",
+        "js/web-reader-extract.js.map": "fac9f8d841c9c365e890a4d3b92aab757c5011b86818f8c94861c6edbaa4de37",
+        "js/web-reader-licenses.txt": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b",
+        "offline-shell-ui.js": "cf95c7c307426a8fe23218e8e76c370ead887d69624265f3fb2528afce655ad6",
+        "offline-shell.js": "b8a9debb388a89f108ba9c0f1bab09fd2a5ae66b9e34d69ce5097eecb329c805"
+      }
+    }
+  },
+  "githubIndexUi": {
+    "label": "index-ui",
+    "steps": [
+      {
+        "name": "lazy-mount",
+        "coverage": {
+          "documents": 1,
+          "idx": 1,
+          "backlinksToC": 0,
+          "complete": false
+        }
+      },
+      {
+        "name": "dialog-open"
+      },
+      {
+        "name": "cancelled",
+        "status": "1 of 3 notes. Index preparation was cancelled. Verified notes were kept so you can resume."
+      },
+      {
+        "name": "missing-refused",
+        "status": "2 of 3 notes. The index is not complete: 1 not cached. Download the vault for offline use or repair it, then prepare the index again. Not cached: Index C.md."
+      },
+      {
+        "name": "corrupt-refused",
+        "status": "2 of 3 notes. The index is not complete: 1 corrupt or not UTF-8. Download the vault for offline use or repair it, then prepare the index again. Corrupt: Index C.md."
+      },
+      {
+        "name": "complete",
+        "coverage": {
+          "documents": 3,
+          "idx": 3,
+          "backlinksToC": 1,
+          "complete": true
+        },
+        "counters": {
+          "api": 0,
+          "raw": 0,
+          "cacheHits": 1
+        }
+      }
+    ]
+  },
+  "finishedAt": "2026-11-02T03:03:52.856Z",
+  "error": {
+    "message": "eviction: failed network loads\n+ actual - expected\n\n+ [\n+   {\n+     at: 1793588630127,\n+     error: 'net::ERR_ABORTED',\n+     url: 'http://127.0.0.1:18861/js/browser-host.js'\n+   }\n+ ]\n- []\n",
+    "stack": "AssertionError [ERR_ASSERTION]: eviction: failed network loads\n+ actual - expected\n\n+ [\n+   {\n+     at: 1793588630127,\n+     error: 'net::ERR_ABORTED',\n+     url: 'http://127.0.0.1:18861/js/browser-host.js'\n+   }\n+ ]\n- []\n\n    at Page.check (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:194:12)\n    at Page.assertClean (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:184:10)\n    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:448:10\n    at async session (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:274:40)\n    at async scenario (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:266:3)\n    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:432:3",
+    "snapshot": {
+      "href": "http://127.0.0.1:18861/",
+      "text": "No vault selected\nSlopsidian\nNew tab\nNew tab\nNo file is open\nCreate a new note\nCtrl+N\nOpen a note\nCtrl+O\nOpen command palette\nCtrl+P\nWASM / Experimental\nNo file open\nAutosave on\nAttach files\nAttach folder\nThe application could not start. Check your connection and browser console. Reload\nOffline app · ready\n\nOffline copy f6d8cdfe is saved: 269 files, 80.1 MiB. This page is running from the offline copy (f6d8cdfe).\n\nUpdate offline app Check for update Verify files Remove offline copy",
+      "panel": {
+        "offlineVersion": "f6d8cdfecd004ce4f87bcfc99f0945f5",
+        "offlineBootVersion": "f6d8cdfecd004ce4f87bcfc99f0945f5",
+        "offlineState": "ready",
+        "status": "Offline copy f6d8cdfe is saved: 269 files, 80.1 MiB. This page is running from the offline copy (f6d8cdfe)."
+      }
+    },
+    "pages": [
+      {
+        "page": "evicted",
+        "url": "http://127.0.0.1:18861/",
+        "errors": [
+          {
+            "kind": "log",
+            "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+            "url": "http://127.0.0.1:18861/browser.css"
+          },
+          {
+            "kind": "log",
+            "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+            "url": "http://127.0.0.1:18861/browser.css"
+          }
+        ],
+        "failedLoads": [
+          {
+            "url": "http://127.0.0.1:18861/js/browser-host.js",
+            "error": "net::ERR_ABORTED",
+            "at": 1793588630127
+          },
+          {
+            "url": "http://127.0.0.1:18861/browser.css",
+            "error": "net::ERR_ABORTED",
+            "at": 1793588630133
+          }
+        ],
+        "badResponses": [
+          {
+            "url": "http://127.0.0.1:18861/browser.css",
+            "status": 503
+          },
+          {
+            "url": "http://127.0.0.1:18861/browser.css",
+            "status": 503
+          }
+        ],
+        "requests": 95,
+        "policy": "eviction",
+        "actions": [
+          {
+            "control": "verify",
+            "stage": "before-summary-click",
+            "at": 1793588630935,
+            "present": true,
+            "open": false,
+            "hidden": false,
+            "inert": false,
+            "openDialogs": 0,
+            "summaryHit": null,
+            "state": "incomplete",
+            "error": "",
+            "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+          },
+          {
+            "control": "verify",
+            "stage": "after-summary-click",
+            "at": 1793588630959,
+            "present": true,
+            "open": true,
+            "hidden": false,
+            "inert": false,
+            "openDialogs": 0,
+            "summaryHit": "summary",
+            "state": "incomplete",
+            "error": "",
+            "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+          },
+          {
+            "control": "verify",
+            "stage": "before-control-click",
+            "at": 1793588630960,
+            "present": true,
+            "open": true,
+            "hidden": false,
+            "inert": false,
+            "openDialogs": 0,
+            "summaryHit": "summary",
+            "state": "incomplete",
+            "error": "",
+            "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+          },
+          {
+            "control": "verify",
+            "stage": "after-control-click",
+            "at": 1793588630983,
+            "present": true,
+            "open": true,
+            "hidden": false,
+            "inert": false,
+            "openDialogs": 0,
+            "summaryHit": "summary",
+            "state": "busy",
+            "error": "",
+            "status": "Verifying every saved file…"
+          },
+          {
+            "control": "prepare",
+            "stage": "panel-already-open",
+            "at": 1793588631832,
+            "present": true,
+            "open": true,
+            "hidden": false,
+            "inert": false,
+            "openDialogs": 0,
+            "summaryHit": "summary",
+            "state": "corrupt",
+            "error": "",
+            "status": "0 damaged and 1 missing files. Repair the offline app while online."
+          },
+          {
+            "control": "prepare",
+            "stage": "before-control-click",
+            "at": 1793588631833,
+            "present": true,
+            "open": true,
+            "hidden": false,
+            "inert": false,
+            "openDialogs": 0,
+            "summaryHit": "summary",
+            "state": "corrupt",
+            "error": "",
+            "status": "0 damaged and 1 missing files. Repair the offline app while online."
+          },
+          {
+            "control": "prepare",
+            "stage": "after-control-click",
+            "at": 1793588631838,
+            "present": true,
+            "open": true,
+            "hidden": false,
+            "inert": false,
+            "openDialogs": 0,
+            "summaryHit": "summary",
+            "state": "busy",
+            "error": "",
+            "status": "Preparing the offline app…"
+          }
+        ],
+        "enforced": true,
+        "unexpected": {
+          "errors": [],
+          "failures": [
+            {
+              "url": "http://127.0.0.1:18861/js/browser-host.js",
+              "error": "net::ERR_ABORTED",
+              "at": 1793588630127
+            }
+          ],
+          "responses": [],
+          "external": []
+        },
+        "childLog": "\r\nWEB_HOST_PID 41580\n\r\nDevTools listening on ws://127.0.0.1:60745/devtools/browser/a5620645-de1b-4597-be20-fb2849f23e74\r\n"
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "page": "online",
+      "url": "http://127.0.0.1:18861/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 47,
+      "policy": "online cold page",
+      "actions": [],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": false,
+          "lifecycle": [],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 44444\n\r\nDevTools listening on ws://127.0.0.1:18862/devtools/browser/7552bd07-c465-4f4a-a5b6-9d7845acfa47\r\nWEB_QUIT_ACK 905ce797-2bd3-4155-af88-0dcfb1f28877\n"
+    },
+    {
+      "page": "prepare",
+      "url": "http://127.0.0.1:18861/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 365,
+      "policy": "prepared page",
+      "actions": [
+        {
+          "control": "prepare",
+          "stage": "before-summary-click",
+          "at": 1793588610398,
+          "present": true,
+          "open": false,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-summary-click",
+          "at": 1793588610416,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "before-control-click",
+          "at": 1793588610419,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-control-click",
+          "at": 1793588610450,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "busy",
+          "error": "",
+          "status": "Preparing the offline app…"
+        }
+      ],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": "The DevTools socket failed.",
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 15500\n\r\nDevTools listening on ws://127.0.0.1:15951/devtools/browser/bd9bd339-a452-4017-9062-78a7f3278c7e\r\nWEB_QUIT_ACK 45d34929-25fc-4eec-aa4e-807fb0e4bcd6\n"
+    },
+    {
+      "page": "cold-offline",
+      "url": "http://127.0.0.1:18861/",
+      "errors": [
+        {
+          "kind": "log",
+          "text": "Failed to load resource: net::ERR_FAILED",
+          "url": "http://127.0.0.1:18861/not-in-the-manifest.txt"
+        }
+      ],
+      "failedLoads": [
+        {
+          "url": "http://127.0.0.1:18861/not-in-the-manifest.txt",
+          "error": "net::ERR_FAILED",
+          "at": 1793588616884
+        }
+      ],
+      "badResponses": [],
+      "requests": 46,
+      "policy": "cold offline boot",
+      "actions": [],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 43160\n\r\nDevTools listening on ws://127.0.0.1:40974/devtools/browser/a3d7e62e-9a35-49f5-bd84-073d36f56d68\r\nWEB_QUIT_ACK 0b3fa290-5798-4373-8512-d790efc0c8f5\n"
+    },
+    {
+      "page": "seed",
+      "url": "http://127.0.0.1:18861/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 48,
+      "policy": "seeding",
+      "actions": [],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 45524\n\r\nDevTools listening on ws://127.0.0.1:26745/devtools/browser/497740a7-2633-41a5-b92a-84adace2e86c\r\nWEB_QUIT_ACK e2b34ded-b7f9-47c7-97e1-4ca4f1031b2e\n"
+    },
+    {
+      "page": "remote-route",
+      "url": "http://127.0.0.1:18861/remote-vault/github.com/slopsidian-fixtures/offline-route-1793588618310/tree/main?cached=true&file=Index%20A.md",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 51,
+      "policy": "cold cached remote route",
+      "actions": [],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 45448\n\r\nDevTools listening on ws://127.0.0.1:23609/devtools/browser/d09a3cc4-736d-4878-846a-d5953d616b91\r\nWEB_QUIT_ACK 9a685cad-ce68-4240-8c98-0ef9bf43ff1a\n"
+    },
+    {
+      "page": "index",
+      "url": "http://127.0.0.1:18861/remote-vault/github.com/slopsidian-fixtures/offline-route-1793588618310/tree/main?cached=true&file=Index%20A.md",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 51,
+      "policy": "cached complete index",
+      "actions": [],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 42540\n\r\nDevTools listening on ws://127.0.0.1:2461/devtools/browser/cb9fa661-db8a-455c-bff2-ca69ad0131d7\r\nWEB_QUIT_ACK bca3d2bf-542c-4786-b380-29244f3ef93e\n"
+    },
+    {
+      "page": "index-ui-seed",
+      "url": "http://127.0.0.1:18861/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 48,
+      "policy": "index dialog seeding",
+      "actions": [],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 25352\n\r\nDevTools listening on ws://127.0.0.1:17898/devtools/browser/dd876117-c0b0-44b4-b072-972032734ece\r\nWEB_QUIT_ACK 9105dac9-47e7-432f-b324-49560dac6433\n"
+    },
+    {
+      "page": "index-ui",
+      "url": "http://127.0.0.1:18861/remote-vault/github.com/slopsidian-fixtures/index-ui-1793588625002/tree/main?cached=true&file=Index%20A.md",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 52,
+      "policy": "cached index dialog",
+      "actions": [],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 16212\n\r\nDevTools listening on ws://127.0.0.1:45810/devtools/browser/1616afcc-c5cd-4a36-82fd-7df9071952b0\r\nWEB_QUIT_ACK f72c0f52-208d-454b-8981-28a98f03adb2\n"
+    },
+    {
+      "page": "evicted",
+      "url": "http://127.0.0.1:18861/",
+      "errors": [
+        {
+          "kind": "log",
+          "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+          "url": "http://127.0.0.1:18861/browser.css"
+        },
+        {
+          "kind": "log",
+          "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+          "url": "http://127.0.0.1:18861/browser.css"
+        }
+      ],
+      "failedLoads": [
+        {
+          "url": "http://127.0.0.1:18861/js/browser-host.js",
+          "error": "net::ERR_ABORTED",
+          "at": 1793588630127
+        },
+        {
+          "url": "http://127.0.0.1:18861/browser.css",
+          "error": "net::ERR_ABORTED",
+          "at": 1793588630133
+        }
+      ],
+      "badResponses": [
+        {
+          "url": "http://127.0.0.1:18861/browser.css",
+          "status": 503
+        },
+        {
+          "url": "http://127.0.0.1:18861/browser.css",
+          "status": 503
+        }
+      ],
+      "requests": 95,
+      "policy": "eviction",
+      "actions": [
+        {
+          "control": "verify",
+          "stage": "before-summary-click",
+          "at": 1793588630935,
+          "present": true,
+          "open": false,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": null,
+          "state": "incomplete",
+          "error": "",
+          "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+        },
+        {
+          "control": "verify",
+          "stage": "after-summary-click",
+          "at": 1793588630959,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "incomplete",
+          "error": "",
+          "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+        },
+        {
+          "control": "verify",
+          "stage": "before-control-click",
+          "at": 1793588630960,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "incomplete",
+          "error": "",
+          "status": "1 offline files were removed by the browser. Prepare the offline app again while online."
+        },
+        {
+          "control": "verify",
+          "stage": "after-control-click",
+          "at": 1793588630983,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "busy",
+          "error": "",
+          "status": "Verifying every saved file…"
+        },
+        {
+          "control": "prepare",
+          "stage": "panel-already-open",
+          "at": 1793588631832,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "corrupt",
+          "error": "",
+          "status": "0 damaged and 1 missing files. Repair the offline app while online."
+        },
+        {
+          "control": "prepare",
+          "stage": "before-control-click",
+          "at": 1793588631833,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "corrupt",
+          "error": "",
+          "status": "0 damaged and 1 missing files. Repair the offline app while online."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-control-click",
+          "at": 1793588631838,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "busy",
+          "error": "",
+          "status": "Preparing the offline app…"
+        }
+      ],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [
+          {
+            "url": "http://127.0.0.1:18861/js/browser-host.js",
+            "error": "net::ERR_ABORTED",
+            "at": 1793588630127
+          }
+        ],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 41580\n\r\nDevTools listening on ws://127.0.0.1:60745/devtools/browser/a5620645-de1b-4597-be20-fb2849f23e74\r\nWEB_QUIT_ACK 0e566ea8-17d5-45bb-86f1-f43aa6a4dc5b\n"
+    }
+  ],
+  "sourceFingerprintBefore": "ecb81c79c6306a4c25756e20f62f155231d53a4a70c85257c1f2afb0f239237e"
+}

@@ -1,0 +1,18 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS Trusted tab drags and Ctrl+Shift+PageUp reorder the actual headers while retaining both dirty buffers, shared Reading peers, editor selection/undo, pin, scroll, history and plugin ownership without saving notes.
+PASS Tab actions and real cross-pane drags move the same note/plugin views, prune an emptied nested pane, and keep the plugin iframe document, state and single owned event subscription alive.
+PASS Escape, removed source tabs, an in-progress vault transition and foreign/stale drag payloads cannot move a tab, retain drag markers, save a dirty buffer or duplicate a view.
+PASS A real drag auto-scrolls an overflowing tab strip to reveal an offscreen insertion point; dropping there retains the source instance and cleans up all insertion and drag styling.
+PASS Explicitly saved rearranged layouts retain order, panes, active tab, modes, pins and opaque plugin state after a full desktop restart or real-folder WASM reconnect, preserving exact BOM/CRLF note bytes and the original Obsidian workspace.

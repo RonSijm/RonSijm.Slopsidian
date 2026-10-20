@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "boundary": "Full unchanged-source build/static/default/GitHub regression record; runtime acceptance remains separate.",
+  "commands": [
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run build; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\original-floating-both-host-geometry-full-aIaTTQ\\build.log"
+    },
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run build:web; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\original-floating-both-host-geometry-full-aIaTTQ\\build-web.log"
+    },
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run verify:web; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\original-floating-both-host-geometry-full-aIaTTQ\\verify-web.log"
+    },
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run test; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\original-floating-both-host-geometry-full-aIaTTQ\\test.log"
+    },
+    {
+      "command": "powershell.exe -NoProfile -NonInteractive -Command npm run test:github; exit $LASTEXITCODE",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\original-floating-both-host-geometry-full-aIaTTQ\\test-github.log"
+    }
+  ],
+  "tests": {
+    "test": {
+      "tests": 1320,
+      "pass": 1320,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "test-github": {
+      "tests": 44,
+      "pass": 44,
+      "fail": 0,
+      "skipped": 0,
+      "cancelled": 0
+    }
+  },
+  "artifacts": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "bytes": 593408,
+      "sha256": "41eae710ed244bef0a4f265788ea6d898061a74c5cc554c3016912064d739eea"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "bytes": 4929253,
+      "sha256": "a6538a5f64ec4d8fe23124e88922b323879cdb83a2f2bc75e8dadd2ad66a6e1a"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+      "bytes": 4929253,
+      "sha256": "a6538a5f64ec4d8fe23124e88922b323879cdb83a2f2bc75e8dadd2ad66a6e1a"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json",
+      "bytes": 37978,
+      "sha256": "3a91f19ba8ef5a70dd87c0c08d0c1accf0820123f73e87f0a1db12f2f86af01d"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\service-worker.js",
+      "bytes": 6863,
+      "sha256": "493fb798976751a6eaca93d2ca519fa08e4a646776790555738fa49e598c256b"
+    }
+  ],
+  "sourceBefore": "212ef2f3c8301fa94614d80aed186a8fb51ce444fd0c716e454c1adcb09a6d7e",
+  "sourceAfter": "212ef2f3c8301fa94614d80aed186a8fb51ce444fd0c716e454c1adcb09a6d7e",
+  "completedAt": "2026-11-02T06:45:17.764Z"
+}

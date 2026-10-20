@@ -1,0 +1,16 @@
+{
+  "status": "runner-failed-binding-stable",
+  "workspace": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle",
+  "script": "smoke.mjs",
+  "args": [
+    "--groups-popouts"
+  ],
+  "environment": {},
+  "startedAt": "2026-11-02T01:02:48.970Z",
+  "boundary": "Raw source/artifact binding only. Inspect the runner's full feature report, scope, error audit and helper teardown separately; diagnostics are not acceptance.",
+  "sourceFingerprint": "20a72238ed626a56f508a58527ecacf47ecf93ed3b2fb7642530c2699d62652c",
+  "runnerPid": 41136,
+  "exitCode": 1,
+  "exitSignal": null,
+  "completedAt": "2026-11-02T01:02:56.940Z"
+}

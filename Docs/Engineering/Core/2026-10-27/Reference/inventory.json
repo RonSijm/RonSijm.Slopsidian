@@ -1,0 +1,599 @@
+{
+  "version": "1.12.7",
+  "modules": {
+    "file-explorer": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onDisable",
+        "onUserEnable",
+        "onFileMenu",
+        "initLeaf",
+        "revealInFolder"
+      ]
+    },
+    "global-search": {
+      "enabled": true,
+      "instance": true,
+      "data": {},
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onExternalSettingsChange",
+        "onUserEnable",
+        "initLeaf",
+        "onFileMenu",
+        "onEditorMenu",
+        "openGlobalSearch",
+        "getGlobalSearchQuery"
+      ]
+    },
+    "switcher": {
+      "enabled": true,
+      "instance": true,
+      "data": {
+        "showExistingOnly": false,
+        "showAttachments": true,
+        "showAllFileTypes": false
+      },
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onExternalSettingsChange",
+        "onOpen"
+      ]
+    },
+    "graph": {
+      "enabled": true,
+      "instance": true,
+      "data": {},
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onDisable",
+        "onExternalSettingsChange",
+        "onFileMenu",
+        "openGraphView",
+        "openLocalGraph",
+        "saveOptions"
+      ]
+    },
+    "backlink": {
+      "enabled": true,
+      "instance": true,
+      "data": {},
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onExternalSettingsChange",
+        "onUserEnable",
+        "onUserDisable",
+        "initLeaf",
+        "onFileMenu",
+        "onFileOpen",
+        "updateBacklinks",
+        "openBacklinksForActiveFile",
+        "toggleBacklinksInDocument"
+      ]
+    },
+    "canvas": {
+      "enabled": true,
+      "instance": true,
+      "data": {
+        "snapToObjects": true,
+        "snapToGrid": true
+      },
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onDisable",
+        "onExternalSettingsChange",
+        "onUserDisable",
+        "onDelete",
+        "onRename",
+        "onFileMenu",
+        "getNewFileParent",
+        "createNewCanvasFile",
+        "saveOptions",
+        "rerenderCanvases"
+      ]
+    },
+    "outgoing-link": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onUserEnable",
+        "onUserDisable",
+        "initLeaf",
+        "onFileMenu",
+        "openForCurrentFile"
+      ]
+    },
+    "tag-pane": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onUserEnable",
+        "initLeaf"
+      ]
+    },
+    "footnotes": {
+      "enabled": false,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onUserEnable",
+        "initLeaf"
+      ]
+    },
+    "properties": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "initLeaf",
+        "onUserEnable",
+        "updateStatusbar",
+        "onFileOpen",
+        "onCacheChanged",
+        "onEnable",
+        "onDisable",
+        "onFileMenu",
+        "ensurePropertiesView",
+        "addProperty"
+      ]
+    },
+    "page-preview": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onHoverLink",
+        "onLinkHover"
+      ]
+    },
+    "daily-notes": {
+      "enabled": true,
+      "instance": true,
+      "data": {
+        "folder": "40 Journal/Daily",
+        "format": "YYYY-MM-DD",
+        "template": "50 Templates/Core/Daily",
+        "autorun": false
+      },
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onExternalSettingsChange",
+        "getDailyNotePathBeforeAppLoads",
+        "getDailyNoteTemplateBeforeAppLoads",
+        "getDailyNote",
+        "onOpenDailyNote",
+        "gotoPreviousExisting",
+        "gotoNextExisting",
+        "iterateDailyNotes",
+        "getCurrentFileDateTimestamp",
+        "getFolder",
+        "getFormat"
+      ]
+    },
+    "templates": {
+      "enabled": true,
+      "instance": true,
+      "data": {
+        "folder": "50 Templates/Core",
+        "dateFormat": "YYYY-MM-DD",
+        "timeFormat": "HH:mm"
+      },
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onExternalSettingsChange",
+        "resolveTemplateFile",
+        "insertTemplate",
+        "onInsertTemplate",
+        "insertCurrentDate",
+        "insertCurrentTime",
+        "insertText"
+      ]
+    },
+    "note-composer": {
+      "enabled": true,
+      "instance": true,
+      "data": {
+        "askBeforeMerging": true
+      },
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onExternalSettingsChange",
+        "onFileMenu",
+        "onEditorMenu",
+        "extractHeading",
+        "getSelectionUnderHeading",
+        "applyTemplate"
+      ]
+    },
+    "command-palette": {
+      "enabled": true,
+      "instance": true,
+      "data": {},
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onDisable",
+        "onExternalSettingsChange",
+        "saveSettings",
+        "onOpen",
+        "getCommands"
+      ]
+    },
+    "slash-command": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onDisable"
+      ]
+    },
+    "editor-status": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onDisable",
+        "getStatus",
+        "getActiveView",
+        "setStatus",
+        "updateStatus",
+        "onClick"
+      ]
+    },
+    "bookmarks": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onUserEnable",
+        "initLeaf",
+        "findBookmarkByView",
+        "onFileRename",
+        "updateTabHeaders",
+        "getBookmarks",
+        "getItemTitle",
+        "addItem",
+        "editItem",
+        "removeItem",
+        "moveItem",
+        "onEnable",
+        "loadData",
+        "onExternalSettingsChange",
+        "onEditorMenu",
+        "onFilesMenu",
+        "onFileMenu",
+        "onTabGroupMenu",
+        "onSearchResultsMenu",
+        "onLeafMenu",
+        "_onItemsChanged",
+        "saveData",
+        "rebuildBookmarkCache",
+        "openBookmarkInLeaf",
+        "openBookmark",
+        "openBookmarks",
+        "trigger",
+        "on"
+      ]
+    },
+    "markdown-importer": {
+      "enabled": false,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onOpen"
+      ]
+    },
+    "zk-prefixer": {
+      "enabled": true,
+      "instance": true,
+      "data": {
+        "folder": "80 Sandbox",
+        "format": "YYYYMMDDHHmmss",
+        "template": "50 Templates/Core/Unique"
+      },
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onExternalSettingsChange",
+        "getUniquePath",
+        "onCreateNote",
+        "addUniqueLink",
+        "getFormat"
+      ]
+    },
+    "random-note": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onRandomNote"
+      ]
+    },
+    "outline": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onUserEnable",
+        "initLeaf",
+        "onFileMenu",
+        "openTocForActiveFile"
+      ]
+    },
+    "word-count": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onDisable",
+        "onFileOpen",
+        "onSelection",
+        "onQuickPreview",
+        "countWords",
+        "onMessage",
+        "updateCount",
+        "updateMobileFileInfo",
+        "updateDisplay"
+      ]
+    },
+    "slides": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onFileMenu"
+      ]
+    },
+    "audio-recorder": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "checkPermission",
+        "onRecordAudio",
+        "onStartRecording",
+        "onStopRecording",
+        "startRecording",
+        "saveRecording",
+        "showRecordingMessage"
+      ]
+    },
+    "workspaces": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onDisable",
+        "onOpenModal",
+        "onLoad",
+        "onSave",
+        "onSaveAndLoad",
+        "saveWorkspace",
+        "setActiveWorkspace",
+        "loadWorkspace",
+        "deleteWorkspace",
+        "saveData"
+      ]
+    },
+    "file-recovery": {
+      "enabled": true,
+      "instance": true,
+      "data": {
+        "intervalMinutes": 5,
+        "keepDays": 7
+      },
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onDisable",
+        "onExternalSettingsChange",
+        "onFileChanged",
+        "forceAdd",
+        "resave",
+        "cleanup",
+        "openModal",
+        "clearData",
+        "getLastVersionByPath"
+      ]
+    },
+    "publish": {
+      "enabled": false,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "onDisable",
+        "loadData",
+        "saveData",
+        "setup",
+        "setIncludes",
+        "setExcludes",
+        "getHost",
+        "isFileSupported",
+        "scanForChanges",
+        "apiRequest",
+        "apiPostFrontend",
+        "apiPostBackend",
+        "apiSetSlug",
+        "apiGetSlugs",
+        "apiCheckSlug",
+        "apiCustomUrl",
+        "apiList",
+        "apiOptions",
+        "apiGetPassword",
+        "apiAddPassword",
+        "apiDelPassword",
+        "apiRemoveFile",
+        "apiUploadFile",
+        "apiDownloadFile",
+        "getCurrentSlug",
+        "getHash",
+        "getPublishFlag",
+        "getHashFromMetadataCache",
+        "computeHash",
+        "openModal",
+        "openPublishChanges",
+        "viewSites",
+        "uploadFile"
+      ]
+    },
+    "sync": {
+      "enabled": false,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "getRemoteVaultId",
+        "getRemoteVaultName",
+        "setRemoteVaultName",
+        "init",
+        "openChooseRemoteVaultModal",
+        "connectToVault",
+        "onEnable",
+        "onDisable",
+        "onFileMenu",
+        "openStatusIconMenu",
+        "loadData",
+        "saveData",
+        "getDefaultDeviceName",
+        "setup",
+        "unsetup",
+        "clear",
+        "setVaultName",
+        "setPause",
+        "getPause",
+        "changeFilter",
+        "log",
+        "logMerge",
+        "logSkip",
+        "logTags",
+        "scanFiles",
+        "setIgnoreFolders",
+        "setSyncType",
+        "setAllowSpecialFile",
+        "registerEvents",
+        "unregisterEvents",
+        "onFileAdd",
+        "onFileRemove",
+        "onFileRename",
+        "onRaw",
+        "onPushedFile",
+        "allowSyncFile",
+        "_allowSyncFile",
+        "canSyncPath",
+        "canSyncLocalFile",
+        "getHost",
+        "setStatus",
+        "getStatus",
+        "failedSync",
+        "requestSync",
+        "getServer",
+        "asyncGetServer",
+        "_sync",
+        "setDirty",
+        "forceSaveData",
+        "getHashFromMetadataCache",
+        "syncFileDown",
+        "patchCorePluginsFile",
+        "updateHash",
+        "_updateStatusBar",
+        "showVersionHistory",
+        "getHistory",
+        "getContentForVersion",
+        "restoreVersion",
+        "showDeletedFiles",
+        "showConfigFiles",
+        "getUsernames",
+        "purge",
+        "size",
+        "openSettings",
+        "showSyncLog",
+        "trigger",
+        "on"
+      ]
+    },
+    "bases": {
+      "enabled": true,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "createAndEmbedBase",
+        "onEnable",
+        "onFileMenu",
+        "onEditorMenu",
+        "createAndOpenBase",
+        "createNewBasesFile",
+        "registerView",
+        "deregisterView",
+        "getRegistration",
+        "getRegistrations",
+        "getViewFactory"
+      ]
+    },
+    "webviewer": {
+      "enabled": false,
+      "instance": true,
+      "prototype": [
+        "constructor",
+        "init",
+        "onEnable",
+        "saveOptions",
+        "onUrlMenu",
+        "getSearchEngineUrl",
+        "updateSession",
+        "handleOpenUrl",
+        "openUrl"
+      ]
+    }
+  }
+}

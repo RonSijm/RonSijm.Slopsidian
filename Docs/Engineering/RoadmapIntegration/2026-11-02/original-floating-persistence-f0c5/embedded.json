@@ -1,0 +1,10 @@
+[
+  {
+    "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+    "sourceFingerprint": "f0c54d1995e69557158e39dad4fd31179a489ccc3176446424e1697c2033b298"
+  },
+  {
+    "path": ".runtime\\web\\wwwroot\\core-verification.json",
+    "sourceFingerprint": "f0c54d1995e69557158e39dad4fd31179a489ccc3176446424e1697c2033b298"
+  }
+]

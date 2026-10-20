@@ -1,0 +1,25 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS Real shared Markdown postprocessors run in async sort order with matching document/source/frontmatter/section context and owned interactive controls; genuine classic HyperMD and the modern bridge agree before and after a following-line edit without changing source bytes.
+PASS Render-child removal and Reading/Source transitions unload actual component events; an asynchronous onload that finishes after removal is still cleaned up and its retained button cannot act.
+PASS Superseded asynchronous processors can only change their detached render section, stale section queries return null, and current processor errors are visible without rewriting or poisoning the next render.
+PASS Register/unregister and real plugin disable refresh unchanged Reading views and remove owned controls; a persisted disable survives restart/reconnect, re-enable works, and original Markdown BOM/CRLF plus other configured plugin IDs remain unchanged.
+PASS Actual plugin and factory code-block processors replace real fenced/nested code, await async handlers, preserve raw Unicode/HTML-like text and trailing blank lines, expose exact source/section context and own working controls; duplicate/invalid registrations reject without reserving a failed language.
+PASS Real MarkdownRenderer.render and deprecated renderMarkdown append independently owned formatted fragments without replacing prior DOM or opening hidden leaves, await actual handlers, provide null fragment-section context, sanitize note HTML and resolve a decoded vault image plus working source-relative link.
+PASS Static rendering waits for real asynchronous render-child loads; removing its DOM unloads controls, owner unload revokes the actual image URL, and a late processor can only mutate its detached section while a new render and disposed retained controls remain correct.
+PASS Async code-block failures reject and visibly retain original code while another block renders; invalid owners write no DOM, disable restores plain fences, re-enable/restart/reconnect removes language registrations correctly, and original Markdown/image bytes plus other enabled IDs remain unchanged.
+PASS Real detached title/wrapper children survive async construction and mutation delivery, become owned after replacement, unload if never inserted, and dispose waits for observer-started async native-style teardown; retained controls stop acting.
+PASS Unchanged Admonition 12.0.11 renders fenced titles/body Markdown, distinct painted backgrounds/titles and nonempty colored icon geometry, working collapse and source-relative links; Source/Reading and disable/re-enable rebuild output. Full visual equivalence remains separate.
+PASS The full local icon catalog has real clone-owned vector geometry and legacy aliases; native custom callouts use CSS-selected icons, both color formats update without overwriting plugin styles or icons, nested legacy colors stay independent, and rerender disposes old style observers without changing note bytes.
+PASS Configured Admonition survives full restart/reconnect, also renders through the actual static MarkdownRenderer API, and cleans static fragments on owner unload; note BOM/CRLF, supplied package bytes and unrelated enabled plugin IDs are preserved.

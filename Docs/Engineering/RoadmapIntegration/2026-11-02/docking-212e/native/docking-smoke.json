@@ -1,0 +1,772 @@
+{
+  "status": "passed",
+  "scope": "workspace-docking",
+  "communityPluginsTested": false,
+  "startedAt": "2026-11-02T07:11:01.520Z",
+  "vault": "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\smoke-vault-84j87F",
+  "launcherPid": 21176,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "Trusted pointer drags show an edge preview and dock live dirty notes to a new right pane and a nested lower pane, with proportional sizes and every editor, shared session, selection, undo history, pin and plugin frame retained.",
+    "Undo and redo in a docked editor still operate on the original editor history.",
+    "A real band drag, the tab menu and the command create/use right and left sidebar groups, expose the sidebar and keep the live plugin iframe, dirty text and ownership intact.",
+    "Sidebar tabs reorder, move between sidebars, return to main by pointer or command and dock above a pane; emptied sidebar/main groups are pruned.",
+    "Escape, a closed source, a closed destination, an in-progress vault transition, foreign payloads and a vetoed/throwing transition leave the exact layout and live views unchanged and remove every preview/band.",
+    "Moving every main tab into sidebars keeps one live empty main pane; moving them back empties and unregisters both sidebars without losing a view.",
+    "A docked split plus left/right sidebar tabs, sidebar width, pins and opaque plugin state persist exactly across a full desktop restart or real-folder WASM reconnect, preserving note bytes and the original Obsidian workspace."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 21176,
+      "electronPid": 21176,
+      "dotnetPid": 33048,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 38016,
+      "electronPid": 38016,
+      "dotnetPid": 45312,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.0",
+  "sourceFingerprint": "212ef2f3c8301fa94614d80aed186a8fb51ce444fd0c716e454c1adcb09a6d7e",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "rendererReloads": [
+    {
+      "previousLoader": "3CE1024BB6AE613104137ED176E85751",
+      "loader": "5503A708D64F5651C0E81503890D3997"
+    }
+  ],
+  "controlledShutdownConsoleErrors": [],
+  "workspaceDocking": {
+    "pointerDragTrusted": true,
+    "movedViewsRecreated": false,
+    "syntheticPluginOnly": true,
+    "physicalTouchTested": false,
+    "popouts": false,
+    "expectedLayout": {
+      "version": 1,
+      "main": {
+        "id": "dock-main",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "f4fdb95d-13a1-4a1c-be65-262ebdf70328",
+            "type": "tabs",
+            "dimension": 50,
+            "children": [
+              {
+                "id": "29c9ba9a-eeaf-47f9-802a-7d82d0c35301",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "pinned": false
+                }
+              },
+              {
+                "id": "dock-alpha",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "futureTab": {
+                      "keep": [
+                        "dock-alpha"
+                      ]
+                    },
+                    "file": "Workspace docking/Alpha.md"
+                  },
+                  "pinned": true
+                }
+              },
+              {
+                "id": "dock-gamma",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "futureTab": {
+                      "keep": [
+                        "dock-gamma"
+                      ]
+                    },
+                    "file": "Workspace docking/Gamma.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 1
+          },
+          {
+            "id": "fd8e02fc-1bfd-405c-a706-5f8562d13206",
+            "type": "tabs",
+            "dimension": 50,
+            "children": [
+              {
+                "id": "dock-reading",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "preview",
+                    "source": true,
+                    "futureTab": {
+                      "keep": [
+                        "dock-reading"
+                      ]
+                    },
+                    "file": "Workspace docking/Alpha.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          }
+        ]
+      },
+      "active": "dock-alpha",
+      "left": {
+        "width": 300,
+        "collapsed": false,
+        "root": {
+          "id": "efb80481-1caa-4ea4-bfdf-33084460880e",
+          "type": "split",
+          "direction": "horizontal",
+          "children": [
+            {
+              "id": "0b6e5525-8519-4980-bed6-8e4dc48d0fa9",
+              "type": "tabs",
+              "children": [
+                {
+                  "id": "dock-beta",
+                  "type": "leaf",
+                  "state": {
+                    "type": "markdown",
+                    "state": {
+                      "mode": "source",
+                      "source": true,
+                      "futureTab": {
+                        "keep": [
+                          "dock-beta"
+                        ]
+                      },
+                      "file": "Workspace docking/Beta.md"
+                    },
+                    "pinned": false
+                  }
+                }
+              ],
+              "currentTab": 0
+            }
+          ]
+        }
+      },
+      "right": {
+        "width": 260,
+        "collapsed": false,
+        "root": {
+          "id": "d68bbd13-3a33-421d-9a86-1b85ed140ca3",
+          "type": "split",
+          "direction": "horizontal",
+          "children": [
+            {
+              "id": "e1527f40-cb96-4871-a3e7-f295f8578e56",
+              "type": "tabs",
+              "children": [
+                {
+                  "id": "dock-probe",
+                  "type": "leaf",
+                  "state": {
+                    "type": "workspace-dock-probe-view",
+                    "state": {
+                      "value": "Plugin dock λ",
+                      "opaque": {
+                        "keep": [
+                          true,
+                          42
+                        ]
+                      }
+                    },
+                    "pinned": true
+                  }
+                }
+              ],
+              "currentTab": 0
+            }
+          ]
+        }
+      },
+      "views": {
+        "workspace-startup": {
+          "source": ".obsidian/workspace.json",
+          "version": "411ab913939a16585ba07e688bfffc92cce36d2eef51d5f85c94970d78a4854a",
+          "warnings": []
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "dock-alpha",
+          "lastFile": "Workspace docking/Alpha.md"
+        },
+        "sidebars": {
+          "left": "workspace-left",
+          "right": "workspace-right"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "consoleErrors": [
+    "[2026-11-02T07:11:07.119Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-11-02T07:11:10.602Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "TypeError: Failed to fetch\n    at requestJson (http://127.0.0.1:57318/js/editor-host.iayz0leb9d.js:40752:26)\n    at VaultConfiguration.read (http://127.0.0.1:57318/js/editor-host.iayz0leb9d.js:98653:29)\n    at http://127.0.0.1:57318/js/editor-host.iayz0leb9d.js:98593:12",
+    "[2026-11-02T07:11:15.611Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "artifacts": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "sha256": "41eae710ed244bef0a4f265788ea6d898061a74c5cc554c3016912064d739eea"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "sha256": "a6538a5f64ec4d8fe23124e88922b323879cdb83a2f2bc75e8dadd2ad66a6e1a"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.css",
+      "sha256": "c890222c40eebe8c8b15549432dc161fac9f93abd81b814623375394952351c1"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\codemirror-license.txt",
+      "sha256": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\hypermd-license.txt",
+      "sha256": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-extract.js",
+      "sha256": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-extract.js.LEGAL.txt",
+      "sha256": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\web-reader-licenses.txt",
+      "sha256": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\search-worker.js",
+      "sha256": "bc67555fe01327add64d94848b1080cf7b8d6f24e8f84a64b68d7443816779ba"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\graph-worker.js",
+      "sha256": "2256d2b9e3378b9c5bd07f4193fcec963ff42849a31e7252ad7e951d0fa95d29"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\bases-worker.js",
+      "sha256": "d32466512fd6829f7aaed9b4fcfc54f5fde56ca7af136709e26a9a1dee6ffbff"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-frame.js",
+      "sha256": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-api.js",
+      "sha256": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-api.js.LEGAL.txt",
+      "sha256": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\mermaid-licenses.txt",
+      "sha256": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\katex-license.txt",
+      "sha256": "766ccc1f306c885aa45542a9846bbd0a505b27a0374f146778171c2254ce18e3"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-api.js",
+      "sha256": "31fda904c82df0457d3b22835859127122667a9264bea635d7bc606c578ae6a8"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-worker.js",
+      "sha256": "145d2dd3ab0c86151011dba95acfa2d5336e2accd59388ea43dbee0efddaaec6"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf-licenses.txt",
+      "sha256": "f812858b82bbea82fb78fc8740dad809e676e4d95fe458faaa143959539879ef"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\wasm\\jbig2.wasm",
+      "sha256": "466f45c2a61a698152fb5400c27e56ff2ceb73dcb71fde3fc366a502308eaab0"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\wasm\\openjpeg.wasm",
+      "sha256": "95e5002597af0824004aa57b1900fe019715db389e37640b1e58395e42f00cc5"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\wasm\\qcms_bg.wasm",
+      "sha256": "663d86126d5f5fcb1c61490f94353e2a8375660b8c5498ab3ebab5a34b08800e"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\cmaps\\Adobe-Japan1-UCS2.bcmap.txt",
+      "sha256": "66c5d0dc4964f4093e77b194023f3a0f689324028ec8330e1e1d0570bcba7c2f"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\pdf\\standard_fonts\\LiberationSans-Regular.ttf.txt",
+      "sha256": "f8ace1f892b2bd9dc1792ba7f097fa7588f84fed48321480e04de5390828221f"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\mermaid-frame.html",
+      "sha256": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333"
+    },
+    {
+      "path": "desktop\\main.cjs",
+      "sha256": "2413e2c13e4bfe7758f54fbf1f6e45c4a139d5a7377b3145e84a3889d1a74777"
+    },
+    {
+      "path": "desktop\\draft-rescue.cjs",
+      "sha256": "9892d89d79952681c123f4eabf886489e1cf51122c8ea0dca156e41b88babc2b"
+    },
+    {
+      "path": "desktop\\draft-rescue-catalog.cjs",
+      "sha256": "226cef9e04f8dbe4f031be098a5f1d9fc3a5a6888cf2c5ab5719863c7c0e6a80"
+    },
+    {
+      "path": "desktop\\draft-rescue-inspector.cjs",
+      "sha256": "d74188d01a8f91bed9bd84170aca5261adbdb5566952a18efc5ef681986ed764"
+    },
+    {
+      "path": "desktop\\draft-rescue-review-state.cjs",
+      "sha256": "a29ddf9c87e421a2708a2be553c65178da4fbf6daa93c5115e3af50a3666c959"
+    },
+    {
+      "path": "desktop\\persistent-draft-storage.cjs",
+      "sha256": "0603b07363221b782d6cf99318e1c330dac7cc00a91d9acf287b0b9f2cc50d59"
+    },
+    {
+      "path": "desktop\\local-storage.cjs",
+      "sha256": "1e2442f44ae6951ba92f4b67022e0e9ffe0560ae27ab643e6dc42c62836a8c95"
+    },
+    {
+      "path": "desktop\\secret-storage.cjs",
+      "sha256": "f794025937f8be2705d4d406f1562e58d2345029e4e198718736671de352cbe0"
+    },
+    {
+      "path": "desktop\\web-viewer.cjs",
+      "sha256": "ce1712c08c73f3498d481e52e9c6222488e89fe576bd4974c1779a0db1aa479c"
+    },
+    {
+      "path": "desktop\\web-viewer-policy.cjs",
+      "sha256": "b05dab72e62df121ec2dda08dfe9ef5e0c1fe6269a4ba8e59c541d694bba4395"
+    },
+    {
+      "path": "desktop\\web-reader.cjs",
+      "sha256": "ba50206513a06a52592f0d3391a26fe48b6b1183f1e129d63c17c53d749dca91"
+    },
+    {
+      "path": "desktop\\web-zoom.cjs",
+      "sha256": "1704e6d131ebb6de7cd3cde16c445470786cf99940016af236044f846da90f41"
+    },
+    {
+      "path": "shared\\web-zoom.cjs",
+      "sha256": "407cce6fd4b61bfb79a909e2c72614e48d9d395dc0079bb4881b44150d0667a6"
+    },
+    {
+      "path": "desktop\\audio-permissions.cjs",
+      "sha256": "6c5f235f7024558593889e6c53c9406cd639841041838ef141aaa4c73cdce5d8"
+    },
+    {
+      "path": "desktop\\attachment-source.cjs",
+      "sha256": "00f422d8cd4f989b7ec060c8acc4cfb806b2a3f01fd04274108a46da0389d523"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\app.css",
+      "sha256": "ae1673d19d280d8164803b06abefe297c56ba61be4c643a16b504fd4ad9f2b63"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\icons.svg",
+      "sha256": "a080b921f421efcd5d6681e4f52a4e79ca1301c0a1eedbe34d008e4d29a38bfe"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\icons-LICENSE.txt",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\lucide-icons.svg",
+      "sha256": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\lucide-icons-LICENSE.txt",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "tools\\smoke.mjs",
+      "sha256": "1d3d52b3b99d53931703291a8e725677f7ec7e6efc764fb07765e8918219f0e6"
+    },
+    {
+      "path": "tools\\reading-scenarios.mjs",
+      "sha256": "3fe9027fa9ffafee0f9af8ab25ad66e97b12b76d5d57ca5ea59959e12705e5aa"
+    },
+    {
+      "path": "tools\\outgoing-scenarios.mjs",
+      "sha256": "435bc89bb05886520623c161fdf104ab9a54543435988ee441516376f3ae3659"
+    },
+    {
+      "path": "tools\\discovery-scenarios.mjs",
+      "sha256": "ef01d1ed135e3ce426b75f06bfb313922880e115c26bb35b8feaa076a146f16b"
+    },
+    {
+      "path": "tools\\editor-chrome-scenarios.mjs",
+      "sha256": "85d6db8cde4903c586b37d601e986cc14a853e18dd5f6d39ae1b6ea1c721fdda"
+    },
+    {
+      "path": "tools\\view-scenarios.mjs",
+      "sha256": "797919b0f5bfecaf187b44abf5abb429891e6a1910758ac2e8f33c6efd5c42f2"
+    },
+    {
+      "path": "tools\\organization-scenarios.mjs",
+      "sha256": "cf4fde63a11939dec90b46f6c0e9d8d12dc58bea663ece94ad054d305f4cb09b"
+    },
+    {
+      "path": "tools\\file-scenarios.mjs",
+      "sha256": "c09e792fc21556a9d06034d2e9f480a29eebddcfd55030494a237ae55163425d"
+    },
+    {
+      "path": "tools\\graph-scenarios.mjs",
+      "sha256": "8164dba360566a680af5d46259db224c0637ae39308b8a9130e01b62fa5c5abe"
+    },
+    {
+      "path": "tools\\canvas-scenarios.mjs",
+      "sha256": "7877f819f771b585c5b408a7ae6c669cf6db70d0b51a79c7e15fd2a961abfe1d"
+    },
+    {
+      "path": "tools\\preview-scenarios.mjs",
+      "sha256": "d04ea8fe3487490711b64a18fdf40a55d01e9abc10834ec182116e86d1d386bc"
+    },
+    {
+      "path": "tools\\editing-tools-scenarios.mjs",
+      "sha256": "f14df21d0e8f7371bf85d407ba9b759064af82702f08dc6221a692abc0d63a18"
+    },
+    {
+      "path": "tools\\format-scenarios.mjs",
+      "sha256": "6ae27ec2c609f8e4e9bc5b9563b893b85b08e8b5c29fbfdaf701ae8ec000122d"
+    },
+    {
+      "path": "tools\\composer-scenarios.mjs",
+      "sha256": "99ff07c7dacedc442ce880e4bc586b31fc78a867a658d3c3da6e23dff2e8ccdd"
+    },
+    {
+      "path": "tools\\menu-scenarios.mjs",
+      "sha256": "39437ae03d55f2e30ab9311c6aa732885b65fb7914ed2901a4f0945fd09528a5"
+    },
+    {
+      "path": "tools\\community-plugin-test-helpers.mjs",
+      "sha256": "c492726631a00bd3e6a4a89818d0a4bce10e51a79f3aea6cbd768c25d61802e5"
+    },
+    {
+      "path": "tools\\suggestion-scenarios.mjs",
+      "sha256": "c806e6913e8ac96a4843ed802a20e577e96dd550530c9959de9570a757312bda"
+    },
+    {
+      "path": "tools\\renderer-scenarios.mjs",
+      "sha256": "a44d423a43febf3a0fafe018027a91470ef289d4af106ee84878536d0599947a"
+    },
+    {
+      "path": "tools\\core-foundation-scenarios.mjs",
+      "sha256": "d56b06ef4308df338f27d7dab11ea1166eda4c8e19659a9b08f3b7ce3930a13d"
+    },
+    {
+      "path": "tools\\core-verification-scenarios.mjs",
+      "sha256": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539"
+    },
+    {
+      "path": "tools\\tab-movement-scenarios.mjs",
+      "sha256": "4c07a8fff96e95c439552e46fd14eb09d6047ae43b9a75a64425ac8a3a069daa"
+    },
+    {
+      "path": "tools\\workspace-docking-scenarios.mjs",
+      "sha256": "342399fa3bb21a7be54b02f28b36cc7fe30fa56c9a68e40f952af4c8bf2dc98f"
+    },
+    {
+      "path": "tools\\workspace-history-scenarios.mjs",
+      "sha256": "08090dd6a2fa70d43d8dba2a20f815af2a6b590f0de84a4c65118ea5e7526052"
+    },
+    {
+      "path": "tools\\workspace-popout-scenarios.mjs",
+      "sha256": "30a82d05356ee0f28e79d888a5f634309ad8c416c7044e7e9b2031ac0ba70af0"
+    },
+    {
+      "path": "client/workspace.ts",
+      "sha256": "47c1d975063e7bdc01b4927933278abe2e531a23529fa3f800c14bb2b3305123"
+    },
+    {
+      "path": "client/workspace-dom.ts",
+      "sha256": "f8227446fd9712ea933519b627478d296e5e55b3b9e70110aba732c0160e3f5d"
+    },
+    {
+      "path": "client/workspace-tab-drag.ts",
+      "sha256": "aab9ef56eaa8fcfbfa2d19eddec9cea06669cdcccebb2733aa2533b8ba2ed8e9"
+    },
+    {
+      "path": "client/workspace-dock.ts",
+      "sha256": "3e92c2bc762468da8f4223a43bd63f1ba71e763100992f6bc314043c09adb0fe"
+    },
+    {
+      "path": "client/desktop-ui.ts",
+      "sha256": "82fb3f941c22c9428d54515531ce450611c49cfc45881e2d0d0edcfb06470daa"
+    },
+    {
+      "path": "tests/workspace-tabs.test.mjs",
+      "sha256": "42f742412bf7dd5c028048b6242d6b618d8db71f304d343a564f3243644e6fde"
+    },
+    {
+      "path": "tools\\core-verification-targets.mjs",
+      "sha256": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+      "sha256": "21698d9cf240aceac6252039e8f395f22818aabc21e460fcbbab603f9a4db77d"
+    },
+    {
+      "path": "tools\\render-child-scenarios.mjs",
+      "sha256": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611"
+    },
+    {
+      "path": "tools\\templater-scenarios.mjs",
+      "sha256": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594"
+    },
+    {
+      "path": "tools\\webviewer-scenarios.mjs",
+      "sha256": "9cdb17cc1af4cc153be71c1e4e8e400ac86f0d1ba8acbf21871d871b2712522f"
+    },
+    {
+      "path": "tools\\bases-scenarios.mjs",
+      "sha256": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d"
+    },
+    {
+      "path": "tools\\bases-summary-scenarios.mjs",
+      "sha256": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47"
+    },
+    {
+      "path": "tools\\recovery-scenarios.mjs",
+      "sha256": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472"
+    },
+    {
+      "path": "tools\\audio-scenarios.mjs",
+      "sha256": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c"
+    },
+    {
+      "path": "tools\\mermaid-scenarios.mjs",
+      "sha256": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8"
+    },
+    {
+      "path": "tools\\math-embed-scenarios.mjs",
+      "sha256": "6cf3f237acbc238a439be49de5f650357c5b06562dd61e8c579f363e8b2eaeae"
+    },
+    {
+      "path": "tools\\workspace-import-scenarios.mjs",
+      "sha256": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863"
+    },
+    {
+      "path": "shared\\core-plugins.json",
+      "sha256": "ac192f5c228b9c1888faf0bef5a2c7a00fa6d259b3633b4516d783b0b12046d5"
+    },
+    {
+      "path": "tools\\core-scenarios.mjs",
+      "sha256": "f0dc3a460bef11c0d386a791c9e87a8e52f30f6cf86edcabc7d1de468bce7c90"
+    }
+  ],
+  "artifactStability": "verified-through-scenario",
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 45312,
+  "electronPid": 38016,
+  "completedAt": "2026-11-02T07:11:15.849Z",
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\evidence\\docking-smoke-errors.jsonl",
+    "nativePaths": [
+      "D:\\RonSijm\\RonSijm.Slopsidian\\.runtime\\smoke-profile\\logs\\errors-smoke-5c445b70-96fa-4661-9242-203b0d674e42.jsonl"
+    ],
+    "records": 0,
+    "expected": 0,
+    "unexpected": [],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "includesFinalTeardown": true
+  }
+}

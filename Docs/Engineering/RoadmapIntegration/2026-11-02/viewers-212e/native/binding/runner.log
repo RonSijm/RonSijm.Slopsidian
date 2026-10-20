@@ -1,0 +1,23 @@
+LIMIT Photo.avif was not generated: this host exposes no WebCodecs AV1 encoder, so AVIF decoding is unverified here.
+PASS Real decoders produced non-placeholder natural sizes for Pixel.png, Anim.gif, Photo.jpg, Photo.webp with exact bytes preserved.
+PASS Raster zoom control changes the reported scale (1.25).
+PASS SVG: valid renders at its declared size; script/handlers/foreignObject/remote refs/javascript: links are removed and reported (event handler, <script> element, style with external or unsafe resources, <foreignObject> element, external reference); dimensionless, malformed and DOCTYPE/ENTITY files are explicit errors, never a 300x150 decode.
+PASS PDF renders to a real canvas with the engine-reported page count (3) and sampled page pixels.
+PASS Page and zoom controls re-render distinct pages and persist in view state.
+PASS Exact encoded #page/#zoom link targets navigate; invalid targets are rejected: PDF page must be a whole number of 1 or more.
+PASS Encrypted PDF prompts, reports an incorrect password, then renders with the correct one.
+PASS Malformed and non-PDF .pdf bytes produce explicit error states, not a blank success.
+PASS A 14400x14400pt page is capped (4091x4091) instead of exhausting memory.
+PASS PDF JavaScript OpenAction did not run and is reported as blocked.
+PASS PDF source bytes unchanged after viewing.
+PASS Opening a PDF beside a dirty Markdown note leaves the unsaved note text intact.
+PASS External modification of the open PDF reloads the viewer (1 page).
+PASS Renaming the open PDF keeps the leaf on the new path.
+PASS Deleting the open PDF externally leaves no stale rendered success state.
+LIMIT Read-only viewing is verified by toggling the vault's read-only flag in the page; no real GitHub read-only vault was used.
+PASS Generated WebM decodes with the host's software decoder at 64x48 with native controls and persisted rate/mute state. No other codec or device is claimed.
+PASS Bare and fragment links open media files; a locked-PDF #page=99 fails visibly after unlock instead of clamping.
+PASS A bare reading-view md link opens the PDF without a fragment error.
+PASS Switching video files installs the incoming rate/volume/mute instead of the outgoing file's state.
+PASS The open image leaf is restored and decoded again after a restart.
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

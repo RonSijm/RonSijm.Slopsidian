@@ -1,0 +1,751 @@
+{
+  "status": "failed",
+  "scope": "reviewed-theme-management",
+  "communityPluginsTested": false,
+  "startedAt": "2026-11-01T23:50:26.862Z",
+  "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine\\.runtime\\smoke-vault-VmRpZE",
+  "launcherPid": 15088,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "No community-theme catalog or theme download request was made at startup.",
+    "An external appearance.json theme selection is adopted by the lifecycle-owned watcher without reload, retaining the unsaved editor text, selection and CM instance.",
+    "External theme-CSS edits and newly enabled snippets are re-read and applied while the editor state is retained.",
+    "Malformed external appearance.json and unsupported external CSS are reported, retain the exact accepted styles and editor state, and later valid files are adopted.",
+    "Browsing and reviewing are explicit; installing writes the exact reviewed BOM/CRLF bytes and manifest, does not select the theme and leaves the active styles and editor untouched.",
+    "A stale review is refused by the host version guard and the locally edited theme bytes are retained.",
+    "An external manifest.json edit after review is refused even though the CSS is unchanged, and every installed byte is retained.",
+    "A fresh review updates the installed theme to the exact reviewed bytes, and the external selection adopts it without disturbing the editor.",
+    "Switching the color scheme re-renders an already mounted Mermaid diagram in place (same container, decoded replacement image, no SVG in the application DOM) without touching the editor.",
+    "A selected-folder bundle with a relative image installs the exact CSS, manifest (unknown keys) and image bytes without enabling trusted local resources."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 15088,
+      "electronPid": 15088,
+      "dotnetPid": 45108,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.0",
+  "sourceFingerprint": "93a28d437dc6980690d3ad27759b5c20e3bd6eaad26815f330385fa3b1a7ee84",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "expectedDiagnostics": [
+    {
+      "id": "795cc410-83bc-4baf-9c01-0ad722d8a4bd:0",
+      "source": "notification",
+      "message": "Host 422: {\"error\":\"The requested JSON file is invalid: 'n' is an invalid start of a property name. Expected a '\\\"'. LineNumber: 0 | BytePositionInLine: 2.\"}",
+      "reason": "an external appearance.json is malformed"
+    },
+    {
+      "id": "795cc410-83bc-4baf-9c01-0ad722d8a4bd:1",
+      "source": "notification",
+      "message": "Only self-contained appearance CSS is supported. Imports and URL/image resources are not loaded. Enable trusted local resources to use theme-relative fonts and images.",
+      "reason": "an external theme CSS becomes unsupported"
+    },
+    {
+      "id": "795cc410-83bc-4baf-9c01-0ad722d8a4bd:2",
+      "source": "notification",
+      "message": "Only self-contained appearance CSS is supported. Imports and URL/image resources are not loaded. Enable trusted local resources to use theme-relative fonts and images.",
+      "reason": "a resource theme is selected while trusted local resources are off"
+    },
+    {
+      "id": "795cc410-83bc-4baf-9c01-0ad722d8a4bd:3",
+      "source": "notification",
+      "message": "Appearance could not check external CSS changes: Host 404: {\"error\":\"This appearance asset is missing: .obsidian/themes/Picked/img/dot.png\"}",
+      "reason": "a referenced resource is deleted externally"
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Redo must also restore the snapshot selection on the same leaf/view/CM\n\nfalse !== true\n\n    at checkAppearanceThemes (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-fluffy-engine/tools/appearance-theme-scenarios.mjs:238:10)\n    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-fluffy-engine/tools/smoke.mjs:1614:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (getComputedStyle(document.body).getPropertyValue(\\\"--res-probe\\\")===\\\"url(\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\\\\\\\")\\\")))()\");\n    if(result&&typeof result."
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (getComputedStyle(document.body).getPropertyValue(\\\"--res-probe\\\")===\\\"url(\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\\\\\\\")\\\")))()\");\n    if(result&&typeof result."
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (getComputedStyle(document.body).getPropertyValue(\\\"--res-probe\\\")===\\\"url(\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\\\\\\\")\\\")))()\");\n    if(result&&typeof result."
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (getComputedStyle(document.body).getPropertyValue(\\\"--res-probe\\\")===\\\"url(\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\\\\\\\")\\\")))()\");\n    if(result&&typeof result."
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (getComputedStyle(document.body).getPropertyValue(\\\"--res-probe\\\")===\\\"url(\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\\\\\\\")\\\")))()\");\n    if(result&&typeof result."
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (getComputedStyle(document.body).getPropertyValue(\\\"--res-probe\\\")===\\\"url(\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\\\\\\\")\\\")))()\");\n    if(result&&typeof result."
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (getComputedStyle(document.body).getPropertyValue(\\\"--res-probe\\\")===\\\"url(\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\\\\\\\")\\\")))()\");\n    if(result&&typeof result."
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (getComputedStyle(document.body).getPropertyValue(\\\"--res-probe\\\")===\\\"url(\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==\\\\\\\")\\\")))()\");\n    if(result&&typeof result."
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const {leaf,view,file,cm,doc}=themeEditor;return leaf.workspace===app.workspace&&app.workspace.leaves().includes(leaf)&&leaf.view===view&&view.file===file&&app.vault.getFileByPath(file.path)===file&&view.editor.cm===cm&&cm.state.doc.toString()===doc&&cm.state."
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const {leaf,cm}=themeEditor;app.workspace.setActiveLeaf(leaf,{focus:true});cm.focus();return true})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retain"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (themeEditor.cm.hasFocus&&app.workspace.activeLeaf===themeEditor.leaf)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=global"
+    },
+    {
+      "method": "Page.bringToFront"
+    },
+    {
+      "method": "Input.dispatchKeyEvent",
+      "key": "z"
+    },
+    {
+      "method": "Input.dispatchKeyEvent",
+      "key": "z"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (themeEditor.cm.state.doc.toString()===\\\"Keep this text, selection and undo through theme changes.\\\\n\\\")))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settl"
+    },
+    {
+      "method": "Page.bringToFront"
+    },
+    {
+      "method": "Input.dispatchKeyEvent",
+      "key": "y"
+    },
+    {
+      "method": "Input.dispatchKeyEvent",
+      "key": "y"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (themeEditor.cm.state.doc.toString()===themeEditor.doc)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidian"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{const {leaf,view,file,cm,doc}=themeEditor;return leaf.workspace===app.workspace&&app.workspace.leaves().includes(leaf)&&leaf.view===view&&view.file===file&&app.vault.getFileByPath(file.path)===file&&view.editor.cm===cm&&cm.state.doc.toString()===doc&&cm.state."
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [
+      {
+        "key": "z",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": true,
+        "length": 66,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "z",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": true,
+        "length": 66,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "y",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 58,
+        "focus": "cm-content cm-lineWrapping"
+      },
+      {
+        "key": "y",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 58,
+        "focus": "cm-content cm-lineWrapping"
+      }
+    ],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [],
+    "clientError": "Appearance could not check external CSS changes: Host 404: {\"error\":\"This appearance asset is missing: .obsidian/themes/Picked/img/dot.png\"} Download log",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "preserved-leaf",
+        "type": "markdown",
+        "path": "Theme management note.md",
+        "text": "Unsaved Keep this text, selection and undo through theme changes.\n",
+        "sessionText": "Unsaved Keep this text, selection and undo through theme changes.\n",
+        "dirty": true,
+        "selection": 8,
+        "length": 66
+      },
+      {
+        "id": "fb7443c8-a5c2-4cbf-9c62-4244537c0211",
+        "type": "markdown",
+        "path": "Theme management diagram.md",
+        "text": "# Diagram\n\n```mermaid\nflowchart LR\n  A[Theme] --> B[Done]\n```\n",
+        "sessionText": "# Diagram\n\n```mermaid\nflowchart LR\n  A[Theme] --> B[Done]\n```\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 62
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "preserved-main",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "preserved-tabs",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "preserved-leaf",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Theme management note.md",
+                    "mode": "source",
+                    "source": true
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "fb7443c8-a5c2-4cbf-9c62-4244537c0211",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "preview",
+                    "source": true,
+                    "file": "Theme management diagram.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          }
+        ]
+      },
+      "active": "preserved-leaf",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-startup": {
+          "source": ".obsidian/workspace.json",
+          "version": "411ab913939a16585ba07e688bfffc92cce36d2eef51d5f85c94970d78a4854a",
+          "warnings": []
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "preserved-leaf",
+          "lastFile": "Theme management note.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "controlledShutdownConsoleErrors": [],
+  "consoleErrors": [
+    "HostError: Host 422: {\"error\":\"The requested JSON file is invalid: 'n' is an invalid start of a property name. Expected a '\\\"'. LineNumber: 0 | BytePositionInLine: 2.\"}\n    at requestJson (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:40759:11)\n    at async VaultConfiguration.read (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:96606:23)",
+    "AppearanceError: Only self-contained appearance CSS is supported. Imports and URL/image resources are not loaded. Enable trusted local resources to use theme-relative fonts and images.\n    at validateAppearanceCss (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:114492:15)\n    at Appearance.prepareStyles (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:115273:11)\n    at async Appearance.checkAssets (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:115067:24)",
+    "AppearanceError: Only self-contained appearance CSS is supported. Imports and URL/image resources are not loaded. Enable trusted local resources to use theme-relative fonts and images.\n    at validateAppearanceCss (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:114492:15)\n    at Appearance.prepareStyles (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:115273:11)\n    at async Appearance.adopt (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:114997:24)",
+    "AppearanceError: Appearance could not check external CSS changes: Host 404: {\"error\":\"This appearance asset is missing: .obsidian/themes/Picked/img/dot.png\"}\n    at Appearance.reportAssetFailure (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:115090:67)\n    at Appearance.checkAssets (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:115079:12)",
+    "[2026-11-01T23:50:59.317Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "TypeError: Failed to fetch\n    at requestJson (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:40752:26)\n    at VaultConfiguration.read (http://127.0.0.1:56595/js/editor-host.rumioxeino.js:96606:29)\n    at http://127.0.0.1:56595/js/editor-host.rumioxeino.js:96546:12",
+    "[2026-11-01T23:51:04.323Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 45108,
+  "electronPid": 15088,
+  "completedAt": "2026-11-01T23:51:04.570Z",
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine\\.runtime\\evidence\\appearance-themes-smoke-errors.jsonl",
+    "nativePaths": [
+      "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-fluffy-engine\\.runtime\\smoke-profile-appearance-1793577026803\\logs\\errors-smoke-a1ce6f17-115e-402c-a505-a585c74232d0.jsonl"
+    ],
+    "records": 4,
+    "expected": 4,
+    "unexpected": [],
+    "sha256": "ed27babc9f4561b7b144527dd2e8b09629207c60f49aacf740524a8b9a374eea",
+    "includesFinalTeardown": true
+  }
+}

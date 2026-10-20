@@ -1,0 +1,20 @@
+/* @settings
+name: Example vault accents
+id: example-vault-accents
+settings:
+  - id: example-callout-radius
+    title: Callout corner radius
+    type: variable-number-slider
+    default: 8
+    min: 0
+    max: 24
+    step: 1
+    format: px
+  - id: example-accent
+    title: Example callout accent
+    type: variable-color
+    format: hex
+    default: "#7c6bd6"
+*/
+body { --example-callout-radius: 8px; --example-accent: #7c6bd6; }
+.callout[data-callout="example"] { border-radius: var(--example-callout-radius); border-inline-start: 3px solid var(--example-accent); }

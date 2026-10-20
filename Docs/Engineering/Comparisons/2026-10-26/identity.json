@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-26",
+  "base": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\obsidian-comparison-2026-10-26",
+  "source": "Provided Obsidian 1.12.7 original archives and native companions under stock Electron with an isolated wrapper; no UI bundle modifications.",
+  "obsidian": {
+    "asar": "2b2483b2e1246772e0d25367ec055cbc5047ea2f0091b667c35656678f86d712",
+    "appJs": "cc6d0c363cba3935207fb70e7d78736c9f0c2024545787871095288a1b185851",
+    "css": "6245db88b65b1728ef136cc79b3ce3ef85ab860944abbe5198e9d6bd9abe9bea"
+  },
+  "fixtures": {
+    "Tags.md": "3a7bc5d8fa2c2f0daa305081f5081eef95ef83f82d01390ed9ad2e8b13d48775",
+    "Rendering.md": "97773449ec32b081176798aa5774732863c1023f44f930ab431943045f058987",
+    "Target.md": "d500ebbbb68588aba8b6b8078ed276e05fe21914329f9fc049e28acd945c894a",
+    "Pixel.png": "ed40521d499663eedff80ca715a3d70e967a1a65228c019b4e3e52d7e6e47ece"
+  },
+  "candidate": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\attachment-import-validation"
+}
