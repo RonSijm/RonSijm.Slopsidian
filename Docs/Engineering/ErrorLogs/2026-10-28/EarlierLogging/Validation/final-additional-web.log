@@ -1,0 +1,24 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS Real DOM insertion/migration, cross-window node/event types, CSS, Moment previews, settings control ownership and SVG registry behavior pass in the actual renderer.
+PASS The native-shaped Markdown embed registry owns a real renderer/editor and persists an exact physical edit, rather than supplying an empty constructor seam.
+PASS Declarative settings reject held asynchronous validation without saving, persist a valid value physically, navigate nested pages and dispose owned renders.
+PASS An actual confirmation blocks duplicate actions and waits for its physical configuration write before closing.
+PASS Unchanged-plugin workflow: Linter delayed settings persist on owned disable.
+PASS Unchanged-plugin workflow: QuickAdd nested settings and physical persistence.
+PASS Unchanged-plugin workflow: Natural Language Dates owned protocol callback.
+PASS Unchanged-plugin workflow: Kanban board rendering and physical checkbox persistence.
+PASS Unchanged-plugin workflow: Configured restoration and owned disable cleanup.
+PASS Seven exact releases pass browser startup/settings; Omnisearch's HTTP/cleanup and Git/Templater's startup Node boundaries remain explicit, not full compatibility.
+PASS Every loaded release renders its real settings while all supplied manifests, scripts and styles remain byte-identical; Git still has no remotes.

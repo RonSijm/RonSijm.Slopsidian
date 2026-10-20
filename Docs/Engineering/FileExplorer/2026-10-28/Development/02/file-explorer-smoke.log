@@ -1,0 +1,72 @@
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-9ad9e738-070a-41cf-a428-f342aefb9a0d.jsonl
+(node:12296) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:64723/devtools/browser/fb0d8022-35dc-4e68-8144-ff6adf9da4b9
+ELECTRON_HOST_PID 12296
+DOTNET_HOST_PID 10468
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-vault-lgwxYQ
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:51808
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:51808
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-9ad9e738-070a-41cf-a428-f342aefb9a0d.jsonl
+(node:8724) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:29336/devtools/browser/493c7d7c-e704-4bea-b13d-68809bb91c8d
+ELECTRON_HOST_PID 8724
+DOTNET_HOST_PID 32352
+warn: RonSijm.Slopsidian.Services.VaultService[0]
+      Cannot read plugin manifest in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-vault-lgwxYQ\.obsidian\plugins\explorer-probe
+      RonSijm.Slopsidian.Services.VaultException: The plugin manifest is missing a valid description.
+         at RonSijm.Slopsidian.Services.VaultService.RequiredString(JsonElement manifest, String name) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 766
+         at RonSijm.Slopsidian.Services.VaultService.ReadManifest(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 759
+         at RonSijm.Slopsidian.Services.VaultService.Scan(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 579
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-vault-lgwxYQ
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:58020
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:58020
+warn: RonSijm.Slopsidian.Services.VaultService[0]
+      Cannot read plugin manifest in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-vault-lgwxYQ\.obsidian\plugins\explorer-probe
+      RonSijm.Slopsidian.Services.VaultException: The plugin manifest is missing a valid description.
+         at RonSijm.Slopsidian.Services.VaultService.RequiredString(JsonElement manifest, String name) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 766
+         at RonSijm.Slopsidian.Services.VaultService.ReadManifest(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 759
+         at RonSijm.Slopsidian.Services.VaultService.Scan(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 579
+warn: RonSijm.Slopsidian.Services.VaultService[0]
+      Cannot read plugin manifest in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-vault-lgwxYQ\.obsidian\plugins\explorer-probe
+      RonSijm.Slopsidian.Services.VaultException: The plugin manifest is missing a valid description.
+         at RonSijm.Slopsidian.Services.VaultService.RequiredString(JsonElement manifest, String name) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 766
+         at RonSijm.Slopsidian.Services.VaultService.ReadManifest(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 759
+         at RonSijm.Slopsidian.Services.VaultService.Scan(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 579
+warn: RonSijm.Slopsidian.Services.VaultService[0]
+      Cannot read plugin manifest in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-vault-lgwxYQ\.obsidian\plugins\explorer-probe
+      RonSijm.Slopsidian.Services.VaultException: The plugin manifest is missing a valid description.
+         at RonSijm.Slopsidian.Services.VaultService.RequiredString(JsonElement manifest, String name) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 766
+         at RonSijm.Slopsidian.Services.VaultService.ReadManifest(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 759
+         at RonSijm.Slopsidian.Services.VaultService.Scan(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 579
+warn: RonSijm.Slopsidian.Services.VaultService[0]
+      Cannot read plugin manifest in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\.runtime\smoke-vault-lgwxYQ\.obsidian\plugins\explorer-probe
+      RonSijm.Slopsidian.Services.VaultException: The plugin manifest is missing a valid description.
+         at RonSijm.Slopsidian.Services.VaultService.RequiredString(JsonElement manifest, String name) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 766
+         at RonSijm.Slopsidian.Services.VaultService.ReadManifest(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 759
+         at RonSijm.Slopsidian.Services.VaultService.Scan(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\file-explorer-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 579
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

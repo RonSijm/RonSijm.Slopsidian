@@ -1,0 +1,20 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS A first-open original layout restores real, pinned Files views in main tabs and a visible sidebar, independent folding/filter/sort and opaque state, alongside an intact Source note.
+PASS Real pointer and keyboard navigation unfolds folders, filters paths case-insensitively without changing another pane, opens files without replacing a pinned explorer, and reveals the active note without stealing editor focus.
+PASS Unsupported attachments remain browsable without errors; enabling an actual fixture plugin updates existing panes and opens its FileView through Ctrl-click. Keyboard context menus deliver the real file-menu event.
+PASS Files creates a real folder through the guarded dialog, re-enables controls after mutation, observes an external file on Refresh, and leaves a live unsaved editor and its disk bytes intact while folding panes.
+PASS Unchanged Iconize 2.14.7 renders configured folder/file emoji on real materialized rows and retains them through folding with clean diagnostics; broader private tree and assignment workflows remain unverified.
+PASS Disabling Files closes and unloads its real views, retains exact saved/opaque state in unavailable panes and removes commands. Detached controls are inert; re-enabling creates fresh live owners with restored state.
+PASS A full restart/reconnect restores independent states, pins, late providers and original source bytes; an explicit legacy sidebar choice wins on later reconnect. The command palette opens a fresh Files tab.

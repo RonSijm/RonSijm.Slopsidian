@@ -1,0 +1,45 @@
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-bee6ae90-e34c-4d11-8376-0e85c74a96ea.jsonl
+(node:40764) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:54621/devtools/browser/76c8a7ed-56fe-4a38-a1b7-2ea015b3e1f0
+ELECTRON_HOST_PID 40764
+DOTNET_HOST_PID 16112
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-vault-bpVoVf
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55414
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:55414
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Error: Timed out waiting for #core-plugins-tab
+    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:347:9)
+    at async waitExpression (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:439:3)
+    at async click (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:453:3)
+    at async toggle (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/editor-chrome-scenarios.mjs:397:5)
+    at async checkEditorChrome (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/editor-chrome-scenarios.mjs:425:3)
+    at async checkEditorChromeWorkflows (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:403:3)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:1380:5
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/outline-panes-validation-20261028/tools/smoke.mjs:1587:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

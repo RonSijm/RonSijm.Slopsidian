@@ -1,0 +1,117 @@
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-172ebe30-4306-4e3b-979e-98ef872246c3.jsonl
+(node:13452) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:47722/devtools/browser/b3e8963b-596d-49b3-a5d1-f12dc89d582d
+ELECTRON_HOST_PID 13452
+DOTNET_HOST_PID 43192
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-vault-M7vXwh
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:63293
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:63293
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-172ebe30-4306-4e3b-979e-98ef872246c3.jsonl
+(node:15804) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:13395/devtools/browser/2e92f520-36cd-4b08-92b0-87f161e092cc
+ELECTRON_HOST_PID 15804
+DOTNET_HOST_PID 33368
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-vault-M7vXwh
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:65424
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:65424
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-172ebe30-4306-4e3b-979e-98ef872246c3.jsonl
+(node:45244) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:60797/devtools/browser/7fdfd14c-b6c8-45a3-a312-ef06356e5993
+ELECTRON_HOST_PID 45244
+DOTNET_HOST_PID 11100
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\.runtime\smoke-vault-M7vXwh
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:53537
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:53537
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/resource
+      RonSijm.Slopsidian.Services.VaultException: Reading view supports local raster images and M4A, WebM, Ogg, MP3 and WAV audio.
+         at RonSijm.Slopsidian.Services.VaultService.ReadResourceAsync(String path, String expectedRoot, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 161
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/resource
+      RonSijm.Slopsidian.Services.VaultException: Reading view supports local raster images and M4A, WebM, Ogg, MP3 and WAV audio.
+         at RonSijm.Slopsidian.Services.VaultService.ReadResourceAsync(String path, String expectedRoot, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 161
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/resource
+      RonSijm.Slopsidian.Services.VaultException: Reading view supports local raster images and M4A, WebM, Ogg, MP3 and WAV audio.
+         at RonSijm.Slopsidian.Services.VaultService.ReadResourceAsync(String path, String expectedRoot, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 161
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/resource
+      RonSijm.Slopsidian.Services.VaultException: Reading view supports local raster images and M4A, WebM, Ogg, MP3 and WAV audio.
+         at RonSijm.Slopsidian.Services.VaultService.ReadResourceAsync(String path, String expectedRoot, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 161
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/resource
+      RonSijm.Slopsidian.Services.VaultException: Reading view supports local raster images and M4A, WebM, Ogg, MP3 and WAV audio.
+         at RonSijm.Slopsidian.Services.VaultService.ReadResourceAsync(String path, String expectedRoot, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.cs:line 161
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\readonly-io-validation-20261028\src\RonSijm.Slopsidian\Program.cs:line 44
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: NotFoundError: Failed to execute 'transaction' on 'IDBDatabase': One of the specified object stores was not found.
+    at eval (eval at <anonymous> (:2:26), <anonymous>:5:25)
+    at new Promise (<anonymous>)
+    at eval (eval at <anonymous> (:2:26), <anonymous>:4:15)
+    at evaluate (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/smoke.mjs:318:10)
+    at async checkReadOnlyDrawing (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/excalidraw-scenarios.mjs:380:3)
+    at async checkExcalidraw (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/excalidraw-scenarios.mjs:355:3)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/smoke.mjs:1139:7
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/readonly-io-validation-20261028/tools/smoke.mjs:1529:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

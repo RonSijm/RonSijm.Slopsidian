@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "nativeWorkflows": 10,
+  "slopsidianWorkflows": 5,
+  "coverage": "Representative workflows across the fifteen expanded plugins, not complete plugin/host parity",
+  "artifacts": {
+    "admonition-fenced-limitation.json": "94236d706d6051aa3b1217cf53db945c1b7682951775c6add943a7cc07b15ef5",
+    "plugin-lab-assets.json": "4a7b4c73710335e2c532c50d2ce2440a857e43d7fcdbbf437283c40f4be7ac1f",
+    "plugin-lab-native.json": "31e47e53ac96874c6f6148c3acc53bf3e863564fa9013e716e3c0310d2278e07",
+    "plugin-lab-slopsidian.json": "0a2a4f7530df7d3a6f272118a3d3c0ee921966abf3ee44fb6cf41659eb971b26",
+    "plugin-lab-vault.json": "466f0227fe130ac9ba3b9d29097c6995cc101d1532e9a68420e67da541f42d27",
+    "workshop-room.png": "bf1f383154b5fac4e464ea054fb082158e37f210a7941d259a53f83659a34ec5"
+  }
+}

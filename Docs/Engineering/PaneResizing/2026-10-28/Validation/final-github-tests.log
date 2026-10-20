@@ -1,0 +1,40 @@
+✔ the installable plugin loads using public Obsidian APIs without native dependencies or startup downloads (125.8026ms)
+✔ GitHub URLs support subfolders and explicit slash-containing refs, and reject other hosts and traversal (1.182ms)
+✔ discovery creates file references with exactly two API calls and no raw downloads or hidden configuration (27.294ms)
+✔ the default fetch transport retains its browser Window receiver (2.9313ms)
+✔ raw reads are pinned, byte-exact, deduplicated, and persist across reader instances (6.2481ms)
+✔ SVG and WAV bodies are preserved and corrupted cache entries are rejected or repaired (4.4032ms)
+✔ incorrect raw content is never cached as the discovered Git blob (2.3119ms)
+✔ rate-limit failures preserve the previous offline inventory (2.7504ms)
+✔ truncated trees fall back to the selected subtree instead of silently losing files (3.0546ms)
+✔ native vault inventories, stat/list, file info, and metadata polling stay lazy (4.3415ms)
+✔ all repository mutation routes are rejected before downloading files or performing network writes (2.304ms)
+✔ personal preferences persist locally with optimistic concurrency and do not alter repository files (3.5323ms)
+✔ late file responses cannot populate another selected vault (2.0837ms)
+✔ public Vault write and processing APIs refuse read-only sources without reading or invoking callbacks (3.5761ms)
+✔ explicit offline download persists every exact blob without eager metadata indexing or new discovery requests (4.9512ms)
+✔ offline downloads bound concurrency to four and keep a fixed snapshot while the caller changes its inventory (6.115ms)
+✔ cancellation aborts outstanding offline requests, keeps completed files, and resumes from persistent cache (3.9875ms)
+✔ cancelling an offline subscriber does not abort the same download used by an open note (2.3881ms)
+✔ a cancelled snapshot can be retried before its abandoned request settles (2.8217ms)
+✔ download failures and browser quota errors never report a complete offline snapshot (2.7325ms)
+✔ oversized files are identified before any offline download, and pre-cancelled runs make no requests (1.564ms)
+✔ offline source descriptors cannot mutate the selected mount, and selection/refresh announce lifecycle changes (2.0088ms)
+✔ GitHub configuration is discovered separately and only plugin manifests load when mounting (3.4334ms)
+✔ repository app/core settings seed local overlays and version conflicts cannot modify their original bytes (3.435ms)
+✔ desktop remote enabled IDs start restricted, explicit enablement loads pinned code/CSS, and trust persists locally (7.4991ms)
+✔ plugin data seeds from GitHub, persists falsy and array values locally, and is isolated by vault (4.6396ms)
+✔ malformed remote configuration and mismatched manifests remain explicit errors without fetching code (3.2793ms)
+✔ late plugin source responses are refused after either a vault switch or snapshot refresh (5.7916ms)
+✔ older cache inventories remain readable and reject configuration paths outside the vault (2.2844ms)
+✔ truncated-tree walking includes the vault-root .obsidian directory and excludes other hidden directories (5.1493ms)
+✔ an incomplete cache-only mount reports missing plugin/settings bytes without falling back to GitHub (3.0446ms)
+✔ WASM GitHub mounts default to unrestricted after platform initialization and preserve an explicit restricted choice (9.9767ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 415.2533

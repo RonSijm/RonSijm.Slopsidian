@@ -1,0 +1,175 @@
+{
+  "status": "passed",
+  "base": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\deep-plugin-native-1793052185161",
+  "host": "Obsidian 1.12.7 original reference resources; isolated vault/profile",
+  "pluginIds": [
+    "folder-notes",
+    "highlightr-plugin",
+    "nldates-obsidian",
+    "note-refactor-obsidian",
+    "obsidian-outliner",
+    "recent-files-obsidian",
+    "various-complements",
+    "mermaid-tools",
+    "obsidian-kanban",
+    "obsidian-excalidraw-plugin"
+  ],
+  "checks": [
+    {
+      "plugin": "highlightr-plugin",
+      "label": "apply and remove the Evidence annotation",
+      "status": "passed",
+      "value": {
+        "command": "highlightr-plugin:Evidence",
+        "storedColor": "#BBFABBA6",
+        "plainTextRestored": true
+      }
+    },
+    {
+      "plugin": "nldates-obsidian",
+      "label": "absolute date, time and current timestamp commands",
+      "status": "passed",
+      "value": {
+        "absolute": "2026-10-23",
+        "time": "19:30",
+        "currentTimestamp": "2026-10-26 23:03",
+        "historicalTime": "20:30"
+      }
+    },
+    {
+      "plugin": "obsidian-outliner",
+      "label": "move a parent with its descendants",
+      "status": "passed",
+      "value": {
+        "command": "obsidian-outliner:move-list-item-up",
+        "descendantsPreserved": true
+      }
+    },
+    {
+      "plugin": "note-refactor-obsidian",
+      "label": "extract a named observation into the configured folder",
+      "status": "passed",
+      "value": {
+        "target": "80 Sandbox/Plugin lab/Note Refactor/Extracted/Runtime observation.md",
+        "sourceLinkStored": true,
+        "unselectedContentPreserved": true
+      }
+    },
+    {
+      "plugin": "folder-notes",
+      "label": "render both prepared overview styles",
+      "status": "passed",
+      "value": [
+        {
+          "style": "list",
+          "links": 4
+        },
+        {
+          "style": "explorer",
+          "links": 0
+        }
+      ]
+    },
+    {
+      "plugin": "recent-files-obsidian",
+      "label": "record an actual visit route without seeded history",
+      "status": "passed",
+      "value": {
+        "recent": [
+          "30 Projects/Meetings/2026-10-21 Planning.md",
+          "80 Sandbox/Plugin lab/Search/Visitor briefing.md",
+          "30 Projects/Observatory.md"
+        ],
+        "historyOrigin": "navigation in disposable vault"
+      }
+    },
+    {
+      "plugin": "various-complements",
+      "label": "accept a local dictionary expansion",
+      "status": "passed",
+      "value": {
+        "selected": "Workshop welcome",
+        "text": "Welcome! Choose something to discover at the telescope or seedling station."
+      }
+    },
+    {
+      "plugin": "mermaid-tools",
+      "label": "load custom elements and parse all prepared diagrams",
+      "status": "passed",
+      "value": {
+        "builtins": 98,
+        "custom": 3,
+        "validDiagrams": 8
+      }
+    },
+    {
+      "plugin": "obsidian-kanban",
+      "label": "render all eight prepared cards and persist a checkbox",
+      "status": "passed",
+      "value": {
+        "cardCount": 8,
+        "physicalCheckboxSaved": true
+      }
+    },
+    {
+      "plugin": "obsidian-excalidraw-plugin",
+      "label": "open the populated modern scene and inspect its links",
+      "status": "passed",
+      "value": {
+        "elements": 16,
+        "noteLinks": [
+          "[[30 Projects/Observatory]]",
+          "[[30 Projects/Garden]]",
+          "[[80 Sandbox/Plugin lab/Search/Visitor briefing]]",
+          "[[80 Sandbox/Plugin lab/Decision register]]"
+        ],
+        "arrows": 4,
+        "screenshot": "workshop-room.png"
+      }
+    }
+  ],
+  "exceptions": [
+    "Uncaught",
+    "Uncaught"
+  ],
+  "sourceHashes": {
+    "folder-notes/main.js": "7e736f94222cab55a8e0113e8782dcf7fb7cf325df9ce87d80b6a544230ad40c",
+    "folder-notes/manifest.json": "d68704cb787fb687a3d6261a77e93d39c9409ef1dab4e37bfc67a6f96b493536",
+    "highlightr-plugin/main.js": "bf7e3b388da76a9154ecfca301b9d9387f06f94224e95c7fcc9e2d243aa87c06",
+    "highlightr-plugin/manifest.json": "2c1b21c61afd8ebeacd365774553e42d317f372a8c45f07b930909e451f787a3",
+    "nldates-obsidian/main.js": "aa5fcc3163889def1b51e2dd1b89ea937fbb3d5bd366d7e3bd9135f7f3510629",
+    "nldates-obsidian/manifest.json": "af72a3303867be4305d876488949beec4a2d153b892e3febbcd103f808cc83df",
+    "note-refactor-obsidian/main.js": "aabda14d29ee42a70b9d7ef8a591e03c48d2f81bd27c470301a1feeb25633b23",
+    "note-refactor-obsidian/manifest.json": "73697c533f735c25c858c0e7b0e53963ceb13901ac1a6cce67d645d112d86d5d",
+    "obsidian-outliner/main.js": "b12610946e133aca69886ba1b16f5386c5db8dbc123ea33aad1a9fb69bcfc100",
+    "obsidian-outliner/manifest.json": "277a8887eb959cc7a4ae047608421153b359bdf451c2d66caab91c35ca98b93f",
+    "recent-files-obsidian/main.js": "2e884136b7fd86cb9ac019d358752d45785459bf93b25af22697e4b2c501915e",
+    "recent-files-obsidian/manifest.json": "6dbfa314a4b5df3f7f8283fd41bc64d149bef3c1128e15b5a94dc690b55fb0d7",
+    "various-complements/main.js": "f58b3b54af0573f3c0d08b161f6571f3d130b6a23295ba131d651ab28753dfbe",
+    "various-complements/manifest.json": "dcee24cdee134542ced33a9bfc493fdd5996ef2552a0c681e3f5e9994b39327c",
+    "mermaid-tools/main.js": "f96c7b4280e4b3b00222fb7a8b7ee8f68cfa20830b2c8ee5bd78ecf18e9a7770",
+    "mermaid-tools/manifest.json": "e392d82708521a4affc1a221d3e3aa16ff7f6e9116290640dd092139360888c9",
+    "obsidian-kanban/main.js": "458574296f9c50bf5ac078ad28f37724a2520ae45e8ad2144c6769f4062453e4",
+    "obsidian-kanban/manifest.json": "24976787097ead467969e014a35654e7a80e4db49a977689a48afadfa15e1854",
+    "obsidian-excalidraw-plugin/main.js": "86027c9f881d70069f40d1fdf63d38868c606c8000169d730cc68c62a6978a77",
+    "obsidian-excalidraw-plugin/manifest.json": "4880b885c50643ef848d31cea829776ca2e96747353aee334d71e875f79d31c0"
+  },
+  "endpoint": "http://127.0.0.1:52427",
+  "targets": [
+    {
+      "type": "page",
+      "url": "app://obsidian.md/index.html"
+    }
+  ],
+  "targetId": "1339A4953E3DE634538CE30599EAE7E3",
+  "limitations": [
+    {
+      "plugin": "nldates-obsidian",
+      "input": "October 23, 2026 at 19:30",
+      "expectedLiteralTime": "19:30",
+      "observed": "20:30",
+      "scope": "Unmodified pinned parser in this reference clock/locale; not a diagnosed cause"
+    }
+  ],
+  "scope": "Prepared demos: selected commands and views in an isolated Obsidian 1.12.7 vault; newer-minimum plugins explicitly omitted; no complete host parity claim."
+}

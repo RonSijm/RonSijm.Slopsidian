@@ -1,0 +1,55 @@
+PASS Real shared Markdown postprocessors run in async sort order with matching document/source/frontmatter/section context and owned interactive controls; genuine classic HyperMD and the modern bridge agree before and after a following-line edit without changing source bytes.
+PASS Render-child removal and Reading/Source transitions unload actual component events; an asynchronous onload that finishes after removal is still cleaned up and its retained button cannot act.
+PASS Superseded asynchronous processors can only change their detached render section, stale section queries return null, and current processor errors are visible without rewriting or poisoning the next render.
+PASS Register/unregister and real plugin disable refresh unchanged Reading views and remove owned controls; a persisted disable survives restart/reconnect, re-enable works, and original Markdown BOM/CRLF plus other configured plugin IDs remain unchanged.
+PASS Actual plugin and factory code-block processors replace real fenced/nested code, await async handlers, preserve raw Unicode/HTML-like text and trailing blank lines, expose exact source/section context and own working controls; duplicate/invalid registrations reject without reserving a failed language.
+PASS Real MarkdownRenderer.render and deprecated renderMarkdown append independently owned formatted fragments without replacing prior DOM or opening hidden leaves, await actual handlers, provide null fragment-section context, sanitize note HTML and resolve a decoded vault image plus working source-relative link.
+PASS Static rendering waits for real asynchronous render-child loads; removing its DOM unloads controls, owner unload revokes the actual image URL, and a late processor can only mutate its detached section while a new render and disposed retained controls remain correct.
+PASS Async code-block failures reject and visibly retain original code while another block renders; invalid owners write no DOM, disable restores plain fences, re-enable/restart/reconnect removes language registrations correctly, and original Markdown/image bytes plus other enabled IDs remain unchanged.
+PASS Real detached title/wrapper children survive async construction and mutation delivery, become owned after replacement, unload if never inserted, and dispose waits for observer-started async native-style teardown; retained controls stop acting.
+PASS Unchanged Admonition 12.0.11 renders fenced titles/body Markdown, distinct painted backgrounds/titles and nonempty colored icon geometry, working collapse and source-relative links; Source/Reading and disable/re-enable rebuild output. Full visual equivalence remains separate.
+PASS The full local icon catalog has real clone-owned vector geometry and legacy aliases; native custom callouts use CSS-selected icons, both color formats update without overwriting plugin styles or icons, nested legacy colors stay independent, and rerender disposes old style observers without changing note bytes.
+PASS Configured Admonition survives full restart/reconnect, also renders through the actual static MarkdownRenderer API, and cleans static fragments on owner unload; note BOM/CRLF, supplied package bytes and unrelated enabled plugin IDs are preserved.
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: Unexpected reported/unhandled errors occurred; inspect D:\source\DecomTest\RonSijm.Slopsidian\.runtime\error-log-validation-20261027\.runtime\evidence\renderers-smoke-errors.jsonl
++ actual - expected
+
++ [
++   {
++     error: {
++       message: 'The linked file does not exist: Missing renderer target',
++       name: 'Error',
++       stack: 'Error: The linked file does not exist: Missing renderer target\n' +
++         '    at openMarkdownLink (http://127.0.0.1:57248/js/editor-host.e1qajmvyrc.js:68407:11)\n' +
++         '    at ReadingView.follow (http://127.0.0.1:57248/js/editor-host.e1qajmvyrc.js:68735:11)\n' +
++         '    at HTMLDivElement.follow (http://127.0.0.1:57248/js/editor-host.e1qajmvyrc.js:68541:14)'
++     },
++     id: '71773d7a-9dd6-4585-bde2-0e5def5c1f6b:0',
++     page: 'http://127.0.0.1:57248/',
++     schemaVersion: 1,
++     session: '71773d7a-9dd6-4585-bde2-0e5def5c1f6b',
++     source: 'notification',
++     timestamp: '2026-10-27T15:19:31.173Z'
++   }
++ ]
+- []
+
+    at Object.finish (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/error-log-validation-20261027/tools/error-log-audit.mjs:47:16)
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/error-log-validation-20261027/tools/smoke.mjs:1520:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/error-log-validation-20261027/tools/smoke.mjs:1528:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

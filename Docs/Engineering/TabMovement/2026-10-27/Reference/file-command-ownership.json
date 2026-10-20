@@ -1,0 +1,51 @@
+{
+  "owned": [
+    {
+      "id": "file-explorer:open",
+      "name": "Files: Show file explorer"
+    },
+    {
+      "id": "file-explorer:reveal-active-file",
+      "name": "Files: Reveal current file in navigation"
+    },
+    {
+      "id": "file-explorer:new-folder",
+      "name": "Files: Create new folder"
+    }
+  ],
+  "globalShape": "function(e){e.name=this.instance.name+\": \"+e.name,this.commands.push(e)}",
+  "registered": [
+    {
+      "id": "file-explorer:new-file",
+      "name": "Create new note"
+    },
+    {
+      "id": "file-explorer:new-file-in-current-tab",
+      "name": "Create new note in current tab"
+    },
+    {
+      "id": "file-explorer:new-file-in-new-pane",
+      "name": "Create note to the right"
+    },
+    {
+      "id": "file-explorer:move-file",
+      "name": "Move current file to another folder"
+    },
+    {
+      "id": "file-explorer:duplicate-file",
+      "name": "Make a copy of the current file"
+    },
+    {
+      "id": "file-explorer:open",
+      "name": "Files: Show file explorer"
+    },
+    {
+      "id": "file-explorer:reveal-active-file",
+      "name": "Files: Reveal current file in navigation"
+    },
+    {
+      "id": "file-explorer:new-folder",
+      "name": "Files: Create new folder"
+    }
+  ]
+}

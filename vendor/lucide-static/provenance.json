@@ -1,0 +1,19 @@
+{
+  "package": "lucide-static",
+  "version": "0.468.0",
+  "url": "https://registry.npmjs.org/lucide-static/-/lucide-static-0.468.0.tgz",
+  "integrity": "sha512-JvpWui2umxRyEVMoETfMzb+qKqibV/sdoqJbKmW1JLdkuhXluJKoO6NqCbvCK/vAbUuH5bTEFD4T6uECsrNcnA==",
+  "license": "ISC",
+  "symbols": 1544,
+  "aliases": 210,
+  "upstreamSha256": {
+    "sprite.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+    "LICENSE": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "dist/esm/lucide-static.js": "43b2ee9ff86a847d181bc9c3158bae39bb828363488397261c5498fa87a5cf2d"
+  },
+  "sha256": {
+    "src/RonSijm.Slopsidian/wwwroot/lucide-icons.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+    "src/RonSijm.Slopsidian/wwwroot/lucide-icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "client/lucide-icon-aliases.ts": "80a7b2431003264c38ce37596389ea98e4f80ce6ee871f236b118be4cb045354"
+  }
+}

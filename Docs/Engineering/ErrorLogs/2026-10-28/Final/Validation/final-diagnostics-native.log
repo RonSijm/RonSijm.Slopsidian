@@ -1,0 +1,4 @@
+PASS DOM helpers allow instance overrides and still deliver an actual same-origin document migration callback.
+PASS Caught notifications, message-only window errors and rejection events persist stacks, origins, browser locations, active view context and causes in the application logfile.
+PASS The error notification's actual Download log button exports the persisted records and original cause stack.
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

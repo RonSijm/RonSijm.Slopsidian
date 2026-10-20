@@ -1,0 +1,17 @@
+{
+  "status": "observed-limitation",
+  "host": "Existing isolated Slopsidian desktop build; supplied plugin packages unchanged",
+  "plugin": "obsidian-admonition",
+  "failedCheck": {
+    "plugin": "obsidian-admonition",
+    "label": "render the three prepared custom types",
+    "status": "failed",
+    "error": "Error: Timed out: custom admonition blocks\n    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/check-deep-plugin-slopsidian.mjs:27:223)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/check-deep-plugin-slopsidian.mjs:54:5\n    at async workflow (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/check-deep-plugin-slopsidian.mjs:30:161)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/check-deep-plugin-slopsidian.mjs:51:3"
+  },
+  "diagnostics": [
+    "Error: A Markdown render child needs a distinct owned element and component lifecycle.\n    at Object.addChild (http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67163:15)\n    at ee.getAdmonitionElement (vault-plugin:obsidian-admonition:34:606)\n    at ee.postprocessor (vault-plugin:obsidian-admonition:32:560)\n    at eval (vault-plugin:obsidian-admonition:35:870)\n    at http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67085:17\n    at Array.map (<anonymous>)\n    at http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67071:32\n    at http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67196:15",
+    "Error: A Markdown render child needs a distinct owned element and component lifecycle.\n    at Object.addChild (http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67163:15)\n    at ee.getAdmonitionElement (vault-plugin:obsidian-admonition:34:606)\n    at ee.postprocessor (vault-plugin:obsidian-admonition:32:560)\n    at eval (vault-plugin:obsidian-admonition:35:870)\n    at http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67085:17\n    at Array.map (<anonymous>)\n    at http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67071:32\n    at http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67196:15",
+    "Error: A Markdown render child needs a distinct owned element and component lifecycle.\n    at Object.addChild (http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67163:15)\n    at ee.getAdmonitionElement (vault-plugin:obsidian-admonition:34:606)\n    at ee.postprocessor (vault-plugin:obsidian-admonition:32:560)\n    at eval (vault-plugin:obsidian-admonition:35:870)\n    at http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67085:17\n    at Array.map (<anonymous>)\n    at http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67071:32\n    at http://127.0.0.1:55356/js/editor-host.0rkiiz6k3s.js:67196:15"
+  ],
+  "workaround": "Prepared examples now use the native custom-callout form verified in the final Slopsidian report."
+}

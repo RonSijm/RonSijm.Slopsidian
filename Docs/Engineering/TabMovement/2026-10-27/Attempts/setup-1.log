@@ -1,0 +1,50 @@
+
+(node:45476) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:1584/devtools/browser/9c133c2c-8db2-4f91-9af2-a37186bfc6a1
+ELECTRON_HOST_PID 45476
+DOTNET_HOST_PID 24448
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-X5plrW
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:50815
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:50815
+warn: RonSijm.Slopsidian.Services.VaultService[0]
+      Cannot read plugin manifest in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-X5plrW\.obsidian\plugins\workspace-tab-probe
+      RonSijm.Slopsidian.Services.VaultException: The plugin manifest is missing a valid description.
+         at RonSijm.Slopsidian.Services.VaultService.RequiredString(JsonElement manifest, String name) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 760
+         at RonSijm.Slopsidian.Services.VaultService.ReadManifest(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 753
+         at RonSijm.Slopsidian.Services.VaultService.Scan(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 573
+warn: RonSijm.Slopsidian.Services.VaultService[0]
+      Cannot read plugin manifest in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-X5plrW\.obsidian\plugins\workspace-tab-probe
+      RonSijm.Slopsidian.Services.VaultException: The plugin manifest is missing a valid description.
+         at RonSijm.Slopsidian.Services.VaultService.RequiredString(JsonElement manifest, String name) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 760
+         at RonSijm.Slopsidian.Services.VaultService.ReadManifest(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 753
+         at RonSijm.Slopsidian.Services.VaultService.Scan(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 573
+warn: RonSijm.Slopsidian.Services.VaultService[0]
+      Cannot read plugin manifest in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-X5plrW\.obsidian\plugins\workspace-tab-probe
+      RonSijm.Slopsidian.Services.VaultException: The plugin manifest is missing a valid description.
+         at RonSijm.Slopsidian.Services.VaultService.RequiredString(JsonElement manifest, String name) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 760
+         at RonSijm.Slopsidian.Services.VaultService.ReadManifest(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 753
+         at RonSijm.Slopsidian.Services.VaultService.Scan(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 573
+warn: RonSijm.Slopsidian.Services.VaultService[0]
+      Cannot read plugin manifest in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-X5plrW\.obsidian\plugins\workspace-tab-probe
+      RonSijm.Slopsidian.Services.VaultException: The plugin manifest is missing a valid description.
+         at RonSijm.Slopsidian.Services.VaultService.RequiredString(JsonElement manifest, String name) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 760
+         at RonSijm.Slopsidian.Services.VaultService.ReadManifest(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 753
+         at RonSijm.Slopsidian.Services.VaultService.Scan(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 573
+warn: RonSijm.Slopsidian.Services.VaultService[0]
+      Cannot read plugin manifest in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-X5plrW\.obsidian\plugins\workspace-tab-probe
+      RonSijm.Slopsidian.Services.VaultException: The plugin manifest is missing a valid description.
+         at RonSijm.Slopsidian.Services.VaultService.RequiredString(JsonElement manifest, String name) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 760
+         at RonSijm.Slopsidian.Services.VaultService.ReadManifest(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 753
+         at RonSijm.Slopsidian.Services.VaultService.Scan(String directory) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 573
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

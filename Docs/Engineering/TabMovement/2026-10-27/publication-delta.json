@@ -1,0 +1,16 @@
+{
+  "scope": "Only the accepted verification catalogue changed between functional acceptance and final status UI publication; runtime binaries and other bound artifacts are identical.",
+  "sourceFingerprint": "323b7e5eb9cc437d25fd453741f0d791930104b659ac974e2b2b8e07ce8f6e35",
+  "desktop": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+      "sha256": "9523524fcb3edff7287afcc6a406800d93ad1665ecbb5508cd16e99b709ff462"
+    }
+  ],
+  "web": [
+    {
+      "path": "core-verification.json",
+      "sha256": "9523524fcb3edff7287afcc6a406800d93ad1665ecbb5508cd16e99b709ff462"
+    }
+  ]
+}

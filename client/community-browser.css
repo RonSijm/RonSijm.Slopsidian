@@ -1,0 +1,16 @@
+.modal.community-browser { width: min(1050px, 94vw); max-width: 94vw; }
+.community-browser .modal-content { max-height: 78vh; overflow: auto; }
+.community-browser-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 12px 0; }
+.community-browser-columns { display: grid; grid-template-columns: minmax(200px, 2fr) minmax(260px, 3fr); gap: 20px; }
+.community-browser-columns > section { min-width: 0; }
+#community-catalog-search { width: 100%; }
+#community-catalog-list { max-height: 45vh; overflow: auto; margin-top: 10px; }
+.community-catalog-entry { padding: 8px 0; border-bottom: 1px solid var(--background-modifier-border); }
+.community-catalog-entry > button { text-align: left; width: 100%; }
+.community-catalog-entry > button[aria-pressed="true"] { border-color: var(--interactive-accent); }
+.community-catalog-entry p { margin: 6px 0; font-size: 0.9em; }
+#community-plugin-detail { overflow-wrap: anywhere; }
+@media (max-width: 650px) {
+  .community-browser-columns { grid-template-columns: minmax(0, 1fr); }
+  #community-catalog-list { max-height: 28vh; }
+}

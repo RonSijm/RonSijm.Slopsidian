@@ -1,0 +1,6 @@
+PASS Trusted tab drags and Ctrl+Shift+PageUp reorder the actual headers while retaining both dirty buffers, shared Reading peers, editor selection/undo, pin, scroll, history and plugin ownership without saving notes.
+PASS Tab actions and real cross-pane drags move the same note/plugin views, prune an emptied nested pane, and keep the plugin iframe document, state and single owned event subscription alive.
+PASS Escape, removed source tabs, an in-progress vault transition and foreign/stale drag payloads cannot move a tab, retain drag markers, save a dirty buffer or duplicate a view.
+PASS A real drag auto-scrolls an overflowing tab strip to reveal an offscreen insertion point; dropping there retains the source instance and cleans up all insertion and drag styling.
+PASS Explicitly saved rearranged layouts retain order, panes, active tab, modes, pins and opaque plugin state after a full desktop restart or real-folder WASM reconnect, preserving exact BOM/CRLF note bytes and the original Obsidian workspace.
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

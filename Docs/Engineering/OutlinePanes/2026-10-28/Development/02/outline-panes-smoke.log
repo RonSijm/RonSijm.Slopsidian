@@ -1,0 +1,84 @@
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-ce8997e6-3118-4729-b0df-72ac3d5d6a3c.jsonl
+(node:35116) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:61225/devtools/browser/ff72df6e-0923-4f24-a8de-462b7098490b
+ELECTRON_HOST_PID 35116
+DOTNET_HOST_PID 3808
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-vault-b3x4lw
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55489
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:55489
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-ce8997e6-3118-4729-b0df-72ac3d5d6a3c.jsonl
+(node:49388) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:53691/devtools/browser/b5dcc8b3-df55-4d7e-a0b4-cbdc4d437815
+ELECTRON_HOST_PID 49388
+DOTNET_HOST_PID 43948
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-vault-b3x4lw
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:56948
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:56948
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-ce8997e6-3118-4729-b0df-72ac3d5d6a3c.jsonl
+(node:37448) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:58440/devtools/browser/f7c22fcc-c0be-4d05-b47c-babd6a402ae9
+ELECTRON_HOST_PID 37448
+DOTNET_HOST_PID 47728
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-vault-b3x4lw
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:57870
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:57870
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-ce8997e6-3118-4729-b0df-72ac3d5d6a3c.jsonl
+(node:48156) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:34057/devtools/browser/0aaabbbb-40e6-4013-bcb9-14f115816e58
+ELECTRON_HOST_PID 48156
+DOTNET_HOST_PID 4556
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\.runtime\smoke-vault-b3x4lw
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:56090
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\outline-panes-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:56090
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

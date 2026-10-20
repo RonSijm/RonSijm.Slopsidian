@@ -1,0 +1,74 @@
+PASS A fixture-held real layout queue delays backend selection; its final source snapshot retains live core-view/opaque state and saves dirty note bytes, with no obsolete cleanup write or selected-vault warning.
+PASS Actual source/target switches restore the original live core view, pin and opaque layout fields; an explicit stale direct API write still receives 409 and cannot change the target layout.
+PASS An explicitly injected final-checkpoint failure keeps both hosts on the source vault and restores editability; normal note/layout saving and a real retry recover without disabling future saves or changing target data.
+PASS An actual dirty Canvas survives source/target/source vault changes: preflight persists its real model before owned unload clears it, no old-root or empty-model write occurs, and a fresh loaded pane restores exact saved data, pin and opaque state.
+PASS Independent source/target layouts, opaque fields, live core views and exact note/Canvas/BOM/CRLF/binary/original settings bytes survive a full desktop-process restart with clean client and host error banners.
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: Unexpected reported/unhandled errors occurred; inspect D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\evidence\workspace-transition-smoke-errors.jsonl
++ actual - expected
+
++ [
++   {
++     context: {
++       file: null,
++       leafId: '8db78064-77c8-4665-8745-60af9e62c8f6',
++       vault: 'D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\workspace-startup-validation-20261028\\.runtime\\smoke-vault-Sd7aSz\\Transition target',
++       view: 'empty'
++     },
++     error: {
++       cause: {
++         message: 'A workspace item must be a JSON object.',
++         name: 'Error',
++         stack: 'Error: A workspace item must be a JSON object.\n' +
++           '    at object2 (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:72010:11)\n' +
++           '    at visit3 (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:72029:18)\n' +
++           '    at importObsidianWorkspace (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:72097:16)\n' +
++           '    at prepareOriginalWorkspace (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:72237:20)\n' +
++           '    at startupWorkspace (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:72252:22)\n' +
++           '    at async Workspace.restore (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:74432:23)\n' +
++           '    at async App.setVault (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:91618:22)\n' +
++           '    at async Module.setVault (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:96375:22)\n' +
++           '    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:58237/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n' +
++           '    at async kn._invokeClientMethod (http://127.0.0.1:58237/_framework/blazor.web.9hsif5t8mt.js:1:69340)',
++         stackOrigin: 'original'
++       },
++       message: "Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.",
++       name: 'Error',
++       stack: "Error: Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.\n" +
++         '    at startupWorkspace (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:72262:14)\n' +
++         '    at async Workspace.restore (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:74432:23)\n' +
++         '    at async App.setVault (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:91618:22)\n' +
++         '    at async Module.setVault (http://127.0.0.1:58237/js/editor-host.ajr12ggoqd.js:96375:22)\n' +
++         '    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:58237/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n' +
++         '    at async kn._invokeClientMethod (http://127.0.0.1:58237/_framework/blazor.web.9hsif5t8mt.js:1:69340)',
++       stackOrigin: 'original'
++     },
++     id: '1930c172-87d4-4588-8bcc-31ea265b94a3:0',
++     page: 'http://127.0.0.1:58237/',
++     schemaVersion: 1,
++     session: '1930c172-87d4-4588-8bcc-31ea265b94a3',
++     source: 'notification',
++     timestamp: '2026-10-28T12:05:11.373Z'
++   }
++ ]
+- []
+
+    at Object.finish (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/workspace-startup-validation-20261028/tools/error-log-audit.mjs:58:16)
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/workspace-startup-validation-20261028/tools/smoke.mjs:1549:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/workspace-startup-validation-20261028/tools/smoke.mjs:1557:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

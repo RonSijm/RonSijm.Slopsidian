@@ -1,0 +1,690 @@
+{
+  "status": "failed",
+  "scope": "backlink-workspace-panes",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-29T01:04:55.496Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\backlink-panes-validation-20261029\\.runtime\\smoke-vault-CIOuvT",
+  "launcherPid": 36968,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 36968,
+      "electronPid": 36968,
+      "dotnetPid": 26956,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 40452,
+      "electronPid": 40452,
+      "dotnetPid": 50148,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.14",
+  "sourceFingerprint": "1cb53dc41e730246ade713ab53bc374e865dc627509b3eb1609f97dc9be6336c",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "controlledShutdownConsoleErrors": [],
+  "error": "Error: Timed out waiting for Backlinks backlink-a linked Backlink panes/Source1.md count 4\n    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/backlink-panes-validation-20261029/tools/smoke.mjs:361:9)\n    at async waitExpression (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/backlink-panes-validation-20261029/tools/smoke.mjs:453:3)\n    at async checkBacklinkPanes (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/backlink-panes-validation-20261029/tools/backlink-pane-scenarios.mjs:35:3)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/backlink-panes-validation-20261029/tools/smoke.mjs:780:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelectorAll(\\\"[data-backlink-pane=\\\\\\\"backlink-a\\\\\\\"] [data-backlink-kind=\\\\\\\"linked\\\\\\\"] [data-backlink-open=\\\\\\\"Backlink panes/Source1.md\\\\\\\"][data-backlink-match]\\\").length===4)))()\");\n    if(result&&typeof result.then===\"fu"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [
+      {
+        "id": "backlink-pane-probe",
+        "loaded": "false"
+      }
+    ],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "74e24ad7-614f-4757-ae6e-814024421125",
+        "type": "markdown",
+        "path": "Backlink panes/Alpha.md",
+        "text": "---\r\naliases: [Seed]\r\n---\r\n# Alpha\r\n\r\n## Section\r\n\r\nBlock text. ^block\r\n",
+        "sessionText": "---\r\naliases: [Seed]\r\n---\r\n# Alpha\r\n\r\n## Section\r\n\r\nBlock text. ^block\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 64
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "20015a93-d3f5-40f5-9bec-6e5203eb64b7",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "c3513b13-e023-485c-9210-fdc400c00b1e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "74e24ad7-614f-4757-ae6e-814024421125",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Backlink panes/Alpha.md",
+                    "mode": "source",
+                    "source": true
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          }
+        ]
+      },
+      "active": "74e24ad7-614f-4757-ae6e-814024421125",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-navigation": {
+          "lastMainLeaf": "74e24ad7-614f-4757-ae6e-814024421125",
+          "lastFile": "Backlink panes/Alpha.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "consoleErrors": [
+    "[2026-10-29T01:04:58.146Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-29T01:05:03.150Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "Error: Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.\n    at startupWorkspace (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:72380:14)\n    at async Workspace.restore (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:74654:23)\n    at async App.setVault (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:94964:22)\n    at async Module.setVault (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:100514:22)\n    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:57534/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n    at async kn._invokeClientMethod (http://127.0.0.1:57534/_framework/blazor.web.9hsif5t8mt.js:1:69340)",
+    "[2026-10-29T01:05:25.798Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-29T01:05:30.810Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 50148,
+  "electronPid": 40452,
+  "completedAt": "2026-10-29T01:05:30.963Z",
+  "errorLogAudit": {
+    "status": "failed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\backlink-panes-validation-20261029\\.runtime\\evidence\\backlink-panes-smoke-errors.jsonl",
+    "nativePaths": [
+      "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\backlink-panes-validation-20261029\\.runtime\\smoke-profile\\logs\\errors-smoke-808fe1b5-523b-4b5b-b2aa-a635a4d3907b.jsonl"
+    ],
+    "records": 1,
+    "expected": 0,
+    "unexpected": [
+      {
+        "schemaVersion": 1,
+        "id": "b9655772-7975-4119-9793-3bb7fa7bdada:0",
+        "session": "b9655772-7975-4119-9793-3bb7fa7bdada",
+        "timestamp": "2026-10-29T01:05:05.428Z",
+        "source": "notification",
+        "error": {
+          "name": "Error",
+          "message": "Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.",
+          "stack": "Error: Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.\n    at startupWorkspace (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:72380:14)\n    at async Workspace.restore (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:74654:23)\n    at async App.setVault (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:94964:22)\n    at async Module.setVault (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:100514:22)\n    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:57534/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n    at async kn._invokeClientMethod (http://127.0.0.1:57534/_framework/blazor.web.9hsif5t8mt.js:1:69340)",
+          "stackOrigin": "original",
+          "cause": {
+            "name": "Error",
+            "message": "A sidebar needs a positive width and a Boolean collapsed flag.",
+            "stack": "Error: A sidebar needs a positive width and a Boolean collapsed flag.\n    at side (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:72159:13)\n    at importObsidianWorkspace (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:72177:16)\n    at prepareOriginalWorkspace (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:72350:20)\n    at startupWorkspace (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:72370:22)\n    at async Workspace.restore (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:74654:23)\n    at async App.setVault (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:94964:22)\n    at async Module.setVault (http://127.0.0.1:57534/js/editor-host.6jxo8u3m78.js:100514:22)\n    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:57534/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n    at async kn._invokeClientMethod (http://127.0.0.1:57534/_framework/blazor.web.9hsif5t8mt.js:1:69340)",
+            "stackOrigin": "original"
+          }
+        },
+        "page": "http://127.0.0.1:57534/",
+        "context": {
+          "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\backlink-panes-validation-20261029\\.runtime\\smoke-vault-CIOuvT",
+          "file": null,
+          "view": "empty",
+          "leafId": "96c02763-fdc7-4f50-89e7-71f390d73e42"
+        }
+      }
+    ],
+    "sha256": "882566a713959f4d0fa8dcc4e7aab1bb16edbe61284df01407d8b0f3a7598f54",
+    "includesFinalTeardown": true
+  }
+}

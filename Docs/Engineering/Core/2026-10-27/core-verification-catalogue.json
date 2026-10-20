@@ -1,0 +1,945 @@
+{
+  "schemaVersion": 1,
+  "sourceFingerprint": "e6376feb207a8eb872dc2a7a0132f9ff57e863f1b918349b407a2c0b6b0e9ca3",
+  "hosts": {
+    "desktop": {
+      "file-explorer": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "file-explorer:lifecycle",
+          "file-explorer:settings",
+          "file-explorer:restart",
+          "file-explorer:basic-navigation",
+          "file-explorer:file-operations"
+        ],
+        "passedCases": [
+          "file-explorer:lifecycle",
+          "file-explorer:settings",
+          "file-explorer:restart",
+          "file-explorer:basic-navigation",
+          "file-explorer:file-operations"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "global-search": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "global-search:lifecycle",
+          "global-search:settings",
+          "global-search:restart",
+          "global-search:query",
+          "global-search:updates"
+        ],
+        "passedCases": [
+          "global-search:lifecycle",
+          "global-search:settings",
+          "global-search:restart",
+          "global-search:query",
+          "global-search:updates"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "switcher": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "switcher:lifecycle",
+          "switcher:settings",
+          "switcher:restart",
+          "switcher:find-note",
+          "switcher:new-tab"
+        ],
+        "passedCases": [
+          "switcher:lifecycle",
+          "switcher:settings",
+          "switcher:restart",
+          "switcher:find-note",
+          "switcher:new-tab"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "graph": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "graph:lifecycle",
+          "graph:settings",
+          "graph:restart",
+          "graph:global-local",
+          "graph:filter-groups"
+        ],
+        "passedCases": [
+          "graph:lifecycle",
+          "graph:settings",
+          "graph:restart",
+          "graph:global-local",
+          "graph:filter-groups"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "backlink": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "backlink:lifecycle",
+          "backlink:settings",
+          "backlink:restart",
+          "backlink:references"
+        ],
+        "passedCases": [
+          "backlink:lifecycle",
+          "backlink:settings",
+          "backlink:restart",
+          "backlink:references"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "canvas": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "canvas:lifecycle",
+          "canvas:settings",
+          "canvas:restart",
+          "canvas:roundtrip",
+          "canvas:interaction"
+        ],
+        "passedCases": [
+          "canvas:lifecycle",
+          "canvas:settings",
+          "canvas:restart",
+          "canvas:roundtrip",
+          "canvas:interaction"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "outgoing-link": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "outgoing-link:lifecycle",
+          "outgoing-link:settings",
+          "outgoing-link:restart",
+          "outgoing-link:targets"
+        ],
+        "passedCases": [
+          "outgoing-link:lifecycle",
+          "outgoing-link:settings",
+          "outgoing-link:restart",
+          "outgoing-link:targets"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "tag-pane": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "tag-pane:lifecycle",
+          "tag-pane:settings",
+          "tag-pane:restart",
+          "tag-pane:nested-tags"
+        ],
+        "passedCases": [
+          "tag-pane:lifecycle",
+          "tag-pane:settings",
+          "tag-pane:restart",
+          "tag-pane:nested-tags"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "footnotes": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "footnotes:lifecycle",
+          "footnotes:settings",
+          "footnotes:restart",
+          "footnotes:references"
+        ],
+        "passedCases": [
+          "footnotes:lifecycle",
+          "footnotes:settings",
+          "footnotes:restart",
+          "footnotes:references"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "properties": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "properties:lifecycle",
+          "properties:settings",
+          "properties:restart",
+          "properties:typed-edit",
+          "properties:catalog"
+        ],
+        "passedCases": [
+          "properties:lifecycle",
+          "properties:settings",
+          "properties:restart",
+          "properties:typed-edit",
+          "properties:catalog"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "page-preview": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "page-preview:lifecycle",
+          "page-preview:settings",
+          "page-preview:restart",
+          "page-preview:hover"
+        ],
+        "passedCases": [
+          "page-preview:lifecycle",
+          "page-preview:settings",
+          "page-preview:restart",
+          "page-preview:hover"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "daily-notes": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "daily-notes:lifecycle",
+          "daily-notes:settings",
+          "daily-notes:restart",
+          "daily-notes:create-today",
+          "daily-notes:navigation"
+        ],
+        "passedCases": [
+          "daily-notes:lifecycle",
+          "daily-notes:settings",
+          "daily-notes:restart",
+          "daily-notes:create-today",
+          "daily-notes:navigation"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "templates": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "templates:lifecycle",
+          "templates:settings",
+          "templates:restart",
+          "templates:insert",
+          "templates:date-time"
+        ],
+        "passedCases": [
+          "templates:lifecycle",
+          "templates:settings",
+          "templates:restart",
+          "templates:insert",
+          "templates:date-time"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "note-composer": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "note-composer:lifecycle",
+          "note-composer:settings",
+          "note-composer:restart",
+          "note-composer:merge",
+          "note-composer:extract"
+        ],
+        "passedCases": [
+          "note-composer:lifecycle",
+          "note-composer:settings",
+          "note-composer:restart",
+          "note-composer:merge",
+          "note-composer:extract"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "command-palette": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "command-palette:lifecycle",
+          "command-palette:settings",
+          "command-palette:restart",
+          "command-palette:execute",
+          "command-palette:availability"
+        ],
+        "passedCases": [
+          "command-palette:lifecycle",
+          "command-palette:settings",
+          "command-palette:restart",
+          "command-palette:execute",
+          "command-palette:availability"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "slash-command": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "slash-command:lifecycle",
+          "slash-command:settings",
+          "slash-command:restart",
+          "slash-command:picker"
+        ],
+        "passedCases": [
+          "slash-command:lifecycle",
+          "slash-command:settings",
+          "slash-command:restart",
+          "slash-command:picker"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "editor-status": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "editor-status:lifecycle",
+          "editor-status:settings",
+          "editor-status:restart",
+          "editor-status:modes"
+        ],
+        "passedCases": [
+          "editor-status:lifecycle",
+          "editor-status:settings",
+          "editor-status:restart",
+          "editor-status:modes"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "bookmarks": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "bookmarks:lifecycle",
+          "bookmarks:settings",
+          "bookmarks:restart",
+          "bookmarks:organize",
+          "bookmarks:resolve"
+        ],
+        "passedCases": [
+          "bookmarks:lifecycle",
+          "bookmarks:settings",
+          "bookmarks:restart",
+          "bookmarks:organize",
+          "bookmarks:resolve"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "markdown-importer": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "markdown-importer:lifecycle",
+          "markdown-importer:settings",
+          "markdown-importer:restart",
+          "markdown-importer:convert"
+        ],
+        "passedCases": [
+          "markdown-importer:lifecycle",
+          "markdown-importer:settings",
+          "markdown-importer:restart",
+          "markdown-importer:convert"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "zk-prefixer": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "zk-prefixer:lifecycle",
+          "zk-prefixer:settings",
+          "zk-prefixer:restart",
+          "zk-prefixer:create-unique"
+        ],
+        "passedCases": [
+          "zk-prefixer:lifecycle",
+          "zk-prefixer:settings",
+          "zk-prefixer:restart",
+          "zk-prefixer:create-unique"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "random-note": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "random-note:lifecycle",
+          "random-note:settings",
+          "random-note:restart",
+          "random-note:open"
+        ],
+        "passedCases": [
+          "random-note:lifecycle",
+          "random-note:settings",
+          "random-note:restart",
+          "random-note:open"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "outline": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "outline:lifecycle",
+          "outline:settings",
+          "outline:restart",
+          "outline:navigate",
+          "outline:markdown-semantics"
+        ],
+        "passedCases": [
+          "outline:lifecycle",
+          "outline:settings",
+          "outline:restart",
+          "outline:navigate",
+          "outline:markdown-semantics"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "word-count": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "word-count:lifecycle",
+          "word-count:settings",
+          "word-count:restart",
+          "word-count:document",
+          "word-count:selection-unicode"
+        ],
+        "passedCases": [
+          "word-count:lifecycle",
+          "word-count:settings",
+          "word-count:restart",
+          "word-count:document",
+          "word-count:selection-unicode"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "slides": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "slides:lifecycle",
+          "slides:settings",
+          "slides:restart",
+          "slides:present"
+        ],
+        "passedCases": [
+          "slides:lifecycle",
+          "slides:settings",
+          "slides:restart",
+          "slides:present"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "audio-recorder": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "audio-recorder:lifecycle",
+          "audio-recorder:settings",
+          "audio-recorder:restart",
+          "audio-recorder:record"
+        ],
+        "passedCases": [
+          "audio-recorder:lifecycle",
+          "audio-recorder:settings",
+          "audio-recorder:restart",
+          "audio-recorder:record"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "workspaces": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "workspaces:lifecycle",
+          "workspaces:settings",
+          "workspaces:restart",
+          "workspaces:layout-roundtrip",
+          "workspaces:named-workspaces"
+        ],
+        "passedCases": [
+          "workspaces:lifecycle",
+          "workspaces:settings",
+          "workspaces:restart",
+          "workspaces:layout-roundtrip",
+          "workspaces:named-workspaces"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      },
+      "file-recovery": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "file-recovery:lifecycle",
+          "file-recovery:settings",
+          "file-recovery:restart",
+          "file-recovery:restore",
+          "file-recovery:retention"
+        ],
+        "passedCases": [
+          "file-recovery:lifecycle",
+          "file-recovery:settings",
+          "file-recovery:restart",
+          "file-recovery:restore",
+          "file-recovery:retention"
+        ],
+        "checkedAt": "2026-10-27T11:32:53.268Z"
+      }
+    },
+    "web": {
+      "file-explorer": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "file-explorer:lifecycle",
+          "file-explorer:settings",
+          "file-explorer:restart",
+          "file-explorer:basic-navigation",
+          "file-explorer:file-operations"
+        ],
+        "passedCases": [
+          "file-explorer:lifecycle",
+          "file-explorer:settings",
+          "file-explorer:restart",
+          "file-explorer:basic-navigation",
+          "file-explorer:file-operations"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "global-search": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "global-search:lifecycle",
+          "global-search:settings",
+          "global-search:restart",
+          "global-search:query",
+          "global-search:updates"
+        ],
+        "passedCases": [
+          "global-search:lifecycle",
+          "global-search:settings",
+          "global-search:restart",
+          "global-search:query",
+          "global-search:updates"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "switcher": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "switcher:lifecycle",
+          "switcher:settings",
+          "switcher:restart",
+          "switcher:find-note",
+          "switcher:new-tab"
+        ],
+        "passedCases": [
+          "switcher:lifecycle",
+          "switcher:settings",
+          "switcher:restart",
+          "switcher:find-note",
+          "switcher:new-tab"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "graph": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "graph:lifecycle",
+          "graph:settings",
+          "graph:restart",
+          "graph:global-local",
+          "graph:filter-groups"
+        ],
+        "passedCases": [
+          "graph:lifecycle",
+          "graph:settings",
+          "graph:restart",
+          "graph:global-local",
+          "graph:filter-groups"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "backlink": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "backlink:lifecycle",
+          "backlink:settings",
+          "backlink:restart",
+          "backlink:references"
+        ],
+        "passedCases": [
+          "backlink:lifecycle",
+          "backlink:settings",
+          "backlink:restart",
+          "backlink:references"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "canvas": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "canvas:lifecycle",
+          "canvas:settings",
+          "canvas:restart",
+          "canvas:roundtrip",
+          "canvas:interaction"
+        ],
+        "passedCases": [
+          "canvas:lifecycle",
+          "canvas:settings",
+          "canvas:restart",
+          "canvas:roundtrip",
+          "canvas:interaction"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "outgoing-link": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "outgoing-link:lifecycle",
+          "outgoing-link:settings",
+          "outgoing-link:restart",
+          "outgoing-link:targets"
+        ],
+        "passedCases": [
+          "outgoing-link:lifecycle",
+          "outgoing-link:settings",
+          "outgoing-link:restart",
+          "outgoing-link:targets"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "tag-pane": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "tag-pane:lifecycle",
+          "tag-pane:settings",
+          "tag-pane:restart",
+          "tag-pane:nested-tags"
+        ],
+        "passedCases": [
+          "tag-pane:lifecycle",
+          "tag-pane:settings",
+          "tag-pane:restart",
+          "tag-pane:nested-tags"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "footnotes": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "footnotes:lifecycle",
+          "footnotes:settings",
+          "footnotes:restart",
+          "footnotes:references"
+        ],
+        "passedCases": [
+          "footnotes:lifecycle",
+          "footnotes:settings",
+          "footnotes:restart",
+          "footnotes:references"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "properties": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "properties:lifecycle",
+          "properties:settings",
+          "properties:restart",
+          "properties:typed-edit",
+          "properties:catalog"
+        ],
+        "passedCases": [
+          "properties:lifecycle",
+          "properties:settings",
+          "properties:restart",
+          "properties:typed-edit",
+          "properties:catalog"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "page-preview": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "page-preview:lifecycle",
+          "page-preview:settings",
+          "page-preview:restart",
+          "page-preview:hover"
+        ],
+        "passedCases": [
+          "page-preview:lifecycle",
+          "page-preview:settings",
+          "page-preview:restart",
+          "page-preview:hover"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "daily-notes": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "daily-notes:lifecycle",
+          "daily-notes:settings",
+          "daily-notes:restart",
+          "daily-notes:create-today",
+          "daily-notes:navigation"
+        ],
+        "passedCases": [
+          "daily-notes:lifecycle",
+          "daily-notes:settings",
+          "daily-notes:restart",
+          "daily-notes:create-today",
+          "daily-notes:navigation"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "templates": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "templates:lifecycle",
+          "templates:settings",
+          "templates:restart",
+          "templates:insert",
+          "templates:date-time"
+        ],
+        "passedCases": [
+          "templates:lifecycle",
+          "templates:settings",
+          "templates:restart",
+          "templates:insert",
+          "templates:date-time"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "note-composer": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "note-composer:lifecycle",
+          "note-composer:settings",
+          "note-composer:restart",
+          "note-composer:merge",
+          "note-composer:extract"
+        ],
+        "passedCases": [
+          "note-composer:lifecycle",
+          "note-composer:settings",
+          "note-composer:restart",
+          "note-composer:merge",
+          "note-composer:extract"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "command-palette": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "command-palette:lifecycle",
+          "command-palette:settings",
+          "command-palette:restart",
+          "command-palette:execute",
+          "command-palette:availability"
+        ],
+        "passedCases": [
+          "command-palette:lifecycle",
+          "command-palette:settings",
+          "command-palette:restart",
+          "command-palette:execute",
+          "command-palette:availability"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "slash-command": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "slash-command:lifecycle",
+          "slash-command:settings",
+          "slash-command:restart",
+          "slash-command:picker"
+        ],
+        "passedCases": [
+          "slash-command:lifecycle",
+          "slash-command:settings",
+          "slash-command:restart",
+          "slash-command:picker"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "editor-status": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "editor-status:lifecycle",
+          "editor-status:settings",
+          "editor-status:restart",
+          "editor-status:modes"
+        ],
+        "passedCases": [
+          "editor-status:lifecycle",
+          "editor-status:settings",
+          "editor-status:restart",
+          "editor-status:modes"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "bookmarks": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "bookmarks:lifecycle",
+          "bookmarks:settings",
+          "bookmarks:restart",
+          "bookmarks:organize",
+          "bookmarks:resolve"
+        ],
+        "passedCases": [
+          "bookmarks:lifecycle",
+          "bookmarks:settings",
+          "bookmarks:restart",
+          "bookmarks:organize",
+          "bookmarks:resolve"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "markdown-importer": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "markdown-importer:lifecycle",
+          "markdown-importer:settings",
+          "markdown-importer:restart",
+          "markdown-importer:convert"
+        ],
+        "passedCases": [
+          "markdown-importer:lifecycle",
+          "markdown-importer:settings",
+          "markdown-importer:restart",
+          "markdown-importer:convert"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "zk-prefixer": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "zk-prefixer:lifecycle",
+          "zk-prefixer:settings",
+          "zk-prefixer:restart",
+          "zk-prefixer:create-unique"
+        ],
+        "passedCases": [
+          "zk-prefixer:lifecycle",
+          "zk-prefixer:settings",
+          "zk-prefixer:restart",
+          "zk-prefixer:create-unique"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "random-note": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "random-note:lifecycle",
+          "random-note:settings",
+          "random-note:restart",
+          "random-note:open"
+        ],
+        "passedCases": [
+          "random-note:lifecycle",
+          "random-note:settings",
+          "random-note:restart",
+          "random-note:open"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "outline": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "outline:lifecycle",
+          "outline:settings",
+          "outline:restart",
+          "outline:navigate",
+          "outline:markdown-semantics"
+        ],
+        "passedCases": [
+          "outline:lifecycle",
+          "outline:settings",
+          "outline:restart",
+          "outline:navigate",
+          "outline:markdown-semantics"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "word-count": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "word-count:lifecycle",
+          "word-count:settings",
+          "word-count:restart",
+          "word-count:document",
+          "word-count:selection-unicode"
+        ],
+        "passedCases": [
+          "word-count:lifecycle",
+          "word-count:settings",
+          "word-count:restart",
+          "word-count:document",
+          "word-count:selection-unicode"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "slides": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "slides:lifecycle",
+          "slides:settings",
+          "slides:restart",
+          "slides:present"
+        ],
+        "passedCases": [
+          "slides:lifecycle",
+          "slides:settings",
+          "slides:restart",
+          "slides:present"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "audio-recorder": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "audio-recorder:lifecycle",
+          "audio-recorder:settings",
+          "audio-recorder:restart",
+          "audio-recorder:record"
+        ],
+        "passedCases": [
+          "audio-recorder:lifecycle",
+          "audio-recorder:settings",
+          "audio-recorder:restart",
+          "audio-recorder:record"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "workspaces": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "workspaces:lifecycle",
+          "workspaces:settings",
+          "workspaces:restart",
+          "workspaces:layout-roundtrip",
+          "workspaces:named-workspaces"
+        ],
+        "passedCases": [
+          "workspaces:lifecycle",
+          "workspaces:settings",
+          "workspaces:restart",
+          "workspaces:layout-roundtrip",
+          "workspaces:named-workspaces"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      },
+      "file-recovery": {
+        "status": "verified-workflows",
+        "requiredCases": [
+          "file-recovery:lifecycle",
+          "file-recovery:settings",
+          "file-recovery:restart",
+          "file-recovery:restore",
+          "file-recovery:retention"
+        ],
+        "passedCases": [
+          "file-recovery:lifecycle",
+          "file-recovery:settings",
+          "file-recovery:restart",
+          "file-recovery:restore",
+          "file-recovery:retention"
+        ],
+        "checkedAt": "2026-10-27T11:25:53.588Z"
+      }
+    }
+  },
+  "scope": "The 27 requested implemented modules: tested workflows, lifecycle, settings availability/configuration, desktop process restart and browser reload/reconnection. This is not complete Obsidian, visual, private API, service, or physical microphone equivalence.",
+  "reference": {
+    "version": "1.12.7",
+    "scope": "Original core registration, real settings UI availability/fields and disable/re-enable command ownership in a disposable example vault; functional cases remain separate",
+    "sha256": "946ceac3b563c261de36c5460a880dbcd41d419b8b6d9d72a93a98d7f04acdcf"
+  },
+  "evidence": {
+    "contractSha256": "ac192f5c228b9c1888faf0bef5a2c7a00fa6d259b3633b4516d783b0b12046d5",
+    "desktopReportSha256": "0393bcee93c8c66cd81121665aba814aaceb8b144810b87dc42e53990dbbeab7",
+    "webReportSha256": "0daab635535d505779414ecb3b534bebd390a098a3644b998b7684698f0978d1"
+  }
+}

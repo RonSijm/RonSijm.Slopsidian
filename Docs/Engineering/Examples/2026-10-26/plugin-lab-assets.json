@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "visiblePathIcons": 205,
+  "sceneElements": 16,
+  "sceneLinks": 4,
+  "dictionaryEntries": 6,
+  "mermaidBuiltins": 98,
+  "mermaidWorkshopElements": 3,
+  "customAdmonitions": 3,
+  "immutablePackageAndTrustFiles": 73,
+  "gitHistoryCommits": 4,
+  "mainCommits": 3,
+  "localBranches": [
+    "main",
+    "indoor-route"
+  ],
+  "remotes": 0,
+  "stageUnstagePreservesEdit": true,
+  "practiceBytesRestored": true
+}

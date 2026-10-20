@@ -1,0 +1,830 @@
+{
+  "status": "failed",
+  "scope": "file-explorer-workspace-panes",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-28T16:19:41.153Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\file-explorer-validation-20261028\\.runtime\\smoke-vault-1pT8VC",
+  "launcherPid": 47988,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "A first-open original layout restores real, pinned Files views in main tabs and a visible sidebar, independent folding/filter/sort and opaque state, alongside an intact Source note.",
+    "Real pointer and keyboard navigation unfolds folders, filters paths case-insensitively without changing another pane, opens files without replacing a pinned explorer, and reveals the active note without stealing editor focus."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 47988,
+      "electronPid": 47988,
+      "dotnetPid": 40164,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 1892,
+      "electronPid": 1892,
+      "dotnetPid": 828,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.14",
+  "sourceFingerprint": "a15b5198797776883cde25ed598e71758c4a0257e6baf829b2f200269f820243",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "controlledShutdownConsoleErrors": [],
+  "error": "Error: Timed out waiting for [data-toggle-plugin=\"explorer-probe\"]\n    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/file-explorer-validation-20261028/tools/smoke.mjs:341:9)\n    at async waitExpression (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/file-explorer-validation-20261028/tools/smoke.mjs:433:3)\n    at async click (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/file-explorer-validation-20261028/tools/smoke.mjs:447:3)\n    at async setCommunityPluginEnabled (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/file-explorer-validation-20261028/tools/community-plugin-test-helpers.mjs:13:5)\n    at async checkFileExplorer (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/file-explorer-validation-20261028/tools/file-explorer-scenarios.mjs:91:3)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/file-explorer-validation-20261028/tools/smoke.mjs:746:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"explorer-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().wi"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "BUTTON",
+      "id": "community-plugins-tab"
+    },
+    "keys": [
+      {
+        "key": "ArrowRight",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "nav-folder-title"
+      },
+      {
+        "key": "ArrowRight",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "nav-folder-title"
+      },
+      {
+        "key": "ArrowLeft",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "nav-file-title is-active"
+      },
+      {
+        "key": "ArrowLeft",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "nav-file-title is-active"
+      },
+      {
+        "key": "ArrowLeft",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "nav-folder-title"
+      },
+      {
+        "key": "ArrowLeft",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "nav-folder-title"
+      },
+      {
+        "key": "ArrowRight",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "nav-folder-title"
+      },
+      {
+        "key": "ArrowRight",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": "nav-folder-title"
+      }
+    ],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [
+      {
+        "id": "explorer-probe",
+        "loaded": "false",
+        "error": "The plugin manifest is missing a valid description."
+      },
+      {
+        "id": "obsidian-icon-folder",
+        "loaded": "false"
+      }
+    ],
+    "clientError": "",
+    "dialogs": [
+      "settings-dialog"
+    ],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "explorer-a",
+        "type": "file-explorer"
+      },
+      {
+        "id": "explorer-b",
+        "type": "file-explorer"
+      },
+      {
+        "id": "explorer-note",
+        "type": "markdown",
+        "path": "Explorer demo/Projects/Note 2.md",
+        "text": "# Note 2\r\n\r\nUnicode λ and 中文.\r\n",
+        "sessionText": "# Note 2\r\n\r\nUnicode λ and 中文.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 28
+      },
+      {
+        "id": "explorer-side",
+        "type": "file-explorer"
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "explorer-main",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "explorer-tabs",
+            "type": "tabs",
+            "dimension": 37,
+            "children": [
+              {
+                "id": "explorer-a",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "opaque": {
+                      "kept": "explorer-a"
+                    },
+                    "collapsedFolders": [],
+                    "autoReveal": true,
+                    "showSearch": true,
+                    "searchQuery": ""
+                  },
+                  "pinned": true
+                }
+              },
+              {
+                "id": "explorer-b",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabeticalReverse",
+                    "opaque": {
+                      "kept": "explorer-b"
+                    },
+                    "showSearch": true,
+                    "searchQuery": "Note 10",
+                    "autoReveal": false,
+                    "collapsedFolders": []
+                  },
+                  "pinned": true
+                }
+              }
+            ],
+            "currentTab": 0
+          },
+          {
+            "id": "explorer-note-tabs",
+            "type": "tabs",
+            "dimension": 63,
+            "children": [
+              {
+                "id": "explorer-note",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Explorer demo/Projects/Note 2.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          }
+        ]
+      },
+      "active": "explorer-a",
+      "left": {
+        "width": 295,
+        "collapsed": false,
+        "root": {
+          "id": "explorer-left",
+          "type": "split",
+          "direction": "horizontal",
+          "children": [
+            {
+              "id": "explorer-side-tabs",
+              "type": "tabs",
+              "children": [
+                {
+                  "id": "explorer-side",
+                  "type": "leaf",
+                  "state": {
+                    "type": "file-explorer",
+                    "state": {
+                      "sortOrder": "alphabetical",
+                      "opaque": {
+                        "kept": "explorer-side"
+                      },
+                      "autoReveal": false,
+                      "showSearch": false,
+                      "searchQuery": "",
+                      "collapsedFolders": []
+                    },
+                    "pinned": true
+                  }
+                }
+              ],
+              "currentTab": 0
+            }
+          ]
+        }
+      },
+      "right": {
+        "width": 240,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-startup": {
+          "source": ".obsidian/workspace.json",
+          "version": "743c6a1fdea41fadd832bee1efd472ce9b406aa1bf2169c1eaa241aa5f46e097",
+          "warnings": []
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "explorer-a",
+          "lastFile": "Explorer demo/Projects/Note 2.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "consoleErrors": [
+    "[2026-10-28T16:19:43.985Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T16:19:48.995Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T16:20:12.768Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T16:20:17.782Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 828,
+  "electronPid": 1892,
+  "completedAt": "2026-10-28T16:20:17.981Z",
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\file-explorer-validation-20261028\\.runtime\\evidence\\file-explorer-smoke-errors.jsonl",
+    "nativePaths": [
+      "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\file-explorer-validation-20261028\\.runtime\\smoke-profile\\logs\\errors-smoke-d92dbf0d-0f55-4ad8-8052-e15a8966341e.jsonl"
+    ],
+    "records": 0,
+    "expected": 0,
+    "unexpected": [],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "includesFinalTeardown": true
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "status": "passed",
+  "verifiedAt": "2026-10-26T18:44:21.149Z",
+  "scope": "Bounded tags/properties/rendering and shared Markdown scrolling, not complete Obsidian or GitHub backend equivalence.",
+  "sourceSnapshot": ".runtime/evidence/rendering-parity-validation-snapshot.json",
+  "candidate": ".runtime/rendering-parity-scroll-validation-20261026",
+  "stableSourceFiles": 650,
+  "sharedGeneratedArtifactsUnchanged": [
+    {
+      "path": "src/RonSijm.Slopsidian/wwwroot/js/editor-host.js",
+      "sha256": "84167352d0f0bb9c50cdcfaf3a4236dfa6a3f5c3c18a4b411cd313865cc0c718"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian/wwwroot/js/editor-host.css",
+      "sha256": "b67b57cc03ad6b9e45eefd40082f08b306a35169b3ce3c1a4ee4c75908f84c14"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian/bin/Debug/net10.0/RonSijm.Slopsidian.dll",
+      "sha256": "27362fdcfedb8b9c976f00c77bbcbb55d224e839f46751153c9dafccdec113a1"
+    }
+  ],
+  "mutableWorkspaceState": [
+    {
+      "path": "Example/.obsidian/plugins/recent-files-obsidian/data.json",
+      "capturedSha256": "35c9555661ec436d2dd8f004f65c048c51f533ef4deaabda265132b40bc91cfe",
+      "observedWorkspaceSha256": "d012b94ac2f64c53fd7dd2564e73de6730bff6bac395d6a7ad412dd59bb09ff8",
+      "observedAt": "2026-10-26T18:24:37.367Z",
+      "reason": "Recent-files runtime preferences change while the user operates Example. Captured candidate fixture retained; shared runtime data was not modified."
+    }
+  ],
+  "regressions": 601,
+  "native": {
+    "checks": 13,
+    "stableArtifacts": 68,
+    "rendererReloads": 2,
+    "sessions": 1,
+    "uncaughtErrors": 0,
+    "consoleDiagnostics": [
+      "[2026-10-26T18:35:49.710Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+      "[2026-10-26T18:35:54.722Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+    ]
+  },
+  "wasm": {
+    "checks": 25,
+    "publishedAssets": 22,
+    "scenarioInputs": 29,
+    "rendererSources": 7,
+    "uncaughtErrors": 0,
+    "readOnlyScope": "disabled/read-only UI model fixture"
+  },
+  "retainedNotes": [
+    {
+      "path": "Native tags.md",
+      "bytes": 374,
+      "sha256": "7f1cb074ccd2ccb9ec6d3a6a378d41e179cb42c308db2587d0c7a54030f2b398"
+    },
+    {
+      "path": "Rendering parity.md",
+      "bytes": 249,
+      "sha256": "d2734f8d3fa4f7b1076d646d956d8b82e08345df3cfb498cbabe00e28f3ab026"
+    },
+    {
+      "path": "Garden scrolling.md",
+      "bytes": 6511,
+      "sha256": "a0a00eeff0a3a1443431ab5b02d66e4fece7d50ece3c483f399f8a5b9fbdd5ec"
+    }
+  ],
+  "captures": [
+    {
+      "path": "tags-scroll-preview-top-desktop.png",
+      "bytes": 76717,
+      "sha256": "ffe97b6eac636353566bdc801e0c8acead2f2f6195d9355eae853f8aa747b4ea"
+    },
+    {
+      "path": "tags-scroll-readonly-split-top-desktop.png",
+      "bytes": 128305,
+      "sha256": "696048f2cc1c52dad6af3d0bb97c1bf536bf3f334e91799bd52dcf9db7b5064c"
+    },
+    {
+      "path": "tags-properties-edited-desktop.png",
+      "bytes": 63556,
+      "sha256": "530c8331ea096dce70262bf63b81d45c2277429e76bc5b8b29f563801e4c9d04"
+    },
+    {
+      "path": "tags-sample-desktop.png",
+      "bytes": 76876,
+      "sha256": "5431207519c2b29bb9a6b91a5147c25f623f98d2e8d1e025e5e171d1a1d6e222"
+    },
+    {
+      "path": "tags-scroll-preview-top-web.png",
+      "bytes": 80738,
+      "sha256": "b10ced245e362df3a3d26f1f6a6a3a7a848f5bac4800c53d40dc207cc1765ec6"
+    },
+    {
+      "path": "tags-scroll-readonly-split-top-web.png",
+      "bytes": 134867,
+      "sha256": "97dfdd998a1b37439382a6f731026b1526fde9267d73d838fc13455f804d4623"
+    },
+    {
+      "path": "tags-properties-edited-web.png",
+      "bytes": 61299,
+      "sha256": "36ec12f160acf0967b28a3fb5a90ebd9e755d0f24dc7ac676bb2bb3a416e1137"
+    },
+    {
+      "path": "tags-sample-web.png",
+      "bytes": 75795,
+      "sha256": "1d0f7bb35b2694a7a89672ff4888f0bbd2eb5285687e057870b1c1f155ab5964"
+    }
+  ],
+  "reports": [
+    {
+      "path": "tags-smoke.json",
+      "sha256": "65c9d8eeb21f41709c8fd8fa46b63dc347b85061b23a46aca3abc5722cb2dd3e"
+    },
+    {
+      "path": "tags-web-smoke.json",
+      "sha256": "847f8bee282cdbf935ef310c3a12b4806e6a44c92e41fe3a7602a1292dd95482"
+    }
+  ],
+  "failureBaselines": [
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\tag-reload-selection-failure.json",
+      "sha256": "160875ccf7ce2e25232a6eadd4473a0cb61c00ab8718d3bd28361c04da368e33"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\tag-reload-selection-failure.png",
+      "sha256": "40a8321e0031a00862ef1a0fbcad3d3ab81e34e5c59ed1a0a4e65b8a1dddce0d"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\tag-reload-selection-failure.log",
+      "sha256": "0982f48b9393aab35fc6517ea0ed5d51558cfe1479e434013bce17dc006778a1"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\parity-fixture-file-identity-failure.json",
+      "sha256": "732693d4f20dbe2c3a9ca0acc03ab42f289fb7e3224b080a4f5b526577d02597"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\parity-fixture-file-identity-failure.png",
+      "sha256": "6b419b24fcab7373018ee617bd56b6653c94fe0b1e2c78f46ce7a806d6f44228"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\parity-fixture-file-identity-failure.log",
+      "sha256": "65e073b6a71bea6149db54076c3d5914bf55ce5e3b7a870682a7c66074a80394"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\callout-source-anchor-failure.json",
+      "sha256": "e0eb279dac169191bdbaa9c19140f28f114a1a13e61109d9db368abef9b46cda"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\callout-source-anchor-failure.png",
+      "sha256": "b8a2f2a1b6a8ec96c5573e49b6cd771d8f7ff537601f0555692d70dafd3401ca"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\callout-source-anchor-failure.log",
+      "sha256": "9a420a0d91f2a838133df99fbf1e7e4c3e30dbf2f39bce1ddd8e5824d624e96a"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\inline-stale-wasm-failure.json",
+      "sha256": "9df9be0d2644cde8a76eaff96bf504cc118b9f9a33d9c8a5223022b7b09eb87c"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\inline-stale-wasm-failure.png",
+      "sha256": "258a3619c85fee4e1f534d907d4c6e45e8c43de001133b7c8144a9bcfd132898"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\inline-stale-wasm-failure.log",
+      "sha256": "f16d8876ad03839beb9e5f560785d4eeec157fab70ab6410792e89ff6506f021"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\inline-detached-blur-wasm-failure.json",
+      "sha256": "4298e707a53357e12ea2ef370a7a2207530d8ee57d7ac62a72f85836b43ac1c7"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\inline-detached-blur-wasm-failure.png",
+      "sha256": "36ec12f160acf0967b28a3fb5a90ebd9e755d0f24dc7ac676bb2bb3a416e1137"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\inline-detached-blur-wasm-failure.log",
+      "sha256": "39ae25824919d691655afc173f633c5f29d915ebeccf27a167a2fe79e32a1cbc"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\inline-forced-refresh-native-failure.json",
+      "sha256": "6e1c84ba77d0f8c1edc71228c7540e0074fcb0139372b7321f2d9bed84c96ff6"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\inline-forced-refresh-native-failure.png",
+      "sha256": "b937ff7bccf74b3b1b0fab4e33c6455b297ad4c4e4e9b61f4ec3dc0d3c6407d0"
+    },
+    {
+      "path": ".runtime\\rendering-parity-scroll-validation-20261026\\.runtime\\evidence\\inline-forced-refresh-native-failure.log",
+      "sha256": "b4632741693fa14a84bed58bf4cb457e23b78481c21d8d47d78cfd2017066d8f"
+    }
+  ]
+}

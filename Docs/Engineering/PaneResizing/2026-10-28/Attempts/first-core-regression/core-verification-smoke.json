@@ -1,0 +1,2453 @@
+{
+  "status": "failed",
+  "scope": "core-verification-targets",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-28T08:39:36.194Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\pane-resize-validation-20261028\\.runtime\\smoke-vault-Epv7zs",
+  "launcherPid": 45292,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "Core foundations exercised real file-tree creation/navigation, filtered command execution, fuzzy switching, heading navigation, live counts, and split/pin/sidebar layout restoration with no community plugins installed or enabled.",
+    "Core controls removed/restored actual commands, ribbon/view resources and keyboard access, isolated state between vaults, retained unknown configuration fields, and survived disabled/enabled desktop process restarts. Templates, dated notes, unique collision handling and random-note empty/attachment cases ran through real UI.",
+    "Command palette settings added/reordered/removed real pinned commands and respected editor/conditional availability. Quick switcher opened a result with Ctrl+Enter, cancelled and created a missing nested note, and handled an empty vault without creating a file.",
+    "Real source selections, edits/undo/redo and Reading mode count frontmatter only when selected, use reference numeric/punctuation/CJK/kana/Korean/Tamil/Tibetan rules and UTF-16 emoji/CRLF lengths without writing the note.",
+    "Outline uses actual ATX/Setext metadata, excludes YAML/comments/indented and nested-length fences, nests skipped levels correctly, folds by pointer/keyboard/all controls and follows real source-cursor navigation.",
+    "Dirty heading edits, undo/redo and external saved replacements refresh the real Outline; Reading heading navigation/scroll changes active highlighting and emits the actual public Markdown scroll event.",
+    "Disable/re-enable removes owned Outline controls and retained listeners, restores counts, and full native restart or real-folder WASM reconnect retains the real files/mode without rewriting original workspace/community configuration.",
+    "The real status control hides for empty/image leaves, honors explicit app.json Live Preview, offers checked keyboard/pointer Source/Reading/Live Preview choices and applies actual in-place Markdown styles without changing native getMode semantics or file bytes.",
+    "Real formatted-text typing and task-checkbox input preserve selections, undo/redo, dirty buffers and community editor extensions across all three modes; only explicit save writes the exact original BOM/CRLF with the intended task marker changed.",
+    "CodeMirror displays an actually decoded local image, rendered table and local Mermaid image; their real Edit buttons reveal original source and revoke resources, detached task controls are inert, and Ctrl-clicking a wiki alias opens the resolved heading in a separate real Reading leaf.",
+    "Real split panes retain independent per-leaf modes with a shared document and community extensions; public same-file setViewState preserves unsaved text/history, rejects malformed source flags without disturbing the view, and retains opaque state.",
+    "Actual external writes refresh clean Source/Live Preview peers, but conflicting saved bytes cannot overwrite a dirty shared buffer; the guarded save rejects visibly to its caller and explicit discard/reload retains the external BOM/CRLF document.",
+    "Disabling Editor status removes its open menu, status button and retained listeners without disabling editing modes; native restart or actual-folder WASM reconnect preserves source flags, opaque leaf state and persisted plugin ownership while leaving app/workspace bytes and other enabled IDs unchanged.",
+    "Actual selection extraction saves previously dirty text, creates a real nested target, resolves source/template links independently, carries image/reference/footnote definitions, and retains BOM/CRLF plus real source undo/redo.",
+    "Cancel and retained closed-dialog controls write nothing; retargeted source views, unresolved relative-link transfers, post-open external/local edits and missing templates reject visibly without losing bytes, creating a target or implicitly saving concurrent local text.",
+    "Heading extraction includes children and blocks, rejects duplicate target anchors, supports Shift+Enter prepend and embed/none replacements, and selectively repairs real Markdown/properties/Canvas while whole-note and remaining-section links stay on the source.",
+    "Merge confirmation is enforced; a real preflight veto and a target changed after planning retain all source/reference files, newer target bytes and restored source panes.",
+    "Confirmed merge combines precise YAML/body data with guarded source trash and Markdown/Canvas reference repair, opens its real target and emits one owned modification/deletion; a real file-menu action also merges a non-active note and Ctrl+Enter creates its new nested target.",
+    "A real modify-event subscriber can edit an open target after commit: Note composer reports the committed-but-unsaved state, retains its text, disables repeat application and permits a normal subsequent save.",
+    "Real select/template/confirmation settings preserve unknown BOM-prefixed configuration, disable removes owned commands/dialog/listeners, and desktop restart or real-folder browser reconnect restores both composed files and enabled runtime.",
+    "An actual CommonJS plugin uses shared Menu/Item/Separator types, rich labels, checked/disabled rows, sections, viewport placement, pointer/keyboard actions and dismissal; real file/editor events carry the current TFile, MarkdownView and CodeMirror editor.",
+    "Actual editor context actions retain copy/cut/select-all, undoable CRLF-aware paste, empty-paste preservation and visible permission/stale/multiple-selection errors using a bounded clipboard API fixture; the system clipboard is never read or changed.",
+    "Closing the actual source view or disabling the plugin removes owned menus and retained button listeners; re-enable has exactly one event subscriber, and only explicit plugin toggles change community enablement.",
+    "The actual opt-in converter previews Roam/Bear/tasks/numeric links and legacy frontmatter in real vault files; Cancel and a retained closed-dialog button write no notes.",
+    "Confirmed legacy conversion rewrites the actual BOM/CRLF note with lossless unknown numeric/YAML data and refreshes its real clean editor; version-guarded Undo restores every original Markdown file byte-for-byte.",
+    "Newer external versions, ambiguous numeric destinations and post-preview dirty edits reject visibly without partial note writes, implicit saves or loss of local text; generated link text disambiguates real files.",
+    "Readable numeric aliases are a separate working conversion; disable removes real converter UI/ribbon/commands/listeners, and restart/reconnect restores enablement without altering unknown settings or original note bytes.",
+    "Outgoing links lists real wiki/Markdown/property links and embeds, deduplicates the same destination/subpath, and explicitly disables unsupported attachment/traversal actions.",
+    "Outgoing links navigates to exact heading/block context, creates a missing Markdown target without changing its source, and keeps a pinned sidebar on its note.",
+    "Dirty-buffer edits, undo/redo, external saves and target renames refresh outgoing resolution without overwriting vault files or secretly rewriting links.",
+    "Unlinked aliases navigate to their source; collapse/follow/pin state survives an actual reload and releasing the pin follows the active note.",
+    "Disabling Outgoing links removes its commands, view and enabled-instance lookup; re-enabling creates one fresh view with the persisted state.",
+    "Image Fit stays inside real fractional CSS viewports without feedback scrollbars, including width- and height-constrained images.",
+    "Outgoing opens real decoded raster/Canvas leaves, honors modified-click tabs, follows provider registration/removal and preserves exact attachment bytes; image fit/zoom/scroll work and closed views release URLs and retained controls.",
+    "Reading links share registered attachment navigation; live external pixel changes, visible decode errors/recovery and guarded image rename refresh the actual view without writing image bytes or losing opaque state.",
+    "Actual image leaves, zoom, opaque state and pinned Outgoing restore after full desktop restart/browser reconnect while original workspace absence/bytes, Markdown and exact binary attachments stay preserved.",
+    "Search executes real worker-backed Boolean/regex/path/file/tag/property/case queries and selects exact source context.",
+    "Search waits for actual worker readiness, including a startup longer than two seconds, without charging it against the separate bounded query deadline.",
+    "Search follows dirty edits/undo/redo, real external writes and renames, rejects invalid queries without stale results, and terminates a blocking regex off the UI thread.",
+    "Tags lists nested inline/property tags with counts, excludes escaped/code/comment text, filters/folds/sorts, and uses the actual Search dependency with a visible disabled-dependency error.",
+    "Backlinks resolves heading/block references and unlinked aliases, navigates exact source ranges, follows unsaved/undo/external/rename changes, and renders/removes real in-document backlinks.",
+    "Footnotes shows multiline definitions, repeated references and explicit missing definitions, selects exact source ranges and updates through dirty edits/undo/redo.",
+    "Search/Tags/Backlinks/Footnotes preserve real query/sort/fold/pin state across reload/reconnect; disabling removes owned views/controllers/commands and re-enabling creates one fresh instance.",
+    "Quick switcher settings control actual registered attachments and unresolved references: Canvas opens, hidden attachments/unknown extensions stay out, and existing-only removes unresolved suggestions without implicitly creating a note.",
+    "The unsupported-file toggle follows app.json, all-types overrides attachment filtering, URI-relative targets and explicit creation use real controls, and Boolean/opaque settings plus BOM survive reload/reconnect without rewriting app.json.",
+    "Bookmarks opens actual heading/block, empty-folder and saved-search targets; distant Reading blocks scroll precisely and missing/unsupported targets reject without discarding data.",
+    "Actual Bookmarks controls add groups/files, rename, reorder, move into groups, remove and filter; BOM, unknown data and note bytes survive, and obsolete controls cannot mutate newer data.",
+    "The async core lifecycle honors an actual Bookmarks preflight veto without unloading its original view, removes owned controls/providers on disable, restores unavailable panes with their filters, and rejects concurrent reloads.",
+    "Organized Bookmarks data and actual per-pane filter state survive a fresh runtime without modifying original note bytes.",
+    "The actual Workspaces manager saves and loads real split/tab/pin/Reading/sidebar and core-view state, without hidden editors or rewriting original Obsidian profiles.",
+    "Saved-layout preflight and staged view loading retain the actual previous editor/DOM on factory failures, explicit preflight vetoes and dirty-save conflicts; external note bytes are not overwritten.",
+    "Named layouts can be renamed and deleted without deleting notes; guarded profiles, unknown configuration, UTF-8 BOM and the active layout survive a fresh runtime.",
+    "Actual local Properties controls edit source/Reading notes, typed numbers, checkboxes and lists; body selections and existing undo/redo survive while exact numeric literals, comments, anchors, unknown structured/type data and BOM/CRLF are retained.",
+    "Properties rejects unsafe numeric input, obsolete dialogs and dirty external-save conflicts without overwriting newer file bytes or discarding the original unsaved buffer.",
+    "The real vault property catalog filters/sorts/counts, assigns case-insensitive types and renames a property in both notes and types.json; all-note collision preflight, unknown types/configuration and precise YAML/body bytes are preserved.",
+    "Actual Properties owned views, filters, sort, pinned file and assigned types survive disable/re-enable and a fresh runtime; unsupported providers retain their saved states without hidden editors or note rewrites.",
+    "The actual file explorer and native-shaped root actions create nested empty folders, retain root identity and reject occupied paths without replacing them or prefilling an absolute root.",
+    "Real rename cancellation and destination collisions retain source/reference bytes, file identity and public event state.",
+    "Pending file mutations cannot be dismissed with Escape or the dialog close button; a later failure stays visible and retains the source bytes.",
+    "Rename/move preserves the actual TFile, shared sessions, Reading mode, pinned discovery/Properties panes and history while saving dirty text and rewriting real wiki/Markdown/reference/property links without changing exact YAML numbers or CRLF/BOM.",
+    "Bookmarking an unmarked paragraph generates and saves a real block ID; a Windows case-only rename updates physical filenames and persists both heading and generated-block targets.",
+    "Disabled attachment previews still expose real tree actions: binary move retains every byte and updates references; cancelled trash changes nothing and committed vault trash preserves a colliding folder.",
+    "Trash saves dirty shared notes, honors a later pane's explicit preflight veto before disposing any editor, preserves undo/redo after rejection, and closes all associated sessions only when the note is actually trashed.",
+    "Renamed files, split sessions, pinned properties and updated bookmarks reopen after a fresh runtime without changing original workspace.json; missing targets still reject explicitly.",
+    "Global Graph uses actual Markdown/property links, missing and orphan notes; node clicks open/create real files and dirty edits, undo and external changes update the rendered graph.",
+    "Local Graph has real directed depth and neighbor-edge controls, follows files unless pinned, and global/local nodes and file state follow an actual guarded rename.",
+    "Actual Graph controls filter nodes, show attachments/tags, navigate to Search, reorder overlapping color groups and change visible sizes/arrows/physics while preserving BOM and unknown configuration fields.",
+    "The real SVG graph supports camera zoom/pan, pointer node dragging and keyboard node activation without using a hidden editor."
+  ],
+  "coreChecks": [
+    {
+      "id": "file-explorer:basic-navigation",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:execute",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:find-note",
+      "status": "passed"
+    },
+    {
+      "id": "outline:navigate",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:document",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:layout-roundtrip",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:settings",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:availability",
+      "status": "passed"
+    },
+    {
+      "id": "templates:settings",
+      "status": "passed"
+    },
+    {
+      "id": "templates:insert",
+      "status": "passed"
+    },
+    {
+      "id": "templates:date-time",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:settings",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:create-today",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:navigation",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:create-unique",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:settings",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "outline:settings",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:settings",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:settings",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:settings",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:settings",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:settings",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:settings",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:settings",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:open",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:new-tab",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "graph:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "properties:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "page-preview:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "templates:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "slash-command:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "outline:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "slides:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "audio-recorder:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:restart",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:restart",
+      "status": "passed"
+    },
+    {
+      "id": "graph:restart",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:restart",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:restart",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:restart",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:restart",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:restart",
+      "status": "passed"
+    },
+    {
+      "id": "properties:restart",
+      "status": "passed"
+    },
+    {
+      "id": "page-preview:restart",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:restart",
+      "status": "passed"
+    },
+    {
+      "id": "templates:restart",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:restart",
+      "status": "passed"
+    },
+    {
+      "id": "slash-command:restart",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:restart",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:restart",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:restart",
+      "status": "passed"
+    },
+    {
+      "id": "outline:restart",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:restart",
+      "status": "passed"
+    },
+    {
+      "id": "slides:restart",
+      "status": "passed"
+    },
+    {
+      "id": "audio-recorder:restart",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:restart",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:restart",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:selection-unicode",
+      "status": "passed"
+    },
+    {
+      "id": "outline:markdown-semantics",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:modes",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:extract",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:merge",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:convert",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:targets",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:query",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:updates",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:nested-tags",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:references",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:references",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:settings",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:settings",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:organize",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:settings",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:named-workspaces",
+      "status": "passed"
+    },
+    {
+      "id": "properties:settings",
+      "status": "passed"
+    },
+    {
+      "id": "properties:typed-edit",
+      "status": "passed"
+    },
+    {
+      "id": "properties:catalog",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:file-operations",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:resolve",
+      "status": "passed"
+    },
+    {
+      "id": "graph:global-local",
+      "status": "passed"
+    }
+  ],
+  "processes": [
+    {
+      "launcherPid": 45292,
+      "electronPid": 45292,
+      "dotnetPid": 40320,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 38072,
+      "electronPid": 38072,
+      "dotnetPid": 43268,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 46496,
+      "electronPid": 46496,
+      "dotnetPid": 11552,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 39072,
+      "electronPid": 39072,
+      "dotnetPid": 7860,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 47060,
+      "electronPid": 47060,
+      "dotnetPid": 36424,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 44856,
+      "electronPid": 44856,
+      "dotnetPid": 12828,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 9832,
+      "electronPid": 9832,
+      "dotnetPid": 16260,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 35736,
+      "electronPid": 35736,
+      "dotnetPid": 40748,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 12760,
+      "electronPid": 12760,
+      "dotnetPid": 6888,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 43068,
+      "electronPid": 43068,
+      "dotnetPid": 41860,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 46292,
+      "electronPid": 46292,
+      "dotnetPid": 32448,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 43176,
+      "electronPid": 43176,
+      "dotnetPid": 35484,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 44228,
+      "electronPid": 44228,
+      "dotnetPid": 6384,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 36676,
+      "electronPid": 36676,
+      "dotnetPid": 37828,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 37308,
+      "electronPid": 37308,
+      "dotnetPid": 45828,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 33008,
+      "electronPid": 33008,
+      "dotnetPid": 36164,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 43564,
+      "electronPid": 43564,
+      "dotnetPid": 40024,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 43316,
+      "electronPid": 43316,
+      "dotnetPid": 12108,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 45744,
+      "electronPid": 45744,
+      "dotnetPid": 37208,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 16612,
+      "electronPid": 16612,
+      "dotnetPid": 41784,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "verificationTargets": [
+    "file-explorer",
+    "global-search",
+    "switcher",
+    "graph",
+    "backlink",
+    "canvas",
+    "outgoing-link",
+    "tag-pane",
+    "footnotes",
+    "properties",
+    "page-preview",
+    "daily-notes",
+    "templates",
+    "note-composer",
+    "command-palette",
+    "slash-command",
+    "editor-status",
+    "bookmarks",
+    "markdown-importer",
+    "zk-prefixer",
+    "random-note",
+    "outline",
+    "word-count",
+    "slides",
+    "audio-recorder",
+    "workspaces",
+    "file-recovery"
+  ],
+  "syntheticAudioOnly": true,
+  "physicalMicrophoneTested": false,
+  "runtime": ".NET 10.0.14",
+  "sourceFingerprint": "2dd245a7158deb5db6953156e50cfc4ae2d37a7ffadc67115c8f19271b1600f9",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "rendererReloads": [
+    {
+      "previousLoader": "BCA731CF87163662EED9A11F17F3CA89",
+      "loader": "9CFEEF644A23B2E0E2EA3E18E583C012"
+    },
+    {
+      "previousLoader": "E345B828E03D0E754A50439F1D9E3621",
+      "loader": "AA42A6E1B46FD05776E68F75CC7308B0"
+    },
+    {
+      "previousLoader": "71D81E08F713D60375CBCD209F6859F3",
+      "loader": "AF2AB333081FE48B3918CBD908EBA0E3"
+    },
+    {
+      "previousLoader": "AF2AB333081FE48B3918CBD908EBA0E3",
+      "loader": "4228DA95221BC5AAF37ADAD34748CC54"
+    }
+  ],
+  "note": "Folder/Core benchmark.md",
+  "exactSavedContent": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+  "restoredWorkspaceLayout": {
+    "version": 1,
+    "main": {
+      "id": "af6cc1c5-29a0-454f-864d-dcf137194c32",
+      "type": "split",
+      "direction": "vertical",
+      "children": [
+        {
+          "id": "acb24ae4-e9d1-417a-b78d-849e24b129f7",
+          "type": "tabs",
+          "dimension": 50,
+          "children": [
+            {
+              "id": "1afa66d7-a9f7-4813-9b86-53469fb536e6",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 0
+        },
+        {
+          "id": "16731269-bf18-4e3d-813d-476a70676892",
+          "type": "tabs",
+          "dimension": 50,
+          "children": [
+            {
+              "id": "677f9f33-b37e-4ec8-a0eb-dda124123ce9",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": true
+              }
+            }
+          ],
+          "currentTab": 0
+        }
+      ]
+    },
+    "active": "677f9f33-b37e-4ec8-a0eb-dda124123ce9",
+    "left": {
+      "width": 260,
+      "collapsed": false
+    },
+    "right": {
+      "width": 260,
+      "collapsed": false
+    },
+    "views": {
+      "sidebars": {
+        "left": "file-explorer",
+        "right": "outline"
+      },
+      "workspace-navigation": {
+        "lastMainLeaf": "677f9f33-b37e-4ec8-a0eb-dda124123ce9",
+        "lastFile": "Folder/Core benchmark.md"
+      }
+    }
+  },
+  "existingObsidianPluginConfigurationUnchanged": true,
+  "existingObsidianWorkspaceUnchanged": true,
+  "expectedDiagnostics": [
+    {
+      "id": "6cdc3779-4b7c-458e-9056-3fae537baf4a:0",
+      "source": "notification",
+      "message": "The configured unique prefix format cannot produce an unused note name.",
+      "reason": "Check unique-note format exhaustion without overwriting an existing file"
+    },
+    {
+      "id": "dd44d9c7-1cfc-435c-b9a4-9954abe588b3:0",
+      "source": "notification",
+      "message": "The editor or selection changed during clipboard access. No text was replaced.",
+      "reason": "Reject an obsolete clipboard result"
+    },
+    {
+      "id": "dd44d9c7-1cfc-435c-b9a4-9954abe588b3:1",
+      "source": "notification",
+      "message": "Clipboard actions with multiple selections are not supported. Select a single range first.",
+      "reason": "Reject unsupported clipboard multi-selection"
+    },
+    {
+      "id": "dd44d9c7-1cfc-435c-b9a4-9954abe588b3:2",
+      "source": "notification",
+      "message": "The editor or selection changed during clipboard access. No text was replaced.",
+      "reason": "Reject a paste after selection changes"
+    },
+    {
+      "id": "dd44d9c7-1cfc-435c-b9a4-9954abe588b3:3",
+      "source": "notification",
+      "message": "Expected clipboard permission rejection",
+      "reason": "Check the owned clipboard permission-denial fixture"
+    },
+    {
+      "id": "7ac4192d-a6e4-4661-9a45-50b4eb40c993:0",
+      "source": "notification",
+      "message": "Enable Search to open tag results.",
+      "reason": "Check the disabled Search dependency"
+    },
+    {
+      "id": "ffd8d847-fd2b-44d8-99b2-9cd17f5744bb:0",
+      "source": "notification",
+      "message": "Enter a finite number that JavaScript can represent safely.",
+      "reason": "Reject a lossy Properties number"
+    },
+    {
+      "id": "ffd8d847-fd2b-44d8-99b2-9cd17f5744bb:1",
+      "source": "notification",
+      "message": "The property changed while this dialog was open. Close it and reopen its current value.",
+      "reason": "Reject a stale Properties dialog"
+    },
+    {
+      "id": "ffd8d847-fd2b-44d8-99b2-9cd17f5744bb:2",
+      "source": "notification",
+      "message": "Host 409: {\"error\":\"This file changed on disk. Your unsaved text is retained; reopen the file after resolving the conflict.\"}",
+      "reason": "Reject an external edit during a dirty Properties save"
+    },
+    {
+      "id": "ffd8d847-fd2b-44d8-99b2-9cd17f5744bb:3",
+      "source": "notification",
+      "message": "The destination property already exists in this note: collision",
+      "reason": "Check vault-wide Properties rename collision preflight"
+    }
+  ],
+  "controlledShutdownConsoleErrors": [],
+  "coreProcessRestarts": 2,
+  "coreFeatureFiles": {
+    "Template target.md": "Before # Template target\n2026.10.28 / 09:39:44 / 2026\n after",
+    "Clock.md": "Start 2026.10.28 / 09:39:44",
+    "Folder/Switcher created.md": "Created through quick switcher.\n",
+    "Journal/2026/10/28.md": "# 2026/10/28\nDay 2026-10-28\nKept edits.\n",
+    "Unique/Unique-2026-10-28.md": "# Unique-2026-10-28\nCreated 2026-10-28\n",
+    "Unique/Unique-2026-10-29.md": "# Unique-2026-10-29\nCreated 2026-10-28\n",
+    "Link target.md": "[[Unique-2026-10-28 Linked title]]"
+  },
+  "finalWorkspaceLayout": {
+    "version": 1,
+    "main": {
+      "id": "af6cc1c5-29a0-454f-864d-dcf137194c32",
+      "type": "split",
+      "direction": "vertical",
+      "children": [
+        {
+          "id": "acb24ae4-e9d1-417a-b78d-849e24b129f7",
+          "type": "tabs",
+          "dimension": 50,
+          "children": [
+            {
+              "id": "1afa66d7-a9f7-4813-9b86-53469fb536e6",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 0
+        },
+        {
+          "id": "16731269-bf18-4e3d-813d-476a70676892",
+          "type": "tabs",
+          "dimension": 50,
+          "children": [
+            {
+              "id": "677f9f33-b37e-4ec8-a0eb-dda124123ce9",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": true
+              }
+            },
+            {
+              "id": "f64e91fd-92e2-4ae6-8fa8-d3c32d1511e8",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Clock.md"
+                },
+                "pinned": false
+              }
+            },
+            {
+              "id": "8c80254c-7f6b-4adc-8181-27c41a8b1e0d",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "CRLF note.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 2
+        }
+      ]
+    },
+    "active": "8c80254c-7f6b-4adc-8181-27c41a8b1e0d",
+    "left": {
+      "width": 260,
+      "collapsed": false
+    },
+    "right": {
+      "width": 260,
+      "collapsed": false
+    },
+    "views": {
+      "sidebars": {
+        "left": "file-explorer",
+        "right": "outline"
+      },
+      "workspace-navigation": {
+        "lastMainLeaf": "8c80254c-7f6b-4adc-8181-27c41a8b1e0d",
+        "lastFile": "CRLF note.md"
+      }
+    }
+  },
+  "noteComposer": {
+    "implementation": "independent guarded merge/selection/heading subset",
+    "originalModuleLoaded": false,
+    "sourceDeletion": "vault trash only after a combined guarded commit",
+    "targets": "new and existing Markdown",
+    "references": "Markdown/property/Canvas whole-file merge or fully moved heading/block extraction",
+    "unsafeDefinitionsAndAnchors": "explicitly refused",
+    "originalRuntimeEquivalence": "not established"
+  },
+  "menuApi": {
+    "fixture": "menu-host-probe",
+    "sha256": "195bd239ff76d6ee3b8dae3d76e92ead89a58e2ae4c9ddd32e93c65455405f5f",
+    "thirdPartyPlugin": false,
+    "clipboard": "bounded API fixture only; OS clipboard and permission prompts not accessed",
+    "nativeElectronMenus": "explicitly unsupported",
+    "originalRuntimeEquivalence": "not established"
+  },
+  "formatConverter": {
+    "implementation": "independent seven-format subset",
+    "originalModuleLoaded": false,
+    "ambiguousIds": "refused",
+    "apply": "root/version-guarded batch of at most 256 changed notes",
+    "undo": "guarded contents restoration while the dialog remains open",
+    "originalRuntimeEquivalence": "not established"
+  },
+  "outgoingLinks": {
+    "implementation": "independent-feature-subset",
+    "originalModuleLoaded": false,
+    "attachmentNavigation": "registered file views; bounded built-in raster subset",
+    "nativeGroupedMainPaneViews": "unavailable",
+    "automaticReferenceRewriting": "guarded FileManager operations; external OS renames do not rewrite references",
+    "unlinkedMentionLinking": "unavailable",
+    "configuredNewNoteLocation": "not-imported; bare missing links create root notes"
+  },
+  "discovery": {
+    "implementation": "independent-feature-subset",
+    "originalModulesLoaded": false,
+    "genericWorkspaceViews": "not-implemented",
+    "fullReferenceRuntimeComparison": "not-performed"
+  },
+  "error": "AssertionError [ERR_ASSERTION]: Cannot reach [data-graph-view=\"global\"] [data-graph-action=\"reload-controls\"]: <div class=\"workspace-split-resizer\" tabindex=\"0\" role=\"separator\" data-pane-resize=\"7f86889c-e4f6-48e2-8a09-98d03f575a69\" data-pane-before=\"424899f4-9e3f-4aa3-ae49-0dff46568ccd\" data-pane-after=\"091bd782-6228-4ca9-a87b-446b5962ec84\" aria-label=\"Resize panes left and right\" aria-orientation=\"vertica\n    at click (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:449:10)\n    at async checkGraphs (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/graph-scenarios.mjs:266:3)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:1407:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Page.bringToFront"
+    },
+    {
+      "method": "Input.dispatchKeyEvent",
+      "key": "Enter"
+    },
+    {
+      "method": "Input.dispatchKeyEvent",
+      "key": "Enter"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\"[data-graph-view=\\\\\\\"global\\\\\\\"] [data-graph-status]\\\")?.dataset.graphComplete===\\\"true\\\"&&document.querySelector(\\\"[data-graph-view=\\\\\\\"global\\\\\\\"] [data-graph-status]\\\").dataset.completedQuery===\\\"path:\\\\\\\"Graph wo"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.querySelector(\\\"[data-graph-view=\\\\\\\"global\\\\\\\"] [data-graph-status]\\\")?.dataset.graphComplete===\\\"true\\\"&&document.querySelector(\\\"[data-graph-view=\\\\\\\"global\\\\\\\"] [data-graph-status]\\\").dataset.completedQuery===\\\"path:\\\\\\\"Graph wo"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.querySelector(\\\"[data-graph-view=\\\\\\\"global\\\\\\\"] [data-graph-status]\\\").classList.contains(\\\"is-error\\\")\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.querySelector(\\\"[data-graph-view=\\\\\\\"global\\\\\\\"] [data-graph-status]\\\").textContent\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.s"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.querySelector('[data-graph-view=\\\"global\\\"] .graph-controls').checkVisibility()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slops"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-graph-view=\\\\\\\"global\\\\\\\"] [data-graph-option=\\\\\\\"showOrphans\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&eleme"
+    },
+    {
+      "method": "Page.bringToFront"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{\\n    const element=document.querySelector(\\\"[data-graph-view=\\\\\\\"global\\\\\\\"] [data-graph-option=\\\\\\\"showOrphans\\\\\\\"]\\\");\\n    element.scrollIntoView({block:\\\"nearest\\\",inline:\\\"nearest\\\"});\\n    const bounds=Array.from(element.getClientRects()).find(rect=>rec"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(document.querySelector('[data-graph-view=\\\"global\\\"] [data-graph-error]').textContent))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (Boolean(document.querySelector('[data-graph-view=\\\"global\\\"] [data-graph-error]').textContent))))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.querySelector('[data-graph-view=\\\"global\\\"] [data-graph-error]').textContent\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-graph-view=\\\\\\\"global\\\\\\\"] [data-graph-action=\\\\\\\"reload-controls\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&e"
+    },
+    {
+      "method": "Page.bringToFront"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{\\n    const element=document.querySelector(\\\"[data-graph-view=\\\\\\\"global\\\\\\\"] [data-graph-action=\\\\\\\"reload-controls\\\\\\\"]\\\");\\n    element.scrollIntoView({block:\\\"nearest\\\",inline:\\\"nearest\\\"});\\n    const bounds=Array.from(element.getClientRects()).find(rect="
+    }
+  ],
+  "audio": {
+    "capture": "idle",
+    "tracks": 0,
+    "saved": null
+  },
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "INPUT",
+      "id": ""
+    },
+    "keys": [
+      {
+        "key": "Tab",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": ""
+      },
+      {
+        "key": "Tab",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": ""
+      },
+      {
+        "key": "Enter",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": {}
+      },
+      {
+        "key": "Enter",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": {}
+      },
+      {
+        "key": "a",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": ""
+      },
+      {
+        "key": "a",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": ""
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": ""
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": ""
+      },
+      {
+        "key": "a",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": ""
+      },
+      {
+        "key": "a",
+        "ctrl": true,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": ""
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": ""
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "focus": ""
+      }
+    ],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [
+      {
+        "id": "editor-mode-host-probe",
+        "loaded": "false"
+      },
+      {
+        "id": "menu-host-probe",
+        "loaded": "false"
+      }
+    ],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "1afa66d7-a9f7-4813-9b86-53469fb536e6",
+        "type": "markdown",
+        "path": "Folder/Core benchmark.md",
+        "text": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "sessionText": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 74
+      },
+      {
+        "id": "677f9f33-b37e-4ec8-a0eb-dda124123ce9",
+        "type": "markdown",
+        "path": "Folder/Core benchmark.md",
+        "text": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "sessionText": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 74
+      },
+      {
+        "id": "f64e91fd-92e2-4ae6-8fa8-d3c32d1511e8",
+        "type": "markdown",
+        "path": "Clock.md",
+        "text": "Start 2026.10.28 / 09:39:44",
+        "sessionText": "Start 2026.10.28 / 09:39:44",
+        "dirty": false,
+        "selection": 0,
+        "length": 27
+      },
+      {
+        "id": "8c80254c-7f6b-4adc-8181-27c41a8b1e0d",
+        "type": "markdown",
+        "path": "Editor chrome/Counts.md",
+        "text": "---\r\ntitle: Hidden words\r\n---\r\n# Count\r\n\r\nAlpha beta.\r\n中文 日本語 かな カタカナ 한글 தமிழ் བོད 😀\r\n\r\n3.14 don't --",
+        "sessionText": "---\r\ntitle: Hidden words\r\n---\r\n# Count\r\n\r\nAlpha beta.\r\n中文 日本語 かな カタカナ 한글 தமிழ் བོད 😀\r\n\r\n3.14 don't --",
+        "dirty": false,
+        "selection": 0,
+        "length": 94
+      },
+      {
+        "id": "4d6a7d54-86dc-4ff1-af6b-7b3d9cabce86",
+        "type": "markdown",
+        "path": "Note composition/New/Composer created merge.md",
+        "text": "# Fresh merge\r\n\r\nA second source.\r\n",
+        "sessionText": "# Fresh merge\r\n\r\nA second source.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 32
+      },
+      {
+        "id": "5bf632a4-e555-4302-a86a-614ae0bfa63f",
+        "type": "markdown",
+        "path": "Note composition/New/Composer created merge.md",
+        "text": "# Fresh merge\r\n\r\nA second source.\r\n",
+        "sessionText": "# Fresh merge\r\n\r\nA second source.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 32
+      },
+      {
+        "id": "3c778790-f26b-4fda-9aa4-4d57bb6a9505",
+        "type": "markdown",
+        "path": "Menu compatibility/Editor.md",
+        "text": "# Context menus\r\n\r\nAlpha beta.\r\n",
+        "sessionText": "# Context menus\r\n\r\nAlpha beta.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 29
+      },
+      {
+        "id": "c251a18c-056c-4bda-ace8-5d8fcd761678",
+        "type": "markdown",
+        "path": "Menu compatibility/Editor.md",
+        "text": "# Context menus\r\n\r\nAlpha beta.\r\n",
+        "sessionText": "# Context menus\r\n\r\nAlpha beta.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 29
+      },
+      {
+        "id": "6066b308-410f-4d70-b9c0-42027562a6b1",
+        "type": "markdown",
+        "path": "Organization/Source.md",
+        "text": "# Organization\r\n\r\n## Destination\r\n\r\nPadding paragraph 0.\r\n\r\nPadding paragraph 1.\r\n\r\nPadding paragraph 2.\r\n\r\nPadding paragraph 3.\r\n\r\nPadding paragraph 4.\r\n\r\nPadding paragraph 5.\r\n\r\nPadding paragraph 6.\r\n\r\nPadding paragraph 7.\r\n\r\nPadding paragraph 8.\r\n\r\nPadding paragraph 9.\r\n\r\nPadding paragraph 10.\r\n\r",
+        "sessionText": "# Organization\r\n\r\n## Destination\r\n\r\nPadding paragraph 0.\r\n\r\nPadding paragraph 1.\r\n\r\nPadding paragraph 2.\r\n\r\nPadding paragraph 3.\r\n\r\nPadding paragraph 4.\r\n\r\nPadding paragraph 5.\r\n\r\nPadding paragraph 6.\r\n\r\nPadding paragraph 7.\r\n\r\nPadding paragraph 8.\r\n\r\nPadding paragraph 9.\r\n\r\nPadding paragraph 10.\r\n\r",
+        "dirty": false,
+        "selection": 0,
+        "length": 1358
+      },
+      {
+        "id": "ca86fa9c-a207-4800-9523-fab73e349a5f",
+        "type": "markdown",
+        "path": "File workflows/Archive/renamed.md",
+        "text": "---\r\nrelated: \"[[Companion#Heading|Companion property]]\"\r\nprecise: 9007199254740993 # exact\r\n---\r\n# Source\r\n\r\nA stable paragraph. ^source-id\r\n\r\n[Companion](../Companion.md#Heading \"Preserve title\") [[File workflows/Archive/renamed#Source|Self caption]] [[File workflows/Attachments/Asset moved.bin|At",
+        "sessionText": "---\r\nrelated: \"[[Companion#Heading|Companion property]]\"\r\nprecise: 9007199254740993 # exact\r\n---\r\n# Source\r\n\r\nA stable paragraph. ^source-id\r\n\r\n[Companion](../Companion.md#Heading \"Preserve title\") [[File workflows/Archive/renamed#Source|Self caption]] [[File workflows/Attachments/Asset moved.bin|At",
+        "dirty": false,
+        "selection": 0,
+        "length": 369
+      },
+      {
+        "id": "c859577e-aa0a-4243-92a7-87902040e114",
+        "type": "markdown",
+        "path": "File workflows/References.md",
+        "text": "---\r\nrelated: \"[[File workflows/Archive/renamed#^source-id|Property caption]]\"\r\nprecise: 0.1234567890123456789 # exact\r\n---\r\n\r\n[[File workflows/Archive/renamed#Source|Wiki caption]] [Markdown caption](./Archive/renamed.md#Source \"Keep title\")\r\n\r\n[One][shared] and [Two][shared].\r\n\r\n[shared]: ./Archiv",
+        "sessionText": "---\r\nrelated: \"[[File workflows/Archive/renamed#^source-id|Property caption]]\"\r\nprecise: 0.1234567890123456789 # exact\r\n---\r\n\r\n[[File workflows/Archive/renamed#Source|Wiki caption]] [Markdown caption](./Archive/renamed.md#Source \"Keep title\")\r\n\r\n[One][shared] and [Two][shared].\r\n\r\n[shared]: ./Archiv",
+        "dirty": false,
+        "selection": 0,
+        "length": 383
+      },
+      {
+        "id": "28cb2740-1ce4-4523-b8bd-6e2b928528f3",
+        "type": "markdown",
+        "path": "File workflows/Archive/renamed.md",
+        "text": "---\r\nrelated: \"[[Companion#Heading|Companion property]]\"\r\nprecise: 9007199254740993 # exact\r\n---\r\n# Source\r\n\r\nA stable paragraph. ^source-id\r\n\r\n[Companion](../Companion.md#Heading \"Preserve title\") [[File workflows/Archive/renamed#Source|Self caption]] [[File workflows/Attachments/Asset moved.bin|At",
+        "sessionText": "---\r\nrelated: \"[[Companion#Heading|Companion property]]\"\r\nprecise: 9007199254740993 # exact\r\n---\r\n# Source\r\n\r\nA stable paragraph. ^source-id\r\n\r\n[Companion](../Companion.md#Heading \"Preserve title\") [[File workflows/Archive/renamed#Source|Self caption]] [[File workflows/Attachments/Asset moved.bin|At",
+        "dirty": false,
+        "selection": 0,
+        "length": 369
+      },
+      {
+        "id": "70b1edbd-24d1-478d-b538-b0701c989b55",
+        "type": "graph"
+      },
+      {
+        "id": "49f4f71c-9213-4c30-9d23-80e3257785d5",
+        "type": "markdown",
+        "path": "Graph workflows/Beta renamed.md",
+        "text": "# Heading\r\n[Gamma](./Gamma.md) [[Alpha]]\r\n",
+        "sessionText": "# Heading\r\n[Gamma](./Gamma.md) [[Alpha]]\r\n",
+        "dirty": false,
+        "selection": 40,
+        "length": 40
+      },
+      {
+        "id": "ced1a27a-6c1e-449b-bc6e-bea9ad07ffc4",
+        "type": "markdown",
+        "path": "Graph workflows/Missing.md",
+        "text": "",
+        "sessionText": "",
+        "dirty": false,
+        "selection": 0,
+        "length": 0
+      },
+      {
+        "id": "1f81983d-f8ac-4738-8875-8b1121660617",
+        "type": "markdown",
+        "path": "Graph workflows/Beta renamed.md",
+        "text": "# Heading\r\n[Gamma](./Gamma.md) [[Alpha]]\r\n",
+        "sessionText": "# Heading\r\n[Gamma](./Gamma.md) [[Alpha]]\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 40
+      },
+      {
+        "id": "c0b7628c-e9da-4611-9f9b-8e59d298e574",
+        "type": "markdown",
+        "path": "Graph workflows/Orphan.md",
+        "text": "# Orphan\r\n[[Orphan]]\r\n",
+        "sessionText": "# Orphan\r\n[[Orphan]]\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 20
+      },
+      {
+        "id": "aa51ecde-8f3f-4053-b9f9-a38948762e20",
+        "type": "localgraph"
+      },
+      {
+        "id": "f9958c97-517d-4a17-b8fa-7cbd349a19f7",
+        "type": "markdown",
+        "path": "Graph workflows/Gamma.md",
+        "text": "# Gamma\r\n[[Graph workflows/Beta renamed]]\r\n",
+        "sessionText": "# Gamma\r\n[[Graph workflows/Beta renamed]]\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 41
+      },
+      {
+        "id": "3e2eee92-4cdb-4cf6-985a-7b7180d54a13",
+        "type": "markdown",
+        "path": "Graph workflows/Alpha.md",
+        "text": "---\r\nrelated: '[[Graph workflows/Beta renamed#Heading]]'\r\ntags: [ graph-fixture/root ]\r\n---\r\n# Alpha\r\n[[Graph workflows/Beta renamed|Repeated]] [[Gamma]] [[Graph workflows/Missing]] ![[Image.png]]\r\n`[[Hidden]]` \\#escaped\r\n",
+        "sessionText": "---\r\nrelated: '[[Graph workflows/Beta renamed#Heading]]'\r\ntags: [ graph-fixture/root ]\r\n---\r\n# Alpha\r\n[[Graph workflows/Beta renamed|Repeated]] [[Gamma]] [[Graph workflows/Missing]] ![[Image.png]]\r\n`[[Hidden]]` \\#escaped\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 215
+      },
+      {
+        "id": "e4b9b502-3fd2-4ba9-b834-717483d23f62",
+        "type": "markdown",
+        "path": "Graph workflows/Beta renamed.md",
+        "text": "# Heading\r\n[Gamma](./Gamma.md) [[Alpha]]\r\n",
+        "sessionText": "# Heading\r\n[Gamma](./Gamma.md) [[Alpha]]\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 40
+      },
+      {
+        "id": "6ef14bc2-3b70-40b2-b1fd-c7f5eaded6e3",
+        "type": "empty"
+      },
+      {
+        "id": "afdc6558-d3f8-4607-9217-216addc1538f",
+        "type": "markdown",
+        "path": "File workflows/Archive/renamed.md",
+        "text": "---\r\nrelated: \"[[Companion#Heading|Companion property]]\"\r\nprecise: 9007199254740993 # exact\r\n---\r\n# Source\r\n\r\nA stable paragraph. ^source-id\r\n\r\n[Companion](../Companion.md#Heading \"Preserve title\") [[File workflows/Archive/renamed#Source|Self caption]] [[File workflows/Attachments/Asset moved.bin|At",
+        "sessionText": "---\r\nrelated: \"[[Companion#Heading|Companion property]]\"\r\nprecise: 9007199254740993 # exact\r\n---\r\n# Source\r\n\r\nA stable paragraph. ^source-id\r\n\r\n[Companion](../Companion.md#Heading \"Preserve title\") [[File workflows/Archive/renamed#Source|Self caption]] [[File workflows/Attachments/Asset moved.bin|At",
+        "dirty": false,
+        "selection": 0,
+        "length": 369
+      },
+      {
+        "id": "50788eea-6185-404c-af9f-c4f29c458c85",
+        "type": "bookmarks"
+      },
+      {
+        "id": "438c6042-40a5-4a80-b47f-387102f4b19f",
+        "type": "all-properties"
+      },
+      {
+        "id": "97db100d-16d3-4ff2-8f01-155add14811b",
+        "type": "file-properties"
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "af6cc1c5-29a0-454f-864d-dcf137194c32",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "acb24ae4-e9d1-417a-b78d-849e24b129f7",
+            "type": "tabs",
+            "dimension": 50,
+            "children": [
+              {
+                "id": "1afa66d7-a9f7-4813-9b86-53469fb536e6",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Folder/Core benchmark.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          },
+          {
+            "id": "b637d1e3-ee47-4759-b3ec-24c0975cfd9f",
+            "type": "split",
+            "dimension": 50,
+            "direction": "horizontal",
+            "children": [
+              {
+                "id": "16731269-bf18-4e3d-813d-476a70676892",
+                "type": "tabs",
+                "dimension": 50,
+                "children": [
+                  {
+                    "id": "677f9f33-b37e-4ec8-a0eb-dda124123ce9",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "mode": "source",
+                        "source": true,
+                        "file": "Folder/Core benchmark.md"
+                      },
+                      "pinned": true
+                    }
+                  },
+                  {
+                    "id": "f64e91fd-92e2-4ae6-8fa8-d3c32d1511e8",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "mode": "source",
+                        "source": true,
+                        "file": "Clock.md"
+                      },
+                      "pinned": false
+                    }
+                  },
+                  {
+                    "id": "8c80254c-7f6b-4adc-8181-27c41a8b1e0d",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "mode": "source",
+                        "source": true,
+                        "file": "Editor chrome/Counts.md"
+                      },
+                      "pinned": false
+                    }
+                  },
+                  {
+                    "id": "4d6a7d54-86dc-4ff1-af6b-7b3d9cabce86",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "mode": "source",
+                        "source": true,
+                        "file": "Note composition/New/Composer created merge.md"
+                      },
+                      "pinned": false
+                    }
+                  },
+                  {
+                    "id": "5bf632a4-e555-4302-a86a-614ae0bfa63f",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "mode": "source",
+                        "source": true,
+                        "file": "Note composition/New/Composer created merge.md"
+                      },
+                      "pinned": false
+                    }
+                  },
+                  {
+                    "id": "3c778790-f26b-4fda-9aa4-4d57bb6a9505",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "mode": "source",
+                        "source": true,
+                        "file": "Menu compatibility/Editor.md"
+                      },
+                      "pinned": false
+                    }
+                  },
+                  {
+                    "id": "c251a18c-056c-4bda-ace8-5d8fcd761678",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "mode": "source",
+                        "source": true,
+                        "file": "Menu compatibility/Editor.md"
+                      },
+                      "pinned": false
+                    }
+                  },
+                  {
+                    "id": "6066b308-410f-4d70-b9c0-42027562a6b1",
+                    "type": "leaf",
+                    "state": {
+                      "type": "markdown",
+                      "state": {
+                        "mode": "preview",
+                        "source": true,
+                        "file": "Organization/Source.md"
+                      },
+                      "pinned": true
+                    }
+                  }
+                ],
+                "currentTab": 7
+              },
+              {
+                "id": "7f86889c-e4f6-48e2-8a09-98d03f575a69",
+                "type": "split",
+                "dimension": 50,
+                "direction": "vertical",
+                "children": [
+                  {
+                    "id": "424899f4-9e3f-4aa3-ae49-0dff46568ccd",
+                    "type": "tabs",
+                    "dimension": 12.5,
+                    "children": [
+                      {
+                        "id": "ca86fa9c-a207-4800-9523-fab73e349a5f",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "mode": "source",
+                            "source": true,
+                            "file": "File workflows/Archive/renamed.md"
+                          },
+                          "pinned": false
+                        }
+                      },
+                      {
+                        "id": "c859577e-aa0a-4243-92a7-87902040e114",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "mode": "source",
+                            "source": true,
+                            "file": "File workflows/References.md"
+                          },
+                          "pinned": false
+                        }
+                      },
+                      {
+                        "id": "28cb2740-1ce4-4523-b8bd-6e2b928528f3",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "mode": "source",
+                            "source": true,
+                            "file": "File workflows/Archive/renamed.md"
+                          },
+                          "pinned": false
+                        }
+                      },
+                      {
+                        "id": "70b1edbd-24d1-478d-b538-b0701c989b55",
+                        "type": "leaf",
+                        "state": {
+                          "type": "graph",
+                          "state": {
+                            "slopsidianViewport": {
+                              "x": 491.0043843234679,
+                              "y": 342.1735337026695,
+                              "scale": 1.7189258139819414
+                            }
+                          },
+                          "pinned": false
+                        }
+                      },
+                      {
+                        "id": "49f4f71c-9213-4c30-9d23-80e3257785d5",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "Graph workflows/Beta renamed.md",
+                            "mode": "source",
+                            "source": true
+                          },
+                          "pinned": false
+                        }
+                      },
+                      {
+                        "id": "ced1a27a-6c1e-449b-bc6e-bea9ad07ffc4",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "Graph workflows/Missing.md",
+                            "mode": "source",
+                            "source": true
+                          },
+                          "pinned": false
+                        }
+                      },
+                      {
+                        "id": "1f81983d-f8ac-4738-8875-8b1121660617",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "Graph workflows/Beta renamed.md",
+                            "mode": "source",
+                            "source": true
+                          },
+                          "pinned": false
+                        }
+                      },
+                      {
+                        "id": "c0b7628c-e9da-4611-9f9b-8e59d298e574",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "Graph workflows/Orphan.md",
+                            "mode": "source",
+                            "source": true
+                          },
+                          "pinned": false
+                        }
+                      }
+                    ],
+                    "currentTab": 3
+                  },
+                  {
+                    "id": "091bd782-6228-4ca9-a87b-446b5962ec84",
+                    "type": "tabs",
+                    "dimension": 12.5,
+                    "children": [
+                      {
+                        "id": "aa51ecde-8f3f-4053-b9f9-a38948762e20",
+                        "type": "leaf",
+                        "state": {
+                          "type": "localgraph",
+                          "state": {
+                            "options": {
+                              "search": "",
+                              "colorGroups": [],
+                              "showTags": false,
+                              "showAttachments": false,
+                              "hideUnresolved": false,
+                              "showOrphans": true,
+                              "localJumps": 1,
+                              "localBacklinks": true,
+                              "localForelinks": true,
+                              "localInterlinks": true,
+                              "showArrow": false,
+                              "textFadeMultiplier": 0,
+                              "nodeSizeMultiplier": 1,
+                              "lineSizeMultiplier": 1,
+                              "centerStrength": 0.5,
+                              "repelStrength": 10,
+                              "linkStrength": 1,
+                              "linkDistance": 250,
+                              "collapse-filter": false,
+                              "collapse-color-groups": true,
+                              "collapse-display": true,
+                              "collapse-forces": true
+                            },
+                            "slopsidianViewport": {
+                              "x": 514.6559585576883,
+                              "y": 345.29912152932934,
+                              "scale": 1.7611533611110182
+                            },
+                            "file": "Graph workflows/Orphan.md"
+                          },
+                          "pinned": false
+                        }
+                      },
+                      {
+                        "id": "f9958c97-517d-4a17-b8fa-7cbd349a19f7",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "Graph workflows/Gamma.md",
+                            "mode": "source",
+                            "source": true
+                          },
+                          "pinned": false
+                        }
+                      },
+                      {
+                        "id": "3e2eee92-4cdb-4cf6-985a-7b7180d54a13",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "Graph workflows/Alpha.md",
+                            "mode": "source",
+                            "source": true
+                          },
+                          "pinned": false
+                        }
+                      },
+                      {
+                        "id": "e4b9b502-3fd2-4ba9-b834-717483d23f62",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "file": "Graph workflows/Beta renamed.md",
+                            "mode": "source",
+                            "source": true
+                          },
+                          "pinned": false
+                        }
+                      }
+                    ],
+                    "currentTab": 3
+                  },
+                  {
+                    "id": "0452d67a-7b44-4ac9-8106-9aafeea8bd50",
+                    "type": "tabs",
+                    "dimension": 25,
+                    "children": [
+                      {
+                        "id": "6ef14bc2-3b70-40b2-b1fd-c7f5eaded6e3",
+                        "type": "leaf",
+                        "state": {
+                          "type": "empty",
+                          "state": {},
+                          "pinned": false
+                        }
+                      }
+                    ],
+                    "currentTab": 0
+                  },
+                  {
+                    "id": "413f9971-f481-42ac-bac4-598ef004f3c9",
+                    "type": "tabs",
+                    "dimension": 50,
+                    "children": [
+                      {
+                        "id": "afdc6558-d3f8-4607-9217-216addc1538f",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "mode": "preview",
+                            "source": true,
+                            "file": "File workflows/Archive/renamed.md"
+                          },
+                          "pinned": false
+                        }
+                      }
+                    ],
+                    "currentTab": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "active": "70b1edbd-24d1-478d-b538-b0701c989b55",
+      "left": {
+        "width": 260,
+        "collapsed": false,
+        "root": {
+          "id": "02df84e7-626f-4b08-a884-ba98283adce6",
+          "type": "split",
+          "direction": "horizontal",
+          "children": [
+            {
+              "id": "4a33b393-a663-42cb-b06d-a46c7f110a46",
+              "type": "tabs",
+              "children": [
+                {
+                  "id": "50788eea-6185-404c-af9f-c4f29c458c85",
+                  "type": "leaf",
+                  "state": {
+                    "type": "bookmarks",
+                    "state": {
+                      "filter": ""
+                    },
+                    "pinned": false
+                  }
+                }
+              ],
+              "currentTab": 0
+            }
+          ]
+        }
+      },
+      "right": {
+        "width": 333,
+        "collapsed": false,
+        "root": {
+          "id": "40a09876-211d-4d1e-89c0-be16b806b245",
+          "type": "split",
+          "direction": "horizontal",
+          "children": [
+            {
+              "id": "d4053d7b-ffff-43a5-a0ed-d78cd8a43310",
+              "type": "tabs",
+              "children": [
+                {
+                  "id": "438c6042-40a5-4a80-b47f-387102f4b19f",
+                  "type": "leaf",
+                  "state": {
+                    "type": "all-properties",
+                    "state": {
+                      "query": "label",
+                      "sort": "frequency"
+                    },
+                    "pinned": false
+                  }
+                },
+                {
+                  "id": "97db100d-16d3-4ff2-8f01-155add14811b",
+                  "type": "leaf",
+                  "state": {
+                    "type": "file-properties",
+                    "state": {
+                      "query": "title",
+                      "sort": "name",
+                      "file": "File workflows/Archive/renamed.md"
+                    },
+                    "pinned": false
+                  }
+                }
+              ],
+              "currentTab": 1
+            }
+          ]
+        }
+      },
+      "views": {
+        "sidebars": {
+          "left": "search",
+          "right": "backlink"
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "70b1edbd-24d1-478d-b538-b0701c989b55",
+          "lastFile": "Graph workflows/Orphan.md"
+        },
+        "outgoing-link": {
+          "linksCollapsed": false,
+          "unlinkedCollapsed": false,
+          "pinned": true,
+          "file": "File workflows/Archive/renamed.md"
+        },
+        "search": {
+          "query": "tag:\"#graph-fixture/root\"",
+          "matchCase": false,
+          "collapsedFiles": []
+        },
+        "tag": {
+          "useHierarchy": true,
+          "sortOrder": "alphabetical",
+          "folded": [
+            "#discovery"
+          ],
+          "filter": ""
+        },
+        "backlink": {
+          "pinned": true,
+          "file": "File workflows/Archive/renamed.md",
+          "showUnlinked": true
+        },
+        "footnotes": {
+          "pinned": true,
+          "file": "Discovery/Moved source.md"
+        },
+        "named-workspaces": {
+          "active": "Renamed review"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "consoleErrors": [
+    "Error: The configured unique prefix format cannot produce an unused note name.\n    at CoreNotes.uniqueName (http://127.0.0.1:54884/js/editor-host.fdxa62b9ya.js:74385:11)\n    at CoreNotes.createUnique (http://127.0.0.1:54884/js/editor-host.fdxa62b9ya.js:74393:26)\n    at async CorePlugins.run (http://127.0.0.1:54884/js/editor-host.fdxa62b9ya.js:74638:7)\n    at async Commands.execute (http://127.0.0.1:54884/js/editor-host.fdxa62b9ya.js:91285:7)\n    at async Object.action (http://127.0.0.1:54884/js/editor-host.fdxa62b9ya.js:93896:9)\n    at async DesktopUI.choose (http://127.0.0.1:54884/js/editor-host.fdxa62b9ya.js:94054:5)",
+    "[2026-10-28T08:40:17.696Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:40:28.714Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:40:33.725Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:40:42.236Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:40:47.239Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:40:50.873Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:40:57.951Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:41:02.956Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:41:07.988Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:41:11.898Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:41:16.906Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:41:27.756Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:41:32.763Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:41:36.422Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "Error: The editor or selection changed during clipboard access. No text was replaced.\n    at MarkdownView.editClipboard (http://127.0.0.1:59256/js/editor-host.fdxa62b9ya.js:72208:13)",
+    "Error: Clipboard actions with multiple selections are not supported. Select a single range first.\n    at MarkdownView.editClipboard (http://127.0.0.1:59256/js/editor-host.fdxa62b9ya.js:72189:13)\n    at http://127.0.0.1:59256/js/editor-host.fdxa62b9ya.js:72137:132\n    at http://127.0.0.1:59256/js/editor-host.fdxa62b9ya.js:70420:34",
+    "Error: The editor or selection changed during clipboard access. No text was replaced.\n    at MarkdownView.editClipboard (http://127.0.0.1:59256/js/editor-host.fdxa62b9ya.js:72208:13)",
+    "Error: Expected clipboard permission rejection\n    at Object.writeText (vault-plugin:menu-host-probe:73:58)\n    at MarkdownView.editClipboard (http://127.0.0.1:59256/js/editor-host.fdxa62b9ya.js:72202:23)\n    at http://127.0.0.1:59256/js/editor-host.fdxa62b9ya.js:72137:132\n    at http://127.0.0.1:59256/js/editor-host.fdxa62b9ya.js:70420:34",
+    "[2026-10-28T08:41:42.493Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:41:49.978Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:41:54.989Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:42:07.981Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "Error: Enable Search to open tag results.\n    at http://127.0.0.1:56787/js/editor-host.fdxa62b9ya.js:76029:19\n    at async CorePlugins.run (http://127.0.0.1:56787/js/editor-host.fdxa62b9ya.js:74638:7)",
+    "[2026-10-28T08:42:32.197Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:42:38.550Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:42:43.568Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:42:49.477Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:42:52.859Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "Error: Enter a finite number that JavaScript can represent safely.\n    at parsePropertyValue (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:70510:13)\n    at http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:71163:41\n    at async CorePlugins.run (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:74638:7)",
+    "Error: The property changed while this dialog was open. Close it and reopen its current value.\n    at http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:71169:19\n    at http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:78553:24\n    at updateFrontmatter (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:65158:3)\n    at action (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:78552:23)",
+    "HostError: Host 409: {\"error\":\"This file changed on disk. Your unsaved text is retained; reopen the file after resolving the conflict.\"}\n    at requestJson (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:40759:11)\n    at async _Vault.writeDocument (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:43956:20)\n    at async DocumentSession.persist (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:72025:21)\n    at async DocumentSession.save (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:72001:7)\n    at async action (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:78547:9)",
+    "Error: The destination property already exists in this note: collision\n    at renameFrontmatterProperty (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:65309:11)\n    at http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:78627:26\n    at Array.flatMap (<anonymous>)\n    at action (http://127.0.0.1:63643/js/editor-host.fdxa62b9ya.js:78626:133)",
+    "[2026-10-28T08:43:02.027Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:43:07.029Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:43:15.930Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:43:20.941Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:43:24.519Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:43:34.476Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T08:43:39.483Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 41784,
+  "electronPid": 16612,
+  "completedAt": "2026-10-28T08:43:39.676Z",
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\pane-resize-validation-20261028\\.runtime\\evidence\\core-verification-smoke-errors.jsonl",
+    "nativePaths": [
+      "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\pane-resize-validation-20261028\\.runtime\\smoke-profile\\logs\\errors-smoke-1c10c8d4-ab09-4a0b-a484-6ee448290ada.jsonl"
+    ],
+    "records": 10,
+    "expected": 10,
+    "unexpected": [],
+    "sha256": "f5d5e26d6d0bbbaea7326fe4da53dd6678e1d1c9e61ca0f48d3ce2dd9084ea45",
+    "includesFinalTeardown": true
+  }
+}

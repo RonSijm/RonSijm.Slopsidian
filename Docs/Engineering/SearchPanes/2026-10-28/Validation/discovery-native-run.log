@@ -1,0 +1,10 @@
+PASS Search executes real worker-backed Boolean/regex/path/file/tag/property/case queries and selects exact source context.
+PASS Search waits for actual worker readiness, including a startup longer than two seconds, without charging it against the separate bounded query deadline.
+PASS Search follows dirty edits/undo/redo, real external writes and renames, rejects invalid queries without stale results, and terminates a blocking regex off the UI thread.
+PASS Tags lists nested inline/property tags with counts, excludes escaped/code/comment text, filters/folds/sorts, and uses the actual Search dependency with a visible disabled-dependency error.
+PASS Backlinks resolves heading/block references and unlinked aliases, navigates exact source ranges, follows unsaved/undo/external/rename changes, and renders/removes real in-document backlinks.
+PASS Footnotes shows multiline definitions, repeated references and explicit missing definitions, selects exact source ranges and updates through dirty edits/undo/redo.
+PASS Search/Tags/Backlinks/Footnotes preserve real query/sort/fold/pin state across reload/reconnect; disabling removes owned views/controllers/commands and re-enabling creates one fresh instance.
+PASS Quick switcher settings control actual registered attachments and unresolved references: Canvas opens, hidden attachments/unknown extensions stay out, and existing-only removes unresolved suggestions without implicitly creating a note.
+PASS The unsupported-file toggle follows app.json, all-types overrides attachment filtering, URI-relative targets and explicit creation use real controls, and Boolean/opaque settings plus BOM survive reload/reconnect without rewriting app.json.
+Explicit-vault startup and 6 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

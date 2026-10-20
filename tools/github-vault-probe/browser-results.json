@@ -1,0 +1,149 @@
+{
+  "testedAt": "2026-10-26T08:47:03.510Z",
+  "testedBrowser": "Codex in-app Chromium 156",
+  "initialRun": {
+    "origin": "http://127.0.0.1:5185",
+    "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "secureContext": true,
+    "mode": "cors",
+    "credentials": "omit",
+    "cacheOnly": false,
+    "mountedCommit": "8bdf62557aea09c3dbc0212d077ff37851ce5e90",
+    "filesListed": 112,
+    "counts": {
+      "api": 2,
+      "raw": 3,
+      "cacheHits": 1
+    },
+    "checks": [
+      {
+        "name": "Anonymous API discovery returns readable CORS JSON",
+        "passed": true
+      },
+      {
+        "name": "Discovery creates lazy references without fetching any raw file bodies",
+        "passed": true
+      },
+      {
+        "name": "Raw Markdown is readable and matches the discovered Git blob",
+        "passed": true
+      },
+      {
+        "name": "Raw SVG can be read, verified, and decoded by an image element",
+        "passed": true
+      },
+      {
+        "name": "Raw WAV can be read, verified, and decoded by an audio element",
+        "passed": true
+      },
+      {
+        "name": "Persisted mount and file caches reopen in cache-only mode with no GitHub requests",
+        "passed": true
+      }
+    ],
+    "requests": [
+      {
+        "kind": "api",
+        "url": "https://api.github.com/repos/RonSijm/RonSijm.Slopsidian/commits/main",
+        "state": "received",
+        "status": 200,
+        "responseType": "cors",
+        "contentType": "application/json; charset=utf-8",
+        "apiRemaining": "20"
+      },
+      {
+        "kind": "api",
+        "url": "https://api.github.com/repos/RonSijm/RonSijm.Slopsidian/git/trees/ef9a99a355c3655b5e39ed013d18edd1492f34ed?recursive=1",
+        "state": "received",
+        "status": 200,
+        "responseType": "cors",
+        "contentType": "application/json; charset=utf-8",
+        "apiRemaining": "19"
+      },
+      {
+        "kind": "raw",
+        "url": "https://raw.githubusercontent.com/RonSijm/RonSijm.Slopsidian/8bdf62557aea09c3dbc0212d077ff37851ce5e90/Example/Start%20here.md",
+        "state": "received",
+        "status": 200,
+        "responseType": "cors",
+        "contentType": "text/plain; charset=utf-8",
+        "apiRemaining": null
+      },
+      {
+        "kind": "raw",
+        "url": "https://raw.githubusercontent.com/RonSijm/RonSijm.Slopsidian/8bdf62557aea09c3dbc0212d077ff37851ce5e90/Example/90%20Attachments/Vault%20map.svg",
+        "state": "received",
+        "status": 200,
+        "responseType": "cors",
+        "contentType": "image/svg+xml",
+        "apiRemaining": null
+      },
+      {
+        "kind": "raw",
+        "url": "https://raw.githubusercontent.com/RonSijm/RonSijm.Slopsidian/8bdf62557aea09c3dbc0212d077ff37851ce5e90/Example/90%20Attachments/Synthetic%20tone.wav",
+        "state": "received",
+        "status": 200,
+        "responseType": "cors",
+        "contentType": "audio/wav",
+        "apiRemaining": null
+      },
+      {
+        "kind": "cache",
+        "url": "https://raw.githubusercontent.com/RonSijm/RonSijm.Slopsidian/8bdf62557aea09c3dbc0212d077ff37851ce5e90/Example/Start%20here.md",
+        "status": 200,
+        "responseType": "cors"
+      }
+    ]
+  },
+  "afterFullPageReload": {
+    "origin": "http://127.0.0.1:5185",
+    "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "secureContext": true,
+    "mode": "cors",
+    "credentials": "omit",
+    "cacheOnly": true,
+    "mountedCommit": "8bdf62557aea09c3dbc0212d077ff37851ce5e90",
+    "filesListed": 112,
+    "counts": {
+      "api": 0,
+      "raw": 0,
+      "cacheHits": 1
+    },
+    "checks": [],
+    "requests": [
+      {
+        "kind": "cache",
+        "url": "https://raw.githubusercontent.com/RonSijm/RonSijm.Slopsidian/8bdf62557aea09c3dbc0212d077ff37851ce5e90/Example/Start%20here.md",
+        "status": 200,
+        "responseType": "cors"
+      }
+    ]
+  },
+  "uncachedFileInCacheOnlyMode": {
+    "status": "Cache-only mode refused a network request: https://raw.githubusercontent.com/RonSijm/RonSijm.Slopsidian/8bdf62557aea09c3dbc0212d077ff37851ce5e90/Example/README.md",
+    "evidence": {
+      "origin": "http://127.0.0.1:5185",
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+      "secureContext": true,
+      "mode": "cors",
+      "credentials": "omit",
+      "cacheOnly": true,
+      "mountedCommit": "8bdf62557aea09c3dbc0212d077ff37851ce5e90",
+      "filesListed": 112,
+      "counts": {
+        "api": 0,
+        "raw": 0,
+        "cacheHits": 1
+      },
+      "checks": [],
+      "requests": [
+        {
+          "kind": "cache",
+          "url": "https://raw.githubusercontent.com/RonSijm/RonSijm.Slopsidian/8bdf62557aea09c3dbc0212d077ff37851ce5e90/Example/Start%20here.md",
+          "status": 200,
+          "responseType": "cors"
+        }
+      ]
+    }
+  }
+}

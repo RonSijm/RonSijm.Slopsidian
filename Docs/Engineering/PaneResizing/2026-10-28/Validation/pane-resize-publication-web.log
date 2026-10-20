@@ -1,0 +1,8 @@
+  RonSijm.Slopsidian.Web -> D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian.Web\bin\Release\net10.0\RonSijm.Slopsidian.Web.dll
+  RonSijm.Slopsidian.Web (Blazor output) -> D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\src\RonSijm.Slopsidian.Web\bin\Release\net10.0\wwwroot
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Publishing without optimizations. Although it's optional for Blazor, we strongly recommend using `wasm-tools` workload! You can install it by running `dotnet workload install wasm-tools` from the command line.
+  RonSijm.Slopsidian.Web -> D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\web\
+Published standalone WASM site: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\pane-resize-validation-20261028\.runtime\web\wwwroot
+Base path: /
+No desktop server or vault files are included.

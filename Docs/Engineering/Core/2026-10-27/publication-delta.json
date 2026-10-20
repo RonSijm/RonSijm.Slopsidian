@@ -1,0 +1,16 @@
+{
+  "scope": "Publication of accepted catalogue only; source identity and fixed requirements unchanged. Functional report artifacts remain the pre-attestation build; final UI reports bind the published build.",
+  "sourceFingerprint": "e6376feb207a8eb872dc2a7a0132f9ff57e863f1b918349b407a2c0b6b0e9ca3",
+  "desktop": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+      "sha256": "880ca7d1f1c6910ff755343a473ae5004ff291262ff5c15fb0a54dd4d5d6d08f"
+    }
+  ],
+  "web": [
+    {
+      "path": "core-verification.json",
+      "sha256": "880ca7d1f1c6910ff755343a473ae5004ff291262ff5c15fb0a54dd4d5d6d08f"
+    }
+  ]
+}

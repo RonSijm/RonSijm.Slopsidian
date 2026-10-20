@@ -1,0 +1,17 @@
+PASS Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.
+PASS The actual OS folder picker grants a live external vault, including binary attachment inventory.
+PASS Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.
+PASS External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.
+PASS The shared note-creation UI creates folders and writes a new Markdown note directly to disk.
+PASS Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.
+PASS Core enablement and the unchanged upstream sample plugin save settings into the selected vault.
+PASS Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.
+PASS External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.
+PASS A real page reload is blocked while a buffer has unsaved changes.
+PASS Cancelling the native folder picker retains the selected vault and dirty buffer.
+PASS Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.
+PASS A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.
+PASS Actual import controls preview compatible panes and unsupported preferences, refuse malformed layouts, cancel safely, and copy the exact original profile without changing active panes, original profiles, automatic layout or BOM/CRLF notes.
+PASS Imported layouts open real Source/Reading split panes with pins and sidebar state; unknown main/sidebar views retain opaque data. Name collisions, stale source reviews and dirty-save conflicts preserve the previous layout and external bytes.
+PASS Actual export controls write original-shaped named profiles and explicitly replace an existing name, while preserving BOM, unknown fields, other profiles, active selection, ribbon/floating/stacked/group data. Concurrent source or destination changes reject without overwriting either file.
+PASS Disable/re-enable removes owned controls and rejects retained actions; imported provenance, active Source/Reading layout, unavailable views and exported original profiles survive a full desktop restart or permissioned browser reconnect.

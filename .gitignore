@@ -1,0 +1,11 @@
+node_modules/
+.runtime/
+/.local/
+.vs/
+*.suo
+*.user
+*.sln.DotSettings.user
+**/bin/
+**/obj/
+src/RonSijm.Slopsidian/wwwroot/js/
+src/RonSijm.Slopsidian/wwwroot/core-verification.json

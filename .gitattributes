@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.sln text eol=crlf
+
+# Preserve the pinned upstream bytes used by the provenance checks.
+vendor/obsidian-sample-plugin/** -text

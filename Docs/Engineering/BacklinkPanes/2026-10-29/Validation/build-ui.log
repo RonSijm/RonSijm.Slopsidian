@@ -1,0 +1,6 @@
+
+> slopsidian@0.1.0 build:ui
+> node tools/build.mjs
+
+GITHUB_PLUGIN_READY D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\.runtime\github-vault-plugin\
+Built the editor and unchanged upstream sample plugin. Demo vault: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\backlink-panes-validation-20261029\.runtime\DemoVault
