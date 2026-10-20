@@ -1,0 +1,31 @@
+{
+  "accepted": true,
+  "scope": "Actual unhandled renderer exception injected through CDP into an owned disposable diagnostics smoke, with unchanged runner/application source; must exit nonzero and fail the final log audit.",
+  "exitCode": 1,
+  "unexpected": [
+    {
+      "schemaVersion": 1,
+      "id": "06e846ce-50f7-4d0f-8a56-200dcc7bb045:3",
+      "session": "06e846ce-50f7-4d0f-8a56-200dcc7bb045",
+      "timestamp": "2026-10-27T23:31:09.460Z",
+      "source": "window-error",
+      "error": {
+        "name": "Error",
+        "message": "Unaccounted smoke failure control",
+        "stack": "Error: Unaccounted smoke failure control\n    at <anonymous>:1:29",
+        "stackOrigin": "original"
+      },
+      "page": "http://127.0.0.1:57108/",
+      "context": {
+        "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\readonly-io-validation-20261028\\.runtime\\smoke-vault-RKoNSx",
+        "file": "CRLF note.md",
+        "view": "markdown",
+        "leafId": "2de758af-e1ef-4892-9194-3c220e561146",
+        "filename": "",
+        "line": 1,
+        "column": 29
+      }
+    }
+  ],
+  "uncaught": 1
+}

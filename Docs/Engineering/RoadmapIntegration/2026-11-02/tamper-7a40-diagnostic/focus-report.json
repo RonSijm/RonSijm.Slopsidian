@@ -1,0 +1,670 @@
+{
+  "status": "focus-diagnostic-only",
+  "focus": "tamper",
+  "sourceFingerprint": "7a4023dbe1d37880363e3850f1169f8124817e1ff7f0562bc8f6c24d65459f4d",
+  "scenarios": [
+    {
+      "name": "cold online page is unprepared and caches nothing until the user asks",
+      "ms": 1803,
+      "pages": [
+        {
+          "page": "online",
+          "url": "http://127.0.0.1:44712/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 46,
+          "policy": "online cold page",
+          "actions": [],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it",
+      "ms": 4250,
+      "pages": [
+        {
+          "page": "prepare",
+          "url": "http://127.0.0.1:44712/",
+          "errors": [],
+          "failedLoads": [],
+          "badResponses": [],
+          "requests": 365,
+          "policy": "prepared page",
+          "actions": [
+            {
+              "control": "prepare",
+              "stage": "before-summary-click",
+              "at": 1793590864201,
+              "present": true,
+              "open": false,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-summary-click",
+              "at": 1793590864218,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "before-control-click",
+              "at": 1793590864220,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-control-click",
+              "at": 1793590864234,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "busy",
+              "error": "",
+              "status": "Preparing the offline app…"
+            }
+          ],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "tampered manifest metadata is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action",
+      "ms": 6757,
+      "pages": [
+        {
+          "page": "tamper-manifest metadata",
+          "url": "http://127.0.0.1:44712/",
+          "errors": [
+            {
+              "kind": "log",
+              "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+              "url": "http://127.0.0.1:44712/"
+            }
+          ],
+          "failedLoads": [],
+          "badResponses": [
+            {
+              "url": "http://127.0.0.1:44712/",
+              "status": 503
+            }
+          ],
+          "requests": 365,
+          "policy": "tampered manifest metadata",
+          "actions": [
+            {
+              "control": "prepare",
+              "stage": "before-summary-click",
+              "at": 1793590872014,
+              "present": true,
+              "open": false,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-summary-click",
+              "at": 1793590872039,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "before-control-click",
+              "at": 1793590872041,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-control-click",
+              "at": 1793590872064,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "busy",
+              "error": "",
+              "status": "Preparing the offline app…"
+            }
+          ],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "tampered adoption record is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action",
+      "ms": 6210,
+      "pages": [
+        {
+          "page": "tamper-adoption record",
+          "url": "http://127.0.0.1:44712/",
+          "errors": [
+            {
+              "kind": "log",
+              "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+              "url": "http://127.0.0.1:44712/"
+            }
+          ],
+          "failedLoads": [],
+          "badResponses": [
+            {
+              "url": "http://127.0.0.1:44712/",
+              "status": 503
+            }
+          ],
+          "requests": 365,
+          "policy": "tampered adoption record",
+          "actions": [
+            {
+              "control": "prepare",
+              "stage": "before-summary-click",
+              "at": 1793590878466,
+              "present": true,
+              "open": false,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-summary-click",
+              "at": 1793590878478,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "before-control-click",
+              "at": 1793590878481,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "not-prepared",
+              "error": "",
+              "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+            },
+            {
+              "control": "prepare",
+              "stage": "after-control-click",
+              "at": 1793590878498,
+              "present": true,
+              "open": true,
+              "hidden": false,
+              "inert": false,
+              "openDialogs": 0,
+              "summaryHit": "summary",
+              "state": "busy",
+              "error": "",
+              "status": "Preparing the offline app…"
+            }
+          ],
+          "enforced": true,
+          "unexpected": {
+            "errors": [],
+            "failures": [],
+            "responses": [],
+            "external": []
+          }
+        }
+      ]
+    }
+  ],
+  "pageDiagnostics": [
+    {
+      "page": "online",
+      "url": "http://127.0.0.1:44712/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 46,
+      "policy": "online cold page",
+      "actions": [],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": false,
+          "lifecycle": [],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 40908\n\r\nDevTools listening on ws://127.0.0.1:44713/devtools/browser/fb119a91-c34b-465e-92e7-e6a6d939b1e4\r\nWEB_QUIT_ACK aa605b5b-de0e-4b5d-a7dd-a8bdfc971d41\n"
+    },
+    {
+      "page": "prepare",
+      "url": "http://127.0.0.1:44712/",
+      "errors": [],
+      "failedLoads": [],
+      "badResponses": [],
+      "requests": 365,
+      "policy": "prepared page",
+      "actions": [
+        {
+          "control": "prepare",
+          "stage": "before-summary-click",
+          "at": 1793590864201,
+          "present": true,
+          "open": false,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-summary-click",
+          "at": 1793590864218,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "before-control-click",
+          "at": 1793590864220,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-control-click",
+          "at": 1793590864234,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "busy",
+          "error": "",
+          "status": "Preparing the offline app…"
+        }
+      ],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 27524\n\r\nDevTools listening on ws://127.0.0.1:35454/devtools/browser/6bf5e4e2-1ff1-445c-beee-8385362aa121\r\nWEB_QUIT_ACK 787c69dc-51bb-48d6-898e-0b6988fa4dfc\n"
+    },
+    {
+      "page": "tamper-manifest metadata",
+      "url": "http://127.0.0.1:44712/",
+      "errors": [
+        {
+          "kind": "log",
+          "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+          "url": "http://127.0.0.1:44712/"
+        }
+      ],
+      "failedLoads": [],
+      "badResponses": [
+        {
+          "url": "http://127.0.0.1:44712/",
+          "status": 503
+        }
+      ],
+      "requests": 365,
+      "policy": "tampered manifest metadata",
+      "actions": [
+        {
+          "control": "prepare",
+          "stage": "before-summary-click",
+          "at": 1793590872014,
+          "present": true,
+          "open": false,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-summary-click",
+          "at": 1793590872039,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "before-control-click",
+          "at": 1793590872041,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-control-click",
+          "at": 1793590872064,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "busy",
+          "error": "",
+          "status": "Preparing the offline app…"
+        }
+      ],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 40516\n\r\nDevTools listening on ws://127.0.0.1:13072/devtools/browser/ec31382b-260c-4623-bfae-18f2764a9d45\r\nWEB_QUIT_ACK fae2f735-f501-4f30-8195-f99a240fdf53\n"
+    },
+    {
+      "page": "tamper-adoption record",
+      "url": "http://127.0.0.1:44712/",
+      "errors": [
+        {
+          "kind": "log",
+          "text": "Failed to load resource: the server responded with a status of 503 (Offline app file unavailable)",
+          "url": "http://127.0.0.1:44712/"
+        }
+      ],
+      "failedLoads": [],
+      "badResponses": [
+        {
+          "url": "http://127.0.0.1:44712/",
+          "status": 503
+        }
+      ],
+      "requests": 365,
+      "policy": "tampered adoption record",
+      "actions": [
+        {
+          "control": "prepare",
+          "stage": "before-summary-click",
+          "at": 1793590878466,
+          "present": true,
+          "open": false,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-summary-click",
+          "at": 1793590878478,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "before-control-click",
+          "at": 1793590878481,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "not-prepared",
+          "error": "",
+          "status": "Nothing is saved yet. Preparing downloads the complete app once so it can start without a network. Vault secrets and GitHub data are never part of it."
+        },
+        {
+          "control": "prepare",
+          "stage": "after-control-click",
+          "at": 1793590878498,
+          "present": true,
+          "open": true,
+          "hidden": false,
+          "inert": false,
+          "openDialogs": 0,
+          "summaryHit": "summary",
+          "state": "busy",
+          "error": "",
+          "status": "Preparing the offline app…"
+        }
+      ],
+      "enforced": true,
+      "unexpected": {
+        "errors": [],
+        "failures": [],
+        "responses": [],
+        "external": []
+      },
+      "exitCode": 0,
+      "forcedKill": false,
+      "quitLog": {
+        "drain": {
+          "app": true,
+          "lifecycle": [
+            {
+              "name": "workspace",
+              "idle": true
+            },
+            {
+              "name": "configuration",
+              "idle": true
+            }
+          ],
+          "polls": 0,
+          "drained": true
+        },
+        "committed": true,
+        "acknowledged": true,
+        "exited": true,
+        "forced": false,
+        "early": false,
+        "deadlineHit": false,
+        "requestError": null,
+        "rejected": null,
+        "dialogs": []
+      },
+      "childLog": "\r\nWEB_HOST_PID 8488\n\r\nDevTools listening on ws://127.0.0.1:33679/devtools/browser/aed5bdc8-9dd6-4c59-ad83-ec66e25432c2\r\nWEB_QUIT_ACK 8164f77b-54bc-4cf7-ab19-d6b4c0aa7913\n"
+    }
+  ],
+  "githubIndexUi": null,
+  "workerOnly": null,
+  "quota": null,
+  "limits": [
+    "A damaged index.html or adoption/manifest record leaves the offline shell unable to repair itself from the page; recovery is clearing site data (exercised with Storage.clearDataForOrigin) and preparing again.",
+    "Worker update rollback is not atomic: a new worker is only admitted while the adoption record names it, but if it finished activating before a rollback write, it stays active against the restored record and fails closed (network online, explicit 503 offline) until the user prepares again. The harness exercises the rejected-install and successful A-to-B paths, not that race."
+  ],
+  "note": "Not acceptance evidence; the full run is still required."
+}

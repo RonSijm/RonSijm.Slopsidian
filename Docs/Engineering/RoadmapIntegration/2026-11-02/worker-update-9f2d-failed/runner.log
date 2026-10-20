@@ -1,0 +1,22 @@
+ok - cold online page is unprepared and caches nothing until the user asks
+ok - user-directed prepare (real pointer) adopts one complete version and the next load is controlled by it
+skipped (focus) - cold restart with the network OFF boots the app, workers and renderer from the cached shell
+skipped (focus) - a genuine cached GitHub mount is seeded offline in local storage only
+skipped (focus) - a cold canonical cached remote route boots offline into the read-only mount with the exact note and no API/raw fallback
+skipped (focus) - explicit complete cached index offline: partial first, missing and corrupt bytes refused, complete after exact cached bytes, zero downloads
+skipped (focus) - cached index dialog UI: real pointers drive Prepare, held Cancel, Resume, missing and corrupt refusal, then a verified complete index with offline search metadata
+skipped (focus) - an evicted file is reported honestly offline (503, never a network or mixed fallback)   and a real-pointer repair restores it
+skipped (focus) - tampered JavaScript is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+skipped (focus) - tampered WebAssembly is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+skipped (focus) - tampered HTML is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+skipped (focus) - tampered manifest metadata is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+skipped (focus) - tampered adoption record is refused on a cold offline boot, never run as a ready shell, and is repaired only by an explicit user action
+ok - a worker-only update is never installed ahead of its adoption record: the unadopted new worker is rejected and the adopted shell keeps serving offline
+Offline shell smoke FAILED; diagnostics preserved in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-musical-funicular\.runtime\evidence\offline-shell-web-smoke-failed-2026-11-02T02-30-18-582Z.json
+Error: Timed out waiting for worker B booting offline
+    at Page.wait (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:143:11)
+    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:555:9
+    at async session (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:269:40)
+    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:544:7
+    at async scenario (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:261:3)
+    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-musical-funicular/tools/offline-shell-smoke.mjs:533:5

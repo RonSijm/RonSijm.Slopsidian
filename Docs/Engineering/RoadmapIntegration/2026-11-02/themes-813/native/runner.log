@@ -1,0 +1,15 @@
+PASS No community-theme catalog or theme download request was made at startup.
+PASS An external appearance.json theme selection is adopted by the lifecycle-owned watcher without reload, retaining the unsaved editor text, selection and CM instance.
+PASS External theme-CSS edits and newly enabled snippets are re-read and applied while the editor state is retained.
+PASS Malformed external appearance.json and unsupported external CSS are reported, retain the exact accepted styles and editor state, and later valid files are adopted.
+PASS Browsing and reviewing are explicit; installing writes the exact reviewed BOM/CRLF bytes and manifest, does not select the theme and leaves the active styles and editor untouched.
+PASS A stale review is refused by the host version guard and the locally edited theme bytes are retained.
+PASS An external manifest.json edit after review is refused even though the CSS is unchanged, and every installed byte is retained.
+PASS A fresh review updates the installed theme to the exact reviewed bytes, and the external selection adopts it without disturbing the editor.
+PASS Switching the color scheme re-renders an already mounted Mermaid diagram in place (same container, decoded replacement image, no SVG in the application DOM) without touching the editor.
+PASS A selected-folder bundle with a relative image installs the exact CSS, manifest (unknown keys) and image bytes without enabling trusted local resources.
+PASS The original editor leaf, view, file and CodeMirror instance, text and selection were retained through every theme step; real Ctrl+Z removed the seeded edit and Ctrl+Y restored its exact text with CodeMirror's history caret on the same leaf/view/CM.
+PASS Resource-only external changes are watched and adopted; a deleted resource is reported while the accepted styles and editor are retained; restoring it is adopted again.
+PASS A theme with a remote URL is refused at review with an explicit reason and nothing is written.
+PASS A read-only GitHub vault refuses theme install (disabled control and host refusal) with unchanged cached blobs and no API/raw requests.
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

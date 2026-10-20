@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "sourceBefore": "4f34cda2c1fe8cfff05ecd3c703e9a0d2bb7fbace215ce75f2624e3ce363946b",
+  "boundary": "Full main builds/static/default/GitHub regression after opener-document DOM parking on terminal popout pagehide, with no premature native model close and connected-only document lifecycle. Runtime proof and broad original/browser equivalence remain separate.",
+  "commands": [
+    {
+      "exitCode": 0,
+      "command": "npm run build",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\dom-ownership-integrated-validation-c1171cf6-844d-4eb3-848b-982489e5c7de\\build.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "npm run build:web",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\dom-ownership-integrated-validation-c1171cf6-844d-4eb3-848b-982489e5c7de\\build-web.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "npm run verify:web",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\dom-ownership-integrated-validation-c1171cf6-844d-4eb3-848b-982489e5c7de\\verify-web.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "npm run test",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\dom-ownership-integrated-validation-c1171cf6-844d-4eb3-848b-982489e5c7de\\test.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "npm run test:github",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\dom-ownership-integrated-validation-c1171cf6-844d-4eb3-848b-982489e5c7de\\test-github.log"
+    }
+  ],
+  "tests": {
+    "test:github": {
+      "cancelled": 0,
+      "pass": 44,
+      "fail": 0,
+      "tests": 44,
+      "skipped": 0
+    },
+    "test": {
+      "cancelled": 0,
+      "pass": 1258,
+      "fail": 0,
+      "tests": 1258,
+      "skipped": 0
+    }
+  },
+  "artifacts": [
+    {
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "bytes": 588800,
+      "sha256": "c2fab4b096fb591b8bed4bab0c1c0fecf55497e2c2ca55a3d5fe6ca88369666b"
+    },
+    {
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "bytes": 4916745,
+      "sha256": "a67ff8618443136b34e684b100f871d298b79a8cb6f4572b69a45561977cc56f"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+      "bytes": 4916745,
+      "sha256": "a67ff8618443136b34e684b100f871d298b79a8cb6f4572b69a45561977cc56f"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json",
+      "bytes": 37676,
+      "sha256": "cc0539034fd2022e85cafdce6091443a5c5c43d18d164ad6eed92eb06301e20d"
+    },
+    {
+      "path": ".runtime\\web\\wwwroot\\service-worker.js",
+      "bytes": 6303,
+      "sha256": "618c9f4a72a70a45eab864b19ea089a91cc4e8a3b7e32a63ab4dae757d103a91"
+    }
+  ],
+  "sourceAfter": "4f34cda2c1fe8cfff05ecd3c703e9a0d2bb7fbace215ce75f2624e3ce363946b",
+  "completedAt": "2026-11-02T02:45:35.5194764Z"
+}

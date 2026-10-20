@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+# Installed plugin packages are included so GitHub vault mounts can load them.
+# The Git plugin creates this machine-local authentication helper at runtime.
+.obsidian/plugins/*/obsidian_askpass.sh
+.obsidian/themes/
+.obsidian/workspace*.json
+.obsidian/workspaces.json
+.obsidian/cache/
+.obsidian/graph.json
+.obsidian/hotkeys.json
+.obsidian/vault-dotnet*.json
+.trash/

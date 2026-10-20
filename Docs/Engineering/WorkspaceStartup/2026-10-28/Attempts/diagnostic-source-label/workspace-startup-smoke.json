@@ -1,0 +1,742 @@
+{
+  "status": "failed",
+  "scope": "workspace-startup-import",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-28T11:42:21.695Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\workspace-startup-validation-20261028\\.runtime\\smoke-vault-5FjxoE",
+  "launcherPid": 24896,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "A fresh runtime imports original Source/Live Preview and Reading panes, pins, dimensions, sidebar widths and unavailable opaque state with Workspaces disabled, preserves exact BOM/CRLF/Unicode bytes, and checkpoints only the independent layout.",
+    "A later restart/reconnect prefers the independent saved layout over a changed original, retaining imported file selection and proportions without rewriting the original source.",
+    "The actual command palette presents an import confirmation; Cancel retains a real unsaved editor and its exact original disk bytes.",
+    "Confirmed manual import uses the guarded layout transition, saves the dirty note's exact intended text, installs the reviewed original panes and leaves the source workspace untouched.",
+    "With neither layout present, normal note access remains available and startup creates no original workspace file or compatibility error."
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 24896,
+      "electronPid": 24896,
+      "dotnetPid": 7516,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 33252,
+      "electronPid": 33252,
+      "dotnetPid": 18224,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 47188,
+      "electronPid": 47188,
+      "dotnetPid": 49280,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 49276,
+      "electronPid": 49276,
+      "dotnetPid": 24536,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 50084,
+      "electronPid": 50084,
+      "dotnetPid": 16816,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.14",
+  "sourceFingerprint": "4af3876ec2d280b579da923e4998d883832045ee9ff8812e24627125a6f662e9",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "controlledShutdownConsoleErrors": [],
+  "error": "AssertionError [ERR_ASSERTION]: A deliberately malformed original must report one causal import failure while keeping the vault usable\n+ actual - expected\n\n+ 'notification'\n- 'reported'\n\n    at expectErrors (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/workspace-startup-validation-20261028/tools/error-log-audit.mjs:82:12)\n    at async checkWorkspaceStartup (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/workspace-startup-validation-20261028/tools/workspace-startup-scenarios.mjs:72:3)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/workspace-startup-validation-20261028/tools/smoke.mjs:743:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.querySelector(\\\"#client-errors\\\").textContent\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n  "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.current()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"typeof slopsidianDiagnostics!==\\\"undefined\\\"\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retain"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.flush()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result);"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.read()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result);\n"
+    },
+    {
+      "method": "Page.enable"
+    },
+    {
+      "method": "Page.getFrameTree"
+    },
+    {
+      "method": "Runtime.enable"
+    },
+    {
+      "method": "Emulation.setFocusEmulationEnabled"
+    },
+    {
+      "method": "Page.addScriptToEvaluateOnNewDocument"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.readyState===\\\"complete\\\"&&document.querySelector(\\\"main[data-ready=true]\\\")&&globalThis.app?.workspace.layoutReady&&!app.changingVault)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.readyState===\\\"complete\\\"&&document.querySelector(\\\"main[data-ready=true]\\\")&&globalThis.app?.workspace.layoutReady&&!app.changingVault)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.readyState===\\\"complete\\\"&&document.querySelector(\\\"main[data-ready=true]\\\")&&globalThis.app?.workspace.layoutReady&&!app.changingVault)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.readyState===\\\"complete\\\"&&document.querySelector(\\\"main[data-ready=true]\\\")&&globalThis.app?.workspace.layoutReady&&!app.changingVault)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.readyState===\\\"complete\\\"&&document.querySelector(\\\"main[data-ready=true]\\\")&&globalThis.app?.workspace.layoutReady&&!app.changingVault)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.readyState===\\\"complete\\\"&&document.querySelector(\\\"main[data-ready=true]\\\")&&globalThis.app?.workspace.layoutReady&&!app.changingVault)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.readyState===\\\"complete\\\"&&document.querySelector(\\\"main[data-ready=true]\\\")&&globalThis.app?.workspace.layoutReady&&!app.changingVault)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"globalThis.smokeKeys=[];window.addEventListener(\\\"keydown\\\",event=>globalThis.smokeKeys.push({key:event.key,ctrl:event.ctrlKey,prevented:event.defaultPrevented,changing:globalThis.app?.changingVault,dirty:globalThis.app?.dirty,length:globalThis.app?.workspace.active"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (document.readyState===\\\"complete\\\"&&document.querySelector(\\\"main[data-ready=true]\\\")&&globalThis.app?.workspace.layoutReady&&!app.changingVault)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending prom"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"slopsidianDiagnostics.current()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [
+      "Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source."
+    ],
+    "buffers": [
+      {
+        "id": "99f3896a-76a4-4d0c-9712-7b52a01557f9",
+        "type": "markdown",
+        "path": "CRLF note.md",
+        "text": "# CRLF preservation\r\n\r\nTODO: Keep the existing encoding.\r\n",
+        "sessionText": "# CRLF preservation\r\n\r\nTODO: Keep the existing encoding.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 55
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "9bb59fd0-90e4-483b-b698-4f862c882f13",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "c2ddea40-3d63-4671-96d7-1b1904901f07",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "99f3896a-76a4-4d0c-9712-7b52a01557f9",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "CRLF note.md",
+                    "mode": "source",
+                    "source": true
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          }
+        ]
+      },
+      "active": "99f3896a-76a4-4d0c-9712-7b52a01557f9",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-navigation": {
+          "lastMainLeaf": "99f3896a-76a4-4d0c-9712-7b52a01557f9",
+          "lastFile": "CRLF note.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "consoleErrors": [
+    "Error: Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.\n    at startupWorkspace (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:72262:14)\n    at async Workspace.restore (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:74423:23)\n    at async App.setVault (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:91609:22)\n    at async Module.setVault (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:96360:22)\n    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:54569/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n    at async kn._invokeClientMethod (http://127.0.0.1:54569/_framework/blazor.web.9hsif5t8mt.js:1:69340)",
+    "[2026-10-28T11:42:24.140Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T11:42:27.410Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T11:42:32.426Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T11:42:37.053Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T11:42:40.451Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T11:42:45.460Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "Error: Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.\n    at startupWorkspace (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:72262:14)\n    at async Workspace.restore (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:74423:23)\n    at async App.setVault (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:91609:22)\n    at async Module.setVault (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:96360:22)\n    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:57304/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n    at async kn._invokeClientMethod (http://127.0.0.1:57304/_framework/blazor.web.9hsif5t8mt.js:1:69340)",
+    "[2026-10-28T11:42:48.234Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T11:42:53.243Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 16816,
+  "electronPid": 50084,
+  "completedAt": "2026-10-28T11:42:53.410Z",
+  "errorLogAudit": {
+    "status": "failed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\workspace-startup-validation-20261028\\.runtime\\evidence\\workspace-startup-smoke-errors.jsonl",
+    "nativePaths": [
+      "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\workspace-startup-validation-20261028\\.runtime\\smoke-profile\\logs\\errors-smoke-daf25485-4745-40b1-acaf-384cf0fb7c33.jsonl"
+    ],
+    "records": 2,
+    "expected": 0,
+    "unexpected": [
+      {
+        "schemaVersion": 1,
+        "id": "2cc233ed-4fd8-431a-b7e1-1d702d79e0e6:0",
+        "session": "2cc233ed-4fd8-431a-b7e1-1d702d79e0e6",
+        "timestamp": "2026-10-28T11:42:23.816Z",
+        "source": "notification",
+        "error": {
+          "name": "Error",
+          "message": "Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.",
+          "stack": "Error: Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.\n    at startupWorkspace (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:72262:14)\n    at async Workspace.restore (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:74423:23)\n    at async App.setVault (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:91609:22)\n    at async Module.setVault (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:96360:22)\n    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:54569/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n    at async kn._invokeClientMethod (http://127.0.0.1:54569/_framework/blazor.web.9hsif5t8mt.js:1:69340)",
+          "stackOrigin": "original",
+          "cause": {
+            "name": "Error",
+            "message": "The active workspace item must identify an imported leaf.",
+            "stack": "Error: The active workspace item must identify an imported leaf.\n    at importObsidianWorkspace (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:72124:11)\n    at prepareOriginalWorkspace (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:72237:20)\n    at startupWorkspace (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:72252:22)\n    at async Workspace.restore (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:74423:23)\n    at async App.setVault (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:91609:22)\n    at async Module.setVault (http://127.0.0.1:54569/js/editor-host.th71sc75fk.js:96360:22)\n    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:54569/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n    at async kn._invokeClientMethod (http://127.0.0.1:54569/_framework/blazor.web.9hsif5t8mt.js:1:69340)",
+            "stackOrigin": "original"
+          }
+        },
+        "page": "http://127.0.0.1:54569/",
+        "context": {
+          "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\workspace-startup-validation-20261028\\.runtime\\smoke-vault-5FjxoE",
+          "file": null,
+          "view": "empty",
+          "leafId": "986b37e2-7b54-4376-90ae-2ab1b3befdcc"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "id": "fbc72799-025b-4d58-8b42-6cd3fe5c6539:0",
+        "session": "fbc72799-025b-4d58-8b42-6cd3fe5c6539",
+        "timestamp": "2026-10-28T11:42:47.849Z",
+        "source": "notification",
+        "error": {
+          "name": "Error",
+          "message": "Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.",
+          "stack": "Error: Could not import .obsidian/workspace.json. Its bytes were retained; notes remain available. Use 'Import Obsidian active workspace' to retry after fixing the source.\n    at startupWorkspace (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:72262:14)\n    at async Workspace.restore (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:74423:23)\n    at async App.setVault (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:91609:22)\n    at async Module.setVault (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:96360:22)\n    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:57304/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n    at async kn._invokeClientMethod (http://127.0.0.1:57304/_framework/blazor.web.9hsif5t8mt.js:1:69340)",
+          "stackOrigin": "original",
+          "cause": {
+            "name": "Error",
+            "message": "Host 422: {\"error\":\"The original workspace must contain valid JSON: Expected depth to be zero at the end of the JSON payload. There is an open JSON object or array that should be closed. LineNumber: 0 | BytePositionInLine: 1.\"}",
+            "stack": "Error: Host 422: {\"error\":\"The original workspace must contain valid JSON: Expected depth to be zero at the end of the JSON payload. There is an open JSON object or array that should be closed. LineNumber: 0 | BytePositionInLine: 1.\"}\n    at requestJson (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:40759:11)\n    at async startupWorkspace (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:72252:53)\n    at async Workspace.restore (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:74423:23)\n    at async App.setVault (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:91609:22)\n    at async Module.setVault (http://127.0.0.1:57304/js/editor-host.th71sc75fk.js:96360:22)\n    at async b.beginInvokeJSFromDotNet (http://127.0.0.1:57304/_framework/blazor.web.9hsif5t8mt.js:1:4177)\n    at async kn._invokeClientMethod (http://127.0.0.1:57304/_framework/blazor.web.9hsif5t8mt.js:1:69340)",
+            "stackOrigin": "original"
+          }
+        },
+        "page": "http://127.0.0.1:57304/",
+        "context": {
+          "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\workspace-startup-validation-20261028\\.runtime\\smoke-vault-5FjxoE",
+          "file": null,
+          "view": "empty",
+          "leafId": "b962806b-cc8b-4fff-b7cf-a160cfede930"
+        }
+      }
+    ],
+    "sha256": "7b728d8d36d4e3c6ed5d826ae752dc225f5cdd1421c7bea52b579d99405cb589",
+    "includesFinalTeardown": true
+  }
+}

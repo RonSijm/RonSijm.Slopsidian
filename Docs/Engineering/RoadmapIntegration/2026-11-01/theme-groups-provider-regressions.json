@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "startedAt": "2026-11-01T22:48:59.0219109Z",
+  "boundary": "Combined integrated theme management, linked groups/popout base, providers and corrected Outline source/regressions. New Reader/native guest acknowledged-close additions and offline shell remain unintegrated. Not current-host feature or whole-roadmap acceptance.",
+  "sourceBefore": "57dd9e85fc6b63badf12d3750639547988dea4e3d34f639fe0185d19c0adfb19",
+  "sourceCount": 553,
+  "commands": [
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\theme-groups-provider-validation-48c8011b-e2ee-4434-9934-b5cd37311ad7\\build.log",
+      "elapsedMs": 5273.0,
+      "exitCode": 0,
+      "command": "npm run build"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\theme-groups-provider-validation-48c8011b-e2ee-4434-9934-b5cd37311ad7\\build-web.log",
+      "elapsedMs": 55912.0,
+      "exitCode": 0,
+      "command": "npm run build:web"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\theme-groups-provider-validation-48c8011b-e2ee-4434-9934-b5cd37311ad7\\verify-web.log",
+      "elapsedMs": 520.0,
+      "exitCode": 0,
+      "command": "npm run verify:web"
+    },
+    {
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\theme-groups-provider-validation-48c8011b-e2ee-4434-9934-b5cd37311ad7\\test.log",
+      "elapsedMs": 167597.0,
+      "exitCode": 0,
+      "command": "npm run test"
+    }
+  ],
+  "sourceAfter_build": "57dd9e85fc6b63badf12d3750639547988dea4e3d34f639fe0185d19c0adfb19",
+  "sourceAfter_build:web": "57dd9e85fc6b63badf12d3750639547988dea4e3d34f639fe0185d19c0adfb19",
+  "sourceAfter_verify:web": "57dd9e85fc6b63badf12d3750639547988dea4e3d34f639fe0185d19c0adfb19",
+  "sourceAfter_test": "57dd9e85fc6b63badf12d3750639547988dea4e3d34f639fe0185d19c0adfb19",
+  "artifacts": [
+    {
+      "sha256": "e40da8a0138e692fb1bdea2692dad91391b4c495fa7c00bf93fb44beb33d7260",
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "bytes": 588800
+    },
+    {
+      "sha256": "374782b2ca60fc72342272ec3ab3bb29fe46b7af6e08e2f088ae71dcade3fa39",
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "bytes": 4885473
+    },
+    {
+      "sha256": "374782b2ca60fc72342272ec3ab3bb29fe46b7af6e08e2f088ae71dcade3fa39",
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+      "bytes": 4885473
+    },
+    {
+      "sha256": "055898c9a5f6d2220b657c3865b8f6eaa48f19170fed06ec186d16b1bb437616",
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\core-verification.json",
+      "bytes": 167
+    },
+    {
+      "sha256": "055898c9a5f6d2220b657c3865b8f6eaa48f19170fed06ec186d16b1bb437616",
+      "path": ".runtime\\web\\wwwroot\\core-verification.json",
+      "bytes": 167
+    }
+  ],
+  "tests": {
+    "tests": 1132,
+    "pass": 1132,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "completedAt": "2026-11-01T22:52:49.0871391Z"
+}

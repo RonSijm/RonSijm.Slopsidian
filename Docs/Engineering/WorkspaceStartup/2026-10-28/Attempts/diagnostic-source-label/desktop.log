@@ -1,0 +1,136 @@
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-daf25485-4745-40b1-acaf-384cf0fb7c33.jsonl
+(node:24896) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:27946/devtools/browser/ba3c7b01-858d-44b7-8cc5-6c80390f31e2
+ELECTRON_HOST_PID 24896
+DOTNET_HOST_PID 7516
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\smoke-vault-5FjxoE
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:54569
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:54569
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-daf25485-4745-40b1-acaf-384cf0fb7c33.jsonl
+(node:33252) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:32546/devtools/browser/8f2af7b8-80e5-40a5-ad34-3d696e4ffe09
+ELECTRON_HOST_PID 33252
+DOTNET_HOST_PID 18224
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\smoke-vault-5FjxoE
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:53114
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:53114
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-daf25485-4745-40b1-acaf-384cf0fb7c33.jsonl
+(node:47188) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:63563/devtools/browser/7389b823-db31-4f19-b917-b35b6cc26539
+ELECTRON_HOST_PID 47188
+DOTNET_HOST_PID 49280
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\smoke-vault-5FjxoE
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:49175
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:49175
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-daf25485-4745-40b1-acaf-384cf0fb7c33.jsonl
+(node:49276) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:27991/devtools/browser/7a8b4fe3-977d-448f-a6cf-f842e797cac5
+ELECTRON_HOST_PID 49276
+DOTNET_HOST_PID 24536
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\smoke-vault-5FjxoE
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:56709
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:56709
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+ERROR_LOG D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\smoke-profile\logs\errors-smoke-daf25485-4745-40b1-acaf-384cf0fb7c33.jsonl
+(node:50084) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:54859/devtools/browser/ece0ec88-3565-416c-a2ab-6b4c86ea90a7
+ELECTRON_HOST_PID 50084
+DOTNET_HOST_PID 16816
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\.runtime\smoke-vault-5FjxoE
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:57304
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:57304
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/workspace/original
+      RonSijm.Slopsidian.Services.VaultException: The original workspace must contain valid JSON: Expected depth to be zero at the end of the JSON payload. There is an open JSON object or array that should be closed. LineNumber: 0 | BytePositionInLine: 1.
+         at RonSijm.Slopsidian.Services.VaultService.ReadOriginalWorkspaceAsync(String expectedRoot, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\Services\VaultService.WorkspaceImport.cs:line 22
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\workspace-startup-validation-20261028\src\RonSijm.Slopsidian\Program.cs:line 45
+
+node:internal/modules/run_main:111
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: A deliberately malformed original must report one causal import failure while keeping the vault usable
++ actual - expected
+
++ 'notification'
+- 'reported'
+
+    at expectErrors (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/workspace-startup-validation-20261028/tools/error-log-audit.mjs:82:12)
+    at async checkWorkspaceStartup (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/workspace-startup-validation-20261028/tools/workspace-startup-scenarios.mjs:72:3)
+    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/workspace-startup-validation-20261028/tools/smoke.mjs:743:5
+
+'failed' !== 'passed'
+
+    at file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/workspace-startup-validation-20261028/tools/smoke.mjs:1557:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v26.12.1

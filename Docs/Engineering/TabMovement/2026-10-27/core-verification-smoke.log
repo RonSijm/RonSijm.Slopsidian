@@ -1,0 +1,766 @@
+
+(node:39528) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:32116/devtools/browser/172f3683-879f-4c12-a7e9-8202d475f93a
+ELECTRON_HOST_PID 39528
+DOTNET_HOST_PID 19392
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:61051
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:61051
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b\.core-isolation
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:46284) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:46208/devtools/browser/40f21237-59ba-4cbd-837a-d35c4c4dbd6f
+ELECTRON_HOST_PID 46284
+DOTNET_HOST_PID 24500
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55486
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:55486
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:15924) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:56818/devtools/browser/872d9052-b877-4fba-972a-251a42b04c6b
+ELECTRON_HOST_PID 15924
+DOTNET_HOST_PID 35908
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:58282
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:58282
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:38016) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:1473/devtools/browser/c8f5d5c4-982d-430c-8d5c-f6bcfe60db6f
+ELECTRON_HOST_PID 38016
+DOTNET_HOST_PID 12828
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:52699
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:52699
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:43264) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:64791/devtools/browser/9fa42f08-fcdb-4b37-b813-bc3df04cecb3
+ELECTRON_HOST_PID 43264
+DOTNET_HOST_PID 23644
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:58609
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:58609
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: This file changed on disk. Your unsaved text is retained; reopen the file after resolving the conflict.
+         at RonSijm.Slopsidian.Services.VaultService.WriteAsync(WriteFileRequest request, Boolean create, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 212
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:39364) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:42126/devtools/browser/539e6edc-204b-41cc-8494-feb6b93d34a8
+ELECTRON_HOST_PID 39364
+DOTNET_HOST_PID 7492
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:56459
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:56459
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:46832) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:64552/devtools/browser/034dce72-a6cc-470d-ac7b-324a1860de09
+ELECTRON_HOST_PID 46832
+DOTNET_HOST_PID 44276
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:62968
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:62968
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:21320) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:48964/devtools/browser/8b15c97b-58fe-4563-b6c1-0d5e0b22caf6
+ELECTRON_HOST_PID 21320
+DOTNET_HOST_PID 8288
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:50658
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:50658
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/core/note-composer/settings
+      RonSijm.Slopsidian.Services.VaultException: Invalid replacementText. Choose link, embed, none.
+         at RonSijm.Slopsidian.Services.VaultService.ValidateCoreSetting(CoreSettingField field, JsonElement value) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Core.cs:line 303
+         at RonSijm.Slopsidian.Services.VaultService.WriteCoreSettingsAsync(String id, CoreSettingsRequest request, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Core.cs:line 82
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/files/trash
+      RonSijm.Slopsidian.Services.VaultException: A file changed on disk. No file operation was applied; reload the affected notes.
+         at RonSijm.Slopsidian.Services.VaultService.ReadFileOperationInputAsync(String path, String expectedVersion, VaultFileEdit edit, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 530
+         at RonSijm.Slopsidian.Services.VaultService.ExecuteFileOperationAsync(String sourcePath, String destination, String sourceVersion, IReadOnlyList`1 requestedEdits, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 264
+         at RonSijm.Slopsidian.Services.VaultService.ExecuteFileOperationAsync(String sourcePath, String destination, String sourceVersion, IReadOnlyList`1 requestedEdits, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 339
+         at RonSijm.Slopsidian.Services.VaultService.MoveFileOperationAsync(String sourcePath, String destination, String sourceVersion, IReadOnlyList`1 requestedEdits, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 231
+         at RonSijm.Slopsidian.Services.VaultService.TrashFileAsync(TrashVaultFileRequest request, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 132
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:27744) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:17120/devtools/browser/b6a144db-2f3a-4871-89f5-39aaaa723139
+ELECTRON_HOST_PID 27744
+DOTNET_HOST_PID 3816
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:53415
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:53415
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:21056) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:18898/devtools/browser/1c0e352a-7cde-49ed-8a47-9fc8eaa09249
+ELECTRON_HOST_PID 21056
+DOTNET_HOST_PID 37532
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:50464
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:50464
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:47080) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:44702/devtools/browser/8811d34e-b43b-4df3-96ae-ae8dce78c9a4
+ELECTRON_HOST_PID 47080
+DOTNET_HOST_PID 15572
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:54735
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:54735
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/files/edit
+      RonSijm.Slopsidian.Services.VaultException: A file changed on disk. No file operation was applied; reload the affected notes.
+         at RonSijm.Slopsidian.Services.VaultService.ReadFileOperationInputAsync(String path, String expectedVersion, VaultFileEdit edit, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 530
+         at RonSijm.Slopsidian.Services.VaultService.ExecuteFileOperationAsync(String sourcePath, String destination, String sourceVersion, IReadOnlyList`1 requestedEdits, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 264
+         at RonSijm.Slopsidian.Services.VaultService.ExecuteFileOperationAsync(String sourcePath, String destination, String sourceVersion, IReadOnlyList`1 requestedEdits, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 339
+         at RonSijm.Slopsidian.Services.VaultService.EditFilesAsync(EditVaultFilesRequest request, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 86
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:29752) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:53977/devtools/browser/490a2185-bdc8-4009-aa6d-10d86ccafb87
+ELECTRON_HOST_PID 29752
+DOTNET_HOST_PID 35648
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:56946
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:56946
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/resource
+      RonSijm.Slopsidian.Services.VaultException: Reading view supports local raster images and M4A, WebM, Ogg, MP3 and WAV audio.
+         at RonSijm.Slopsidian.Services.VaultService.ReadResourceAsync(String path, String expectedRoot, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 161
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:27736) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:57152/devtools/browser/d3709b03-5438-404d-bc5e-f5708ca644ed
+ELECTRON_HOST_PID 27736
+DOTNET_HOST_PID 31368
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:51328
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:51328
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:25980) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:33941/devtools/browser/0f1b9c51-7592-4294-87c8-6bb56bbb43da
+ELECTRON_HOST_PID 25980
+DOTNET_HOST_PID 44752
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:52398
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:52398
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:40124) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:33867/devtools/browser/79c2462f-8ed7-4315-94b4-1f49f1c72cb5
+ELECTRON_HOST_PID 40124
+DOTNET_HOST_PID 45120
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55921
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:55921
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: This file changed on disk. Your unsaved text is retained; reopen the file after resolving the conflict.
+         at RonSijm.Slopsidian.Services.VaultService.WriteAsync(WriteFileRequest request, Boolean create, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 212
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:45404) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:11250/devtools/browser/bf849181-cff7-45d4-a1cb-78872cb93004
+ELECTRON_HOST_PID 45404
+DOTNET_HOST_PID 11696
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55544
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:55544
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:45660) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:4664/devtools/browser/2f2e1acb-a17c-4aa6-9057-3f4b2aea6c59
+ELECTRON_HOST_PID 45660
+DOTNET_HOST_PID 45564
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:63164
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:63164
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: This file changed on disk. Your unsaved text is retained; reopen the file after resolving the conflict.
+         at RonSijm.Slopsidian.Services.VaultService.WriteAsync(WriteFileRequest request, Boolean create, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 212
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:11700) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:25904/devtools/browser/eccb5e4b-6f6d-442a-8cb3-357a6c25649e
+ELECTRON_HOST_PID 11700
+DOTNET_HOST_PID 6192
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:54067
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:54067
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/files/folders
+      RonSijm.Slopsidian.Services.VaultException: A file or folder already exists at that path.
+         at RonSijm.Slopsidian.Services.VaultService.CreateFolderCoreAsync(CreateVaultFolderRequest request, Boolean allowHidden, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Files.cs:line 46
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:46560) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:12601/devtools/browser/7a2d1d3f-1237-4f50-ae29-098cd4277d66
+ELECTRON_HOST_PID 46560
+DOTNET_HOST_PID 41480
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:64704
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:64704
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:40880) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:14749/devtools/browser/ab4168a0-d9af-4455-b436-02db2b175064
+ELECTRON_HOST_PID 40880
+DOTNET_HOST_PID 45792
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:54266
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:54266
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/configuration/graph
+      RonSijm.Slopsidian.Services.VaultException: The configuration changed on disk. Reload it before saving; the existing file was retained.
+         at RonSijm.Slopsidian.Services.VaultService.WriteConfigurationAsync(String id, WriteConfigurationRequest request, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 45
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:46372) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:45941/devtools/browser/0de409e3-57c5-4475-8a83-96cd560f9911
+ELECTRON_HOST_PID 46372
+DOTNET_HOST_PID 42284
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:62686
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:62686
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: This file changed on disk. Your unsaved text is retained; reopen the file after resolving the conflict.
+         at RonSijm.Slopsidian.Services.VaultService.WriteAsync(WriteFileRequest request, Boolean create, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 212
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:41000) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:24276/devtools/browser/6ee27b27-bbcc-45f8-808c-8cb5e494bd46
+ELECTRON_HOST_PID 41000
+DOTNET_HOST_PID 45520
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:52263
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:52263
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:19972) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:32606/devtools/browser/ae9fd1eb-6f36-4e88-bcec-fe0a66ad719b
+ELECTRON_HOST_PID 19972
+DOTNET_HOST_PID 18244
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:54264
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:54264
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:11868) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:38548/devtools/browser/672a0a12-176c-4250-b45a-b75bfddcc9d5
+ELECTRON_HOST_PID 11868
+DOTNET_HOST_PID 37276
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:54056
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:54056
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:36252) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:18543/devtools/browser/32f0a997-862a-4d7e-b823-64ddb4cb5aae
+ELECTRON_HOST_PID 36252
+DOTNET_HOST_PID 41480
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:57912
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:57912
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:41516) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:4992/devtools/browser/e296ad24-4e89-478e-baaf-224260d77a48
+ELECTRON_HOST_PID 41516
+DOTNET_HOST_PID 30908
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:59634
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:59634
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/file
+      RonSijm.Slopsidian.Services.VaultException: The requested file does not exist.
+         at RonSijm.Slopsidian.Services.VaultService.ReadAsync(String path, CancellationToken cancellationToken, String expectedRoot) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.cs:line 121
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:44624) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:14765/devtools/browser/09511f6a-961c-4126-90fe-85463bfd0feb
+ELECTRON_HOST_PID 44624
+DOTNET_HOST_PID 34192
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:64209
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:64209
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:16692) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:39764/devtools/browser/8eb88868-3910-4d16-b658-dfa31dfa08c9
+ELECTRON_HOST_PID 16692
+DOTNET_HOST_PID 28928
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55559
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:55559
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:12828) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:49071/devtools/browser/f2e2ca7c-cd00-4dd4-811b-6b53d1e74448
+ELECTRON_HOST_PID 12828
+DOTNET_HOST_PID 43288
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:52543
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:52543
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/binary
+      RonSijm.Slopsidian.Services.VaultException: A file or folder already exists at that path.
+         at RonSijm.Slopsidian.Services.VaultService.CreateBinaryAsync(CreateBinaryRequest request, CancellationToken cancellationToken) in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Services\VaultService.Binary.cs:line 28
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__4>d.MoveNext() in D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian\Program.cs:line 44
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:23460) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:16871/devtools/browser/9054ae4f-8473-4cb0-ba93-6547fe2f74a7
+ELECTRON_HOST_PID 23460
+DOTNET_HOST_PID 7856
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55856
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:55856
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:14604) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:31320/devtools/browser/2f7edf07-fbd4-4243-99b0-a13d3137c7fd
+ELECTRON_HOST_PID 14604
+DOTNET_HOST_PID 42812
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\.runtime\smoke-vault-pZPp7b
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:64735
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\tab-movement-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:64735
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

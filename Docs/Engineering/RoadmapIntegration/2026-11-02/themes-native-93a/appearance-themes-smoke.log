@@ -1,0 +1,106 @@
+
+ERROR_LOG C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-profile-appearance-1793577026803\logs\errors-smoke-a1ce6f17-115e-402c-a505-a585c74232d0.jsonl
+(node:15088) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:2202/devtools/browser/c3f90d64-9cca-4f1d-8855-4abe48bc3ab7
+ELECTRON_HOST_PID 15088
+DOTNET_HOST_PID 45108
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\.runtime\smoke-vault-VmRpZE
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:56595
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:56595
+warn: RonSijm.Slopsidian[0]
+      Invalid JSON in vault data
+      System.Text.Json.JsonReaderException: 'n' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.
+         at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlySpan`1 utf8JsonSpan, JsonReaderOptions readerOptions, MetadataDb& database, StackRowStack& stack)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonReaderOptions readerOptions, Byte[] extraRentedArrayPoolBytes, PooledByteBufferWriter extraPooledByteBufferWriter, Boolean allowDuplicateProperties)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonDocumentOptions options)
+         at RonSijm.Slopsidian.Services.VaultService.ConfigurationDocumentAsync(String id, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 97
+         at RonSijm.Slopsidian.Services.VaultService.ReadConfigurationAsync(String id, String expectedRoot, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 16
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Invalid JSON in vault data
+      System.Text.Json.JsonReaderException: 'n' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.
+         at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlySpan`1 utf8JsonSpan, JsonReaderOptions readerOptions, MetadataDb& database, StackRowStack& stack)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonReaderOptions readerOptions, Byte[] extraRentedArrayPoolBytes, PooledByteBufferWriter extraPooledByteBufferWriter, Boolean allowDuplicateProperties)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonDocumentOptions options)
+         at RonSijm.Slopsidian.Services.VaultService.ConfigurationDocumentAsync(String id, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 97
+         at RonSijm.Slopsidian.Services.VaultService.ReadConfigurationAsync(String id, String expectedRoot, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 16
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Invalid JSON in vault data
+      System.Text.Json.JsonReaderException: 'n' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.
+         at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlySpan`1 utf8JsonSpan, JsonReaderOptions readerOptions, MetadataDb& database, StackRowStack& stack)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonReaderOptions readerOptions, Byte[] extraRentedArrayPoolBytes, PooledByteBufferWriter extraPooledByteBufferWriter, Boolean allowDuplicateProperties)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonDocumentOptions options)
+         at RonSijm.Slopsidian.Services.VaultService.ConfigurationDocumentAsync(String id, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 97
+         at RonSijm.Slopsidian.Services.VaultService.ReadConfigurationAsync(String id, String expectedRoot, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 16
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/css
+      RonSijm.Slopsidian.Services.VaultException: This appearance stylesheet is missing: .obsidian/themes/Reviewed/theme.css
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceCssAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 103
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/css
+      RonSijm.Slopsidian.Services.VaultException: This appearance stylesheet is missing: .obsidian/themes/Reviewed/manifest.json
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceCssAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 103
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/theme
+      RonSijm.Slopsidian.Services.VaultException: The installed theme changed after it was reviewed. Review it again; the existing files were retained.
+         at RonSijm.Slopsidian.Services.VaultService.InstallAppearanceThemeAsync(InstallAppearanceThemeRequest request, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.AppearanceTheme.cs:line 141
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/theme
+      RonSijm.Slopsidian.Services.VaultException: The installed theme changed after it was reviewed. Review it again; the existing files were retained.
+         at RonSijm.Slopsidian.Services.VaultService.InstallAppearanceThemeAsync(InstallAppearanceThemeRequest request, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.AppearanceTheme.cs:line 141
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/css
+      RonSijm.Slopsidian.Services.VaultException: This appearance stylesheet is missing: .obsidian/themes/Picked/theme.css
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceCssAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 103
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/css
+      RonSijm.Slopsidian.Services.VaultException: This appearance stylesheet is missing: .obsidian/themes/Picked/manifest.json
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceCssAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 103
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/asset
+      RonSijm.Slopsidian.Services.VaultException: This appearance asset is missing: .obsidian/themes/Picked/img/dot.png
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceAssetAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 39
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/asset
+      RonSijm.Slopsidian.Services.VaultException: This appearance asset is missing: .obsidian/themes/Picked/img/dot.png
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceAssetAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 39
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

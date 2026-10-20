@@ -1,0 +1,656 @@
+{
+  "status": "failed",
+  "scope": "editor-chrome-runtime",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-27T10:23:11.351Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\core-verification-validation-20261027\\.runtime\\smoke-vault-WZwMBb",
+  "launcherPid": 44652,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "Real source selections, edits/undo/redo and Reading mode count frontmatter only when selected, use reference numeric/punctuation/CJK/kana/Korean/Tamil/Tibetan rules and UTF-16 emoji/CRLF lengths without writing the note.",
+    "Outline uses actual ATX/Setext metadata, excludes YAML/comments/indented and nested-length fences, nests skipped levels correctly, folds by pointer/keyboard/all controls and follows real source-cursor navigation.",
+    "Dirty heading edits, undo/redo and external saved replacements refresh the real Outline; Reading heading navigation/scroll changes active highlighting and emits the actual public Markdown scroll event.",
+    "Disable/re-enable removes owned Outline controls and retained listeners, restores counts, and full native restart or real-folder WASM reconnect retains the real files/mode without rewriting original workspace/community configuration."
+  ],
+  "coreChecks": [
+    {
+      "id": "word-count:selection-unicode",
+      "status": "passed"
+    },
+    {
+      "id": "outline:markdown-semantics",
+      "status": "passed"
+    }
+  ],
+  "processes": [
+    {
+      "launcherPid": 44652,
+      "electronPid": 44652,
+      "dotnetPid": 41536,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 40636,
+      "electronPid": 40636,
+      "dotnetPid": 34556,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 43780,
+      "electronPid": 43780,
+      "dotnetPid": 46448,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.14",
+  "controlledShutdownConsoleErrors": [],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n    emphasis: true,\n    hidden: true,\n    highlight: true,\n    literal: 'Literal ==code==',\n    strike: true,\n+   strong: false\n-   strong: true\n  }\n\n    at checkEditorModes (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/core-verification-validation-20261027/tools/editor-chrome-scenarios.mjs:141:12)\n    at async checkEditorChromeWorkflows (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/core-verification-validation-20261027/tools/smoke.mjs:368:3)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/core-verification-validation-20261027/tools/smoke.mjs:1359:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (!app.plugins.isManaging)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n   "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"Boolean(app.plugins.getPlugin(\\\"editor-mode-host-probe\\\"))\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set()"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"editor-mode-host-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientR"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"editor-mode-host-probe\\\\\\\"]\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientR"
+    },
+    {
+      "method": "Page.bringToFront"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{\\n    const element=document.querySelector(\\\"[data-toggle-plugin=\\\\\\\"editor-mode-host-probe\\\\\\\"]\\\");\\n    element.scrollIntoView({block:\\\"nearest\\\",inline:\\\"nearest\\\"});\\n    const bounds=Array.from(element.getClientRects()).find(rect=>rect.width>0&&rect.heigh"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (!app.plugins.isManaging&&(Boolean(app.plugins.getPlugin(\\\"editor-mode-host-probe\\\"))===false||Boolean(document.querySelector(\\\".plugin-card[data-plugin-id=\\\\\\\"editor-mode-host-probe\\\\\\\"] .plugin-error\\\")||document.querySelector(\\\"#community-"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (!app.plugins.isManaging&&(Boolean(app.plugins.getPlugin(\\\"editor-mode-host-probe\\\"))===false||Boolean(document.querySelector(\\\".plugin-card[data-plugin-id=\\\\\\\"editor-mode-host-probe\\\\\\\"] .plugin-error\\\")||document.querySelector(\\\"#community-"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"Boolean(app.plugins.getPlugin(\\\"editor-mode-host-probe\\\"))\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set()"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"document.querySelector(\\\".plugin-card[data-plugin-id=\\\\\\\"editor-mode-host-probe\\\\\\\"]\\\").textContent\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globa"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\".settings-close\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBoundingCl"
+    },
+    {
+      "method": "Page.bringToFront"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(()=>{\\n    const element=document.querySelector(\\\".settings-close\\\");\\n    element.scrollIntoView({block:\\\"nearest\\\",inline:\\\"nearest\\\"});\\n    const bounds=Array.from(element.getClientRects()).find(rect=>rect.width>0&&rect.height>0);\\n    if(!bounds){throw new Err"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    },
+    {
+      "method": "Input.dispatchMouseEvent"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "BUTTON",
+      "id": ""
+    },
+    "keys": [
+      {
+        "key": "Home",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item"
+      },
+      {
+        "key": "Home",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item"
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item"
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item"
+      },
+      {
+        "key": "Home",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item is-checked"
+      },
+      {
+        "key": "Home",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item is-checked"
+      },
+      {
+        "key": "ArrowDown",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item is-checked"
+      },
+      {
+        "key": "ArrowDown",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item is-checked"
+      },
+      {
+        "key": "ArrowDown",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item"
+      },
+      {
+        "key": "ArrowDown",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item"
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item"
+      },
+      {
+        "key": "Enter",
+        "ctrl": false,
+        "prevented": false,
+        "changing": false,
+        "dirty": false,
+        "length": 492,
+        "focus": "menu-item"
+      }
+    ],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [
+      {
+        "id": "editor-mode-host-probe",
+        "loaded": "false"
+      }
+    ],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "b064300d-84d2-4716-b395-ba529c5df4da",
+        "type": "markdown",
+        "path": "Editor chrome/Counts.md",
+        "text": "---\r\ntitle: Hidden words\r\n---\r\n# Count\r\n\r\nAlpha beta.\r\n中文 日本語 かな カタカナ 한글 தமிழ் བོད 😀\r\n\r\n3.14 don't --",
+        "sessionText": "---\r\ntitle: Hidden words\r\n---\r\n# Count\r\n\r\nAlpha beta.\r\n中文 日本語 かな カタカナ 한글 தமிழ் བོད 😀\r\n\r\n3.14 don't --",
+        "dirty": false,
+        "selection": 0,
+        "length": 94
+      },
+      {
+        "id": "afd4d22a-11e7-4d6a-8c48-b9811773391b",
+        "type": "image"
+      },
+      {
+        "id": "99ef5cfc-542f-4c4c-b0d1-81d96345506c",
+        "type": "markdown",
+        "path": "Editor modes/Mixed.md",
+        "text": "---\r\ntitle: Preserved metadata\r\n---\r\n# Live heading\r\n\r\n**Strong** *Emphasis* ~~Removed~~ ==Highlighted== and `Literal ==code==`.\r\n\r\n- [ ] Task one\r\n- [x] Task two\r\n\r\n[[Editor modes/Target.md#Destination|A real alias]] and [Markdown target](Target.md#Destination).\r\n\r\n![[Editor modes/Pixel.png]]\r\n\r\n| ",
+        "sessionText": "---\r\ntitle: Preserved metadata\r\n---\r\n# Live heading\r\n\r\n**Strong** *Emphasis* ~~Removed~~ ==Highlighted== and `Literal ==code==`.\r\n\r\n- [ ] Task one\r\n- [x] Task two\r\n\r\n[[Editor modes/Target.md#Destination|A real alias]] and [Markdown target](Target.md#Destination).\r\n\r\n![[Editor modes/Pixel.png]]\r\n\r\n| ",
+        "dirty": false,
+        "selection": 0,
+        "length": 492
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "ce6de968-ab2c-4301-a123-3546b6fb3d93",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "6ef714f7-8975-4c40-b2c4-d0899be1fd26",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "b064300d-84d2-4716-b395-ba529c5df4da",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Editor chrome/Counts.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "afd4d22a-11e7-4d6a-8c48-b9811773391b",
+                "type": "leaf",
+                "state": {
+                  "type": "image",
+                  "state": {
+                    "file": "Editor modes/Pixel.png",
+                    "imageZoom": "fit"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "99ef5cfc-542f-4c4c-b0d1-81d96345506c",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Editor modes/Mixed.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 2
+          }
+        ]
+      },
+      "active": "99ef5cfc-542f-4c4c-b0d1-81d96345506c",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": false
+      },
+      "views": {
+        "sidebars": {
+          "left": "file-explorer",
+          "right": "outline"
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "99ef5cfc-542f-4c4c-b0d1-81d96345506c",
+          "lastFile": "Editor modes/Mixed.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "consoleErrors": [
+    "[2026-10-27T10:23:18.158Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T10:23:20.945Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T10:23:25.962Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-27T10:23:30.057Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 46448,
+  "electronPid": 43780,
+  "completedAt": "2026-10-27T10:23:30.247Z"
+}

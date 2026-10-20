@@ -1,0 +1,2453 @@
+{
+  "status": "passed",
+  "scope": "actual-excalidraw-runtime",
+  "startedAt": "2026-10-27T23:23:26.480Z",
+  "checks": [
+    "Standalone Blazor WASM starts from static hosting with no renderer Node runtime or desktop path UI.",
+    "The actual OS folder picker grants a live external vault, including binary attachment inventory.",
+    "Real CodeMirror typing and Ctrl+S preserve exact UTF-8 BOM, CRLF and Unicode in the original file.",
+    "External LF/CRLF changes reconfigure CodeMirror without changing the next save's line-ending style.",
+    "The shared note-creation UI creates folders and writes a new Markdown note directly to disk.",
+    "Desktop-only plugins are unavailable and Node-dependent plugins fail visibly without executing past require.",
+    "Core enablement and the unchanged upstream sample plugin save settings into the selected vault.",
+    "Page reload reconnects an IndexedDB directory handle and restores layout, core state and exact disk content.",
+    "External edits refresh clean buffers; stale saves fail without overwriting disk or discarding unsaved text.",
+    "A real page reload is blocked while a buffer has unsaved changes.",
+    "Cancelling the native folder picker retains the selected vault and dirty buffer.",
+    "Vault switching isolates core settings, and Create vault creates a real subfolder in the selected parent.",
+    "A new vault required explicit community-plugin opt-in, stored separately without creating or resetting an enabled-ID file.",
+    "The unchanged pinned Excalidraw plugin loads through explicit persisted enablement and registers its real settings and commands.",
+    "The real Excalidraw creation command opens its unchanged drawing view and a nonzero-size canvas.",
+    "Real pointer/keyboard input creates and moves a rectangle; the original canvas undo and redo restore it.",
+    "The original Insert image command and fuzzy picker add a real vault PNG; the actual canvas file data decodes to the exact dimensions and center pixel while the source asset bytes remain unchanged.",
+    "The actual plugin Ctrl+S path persists the edited element identities, geometry and compressed scene to the real vault file.",
+    "The real plugin view closes without cleanup errors and reopens its physical compressed scene with the same element identities and edited geometry.",
+    "Actual File explorer input reopens the saved drawing through the unchanged plugin's normal navigation interception, not only a direct custom-view request.",
+    "A real-folder WASM reload/reconnect retains the edited compressed scene and saved leaf, restores vault-configured enablement and opens the actual drawing with unchanged element identities, geometry and file bytes.",
+    "Disabling the actual plugin closes and unloads its live drawing without cleanup errors, removes owned commands/settings/styles and retains unavailable pane state; re-enable creates a fresh real canvas with the same physical saved scene.",
+    "The unchanged Markdown postprocessor renders the real saved drawing and linked PNG inside a BOM/CRLF note; actual SVG paths and decoded image pixels are verified, Source and plugin disable remove the embed, and re-enable refreshes it without rewriting the note, drawing or asset.",
+    "The unchanged plugin opens a real cached GitHub drawing in enforced view mode, skips repeated background/force/explicit saves without acknowledging revisions, permits local settings, denies direct writes, closes cleanly and returns to the local vault with all remote blobs and local note/asset bytes unchanged."
+  ],
+  "rendererNodeIntegration": false,
+  "realExternalDirectoryPicker": true,
+  "pickerStartsInDisposableDocuments": true,
+  "communityPluginsTested": true,
+  "endpoint": "http://127.0.0.1:17221/",
+  "sha256": {
+    "index.html": "c57ea9db00a7384748e5c3493b79b783666233aacaa8e4cb1ef9a9229e4a63f8",
+    "app.css": "d8b5782dd851c2d63b6372ebc5d1c4194a79570d4c2348a68cd7c981c73c1fd0",
+    "browser.css": "cb31285e1f8c3934a1c93e0448f271ceb9156ca4fe5c80deb081c70471404a67",
+    "icons.svg": "e659196481c2d85f3e52bed31460946e6b2d6351235b87ce1f87e8526beeab0c",
+    "icons-LICENSE.txt": "c059ec5ba27c5876963f0678f63d2182a6fb6ce97d45ed8b6472ec0c2ec189bf",
+    "core-verification.json": "a5fef9232d93e31af73d0bf9073ec6e6ccaab16f6dbfb2654f781fb5c714b042",
+    "lucide-icons.svg": "b3b7a00eff7743f34c13b57528b34aa9b1505a1abf5c89545afe5559cdf1ada3",
+    "lucide-icons-LICENSE.txt": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+    "mermaid-frame.html": "26e6b40fe61e6c53f99a4cf980d94619641fae38775dabfd0e18800457ad6333",
+    "js/mermaid-frame.js": "3392f1424ac3b6edca5653129b05f4cc9c0bf7f0b4afe6bcdca8031370911d62",
+    "js/mermaid-api.js": "91c1582732b6839c824370267eb6132d5b3eb68d1ae06baeac4b43cbb2fd958a",
+    "js/mermaid-api.js.LEGAL.txt": "e92aa8b1fc54113ebde271a9c66afa1ad02b06abea28ef93bd1da4cffd5c11d1",
+    "js/mermaid-licenses.txt": "3215a83d2a37195adbb5801503ef259b56911e1d876ef6c7de1d8b5982a69735",
+    "js/editor-host.js": "9f91526bed225c74dd686c0b58704940f4d027c0581f06b04f0f1bf7fd9d8d46",
+    "js/editor-host.css": "71b1c8ea199384cb74866d54b44f6cb5e1472797dd9c1d5b23fc5ffb97a12a65",
+    "js/codemirror-license.txt": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07",
+    "js/hypermd-license.txt": "46eb618f09cba06340fc187d691cf3ea6a40d73b29bc9f837c4b75d5c43aa36b",
+    "js/web-reader-extract.js": "794b4e4d47928e221d4f9224898c3abcde419f2715ed438268c1b34b03d2f601",
+    "js/web-reader-extract.js.LEGAL.txt": "4245c420f535f6b11e3f590606105d70565d76e4ba670d1f1497c1f39c57800a",
+    "js/web-reader-licenses.txt": "1a7fd569ce00b9153c711a13b0d887ef4b146b1cfa767af6dc6760f16706403b",
+    "js/browser-host.js": "891aac212b2cb712549324f2f5a54bc28f40b3d0336bcc4cb9cad0f740c6a3fb",
+    "js/search-worker.js": "6b24e0d9f29c3425b36b99efef28bce277c5c55bc93527fd395d5aa0b8765f84",
+    "js/graph-worker.js": "83b481a7e38ca1bc3e7f88a942400d83aa36449ce23f80edbfeb87e595f0d010",
+    "js/bases-worker.js": "719be94513c09032762919eb1ae7feae12f202e52d08693ed9aa035f039988c6",
+    "_framework/RonSijm.Slopsidian.Web.u9g8histbu.wasm": "623d8f57a98aebaa6ffda6efc55e11305fc8b945e6bc1877457641108c3f965f"
+  },
+  "scenarioSha256": {
+    "web-smoke.mjs": "64fa396296dbc7f5a19183d9828c336b83c94efe54b3576de2790c4f8f2b5d02",
+    "web-smoke-host.cjs": "38f2d99a0c1f70a962857c3dc17489e3bacbd913c9fddc7e0008d6c4446ea381",
+    "core-foundation-scenarios.mjs": "bfe37918fc6723c519fc6f7d2e992b1a49e885a2ae052f8b89ab8e9afd0d4905",
+    "core-scenarios.mjs": "b16bdf012477e16953b7d4cc9f0df6a502ae71403f369dbab6c5dda5b4482c3f",
+    "core-verification-targets.mjs": "41d13675c31adce8e1e091f52c488fbfa63ae235ff481cf8864681f3153d9f86",
+    "core-verification-scenarios.mjs": "833988cf8438767c6889ecd41e1bebfcca8fa57e07103d506f2b0f5702087539",
+    "tab-movement-scenarios.mjs": "ca65db3f8f47a6e8bb920d93876e8420dc36338e8d936b827755f9569bfe0227",
+    "reading-scenarios.mjs": "b3cef9a15c8a0bbbec81bcd83f09f5d03aa0f67f42ab843aeacfb1d7af6853f1",
+    "outgoing-scenarios.mjs": "6a15662333f510e069e014e533eff13b6cb974a0ed7d720cad5e6bd9f4a0b5ca",
+    "discovery-scenarios.mjs": "eb2c3d978e7faab8df02335911a78b5b760416aaaf4f8c3eba80003557d9881c",
+    "editor-chrome-scenarios.mjs": "580c2f69b378757fbbcae5ae0ed219fe69e2af0047494e4705ed9c5958ab3a19",
+    "suggestion-scenarios.mjs": "a2bd9f49ca0261a0ed9316966c579b7df5bfe96f6e5563b38d13e8f2f5ded873",
+    "renderer-scenarios.mjs": "5ea3154e5ea83cf9c3ee93c0269ff974e8c979e52a0129584593126daffb57a6",
+    "render-child-scenarios.mjs": "9b7b9e1a052c99d4eeddb33b03b51bc5efca92c3b023e0ec9e6e959fb72aa611",
+    "templater-scenarios.mjs": "52d9125093c7c910257832e151304596f617b97205379cbb47cd31646c566594",
+    "organization-scenarios.mjs": "6d356a9471a8ece167567d0e0aaf54e73f7aa4aa31d99563467a2f9f6557932a",
+    "file-scenarios.mjs": "d1a4a84690fc5bfad4d49b36fd762902ef8c3aa7ef53ce78c1a9a00ce10cf60a",
+    "graph-scenarios.mjs": "50cd7e334239383d403b196d4b2ad16949e92227efb7de019ca4474ee0b9ce18",
+    "canvas-scenarios.mjs": "5d389f419dbd99c042176d38669c69bff20fd148ebdd24d710a723b35b51cf6e",
+    "preview-scenarios.mjs": "16eee75c61ff2c56572c217e9af95b0bd65f0166557c6eaaa575587922f104f2",
+    "editing-tools-scenarios.mjs": "7c02dd1493956840958e2c4667c61a7a737afc915401dd54e77d9bfbbc4e36d2",
+    "format-scenarios.mjs": "e0c7a1583b6bbbed9e032eab1768ac6942d070c5b8756257b84054c9f56de731",
+    "composer-scenarios.mjs": "28893c704bd8067cd1237133f58d5b2ead7eb05a6b2d392a219a77c23b9d47c9",
+    "menu-scenarios.mjs": "a2f3232c5e40b17929197b845250c60411cc32420f65eb5d2267785b2d83a8ff",
+    "bases-scenarios.mjs": "332e6d9a0b8aa6ad72ad4a7aeafa7af557139e12b9c9457b03de600b90af657d",
+    "bases-summary-scenarios.mjs": "495c43a9cb425baeb8bf3e8284a96d47ce56f9f2d4d582ea7bc2c3d88e31fe47",
+    "recovery-scenarios.mjs": "17eb70a258c0fccb7aca28c2479be4ea72d9304c80fb43d9a51f3f36a2765472",
+    "view-scenarios.mjs": "5486d539b55e48e297034eadbbcbe76ad53bdc9153ae437c1e68390af136511d",
+    "audio-scenarios.mjs": "362b2f0273faaf2977711035ad07907d30d8f3453c94bb932592196ca600138c",
+    "mermaid-scenarios.mjs": "f7aa2283335a4fcfe2c01193839a67a02c3aa84190dcd2285e14d3ba5317bda8",
+    "workspace-import-scenarios.mjs": "3a185b3019dcc951cdaa1f5922991d9d5b511c27cd988bde3f1b81c23e0da863",
+    "community-plugin-test-helpers.mjs": "a5a42c9e7728fdcee7d8fd61094bd55114cd90df183164d0af6937f482b8e8f9",
+    "excalidraw-scenarios.mjs": "bcbdae62397e1b4f08d852b472c648643220d979053599158fd89473a8c454b2",
+    "select-test-folder.ps1": "9a18d1edcde9b5d252972012ba70bf3810c8bbc72a50958bad469dba164946f0"
+  },
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes; production launch is unchanged.",
+  "lastInteraction": {
+    "type": "click",
+    "selector": "[data-recent-vault=\"browser-vault:386a12e7-8ecd-40b1-b1da-f0b788db972e\"]"
+  },
+  "consoleErrorDetails": [
+    {
+      "args": [
+        {
+          "type": "object",
+          "subtype": "error",
+          "className": "Error",
+          "description": "Error: Unsupported module without the desktop Node runtime: node:fs\n    at PluginHost.require (http://127.0.0.1:17221/js/editor-host.js:92931:11)\n    at http://127.0.0.1:17221/js/editor-host.js:92871:31\n    at eval (vault-plugin:node-only:3:1)\n    at PluginHost.enable (http://127.0.0.1:17221/js/editor-host.js:92871:7)\n    at async http://127.0.0.1:17221/js/editor-host.js:92795:9\n    at async run (http://127.0.0.1:17221/js/editor-host.js:92663:16)",
+          "objectId": "4606486853593924194.3.1",
+          "preview": {
+            "type": "object",
+            "subtype": "error",
+            "description": "Error: Unsupported module without the desktop Node runtime: node:fs\n    at PluginHost.require (http://127.0.0.1:17221/js/editor-host.js:92931:11)\n    at http://127.0.0.1:17221/js/editor-host.js:92871:31\n    at eval (vault-plugin:node-only:3:1)\n    at PluginHost.enable (http://127.0.0.1:17221/js/editor-host.js:92871:7)\n    at async http://127.0.0.1:17221/js/editor-host.js:92795:9\n    at async run (http://127.0.0.1:17221/js/editor-host.js:92663:16)",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "stack",
+                "type": "string",
+                "value": "Error: Unsupported module without the desktop Node…ttp://127.0.0.1:17221/js/editor-host.js:92663:16)"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Unsupported module without the desktop Node runtime: node:fs"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:17221/js/editor-host.js",
+            "lineNumber": 94393,
+            "columnNumber": 14
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "string",
+          "value": "fail: RonSijm.Slopsidian.Components.Pages.Home[0]\n      Vault operation failed\nMicrosoft.JSInterop.JSException: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\nError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:17221/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:17221/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:17221/js/editor-host.js:43956:20)\n    at async DocumentSession.persist (http://127.0.0.1:17221/js/editor-host.js:71717:21)\n    at async DocumentSession.save (http://127.0.0.1:17221/js/editor-host.js:71693:7)\n    at async Workspace.saveAll (http://127.0.0.1:17221/js/editor-host.js:73354:7)\n    at async App.saveAll (http://127.0.0.1:17221/js/editor-host.js:91140:5)\n    at async Commands.execute (http://127.0.0.1:17221/js/editor-host.js:90925:7)\n    at async DesktopUI.perform (http://127.0.0.1:17221/js/editor-host.js:93473:5)\n    at async Module.performAction (http://127.0.0.1:17221/js/editor-host.js:95216:3)\n   at Microsoft.JSInterop.JSRuntime.<InvokeAsync>d__23`1[[Microsoft.JSInterop.Infrastructure.IJSVoidResult, Microsoft.JSInterop, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]].MoveNext()\n   at Microsoft.JSInterop.JSObjectReferenceExtensions.InvokeVoidAsync(IJSObjectReference , String , Object[] )\n   at RonSijm.Slopsidian.Components.Pages.Home.<>c__DisplayClass47_0.<<WorkspaceActionAsync>b__0>d.MoveNext()\n--- End of stack trace from previous location ---\n   at RonSijm.Slopsidian.Components.Pages.Home.RunAsync(Func`1 operation)"
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "11",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 175112
+          },
+          {
+            "functionName": "Mc",
+            "scriptId": "11",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 175836
+          },
+          {
+            "functionName": "$func1892",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 654264
+          },
+          {
+            "functionName": "$func298",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 128919
+          },
+          {
+            "functionName": "$func222",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 117400
+          },
+          {
+            "functionName": "$func213",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 60391
+          },
+          {
+            "functionName": "$func256",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 121204
+          },
+          {
+            "functionName": "$func3231",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 989414
+          },
+          {
+            "functionName": "$func2553",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 815504
+          },
+          {
+            "functionName": "$func2558",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 817544
+          },
+          {
+            "functionName": "$func2582",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 827494
+          },
+          {
+            "functionName": "$mono_wasm_invoke_jsexport",
+            "scriptId": "15",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.3zpaws0drs.wasm",
+            "lineNumber": 0,
+            "columnNumber": 44188
+          },
+          {
+            "functionName": "Module._mono_wasm_invoke_jsexport",
+            "scriptId": "12",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.native.q38003gvqi.js",
+            "lineNumber": 7,
+            "columnNumber": 113427
+          },
+          {
+            "functionName": "kn",
+            "scriptId": "11",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 29521
+          },
+          {
+            "functionName": "",
+            "scriptId": "11",
+            "url": "http://127.0.0.1:17221/_framework/dotnet.runtime.azrfhwb804.js",
+            "lineNumber": 2,
+            "columnNumber": 38146
+          },
+          {
+            "functionName": "endInvokeJSFromDotNet",
+            "scriptId": "7",
+            "url": "http://127.0.0.1:17221/_framework/blazor.webassembly.js",
+            "lineNumber": 0,
+            "columnNumber": 50484
+          },
+          {
+            "functionName": "beginInvokeJSFromDotNet",
+            "scriptId": "7",
+            "url": "http://127.0.0.1:17221/_framework/blazor.webassembly.js",
+            "lineNumber": 0,
+            "columnNumber": 4325
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "className": "Object",
+          "description": "Object",
+          "objectId": "4606486853593924194.7.2",
+          "preview": {
+            "type": "object",
+            "description": "Object",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "plugin",
+                "type": "string",
+                "value": "Excalidraw"
+              },
+              {
+                "name": "where",
+                "type": "string",
+                "value": "setDynamicStyle"
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "value": "TypeError: t.app.getAccentColor is not a function\n    at setDynamicStyle (vault-plugin:obsidian-exc…",
+                "subtype": "error"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Dynamic styling failed"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "errorlog",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 291565
+          },
+          {
+            "functionName": "setDynamicStyle",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1141943
+          },
+          {
+            "functionName": "canvasColorChangeHook",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1387376
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1389810
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1218819
+          },
+          {
+            "functionName": "componentDidUpdate",
+            "scriptId": "318",
+            "url": "",
+            "lineNumber": 549,
+            "columnNumber": 24372
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121911
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122261
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122049
+          },
+          {
+            "functionName": "df",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 143519
+          },
+          {
+            "functionName": "cf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 142130
+          },
+          {
+            "functionName": "Vc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 137289
+          },
+          {
+            "functionName": "$c",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 136777
+          },
+          {
+            "functionName": "Nf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 147612
+          },
+          {
+            "functionName": "T",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 14823
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "className": "Object",
+          "description": "Object",
+          "objectId": "4606486853593924194.7.3",
+          "preview": {
+            "type": "object",
+            "description": "Object",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "plugin",
+                "type": "string",
+                "value": "Excalidraw"
+              },
+              {
+                "name": "where",
+                "type": "string",
+                "value": "setDynamicStyle"
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "value": "TypeError: t.app.getAccentColor is not a function\n    at setDynamicStyle (vault-plugin:obsidian-exc…",
+                "subtype": "error"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Dynamic styling failed"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "errorlog",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 291565
+          },
+          {
+            "functionName": "setDynamicStyle",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1141943
+          },
+          {
+            "functionName": "canvasColorChangeHook",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1387376
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1389810
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1218819
+          },
+          {
+            "functionName": "componentDidUpdate",
+            "scriptId": "318",
+            "url": "",
+            "lineNumber": 549,
+            "columnNumber": 24372
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121911
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122261
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122049
+          },
+          {
+            "functionName": "df",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 143519
+          },
+          {
+            "functionName": "cf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 142130
+          },
+          {
+            "functionName": "Vc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 137289
+          },
+          {
+            "functionName": "$c",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 136777
+          },
+          {
+            "functionName": "Nf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 147612
+          },
+          {
+            "functionName": "T",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 14823
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "className": "Object",
+          "description": "Object",
+          "objectId": "4606486853593924194.7.4",
+          "preview": {
+            "type": "object",
+            "description": "Object",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "plugin",
+                "type": "string",
+                "value": "Excalidraw"
+              },
+              {
+                "name": "where",
+                "type": "string",
+                "value": "setDynamicStyle"
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "value": "TypeError: t.app.getAccentColor is not a function\n    at setDynamicStyle (vault-plugin:obsidian-exc…",
+                "subtype": "error"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Dynamic styling failed"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "errorlog",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 291565
+          },
+          {
+            "functionName": "setDynamicStyle",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1141943
+          },
+          {
+            "functionName": "canvasColorChangeHook",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1387376
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1389810
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1218819
+          },
+          {
+            "functionName": "componentDidUpdate",
+            "scriptId": "318",
+            "url": "",
+            "lineNumber": 549,
+            "columnNumber": 24372
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121911
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122261
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122049
+          },
+          {
+            "functionName": "df",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 143519
+          },
+          {
+            "functionName": "cf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 142130
+          },
+          {
+            "functionName": "Vc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 137289
+          },
+          {
+            "functionName": "$c",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 136777
+          },
+          {
+            "functionName": "Nf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 147612
+          },
+          {
+            "functionName": "T",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 14823
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "className": "Object",
+          "description": "Object",
+          "objectId": "4606486853593924194.10.2",
+          "preview": {
+            "type": "object",
+            "description": "Object",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "plugin",
+                "type": "string",
+                "value": "Excalidraw"
+              },
+              {
+                "name": "where",
+                "type": "string",
+                "value": "setDynamicStyle"
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "value": "TypeError: t.app.getAccentColor is not a function\n    at setDynamicStyle (vault-plugin:obsidian-exc…",
+                "subtype": "error"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Dynamic styling failed"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "errorlog",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 291565
+          },
+          {
+            "functionName": "setDynamicStyle",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1141943
+          },
+          {
+            "functionName": "canvasColorChangeHook",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1387376
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1389810
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1218819
+          },
+          {
+            "functionName": "componentDidUpdate",
+            "scriptId": "318",
+            "url": "",
+            "lineNumber": 549,
+            "columnNumber": 24372
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121911
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122261
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122049
+          },
+          {
+            "functionName": "df",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 143519
+          },
+          {
+            "functionName": "cf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 142130
+          },
+          {
+            "functionName": "Vc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 137289
+          },
+          {
+            "functionName": "$c",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 136777
+          },
+          {
+            "functionName": "Nf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 147612
+          },
+          {
+            "functionName": "T",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 14823
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "className": "Object",
+          "description": "Object",
+          "objectId": "4606486853593924194.10.4",
+          "preview": {
+            "type": "object",
+            "description": "Object",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "plugin",
+                "type": "string",
+                "value": "Excalidraw"
+              },
+              {
+                "name": "where",
+                "type": "string",
+                "value": "setDynamicStyle"
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "value": "TypeError: t.app.getAccentColor is not a function\n    at setDynamicStyle (vault-plugin:obsidian-exc…",
+                "subtype": "error"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Dynamic styling failed"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "errorlog",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 291565
+          },
+          {
+            "functionName": "setDynamicStyle",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1141943
+          },
+          {
+            "functionName": "canvasColorChangeHook",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1387376
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1389810
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1218819
+          },
+          {
+            "functionName": "componentDidUpdate",
+            "scriptId": "318",
+            "url": "",
+            "lineNumber": 549,
+            "columnNumber": 24372
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121911
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122261
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122049
+          },
+          {
+            "functionName": "df",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 143519
+          },
+          {
+            "functionName": "cf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 142130
+          },
+          {
+            "functionName": "Vc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 137289
+          },
+          {
+            "functionName": "$c",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 136777
+          },
+          {
+            "functionName": "Nf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 147612
+          },
+          {
+            "functionName": "T",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 14823
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "className": "Object",
+          "description": "Object",
+          "objectId": "4606486853593924194.10.6",
+          "preview": {
+            "type": "object",
+            "description": "Object",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "plugin",
+                "type": "string",
+                "value": "Excalidraw"
+              },
+              {
+                "name": "where",
+                "type": "string",
+                "value": "setDynamicStyle"
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "value": "TypeError: t.app.getAccentColor is not a function\n    at setDynamicStyle (vault-plugin:obsidian-exc…",
+                "subtype": "error"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Dynamic styling failed"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "errorlog",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 291565
+          },
+          {
+            "functionName": "setDynamicStyle",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1141943
+          },
+          {
+            "functionName": "canvasColorChangeHook",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1387376
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1389810
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1218819
+          },
+          {
+            "functionName": "componentDidUpdate",
+            "scriptId": "318",
+            "url": "",
+            "lineNumber": 549,
+            "columnNumber": 24372
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121911
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122261
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122049
+          },
+          {
+            "functionName": "df",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 143519
+          },
+          {
+            "functionName": "cf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 142130
+          },
+          {
+            "functionName": "Vc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 137289
+          },
+          {
+            "functionName": "$c",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 136777
+          },
+          {
+            "functionName": "Nf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 147612
+          },
+          {
+            "functionName": "T",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 14823
+          }
+        ]
+      }
+    },
+    {
+      "args": [
+        {
+          "type": "object",
+          "className": "Object",
+          "description": "Object",
+          "objectId": "4606486853593924194.10.8",
+          "preview": {
+            "type": "object",
+            "description": "Object",
+            "overflow": false,
+            "properties": [
+              {
+                "name": "plugin",
+                "type": "string",
+                "value": "Excalidraw"
+              },
+              {
+                "name": "where",
+                "type": "string",
+                "value": "setDynamicStyle"
+              },
+              {
+                "name": "error",
+                "type": "object",
+                "value": "TypeError: t.app.getAccentColor is not a function\n    at setDynamicStyle (vault-plugin:obsidian-exc…",
+                "subtype": "error"
+              },
+              {
+                "name": "message",
+                "type": "string",
+                "value": "Dynamic styling failed"
+              }
+            ]
+          }
+        }
+      ],
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "errorlog",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 291565
+          },
+          {
+            "functionName": "setDynamicStyle",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1141943
+          },
+          {
+            "functionName": "canvasColorChangeHook",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1387376
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1389810
+          },
+          {
+            "functionName": "view.onChange",
+            "scriptId": "18",
+            "url": "http://127.0.0.1:17221/js/editor-host.js",
+            "lineNumber": 68126,
+            "columnNumber": 18
+          },
+          {
+            "functionName": "onChange",
+            "scriptId": "312",
+            "url": "vault-plugin:obsidian-excalidraw-plugin",
+            "lineNumber": 36,
+            "columnNumber": 1218819
+          },
+          {
+            "functionName": "componentDidUpdate",
+            "scriptId": "318",
+            "url": "",
+            "lineNumber": 549,
+            "columnNumber": 24372
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121911
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122675
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122261
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 121723
+          },
+          {
+            "functionName": "Ec",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 130385
+          },
+          {
+            "functionName": "fc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 122049
+          },
+          {
+            "functionName": "df",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 143519
+          },
+          {
+            "functionName": "cf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 142130
+          },
+          {
+            "functionName": "Vc",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 137289
+          },
+          {
+            "functionName": "$c",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 136777
+          },
+          {
+            "functionName": "Nf",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 147612
+          },
+          {
+            "functionName": "T",
+            "scriptId": "313",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 14823
+          }
+        ]
+      }
+    }
+  ],
+  "expectedDiagnostics": [
+    {
+      "id": "63ecd602-888d-4be8-bff0-3a7ec64f24d8:0",
+      "source": "host",
+      "message": "This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.",
+      "reason": "Check browser explicit-save conflict protection"
+    }
+  ],
+  "sourceFingerprint": "3a3ee9432cb96d036638f2703609037b8b1791f94cce86544834570db36d0f31",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": false,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "excalidraw": {
+    "id": "obsidian-excalidraw-plugin",
+    "version": "2.29.0",
+    "host": "browser-wasm",
+    "unmodifiedReleaseAssets": [
+      {
+        "name": "main.js",
+        "sha256": "4da2084a4eafe7d328484fa5742004b9fb990346c4c84fde924b885a5ecc1c17"
+      },
+      {
+        "name": "manifest.json",
+        "sha256": "4880b885c50643ef848d31cea829776ca2e96747353aee334d71e875f79d31c0"
+      },
+      {
+        "name": "styles.css",
+        "sha256": "173e9c161a01c53b3c173344e023de4d327fd0658e476961b46b0e6a93117ded"
+      }
+    ],
+    "referenceRuntimeComparison": "not-performed",
+    "workflows": "passed-bounded-wasm-subset",
+    "startupError": null,
+    "startupState": {
+      "ready": true,
+      "settingsReady": true,
+      "clientError": "",
+      "notices": []
+    },
+    "commands": [
+      "obsidian-excalidraw-plugin:show-cli-instructions",
+      "obsidian-excalidraw-plugin:excalidraw-convert-image-from-url-to-local-file",
+      "obsidian-excalidraw-plugin:excalidraw-unzip-file",
+      "obsidian-excalidraw-plugin:excalidraw-publish-svg-check",
+      "obsidian-excalidraw-plugin:excalidraw-embeddable-poroperties",
+      "obsidian-excalidraw-plugin:excalidraw-embeddables-relative-scale",
+      "obsidian-excalidraw-plugin:open-image-excalidraw-source",
+      "obsidian-excalidraw-plugin:excalidraw-disable-autosave",
+      "obsidian-excalidraw-plugin:excalidraw-enable-autosave",
+      "obsidian-excalidraw-plugin:excalidraw-toggle-session-view-mode",
+      "obsidian-excalidraw-plugin:excalidraw-download-lib",
+      "obsidian-excalidraw-plugin:excalidraw-open-sidepanel",
+      "obsidian-excalidraw-plugin:excalidraw-open",
+      "obsidian-excalidraw-plugin:excalidraw-open-on-current",
+      "obsidian-excalidraw-plugin:excalidraw-insert-transclusion",
+      "obsidian-excalidraw-plugin:excalidraw-insert-last-active-transclusion",
+      "obsidian-excalidraw-plugin:excalidraw-autocreate",
+      "obsidian-excalidraw-plugin:excalidraw-autocreate-newtab",
+      "obsidian-excalidraw-plugin:excalidraw-autocreate-on-current",
+      "obsidian-excalidraw-plugin:excalidraw-autocreate-popout",
+      "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed",
+      "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed-new-tab",
+      "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed-on-current",
+      "obsidian-excalidraw-plugin:excalidraw-autocreate-and-embed-popout",
+      "obsidian-excalidraw-plugin:run-ocr",
+      "obsidian-excalidraw-plugin:rerun-ocr",
+      "obsidian-excalidraw-plugin:run-ocr-selectedelements",
+      "obsidian-excalidraw-plugin:search-text",
+      "obsidian-excalidraw-plugin:fullscreen",
+      "obsidian-excalidraw-plugin:disable-binding",
+      "obsidian-excalidraw-plugin:disable-framerendering",
+      "obsidian-excalidraw-plugin:frame-settings",
+      "obsidian-excalidraw-plugin:copy-link-to-drawing",
+      "obsidian-excalidraw-plugin:disable-frameclipping",
+      "obsidian-excalidraw-plugin:export-image",
+      "obsidian-excalidraw-plugin:save",
+      "obsidian-excalidraw-plugin:toggle-lock",
+      "obsidian-excalidraw-plugin:scriptengine-store",
+      "obsidian-excalidraw-plugin:delete-file",
+      "obsidian-excalidraw-plugin:convert-text2MD",
+      "obsidian-excalidraw-plugin:insert-link",
+      "obsidian-excalidraw-plugin:insert-cmd",
+      "obsidian-excalidraw-plugin:insert-link-to-element",
+      "obsidian-excalidraw-plugin:insert-link-to-element-group",
+      "obsidian-excalidraw-plugin:insert-link-to-element-frame",
+      "obsidian-excalidraw-plugin:insert-link-to-element-frame-clipped",
+      "obsidian-excalidraw-plugin:insert-link-to-element-area",
+      "obsidian-excalidraw-plugin:toggle-lefthanded-mode",
+      "obsidian-excalidraw-plugin:toggle-enable-context-menu",
+      "obsidian-excalidraw-plugin:flip-image",
+      "obsidian-excalidraw-plugin:duplicate-image",
+      "obsidian-excalidraw-plugin:reset-image-to-100",
+      "obsidian-excalidraw-plugin:reset-image-ar",
+      "obsidian-excalidraw-plugin:open-link-props",
+      "obsidian-excalidraw-plugin:convert-card-to-file",
+      "obsidian-excalidraw-plugin:insert-active-pdfpage",
+      "obsidian-excalidraw-plugin:crop-image",
+      "obsidian-excalidraw-plugin:annotate-image",
+      "obsidian-excalidraw-plugin:insert-editable-markdown-image",
+      "obsidian-excalidraw-plugin:edit-selected-markdown-image",
+      "obsidian-excalidraw-plugin:refresh-scene-images",
+      "obsidian-excalidraw-plugin:insert-image",
+      "obsidian-excalidraw-plugin:import-svg",
+      "obsidian-excalidraw-plugin:release-notes",
+      "obsidian-excalidraw-plugin:view-autostart-scripts",
+      "obsidian-excalidraw-plugin:tray-mode",
+      "obsidian-excalidraw-plugin:insert-md",
+      "obsidian-excalidraw-plugin:insert-pdf",
+      "obsidian-excalidraw-plugin:universal-add-file",
+      "obsidian-excalidraw-plugin:universal-card",
+      "obsidian-excalidraw-plugin:insert-LaTeX-symbol",
+      "obsidian-excalidraw-plugin:toggle-excalidraw-view",
+      "obsidian-excalidraw-plugin:convert-to-excalidraw",
+      "obsidian-excalidraw-plugin:convert-excalidraw"
+    ],
+    "drawingState": {
+      "type": "excalidraw",
+      "file": "Excalidraw/Drawing 2026-10-28 00.23.47.excalidraw.md",
+      "hasCanvasAPI": true,
+      "clientError": "",
+      "notices": [],
+      "canvases": [
+        {
+          "className": "excalidraw__canvas static",
+          "width": 1349,
+          "height": 930
+        },
+        {
+          "className": "excalidraw__canvas interactive",
+          "width": 1349,
+          "height": 930
+        }
+      ],
+      "modals": []
+    },
+    "editedElements": [
+      {
+        "id": "dIV4Ae1t",
+        "type": "rectangle",
+        "x": -52.97003173828125,
+        "y": -73.4599609375,
+        "width": 140,
+        "height": 90
+      },
+      {
+        "id": "cVf3TNAF",
+        "type": "image",
+        "x": 4.02996826171875,
+        "y": -81.4599609375,
+        "width": 24,
+        "height": 16
+      }
+    ],
+    "imageAsset": {
+      "path": "Excalidraw assets/Existing image.png",
+      "sha256": "f188973d52e8075444ed58f7bf5c167af7587888963c74a3bb835e220bf0f088",
+      "fileId": "ac4d85f23ef9599aff38662248852ac2f50ade5b",
+      "input": "original-command-and-fuzzy-picker",
+      "decodedWidth": 24,
+      "decodedHeight": 16,
+      "exactCenterPixel": true
+    },
+    "savedDrawing": {
+      "path": "Excalidraw/Drawing 2026-10-28 00.23.47.excalidraw.md",
+      "sha256": "2cc176ba18f2fb9b274f9baa385974a94204cfe211458d359db0064f60f029fb",
+      "elements": 2,
+      "compressed": true
+    },
+    "closedDrawing": {
+      "unloaded": true,
+      "disconnected": true,
+      "clientError": ""
+    },
+    "reopenedDrawing": {
+      "path": "Excalidraw/Drawing 2026-10-28 00.23.47.excalidraw.md",
+      "elements": 2,
+      "exactGeometry": true
+    },
+    "navigationState": {
+      "type": "excalidraw",
+      "file": "Excalidraw/Drawing 2026-10-28 00.23.47.excalidraw.md",
+      "clientError": ""
+    },
+    "persistence": {
+      "kind": "real-folder-browser-reload-reconnect",
+      "restoredVaultEnablement": true,
+      "restoredLeaf": "f86d6abe-3d23-48aa-8b8b-f6a8170ef58a",
+      "exactGeometry": true,
+      "exactDrawingBytes": true
+    },
+    "ownedCleanup": {
+      "unloadedDetachedView": true,
+      "removedCommandsSettingsStyles": true,
+      "restoredFreshView": true,
+      "exactDrawingBytes": true
+    },
+    "markdownEmbed": {
+      "path": "Excalidraw assets/Drawing embed.md",
+      "svgSha256": "48d65a58b449dd9ad766315636ea4a461aed9d8644f4f84c5331fe9ed91f8757",
+      "paths": 1,
+      "decodedImage": true,
+      "originalPostprocessor": true,
+      "sourceAndDisableCleanup": true,
+      "reenableRefresh": true,
+      "exactSourceDrawingAssetBytes": true
+    },
+    "editingState": {
+      "type": "markdown",
+      "loaded": true,
+      "drawingLoaded": true,
+      "dirty": false,
+      "hostDirty": false,
+      "clientError": "",
+      "notices": []
+    },
+    "readOnly": {
+      "cacheOnlyGitHubMount": true,
+      "opening": {
+        "readOnly": true,
+        "viewReadOnly": true,
+        "mode": true,
+        "autosave": false,
+        "elements": 2
+      },
+      "sameBytes": true,
+      "before": 0,
+      "after": 0,
+      "dirty": true,
+      "outcomes": [
+        {
+          "status": "skipped",
+          "acknowledgedRevision": null
+        },
+        {
+          "status": "skipped",
+          "acknowledgedRevision": null
+        },
+        {
+          "status": "skipped",
+          "acknowledgedRevision": null
+        },
+        {
+          "status": "skipped",
+          "acknowledgedRevision": null
+        },
+        {
+          "status": "skipped",
+          "acknowledgedRevision": null
+        }
+      ],
+      "mode": true,
+      "autosave": false,
+      "hostDirty": false,
+      "localPreference": true,
+      "refusal": {
+        "name": "ReadOnlyVaultError",
+        "code": "VAULT_READ_ONLY",
+        "operation": "modify",
+        "path": "Excalidraw/Drawing 2026-10-28 00.23.47.excalidraw.md"
+      },
+      "state": {
+        "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "cached": true,
+        "loaded": 1,
+        "total": 1,
+        "counters": {
+          "api": 0,
+          "raw": 0,
+          "cacheHits": 11
+        }
+      },
+      "ownedCloseAndDisable": true,
+      "allRemoteBlobsUnchanged": true,
+      "returnedToLocalVault": true
+    }
+  },
+  "artifactStability": "verified-through-scenario",
+  "consoleErrors": [
+    "Error: Unsupported module without the desktop Node runtime: node:fs\n    at PluginHost.require (http://127.0.0.1:17221/js/editor-host.js:92931:11)\n    at http://127.0.0.1:17221/js/editor-host.js:92871:31\n    at eval (vault-plugin:node-only:3:1)\n    at PluginHost.enable (http://127.0.0.1:17221/js/editor-host.js:92871:7)\n    at async http://127.0.0.1:17221/js/editor-host.js:92795:9\n    at async run (http://127.0.0.1:17221/js/editor-host.js:92663:16)",
+    "fail: RonSijm.Slopsidian.Components.Pages.Home[0]\n      Vault operation failed\nMicrosoft.JSInterop.JSException: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\nError: Host 409: This file changed on disk. Your unsaved text is retained; resolve the conflict before saving.\n    at browserRequest (http://127.0.0.1:17221/js/editor-host.js:40735:11)\n    at async requestJson (http://127.0.0.1:17221/js/editor-host.js:40746:23)\n    at async _Vault.writeDocument (http://127.0.0.1:17221/js/editor-host.js:43956:20)\n    at async DocumentSession.persist (http://127.0.0.1:17221/js/editor-host.js:71717:21)\n    at async DocumentSession.save (http://127.0.0.1:17221/js/editor-host.js:71693:7)\n    at async Workspace.saveAll (http://127.0.0.1:17221/js/editor-host.js:73354:7)\n    at async App.saveAll (http://127.0.0.1:17221/js/editor-host.js:91140:5)\n    at async Commands.execute (http://127.0.0.1:17221/js/editor-host.js:90925:7)\n    at async DesktopUI.perform (http://127.0.0.1:17221/js/editor-host.js:93473:5)\n    at async Module.performAction (http://127.0.0.1:17221/js/editor-host.js:95216:3)\n   at Microsoft.JSInterop.JSRuntime.<InvokeAsync>d__23`1[[Microsoft.JSInterop.Infrastructure.IJSVoidResult, Microsoft.JSInterop, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]].MoveNext()\n   at Microsoft.JSInterop.JSObjectReferenceExtensions.InvokeVoidAsync(IJSObjectReference , String , Object[] )\n   at RonSijm.Slopsidian.Components.Pages.Home.<>c__DisplayClass47_0.<<WorkspaceActionAsync>b__0>d.MoveNext()\n--- End of stack trace from previous location ---\n   at RonSijm.Slopsidian.Components.Pages.Home.RunAsync(Func`1 operation)",
+    "Object",
+    "Object",
+    "Object",
+    "Object",
+    "Object",
+    "Object",
+    "Object"
+  ],
+  "exceptions": [],
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\readonly-io-validation-20261028\\.runtime\\evidence\\excalidraw-web-smoke-errors.jsonl",
+    "nativePaths": [],
+    "records": 1,
+    "expected": 1,
+    "unexpected": [],
+    "sha256": "628db8e2f25481a7e7a60d53121ed23d52d65387395cf7fc238990b840fc517e",
+    "includesFinalTeardown": true
+  },
+  "completedAt": "2026-10-27T23:24:02.401Z"
+}

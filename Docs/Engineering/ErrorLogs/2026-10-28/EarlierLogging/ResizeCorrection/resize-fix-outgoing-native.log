@@ -1,0 +1,10 @@
+PASS Outgoing links lists real wiki/Markdown/property links and embeds, deduplicates the same destination/subpath, and explicitly disables unsupported attachment/traversal actions.
+PASS Outgoing links navigates to exact heading/block context, creates a missing Markdown target without changing its source, and keeps a pinned sidebar on its note.
+PASS Dirty-buffer edits, undo/redo, external saves and target renames refresh outgoing resolution without overwriting vault files or secretly rewriting links.
+PASS Unlinked aliases navigate to their source; collapse/follow/pin state survives an actual reload and releasing the pin follows the active note.
+PASS Disabling Outgoing links removes its commands, view and enabled-instance lookup; re-enabling creates one fresh view with the persisted state.
+PASS Image Fit stays inside real fractional CSS viewports without feedback scrollbars, including width- and height-constrained images.
+PASS Outgoing opens real decoded raster/Canvas leaves, honors modified-click tabs, follows provider registration/removal and preserves exact attachment bytes; image fit/zoom/scroll work and closed views release URLs and retained controls.
+PASS Reading links share registered attachment navigation; live external pixel changes, visible decode errors/recovery and guarded image rename refresh the actual view without writing image bytes or losing opaque state.
+PASS Actual image leaves, zoom, opaque state and pinned Outgoing restore after full desktop restart/browser reconnect while original workspace absence/bytes, Markdown and exact binary attachments stay preserved.
+Explicit-vault startup and 1 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

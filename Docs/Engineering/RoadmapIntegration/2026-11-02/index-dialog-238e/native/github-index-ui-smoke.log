@@ -1,0 +1,21 @@
+
+ERROR_LOG D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-profile\logs\errors-smoke-dc1d29e4-2c87-4498-989e-0083889e466b.jsonl
+(node:30072) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:57632/devtools/browser/d713b604-5be8-459c-94a4-ca234a2dfb05
+ELECTRON_HOST_PID 30072
+DOTNET_HOST_PID 20684
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\RonSijm\RonSijm.Slopsidian\.runtime\smoke-vault-5jfxPC
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:54146
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\RonSijm\RonSijm.Slopsidian\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:54146
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

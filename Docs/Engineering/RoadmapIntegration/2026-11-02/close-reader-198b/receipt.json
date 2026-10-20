@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "sourceBefore": "198b64fd30ff26e263764b712a2b77cf63c366ced96ffa2031e601ea3e40efef",
+  "boundary": "Paired build/static evidence after the prompt confirmed-close source fix and accepted Reader fixture integration. Normal-return behavior is isolated49 evidence; full native/WASM groups, unexpected-close lifetime and full strict offline acceptance remain unaccepted. Full1197+44 regressions remain bound to priorcc51 epoch; targeted91 close/window regressions passed before this build.",
+  "commands": [
+    {
+      "command": "npm run build",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\post-close-reader-builds-051fd575-6921-4966-abf8-d7ab8a9fb0af\\build.log",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build:web",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\post-close-reader-builds-051fd575-6921-4966-abf8-d7ab8a9fb0af\\build-web.log",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run verify:web",
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\post-close-reader-builds-051fd575-6921-4966-abf8-d7ab8a9fb0af\\verify-web.log",
+      "exitCode": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "bytes": 588800,
+      "sha256": "c2fab4b096fb591b8bed4bab0c1c0fecf55497e2c2ca55a3d5fe6ca88369666b",
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll"
+    },
+    {
+      "bytes": 4913848,
+      "sha256": "e646d8e53e11326afac832b6698806b44e4eace5d744545b52a611302e29a6ea",
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js"
+    },
+    {
+      "bytes": 4913848,
+      "sha256": "e646d8e53e11326afac832b6698806b44e4eace5d744545b52a611302e29a6ea",
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js"
+    },
+    {
+      "bytes": 37676,
+      "sha256": "bbfacf4ea85089c38e7c99cd65342ef2d10a0c5e3662fcb173e54174cd1dda1c",
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json"
+    },
+    {
+      "bytes": 6303,
+      "sha256": "618c9f4a72a70a45eab864b19ea089a91cc4e8a3b7e32a63ab4dae757d103a91",
+      "path": ".runtime\\web\\wwwroot\\service-worker.js"
+    }
+  ],
+  "sourceAfter": "198b64fd30ff26e263764b712a2b77cf63c366ced96ffa2031e601ea3e40efef",
+  "completedAt": "2026-11-02T01:17:21.8721968Z"
+}

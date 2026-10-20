@@ -1,0 +1,40 @@
+
+(node:45628) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:19184/devtools/browser/31453bc4-099d-4c6c-9804-e713f4c9b696
+ELECTRON_HOST_PID 45628
+DOTNET_HOST_PID 11236
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\core-verification-validation-20261027\.runtime\smoke-vault-CH7ntj
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:50054
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\core-verification-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:50054
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+
+(node:46176) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `electron --trace-warnings ...` to show where the warning was created)
+
+DevTools listening on ws://127.0.0.1:25060/devtools/browser/f9648a61-00c4-46af-85cc-569ee18b7ea1
+ELECTRON_HOST_PID 46176
+DOTNET_HOST_PID 27056
+info: RonSijm.Slopsidian.Services.VaultService[0]
+      Opened vault D:\source\DecomTest\RonSijm.Slopsidian\.runtime\core-verification-validation-20261027\.runtime\smoke-vault-CH7ntj
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:57638
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\source\DecomTest\RonSijm.Slopsidian\.runtime\core-verification-validation-20261027\src\RonSijm.Slopsidian
+VAULT_READY http://127.0.0.1:57638
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

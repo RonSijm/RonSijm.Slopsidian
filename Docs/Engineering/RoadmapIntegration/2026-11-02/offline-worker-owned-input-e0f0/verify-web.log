@@ -1,0 +1,5 @@
+
+> slopsidian@0.1.0 verify:web
+> node tools\verify-web.mjs
+
+Verified standalone WASM assets, compressed pages and static serving at /

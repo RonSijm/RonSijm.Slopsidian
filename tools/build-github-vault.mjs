@@ -1,0 +1,13 @@
+import { build } from "esbuild";
+import { copyFile, mkdir, writeFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+const source = new URL("../plugins/github-vault/", import.meta.url);
+const output = new URL("../.runtime/github-vault-plugin/", import.meta.url);
+await mkdir(output, { recursive: true });
+await build({ entryPoints: [fileURLToPath(new URL("main.ts", source))], outfile: fileURLToPath(new URL("main.js", output)), bundle: true, format: "cjs", platform: "browser", target: "es2022", external: ["obsidian"], legalComments: "linked" });
+for (const name of ["manifest.json", "styles.css"]) await copyFile(new URL(name, source), new URL(name, output));
+await copyFile(new URL("../node_modules/marked/LICENSE", import.meta.url), new URL("marked-LICENSE.txt", output));
+await copyFile(new URL("../node_modules/dompurify/LICENSE", import.meta.url), new URL("DOMPurify-LICENSE.txt", output));
+await copyFile(new URL("../node_modules/dompurify/LICENSE-MPL", import.meta.url), new URL("DOMPurify-LICENSE-MPL.txt", output));
+await writeFile(new URL("THIRD-PARTY.txt", output), "GitHub Vault bundles marked (MIT) and DOMPurify (Apache-2.0 OR MPL-2.0). See main.js.LEGAL.txt for bundled license comments.\n");
+console.log("GITHUB_PLUGIN_READY " + fileURLToPath(output));

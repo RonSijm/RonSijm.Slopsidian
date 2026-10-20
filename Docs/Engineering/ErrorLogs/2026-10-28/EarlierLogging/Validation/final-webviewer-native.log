@@ -1,0 +1,7 @@
+PASS Real desktop pane, persisted homepage/search settings and a sandboxed remote page without Node or an opener
+PASS Switching tabs hides the native surface; Reading links open Web viewer and separate panes do not share website cookies
+PASS Pointer navigation, native back/forward and reload, Ctrl+F and actual find-in-page matches
+PASS New-window links stay contained; file links, vault-service navigation and redirects are blocked; no vault token reaches pages
+PASS Configured search safely encodes input; a full Electron/.NET restart restores URL, title, settings and unknown nested leaf state
+PASS Disable/enable and disabled process restart preserve unavailable leaf state, remove owned commands/ribbon and release browser contents; original workspace/settings data survive
+Desktop Web viewer workflows passed in an isolated test profile.

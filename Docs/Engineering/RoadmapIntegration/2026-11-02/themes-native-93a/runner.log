@@ -1,0 +1,112 @@
+PASS No community-theme catalog or theme download request was made at startup.
+PASS An external appearance.json theme selection is adopted by the lifecycle-owned watcher without reload, retaining the unsaved editor text, selection and CM instance.
+PASS External theme-CSS edits and newly enabled snippets are re-read and applied while the editor state is retained.
+PASS Malformed external appearance.json and unsupported external CSS are reported, retain the exact accepted styles and editor state, and later valid files are adopted.
+PASS Browsing and reviewing are explicit; installing writes the exact reviewed BOM/CRLF bytes and manifest, does not select the theme and leaves the active styles and editor untouched.
+PASS A stale review is refused by the host version guard and the locally edited theme bytes are retained.
+PASS An external manifest.json edit after review is refused even though the CSS is unchanged, and every installed byte is retained.
+PASS A fresh review updates the installed theme to the exact reviewed bytes, and the external selection adopts it without disturbing the editor.
+PASS Switching the color scheme re-renders an already mounted Mermaid diagram in place (same container, decoded replacement image, no SVG in the application DOM) without touching the editor.
+PASS A selected-folder bundle with a relative image installs the exact CSS, manifest (unknown keys) and image bytes without enabling trusted local resources.
+rvices\VaultService.Configuration.cs:line 97
+         at RonSijm.Slopsidian.Services.VaultService.ReadConfigurationAsync(String id, String expectedRoot, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 16
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Invalid JSON in vault data
+      System.Text.Json.JsonReaderException: 'n' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.
+         at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlySpan`1 utf8JsonSpan, JsonReaderOptions readerOptions, MetadataDb& database, StackRowStack& stack)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonReaderOptions readerOptions, Byte[] extraRentedArrayPoolBytes, PooledByteBufferWriter extraPooledByteBufferWriter, Boolean allowDuplicateProperties)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonDocumentOptions options)
+         at RonSijm.Slopsidian.Services.VaultService.ConfigurationDocumentAsync(String id, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 97
+         at RonSijm.Slopsidian.Services.VaultService.ReadConfigurationAsync(String id, String expectedRoot, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 16
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Invalid JSON in vault data
+      System.Text.Json.JsonReaderException: 'n' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.
+         at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlySpan`1 utf8JsonSpan, JsonReaderOptions readerOptions, MetadataDb& database, StackRowStack& stack)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonReaderOptions readerOptions, Byte[] extraRentedArrayPoolBytes, PooledByteBufferWriter extraPooledByteBufferWriter, Boolean allowDuplicateProperties)
+         at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonDocumentOptions options)
+         at RonSijm.Slopsidian.Services.VaultService.ConfigurationDocumentAsync(String id, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 97
+         at RonSijm.Slopsidian.Services.VaultService.ReadConfigurationAsync(String id, String expectedRoot, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Configuration.cs:line 16
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/css
+      RonSijm.Slopsidian.Services.VaultException: This appearance stylesheet is missing: .obsidian/themes/Reviewed/theme.css
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceCssAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 103
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/css
+      RonSijm.Slopsidian.Services.VaultException: This appearance stylesheet is missing: .obsidian/themes/Reviewed/manifest.json
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceCssAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 103
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/theme
+      RonSijm.Slopsidian.Services.VaultException: The installed theme changed after it was reviewed. Review it again; the existing files were retained.
+         at RonSijm.Slopsidian.Services.VaultService.InstallAppearanceThemeAsync(InstallAppearanceThemeRequest request, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.AppearanceTheme.cs:line 141
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/theme
+      RonSijm.Slopsidian.Services.VaultException: The installed theme changed after it was reviewed. Review it again; the existing files were retained.
+         at RonSijm.Slopsidian.Services.VaultService.InstallAppearanceThemeAsync(InstallAppearanceThemeRequest request, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.AppearanceTheme.cs:line 141
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<>c__DisplayClass102_2.<<HandleRequestBodyAndCompileRequestDelegateForJson>b__2>d.MoveNext()
+      --- End of stack trace from previous location ---
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/css
+      RonSijm.Slopsidian.Services.VaultException: This appearance stylesheet is missing: .obsidian/themes/Picked/theme.css
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceCssAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 103
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/css
+      RonSijm.Slopsidian.Services.VaultException: This appearance stylesheet is missing: .obsidian/themes/Picked/manifest.json
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceCssAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 103
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/asset
+      RonSijm.Slopsidian.Services.VaultException: This appearance asset is missing: .obsidian/themes/Picked/img/dot.png
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceAssetAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 39
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+warn: RonSijm.Slopsidian[0]
+      Rejected vault request /api/appearance/asset
+      RonSijm.Slopsidian.Services.VaultException: This appearance asset is missing: .obsidian/themes/Picked/img/dot.png
+         at RonSijm.Slopsidian.Services.VaultService.ReadAppearanceAssetAsync(String expectedRoot, String path, CancellationToken cancellationToken) in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Services\VaultService.Appearance.cs:line 39
+         at Microsoft.AspNetCore.Http.RequestDelegateFactory.<ExecuteTaskOfTFast>g__ExecuteAwaited|133_0[T](Task`1 task, HttpContext httpContext, JsonTypeInfo`1 jsonTypeInfo)
+         at Program.<>c__DisplayClass0_0.<<<Main>$>b__6>d.MoveNext() in C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-fluffy-engine\src\RonSijm.Slopsidian\Program.cs:line 45
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: Redo must also restore the snapshot selection on the same leaf/view/CM
+
+false !== true
+
+    at checkAppearanceThemes (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-fluffy-engine/tools/appearance-theme-scenarios.mjs:238:10)
+    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-fluffy-engine/tools/smoke.mjs:1614:5
+
+'failed' !== 'passed'
+
+    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-fluffy-engine/tools/smoke.mjs:1823:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v25.6.1

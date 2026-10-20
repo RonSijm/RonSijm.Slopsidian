@@ -1,0 +1,23 @@
+{
+  "acceptance": "Independent unsigned portable build only; installed/portable GUI and full-wave renewal remain pending.",
+  "source": {
+    "head": "07db79e59b288b14749206f6ab080846e0524e68",
+    "files": 1737,
+    "sha256": "bb0785b6be76bb9b4dbabab9cb75dc2129fc00a3167a0f1f81131f6d94580e18",
+    "coreVerificationInputs": "1d0e74a5ae0b2551c37a1a7b82251990c9e4e9d355bdce9a48d2d8990ee81bb4",
+    "algorithm": "sha256 over sorted 'path NUL sha256(content)' of git ls-files -c -o --exclude-standard; coreVerificationInputs is the repository-standard tools/core-verification-inputs.mjs fingerprint"
+  },
+  "dotnetSdk": "10.0.100",
+  "contentScan": {
+    "files": 548,
+    "violations": 0
+  },
+  "artifacts": {
+    "portableZip": {
+      "file": "Slopsidian-0.1.0-win-x64-portable.zip",
+      "bytes": 262878495,
+      "entries": 548,
+      "sha256": "0783fb4a1cc57619c6e8bf88822e6e414b1476077da8a5cb2aa29958325526a1"
+    }
+  }
+}

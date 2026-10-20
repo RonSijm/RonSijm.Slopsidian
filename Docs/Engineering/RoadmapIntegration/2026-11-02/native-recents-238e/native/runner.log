@@ -1,0 +1,8 @@
+PASS Confirmed native opens appear most-recent-first in the Recent vaults list.
+PASS An unavailable directory fails through the chooser error, creates nothing, keeps the current vault and does not change history.
+PASS Cancelling the chooser leaves vault and history unchanged.
+PASS Selecting a recent entry reopens it through the guarded switch, and Windows spelling variants stay one entry.
+PASS A confirmed vault creation is remembered at the front.
+PASS A full Electron and .NET restart keeps the recent vault order from the application profile.
+PASS History is stored in the profile only; original fixture note/config bytes are unchanged and no vault file holds MRU state.
+Explicit-vault startup and 0 core acceptance cases passed, including full desktop restarts. Independent host probes are not third-party community-plugin acceptance.

@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "sourceBefore": "23d9931c9fcfe4c0949978d4e85efc1becde5302a5ef02c298216fd31aaa2d7d",
+  "boundary": "Paired main build/static plus targeted modal/generated-wait/scope/real-OS-fixture/close-recovery regressions. Full1230+44 remains6254 historical epoch; no runtime promotion or physical OS proof from builds.",
+  "commands": [
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\dialog-os-recovery-paired-599bd365-29b4-4b4b-bda9-379a8a20db80\\build.log"
+    },
+    {
+      "command": "npm run build:web",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\dialog-os-recovery-paired-599bd365-29b4-4b4b-bda9-379a8a20db80\\build-web.log"
+    },
+    {
+      "command": "npm run verify:web",
+      "exitCode": 0,
+      "log": "C:\\Users\\Ron\\.copilot\\session-state\\daec7fc9-c348-4465-aa1e-1bba92b943bd\\files\\roadmap-orchestration\\dialog-os-recovery-paired-599bd365-29b4-4b4b-bda9-379a8a20db80\\verify-web.log"
+    }
+  ],
+  "tests": {
+    "tests": 142,
+    "pass": 142,
+    "cancelled": 0,
+    "fail": 0,
+    "skipped": 0
+  },
+  "artifacts": [
+    {
+      "bytes": 588800,
+      "path": "src\\RonSijm.Slopsidian\\bin\\Debug\\net10.0\\RonSijm.Slopsidian.dll",
+      "sha256": "c2fab4b096fb591b8bed4bab0c1c0fecf55497e2c2ca55a3d5fe6ca88369666b"
+    },
+    {
+      "bytes": 4916572,
+      "path": "src\\RonSijm.Slopsidian\\wwwroot\\js\\editor-host.js",
+      "sha256": "7c6e61e3e62870c2e462b88dcb87af7a5cdf594762d2c92d16ac8e87456be4a9"
+    },
+    {
+      "bytes": 4916572,
+      "path": ".runtime\\web\\wwwroot\\js\\editor-host.js",
+      "sha256": "7c6e61e3e62870c2e462b88dcb87af7a5cdf594762d2c92d16ac8e87456be4a9"
+    },
+    {
+      "bytes": 37676,
+      "path": ".runtime\\web\\wwwroot\\offline-manifest.json",
+      "sha256": "517da161b9f61bdf01bb57bf7e5ea8d84e8ec946360303349d0ee11eeefd281d"
+    },
+    {
+      "bytes": 6303,
+      "path": ".runtime\\web\\wwwroot\\service-worker.js",
+      "sha256": "618c9f4a72a70a45eab864b19ea089a91cc4e8a3b7e32a63ab4dae757d103a91"
+    }
+  ],
+  "sourceAfter": "23d9931c9fcfe4c0949978d4e85efc1becde5302a5ef02c298216fd31aaa2d7d",
+  "completedAt": "2026-11-02T02:27:49.9400859Z"
+}

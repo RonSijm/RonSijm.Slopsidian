@@ -1,0 +1,876 @@
+{
+  "status": "failed",
+  "scope": "workspace-groups-popouts",
+  "communityPluginsTested": false,
+  "startedAt": "2026-11-02T01:39:50.297Z",
+  "vault": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-xxxlyc",
+  "launcherPid": 24244,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "linked leaves follow navigation, skip pinned members and keep independent history",
+    "a real popout window hosts the same live leaf, view and owner",
+    "typing, undo and hotkey save work in the real popout document",
+    "menus and modals open in, and cancel from, the popout document",
+    "a held file mutation freezes the popout and real input/undo resume afterwards",
+    "a refused dirty close keeps the window, tab and edit",
+    "a real native close request is vetoed while the tab is dirty"
+  ],
+  "coreChecks": [],
+  "processes": [
+    {
+      "launcherPid": 24244,
+      "electronPid": 24244,
+      "dotnetPid": 38328,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "runtime": ".NET 10.0.0",
+  "sourceFingerprint": "c151057258a3f028d302bf30d566dda7fc9228f03b311ebe94f84388fcfa7b48",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "rendererReloads": [
+    {
+      "previousLoader": "555A03F5B12E138F5982B1E20BE69B21",
+      "loader": "992F4CE7A8420B610603D30DAC2F1001"
+    }
+  ],
+  "popupPolicy": "native",
+  "nativeUserClose": {
+    "pid": 24244,
+    "hwnd": 62524984,
+    "title": "slopsidian-veto-probe-1793583593658",
+    "message": "WM_CLOSE"
+  },
+  "expectedDiagnostics": [
+    {
+      "id": "254caf34-8634-48b2-8c5c-2a1a15ce780d:0",
+      "source": "notification",
+      "message": "refused",
+      "reason": "Record the deliberate native close request vetoed by the owned prepareClose fixture"
+    }
+  ],
+  "guestHostInspection": {
+    "guestWebContentsId": 3,
+    "mainWindowId": 1
+  },
+  "readerReadinessFailure": {
+    "lastProbe": {
+      "at": 1793583616533,
+      "hasReader": true,
+      "messages": [],
+      "sameReader": true,
+      "connected": true,
+      "inViewDocument": true,
+      "ownerWindowIsFrameWindow": true,
+      "ownerIsMain": false,
+      "progressReady": false,
+      "disposed": false,
+      "visible": true,
+      "revision": 2,
+      "ownerOrigin": "null",
+      "frameSandbox": "allow-scripts",
+      "hasSrcdoc": true,
+      "hasContentWindow": true,
+      "parentIsOwner": true,
+      "preconditions": false,
+      "ok": false
+    },
+    "liveProbe": {
+      "at": 1793583616643,
+      "hasReader": true,
+      "messages": [],
+      "sameReader": true,
+      "connected": true,
+      "inViewDocument": true,
+      "ownerWindowIsFrameWindow": true,
+      "ownerIsMain": false,
+      "progressReady": false,
+      "disposed": false,
+      "visible": true,
+      "revision": 2,
+      "ownerOrigin": "null",
+      "frameSandbox": "allow-scripts",
+      "hasSrcdoc": true,
+      "hasContentWindow": true,
+      "parentIsOwner": true,
+      "preconditions": false,
+      "ok": false
+    },
+    "popupFrameTree": {
+      "frame": {
+        "id": "49A6720BA8A1760C0E11E0BA6EC7CA1B",
+        "loaderId": "E1D28B464A0E56F1757B0ADDA80D5A39",
+        "url": "about:blank",
+        "domainAndRegistry": "",
+        "securityOrigin": "://",
+        "securityOriginDetails": {
+          "isLocalhost": false
+        },
+        "mimeType": "text/html",
+        "adFrameStatus": {
+          "adFrameType": "none"
+        },
+        "secureContextType": "SecureLocalhost",
+        "crossOriginIsolatedContextType": "NotIsolated",
+        "gatedAPIFeatures": []
+      }
+    },
+    "popupIframe": [
+      {
+        "sandbox": "allow-scripts",
+        "src": null,
+        "srcdocLength": 17946,
+        "w": 888,
+        "h": 484,
+        "connected": true,
+        "csp": null
+      }
+    ],
+    "popupRealmControl": [
+      {
+        "kind": "progress",
+        "requestId": 2100000001,
+        "sourceIsFrame": true
+      }
+    ],
+    "targets": [
+      {
+        "id": "49A6720BA8A1760C0E11E0BA6EC7CA1B",
+        "type": "page",
+        "url": "about:blank",
+        "title": "A quiet place to read"
+      },
+      {
+        "id": "7BD141D69F2237773C4C5B23F3ACBA34",
+        "type": "iframe",
+        "url": "about:srcdoc",
+        "title": "about:srcdoc"
+      },
+      {
+        "id": "FBDB4BA61274F7F0A6DC7A00C0E98496",
+        "type": "page",
+        "url": "http://127.0.0.1:65533/reader-story",
+        "title": "A quiet place to read"
+      },
+      {
+        "id": "762D123C9417B04F938A5DEA42C43E07",
+        "type": "page",
+        "url": "about:blank",
+        "title": "slopsidian-veto-probe-1793583593658"
+      },
+      {
+        "id": "9A7B2A00576544DB38CD392DBA5A7DF5",
+        "type": "page",
+        "url": "http://127.0.0.1:50916/",
+        "title": "Slopsidian"
+      }
+    ]
+  },
+  "error": "Error: Timed out waiting for the moved Reader's current document answered ready in the popout\n    at waitFor (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:407:9)\n    at async waitExpression (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:524:3)\n    at async checkWorkspaceGroupsPopouts (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/workspace-popout-scenarios.mjs:267:15)\n    at async file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:927:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((async()=>JSON.parse(await (async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.de"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"window.__readerProbeLast||null\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Set();\n      retained.add(result)"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>{const r=app.workspace.getLeafById(window.__webLeaf).view.reader,s={at:Date.now(),hasReader:!!r,messages:[]};try{if(!r){s.ok=false;return JSON.stringify(s)}\\nconst f=r.frame,doc=f.ownerDocument,win=doc.defaultView;\\nObject.assign(s,{sameReader:r===window._"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"app.workspace.getLeafById(window.__webLeaf).view.reader.token\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromises??=new Se"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>{window.__restoreIpc?.();const l=window.__webLeaf&&app.workspace.getLeafById(window.__webLeaf);if(l)await app.workspace.closeLeaf(l)})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains "
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>{await app.core.setEnabled(\\\"webviewer\\\",false);return true})()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsidianSmokePromi"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await (!app.core.busy&&app.core.isEnabled(\\\"webviewer\\\")===false)))()\");\n    if(result&&typeof result.then===\"function\"){\n      // CDP can collect a pending promise unless the page retains it until settlement.\n      const retained=globalThis.slopsi"
+    }
+  ],
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "DIV",
+      "id": ""
+    },
+    "keys": [],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": false
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [],
+    "clientError": "refused Download log",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "pop-a",
+        "type": "markdown",
+        "path": "Popout nav/C.md",
+        "text": "dirty popout edit",
+        "sessionText": "dirty popout edit",
+        "dirty": false,
+        "selection": 0,
+        "length": 17
+      },
+      {
+        "id": "pop-pinned",
+        "type": "markdown",
+        "path": "Popout nav/C.md",
+        "text": "dirty popout edit",
+        "sessionText": "dirty popout edit",
+        "dirty": false,
+        "selection": 0,
+        "length": 17
+      },
+      {
+        "id": "pop-b",
+        "type": "markdown",
+        "path": "Popout nav/C.md",
+        "text": "dirty popout edit",
+        "sessionText": "dirty popout edit",
+        "dirty": false,
+        "selection": 17,
+        "length": 17
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "pop-main",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "pop-tabs",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "pop-a",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Popout nav/C.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "pop-pinned",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Popout nav/C.md"
+                  },
+                  "pinned": true
+                }
+              }
+            ],
+            "currentTab": 0
+          }
+        ]
+      },
+      "active": "pop-a",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": true
+      },
+      "views": {
+        "workspace-startup": {
+          "source": ".obsidian/workspace.json",
+          "version": "411ab913939a16585ba07e688bfffc92cce36d2eef51d5f85c94970d78a4854a",
+          "warnings": []
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "pop-a",
+          "lastFile": "Popout nav/C.md"
+        },
+        "workspace-groups": {
+          "links": {
+            "pop-a": "g03d9ef22827341e1",
+            "pop-b": "g03d9ef22827341e1",
+            "pop-pinned": "g03d9ef22827341e1"
+          }
+        },
+        "workspace-windows": {
+          "windows": [
+            {
+              "root": {
+                "id": "60e0b74d-b184-4424-8bcb-81c64a7f0cd0",
+                "type": "split",
+                "direction": "vertical",
+                "children": [
+                  {
+                    "id": "fef2e329-6bf5-4200-aa98-491a2677ef46",
+                    "type": "tabs",
+                    "children": [
+                      {
+                        "id": "pop-b",
+                        "type": "leaf",
+                        "state": {
+                          "type": "markdown",
+                          "state": {
+                            "mode": "source",
+                            "source": true,
+                            "file": "Popout nav/C.md"
+                          },
+                          "pinned": false
+                        }
+                      }
+                    ],
+                    "currentTab": 0
+                  }
+                ]
+              },
+              "bounds": {
+                "x": 403,
+                "y": 159,
+                "width": 901,
+                "height": 701
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "controlledShutdownConsoleErrors": [],
+  "consoleErrors": [
+    "Error: refused\n    at l.view.prepareClose (eval at <anonymous> (:2:26), <anonymous>:1:86)\n    at Workspace.closeWindow (http://127.0.0.1:50916/js/editor-host.haboprvg2z.js:91735:27)",
+    "[2026-11-02T01:40:18.155Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 38328,
+  "electronPid": 24244,
+  "completedAt": "2026-11-02T01:40:18.601Z",
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\evidence\\groups-popouts-smoke-errors.jsonl",
+    "nativePaths": [
+      "C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-profile\\logs\\errors-smoke-7a4b64d4-0ae5-48a9-a6e1-6691c6123e12.jsonl"
+    ],
+    "records": 1,
+    "expected": 1,
+    "unexpected": [],
+    "sha256": "eb1c7b4d9d62d14fe5669636e941d3778f7adff0e4cbe8184866aea128a31657",
+    "includesFinalTeardown": true
+  }
+}

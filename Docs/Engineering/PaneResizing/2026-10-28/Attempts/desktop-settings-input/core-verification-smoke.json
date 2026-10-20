@@ -1,0 +1,1576 @@
+{
+  "status": "failed",
+  "scope": "core-verification-targets",
+  "communityPluginsTested": false,
+  "startedAt": "2026-10-28T09:40:07.793Z",
+  "vault": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\pane-resize-validation-20261028\\.runtime\\smoke-vault-p3ta83",
+  "launcherPid": 23032,
+  "launchMode": "electron",
+  "startupMode": "explicit-vault",
+  "checks": [
+    "Real .NET host and interactive Blazor page opened an existing vault and imported its enabled-plugin list without rewriting it.",
+    "Core foundations exercised real file-tree creation/navigation, filtered command execution, fuzzy switching, heading navigation, live counts, and split/pin/sidebar layout restoration with no community plugins installed or enabled.",
+    "Core controls removed/restored actual commands, ribbon/view resources and keyboard access, isolated state between vaults, retained unknown configuration fields, and survived disabled/enabled desktop process restarts. Templates, dated notes, unique collision handling and random-note empty/attachment cases ran through real UI.",
+    "Command palette settings added/reordered/removed real pinned commands and respected editor/conditional availability. Quick switcher opened a result with Ctrl+Enter, cancelled and created a missing nested note, and handled an empty vault without creating a file.",
+    "Real source selections, edits/undo/redo and Reading mode count frontmatter only when selected, use reference numeric/punctuation/CJK/kana/Korean/Tamil/Tibetan rules and UTF-16 emoji/CRLF lengths without writing the note.",
+    "Outline uses actual ATX/Setext metadata, excludes YAML/comments/indented and nested-length fences, nests skipped levels correctly, folds by pointer/keyboard/all controls and follows real source-cursor navigation.",
+    "Dirty heading edits, undo/redo and external saved replacements refresh the real Outline; Reading heading navigation/scroll changes active highlighting and emits the actual public Markdown scroll event.",
+    "Disable/re-enable removes owned Outline controls and retained listeners, restores counts, and full native restart or real-folder WASM reconnect retains the real files/mode without rewriting original workspace/community configuration.",
+    "The real status control hides for empty/image leaves, honors explicit app.json Live Preview, offers checked keyboard/pointer Source/Reading/Live Preview choices and applies actual in-place Markdown styles without changing native getMode semantics or file bytes.",
+    "Real formatted-text typing and task-checkbox input preserve selections, undo/redo, dirty buffers and community editor extensions across all three modes; only explicit save writes the exact original BOM/CRLF with the intended task marker changed.",
+    "CodeMirror displays an actually decoded local image, rendered table and local Mermaid image; their real Edit buttons reveal original source and revoke resources, detached task controls are inert, and Ctrl-clicking a wiki alias opens the resolved heading in a separate real Reading leaf.",
+    "Real split panes retain independent per-leaf modes with a shared document and community extensions; public same-file setViewState preserves unsaved text/history, rejects malformed source flags without disturbing the view, and retains opaque state.",
+    "Actual external writes refresh clean Source/Live Preview peers, but conflicting saved bytes cannot overwrite a dirty shared buffer; the guarded save rejects visibly to its caller and explicit discard/reload retains the external BOM/CRLF document.",
+    "Disabling Editor status removes its open menu, status button and retained listeners without disabling editing modes; native restart or actual-folder WASM reconnect preserves source flags, opaque leaf state and persisted plugin ownership while leaving app/workspace bytes and other enabled IDs unchanged.",
+    "Actual selection extraction saves previously dirty text, creates a real nested target, resolves source/template links independently, carries image/reference/footnote definitions, and retains BOM/CRLF plus real source undo/redo.",
+    "Cancel and retained closed-dialog controls write nothing; retargeted source views, unresolved relative-link transfers, post-open external/local edits and missing templates reject visibly without losing bytes, creating a target or implicitly saving concurrent local text.",
+    "Heading extraction includes children and blocks, rejects duplicate target anchors, supports Shift+Enter prepend and embed/none replacements, and selectively repairs real Markdown/properties/Canvas while whole-note and remaining-section links stay on the source.",
+    "Merge confirmation is enforced; a real preflight veto and a target changed after planning retain all source/reference files, newer target bytes and restored source panes.",
+    "Confirmed merge combines precise YAML/body data with guarded source trash and Markdown/Canvas reference repair, opens its real target and emits one owned modification/deletion; a real file-menu action also merges a non-active note and Ctrl+Enter creates its new nested target.",
+    "A real modify-event subscriber can edit an open target after commit: Note composer reports the committed-but-unsaved state, retains its text, disables repeat application and permits a normal subsequent save.",
+    "Real select/template/confirmation settings preserve unknown BOM-prefixed configuration, disable removes owned commands/dialog/listeners, and desktop restart or real-folder browser reconnect restores both composed files and enabled runtime.",
+    "An actual CommonJS plugin uses shared Menu/Item/Separator types, rich labels, checked/disabled rows, sections, viewport placement, pointer/keyboard actions and dismissal; real file/editor events carry the current TFile, MarkdownView and CodeMirror editor.",
+    "Actual editor context actions retain copy/cut/select-all, undoable CRLF-aware paste, empty-paste preservation and visible permission/stale/multiple-selection errors using a bounded clipboard API fixture; the system clipboard is never read or changed.",
+    "Closing the actual source view or disabling the plugin removes owned menus and retained button listeners; re-enable has exactly one event subscriber, and only explicit plugin toggles change community enablement."
+  ],
+  "coreChecks": [
+    {
+      "id": "file-explorer:basic-navigation",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:execute",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:find-note",
+      "status": "passed"
+    },
+    {
+      "id": "outline:navigate",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:document",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:layout-roundtrip",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:settings",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:availability",
+      "status": "passed"
+    },
+    {
+      "id": "templates:settings",
+      "status": "passed"
+    },
+    {
+      "id": "templates:insert",
+      "status": "passed"
+    },
+    {
+      "id": "templates:date-time",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:settings",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:create-today",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:navigation",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:create-unique",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:settings",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:settings",
+      "status": "passed"
+    },
+    {
+      "id": "outline:settings",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:settings",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:settings",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:settings",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:settings",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:settings",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:settings",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:settings",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:open",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:new-tab",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "graph:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "properties:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "page-preview:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "templates:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "slash-command:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "outline:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "slides:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "audio-recorder:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:lifecycle",
+      "status": "passed"
+    },
+    {
+      "id": "file-explorer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "global-search:restart",
+      "status": "passed"
+    },
+    {
+      "id": "switcher:restart",
+      "status": "passed"
+    },
+    {
+      "id": "graph:restart",
+      "status": "passed"
+    },
+    {
+      "id": "backlink:restart",
+      "status": "passed"
+    },
+    {
+      "id": "canvas:restart",
+      "status": "passed"
+    },
+    {
+      "id": "outgoing-link:restart",
+      "status": "passed"
+    },
+    {
+      "id": "tag-pane:restart",
+      "status": "passed"
+    },
+    {
+      "id": "footnotes:restart",
+      "status": "passed"
+    },
+    {
+      "id": "properties:restart",
+      "status": "passed"
+    },
+    {
+      "id": "page-preview:restart",
+      "status": "passed"
+    },
+    {
+      "id": "daily-notes:restart",
+      "status": "passed"
+    },
+    {
+      "id": "templates:restart",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "command-palette:restart",
+      "status": "passed"
+    },
+    {
+      "id": "slash-command:restart",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:restart",
+      "status": "passed"
+    },
+    {
+      "id": "bookmarks:restart",
+      "status": "passed"
+    },
+    {
+      "id": "markdown-importer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "zk-prefixer:restart",
+      "status": "passed"
+    },
+    {
+      "id": "random-note:restart",
+      "status": "passed"
+    },
+    {
+      "id": "outline:restart",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:restart",
+      "status": "passed"
+    },
+    {
+      "id": "slides:restart",
+      "status": "passed"
+    },
+    {
+      "id": "audio-recorder:restart",
+      "status": "passed"
+    },
+    {
+      "id": "workspaces:restart",
+      "status": "passed"
+    },
+    {
+      "id": "file-recovery:restart",
+      "status": "passed"
+    },
+    {
+      "id": "word-count:selection-unicode",
+      "status": "passed"
+    },
+    {
+      "id": "outline:markdown-semantics",
+      "status": "passed"
+    },
+    {
+      "id": "editor-status:modes",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:extract",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:merge",
+      "status": "passed"
+    },
+    {
+      "id": "note-composer:settings",
+      "status": "passed"
+    }
+  ],
+  "processes": [
+    {
+      "launcherPid": 23032,
+      "electronPid": 23032,
+      "dotnetPid": 7644,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 34424,
+      "electronPid": 34424,
+      "dotnetPid": 46032,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 3956,
+      "electronPid": 3956,
+      "dotnetPid": 31024,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 15752,
+      "electronPid": 15752,
+      "dotnetPid": 41912,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 21632,
+      "electronPid": 21632,
+      "dotnetPid": 27640,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 30096,
+      "electronPid": 30096,
+      "dotnetPid": 29316,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 46324,
+      "electronPid": 46324,
+      "dotnetPid": 5056,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 24952,
+      "electronPid": 24952,
+      "dotnetPid": 46944,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 4880,
+      "electronPid": 4880,
+      "dotnetPid": 42824,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 31056,
+      "electronPid": 31056,
+      "dotnetPid": 47632,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    },
+    {
+      "launcherPid": 45528,
+      "electronPid": 45528,
+      "dotnetPid": 17692,
+      "exitCode": 0,
+      "exitSignal": null,
+      "deadlineExpired": false
+    }
+  ],
+  "inputEnvironment": "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.",
+  "verificationTargets": [
+    "file-explorer",
+    "global-search",
+    "switcher",
+    "graph",
+    "backlink",
+    "canvas",
+    "outgoing-link",
+    "tag-pane",
+    "footnotes",
+    "properties",
+    "page-preview",
+    "daily-notes",
+    "templates",
+    "note-composer",
+    "command-palette",
+    "slash-command",
+    "editor-status",
+    "bookmarks",
+    "markdown-importer",
+    "zk-prefixer",
+    "random-note",
+    "outline",
+    "word-count",
+    "slides",
+    "audio-recorder",
+    "workspaces",
+    "file-recovery"
+  ],
+  "syntheticAudioOnly": true,
+  "physicalMicrophoneTested": false,
+  "runtime": ".NET 10.0.14",
+  "sourceFingerprint": "0673ac9e9bed9d269efd40786dd1f129fac726355bf61e41853c611c6854d965",
+  "coreSettingsAvailability": [
+    {
+      "id": "file-explorer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "global-search",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "switcher",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "graph",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "backlink",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "canvas",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "outgoing-link",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "tag-pane",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "footnotes",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "properties",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "page-preview",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "daily-notes",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "templates",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "note-composer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "command-palette",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "slash-command",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "editor-status",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "bookmarks",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "markdown-importer",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "zk-prefixer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "random-note",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "outline",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "word-count",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "slides",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "audio-recorder",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "workspaces",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "file-recovery",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    },
+    {
+      "id": "publish",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "sync",
+      "implemented": false,
+      "settingsSupport": "unimplemented"
+    },
+    {
+      "id": "bases",
+      "implemented": true,
+      "settingsSupport": "none"
+    },
+    {
+      "id": "webviewer",
+      "implemented": true,
+      "settingsSupport": "implemented"
+    }
+  ],
+  "rendererReloads": [
+    {
+      "previousLoader": "3F875F0797BC14EED068A6C83C2C0439",
+      "loader": "74D80B9171EA859463750D08CF44E224"
+    }
+  ],
+  "note": "Folder/Core benchmark.md",
+  "exactSavedContent": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+  "restoredWorkspaceLayout": {
+    "version": 1,
+    "main": {
+      "id": "8108eb09-e375-4d85-9303-6d6b9ee9305e",
+      "type": "split",
+      "direction": "vertical",
+      "children": [
+        {
+          "id": "e6e31814-fecc-4e77-a608-166982db0edf",
+          "type": "tabs",
+          "dimension": 50,
+          "children": [
+            {
+              "id": "5555502e-0a47-4d4d-aae4-a384a4122567",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 0
+        },
+        {
+          "id": "a1ec0f90-8516-4b1b-80f7-f0a89157ef05",
+          "type": "tabs",
+          "dimension": 50,
+          "children": [
+            {
+              "id": "8f44e539-4454-4c52-9c20-7f8e450b905f",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": true
+              }
+            }
+          ],
+          "currentTab": 0
+        }
+      ]
+    },
+    "active": "8f44e539-4454-4c52-9c20-7f8e450b905f",
+    "left": {
+      "width": 260,
+      "collapsed": false
+    },
+    "right": {
+      "width": 260,
+      "collapsed": false
+    },
+    "views": {
+      "sidebars": {
+        "left": "file-explorer",
+        "right": "outline"
+      },
+      "workspace-navigation": {
+        "lastMainLeaf": "8f44e539-4454-4c52-9c20-7f8e450b905f",
+        "lastFile": "Folder/Core benchmark.md"
+      }
+    }
+  },
+  "existingObsidianPluginConfigurationUnchanged": true,
+  "existingObsidianWorkspaceUnchanged": true,
+  "expectedDiagnostics": [
+    {
+      "id": "557c7311-9d8d-4b64-81f2-8cd9eb70fefb:0",
+      "source": "notification",
+      "message": "The configured unique prefix format cannot produce an unused note name.",
+      "reason": "Check unique-note format exhaustion without overwriting an existing file"
+    },
+    {
+      "id": "6025d882-0fa4-4bfa-b78e-862a4e8b1bc0:0",
+      "source": "notification",
+      "message": "The editor or selection changed during clipboard access. No text was replaced.",
+      "reason": "Reject an obsolete clipboard result"
+    },
+    {
+      "id": "6025d882-0fa4-4bfa-b78e-862a4e8b1bc0:1",
+      "source": "notification",
+      "message": "Clipboard actions with multiple selections are not supported. Select a single range first.",
+      "reason": "Reject unsupported clipboard multi-selection"
+    },
+    {
+      "id": "6025d882-0fa4-4bfa-b78e-862a4e8b1bc0:2",
+      "source": "notification",
+      "message": "The editor or selection changed during clipboard access. No text was replaced.",
+      "reason": "Reject a paste after selection changes"
+    },
+    {
+      "id": "6025d882-0fa4-4bfa-b78e-862a4e8b1bc0:3",
+      "source": "notification",
+      "message": "Expected clipboard permission rejection",
+      "reason": "Check the owned clipboard permission-denial fixture"
+    }
+  ],
+  "controlledShutdownConsoleErrors": [],
+  "coreProcessRestarts": 2,
+  "coreFeatureFiles": {
+    "Template target.md": "Before # Template target\n2026.10.28 / 10:40:16 / 2026\n after",
+    "Clock.md": "Start 2026.10.28 / 10:40:16",
+    "Folder/Switcher created.md": "Created through quick switcher.\n",
+    "Journal/2026/10/28.md": "# 2026/10/28\nDay 2026-10-28\nKept edits.\n",
+    "Unique/Unique-2026-10-28.md": "# Unique-2026-10-28\nCreated 2026-10-28\n",
+    "Unique/Unique-2026-10-29.md": "# Unique-2026-10-29\nCreated 2026-10-28\n",
+    "Link target.md": "[[Unique-2026-10-28 Linked title]]"
+  },
+  "finalWorkspaceLayout": {
+    "version": 1,
+    "main": {
+      "id": "8108eb09-e375-4d85-9303-6d6b9ee9305e",
+      "type": "split",
+      "direction": "vertical",
+      "children": [
+        {
+          "id": "e6e31814-fecc-4e77-a608-166982db0edf",
+          "type": "tabs",
+          "dimension": 50,
+          "children": [
+            {
+              "id": "5555502e-0a47-4d4d-aae4-a384a4122567",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 0
+        },
+        {
+          "id": "a1ec0f90-8516-4b1b-80f7-f0a89157ef05",
+          "type": "tabs",
+          "dimension": 50,
+          "children": [
+            {
+              "id": "8f44e539-4454-4c52-9c20-7f8e450b905f",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Core benchmark.md"
+                },
+                "pinned": true
+              }
+            },
+            {
+              "id": "e2c8ba02-92f1-4ba7-935d-c8e9d66456d6",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Clock.md"
+                },
+                "pinned": false
+              }
+            },
+            {
+              "id": "d7561402-2ad8-4d5b-8e91-d16e175b7046",
+              "type": "leaf",
+              "state": {
+                "type": "markdown",
+                "state": {
+                  "mode": "source",
+                  "source": true,
+                  "file": "Folder/Switcher created.md"
+                },
+                "pinned": false
+              }
+            }
+          ],
+          "currentTab": 2
+        }
+      ]
+    },
+    "active": "d7561402-2ad8-4d5b-8e91-d16e175b7046",
+    "left": {
+      "width": 260,
+      "collapsed": false
+    },
+    "right": {
+      "width": 260,
+      "collapsed": false
+    },
+    "views": {
+      "sidebars": {
+        "left": "file-explorer",
+        "right": "outline"
+      },
+      "workspace-navigation": {
+        "lastMainLeaf": "d7561402-2ad8-4d5b-8e91-d16e175b7046",
+        "lastFile": "Folder/Switcher created.md"
+      }
+    }
+  },
+  "noteComposer": {
+    "implementation": "independent guarded merge/selection/heading subset",
+    "originalModuleLoaded": false,
+    "sourceDeletion": "vault trash only after a combined guarded commit",
+    "targets": "new and existing Markdown",
+    "references": "Markdown/property/Canvas whole-file merge or fully moved heading/block extraction",
+    "unsafeDefinitionsAndAnchors": "explicitly refused",
+    "originalRuntimeEquivalence": "not established"
+  },
+  "menuApi": {
+    "fixture": "menu-host-probe",
+    "sha256": "195bd239ff76d6ee3b8dae3d76e92ead89a58e2ae4c9ddd32e93c65455405f5f",
+    "thirdPartyPlugin": false,
+    "clipboard": "bounded API fixture only; OS clipboard and permission prompts not accessed",
+    "nativeElectronMenus": "explicitly unsupported",
+    "originalRuntimeEquivalence": "not established"
+  },
+  "error": "Error: Timed out waiting for #core-plugins-tab\n    at waitFor (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:332:9)\n    at async waitExpression (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:424:3)\n    at async click (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:438:3)\n    at async checkFormatConversion (file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/format-scenarios.mjs:83:3)\n    at async file:///D:/source/DecomTest/RonSijm.Slopsidian/.runtime/pane-resize-validation-20261028/tools/smoke.mjs:1366:5",
+  "pendingDialogs": [],
+  "recentCommands": [
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    },
+    {
+      "method": "Runtime.evaluate",
+      "expression": "(()=>{\n    const result=(0,eval)(\"(async()=>Boolean(await ((()=>{const element=document.querySelector(\\\"#core-plugins-tab\\\");const modal=document.querySelector(\\\"dialog[open]\\\");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBounding"
+    }
+  ],
+  "audio": {
+    "capture": "idle",
+    "tracks": 0,
+    "saved": null
+  },
+  "diagnostics": {
+    "focused": {
+      "hasFocus": true,
+      "tag": "BODY",
+      "id": ""
+    },
+    "keys": [],
+    "changingVault": false,
+    "coreBusy": false,
+    "coreStates": [
+      {
+        "id": "file-explorer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "global-search",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "switcher",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "graph",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "backlink",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "canvas",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outgoing-link",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "tag-pane",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "footnotes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "properties",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "page-preview",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "daily-notes",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "templates",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "note-composer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "command-palette",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slash-command",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "editor-status",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "bookmarks",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "markdown-importer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "zk-prefixer",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "random-note",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "outline",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "word-count",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "slides",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "audio-recorder",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "workspaces",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "file-recovery",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "publish",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "sync",
+        "implemented": false,
+        "enabled": false
+      },
+      {
+        "id": "bases",
+        "implemented": true,
+        "enabled": true
+      },
+      {
+        "id": "webviewer",
+        "implemented": true,
+        "enabled": false
+      }
+    ],
+    "coreControls": [
+      {
+        "id": "file-explorer",
+        "disabled": false
+      },
+      {
+        "id": "global-search",
+        "disabled": false
+      },
+      {
+        "id": "switcher",
+        "disabled": false
+      },
+      {
+        "id": "graph",
+        "disabled": false
+      },
+      {
+        "id": "backlink",
+        "disabled": false
+      },
+      {
+        "id": "canvas",
+        "disabled": false
+      },
+      {
+        "id": "outgoing-link",
+        "disabled": false
+      },
+      {
+        "id": "tag-pane",
+        "disabled": false
+      },
+      {
+        "id": "footnotes",
+        "disabled": false
+      },
+      {
+        "id": "properties",
+        "disabled": false
+      },
+      {
+        "id": "page-preview",
+        "disabled": false
+      },
+      {
+        "id": "daily-notes",
+        "disabled": false
+      },
+      {
+        "id": "templates",
+        "disabled": false
+      },
+      {
+        "id": "note-composer",
+        "disabled": false
+      },
+      {
+        "id": "command-palette",
+        "disabled": false
+      },
+      {
+        "id": "slash-command",
+        "disabled": false
+      },
+      {
+        "id": "editor-status",
+        "disabled": false
+      },
+      {
+        "id": "bookmarks",
+        "disabled": false
+      },
+      {
+        "id": "markdown-importer",
+        "disabled": false
+      },
+      {
+        "id": "zk-prefixer",
+        "disabled": false
+      },
+      {
+        "id": "random-note",
+        "disabled": false
+      },
+      {
+        "id": "outline",
+        "disabled": false
+      },
+      {
+        "id": "word-count",
+        "disabled": false
+      },
+      {
+        "id": "slides",
+        "disabled": false
+      },
+      {
+        "id": "audio-recorder",
+        "disabled": false
+      },
+      {
+        "id": "workspaces",
+        "disabled": false
+      },
+      {
+        "id": "file-recovery",
+        "disabled": false
+      },
+      {
+        "id": "publish",
+        "disabled": true
+      },
+      {
+        "id": "sync",
+        "disabled": true
+      },
+      {
+        "id": "bases",
+        "disabled": false
+      },
+      {
+        "id": "webviewer",
+        "disabled": false
+      }
+    ],
+    "enabledPlugins": [],
+    "cards": [
+      {
+        "id": "editor-mode-host-probe",
+        "loaded": "false"
+      },
+      {
+        "id": "menu-host-probe",
+        "loaded": "false"
+      }
+    ],
+    "clientError": "",
+    "dialogs": [],
+    "pluginModals": [],
+    "notices": [],
+    "buffers": [
+      {
+        "id": "5555502e-0a47-4d4d-aae4-a384a4122567",
+        "type": "markdown",
+        "path": "Folder/Core benchmark.md",
+        "text": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "sessionText": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 74
+      },
+      {
+        "id": "8f44e539-4454-4c52-9c20-7f8e450b905f",
+        "type": "markdown",
+        "path": "Folder/Core benchmark.md",
+        "text": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "sessionText": "# Core heading\n\nAlpha beta gamma.\n\n## Second heading\n\nDelta epsilon.\nZeta\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 74
+      },
+      {
+        "id": "e2c8ba02-92f1-4ba7-935d-c8e9d66456d6",
+        "type": "markdown",
+        "path": "Clock.md",
+        "text": "Start 2026.10.28 / 10:40:16",
+        "sessionText": "Start 2026.10.28 / 10:40:16",
+        "dirty": false,
+        "selection": 0,
+        "length": 27
+      },
+      {
+        "id": "d7561402-2ad8-4d5b-8e91-d16e175b7046",
+        "type": "markdown",
+        "path": "Editor chrome/Counts.md",
+        "text": "---\r\ntitle: Hidden words\r\n---\r\n# Count\r\n\r\nAlpha beta.\r\n中文 日本語 かな カタカナ 한글 தமிழ் བོད 😀\r\n\r\n3.14 don't --",
+        "sessionText": "---\r\ntitle: Hidden words\r\n---\r\n# Count\r\n\r\nAlpha beta.\r\n中文 日本語 かな カタカナ 한글 தமிழ் བོད 😀\r\n\r\n3.14 don't --",
+        "dirty": false,
+        "selection": 0,
+        "length": 94
+      },
+      {
+        "id": "a294df09-d94d-47a5-8a41-356692ce1cc0",
+        "type": "markdown",
+        "path": "Note composition/New/Composer created merge.md",
+        "text": "# Fresh merge\r\n\r\nA second source.\r\n",
+        "sessionText": "# Fresh merge\r\n\r\nA second source.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 32
+      },
+      {
+        "id": "45288e7e-6405-4ee1-be0f-b833b5764d7e",
+        "type": "markdown",
+        "path": "Note composition/New/Composer created merge.md",
+        "text": "# Fresh merge\r\n\r\nA second source.\r\n",
+        "sessionText": "# Fresh merge\r\n\r\nA second source.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 32
+      },
+      {
+        "id": "a2713cf9-a68f-42bf-9277-63d326b19039",
+        "type": "markdown",
+        "path": "Menu compatibility/Editor.md",
+        "text": "# Context menus\r\n\r\nAlpha beta.\r\n",
+        "sessionText": "# Context menus\r\n\r\nAlpha beta.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 29
+      },
+      {
+        "id": "6bcc0fdd-d258-43a5-b217-04c8a5f5e14a",
+        "type": "markdown",
+        "path": "Menu compatibility/Editor.md",
+        "text": "# Context menus\r\n\r\nAlpha beta.\r\n",
+        "sessionText": "# Context menus\r\n\r\nAlpha beta.\r\n",
+        "dirty": false,
+        "selection": 0,
+        "length": 29
+      }
+    ],
+    "workspace": {
+      "version": 1,
+      "main": {
+        "id": "8108eb09-e375-4d85-9303-6d6b9ee9305e",
+        "type": "split",
+        "direction": "vertical",
+        "children": [
+          {
+            "id": "e6e31814-fecc-4e77-a608-166982db0edf",
+            "type": "tabs",
+            "dimension": 50,
+            "children": [
+              {
+                "id": "5555502e-0a47-4d4d-aae4-a384a4122567",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Folder/Core benchmark.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 0
+          },
+          {
+            "id": "a1ec0f90-8516-4b1b-80f7-f0a89157ef05",
+            "type": "tabs",
+            "dimension": 50,
+            "children": [
+              {
+                "id": "8f44e539-4454-4c52-9c20-7f8e450b905f",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Folder/Core benchmark.md"
+                  },
+                  "pinned": true
+                }
+              },
+              {
+                "id": "e2c8ba02-92f1-4ba7-935d-c8e9d66456d6",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Clock.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "d7561402-2ad8-4d5b-8e91-d16e175b7046",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Editor chrome/Counts.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "a294df09-d94d-47a5-8a41-356692ce1cc0",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Note composition/New/Composer created merge.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "45288e7e-6405-4ee1-be0f-b833b5764d7e",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Note composition/New/Composer created merge.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "a2713cf9-a68f-42bf-9277-63d326b19039",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Menu compatibility/Editor.md"
+                  },
+                  "pinned": false
+                }
+              },
+              {
+                "id": "6bcc0fdd-d258-43a5-b217-04c8a5f5e14a",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "mode": "source",
+                    "source": true,
+                    "file": "Menu compatibility/Editor.md"
+                  },
+                  "pinned": false
+                }
+              }
+            ],
+            "currentTab": 6
+          }
+        ]
+      },
+      "active": "6bcc0fdd-d258-43a5-b217-04c8a5f5e14a",
+      "left": {
+        "width": 260,
+        "collapsed": false
+      },
+      "right": {
+        "width": 260,
+        "collapsed": false
+      },
+      "views": {
+        "sidebars": {
+          "left": "file-explorer",
+          "right": "outline"
+        },
+        "workspace-navigation": {
+          "lastMainLeaf": "6bcc0fdd-d258-43a5-b217-04c8a5f5e14a",
+          "lastFile": "Menu compatibility/Editor.md"
+        }
+      }
+    }
+  },
+  "browserErrors": [],
+  "consoleErrors": [
+    "Error: The configured unique prefix format cannot produce an unused note name.\n    at CoreNotes.uniqueName (http://127.0.0.1:56108/js/editor-host.0epsfhrdsk.js:74437:11)\n    at CoreNotes.createUnique (http://127.0.0.1:56108/js/editor-host.0epsfhrdsk.js:74445:26)\n    at async CorePlugins.run (http://127.0.0.1:56108/js/editor-host.0epsfhrdsk.js:74690:7)\n    at async Commands.execute (http://127.0.0.1:56108/js/editor-host.0epsfhrdsk.js:91337:7)\n    at async Object.action (http://127.0.0.1:56108/js/editor-host.0epsfhrdsk.js:94086:9)\n    at async DesktopUI.choose (http://127.0.0.1:56108/js/editor-host.0epsfhrdsk.js:94244:5)",
+    "[2026-10-28T09:40:50.460Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:41:02.048Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:41:11.741Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:41:16.741Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:41:20.490Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:41:25.503Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:41:33.488Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:41:38.956Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:41:43.645Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:41:48.650Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:42:01.406Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:42:05.279Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "Error: The editor or selection changed during clipboard access. No text was replaced.\n    at MarkdownView.editClipboard (http://127.0.0.1:51763/js/editor-host.0epsfhrdsk.js:72257:13)",
+    "Error: Clipboard actions with multiple selections are not supported. Select a single range first.\n    at MarkdownView.editClipboard (http://127.0.0.1:51763/js/editor-host.0epsfhrdsk.js:72238:13)\n    at http://127.0.0.1:51763/js/editor-host.0epsfhrdsk.js:72186:132\n    at http://127.0.0.1:51763/js/editor-host.0epsfhrdsk.js:70420:34",
+    "Error: The editor or selection changed during clipboard access. No text was replaced.\n    at MarkdownView.editClipboard (http://127.0.0.1:51763/js/editor-host.0epsfhrdsk.js:72257:13)",
+    "Error: Expected clipboard permission rejection\n    at Object.writeText (vault-plugin:menu-host-probe:73:58)\n    at MarkdownView.editClipboard (http://127.0.0.1:51763/js/editor-host.0epsfhrdsk.js:72251:23)\n    at http://127.0.0.1:51763/js/editor-host.0epsfhrdsk.js:72186:132\n    at http://127.0.0.1:51763/js/editor-host.0epsfhrdsk.js:70420:34",
+    "[2026-10-28T09:42:12.314Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'.",
+    "[2026-10-28T09:42:36.366Z] Error: Connection disconnected with error 'Error: WebSocket closed with status code: 1006 (no reason given).'."
+  ],
+  "exitCode": 0,
+  "exitSignal": null,
+  "dotnetPid": 17692,
+  "electronPid": 45528,
+  "completedAt": "2026-10-28T09:42:36.578Z",
+  "errorLogAudit": {
+    "status": "passed",
+    "path": "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\pane-resize-validation-20261028\\.runtime\\evidence\\core-verification-smoke-errors.jsonl",
+    "nativePaths": [
+      "D:\\source\\DecomTest\\RonSijm.Slopsidian\\.runtime\\pane-resize-validation-20261028\\.runtime\\smoke-profile\\logs\\errors-smoke-7645c6c7-5338-4763-b5d9-170271f6ab8a.jsonl"
+    ],
+    "records": 5,
+    "expected": 5,
+    "unexpected": [],
+    "sha256": "ada27444a080751cf5da4bae0b36b15e16fc4455a58e612e1c6e1688aa197def",
+    "includesFinalTeardown": true
+  }
+}

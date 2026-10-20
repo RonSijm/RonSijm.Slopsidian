@@ -1,0 +1,654 @@
+PASS linked leaves follow navigation, skip pinned members and keep independent history
+PASS a real popout window hosts the same live leaf, view and owner
+PASS a held file mutation freezes the popout and real input/undo resume afterwards
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: AssertionError [ERR_ASSERTION]: Unexpected reported/unhandled errors occurred; inspect C:\Users\Ron\.copilot\repos\copilot-worktrees\RonSijm.Slopsidian\ronsijm-stunning-sniffle\.runtime\evidence\groups-popouts-barrier-diagnostic-smoke-errors.jsonl
++ actual - expected
+
++ [
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:0',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.018Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:1',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.034Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:2',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.050Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:3',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.069Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:4',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.084Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:5',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.100Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:6',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.116Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:7',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.133Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:8',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.150Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:9',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.166Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:10',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.183Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:11',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.200Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:12',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.216Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:13',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.233Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:14',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.249Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:15',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.266Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:16',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.283Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:17',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.299Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:18',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.316Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:19',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.333Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:20',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.349Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:21',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.366Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:22',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.383Z'
++   },
++   {
++     context: {
++       column: 0,
++       file: 'Popout nav/C.md',
++       filename: 'http://127.0.0.1:58041/',
++       leafId: 'pop-b',
++       line: 0,
++       vault: 'C:\\Users\\Ron\\.copilot\\repos\\copilot-worktrees\\RonSijm.Slopsidian\\ronsijm-stunning-sniffle\\.runtime\\smoke-vault-XugJ3J',
++       view: 'markdown'
++     },
++     error: {
++       message: 'ResizeObserver loop completed with undelivered notifications.',
++       name: 'Error',
++       stack: 'Error: Reported here\n' +
++         '    at describeError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42877:149)\n' +
++         '    at recordError (http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:42937:12)\n' +
++         '    at http://127.0.0.1:58041/js/editor-host.vzexpe5qyb.js:124756:21',
++       stackOrigin: 'reported'
++     },
++     id: '3a89defa-288e-413c-aa03-21d7bb548337:23',
++     page: 'http://127.0.0.1:58041/',
++     schemaVersion: 1,
++     session: '3a89defa-288e-413c-aa03-21d7bb548337',
++     source: 'window-error',
++     timestamp: '2026-11-01T23:48:02.399Z'
++   }
++ ]
+- []
+
+    at Object.finish (file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/error-log-audit.mjs:58:16)
+    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:1820:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+'failed' !== 'passed'
+
+    at file:///C:/Users/Ron/.copilot/repos/copilot-worktrees/RonSijm.Slopsidian/ronsijm-stunning-sniffle/tools/smoke.mjs:1828:10 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'failed',
+  expected: 'passed',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v25.6.1

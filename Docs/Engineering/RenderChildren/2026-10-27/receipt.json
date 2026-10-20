@@ -1,0 +1,126 @@
+{
+  "reviewDate": "2026-10-27",
+  "capturedAt": "2026-10-27T01:13:53.149Z",
+  "candidate": ".runtime/render-child-validation-20261026",
+  "scope": "Detached Markdown child ownership and unchanged Admonition 12.0.11 fenced Reading/static workflows; color/icon presentation remains a visual gap",
+  "tests": {
+    "regressions": 611,
+    "newFocusedLifecycleTests": 10,
+    "desktopChecks": 12,
+    "wasmChecks": 24,
+    "sharedScenarioGroups": 11,
+    "desktopStableArtifacts": 60,
+    "wasmAssets": 22,
+    "wasmScenarioInputs": 28
+  },
+  "diagnostics": {
+    "uncaughtDesktop": 0,
+    "uncaughtWasm": 0,
+    "desktopConsoleMessages": 14,
+    "desktopWebSocket1006": 11,
+    "unexpectedDesktopMessages": []
+  },
+  "package": [
+    {
+      "file": "main.js",
+      "sha256": "6a1df01446e9dd3e2165173a1c237707414aa2e92ff0589ab1152921b6404f8b"
+    },
+    {
+      "file": "manifest.json",
+      "sha256": "c05262a4938c5942991eb4fd99e9cda4f80524147f8385b5b35a1ebd0985bcf5"
+    },
+    {
+      "file": "styles.css",
+      "sha256": "09d3328199aba165fc10ac419747bb092ce777867f4431db0d6c7f1c9da8258c"
+    }
+  ],
+  "sources": [
+    {
+      "path": "client/markdown-postprocessors.ts",
+      "sha256": "4cfb18d2d7cae5d102055600c90792a43307649fe56d84ba0c509ed681ad199c"
+    },
+    {
+      "path": "client/plugin.ts",
+      "sha256": "08aab198345ca6a2af60707eee4c1a8332191017280f04870a8a9aeebc4d8d39"
+    },
+    {
+      "path": "client/reading.ts",
+      "sha256": "8fd635984cd9804e7d4f29c1a2edc75ea4986c1cf668d92e151f9ff22fe0424b"
+    },
+    {
+      "path": "tests/markdown-postprocessors.test.mjs",
+      "sha256": "43a5f772f2d8a053446751296eff1e631ac3935cdd51289fa53868377f52f374"
+    },
+    {
+      "path": "tools/render-child-scenarios.mjs",
+      "sha256": "9eefd7b849a6450021a24682ad2db97e1cb2cb5a65cf78a88bf0dcf78a6650a3"
+    },
+    {
+      "path": "tools/renderer-scenarios.mjs",
+      "sha256": "e9946299cc3d4d4ca6b78b2b054a9c514d676bd904c2f8adf7766ed28f0cb32d"
+    },
+    {
+      "path": "tools/smoke.mjs",
+      "sha256": "d4c06e9633ac3342afd40f6e8f476695625639e8d20e551db51c428f1e55cb23"
+    },
+    {
+      "path": "tools/web-smoke.mjs",
+      "sha256": "2987128f6fd678679f266981d37c60a031647a414f972a59206498d2dda3b551"
+    },
+    {
+      "path": "package.json",
+      "sha256": "7cbf714dae8baa19c0b66946bda6fad9ecd0cff3db852a5a86316e4eb8f340c8"
+    }
+  ],
+  "sharedArtifactsPreserved": [
+    {
+      "path": "src/RonSijm.Slopsidian/wwwroot/js/editor-host.js",
+      "sha256": "84167352d0f0bb9c50cdcfaf3a4236dfa6a3f5c3c18a4b411cd313865cc0c718"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian/wwwroot/js/editor-host.css",
+      "sha256": "b67b57cc03ad6b9e45eefd40082f08b306a35169b3ce3c1a4ee4c75908f84c14"
+    },
+    {
+      "path": "src/RonSijm.Slopsidian/bin/Debug/net10.0/RonSijm.Slopsidian.dll",
+      "sha256": "27362fdcfedb8b9c976f00c77bbcbb55d224e839f46751153c9dafccdec113a1"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "renderers-desktop.json",
+      "sha256": "4423151894e4424c80f6a9a98423e0942a6f3a90ab7ff3863a0be955f1284bba",
+      "bytes": 19119
+    },
+    {
+      "path": "renderers-web.json",
+      "sha256": "784de7c288b998b641315fc87347bb99bdef2433a591bb46decf91f1ead3aa27",
+      "bytes": 12468
+    },
+    {
+      "path": "admonition-desktop.png",
+      "sha256": "32efb5a72763639e811bffa5fd32e7d10a0444dfffa646ad08a1a5374f03abc6",
+      "bytes": 66099
+    },
+    {
+      "path": "admonition-web.png",
+      "sha256": "04dca92238c5a94d9981ec2bc7428f87cadc90ed87778e12aec363d9558645e0",
+      "bytes": 62674
+    },
+    {
+      "path": "regressions.log",
+      "sha256": "d999ea81951fd34871347d301bd81869b5ea13a9176afeff2179f92937c2ece7",
+      "bytes": 79784
+    },
+    {
+      "path": "example-vault.json",
+      "sha256": "466f0227fe130ac9ba3b9d29097c6995cc101d1532e9a68420e67da541f42d27",
+      "bytes": 689
+    },
+    {
+      "path": "debugger-startup-attempt.json",
+      "sha256": "33fca5cf852529ef3294a5e9e365b0868f0c79d4c6eb4f9c3baa9efa01e43ad1",
+      "bytes": 1030
+    }
+  ]
+}
