@@ -1,6 +1,6 @@
 import type { App } from "./app";
 import { reportError } from "./dom";
-import { composerFragment, composerHeading, composerTemplate, insertMarkdown, parseMarkdown, renameFrontmatterProperty, sourcePositions, updateFrontmatter, type SourceRange } from "./markdown";
+import { composerFragment, composerHeading, composerTemplate, insertMarkdown, parseMarkdown, renameFrontmatterProperty, updateFrontmatter, type SourceRange } from "./markdown";
 import { propertyName } from "./property-types";
 import { copyViewData, type VaultConfigurationDocument, type VaultDocument, type VaultFileEdit } from "./contracts";
 import { normalizePath, TAbstractFile, TFile, TFolder } from "./vault";
@@ -10,6 +10,7 @@ import { createLinkResolver, fileLinktext, linkTextFormat, newLinkedNotePath, re
 import { Modal, Notice } from "./ui";
 import { rewriteCanvasFolderReferences, rewriteCanvasReferences } from "./canvas-model";
 import { Menu } from "./menu";
+import type { VaultTrashRestoreReview, VaultTrashRestoreItem, VaultTrashRestoreResult } from "./contracts";
 
 const FOLDER_LINK_UPDATE_LIMIT = 256;
 export interface NoteComposition {
@@ -45,12 +46,50 @@ export class FileManager {
     return newLinkedNotePath({ path: target, subpath: "" }, sourcePath, parent);
   }
 
-  createLinkedNote(name: string, sourcePath: string): Promise<TFile> {
+  createLinkedNote(name: string, sourcePath: string, review?: { expectedPath: string; guard: () => boolean; created?: (file: TFile) => void }): Promise<TFile> {
     const source = this.app.vault.getFileByPath(sourcePath);
     return this.mutate(async () => {
       if (source && this.app.vault.getFileByPath(source.path) !== source) { throw new Error("The source note changed before its link could be created."); }
       const path = this.getNewNotePath(name, source?.path ?? sourcePath, true);
-      return this.app.vault.create(path, "");
+      if (review && (path !== review.expectedPath || !review.guard())) { throw new Error("The note or its destination changed before creation. No note was created."); }
+      const created = await this.app.vault.create(path, "");
+      review?.created?.(created);
+      return created;
+    });
+  }
+
+  /** Reviewed target edit for an explicitly selected new block reference. */
+  assignBlockId(file: TFile, expectedText: string, change: (content: string) => string, review: { guard: () => boolean; written?: (document: VaultDocument) => void }): Promise<VaultDocument> {
+    return this.assignMarkdownSubpath(file, expectedText, change, review);
+  }
+
+  /** Optimistic target edit shared by explicit heading and block authoring. */
+  assignMarkdownSubpath(file: TFile, expectedText: string, change: (content: string) => string, review: { guard: () => boolean; written?: (document: VaultDocument) => void }): Promise<VaultDocument> {
+    const path = file.path, root = this.app.vault.rootPath;
+    return this.mutate(async () => {
+      this.requireFile(file);
+      if (file.path !== path || root !== this.app.vault.rootPath || file.extension.toLowerCase() !== "md" || typeof expectedText !== "string" || typeof change !== "function") {
+        throw new Error("The target note changed before its reference could be added.");
+      }
+      const document = await this.app.vault.readDocument(path);
+      this.requireFile(file);
+      const session = this.app.workspace.sessions.get(path);
+      if (file.path !== path || root !== this.app.vault.rootPath || document.content !== expectedText
+        || session && (session.originRoot !== root || session.isReloading || session.dirty || session.text !== expectedText)
+        || review.guard() !== true) {
+        throw new Error("The source or target note changed. No target edit was added.");
+      }
+      const updated: unknown = change(document.content);
+      if (typeof updated !== "string" || updated === document.content) { throw new Error("A target edit requires a current synchronous text change."); }
+      // No asynchronous boundary separates the final owner proof from the
+      // optimistic write. A later source change retains the acknowledged change.
+      if (review.guard() !== true || root !== this.app.vault.rootPath || file.path !== path) {
+        throw new Error("The source or target note changed. No target edit was added.");
+      }
+      const written = await this.app.vault.writeDocument(path, updated, document.version, false);
+      review.written?.(written);
+      this.app.workspace.acceptExternalDocuments([written], true);
+      return written;
     });
   }
 
@@ -117,7 +156,9 @@ export class FileManager {
     this.batch = batch;
     const remove = (): void => { if (this.batch === batch) { this.batch = null; } };
     batch.then(remove, remove);
-    return operation;
+    // Sequential callers may start another rename as soon as this promise
+    // settles. Release the batch before returning control to those callers.
+    return operation.finally(remove);
   }
 
   private requireFile(file: TAbstractFile): asserts file is TFile {
@@ -283,10 +324,12 @@ export class FileManager {
     });
   }
 
-  renameFile(file: TAbstractFile, value: string, updateLinks = true): Promise<void> {
-    if (file instanceof TFolder) { return this.renameFolder(file, value, updateLinks); }
+  renameFile(file: TAbstractFile, value: string, updateLinks = true, review?: { guard: () => boolean }): Promise<void> {
+    if (file instanceof TFolder) { if (review) { return Promise.reject(new Error("Reviewed note moves cannot move folders.")); } return this.renameFolder(file, value, updateLinks); }
+    const reviewedPath = file.path;
     return this.mutate(async () => {
       this.requireFile(file);
+      if (review && (file.path !== reviewedPath || review.guard() !== true)) { throw new Error("The reviewed move changed. No file was moved."); }
       const path = value.replaceAll("\\", "/");
       const oldPath = file.path;
       if (path === oldPath) { return; }
@@ -321,6 +364,7 @@ export class FileManager {
       }
       if (edits.length > 256) { throw new Error("A rename currently supports up to 256 affected Markdown/Canvas files. No files were moved."); }
       if (this.app.workspace.hasUnsavedChanges) { throw new Error("An open view changed during rename planning. Its text was retained; save it before retrying."); }
+      if (review && (file.path !== reviewedPath || review.guard() !== true)) { throw new Error("The reviewed move changed during planning. No file was moved."); }
       const result = await this.app.vault.moveFile(file, path, info.version, edits);
       const entry = result.snapshot.files.find(entry => entry.path === file.path);
       if (!entry) { throw new Error("The moved file is absent from its returned inventory."); }
@@ -348,17 +392,29 @@ export class FileManager {
     });
   }
 
-  trashFile(file: TAbstractFile, system = false): Promise<void> {
+  trashFile(file: TAbstractFile, system = false, review?: { guard: () => boolean; version: string; removed?: () => void }): Promise<void> {
     if (file instanceof TFolder) {
+      if (review) { return Promise.reject(new Error("Reviewed note trash cannot remove folders.")); }
       if (!system) { return Promise.reject(new Error("Vault-local folder trash is not supported; folders can be moved to the system trash, renamed, or permanently deleted after a verified manifest check.")); }
       return this.deleteFolder(file, "system");
     }
-    return this.removeFile(file, system ? "system" : "vault");
+    return this.removeFile(file, system ? "system" : "vault", review);
   }
 
-  deleteFile(file: TAbstractFile): Promise<void> {
-    if (file instanceof TFolder) { return this.deleteFolder(file); }
-    return this.removeFile(file, "permanent");
+  deleteFile(file: TAbstractFile, review?: { guard: () => boolean; version: string; removed?: () => void }): Promise<void> {
+    if (file instanceof TFolder) {
+      if (review) { return Promise.reject(new Error("Reviewed note removal cannot remove folders.")); }
+      return this.deleteFolder(file);
+    }
+    return this.removeFile(file, "permanent", review);
+  }
+
+  restoreTrashFile(review: VaultTrashRestoreReview, item: VaultTrashRestoreItem, guard: () => boolean, acknowledged: () => void): Promise<VaultTrashRestoreResult> {
+    return this.mutate(async () => {
+      if (!guard() || review.root !== this.app.vault.rootPath || this.app.vault.getAbstractFileByPathInsensitive(item.newPath)) { throw new Error("The restore selection or destination changed. No note was restored."); }
+      if ([...this.app.workspace.sessions.keys()].some(path => path.toLowerCase() === item.newPath.toLowerCase()) || this.app.workspace.leaves().some(leaf => (leaf.view as { file?: TAbstractFile }).file?.path.toLowerCase() === item.newPath.toLowerCase())) { throw new Error("Close the existing or missing-file view at the restore destination before reviewing again."); }
+      return this.app.vault.restoreTrashFile(review, item, () => acknowledged());
+    }, false);
   }
 
   private requireFolder(folder: TFolder): void {
@@ -500,12 +556,16 @@ export class FileManager {
     });
   }
 
-  private removeFile(file: TAbstractFile, mode: "vault" | "system" | "permanent"): Promise<void> {
+  private removeFile(file: TAbstractFile, mode: "vault" | "system" | "permanent", review?: { guard: () => boolean; version: string; removed?: () => void }): Promise<void> {
+    const reviewedPath = file.path;
     return this.mutate(async () => {
       this.requireFile(file);
+      const current = (): boolean => file.path === reviewedPath && file.vault === this.app.vault && this.app.vault.getFileByPath(reviewedPath) === file && review?.guard() === true;
+      if (review && !current()) { throw new Error("The reviewed removal selection changed. No note was removed."); }
       if (mode === "system" && !this.app.vault.supportsSystemTrash) { throw new Error("System trash is only available in the Windows native host. Nothing was deleted; use vault trash instead."); }
       const root = this.app.vault.rootPath;
       const info = await this.app.vault.getFileInfo(file);
+      if (review && (info.version !== review.version || !current())) { throw new Error("The reviewed note changed before removal. Review the selection again."); }
       const staged = await this.app.workspace.stageFileTrash(file);
       const finish = async (): Promise<void> => {
         staged.commit();
@@ -515,9 +575,13 @@ export class FileManager {
         await this.app.notifyEditor();
       };
       try {
+        if (review && (this.app.workspace.hasUnsavedChanges || !current())) { throw new Error("The reviewed selection or an open note changed while views were closing. No note was removed."); }
         if (mode === "permanent") { await this.app.vault.deleteFile(file, info.version); }
         else if (mode === "system") { await this.app.vault.systemTrashFile(file, info.version); }
         else { await this.app.vault.trashFile(file, info.version); }
+        // A missing source alone cannot prove this operation moved it to trash.
+        // Deliver the host acknowledgement before view/metadata cleanup.
+        review?.removed?.();
       }
       catch (error) {
         const errors: unknown[] = [error];
@@ -674,7 +738,8 @@ export class FileManager {
 
   cancelPrompts(): void { this.modal?.close(); this.modal = null; }
 
-  processFrontMatter(file: TFile, change: (properties: Record<string, unknown>) => void, options?: { ctime?: number; mtime?: number }): Promise<void> {
+  /** Internal guards validate owned UI choices before saves and again after asynchronous reads. */
+  processFrontMatter(file: TFile, change: (properties: Record<string, unknown>) => void, options?: { ctime?: number; mtime?: number }, guard?: (content: string) => void, transform?: (updated: string, original: string) => string): Promise<void> {
     if (this.app.workspace.isChangingFiles) { return Promise.reject(new Error("Wait for the current file operation before editing its properties.")); }
     if (options && Object.keys(options).length) {
       return Promise.reject(new Error("Custom timestamps are not supported for frontmatter writes yet."));
@@ -688,6 +753,17 @@ export class FileManager {
       if (!root || root !== this.app.vault.rootPath || this.app.changingVault || this.app.workspace.isChangingLayout || this.app.vault.getAbstractFileByPath(file.path) !== file) {
         throw new Error("The note or selected vault changed before its properties could be edited.");
       }
+      const check = (content: string): void => {
+        const result: unknown = guard?.(content);
+        if (result && typeof result === "object" && "then" in result && typeof result.then === "function") {
+          Promise.resolve(result).catch(reportError);
+          throw new Error("A frontmatter guard must finish synchronously.");
+        }
+      };
+      if (guard) {
+        const current = this.app.workspace.sessions.get(file.path)?.text ?? this.app.metadataCache.getDocument(file.path)?.text;
+        check(current ?? (await this.app.vault.readDocument(file.path)).content);
+      }
       for (const leaf of this.app.workspace.leaves()) {
         if (leaf.view instanceof TextFileView && !(leaf.view instanceof MarkdownView) && leaf.view.file === file) { await leaf.view.save(); }
       }
@@ -698,13 +774,25 @@ export class FileManager {
       }
       const document = session?.document ?? await this.app.vault.readDocument(file.path);
       const content = session?.text ?? document.content;
-      const updated = updateFrontmatter(content, properties => {
+      let updated = updateFrontmatter(content, properties => {
+        check(content);
         const result: unknown = change(properties);
         if (result && typeof result === "object" && "then" in result && typeof result.then === "function") {
           Promise.resolve(result).catch(reportError);
           throw new Error("A frontmatter callback must finish synchronously.");
         }
       });
+      if (transform) {
+        check(content);
+        const result: unknown = transform(updated, content);
+        if (result && typeof result === "object" && "then" in result && typeof result.then === "function") {
+          Promise.resolve(result).catch(reportError);
+          throw new Error("A frontmatter source transform must finish synchronously.");
+        }
+        if (typeof result !== "string") { throw new Error("A frontmatter source transform must return Markdown text."); }
+        updated = result;
+        check(content);
+      }
       if (updated === content) { return; }
       if (root !== this.app.vault.rootPath || this.app.changingVault) { throw new Error("The vault changed before its properties could be saved."); }
       if (session) {
@@ -718,8 +806,7 @@ export class FileManager {
         let to = content.length;
         let end = updated.length;
         while (to > from && end > from && content[to - 1] === updated[end - 1]) { to--; end--; }
-        const position = sourcePositions(content)(from, to);
-        view.editor.replaceRange(updated.slice(from, end), position.start, position.end);
+        view.editor.replaceExpected(content, from, to, updated.slice(from, end), "input.properties");
         await session.save();
       } else {
         await this.app.vault.writeDocument(file.path, updated, document.version, false);

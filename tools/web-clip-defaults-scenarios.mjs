@@ -4,6 +4,8 @@ import { join } from "node:path";
 import { parseDocument } from "yaml";
 import { checkWebAddressDraft } from "./webviewer-scenarios.mjs";
 
+const logicalHeadingText = element => element ? [...element.childNodes].filter(node => node.nodeType !== 1 || !node.matches("button.reading-fold-toggle")).map(node => node.textContent).join("") : null;
+
 export async function checkClipDefaults({ host, origin, targets, connect, restart, until, requests, directory, pass, capture }) {
   const view = "app.workspace.activeLeaf.view", source = origin + "/clip-story", selectionSource = origin + "/clip-selection";
   const config = join(directory, ".obsidian"), settingsPath = join(config, "webviewer.json"), originalSettings = JSON.parse(await readFile(settingsPath, "utf8"));
@@ -50,7 +52,7 @@ export async function checkClipDefaults({ host, origin, targets, connect, restar
     const metadata = await host.evaluate(`app.metadataCache.getFileCache(app.vault.getFileByPath(${JSON.stringify(path)})).frontmatter`);
     for (const [key, value] of Object.entries(expected)) { assert.deepEqual(metadata[key], value); }
     await host.evaluate(`${view}.setMode("preview")`);
-    await host.wait(`${view}.previewEl.querySelector("h1")?.textContent===${JSON.stringify(expected.title)}`, "default note Reading ready");
+    await host.wait(`(${logicalHeadingText.toString()})(${view}.previewEl.querySelector("h1"))===${JSON.stringify(expected.title)}`, "default note Reading ready");
     return markdown;
   }
   if (!await host.evaluate('app.core.isEnabled("webviewer")')) { await host.evaluate('app.core.setEnabled("webviewer",true)'); }

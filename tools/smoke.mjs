@@ -93,6 +93,25 @@ const recoveryOnly = process.argv.includes("--recovery");
 const discoveryOnly = process.argv.includes("--discovery");
 const audioOnly = process.argv.includes("--audio");
 const editorChromeOnly = process.argv.includes("--editor-chrome");
+const editorImprovementsOnly = process.argv.includes("--editor-improvements");
+const structuredRecoveryOnly = process.argv.includes("--structured-recovery");
+const workflowControlsOnly = process.argv.includes("--workflow-controls");
+const propertiesReadingOnly = process.argv.includes("--properties-reading");
+const authoringTransfersOnly = process.argv.includes("--authoring-transfers");
+const noteManagementOnly = process.argv.includes("--note-management");
+const authoringOrganizationOnly = process.argv.includes("--authoring-organization");
+const linkAuthoringOnly = process.argv.includes("--link-authoring");
+const noteContinuityOnly = process.argv.includes("--note-continuity");
+const markdownPolishOnly = process.argv.includes("--markdown-polish");
+const markdownInteractionOnly = process.argv.includes("--markdown-interaction");
+const editorAssistanceOnly = process.argv.includes("--editor-assistance");
+const noteNavigationOnly = process.argv.includes("--note-navigation");
+const readingToolsOnly = process.argv.includes("--reading-tools");
+const noteWorkflowsOnly = process.argv.includes("--note-workflows");
+const editorWorkflowsOnly = process.argv.includes("--editor-workflows");
+const readingDiscoveryOnly = process.argv.includes("--reading-discovery");
+const editorProductivityOnly = process.argv.includes("--editor-productivity");
+const noteAuthoringOnly = process.argv.includes("--note-authoring");
 const mermaidOnly = process.argv.includes("--mermaid");
 const viewersOnly = process.argv.includes("--viewers");
 const viewerProofsOnly = process.argv.includes("--viewer-proofs");
@@ -101,11 +120,11 @@ const workspacesOnly = process.argv.includes("--workspaces");
 const workspaceTransitionOnly = process.argv.includes("--workspace-transition");
 const outgoingPanesOnly = process.argv.includes("--outgoing-panes");
 const outgoingOnly = process.argv.includes("--outgoing") || outgoingPanesOnly;
-const focused = [originalFloatingOnly, nativeRecentsOnly, githubIndexUiOnly, appearanceOnly, backlinkPanesOnly, discoveryPanesOnly, bookmarksOnly, outlinePanesOnly, searchPanesOnly, fileExplorerOnly, folderOperationsOnly, workspaceStartupOnly, communityInstallOnly, paneResizeOnly, diagnosticsOnly, coreVerificationOnly, coreStatusOnly, tabMovementOnly, attachmentsOnly, autosaveOnly, propertiesOnly, filesOnly, graphsOnly, canvasesOnly, previewsOnly, editingToolsOnly, formatsOnly, composerOnly, menusOnly, suggestionsOnly, modalFocusOnly, modalLayoutOnly, draftRescueOnly, rescueReviewOnly, rescueInspectionOnly, rescueReviewStateOnly, renderersOnly, tagsOnly, templaterOnly, excalidrawOnly, reportedPluginsOnly, additionalPluginsOnly, basesOnly, recoveryOnly, discoveryOnly, audioOnly, editorChromeOnly, mermaidOnly, workspacesOnly, outgoingOnly, workspaceTransitionOnly, communitySettingsOnly, mathEmbedsOnly, hotkeysSecretsOnly, persistentDraftsOnly, viewersOnly, configurationLifecycleOnly, viewerProofsOnly, systemTrashOnly].filter(Boolean).length;
+const focused = [originalFloatingOnly, nativeRecentsOnly, githubIndexUiOnly, appearanceOnly, backlinkPanesOnly, discoveryPanesOnly, bookmarksOnly, outlinePanesOnly, searchPanesOnly, fileExplorerOnly, folderOperationsOnly, workspaceStartupOnly, communityInstallOnly, paneResizeOnly, diagnosticsOnly, coreVerificationOnly, coreStatusOnly, tabMovementOnly, attachmentsOnly, autosaveOnly, propertiesOnly, filesOnly, graphsOnly, canvasesOnly, previewsOnly, editingToolsOnly, formatsOnly, composerOnly, menusOnly, suggestionsOnly, modalFocusOnly, modalLayoutOnly, draftRescueOnly, rescueReviewOnly, rescueInspectionOnly, rescueReviewStateOnly, renderersOnly, tagsOnly, templaterOnly, excalidrawOnly, reportedPluginsOnly, additionalPluginsOnly, basesOnly, recoveryOnly, discoveryOnly, audioOnly, editorChromeOnly, editorImprovementsOnly, structuredRecoveryOnly, workflowControlsOnly, propertiesReadingOnly, authoringTransfersOnly, noteManagementOnly, authoringOrganizationOnly, linkAuthoringOnly, noteContinuityOnly, markdownPolishOnly, markdownInteractionOnly, editorAssistanceOnly, noteNavigationOnly, readingToolsOnly, noteWorkflowsOnly, editorWorkflowsOnly, readingDiscoveryOnly, editorProductivityOnly, noteAuthoringOnly, mermaidOnly, workspacesOnly, outgoingOnly, workspaceTransitionOnly, communitySettingsOnly, mathEmbedsOnly, hotkeysSecretsOnly, persistentDraftsOnly, viewersOnly, configurationLifecycleOnly, viewerProofsOnly, systemTrashOnly].filter(Boolean).length;
 if (focused > 1 || community && focused) { throw new Error("Choose one focused desktop suite, separately from community acceptance."); }
 const syntheticAudio = coreVerificationOnly || audioOnly || (!focused && !community);
 const throughChooser = !focused && !process.argv.includes("--explicit-vault") && (!community || process.argv.includes("--chooser"));
-const reportName = originalFloatingOnly ? "original-floating-import-smoke" : nativeRecentsOnly ? "native-recents-smoke" : nativeOsDragOnly ? "groups-popouts-os-drag-smoke" : appearanceCatalogOnly ? "appearance-catalog-diagnostic-smoke" : appearanceWatchOnly ? "appearance-watch-diagnostic-smoke" : githubIndexUiOnly ? "github-index-ui-smoke" : systemTrashOnly ? "system-trash-smoke" : appearanceThemesOnly ? "appearance-themes-smoke" : appearanceResourcesOnly ? "appearance-resources-smoke" : appearanceOnly ? "appearance-smoke" : outgoingPanesOnly ? "outgoing-panes-smoke" : backlinkPanesOnly ? "backlink-panes-smoke" : discoveryPanesOnly ? "discovery-panes-smoke" : bookmarksOnly ? "bookmarks-workflows-smoke" : outlinePanesOnly ? "outline-panes-smoke" : searchPanesOnly ? "search-panes-smoke" : fileExplorerOnly ? "file-explorer-smoke" : folderOperationsOnly ? "folder-operations-smoke" : workspaceStartupOnly ? "workspace-startup-smoke" : communityInstallOnly ? "community-install-smoke" : paneResizeOnly ? "pane-resize-smoke" : diagnosticsOnly ? "diagnostics-smoke" : groupsPopoutsOnly ? (process.env.SLOPSIDIAN_GROUPS_POPOUTS_ONLY === "forced-close" ? "groups-popouts-forced-close-diagnostic-smoke" : process.env.SLOPSIDIAN_GROUPS_POPOUTS_ONLY === "barrier" ? "groups-popouts-barrier-diagnostic-smoke" : "groups-popouts-smoke") : historyOnly ? "history-smoke" : dockingOnly ? "docking-smoke" : tabMovementOnly ? "tabs-smoke" : coreVerificationOnly ? "core-verification-smoke" : coreStatusOnly ? "core-status-smoke" : attachmentsOnly ? "attachments-smoke" : viewerProofsOnly ? "viewer-proofs-smoke" : autosaveOnly ? "autosave-smoke" : rescueReviewStateOnly ? "rescue-review-state-smoke" : rescueInspectionOnly ? "rescue-inspection-smoke" : rescueReviewOnly ? "rescue-review-smoke" : draftRescueOnly ? "draft-rescue-smoke" : modalLayoutOnly ? "modal-layout-smoke" : modalFocusOnly ? "modal-focus-smoke" : additionalPluginsOnly ? "additional-plugins-smoke" : communitySettingsOnly ? "community-settings-smoke" : tagsOnly ? "tags-smoke" : workspaceTransitionOnly ? "workspace-transition-smoke" : reportedPluginsOnly ? "reported-plugins-smoke" : excalidrawOnly ? "excalidraw-smoke" : renderersOnly ? "renderers-smoke" : templaterOnly ? "templater-smoke" : suggestionsOnly ? "suggestions-smoke" : baseSummariesOnly ? "bases-summaries-smoke" : outgoingOnly ? "outgoing-smoke" : workspacesOnly ? "workspaces-smoke" : mermaidOnly ? "mermaid-smoke" : audioOnly ? "audio-smoke" : community ? "desktop-smoke" : propertiesOnly ? "properties-smoke" : filesOnly ? "files-smoke" : graphsOnly ? "graphs-smoke" : canvasesOnly ? "canvases-smoke" : previewsOnly ? "previews-smoke" : editingToolsOnly ? "editing-tools-smoke" : formatsOnly ? "formats-smoke" : composerOnly ? "composer-smoke" : menusOnly ? "menus-smoke" : basesOnly ? "bases-smoke" : recoveryOnly ? "recovery-smoke" : discoveryOnly ? "discovery-smoke" : editorChromeOnly ? "editor-chrome-smoke" : throughChooser ? "core-smoke" : mathEmbedsOnly ? "math-embeds-smoke" : hotkeysSecretsOnly ? "hotkeys-secrets-smoke" : persistentDraftsDiagnosticOnly ? "persistent-drafts-text-diagnostic-smoke" : persistentDraftsOnly ? "persistent-drafts-smoke" : viewersOnly ? "viewers-smoke" : configurationLifecycleOnly ? "configuration-lifecycle-smoke" : "explicit-vault-smoke";
+const reportName = structuredRecoveryOnly ? "structured-recovery-smoke" : workflowControlsOnly ? "workflow-controls-smoke" : propertiesReadingOnly ? "properties-reading-smoke" : authoringTransfersOnly ? "authoring-transfers-smoke" : noteManagementOnly ? "note-management-smoke" : authoringOrganizationOnly ? "authoring-organization-smoke" : linkAuthoringOnly ? "link-authoring-smoke" : noteContinuityOnly ? "note-continuity-smoke" : markdownPolishOnly ? "markdown-polish-smoke" : markdownInteractionOnly ? "markdown-interaction-smoke" : editorAssistanceOnly ? "editor-assistance-smoke" : noteNavigationOnly ? "note-navigation-smoke" : readingToolsOnly ? "reading-tools-smoke" : noteWorkflowsOnly ? "note-workflows-smoke" : editorWorkflowsOnly ? "editor-workflows-smoke" : readingDiscoveryOnly ? "reading-discovery-smoke" : editorProductivityOnly ? "editor-productivity-smoke" : noteAuthoringOnly ? "note-authoring-smoke" : editorImprovementsOnly ? "editor-improvements-smoke" : originalFloatingOnly ? "original-floating-import-smoke" : nativeRecentsOnly ? "native-recents-smoke" : nativeOsDragOnly ? "groups-popouts-os-drag-smoke" : appearanceCatalogOnly ? "appearance-catalog-diagnostic-smoke" : appearanceWatchOnly ? "appearance-watch-diagnostic-smoke" : githubIndexUiOnly ? "github-index-ui-smoke" : systemTrashOnly ? "system-trash-smoke" : appearanceThemesOnly ? "appearance-themes-smoke" : appearanceResourcesOnly ? "appearance-resources-smoke" : appearanceOnly ? "appearance-smoke" : outgoingPanesOnly ? "outgoing-panes-smoke" : backlinkPanesOnly ? "backlink-panes-smoke" : discoveryPanesOnly ? "discovery-panes-smoke" : bookmarksOnly ? "bookmarks-workflows-smoke" : outlinePanesOnly ? "outline-panes-smoke" : searchPanesOnly ? "search-panes-smoke" : fileExplorerOnly ? "file-explorer-smoke" : folderOperationsOnly ? "folder-operations-smoke" : workspaceStartupOnly ? "workspace-startup-smoke" : communityInstallOnly ? "community-install-smoke" : paneResizeOnly ? "pane-resize-smoke" : diagnosticsOnly ? "diagnostics-smoke" : groupsPopoutsOnly ? (process.env.SLOPSIDIAN_GROUPS_POPOUTS_ONLY === "forced-close" ? "groups-popouts-forced-close-diagnostic-smoke" : process.env.SLOPSIDIAN_GROUPS_POPOUTS_ONLY === "barrier" ? "groups-popouts-barrier-diagnostic-smoke" : "groups-popouts-smoke") : historyOnly ? "history-smoke" : dockingOnly ? "docking-smoke" : tabMovementOnly ? "tabs-smoke" : coreVerificationOnly ? "core-verification-smoke" : coreStatusOnly ? "core-status-smoke" : attachmentsOnly ? "attachments-smoke" : viewerProofsOnly ? "viewer-proofs-smoke" : autosaveOnly ? "autosave-smoke" : rescueReviewStateOnly ? "rescue-review-state-smoke" : rescueInspectionOnly ? "rescue-inspection-smoke" : rescueReviewOnly ? "rescue-review-smoke" : draftRescueOnly ? "draft-rescue-smoke" : modalLayoutOnly ? "modal-layout-smoke" : modalFocusOnly ? "modal-focus-smoke" : additionalPluginsOnly ? "additional-plugins-smoke" : communitySettingsOnly ? "community-settings-smoke" : tagsOnly ? "tags-smoke" : workspaceTransitionOnly ? "workspace-transition-smoke" : reportedPluginsOnly ? "reported-plugins-smoke" : excalidrawOnly ? "excalidraw-smoke" : renderersOnly ? "renderers-smoke" : templaterOnly ? "templater-smoke" : suggestionsOnly ? "suggestions-smoke" : baseSummariesOnly ? "bases-summaries-smoke" : outgoingOnly ? "outgoing-smoke" : workspacesOnly ? "workspaces-smoke" : mermaidOnly ? "mermaid-smoke" : audioOnly ? "audio-smoke" : community ? "desktop-smoke" : propertiesOnly ? "properties-smoke" : filesOnly ? "files-smoke" : graphsOnly ? "graphs-smoke" : canvasesOnly ? "canvases-smoke" : previewsOnly ? "previews-smoke" : editingToolsOnly ? "editing-tools-smoke" : formatsOnly ? "formats-smoke" : composerOnly ? "composer-smoke" : menusOnly ? "menus-smoke" : basesOnly ? "bases-smoke" : recoveryOnly ? "recovery-smoke" : discoveryOnly ? "discovery-smoke" : editorChromeOnly ? "editor-chrome-smoke" : throughChooser ? "core-smoke" : mathEmbedsOnly ? "math-embeds-smoke" : hotkeysSecretsOnly ? "hotkeys-secrets-smoke" : persistentDraftsDiagnosticOnly ? "persistent-drafts-text-diagnostic-smoke" : persistentDraftsOnly ? "persistent-drafts-smoke" : viewersOnly ? "viewers-smoke" : configurationLifecycleOnly ? "configuration-lifecycle-smoke" : "explicit-vault-smoke";
 if (throughLauncher) {
   await import("./build.mjs");
 }
@@ -155,6 +174,25 @@ if (throughChooser) {
 
 const inputEnvironmentArguments = ["--disable-features=CalculateNativeWinOcclusion", "--disable-background-timer-throttling", "--disable-renderer-backgrounding", ...(nativeRecentsOnly ? ["--smoke-profile=" + nativeRecentsProfile] : [])];
 if (originalFloatingOnly) { inputEnvironmentArguments.push("--smoke-profile=" + originalFloatingProfile); }
+if (editorImprovementsOnly) { inputEnvironmentArguments.push("--smoke-profile=editor-improvements-" + Date.now()); }
+if (structuredRecoveryOnly) { inputEnvironmentArguments.push("--smoke-profile=structured-recovery-" + Date.now()); }
+if (workflowControlsOnly) { inputEnvironmentArguments.push("--smoke-profile=workflow-controls-" + Date.now()); }
+if (propertiesReadingOnly) { inputEnvironmentArguments.push("--smoke-profile=properties-reading-" + Date.now()); }
+if (authoringTransfersOnly) { inputEnvironmentArguments.push("--smoke-profile=authoring-transfers-" + Date.now()); }
+if (noteManagementOnly) { inputEnvironmentArguments.push("--smoke-profile=note-management-" + Date.now()); }
+if (authoringOrganizationOnly) { inputEnvironmentArguments.push("--smoke-profile=authoring-organization-" + Date.now()); }
+if (linkAuthoringOnly) { inputEnvironmentArguments.push("--smoke-profile=link-authoring-" + Date.now()); }
+if (noteContinuityOnly) { inputEnvironmentArguments.push("--smoke-profile=note-continuity-" + Date.now()); }
+if (markdownPolishOnly) { inputEnvironmentArguments.push("--smoke-profile=markdown-polish-" + Date.now()); }
+if (markdownInteractionOnly) { inputEnvironmentArguments.push("--smoke-profile=markdown-interaction-" + Date.now()); }
+if (editorAssistanceOnly) { inputEnvironmentArguments.push("--smoke-profile=editor-assistance-" + Date.now()); }
+if (noteNavigationOnly) { inputEnvironmentArguments.push("--smoke-profile=note-navigation-" + Date.now()); }
+if (readingToolsOnly) { inputEnvironmentArguments.push("--smoke-profile=reading-tools-" + Date.now()); }
+if (noteWorkflowsOnly) { inputEnvironmentArguments.push("--smoke-profile=note-workflows-" + Date.now()); }
+if (editorWorkflowsOnly) { inputEnvironmentArguments.push("--smoke-profile=editor-workflows-" + Date.now()); }
+if (readingDiscoveryOnly) { inputEnvironmentArguments.push("--smoke-profile=reading-discovery-" + Date.now()); }
+if (editorProductivityOnly) { inputEnvironmentArguments.push("--smoke-profile=editor-productivity-" + Date.now()); }
+if (noteAuthoringOnly) { inputEnvironmentArguments.push("--smoke-profile=note-authoring-" + Date.now()); }
 const applicationArguments = [
   ...(appearanceOnly ? ["--smoke-profile=" + appearanceProfile] : []), ...(hotkeysSecretsOnly ? ["--smoke-profile=" + hotkeysSecretsProfile] : []),
   ...(discoveryPanesOnly ? ["--smoke-profile=" + discoveryPanesProfile] : []),
@@ -174,6 +212,25 @@ const applicationArguments = [
 const executable = throughLauncher ? process.env.ComSpec : join(root, "node_modules", "electron", "dist", "electron.exe");
 const arguments_ = throughLauncher ? ["/d", "/c", join(root, "build-and-run.cmd"), ...applicationArguments] : [root, ...applicationArguments];
 const artifactPaths = [
+  ...(structuredRecoveryOnly ? ["tools/structured-recovery-scenarios.mjs","tools/multiline-properties-scenarios.mjs","tools/markdown-crlf-scenarios.mjs","tools/trash-recovery-scenarios.mjs","client/properties.ts","client/markdown.ts","client/vault.ts","client/vault-io.ts","client/browser-vault.ts","client/file-manager.ts","client/file-explorer-view.ts","client/contracts.ts","src/RonSijm.Slopsidian/Services/FileOperations.cs","tests/multiline-properties.test.mjs","tests/markdown-crlf-structure.test.mjs","tests/trash-recovery.test.mjs","tests/trash-recovery-host.test.mjs","tests/smoke-scopes.test.mjs","client/multiline-properties.ts","client/explorer-trash-recovery.ts","client/explorer-trash-recovery-modal.ts","client/explorer-trash-recovery-browser.ts","client/heading-authoring.ts","client/block-authoring.ts","src/RonSijm.Slopsidian/Services/VaultService.TrashRecovery.cs","src/RonSijm.Slopsidian/Services/VaultService.Files.cs","src/RonSijm.Slopsidian/wwwroot/app.css","tests/markdown-crlf-authoring.test.mjs"] : []),
+
+  ...(workflowControlsOnly ? ["tools/workflow-controls-scenarios.mjs","tools/property-link-authoring-scenarios.mjs","tools/reading-bulk-fold-scenarios.mjs","tools/explorer-removal-choices-scenarios.mjs","client/app.ts","client/editor-fold-commands.ts","client/properties.ts","client/property-value-suggestions.ts","client/file-manager.ts","client/explorer-trash.ts","client/explorer-trash-modal.ts","client/file-explorer-view.ts","client/reading.ts","client/reading-folding.ts","client/reading-list-folding.ts","client/reading-callout-folding.ts","client/fold-state-storage.ts","tests/property-link-authoring.test.mjs","tests/reading-bulk-folds.test.mjs","tests/explorer-removal-choices.test.mjs","tests/smoke-scopes.test.mjs"] : []),  ...(propertiesReadingOnly ? ["tools/properties-reading-scenarios.mjs","tools/property-workflows-scenarios.mjs","tools/crosspane-drop-scenarios.mjs","tools/reading-callout-scenarios.mjs","client/properties.ts","client/property-value-suggestions.ts","client/file-manager.ts","client/file-explorer-view.ts","client/explorer-move-modal.ts","client/explorer-move.ts","client/reading.ts","client/reading-search.ts","client/fold-state-storage.ts","src/RonSijm.Slopsidian/wwwroot/app.css","client/explorer-note-drag.ts","client/reading-callout-folding.ts","client/heading-authoring.ts","client/markdown.ts","tests/property-workflows.test.mjs","tests/property-heading-creation.test.mjs","tests/property-note-creation.test.mjs","tests/property-value-suggestions.test.mjs","tests/properties-panes.test.mjs","tests/file-explorer.test.mjs","tests/fold-state-storage.test.mjs","tests/reading-callout-folding.test.mjs","tests/reading-search.test.mjs","tests/reading-folding.test.mjs","tests/reading-list-folding.test.mjs","tests/reading-tasks.test.mjs","tests/editor-history-selection.test.mjs","tests/smoke-scopes.test.mjs","tests/heading-authoring.test.mjs","tests/markdown.test.mjs","tests/builtin-suggestions.test.mjs"] : []),
+  ...(authoringTransfersOnly ? ["tools/authoring-transfers-scenarios.mjs","tools/setext-authoring-scenarios.mjs","tools/callout-authoring-scenarios.mjs","tools/property-heading-creation-scenarios.mjs","tools/explorer-drop-scenarios.mjs","client/heading-authoring.ts","client/block-authoring.ts","client/markdown.ts","client/builtin-suggestions.ts","client/property-value-suggestions.ts","client/properties.ts","client/file-manager.ts","client/file-explorer-view.ts","client/explorer-move-modal.ts","client/explorer-move.ts","src/RonSijm.Slopsidian/wwwroot/app.css","tests/heading-authoring.test.mjs","tests/block-authoring.test.mjs","tests/markdown.test.mjs","tests/property-heading-creation.test.mjs","tests/property-value-suggestions.test.mjs","tests/property-note-creation.test.mjs","tests/file-explorer.test.mjs"] : []),
+  ...(noteManagementOnly ? ["tools/note-management-scenarios.mjs","tools/heading-chain-scenarios.mjs","tools/block-extended-scenarios.mjs","tools/explorer-rename-scenarios.mjs","tools/explorer-trash-scenarios.mjs","client/heading-authoring.ts","client/block-authoring.ts","client/builtin-suggestions.ts","client/markdown.ts","client/explorer-rename.ts","client/explorer-rename-modal.ts","client/explorer-trash.ts","client/explorer-trash-modal.ts","client/file-explorer-view.ts","client/file-manager.ts","tests/heading-authoring.test.mjs","tests/block-authoring.test.mjs","tests/markdown.test.mjs","tests/builtin-suggestions.test.mjs","tests/explorer-rename.test.mjs","tests/client-folder-operations.test.mjs","tests/file-explorer.test.mjs"] : []),
+  ...(authoringOrganizationOnly ? ["tools/authoring-organization-scenarios.mjs","tools/heading-authoring-scenarios.mjs","tools/block-kinds-scenarios.mjs","tools/explorer-move-scenarios.mjs","client/heading-authoring.ts","client/block-authoring.ts","client/builtin-suggestions.ts","client/markdown.ts","client/file-manager.ts","client/explorer-move.ts","client/explorer-move-modal.ts","client/file-explorer-view.ts","tests/heading-authoring.test.mjs","tests/block-authoring.test.mjs","tests/builtin-suggestions.test.mjs","tests/client-folder-operations.test.mjs","tests/file-explorer.test.mjs"] : []),
+  ...(linkAuthoringOnly ? ["client/workspace.ts","tests/editor-api.test.mjs","tools/link-authoring-scenarios.mjs","tools/unresolved-heading-scenarios.mjs","tools/block-authoring-scenarios.mjs","tools/property-note-creation-scenarios.mjs","client/unresolved-heading-completion.ts","client/block-authoring.ts","client/builtin-suggestions.ts","client/editor.ts","client/file-manager.ts","client/property-value-suggestions.ts","client/properties.ts","tests/unresolved-heading-completion.test.mjs","tests/block-authoring.test.mjs","tests/property-note-creation.test.mjs","tests/builtin-suggestions.test.mjs","tests/property-value-suggestions.test.mjs"] : []),
+  ...(noteContinuityOnly ? ["tools/note-continuity-scenarios.mjs","tools/editor-fold-state-scenarios.mjs","tools/reading-fold-state-scenarios.mjs","tools/note-creation-scenarios.mjs","client/fold-state-storage.ts","client/editor-fold-state.ts","client/reading-fold-state.ts","client/editor.ts","client/reading.ts","client/workspace.ts","client/builtin-suggestions.ts","client/builtin-suggestion-model.ts","client/file-manager.ts","tests/fold-state-storage.test.mjs","tests/editor-fold-state.test.mjs","tests/reading-fold-state.test.mjs","tests/builtin-suggestions.test.mjs","tests/file-settings.test.mjs"] : []),
+  ...(markdownPolishOnly ? ["tools/markdown-polish-scenarios.mjs","tools/extra-highlighting-scenarios.mjs","tools/markdown-pairing-scenarios.mjs","tools/reading-task-scenarios.mjs","client/reading.ts","client/reading-tasks.ts","client/reading-list-folding.ts","client/code-highlighting.ts","client/editor-markdown-pairing.ts","client/editor-spellcheck.ts","tests/code-highlighting.test.mjs","tests/reading-tasks.test.mjs","tests/editor-markdown-pairing.test.mjs"] : []),
+  ...(markdownInteractionOnly ? ["tools/markdown-interaction-scenarios.mjs","tools/reading-list-folding-scenarios.mjs","tools/markdown-pairing-scenarios.mjs","tools/reading-task-scenarios.mjs","client/reading.ts","client/reading-list-folding.ts","client/reading-tasks.ts","client/reading-folding.ts","client/reading-search.ts","client/editor-preferences.ts","client/editor-typing.ts","client/editor-markdown-pairing.ts","client/editor-spellcheck.ts","client/editor.ts","client/app.ts","tests/reading-list-folding.test.mjs","tests/reading-tasks.test.mjs","tests/editor-markdown-pairing.test.mjs","tests/editor-typing.test.mjs","tests/editor-preferences.test.mjs"] : []),
+  ...(editorAssistanceOnly ? ["tools/editor-assistance-scenarios.mjs","tools/reading-folding-scenarios.mjs","tools/typing-control-scenarios.mjs","tools/fuzzy-completion-scenarios.mjs","client/reading.ts","client/reading-folding.ts","client/reading-search.ts","client/editor-preferences.ts","client/editor-typing.ts","client/editor.ts","client/editor-language.ts","client/editor-spellcheck.ts","client/builtin-suggestion-model.ts","client/app.ts","tests/reading-search.test.mjs","tests/editor-preferences.test.mjs","tests/builtin-suggestions.test.mjs"] : []),
+  ...(noteNavigationOnly ? ["tools/note-navigation-scenarios.mjs","tools/folding-control-scenarios.mjs","tools/properties-subpath-scenarios.mjs","tools/file-selection-scenarios.mjs","client/editor-preferences.ts","client/editor.ts","client/editor-spellcheck.ts","client/file-explorer-view.ts","client/file-explorer-model.ts","client/property-value-suggestions.ts","client/properties.ts","tests/editor-preferences.test.mjs","tests/file-explorer.test.mjs","tests/property-value-suggestions.test.mjs"] : []),
+  ...(readingToolsOnly ? ["tools/reading-tools-scenarios.mjs","tools/reading-regex-scenarios.mjs","tools/language-highlighting-scenarios.mjs","tools/properties-link-scenarios.mjs","client/reading-search.ts","client/search-pattern.ts","client/editor-search.ts","client/code-highlighting.ts","client/property-value-suggestions.ts","client/properties.ts","tests/reading-search.test.mjs","tests/editor-search.test.mjs","tests/code-highlighting.test.mjs","tests/property-value-suggestions.test.mjs"] : []),
+  ...(noteWorkflowsOnly ? ["tools/note-workflows-scenarios.mjs","tools/hierarchical-heading-scenarios.mjs","tools/properties-completion-scenarios.mjs","tools/reading-selection-scenarios.mjs","client/links.ts","client/file-manager.ts","client/builtin-suggestion-model.ts","client/builtin-suggestions.ts","client/properties.ts","client/property-value-suggestions.ts","client/reading-search.ts","tests/heading-links.test.mjs","tests/frontmatter-guard.test.mjs","tests/builtin-suggestions.test.mjs","tests/property-value-suggestions.test.mjs","tests/reading-search.test.mjs"] : []),
+  ...(editorWorkflowsOnly ? ["tools/editor-workflows-scenarios.mjs","tools/cursor-handoff-scenarios.mjs","tools/multi-range-search-scenarios.mjs","tools/spellcheck-management-scenarios.mjs","client/editor.ts","client/workspace.ts","client/editor-search.ts","client/editor-spellcheck.ts","client/spellcheck-settings.ts","desktop/spellcheck.cjs","desktop/main.cjs","tests/cursor-handoff.test.mjs","tests/editor-search.test.mjs","tests/editor-spellcheck.test.mjs"] : []),
+  ...(readingDiscoveryOnly ? ["tools/reading-discovery-scenarios.mjs","tools/reading-search-scenarios.mjs","tools/global-heading-scenarios.mjs","tools/expanded-highlighting-scenarios.mjs","client/reading-search.ts","client/reading.ts","client/workspace.ts","client/editor-search-commands.ts","client/builtin-suggestion-model.ts","client/builtin-suggestions.ts","client/code-highlighting.ts","tests/reading-search.test.mjs","tests/builtin-suggestions.test.mjs","tests/code-highlighting.test.mjs"] : []),
+  ...(editorProductivityOnly ? ["tools/editor-productivity-scenarios.mjs","tools/editor-preference-scenarios.mjs","tools/property-value-scenarios.mjs","tools/selection-search-scenarios.mjs","client/editor-preferences.ts","client/editor-spellcheck.ts","client/editor.ts","client/editor-search.ts","client/builtin-suggestion-model.ts","client/builtin-suggestions.ts","client/app.ts","tests/editor-preferences.test.mjs","tests/editor-search.test.mjs","tests/builtin-suggestions.test.mjs"] : []),
+  ...(noteAuthoringOnly ? ["tools/note-authoring-scenarios.mjs","tools/spellcheck-scenarios.mjs","tools/subpath-suggestion-scenarios.mjs","tools/print-export-scenarios.mjs","tools/save-test-pdf.ps1","client/editor-spellcheck.ts","client/print-export.ts","client/print-export-model.ts","client/builtin-suggestion-model.ts","client/builtin-suggestions.ts","client/editor.ts","client/editor-host.ts","client/app.ts","desktop/spellcheck.cjs","desktop/print-export.cjs","desktop/main.cjs","tests/editor-spellcheck.test.mjs","tests/print-export.test.mjs","tests/builtin-suggestions.test.mjs","src/RonSijm.Slopsidian/Components/Pages/Home.razor","src/RonSijm.Slopsidian/Components/Pages/Home.razor.cs"] : []),
+  ...(editorImprovementsOnly ? ["tools/editor-improvements-scenarios.mjs", "tools/code-highlighting-scenarios.mjs", "tools/editor-search-scenarios.mjs", "tools/builtin-suggestion-scenarios.mjs", "tests/code-highlighting.test.mjs", "tests/editor-search.test.mjs", "tests/builtin-suggestions.test.mjs"] : []),
   ...(originalFloatingOnly ? ["tools/web-smoke-quit.cjs", "desktop/popout-windows.cjs", "client/workspace-window.ts"] : []),
   ...(originalFloatingOnly ? ["tools/original-floating-import-scenario.mjs", "client/workspace-import.ts", "client/workspace-startup.ts", "tests/original-floating-import.test.mjs", "tests/original-floating-import-scenario.test.mjs", "tests/fixtures/original-obsidian-1.12.7/workspace.floating-open.json", "tests/fixtures/original-obsidian-1.12.7/capture-result.json"] : []),
   ...(nativeRecentsOnly ? ["desktop/native-recent-vaults.cjs", "desktop/local-storage.cjs", "client/native-recents.ts", "client/editor-host.ts", "src/RonSijm.Slopsidian/Components/Pages/Home.razor", "src/RonSijm.Slopsidian/Components/Pages/Home.razor.cs", "tools/native-recent-vault-scenarios.mjs", "tests/native-recent-vaults.test.mjs"] : []),
@@ -255,7 +312,7 @@ const artifactPaths = [
   join("tools", "workspace-popout-scenarios.mjs"),
   ...(bookmarksOnly ? ["tools/bookmark-scenarios.mjs", "tools/graph-scenarios.mjs", "tools/organization-scenarios.mjs", "tools/cached-github-fixture.mjs", "client/bookmarks.ts", "client/graph.ts", "client/desktop-ui.ts", "tests/bookmarks.test.mjs"] : []),
   ...(discoveryOnly ? ["tools/cached-github-fixture.mjs", "client/links.ts", "client/metadata.ts", "client/vault.ts", "client/file-manager.ts", "client/desktop-ui.ts", "client/recent-files.ts", "client/workspace.ts", "client/workspace-startup.ts", "client/bookmarks.ts", "tests/markdown.test.mjs", "tests/workspace-tabs.test.mjs", "tests/workspace-startup.test.mjs", "tests/workspace-transition.test.mjs"] : []),
-  ...(discoveryPanesOnly ? ["tools/discovery-pane-scenarios.mjs", "tools/cached-github-fixture.mjs", "client/tags-pane-view.ts", "client/tags-pane-model.ts", "client/footnotes-pane-view.ts", "client/footnotes-pane-model.ts", "client/discovery-views.ts", "client/sidebars.ts", "client/search-pane-model.ts", "client/bookmarks.ts", "client/workspace.ts", "tests/discovery-panes.test.mjs", "tests/workspace-tabs.test.mjs", "src/RonSijm.Slopsidian/wwwroot/app.css"] : []),
+  ...(discoveryPanesOnly ? ["tools/discovery-pane-scenarios.mjs", "tools/inline-footnote-scenarios.mjs", "client/inline-footnotes.ts", "client/footnote-render-model.ts", "client/reading.ts", "client/footnote-edit.ts", "client/footnote-edit-modal.ts", "tests/inline-footnotes.test.mjs", "tools/cached-github-fixture.mjs", "client/tags-pane-view.ts", "client/tags-pane-model.ts", "client/footnotes-pane-view.ts", "client/footnotes-pane-model.ts", "client/discovery-views.ts", "client/sidebars.ts", "client/search-pane-model.ts", "client/bookmarks.ts", "client/workspace.ts", "tests/discovery-panes.test.mjs", "tests/workspace-tabs.test.mjs", "src/RonSijm.Slopsidian/wwwroot/app.css"] : []),
   ...(githubIndexUiOnly ? ["tools/github-index-ui-scenarios.mjs","tools/cached-github-fixture.mjs","client/github-index.ts","client/github-index-ui.ts","client/github-offline-ui.ts","client/github-vault.ts","plugins/github-vault/provider.ts","tests/github-vault.test.mjs"] : []),
   ...(backlinkPanesOnly ? ["tools/backlink-pane-scenarios.mjs","tools/cached-github-fixture.mjs","client/backlink-view.ts","client/backlink-model.ts","client/discovery-views.ts","client/sidebars.ts","tests/backlink-panes.test.mjs","src/RonSijm.Slopsidian/wwwroot/app.css"] : []),
   ...(outgoingPanesOnly ? ["tools/outgoing-pane-scenarios.mjs", "tools/cached-github-fixture.mjs", "client/outgoing-pane-view.ts", "client/outgoing-pane-model.ts", "client/outgoing-links.ts", "client/sidebars.ts", "client/workspace.ts", "tests/outgoing-panes.test.mjs", "tests/workspace-tabs.test.mjs", "src/RonSijm.Slopsidian/wwwroot/app.css"] : []),
@@ -349,6 +406,25 @@ const recentCommands = [];
 let report = { status: "failed", scope: community ? "legacy-community-and-workspace" : propertiesOnly ? "properties-runtime" : filesOnly ? "file-operations-runtime" : graphsOnly ? "graphs-runtime" : canvasesOnly ? "canvas-runtime" : previewsOnly ? "page-preview-runtime" : editingToolsOnly ? "editing-tools-runtime" : formatsOnly ? "format-conversion-runtime" : composerOnly ? "note-composition-runtime" : menusOnly ? "menu-api-runtime" : discoveryOnly ? "discovery-runtime" : editorChromeOnly ? "editor-chrome-runtime" : "implemented-core-foundations", communityPluginsTested: community, startedAt: new Date().toISOString(), vault, launcherPid: child.pid, launchMode: throughLauncher ? "build-and-run.cmd" : "electron", startupMode: throughChooser ? "vault-chooser" : "explicit-vault", checks: [], coreChecks: [], processes: [] };
 report.inputEnvironment = "Windows occlusion and renderer/timer background throttling disabled in disposable UI processes, including restarts; production launch is unchanged.";
 if (suggestionsOnly) { report.scope = "plugin-suggestions-runtime"; }
+if (editorImprovementsOnly) { report.scope = "editor-improvements-runtime"; }
+if (structuredRecoveryOnly) { report.scope = "structured-recovery-runtime"; }
+if (workflowControlsOnly) { report.scope = "workflow-controls-runtime"; }
+if (propertiesReadingOnly) { report.scope = "properties-reading-runtime"; }
+if (authoringTransfersOnly) { report.scope = "authoring-transfers-runtime"; }
+if (noteManagementOnly) { report.scope = "note-management-runtime"; }
+if (authoringOrganizationOnly) { report.scope = "authoring-organization-runtime"; }
+if (linkAuthoringOnly) { report.scope = "link-authoring-runtime"; }
+if (noteContinuityOnly) { report.scope = "note-continuity-runtime"; }
+if (markdownPolishOnly) { report.scope = "markdown-polish-runtime"; }
+if (markdownInteractionOnly) { report.scope = "markdown-interaction-runtime"; }
+if (editorAssistanceOnly) { report.scope = "editor-assistance-runtime"; }
+if (noteNavigationOnly) { report.scope = "note-navigation-runtime"; }
+if (readingToolsOnly) { report.scope = "reading-tools-runtime"; }
+if (noteWorkflowsOnly) { report.scope = "note-workflows-runtime"; }
+if (editorWorkflowsOnly) { report.scope = "editor-workflows-runtime"; }
+if (readingDiscoveryOnly) { report.scope = "reading-discovery-runtime"; }
+if (editorProductivityOnly) { report.scope = "editor-productivity-runtime"; }
+if (noteAuthoringOnly) { report.scope = "note-authoring-runtime"; }
 if (modalFocusOnly) { report.scope = "shared-modal-keyboard-accessibility"; }
 if (attachmentsOnly) { report.scope = "shared-note-attachment-import"; }
 if (autosaveOnly) { report.scope = "safe-markdown-autosave"; }
@@ -557,8 +633,8 @@ async function waitForDesktopReady(label) {
 }
 async function click(selector, modifiers = 0) {
   const encoded = JSON.stringify(selector);
-  await waitExpression(`(()=>{const element=document.querySelector(${encoded});const modal=document.querySelector("dialog[open]");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBoundingClientRect().height>0&&(!modal||element.closest("dialog")===modal)})()`, selector);
   await command("Page.bringToFront");
+  await waitExpression(`(()=>{const element=document.querySelector(${encoded});const modal=document.querySelector("dialog[open]");return element&&!element.disabled&&element.checkVisibility()&&element.getBoundingClientRect().width>0&&element.getBoundingClientRect().height>0&&(!modal||element.closest("dialog")===modal)})()`, selector);
   const point = await evaluate(`(()=>{
     const element=document.querySelector(${encoded});
     element.scrollIntoView({block:"nearest",inline:"nearest"});
@@ -1654,6 +1730,121 @@ try {
         const screenshot = await command("Page.captureScreenshot", { format: "png" });
         await writeFile(join(evidence, "graphs-desktop.png"), Buffer.from(screenshot.data, "base64"));
       },
+    });
+  } else if (structuredRecoveryOnly) {
+    const { checkStructuredRecovery } = await import("./structured-recovery-scenarios.mjs");
+    await checkStructuredRecovery({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("Multiline Properties and recovery restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence,"structured-recovery-" + mode + "-desktop.png"),Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (workflowControlsOnly) {
+    const { checkWorkflowControls } = await import("./workflow-controls-scenarios.mjs");
+    await checkWorkflowControls({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("Properties and Reading restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence,"workflow-controls-" + mode + "-desktop.png"),Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (propertiesReadingOnly) {
+    const { checkPropertiesReading } = await import("./properties-reading-scenarios.mjs");
+    await checkPropertiesReading({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("Properties and Reading restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence,"properties-reading-" + mode + "-desktop.png"),Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (authoringTransfersOnly) {
+    const { checkAuthoringTransfers } = await import("./authoring-transfers-scenarios.mjs");
+    await checkAuthoringTransfers({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("markdown polish restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence,"authoring-transfers-" + mode + "-desktop.png"),Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (noteManagementOnly) {
+    const { checkNoteManagement } = await import("./note-management-scenarios.mjs");
+    await checkNoteManagement({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("markdown polish restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence,"note-management-" + mode + "-desktop.png"),Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (authoringOrganizationOnly) {
+    const { checkAuthoringOrganization } = await import("./authoring-organization-scenarios.mjs");
+    await checkAuthoringOrganization({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("markdown polish restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence,"authoring-organization-" + mode + "-desktop.png"),Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (linkAuthoringOnly) {
+    const { checkLinkAuthoring } = await import("./link-authoring-scenarios.mjs");
+    await checkLinkAuthoring({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("markdown polish restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence,"link-authoring-" + mode + "-desktop.png"),Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (noteContinuityOnly) {
+    const { checkNoteContinuity } = await import("./note-continuity-scenarios.mjs");
+    await checkNoteContinuity({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("markdown polish restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence,"note-continuity-" + mode + "-desktop.png"),Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (markdownPolishOnly) {
+    const { checkMarkdownPolish } = await import("./markdown-polish-scenarios.mjs");
+    await checkMarkdownPolish({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("markdown polish restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence,"markdown-polish-" + mode + "-desktop.png"),Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (markdownInteractionOnly) {
+    const { checkMarkdownInteraction } = await import("./markdown-interaction-scenarios.mjs");
+    await checkMarkdownInteraction({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("markdown interaction restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence, "markdown-interaction-" + mode + "-desktop.png"), Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (editorAssistanceOnly) {
+    const { checkEditorAssistance } = await import("./editor-assistance-scenarios.mjs");
+    await checkEditorAssistance({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("editor assistance restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence, "editor-assistance-" + mode + "-desktop.png"), Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (noteNavigationOnly) {
+    const { checkNoteNavigation } = await import("./note-navigation-scenarios.mjs");
+    await checkNoteNavigation({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("note navigation restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence, "note-navigation-" + mode + "-desktop.png"), Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (readingToolsOnly) {
+    const { checkReadingTools } = await import("./reading-tools-scenarios.mjs");
+    await checkReadingTools({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("reading tools restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence, "reading-tools-" + mode + "-desktop.png"), Buffer.from(screenshot.data,"base64")); },
+    });
+  } else if (noteWorkflowsOnly) {
+    const { checkNoteWorkflows } = await import("./note-workflows-scenarios.mjs");
+    await checkNoteWorkflows({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("note workflows restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence, "note-workflows-" + mode + "-desktop.png"), Buffer.from(screenshot.data, "base64")); },
+    });
+  } else if (editorWorkflowsOnly) {
+    const { checkEditorWorkflows } = await import("./editor-workflows-scenarios.mjs");
+    await checkEditorWorkflows({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("editor workflows restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence, "editor-workflows-" + mode + "-desktop.png"), Buffer.from(screenshot.data, "base64")); },
+    });
+  } else if (readingDiscoveryOnly) {
+    const { checkReadingDiscovery } = await import("./reading-discovery-scenarios.mjs");
+    await checkReadingDiscovery({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("reading discovery restart"),
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence, "reading-discovery-" + mode + "-desktop.png"), Buffer.from(screenshot.data, "base64")); },
+    });
+  } else if (editorProductivityOnly) {
+    const { checkEditorProductivity } = await import("./editor-productivity-scenarios.mjs");
+    await checkEditorProductivity({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("editor productivity restart"),
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence, "editor-productivity-" + mode + "-desktop.png"), Buffer.from(screenshot.data, "base64")); },
+    });
+  } else if (noteAuthoringOnly) {
+    const { checkNoteAuthoring } = await import("./note-authoring-scenarios.mjs");
+    await checkNoteAuthoring({ directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("note authoring restart"), evidenceDirectory: evidence, getNativePid: () => child.pid,
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence, "note-authoring-" + mode + "-desktop.png"), Buffer.from(screenshot.data, "base64")); },
+    });
+  } else if (editorImprovementsOnly) {
+    const { checkEditorImprovements } = await import("./editor-improvements-scenarios.mjs");
+    await checkEditorImprovements({
+      directory: vault, evaluate, command, click, press, wait: waitExpression, report, restart: restartDesktop,
+      afterReload: () => waitForDesktopReady("editor improvements restart"),
+      capture: async mode => { const screenshot = await command("Page.captureScreenshot", { format: "png" }); await writeFile(join(evidence, "editor-improvements-" + mode + "-desktop.png"), Buffer.from(screenshot.data, "base64")); },
     });
   } else if (editorChromeOnly) {
     await checkEditorChromeWorkflows();

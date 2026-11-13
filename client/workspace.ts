@@ -5,6 +5,7 @@ import type { App } from "./app";
 import { copyViewData, requestJson, validateViewType, writeJson, type FileEntry, type LeafLayout, type MarkdownEditingMode, type MarkdownMode, type SidebarLayout, type SplitLayout, type TabsLayout, type VaultDocument, type ViewState, type ViewStateResult, type WorkspaceLayout } from "./contracts";
 import { element, reportError } from "./dom";
 import { Editor } from "./editor";
+import { moveFoldPreferences } from "./fold-state-storage";
 import { Events } from "./events";
 import { icon, iconButton } from "./icons";
 import { TAbstractFile, TFile } from "./vault";
@@ -146,14 +147,14 @@ class DocumentSession {
     }
   }
 
-  acceptDocument(document: VaultDocument): void {
+  acceptDocument(document: VaultDocument, preserveHistory = false): void {
     if (this.dirty || this.isSaving) {
       throw new Error("Save the open note before replacing its document.");
     }
     this.document = document;
     this.text = document.content;
     for (const leaf of this.leaves) {
-      leaf.editor.syncValue(this.text);
+      leaf.editor.syncValue(this.text, preserveHistory);
       leaf.leaf.updateHeader();
     }
     this.workspace.app.markdownAutosave?.changed(this);
@@ -181,7 +182,6 @@ export class MarkdownView extends TextFileView {
   private previewKey = "";
   private readonly reading: ReadingView;
   private readonly editorStates = new Map<string, EditorState>();
-  private scrollFrame: number | null = null;
   private scrollCleanup: (() => void) | null = null;
 
   constructor(leaf: WorkspaceLeaf) {
@@ -305,28 +305,33 @@ export class MarkdownView extends TextFileView {
     for (const key of ["cursor", "selections", "main", "scroll"]) { delete state[key]; }
     super.setEphemeralState(state);
     if (!location) { return; }
-    if (location.selections.length) { this.editor.setSelections(location.selections, location.main, false); }
+    if (location.selections.length) { this.editor.setSelections(location.selections, location.main, false); this.editor.revealFoldedSelections(); }
     this.restoreScroll(location.scroll);
   }
   private restoreScroll(top: number): void {
     this.scrollCleanup?.();
     // A hidden or not-yet-measured pane, or a late editor re-measure, can move the scroller after it was set,
     // so keep applying for a short settling window unless the user scrolls first.
-    const el = this.contentEl;
+    const el = this.contentEl, file = this.file, root = this.app.vault.rootPath, mode = this.mode, document = el.ownerDocument;
+    const window = document.defaultView!;
     const until = performance.now() + 800;
     const types = ["wheel", "pointerdown", "touchstart", "keydown"];
+    let active = true, frame: number | null = null;
     const stop = (): void => {
+      if (!active) { return; }
+      active = false;
       for (const type of types) { el.removeEventListener(type, stop, true); }
-      if (this.scrollFrame !== null) { cancelAnimationFrame(this.scrollFrame); this.scrollFrame = null; }
+      if (frame !== null) { window.cancelAnimationFrame(frame); frame = null; }
       if (this.scrollCleanup === stop) { this.scrollCleanup = null; }
     };
     this.scrollCleanup = stop;
     for (const type of types) { el.addEventListener(type, stop, true); }
     const apply = (): void => {
-      this.scrollFrame = null;
-      if (!this.isLoaded) { stop(); return; }
+      frame = null;
+      if (!active) { return; }
+      if (!this.isLoaded || this.file !== file || this.app.vault.rootPath !== root || this.mode !== mode || el.ownerDocument !== document) { stop(); return; }
       if (Math.abs(el.scrollTop - top) > 1) { el.scrollTop = top; }
-      if (top > 0 && performance.now() < until) { this.scrollFrame = requestAnimationFrame(apply); } else { stop(); }
+      if (top > 0 && performance.now() < until) { frame = window.requestAnimationFrame(apply); } else { stop(); }
     };
     apply();
   }
@@ -387,11 +392,14 @@ export class MarkdownView extends TextFileView {
       throw new Error("Open a note before changing its view mode.");
     }
     this.dismissMenus();
+    if (mode !== this.mode) { this.scrollCleanup?.(); this.editor.closeSearch(); this.reading.closeSearch(false); }
     if (mode === "preview") {
       this.reading.render(this.editor.getValue(), this.file.path);
     }
     this.mode = mode;
+    if (mode === "preview") { this.editor.releaseReadingSelection(); }
     this.editor.setEditable(mode === "source" && !this.app.changingVault);
+    this.editor.bindFoldState(false);
     this.leaf.updateHeader();
     this.leaf.workspace.layoutChanged();
     this.leaf.workspace.notifyEditor();
@@ -403,8 +411,10 @@ export class MarkdownView extends TextFileView {
   toggleMode(): void { this.setMode(this.mode === "source" ? "preview" : "source"); }
   override focus(): void { this.mode === "preview" ? this.reading.focus() : this.editor.focus(); }
   override onResize(): void { this.editor.cm.requestMeasure(); }
-  override onWindowMoved(doc: Document): void { this.editor.moveToDocument(doc); }
+  override onWindowMoved(doc: Document): void { this.scrollCleanup?.(); this.reading.closeSearch(false); this.editor.moveToDocument(doc); }
   revealLine(line: number): void {
+    this.scrollCleanup?.();
+    if (this.mode === "preview") { this.editor.releaseReadingSelection(); }
     this.editor.setCursor({ line, ch: 0 });
     if (this.mode === "preview") {
       this.reading.revealLine(line);
@@ -1226,11 +1236,11 @@ export class Workspace extends Events {
     }
   }
 
-  acceptExternalDocuments(documents: readonly VaultDocument[]): void {
+  acceptExternalDocuments(documents: readonly VaultDocument[], preserveHistory = false): void {
     for (const document of documents) {
       const session = this.sessions.get(document.file.path);
       if (session && !session.dirty && !session.isSaving && session.document.version !== document.version) {
-        session.acceptDocument(document);
+        session.acceptDocument(document, preserveHistory);
       }
     }
   }
@@ -1257,6 +1267,7 @@ export class Workspace extends Events {
   }
 
   acceptFileRename(file: TFile, oldPath: string, entry: FileEntry, documents: readonly VaultDocument[]): void {
+    moveFoldPreferences(this.app, oldPath, file.path);
     const session = this.sessions.get(oldPath);
     if (session) {
       this.sessions.delete(oldPath);
@@ -1272,6 +1283,9 @@ export class Workspace extends Events {
       if (leaf.view instanceof TextFileView && leaf.view.file === file) { leaf.view.acceptFileRename(entry); }
     }
     this.acceptExternalDocuments(documents);
+    for (const leaf of this.leaves()) {
+      if (leaf.view instanceof MarkdownView && leaf.view.file === file) { leaf.view.editor.bindFoldState(false); }
+    }
     this.leaves().forEach(leaf => leaf.updateHeader());
   }
 
@@ -2786,7 +2800,11 @@ export class Workspace extends Events {
     if (this.restoring) { throw new Error("Wait for workspace restoration to finish."); }
     this.changingLayout = true;
     const idle = Promise.all([...this.tasks, this.layoutWrite]);
-    const operation = idle.then(() => this.applyLayout(value)).finally(() => { this.changingLayout = false; });
+    const operation = idle.then(() => this.applyLayout(value)).finally(() => {
+      this.changingLayout = false;
+      // Views may have refreshed while applyLayout still held the guard, including on rollback.
+      this.trigger("layout-change");
+    });
     return this.track(operation);
   }
 

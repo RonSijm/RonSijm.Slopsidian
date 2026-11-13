@@ -96,6 +96,13 @@ export interface TrashVaultFileResult {
   documents: VaultDocument[];
 }
 
+export interface VaultTrashEntry { path: string; name: string; size: number; mtime: number; token: string }
+export interface VaultTrashListing { root: string; entries: VaultTrashEntry[]; ignored: number; canRestore: boolean }
+export interface VaultTrashPreview { root: string; entry: VaultTrashEntry; content: string; version: string; hasBom: boolean }
+export interface VaultTrashRestoreItem { trashPath: string; newPath: string; version: string }
+export interface VaultTrashRestoreReview { root: string; token: string; folder: string; items: VaultTrashRestoreItem[] }
+export interface VaultTrashRestoreResult { snapshot: VaultSnapshot; trashPath: string; newPath: string; document: VaultDocument }
+
 export interface SystemTrashVaultFileResult {
   snapshot: VaultSnapshot;
   path: string;

@@ -384,13 +384,13 @@ public sealed partial class VaultService
         return directory;
     }
 
-    private async Task<RenameVaultFileResult> MoveFileOperationAsync(string sourcePath, string destination, string? sourceVersion, IReadOnlyList<VaultFileEdit> requestedEdits, CancellationToken cancellationToken)
+    private async Task<RenameVaultFileResult> MoveFileOperationAsync(string sourcePath, string destination, string? sourceVersion, IReadOnlyList<VaultFileEdit> requestedEdits, CancellationToken cancellationToken, Action? beforeMove = null, Action<FileStream>? movedHandle = null)
     {
-        var result = await ExecuteFileOperationAsync(sourcePath, destination, sourceVersion, requestedEdits, cancellationToken);
+        var result = await ExecuteFileOperationAsync(sourcePath, destination, sourceVersion, requestedEdits, cancellationToken, beforeMove, movedHandle);
         return new RenameVaultFileResult(result.Snapshot, FileOperationRelativePath(sourcePath), FileOperationRelativePath(destination), result.Documents);
     }
 
-    private async Task<EditVaultFilesResult> ExecuteFileOperationAsync(string? sourcePath, string? destination, string? sourceVersion, IReadOnlyList<VaultFileEdit> requestedEdits, CancellationToken cancellationToken)
+    private async Task<EditVaultFilesResult> ExecuteFileOperationAsync(string? sourcePath, string? destination, string? sourceVersion, IReadOnlyList<VaultFileEdit> requestedEdits, CancellationToken cancellationToken, Action? beforeMove = null, Action<FileStream>? movedHandle = null)
     {
         if (sourcePath is not null)
         {
@@ -436,11 +436,13 @@ public sealed partial class VaultService
 
             if (source is not null)
             {
+                beforeMove?.Invoke();
                 CreateFileOperationDirectories(Path.GetDirectoryName(destination)!, created, cancellationToken);
                 cancellationToken.ThrowIfCancellationRequested();
                 CloseFileOperationInput(source);
                 MoveFileOperationSource(source, destination!, transaction);
                 await LockFileOperationInputAsync(source, source.Original, cancellationToken);
+                movedHandle?.Invoke(source.Stream!);
             }
 
             foreach (var input in inputs)

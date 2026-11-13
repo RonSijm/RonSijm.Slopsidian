@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdir, readFile, readdir, stat, unlink, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, rmdir, stat, unlink, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 // Drives the real Files explorer context menu and dialogs against a disposable vault. The same scenario runs on
@@ -52,6 +52,30 @@ export async function checkFolderOperations({ directory, evaluate, command, clic
   assert.equal(await evaluate("app.vault.readOnly"), false, "folder operations need a writable vault");
   await wait(`Boolean(document.querySelector(${JSON.stringify(row(lib))}))`, "Lib folder row");
   pass("A disposable writable vault opens a real pinned Files pane beside a Source note inside the folder under test.");
+
+  // An ordinary inventory refresh must not consume external folder events before metadata sees them.
+  const observed = "External folder events", child = observed + "/Child", empty = child + "/Empty", observedNote = child + "/Note.md";
+  await mkdir(join(directory, empty), { recursive: true }); await writeFile(join(directory, observedNote), "# External folder note\n");
+  await evaluate("(async()=>{await app.vault.refresh();await app.metadataCache.refresh()})()");
+  await wait(`Boolean(document.querySelector(${JSON.stringify(row(observed))}))`, "externally created folder row");
+  const observedEvents = (await events()).filter(event => event[1] === observed || event[1].startsWith(observed + "/"));
+  assert.deepEqual(observedEvents.map(event => event.slice(0, 2)), [["create", observed], ["create", child], ["create", empty], ["create", observedNote]]);
+  await evaluate("app.metadataCache.refresh()");
+  assert.equal((await events()).filter(event => event[1] === observed || event[1].startsWith(observed + "/")).length, 4);
+  pass("Actual external nested and empty folders emit one parent-first create sequence after an ordinary inventory refresh, and the Files pane shows the new tree.");
+
+  await unlink(join(directory, observedNote)); await rmdir(join(directory, empty)); await rmdir(join(directory, child)); await rmdir(join(directory, observed));
+  await evaluate("(async()=>{await app.vault.refresh();await app.metadataCache.refresh()})()");
+  await wait(`!document.querySelector(${JSON.stringify(row(observed))})`, "externally removed folder row");
+  const removedEvents = (await events()).filter(event => event[0] === "delete" && (event[1] === observed || event[1].startsWith(observed + "/"))).map(event => event[1]);
+  assert.equal(removedEvents.length, 4);
+  assert.ok(removedEvents.indexOf(observedNote) < removedEvents.indexOf(child));
+  assert.ok(removedEvents.indexOf(empty) < removedEvents.indexOf(child));
+  assert.ok(removedEvents.indexOf(child) < removedEvents.indexOf(observed));
+  await evaluate("app.metadataCache.refresh()");
+  assert.equal((await events()).filter(event => event[0] === "delete" && (event[1] === observed || event[1].startsWith(observed + "/"))).length, 4);
+  report.externalFolderEvents = { realFilesystem: true, inventoryRefresh: true, parentsBeforeChildren: true, childrenBeforeParents: true, unchangedRefreshSilent: true, visibleTree: true };
+  pass("Actual external folder removal emits original descendants before their parents once and removes the tree from the live Files pane.");
 
   // Exercise the public plugin method, not just binary bytes carried by a folder move.
   const changedBinary = Buffer.from([255, 0, 254, 1, 128, 13, 10, 0, 42]);

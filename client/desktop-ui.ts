@@ -492,7 +492,7 @@ export class DesktopUI {
     this.input.value = "";
     this.selection = 0;
     if (kind === "files") { this.app.metadataCache.updateOpenDocuments(); }
-    const paneCommands = new Set(["workspace:split-vertical", "workspace:split-horizontal", "workspace:toggle-pin", "workspace:save-file", "workspace:reload-file", "markdown:toggle-preview", "workspace:close", "workspace:popout-tab", "workspace:return-window", "workspace:close-window", "workspace:link-pane-tabs", "workspace:unlink-tab", "file-explorer:rename-file", "file-explorer:trash-file", "workspace:move-tab-left", "workspace:move-tab-right", "workspace:move-tab-to-previous-pane", "workspace:move-tab-to-next-pane", ...dockActions.map(action => "workspace:" + action.id.replace(/^to-/, "move-tab-to-").replace(/^dock-/, "dock-tab-"))]);
+    const paneCommands = new Set(["workspace:print", "workspace:export-pdf", "workspace:split-vertical", "workspace:split-horizontal", "workspace:toggle-pin", "workspace:save-file", "workspace:reload-file", "markdown:toggle-preview", "workspace:close", "workspace:popout-tab", "workspace:return-window", "workspace:close-window", "workspace:link-pane-tabs", "workspace:unlink-tab", "file-explorer:rename-file", "file-explorer:trash-file", "workspace:move-tab-left", "workspace:move-tab-right", "workspace:move-tab-to-previous-pane", "workspace:move-tab-to-next-pane", ...dockActions.map(action => "workspace:" + action.id.replace(/^to-/, "move-tab-to-").replace(/^dock-/, "dock-tab-"))]);
     this.items = kind === "files"
       ? this.switcherItems()
       : this.app.commands.status().filter(command => command.enabled && (kind !== "pane" || paneCommands.has(command.id))).map(command => ({

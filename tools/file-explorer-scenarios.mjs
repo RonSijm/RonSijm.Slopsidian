@@ -108,6 +108,7 @@ export async function checkFileExplorer({ directory, evaluate, command, click, p
   await click(`${pane("explorer-a")} [data-explorer-action=new-folder]`); await wait('document.querySelector("[data-file-dialog=folder]")');
   await click('[data-file-field=path]'); await press("a", "KeyA", 65, 2); await command("Input.insertText", { text: prefix + "/Created in Files" }); await click('[data-file-dialog=folder] [data-file-action=folder]');
   await wait(`app.vault.getFolderByPath(${JSON.stringify(prefix + "/Created in Files")})&&!app.workspace.isChangingFiles`);
+  await wait('!document.querySelector("[data-file-dialog=folder]")', "the completed folder dialog closes before the toolbar is used");
   await wait(`!document.querySelector(${JSON.stringify(pane("explorer-a") + " select")}).disabled`, "file operation releases controls");
   await writeFile(join(directory, project, "External.md"), "# External\n");
   await click(`${pane("explorer-a")} [data-explorer-action=refresh]`);

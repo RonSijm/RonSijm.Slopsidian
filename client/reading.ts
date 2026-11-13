@@ -8,11 +8,20 @@ import { observeCalloutStyles } from "./callout-styles";
 import { parseLinktext, resolveLink, resolveSubpath } from "./links";
 import { mediaSubpathKind, parsePdfSubpath, parseVideoSubpath } from "./media-policy";
 import { parseMarkdown, validTag } from "./markdown";
+import { planFootnoteRendering } from "./footnote-render-model";
 import { MAX_MERMAID_BLOCKS } from "./mermaid-policy";
 import { mountMath } from "./math";
 import { matchBlockMath, matchInlineMath, MAX_MATH_PER_VIEW } from "./math-syntax";
 import { mountMermaid } from "./mermaid-renderer";
 import { NoteEmbed, newEmbedScope, type EmbedScope } from "./note-embed";
+import { captureCodeHighlightTargets, highlightCodeTargets } from "./code-highlighting";
+import { ReadingSearch } from "./reading-search";
+import { captureReadingFolds, MAX_READING_FOLD_BLOCKS, ReadingFolding, type ReadingFoldInventory } from "./reading-folding";
+import { captureReadingListFolds, ReadingListFolding } from "./reading-list-folding";
+import { captureReadingCallouts, ReadingCalloutFolding } from "./reading-callout-folding";
+import { captureReadingTasks, ReadingTasks, type ReadingTaskPlan } from "./reading-tasks";
+import { foldStatePort, type FoldStatePort } from "./fold-state-storage";
+import type { Editor } from "./editor";
 import { markdownProcessorsVersion, observeMarkdownProcessors, processRenderedMarkdown } from "./markdown-postprocessors";
 import { Component, MarkdownRenderChild } from "./plugin";
 import type { HoverPopover } from "./hover";
@@ -215,6 +224,33 @@ function headingText(text: string): string {
   return text.normalize("NFC").trim().toLowerCase().replace(/[*_`]/g, "").replace(/\s+/g, " ");
 }
 
+const taskLabelInlineTags = new Set(["A", "ABBR", "B", "BDI", "BDO", "BR", "CITE", "CODE", "DEL", "EM", "I", "IMG", "KBD", "MARK", "Q", "S", "SMALL", "SPAN", "STRONG", "SUB", "SUP", "TIME", "U", "WBR"]);
+
+/** Isolate completion styling on original inline labels before processors run. */
+export function decorateReadingTaskLabel(input: HTMLInputElement, item: HTMLElement): void {
+  const container = input.parentElement;
+  if (!container || container !== item && (container.tagName !== "P" || container.parentElement !== item) || container.firstElementChild !== input) { return; }
+  let label: HTMLElement | null = null;
+  for (let node: ChildNode | null = input.nextSibling; node;) {
+    const next = node.nextSibling;
+    if (node.nodeType === 1) {
+      const element = node as HTMLElement;
+      // Nested/continuation blocks remain original direct children. Note embeds
+      // keep their own text styling even when their anchor was inline Markdown.
+      if (!taskLabelInlineTags.has(element.tagName)) { break; }
+      if (element.classList.contains("reading-task-label") || element.classList.contains("internal-embed")
+        || element.tagName === "IMG" && element.dataset.slopsidianSrc !== undefined
+        || element.querySelector("input,ul,ol,blockquote,pre,table,div,.internal-embed,img[data-slopsidian-src]")) { label = null; node = next; continue; }
+    } else if (node.nodeType !== 3) { label = null; node = next; continue; }
+    if (!label && node.nodeType === 3 && !node.textContent?.trim()) { node = next; continue; }
+    if (!label) {
+      label = input.ownerDocument.createElement("span"); label.className = "reading-task-label";
+      container.insertBefore(label, node);
+    }
+    label.appendChild(node); node = next;
+  }
+}
+
 function sourceMarkup(content: string, startLine: number): { html: string; anchors: Map<string, number>; diagrams: Map<string, string> } {
   const positions = new WeakMap<object, number>();
   const lines = (value: string): number => value.split("\n").length - 1;
@@ -302,6 +338,8 @@ export class ReadingView {
   private readonly app: App;
   private readonly leaf: WorkspaceLeaf | null;
   private readonly headingPrefix: string;
+  private footnoteLinks = new WeakMap<HTMLAnchorElement, HTMLElement>();
+  private headingNames = new WeakMap<HTMLElement, string>();
   private key: string | null = null;
   private generation = 0;
   private sourcePath: string | null = null;
@@ -313,6 +351,17 @@ export class ReadingView {
   private readonly embeds = new Set<NoteEmbed>();
   private missingWatch: Component | null = null;
   private embedsReady: Promise<void> = Promise.resolve();
+  private search: ReadingSearch | null = null;
+  private folding: ReadingFolding | null = null;
+  private listFolding: ReadingListFolding | null = null;
+  private calloutFolding: ReadingCalloutFolding | null = null;
+  private tasks: ReadingTasks | null = null;
+  private taskFocusCleanup: (() => void) | null = null;
+  private foldingContext: { section: HTMLElement; inventory: ReadingFoldInventory; lists: ReturnType<typeof captureReadingListFolds>; callouts: ReturnType<typeof captureReadingCallouts>; tasks: ReturnType<typeof captureReadingTasks>;
+    path: string; source: string; headingState: FoldStatePort; listState: FoldStatePort; calloutState: FoldStatePort;
+    owned: () => boolean; current: () => boolean; writable: () => boolean; commit: (plan: ReadingTaskPlan) => boolean;
+    document: Document; children: Element[] | null; ready: boolean } | null = null;
+  private unwatchFolding: (() => void) | null = null;
   /** Set by an owning embed so nested renders share ancestry and limits. */
   embedScope: EmbedScope = newEmbedScope();
 
@@ -348,17 +397,133 @@ export class ReadingView {
     return this.sourcePath === null ? null : { leaf: this.leaf, sourcePath: this.sourcePath };
   }
 
+  showSearch(): boolean {
+    const leaf = this.leaf, path = this.sourcePath, root = this.app.vault.rootPath, generation = this.generation;
+    const file = path === null ? null : this.app.vault.getFileByPath(path);
+    const current = (): boolean => Boolean(leaf && file && generation === this.generation && root === this.app.vault.rootPath
+      && this.sourcePath === path && this.app.vault.getFileByPath(file.path) === file && !this.app.changingVault && !leaf.workspace.isChangingFiles
+      && leaf.view.isLoaded && (leaf.view as { currentMode?: unknown }).currentMode === this && (leaf.view as { file?: TFile }).file === file);
+    if (!current() || !this.containerEl.parentElement) { return false; }
+    this.search ??= new ReadingSearch(this.containerEl, this.containerEl.parentElement, current, () => { this.search = null; }, {
+      includeCollapsedCallout: details => this.calloutFolding?.includes(details) ?? false,
+      reveal: element => this.calloutFolding?.reveal(element),
+    });
+    this.search.focus(); return true;
+  }
+  searchIsOpen(): boolean { return this.search !== null; }
+  findNext(): boolean { return this.search ? this.search.next() : this.showSearch(); }
+  findPrevious(): boolean { return this.search ? this.search.previous() : this.showSearch(); }
+  closeSearch(focus = true): boolean { if (!this.search) { return false; } this.search.close(focus); return true; }
+
+  /** Only this active, visible original-main render may receive bulk commands. */
+  private bulkFoldTargets(): (ReadingFolding | ReadingListFolding | ReadingCalloutFolding)[] {
+    const context = this.foldingContext, leaf = this.leaf;
+    if (!context?.ready || !leaf || leaf.workspace.activeLeaf !== leaf || leaf.workspace.isChangingLayout || !context.current()
+      || context.document !== this.containerEl.ownerDocument || context.children?.length !== context.section.childElementCount
+      || !context.children.every((child, index) => context.section.children[index] === child)) { return []; }
+    const targets: (ReadingFolding | ReadingListFolding | ReadingCalloutFolding)[] = [];
+    if (this.app.configuration.get("app", "foldHeading") !== false && context.inventory.headings.length) {
+      if (!this.folding?.canSetAll()) { return []; } targets.push(this.folding);
+    }
+    if (this.app.configuration.get("app", "foldIndent") !== false && context.lists.items.some(item => item.bodies.length)) {
+      if (!this.listFolding?.canSetAll()) { return []; } targets.push(this.listFolding);
+    }
+    if (context.callouts.entries.length) {
+      if (!this.calloutFolding?.canSetAll()) { return []; } targets.push(this.calloutFolding);
+    }
+    return targets;
+  }
+
+  canFoldAll(): boolean { return this.bulkFoldTargets().length > 0; }
+  foldAll(): boolean { return this.setAllFolds(true); }
+  unfoldAll(): boolean { return this.setAllFolds(false); }
+
+  private setAllFolds(collapse: boolean): boolean {
+    const targets = this.bulkFoldTargets();
+    if (!targets.length) { return false; }
+    for (const target of targets) { if (!target.setAll(collapse)) { return false; } }
+    return true;
+  }
+
+  /** Independent view controls share this render's ownership, never its source. */
+  refreshFolding(): void {
+    const context = this.foldingContext;
+    if (!context || !context.owned() || context.document !== this.containerEl.ownerDocument) {
+      this.retireInteractions(); return;
+    }
+    // A same-content refresh can arrive while processors/embeds are finishing.
+    // This render already retired its old controls. Keep its pending task focus
+    // request until readiness; new owners and later user input still cancel it.
+    if (!context.ready) { return; }
+    if (context.children?.length !== context.section.childElementCount || !context.children.every((child, index) => context.section.children[index] === child)) {
+      this.retireInteractions(); return;
+    }
+    // Passive installation must work while a saved Reading pane is restoring;
+    // action availability still requires its loaded, current Reading mode.
+    const changed = (): void => this.search?.visibilityChanged();
+    if (this.app.configuration.get("app", "foldHeading") === false || !context.inventory.headings.length) {
+      this.folding?.dispose(); this.folding = null;
+    } else if (!this.folding || this.folding.isDisposed) {
+      this.folding = new ReadingFolding(this.containerEl, context.section, context.inventory, context.current, changed, {
+        initialCollapsed: context.headingState.load(context.path, context.source),
+        onUserChange: lines => { if (context.current()) { context.headingState.save(context.path, context.source, lines); } },
+      });
+    }
+    if (this.app.configuration.get("app", "foldIndent") === false) {
+      this.listFolding?.dispose(); this.listFolding = null;
+    } else if (!this.listFolding || this.listFolding.isDisposed) {
+      this.listFolding = new ReadingListFolding(this.containerEl, context.section, context.lists, context.current, changed, {
+        initialCollapsed: context.listState.load(context.path, context.source),
+        onUserChange: lines => { if (context.current()) { context.listState.save(context.path, context.source, lines); } },
+      });
+    }
+    if (!this.tasks || this.tasks.isDisposed) {
+      this.tasks = new ReadingTasks(this.containerEl, context.section, context.tasks, {
+        current: context.current, writable: context.writable, commit: context.commit, onError: reportError,
+      });
+    }
+    if (!this.calloutFolding || this.calloutFolding.isDisposed) {
+      this.calloutFolding = new ReadingCalloutFolding(this.containerEl, context.section, context.callouts, context.current, () => {}, {
+        initialCollapsed: context.calloutState.load(context.path, context.source),
+        onUserChange: lines => { if (context.current()) { context.calloutState.save(context.path, context.source, lines); } },
+      });
+    }
+    this.tasks.refresh();
+  }
+
+  private retireInteractions(): void {
+    this.taskFocusCleanup?.(); this.taskFocusCleanup = null;
+    this.tasks?.dispose(); this.tasks = null;
+    this.listFolding?.dispose(); this.listFolding = null;
+    this.calloutFolding?.dispose(); this.calloutFolding = null;
+    this.folding?.dispose(); this.folding = null;
+  }
+
   render(content: string, sourcePath: string): void {
     const root = this.app.vault.rootPath;
     const key = JSON.stringify([root, sourcePath, content, markdownProcessorsVersion()]);
     if (this.key === key) {
+      queueMicrotask(() => { if (this.key === key) { this.refreshFolding(); } });
       return;
     }
     this.clear();
     const generation = this.generation;
     const cache = parseMarkdown(content);
     const start = cache.frontmatterPosition?.end.offset ?? 0;
-    const { html, anchors, diagrams } = sourceMarkup(content.slice(start), content.slice(0, start).split(/\r\n|\n|\r/).length - 1);
+    const footnotes = planFootnoteRendering(content, cache, crypto.randomUUID());
+    const markup = sourceMarkup(footnotes.source.slice(start), content.slice(0, start).split(/\r\n|\n|\r/).length - 1);
+    let html = markup.html;
+    const { anchors, diagrams } = markup;
+    if (footnotes.notes.length) {
+      html += '<section class="footnotes" role="doc-endnotes" aria-label="Footnotes"><hr><ol>';
+      for (const note of footnotes.notes) {
+        const body = sourceMarkup(note.source, note.definition.position.start.line);
+        for (const [key, line] of body.anchors) { anchors.set(key, line); }
+        for (const [key, source] of body.diagrams) { diagrams.set(key, source); }
+        html += '<li data-slopsidian-footnote-note="' + note.token + '" value="' + note.number + '">' + body.html + "</li>";
+      }
+      html += "</ol></section>";
+    }
     const fragment = DOMPurify.sanitize(html, {
       RETURN_DOM_FRAGMENT: true,
       USE_PROFILES: { html: true },
@@ -371,6 +536,7 @@ export class ReadingView {
         const item = input.parentElement?.tagName === "LI" ? input.parentElement : input.parentElement?.parentElement?.tagName === "LI" ? input.parentElement.parentElement : null;
         item?.classList.add("task-list-item");
         item?.classList.toggle("is-checked", input.checked);
+        if (item) { decorateReadingTaskLabel(input, item); }
       } else {
         input.remove();
       }
@@ -398,9 +564,36 @@ export class ReadingView {
       delete node.dataset.slopsidianSource;
       if (line !== undefined) { node.dataset.sourceLine = String(line); }
     }
+    const headingNames = new Map(cache.headings.map(heading => [heading.position.start.line, heading.heading]));
     fragment.querySelectorAll<HTMLElement>("h1,h2,h3,h4,h5,h6").forEach((heading, index) => {
       heading.id = `${this.headingPrefix}-heading-${index}`;
+      const name = headingNames.get(Number(heading.dataset.sourceLine));
+      if (name !== undefined) { this.headingNames.set(heading, name); }
     });
+    const notes = new Map(footnotes.notes.map(note => [note.token, note]));
+    const noteElements = new Map<string, HTMLElement>();
+    for (const node of fragment.querySelectorAll<HTMLElement>("[data-slopsidian-footnote-note]")) {
+      const token = node.dataset.slopsidianFootnoteNote!, note = notes.get(token); delete node.dataset.slopsidianFootnoteNote;
+      if (!note || node.tagName !== "LI") { continue; }
+      node.id = `${this.headingPrefix}-footnote-${note.number}`; node.tabIndex = -1; node.dataset.footnoteNumber = String(note.number);
+      node.setAttribute("aria-label", "Footnote " + note.number); noteElements.set(token, node);
+    }
+    const references = new Map(footnotes.references.map(reference => [reference.token, reference]));
+    const counts = new Map<string, number>();
+    for (const node of fragment.querySelectorAll<HTMLElement>("[data-slopsidian-footnote-ref]")) {
+      const token = node.dataset.slopsidianFootnoteRef!, reference = references.get(token); delete node.dataset.slopsidianFootnoteRef;
+      const destination = reference && noteElements.get(reference.note);
+      if (!reference || !destination || node.tagName !== "SPAN") { continue; }
+      const sup = document.createElement("sup"), link = document.createElement("a"), back = document.createElement("a");
+      const index = (counts.get(reference.note) ?? 0) + 1; counts.set(reference.note, index);
+      sup.className = "footnote-ref"; sup.dataset.footnoteReference = String(reference.number);
+      link.id = `${this.headingPrefix}-${token}`; link.href = "#" + destination.id; link.textContent = String(reference.number);
+      link.setAttribute("aria-label", "Footnote " + reference.number); link.setAttribute("role", "doc-noteref");
+      back.className = "footnote-backref"; back.href = "#" + link.id; back.textContent = index === 1 ? "↩" : "↩" + index;
+      back.setAttribute("aria-label", "Back to reference " + index + " for footnote " + reference.number);
+      this.footnoteLinks.set(link, destination); this.footnoteLinks.set(back, link);
+      sup.append(link); node.replaceWith(sup); destination.append(document.createTextNode(" "), back);
+    }
     const section = document.createElement("div");
     section.className = "markdown-preview-sizer markdown-preview-section";
     section.appendChild(fragment);
@@ -455,7 +648,8 @@ export class ReadingView {
       (wiki && parent?.classList.contains("internal-embed") ? parent : image).replaceWith(host);
       noteEmbeds.push({ host, file, linktext: href, uri: !wiki });
     }
-    const current = (): boolean => generation === this.generation && root === this.app.vault.rootPath && !this.app.changingVault;
+    const owned = (): boolean => generation === this.generation && root === this.app.vault.rootPath;
+    const current = (): boolean => owned() && !this.app.changingVault;
     if (hasMissing) {
       const watch = this.missingWatch = new Component();
       watch.load();
@@ -481,6 +675,65 @@ export class ReadingView {
     this.unwatchProcessors = observeMarkdownProcessors(() => {
       queueMicrotask(() => { if (current()) { this.render(content, sourcePath); } });
     });
+    const codeHighlights = captureCodeHighlightTargets(section);
+    const callouts = this.leaf ? captureReadingCallouts(section, content) : null;
+    if (this.leaf && (cache.headings.length || cache.listItems.length || callouts?.entries.length)) {
+      const leaf = this.leaf, file = this.app.vault.getFileByPath(sourcePath);
+      const view = leaf.view as typeof leaf.view & { file?: TFile; reading?: ReadingView; editor?: Editor; currentMode?: unknown };
+      const foldOwned = (): boolean => owned() && this.sourcePath === sourcePath && section.parentElement === this.containerEl
+        && leaf.view === view && view.reading === this && view.file === file && Boolean(file) && this.app.vault.getFileByPath(sourcePath) === file
+        && view.editor?.getValue() === content;
+      const foldCurrent = (): boolean => foldOwned() && view.isLoaded && view.currentMode === this && !this.app.changingVault && !leaf.workspace.isChangingFiles
+        && leaf.workspace.getLeafById(leaf.id) === leaf && this.containerEl.getClientRects().length > 0;
+      const writable = (): boolean => foldCurrent() && !this.app.vault.readOnly && Boolean(view.editor) && !view.editor!.cm.state.readOnly
+        && !view.editor!.cm.composing && !view.editor!.cm.compositionStarted;
+      const commit = (plan: ReadingTaskPlan): boolean => {
+        if (!writable() || plan.source !== content || !Number.isInteger(plan.from) || plan.to !== plan.from + 1
+          || plan.from < 1 || plan.to >= content.length || content[plan.from - 1] !== "[" || content[plan.to] !== "]"
+          || !/[ xX]/.test(content[plan.from]) || plan.insert !== "x" && plan.insert !== " ") { return false; }
+        const next = content.slice(0, plan.from) + plan.insert + content.slice(plan.to);
+        if (next === content) { return false; }
+        const scroll = this.containerEl.scrollTop, left = this.containerEl.scrollLeft, parent = this.containerEl.parentElement;
+        const parentScroll = parent?.scrollTop ?? 0;
+        view.editor!.replaceExpected(content, plan.from, plan.to, plan.insert, "input.reading-task");
+        if (view.editor!.getValue() !== next) { return false; }
+        // The shared editor normally renders synchronously; an explicit render
+        // also binds focus restoration when its notification is deferred.
+        this.render(next, sourcePath);
+        const committedGeneration = this.generation, document = this.containerEl.ownerDocument;
+        let restore = true;
+        const events = ["wheel", "pointerdown", "touchstart", "keydown"];
+        const cancel = (): void => {
+          restore = false;
+          for (const event of events) { document.removeEventListener(event, cancel, true); }
+          if (this.taskFocusCleanup === cancel) { this.taskFocusCleanup = null; }
+        };
+        this.taskFocusCleanup = cancel;
+        for (const event of events) { document.addEventListener(event, cancel, true); }
+        this.containerEl.scrollTop = scroll; this.containerEl.scrollLeft = left;
+        if (parent && this.containerEl.parentElement === parent) { parent.scrollTop = parentScroll; }
+        void this.whenReady().then(() => {
+          if (!restore || committedGeneration !== this.generation || document !== this.containerEl.ownerDocument || root !== this.app.vault.rootPath
+            || leaf.view !== view || view.file !== file || !view.isLoaded || view.currentMode !== this || view.editor?.getValue() !== next
+            || this.app.vault.getFileByPath(sourcePath) !== file || this.app.changingVault || leaf.workspace.isChangingFiles || this.search
+            || !document.hasFocus() || document.activeElement !== document.body && document.activeElement !== this.containerEl) { return; }
+          this.containerEl.scrollTop = scroll; this.containerEl.scrollLeft = left;
+          if (parent && this.containerEl.parentElement === parent) { parent.scrollTop = parentScroll; }
+          if (plan.focus) { this.tasks?.focusTask(plan.line); }
+        }).catch(reportError).finally(cancel);
+        return true;
+      };
+      this.foldingContext = { section, inventory: captureReadingFolds(section, content.length, cache.headings),
+        path: sourcePath, source: content, headingState: foldStatePort(this.app, "reading-headings"), listState: foldStatePort(this.app, "reading-lists"), calloutState: foldStatePort(this.app, "reading-callouts"),
+        lists: captureReadingListFolds(section, content, cache.listItems), callouts: callouts!, tasks: captureReadingTasks(section, content, cache.listItems),
+        owned: foldOwned, current: foldCurrent, writable, commit, document: this.containerEl.ownerDocument, children: null, ready: false };
+      const refresh = (): void => {
+        if (!foldOwned() || view.isLoaded && view.currentMode !== this) { this.retireInteractions(); }
+        else { this.refreshFolding(); }
+      };
+      const changes = leaf.workspace.on("layout-change", refresh), ready = leaf.workspace.on("layout-ready", refresh);
+      this.unwatchFolding = () => { leaf.workspace.offref(changes); leaf.workspace.offref(ready); };
+    }
     this.processors = processRenderedMarkdown(section, sourcePath, content, cache, current, this.leaf !== null, this.component !== undefined);
     const mountEmbeds = (): Promise<void> => {
       if (!current() || !noteEmbeds.length) { return Promise.resolve(); }
@@ -496,7 +749,18 @@ export class ReadingView {
       return Promise.all(mounted).then(() => {});
     };
     // Nested notes run their own processors; mount them only after this view's processors have finished.
-    this.embedsReady = this.processors.ready.then(mountEmbeds, mountEmbeds);
+    const finishRender = (): Promise<void> => {
+      // Passive decoration can finish during startup restoration. Waiting for the
+      // interactive guard here would permanently skip a cached same-content render.
+      highlightCodeTargets(section, codeHighlights, owned);
+      return mountEmbeds();
+    };
+    this.embedsReady = this.processors.ready.then(finishRender, finishRender).then(() => {
+      if (owned() && this.foldingContext?.section === section) {
+        this.foldingContext.children = section.childElementCount <= MAX_READING_FOLD_BLOCKS ? [...section.children] : [];
+        this.foldingContext.ready = true; this.refreshFolding();
+      }
+    });
     this.embedsReady.catch(reportError);
     this.processors.ready.catch(error => {
       if (!current()) { return; }
@@ -518,6 +782,7 @@ export class ReadingView {
   revealLine(line: number, focus = true): void {
     const blocks = [...this.containerEl.querySelectorAll<HTMLElement>("[data-source-line]")].filter(entry => this.owns(entry));
     const block = blocks.findLast(entry => Number(entry.dataset.sourceLine) <= line) ?? blocks[0];
+    if (block) { this.folding?.reveal(block); this.listFolding?.reveal(block); this.calloutFolding?.reveal(block); }
     block?.scrollIntoView({ block: "start" });
     if (focus) { this.focus(); }
   }
@@ -525,15 +790,22 @@ export class ReadingView {
   revealHeading(subpath: string): void {
     const wanted = headingText(subpath.replace(/^#/, "").replaceAll("-", " "));
     const heading = [...this.containerEl.querySelectorAll<HTMLElement>("h1,h2,h3,h4,h5,h6")]
-      .filter(entry => this.owns(entry)).find(entry => headingText(entry.textContent ?? "").replaceAll("-", " ") === wanted);
+      .filter(entry => this.owns(entry)).find(entry => headingText(entry.textContent ?? "").replaceAll("-", " ") === wanted
+        || headingText(this.headingNames.get(entry) ?? "").replaceAll("-", " ") === wanted);
     if (!heading) {
       throw new Error("The linked heading does not exist: " + subpath);
     }
+    this.folding?.reveal(heading);
+    this.listFolding?.reveal(heading);
+    this.calloutFolding?.reveal(heading);
     heading.scrollIntoView({ block: "start" });
     this.focus();
   }
 
   clear(): Promise<void> {
+    this.closeSearch(false);
+    this.unwatchFolding?.(); this.unwatchFolding = null;
+    this.retireInteractions(); this.foldingContext = null;
     this.unwatchCalloutColors?.(); this.unwatchCalloutColors = null;
     this.unwatchProcessors?.(); this.unwatchProcessors = null;
     this.missingWatch?.unload(); this.missingWatch = null;
@@ -542,6 +814,7 @@ export class ReadingView {
     cleanup.catch(reportError); this.processors = null;
     this.key = null;
     this.sourcePath = null;
+    this.footnoteLinks = new WeakMap(); this.headingNames = new WeakMap();
     this.generation++;
     for (const dispose of this.diagrams) { dispose(); } this.diagrams.clear();
     this.containerEl.querySelectorAll("audio").forEach(audio => { audio.pause(); audio.removeAttribute("src"); audio.load(); });
@@ -554,6 +827,13 @@ export class ReadingView {
   }
 
   private async follow(link: HTMLAnchorElement, newTab: boolean): Promise<void> {
+    const footnote = this.footnoteLinks.get(link);
+    if (footnote && this.containerEl.contains(footnote) && this.owns(footnote)) {
+      this.folding?.reveal(footnote);
+      this.listFolding?.reveal(footnote);
+      this.calloutFolding?.reveal(footnote);
+      footnote.scrollIntoView({ block: "center" }); footnote.focus({ preventScroll: true }); return;
+    }
     const wiki = link.dataset.slopsidianLink;
     const href = wiki ?? link.getAttribute("href");
     if (!href || this.sourcePath === null) {

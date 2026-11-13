@@ -5,6 +5,8 @@ import { join } from "node:path";
 import { pixel } from "./reading-scenarios.mjs";
 import { checkEditorPublicApi } from "./editor-api-scenarios.mjs";
 
+const logicalHeadingText = element => element ? [...element.childNodes].filter(node => node.nodeType !== 1 || !node.matches("button.reading-fold-toggle")).map(node => node.textContent).join("") : null;
+
 export async function checkEditorModes(tools) {
   const { directory, evaluate, command, click, press, wait, afterReload, restart, capture, report } = tools;
   await checkEditorPublicApi(tools);
@@ -137,7 +139,7 @@ module.exports = class extends Plugin {
     assert.equal(await evaluate(`document.querySelector(${JSON.stringify(source)}).classList.contains("is-live-preview")`), false);
     assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(source + " .cm-live-widget")}).length`), 0);
     await choose("preview", true);
-    await wait(`document.querySelector(${JSON.stringify(active + " .markdown-preview-view h1")})?.textContent==="Live heading"`, "actual Reading heading");
+    await wait(`(${logicalHeadingText.toString()})(document.querySelector(${JSON.stringify(active + " .markdown-preview-view h1")}))==="Live heading"`, "actual Reading heading");
     await choose("live-preview", true);
     await scrollTo("**Strong**");
     await wait(`document.querySelector(${JSON.stringify(source + " .cm-live-strong")})?.textContent==="Strong"`, "actual in-place strong formatting");

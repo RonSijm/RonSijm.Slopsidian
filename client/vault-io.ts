@@ -15,3 +15,11 @@ export class ReadOnlyVaultError extends Error {
 export function assertVaultWritable(readOnly: boolean, operation = "write", path?: string): void {
   if (readOnly) { throw new ReadOnlyVaultError(operation, path); }
 }
+
+export class TrashRestoreUnavailableError extends Error {
+  readonly code = "TRASH_RESTORE_UNAVAILABLE";
+  constructor() {
+    super("Restoring into a vault folder requires the Windows desktop host. In the browser, preview a trash note and download an exact copy; vault trash stays untouched.");
+    this.name = "TrashRestoreUnavailableError";
+  }
+}

@@ -2,6 +2,1317 @@
 
 [Feature-parity index](../FEATURE-PARITY.md)
 
+## Structured recovery and multiline Properties, 2026-11-15
+
+**Accepted bounded workflows on both hosts.** Multiline Properties editing, bounded read-only nested YAML inspection, corrected CRLF metadata/authoring after raw HTML, and safe saved-Markdown trash recovery are implemented. Windows supports reviewed in-vault restoration; the browser offers exact-byte Download copy and retains trash originals. 22 source-bound desktop/browser collections / 606 checks, 2,310 full default tests in 161 modules and 44 GitHub regressions pass. Type checking, native Debug, published WASM and static serving pass. The current native DLL starts successfully without a policy change by this work; desktop renewal closes the earlier Application Control validation gap for these collections. Source `d1dae81d512b103869b9cda0da893d807a4218f77eb49a4fbc3ab29570aa1114` binds 769 inputs and 1165 unchanged outputs. No native modules are excluded from the full default run.
+
+| Current-source collection | Windows desktop | Actual-folder WASM |
+|---|---:|---:|
+| structured-recovery | 27 | 39 |
+| workflow-controls | 26 | 38 |
+| properties-reading | 24 | 36 |
+| authoring-transfers | 31 | 43 |
+| note-management | 30 | 42 |
+| authoring-organization | 24 | 36 |
+| link-authoring | 22 | 34 |
+| file-explorer | 9 | 21 |
+| properties | 13 | 25 |
+| math-embeds | 8 | 20 |
+| note-continuity | 23 | 35 |
+
+The current native artifact starts without a policy change by this work. This renews the earlier browser-only milestone subsets; their original receipts and previous artifact failures remain intact. Browser direct restore is unsupported before I/O; exact Download copy and Windows reviewed restore have distinct accepted capabilities. The inherited native path identity/rollback boundary remains dynamically unverified, with no atomic/race-free claim. [Scope, reviews and remaining limits](STRUCTURED-RECOVERY-2026-11-15.md) and the [source-bound receipt](../../.runtime/evidence/structured-recovery-accepted-2026-11-15/receipt.json) retain full test results, exact error/shutdown audits, 56 reviewed captures, failed attempts and all 61 initial local-file backups.
+
+## Workflow controls, 2026-11-15
+
+**Browser verified; native validation pending.** 10 source-bound browser collections / 330 checks pass. Type checking, native Debug, published WASM and static serving pass; 1,938 selected default tests in 130 non-native modules and 44 GitHub regressions pass. The 26 native-dependent default modules and native GUI validation remain pending Windows Application Control. Source `f2973a4043fe6d5cbc4a347fe06ca89f16e9ec84bbb504dcde684db265d36e4e` binds 755 inputs and 1165 unchanged outputs.
+
+| Current-source collection | Actual-folder WASM checks | Windows desktop |
+|---|---:|---|
+| workflow-controls | 38 | Pending — Application Control |
+| properties-reading | 36 | Pending — Application Control |
+| authoring-transfers | 43 | Pending — Application Control |
+| note-management | 42 | Pending — Application Control |
+| authoring-organization | 36 | Pending — Application Control |
+| link-authoring | 34 | Pending — Application Control |
+| file-explorer | 21 | Pending — Application Control |
+| properties | 25 | Pending — Application Control |
+| math-embeds | 20 | Pending — Application Control |
+| note-continuity | 35 | Pending — Application Control |
+
+The native DLL is byte-identical to the previously observed Application Control refusal; the same blocked launch was not repeated. The full default suite, desktop GUI and new actual bulk Recycle Bin use remain pending. [Delivered workflows and review limits](WORKFLOW-CONTROLS-2026-11-15.md) and the [browser-only receipt](../../.runtime/evidence/workflow-controls-browser-verified-2026-11-15/receipt.json) retain exact tested inputs, source/artifacts, real-input and final error/shutdown audits, pending native modules, reviewed captures, failed attempts and 47 preserved initial local files.
+
+## Properties, Files and Reading, 2026-11-15
+
+**Browser verified; native validation pending.** 9 current-source browser collections / 292 checks pass. Type checking, native Debug, published WASM and static serving pass; 1,887 selected default tests in 127 non-native modules and 44 GitHub regressions pass. The 26 native-dependent default modules and native GUI acceptance remain pending Windows Application Control. Source `caaa0d6abd8d2b220fa8014ba27d0332ce4ba2cd4438ed355af32e84bb9e9d43` binds 747 canonical inputs and 1165 unchanged outputs.
+
+| Current-source collection | Actual-folder WASM checks | Windows desktop |
+|---|---:|---|
+| properties-reading | 36 | Pending — Application Control |
+| authoring-transfers | 43 | Pending — Application Control |
+| note-management | 42 | Pending — Application Control |
+| authoring-organization | 36 | Pending — Application Control |
+| link-authoring | 34 | Pending — Application Control |
+| file-explorer | 21 | Pending — Application Control |
+| properties | 25 | Pending — Application Control |
+| math-embeds | 20 | Pending — Application Control |
+| note-continuity | 35 | Pending — Application Control |
+
+The selected default run has no failures, cancellations, skips or todos; the full default suite and native GUI are not accepted. A fresh launch of the unchanged rebuilt DLL is refused under Application Control (0x800711C7, Code Integrity 3077/3033). No policy was changed. [Delivered scope, review findings and native limitation](PROPERTIES-READING-2026-11-15.md) and the [browser-only receipt](../../.runtime/evidence/properties-reading-browser-verified-2026-11-15/receipt.json) retain exact source/artifacts, real input and final error/shutdown audits, selected/pending test modules, reviewed captures, failed attempts and the 31 preserved prior local files/receipt. Earlier source-bound acceptances keep their own scope.
+
+## Authoring and transfers, 2026-11-15
+
+**Browser verified; desktop validation pending.** Seven current-source browser collections / 221 checks pass. Type checking, native Debug and published WASM/static builds pass; 464 focused and 44 GitHub regressions pass. Desktop runtime sign-off and a passing full default suite remain blocked by Windows Application Control. Source `8f9b95a9172b6070cd3b2d22ffd3654591d2d6bfe394614e92df0b2054544f73` binds 739 canonical inputs and 1,165 unchanged outputs.
+
+| Current-source collection | Actual-folder WASM checks | Windows desktop |
+|---|---:|---|
+| authoring-transfers | 43 | Pending — Application Control |
+| note-management | 42 | Pending — Application Control |
+| authoring-organization | 36 | Pending — Application Control |
+| link-authoring | 34 | Pending — Application Control |
+| file-explorer | 21 | Pending — Application Control |
+| properties | 25 | Pending — Application Control |
+| math-embeds | 20 | Pending — Application Control |
+
+The full default run reports 2,128 tests: 1,977 pass, 151 fail during native startup under Application Control (0x800711C7), 0 skipped. All 151 failure records have that same native policy cause; there are no other failing tests. This is not a passing full-suite or native-GUI acceptance. The focused run completed while the earlier native definition host was available. One final scenario-only correction leaves all application/test inputs unchanged. [Delivered scope, policy evidence and remaining work](AUTHORING-TRANSFERS-2026-11-15.md) and the [browser-only receipt](../../.runtime/evidence/authoring-transfers-browser-verified-2026-11-15/receipt.json) retain that distinction, final browser error/shutdown audits, exact bytes/history, reviewed screenshots, the earlier attempt and the unchanged prior acceptance. An approved native signing/allow-list path is required to finish native validation; no security policy was changed.
+
+## Note management, 2026-11-15
+
+**Accepted bounded workflows on both hosts.** Missing ATX ancestor chains, whole closed fenced-code/table IDs, selected-Markdown batch rename and saved-note vault trash are verified. All 12 source-bound host collections / 278 checks, 2,091 default/44 GitHub regressions and 401 overlapping focused checks pass. Source `d6a700651f5586e7cf0dbb5e8e24895224310825af58ea10f5c8dd4bf9baf6d6` binds 733 canonical inputs and 1162 unchanged outputs. Type checking, native Debug and published WASM/static serving pass. The complete regression suite predates the final scenario-only correction; application and test inputs remain unchanged, and final-source focused checks and GUI collections pass.
+
+| Current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| note-management | 30 | 42 |
+| authoring-organization | 24 | 36 |
+| link-authoring | 22 | 34 |
+| file-explorer | 9 | 21 |
+| folder-operations | 10 | 22 |
+| math-embeds | 8 | 20 |
+
+[Behavior, reference use, independent reviews, retained diagnostics and remaining limits](NOTE-MANAGEMENT-2026-11-15.md) and the [local acceptance receipt](../../.runtime/evidence/note-management-accepted-2026-11-15/receipt.json) record exact source/trash bytes/history/metadata, trusted input, version/collision/stale/partial-result guards, 320px toolbar renewal, restarts, cached blobs/zero-network, final error/shutdown audits and reviewed-image hashes. Only these six GUI collections are renewed. Earlier milestone rows and receipts retain their original source epochs and then-open limits. The prior CI fix remains local; remote rerun is pending.
+
+## Authoring and organization, 2026-11-15
+
+**Accepted bounded workflows on both hosts.** Explicit destination heading creation, whole list/task/quote IDs, reviewed selected-Markdown moves and the four-language runtime follow-up pass 10 current-source host collections. Source `7e4979cae15a786ebecbca5902680cb0fcff126d707c8d212de59571a1ff9f6a` binds 723 canonical inputs and 1162 unchanged outputs. Type checking, native Debug, published WASM/static serving, 2,045 default/44 GitHub regressions and 407 overlapping focused checks pass. The separate CI attachment DOS-path fix passes all 14 focused cases, including genuine native short names; remote CI requires a push/rerun.
+
+| Current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| authoring-organization | 24 | 36 |
+| markdown-polish | 28 | 40 |
+| link-authoring | 22 | 34 |
+| file-explorer | 9 | 21 |
+| folder-operations | 10 | 22 |
+
+[Behavior, reference use, retained failures and remaining limits](AUTHORING-ORGANIZATION-2026-11-15.md) and the [local acceptance receipt](../../.runtime/evidence/authoring-organization-accepted-2026-11-15/receipt.json) record exact bytes/history/metadata, real pointer/keyboard and 320px Files controls, version/conflict/partial-success guards, restarts, cached blob/zero-network assertions, clean final error audits/shutdown and reviewed-image hashes. Only these five GUI collections are renewed; older acceptance rows remain historical. Wider block/heading syntax, batch rename/delete/tree transfers, full native/private behavior and service/release work remain.
+
+## Link authoring, 2026-11-15
+
+**Accepted bounded workflows on both hosts.** Source `778eab9c9997badc6616edab7f39934a54a576e91a767b3ba62691172ed93f3d` adds
+explicit missing-heading links, supported prose block-ID authoring and a
+Properties **Create note** action. Type checking, native Debug, published WASM
+and static serving pass. All **1,997 default/44 GitHub regressions** and **309 focused
+checks** pass with **1,159 unchanged build outputs**. No dependencies
+were added. The dependency lock and canonical native/backend source retain the
+Note-continuity baseline; the receipt binds the actual current and prior native
+DLL identities without assuming byte equality.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| link-authoring | 22 | 34 |
+| note-continuity | 23 | 35 |
+| markdown-polish | 26 | 38 |
+| markdown-interaction | 26 | 38 |
+| editor-assistance | 23 | 35 |
+| editor-improvements | 18 | 30 |
+| reading-tools | 31 | 43 |
+| reading-discovery | 19 | 31 |
+| renderers | 13 | 25 |
+| math-embeds | 8 | 20 |
+
+All **20 scopes / 538 reported checks** retain the current
+source/build identities, final error audits, owned shutdown and reviewed runtime
+captures. The collection covers actual pointer/keyboard controls, exact
+BOM/CRLF/Unicode source and target bytes, isolated Undo/Redo, stale source,
+target and field owners, source/target conflicts, restart/reconnection and
+genuine cache-only read-only refusal. These reports renew their listed bounded
+workflows; they do not renew older whole-core or full-native claims. Earlier
+Note-continuity failures and diagnostics retain their own source epochs and
+receipts.
+
+**Retained build failure and unchanged rerun.** At source
+`057f18a8850470fcd825c842c8ef07e1096c1365f38190e93dafe3bdc1b6227a`,
+attempt 5 retained 11 outputs after SDK **10.0.100** WASM publishing failed in
+`GenerateStaticWebAssetEndpointsManifest.Execute` with a
+`System.Text.Json.Serialization.JsonConverter<T>.TryWrite`
+`NullReferenceException` at `StaticWebAssets.targets(631,5)`. An explicitly
+invoked complete build rerun passed at the same source epoch without source,
+SDK, JIT, cache or environment changes. The cause remains unknown; the later
+application fix is not evidence of a build-tool fix. The
+[retained SDK build diagnostics](../../.runtime/evidence/link-authoring-sdk-build-diagnostic-bundle.json)
+bind both failed and successful publish logs.
+
+Both hosts in same-source attempt 6 passed all missing-heading and block-ID
+groups before the Properties pane refused its own creation's file-mutation
+lock. The current Properties guard preserves the original connected field/pane
+during its own creation lock, then requires the ordinary ownership and mutation
+checks again before the property edit. Source, field, layout and foreign-mutation
+refusals remain in force. These are retained earlier attempts; final accepted
+reports belong to the current source above.
+
+**Retained current-source browser reload timeout.** At source
+`778eab9c9997badc6616edab7f39934a54a576e91a767b3ba62691172ed93f3d`,
+the Markdown-polish WASM report stopped after 18 checks with
+`CDP timed out: Runtime.evaluate` during `full restart`.
+Of its 8 recorded evaluation timeouts in total, `evaluationTimeouts[0]`
+identifies the post-`Page.reload` readiness evaluation; later diagnostic and
+cleanup evaluations timed out too. The failed run had zero
+unexpected application diagnostics, and its native counterpart passed 26 checks.
+An explicitly started fresh browser run then passed 38 checks with unchanged
+source, build, compiled-bundle/scenario identities, assertions, SDK, JIT,
+environment and timeout limits. The cause remains unknown; the observed check
+location does not establish an application, browser, resource or transport cause.
+The [retained browser reload diagnostics](../../.runtime/evidence/link-authoring-cdp-reload-diagnostic-bundle.json)
+bind the earlier failure and fresh passing result separately from the older
+waves' diagnostics and the SDK publish failure above.
+
+**Missing-heading links.** Source/Live Preview offers **Link to missing
+heading** for a complete nonempty supported heading query using a proven existing
+Markdown file path/basename, only when no existing heading suggestion or exact resolver
+destination applies. Current-note and hierarchical forms retain the requested
+heading address. Full bounded target source is reparsed for negative proof;
+stale or incomplete cached headings cannot invent absence. Existing normalized
+destinations, fuzzy matches and literal-hash hierarchy shadows keep priority.
+The action writes one source wiki link in one Undo step, without navigating,
+saving a target or creating a heading. The link remains unresolved until that
+heading exists. Empty/global/unsafe/missing-file queries remain outside this
+action. This adapts the supplied 1.15.0 fallback-link behavior; it does not
+establish original runtime or private/visual parity.
+
+**Prose block IDs.** Source/Live Preview can choose an explicitly labelled
+unlabelled top-level prose paragraph after a supported `#^` query. Existing-ID
+navigation rows stay separate. The action validates its exact paragraph, adds a
+collision-checked six-character local ID and inserts the corresponding source
+wiki link. Current-note marker and link changes share one isolated editor Undo
+step, preserving selections, source line endings and the original editor.
+Cross-note authoring uses the normal FileManager save-all preflight, then
+rechecks the reviewed text, a clean current target session and its disk version
+before inserting a held source link. Clean
+open target peers receive the accepted target change through existing session
+mapping; source Undo removes only the link and leaves the other note's ID.
+
+After FileManager acknowledges the target write, later stale source ownership or
+cleanup failure refuses the held link and keeps the ID when the acknowledged
+target text remains current. The acknowledged write is not rolled back. An
+observed target replacement also refuses the held link; actual newer target
+contents are retained even if they removed the paragraph or ID. A no-link Notice
+asks the user to review the target where applicable. The original cleanup error
+remains reported. This is not an atomic two-file
+transaction or automatic cross-file rollback. Earlier internal transport/raw
+acknowledgement failure windows remain outside this acknowledgement proof. Only
+source-backed top-level prose is authored: heading/list/task/quote/callout,
+table/code/HTML/footnote/embedded blocks and existing or marker-looking endings
+are excluded. The existing source allowance is 262,144 UTF-16 units; paragraph
+inspection is bounded at 2,048, results at 40 and ID attempts at 16. Broader block
+kinds, all native authoring rules and generated-ID private behavior remain open.
+
+**Properties creation extension.** A complete supported missing wiki target in
+an ordinary Properties text field or list add field now offers explicit
+**Create note**, including inline Reading/Live Preview Properties and the
+Properties pane. It previews the path, uses existing root/current/configured
+folder placement and create-only collision handling, then revalidates the
+source/session/root, field/row/generation, placement and link preferences before
+committing one wiki-link property value. It stays a wiki link when body links
+prefer Markdown syntax. Known notes/aliases remain ordinary choices, and tags,
+aliases, embedded prose and unsupported heading/block or structured link widgets
+do not acquire this creator. The existing YAML serializer may normalize changed
+flow-list spacing; arbitrary lexical YAML preservation is not claimed.
+
+Explicit creation acceptance consumes its query until the field value genuinely
+changes or the field is explicitly canceled. Composition alone does not release
+an unchanged accepted query, including a temporary draft that returns to it.
+Later blur or Enter cannot resubmit that consumed incomplete prefix as a literal
+property value after failure or Undo.
+
+Undo affects the property edit and keeps the created file. A stale/detached field
+refused before its source edit does not insert the held property link. A later
+save/refresh failure can occur after the editor mutation, so the property may
+already contain that link in dirty or saved source even when the operation
+returns failure. The acknowledged file is kept in either phase; the failure
+Notice directs the user to review the property and any unsaved changes, and the
+original error remains visible. No rollback or automatic deletion is claimed.
+Complete bounded
+metadata/alias proof is required, and read-only cached vaults offer no mutation
+action or remote writes. This Properties creator is an intentional Slopsidian
+extension: the inspected original fallback only completes link text, so no
+original create-note parity is inferred.
+
+Native GUI execution and native regression children use installed **.NET
+10.0.15**; builds and published WASM retain **SDK 10.0.100**. Current frozen binary
+and file-version observations are recorded separately from canonical native
+source equality. The supplied **1.15.0** static reference informed bounded
+adaptations; the pinned **1.12.7** target and fixed 31-module/140-case contract
+remain unchanged. Target heading creation, arbitrary block kinds and new-note
+entry points, full Properties types/widgets/ranking, unrestricted regex and
+broader native/private/plugin/physical-input behavior remain open.
+
+The [local acceptance receipt](../../.runtime/evidence/link-authoring-accepted-2026-11-15/receipt.json) binds exact final counts, source/build inventories,
+reports, captures and declared limits.
+
+## Note continuity, 2026-11-15
+
+**Accepted bounded workflows on both hosts.** Source `3c780aa0cba2b4178441c7c6690a9f64a2bd6f4b335f06f70362d88783d111f5` adds
+exact-source local fold persistence in Source/Live Preview and original main
+Reading, plus an explicit **Create note** choice in built-in wiki-link
+completion. Type checking, native Debug, published WASM and static serving
+pass. All **1,920 default/44 GitHub regressions** and **306 focused checks** pass with
+**1,159 unchanged build outputs**. No dependencies were added; the
+dependency lock and canonical native/backend source match the accepted
+Markdown-polish wave. The rebuilt native application DLL differs; all final
+native collections test the current frozen binary.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| note-continuity | 23 | 35 |
+| markdown-polish | 26 | 38 |
+| markdown-interaction | 26 | 38 |
+| editor-assistance | 23 | 35 |
+| editor-improvements | 18 | 30 |
+| reading-tools | 31 | 43 |
+| reading-discovery | 19 | 31 |
+| renderers | 13 | 25 |
+| math-embeds | 8 | 20 |
+
+All **18 scopes / 482 reported checks** retain exact current
+source/build identities, final error audits and clean owned shutdown. Actual
+pointer/keyboard controls, source/selection/history, BOM/CRLF/Unicode bytes,
+original rendered DOM/plugin ownership, duplicate panes, stale/hidden owners,
+confirmed file/folder renames, restart/reconnection and genuine cache-only
+read-only workflows pass. The receipt binds reviewed current captures and
+retained attempts; it does not renew older whole-core or full-native claims.
+
+Retained failures remain separate from the successful final collections. An
+earlier focused Node run on source `1b9f12dd` recorded an unexplained worker
+exit; a complete 304-check TAP diagnostic passed on the unchanged source.
+On final source `3c780aa0`, one browser collection retained a CDP evaluation
+hang while switching to `Other.md`. Its cause is unestablished. An explicit
+rerun of the whole unchanged browser collection passed all 35 checks, with
+the same 705 source inputs and 1,159 build artifacts. Neither diagnostic used
+automatic retries or weakened assertions; the failed outputs remain retained.
+
+An earlier paired collection also reproduced a real stale-choice gap: after
+typing changed an existing note/alias query to a Create-only query, a held
+existing-link choice could still be accepted. Acceptance now requires membership
+in the currently enumerated choices. Two regressions cover held note and alias
+rows, preserving the newer source and refusing that stale selection.
+
+Native GUI execution and native regression children use installed **.NET
+10.0.15**. Builds retain **SDK 10.0.100**. Canonical native/backend source inputs
+match Wave 11, while the rebuilt application DLL has a different SHA-256.
+The recorded product version contains the current committed Git revision;
+revision metadata may contribute to the difference, but the full binary
+difference has not been attributed exclusively to metadata. The receipt retains
+both binary identities and the current file-version observation. All final
+native GUI/regression collections use the current frozen DLL, unchanged
+throughout those runs. The published browser WASM runtime remains the
+SDK-produced artifact, with no servicing-runtime substitution. Earlier 10.0.0
+startup/probe observations remain historical in the
+[Markdown-polish evidence](#markdown-polish-2026-11-14); they are not new
+failures from this collection, and no shared cause or patch-fix claim is made.
+
+**Remembering folds.** Three independent channels store Source/Live Preview
+offset ranges, Reading heading starts and Reading nested-list starts through
+App profile-local storage, scoped to the actual selected vault and file. Each
+record validates a SHA-256 of the exact UTF-16LE source, including line endings
+and malformed-surrogate distinctions. Equal line counts or lengths do not
+authorize restoration after source changes. The source allowance is 1,048,576
+UTF-16 units, with at most 512 editor ranges or 2,048 starts per Reading
+channel. The shared catalog retains at most 128 most-recent channel/path records
+and 2,097,152 serialized UTF-8 bytes. It stores hashes/ranges rather than note
+bodies; it does not edit vault notes, configuration or original private keys.
+
+Source/Live Preview restores only exact currently foldable offsets, honoring
+heading/list preferences and supported current plugin fold services. One
+bounded 50ms parser pass can validate folds beyond the initial viewport.
+Restoration retains the existing document, selections, plugin state and Undo/
+Redo; all primary and secondary caret/selection destinations remain visible.
+A fresh pane sharing genuinely dirty text skips profile replay. Retained
+in-memory editor history/folds take priority over profile replay. Visible
+Source navigation unfolding, explicit fold controls, mapped text changes and
+preference-off expansion can update its remembered actual fold state.
+
+Reading persists explicit user choices on its original mapped main-view
+heading and nested-list controls, without replacing or moving rendered
+blocks, task controls, plugin nodes or nested lists. Navigation may temporarily
+open only destination ancestors while retaining the target's own fold; Find
+continues to search visible content. These reveals and Find do not rewrite
+remembered intention. Turning a Reading fold preference off expands/removes
+its controls; turning it on restores eligible exact-source choices. Original
+continuation prose and independent heading/list choices retain their prior
+ownership. Static, embedded, quoted/callout and plugin-created/replacement
+renderings do not acquire main-view folding ownership.
+
+Both modes guard current file/session/source/root and refuse obsolete or hidden
+owners. Duplicate panes keep their own view; the last explicit visible action
+wins its stored channel without live mirroring or idle/teardown writes.
+Confirmed file/folder rename operations migrate preference paths and rebind
+live Source owners after document remapping. Corrupt records fall back without
+applying folds; storage denial/quota leaves ordinary nonmutating folding usable
+and reports that preferences could not be remembered. Bounded eviction,
+storage loss, unobserved external renames and crash durability remain limits.
+Cached read-only GitHub vaults use only local profile state, with typing and
+remote writes refused, zero API/raw requests and unchanged cached blobs.
+
+**Explicit note creation.** A complete nonempty supported missing wiki-link
+query offers **Create note: name** after ordinary known-note/alias suggestions.
+Typing alone never creates a file. Bare names use the existing root/current/
+configured-folder placement; supported explicit paths retain normal safe path
+validation. A complete bounded file/alias/metadata proof suppresses ambiguous
+or already resolved destinations; absent metadata, changed contributors or
+exhausted proof budgets suppress this action. Installed EditorSuggest providers
+retain priority. Empty/partial target suffixes, heading/block queries,
+attachments, unsafe paths and read-only owners receive no creation action.
+
+Acceptance rechecks the actual editor, exact source/cursor/session/root,
+destination and placement/link preferences before the create-only FileManager
+write. A collision or stale pre-write owner refuses without overwriting or
+auto-renaming a file. After acknowledgement, it inserts one preferences-correct
+wiki or Markdown link only into the same still-current source, without
+navigating away. The source insertion has isolated Undo; Undo never deletes
+the acknowledged new file. If the owner becomes stale after creation or
+post-write metadata/layout cleanup fails, the file is kept and no stale source
+link is inserted. A Notice explains that result; the original error remains
+available for the existing error audit. This is an acknowledged two-stage
+workflow, not an atomic cross-file rollback or power-loss guarantee.
+
+Completion retains the existing 262,144-unit source, 256-unit query and
+40-result limits. Creation proof inspects at most 10,000 Markdown candidates,
+262,144 aggregate alias characters and 262,144 dirty-source parse characters.
+Missing headings/new block IDs, arbitrary new-note entry points, Properties
+creation widgets, broader native/private grammar/input, physical IME/popout
+and plugin/static/embedded folding equivalence remain outside this subset.
+The supplied **1.15.0** static reference informed independent adaptations;
+the pinned **1.12.7** target is unchanged. The [local acceptance receipt](../../.runtime/evidence/note-continuity-accepted-2026-11-15/receipt.json) binds
+the final source, reports, captures and declared limits.
+
+## Markdown polish, 2026-11-14
+
+**Accepted bounded workflows on both hosts.** Source `ae4e709cc14a1b18932bdb2ad19de83f1161251681c1e65e64ff5679c3893bac` isolates
+Reading task completion styling to each original inline label, adds bounded
+tilde/equal Markdown input assistance, and bundles ten more Reading/static code
+languages. Type checking, native Debug, published WASM and static serving pass.
+All **1,862 default/44 GitHub regressions** and **298 focused checks** pass with
+**1,156 unchanged build outputs**. No dependencies were added; the native
+backend is byte-identical to the accepted Markdown-interactions wave.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| markdown-polish | 26 | 38 |
+| markdown-interaction | 26 | 38 |
+| editor-assistance | 23 | 35 |
+| editor-improvements | 18 | 30 |
+| reading-tools | 31 | 43 |
+| reading-discovery | 19 | 31 |
+| renderers | 13 | 25 |
+| math-embeds | 8 | 20 |
+
+All **16 scopes / 424 reported checks** retain current
+source/artifact identity, final error audits and clean owned shutdown. Actual
+pointer/keyboard input, exact BOM/CRLF/Unicode source/history, original DOM and
+processor ownership, stale jobs/targets, restart/reconnection and genuine
+cache-only read-only vaults pass. Reviewed captures cover task labels, Source/
+Live Preview extra pairs and real dark/light language colors. The receipt keeps
+attempts and execution conditions. The GUI collection above used repository-local
+.NET 10.0.0 with ordinary logging. Three preceding full regression runs on that
+runtime each retained one failure in a different pre-existing native test. The
+first captured an Internal CLR error during static-asset floating-point parsing;
+the second captured a connection reset followed by cleanup EPIPE without the
+native exit. The third observed 129 native children: 128 normal exits and one
+exit/close `0xC0000005`, with CLR `0x80131506` in
+`IPAddress.TryParse`/Kestrel before readiness. The first two six-test files
+passed unchanged in isolation. No specific cause was established.
+
+A separate same-assembly console probe with no Slopsidian code or requests
+passed 77 launches on 10.0.0, then exited `0xC0000409` before producing output;
+its arm stopped on that first failure. The same probe passed 100/100 launches
+on installed 10.0.15. The probe's captured signature differs from the app's CLR
+fault; these observations do not establish a shared defect or a patch fix.
+The accepted default regression collection uses installed .NET 10.0.15 on the
+unchanged application DLL, with health-endpoint framework confirmation and
+diagnostic-only child output/exit capture. Build SDK 10.0.100, application/build
+bytes, assertions, request coverage and JIT options remain unchanged; runtime,
+framework and JIT implementation bytes differ. This regression environment is
+separate from the retained 10.0.0 GUI environment. Neither environment uses
+automatic test or HTTP retries. Failed runs and all diagnostic output remain
+in the receipt. Historical milestones, source identities,
+receipts and the fixed 31-module/140-case contract retain their own evidence.
+The preceding milestone's checked-parent styling gap remains recorded there;
+the task-label adaptation below closes that gap in the current implementation.
+This does not renew full native/private input, physical IME, popout, arbitrary
+theme/plugin CSS, PDF export or OS dictionary word-write acceptance.
+
+**Task completion labels.** Original renderer checkboxes remain leading inputs
+directly in a tight list item or its leading loose paragraph. Before processors
+and source-control captures, their eligible inline text/strong/emphasis/code/
+link nodes move into neutral `span.reading-task-label` containers, retaining
+their identities. Completion color and line-through apply to a checked item's
+own direct label spans, rather than the ancestor list item. Unchecked children,
+ordinary nested prose and loose continuation paragraphs retain their own normal
+color/decoration; checked descendants retain their own completed labels.
+Original child lists, checkbox positions, source-backed image/embed nodes and
+their containing inline ancestors, inline note-embed anchors and foreign block
+subtrees stay outside each parent's completion label. Folding retains the
+resulting original nodes and subsequent plugin children/listeners. This label
+boundary is prepared before processors; dynamically injected postprocessor
+descendants do not gain a new separation guarantee, and plugins retain
+responsibility for their own replacement/injected DOM.
+
+The shared renderer styles tight/loose/nested bullet/ordered tasks in main,
+quoted, embedded, component-owned static and read-only Reading content. Styling
+adds no editing eligibility: only original source-mapped current main-view task
+inputs use the existing one-marker/history/normal-save workflow. Embedded,
+static, quoted/callout and plugin-created/replacement controls do not acquire
+main-view editing. Read-only, hidden, stale, changed-source, composing/locked
+and vault/file-transition refusals stay intact.
+
+Label preparation scans each original inline sibling run forward, stopping at
+unsupported block tags and excluding embedded/foreign block subtrees; it uses
+no source copies, text matching or new editor offsets. The task-editing limits
+remain separate and unchanged: 1,048,576 source UTF-16 units, 65,536 LF/CRLF
+lines, 4,096 metadata items/root children/list items/inputs, 4,096 units per task
+source line, 64 ancestry steps and 160 codepoints per accessible task label.
+Only declared original inline shapes and existing default styling are covered.
+Third-party theme or plugin CSS can override decoration; alternate platforms,
+popouts and full native/private visual equivalence need separate evidence.
+
+**Extra Markdown pairs.** The existing independent **Automatic Markdown pairs**
+setting still defaults to enabled. A single `~` or `=` at an empty caret is
+literal. Typing a matching second single marker creates an owned `~~` or `==`
+closer only at a supported inline prose boundary. Bare whitespace and repeated/
+mixed quote, bullet or ordered prefixes (one to nine digits) stay literal so fences and Setext underlines
+remain available. Spaced operators, word-adjacent/escaped markers, code,
+frontmatter, links, HTML, comments, math and other unsupported contexts keep
+ordinary input. A third opening tilde/equal in an empty generated double drops
+the unused closers and leaves an exact literal three-marker run. One input event
+containing both markers is ordinary input too.
+
+A supported nonempty single-line selection wraps one marker per side with each
+typed `~`/`=`; repeating once forms `~~strike~~` or `==highlight==` while
+retaining anchor/head direction and one isolated Undo step per action. Generated
+double closers overtype one marker at a time; empty-pair Backspace removes one
+marker on each side at a time. Spacing removes unused generated closers. Literal
+imported/restored closing runs never gain inferred ownership. The inline
+empty-caret double trigger is an independent adaptation: the supplied static
+reference demonstrates extra-marker selection wrapping, rather than that
+automatic inline trigger. It does not establish native pairing equivalence.
+
+Existing limits remain 262,144 document UTF-16 units, 16,384 syntax nodes,
+4,096 protected contexts, a 20ms complete-tree request, 64 ranges, 4,096 units
+per range/containing line, 16,384 total selected units and 128 generated pairs.
+Tilde/equal pairs grow at most two markers per side; asterisk/underscore growth
+retains its three-marker limit. Unsupported multi-range members, incomplete/
+oversized parsing, malformed Unicode, surrogate-interior boundaries and
+multiline/whitespace-edge selections decline assistance. Disabled, read-only,
+noneditable/composing and non-Markdown paths retain their guards. Existing
+emphasis/bracket/list behavior, preference/history ownership and higher-priority
+plugin/completion behavior stay independent; cached preference writes remain
+local overlays with source typing refused. Other delimiters, Vim and full
+native/IME/grammar behavior remain outside this subset.
+
+**Ten more local code languages** are Dart, Clojure, Haskell, R, Perl, Erlang,
+Scala, CMake, Nginx and Objective-C, using already installed CodeMirror
+legacy-modes 6.5.2. Explicit aliases add `clj/cljs/cljc/edn`, `hs`, `rscript`,
+`pl/pm`, `erl` and `objective-c/objc`. Ambiguous `m/mm/conf`, PHP, unknown,
+plain and unlabelled fences remain unsupported/plain; Objective-C++ is not
+claimed. Labels are case-insensitive and retain the existing first-info-word
+matching. Reading and public component-owned static renderers emit inert local
+token spans without fetching or executing code. Original code/pre nodes, exact
+text/source lines and registered fenced-processor precedence remain intact;
+changed/replaced or obsolete code jobs do not acquire highlighting.
+
+The existing budgets remain 65,536 UTF-16 units per block, 262,144 units and
+64 blocks per renderer, 16,384 spans per block, 4,096 parse advances and a 30ms
+incremental parse budget. Failure or budget exhaustion retains the complete plain source.
+Actual Appearance controls change distinct dark/light token colors without
+replacing code/editor owners. A genuine cached read-only note covers Dart,
+Clojure, CMake and Objective-C with exact source, zero API/raw requests and
+unchanged cached blobs through local-vault return. Broader languages/dialects,
+native Prism token/color parity, private APIs and arbitrary plugin/theme output
+remain separate.
+
+The supplied **1.15.0** static reference informed independent adaptations; the
+pinned **1.12.7** target is unchanged. The [local acceptance receipt](../../.runtime/evidence/markdown-polish-accepted-2026-11-14/receipt.json) binds
+reports, tests, reviewed captures and retained attempts to this source.
+
+## Markdown interactions, 2026-11-14
+
+**Accepted bounded workflows on both hosts.** Source `0952c8909da6e4f1e441771340d544823bdb2e17fd402de5aaa3cc4f931b44a6` adds nested
+list folding and source-backed task editing in the current main Reading view,
+plus configurable automatic asterisk/underscore emphasis pairs in Source and
+Live Preview. Type checking, native Debug, published WASM and static serving
+pass. All **1,836 default/44 GitHub regressions** and **272 focused checks** pass with
+**1,156 unchanged build outputs**. No dependencies were added.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| markdown-interaction | 22 | 34 |
+| editor-assistance | 23 | 35 |
+| editor-improvements | 18 | 30 |
+| editor-productivity | 17 | 29 |
+| reading-tools | 31 | 43 |
+| reading-discovery | 19 | 31 |
+| renderers | 13 | 25 |
+| math-embeds | 8 | 20 |
+
+All **16 scopes / 398 reported checks** retain strict current
+source/artifact identity, final error audits and clean owned shutdown. Actual
+pointer/keyboard controls, exact BOM/CRLF/Unicode source and editor history,
+stale owners/targets, pending processors, restart/reconnection and genuine
+cache-only read-only vaults pass. Reviewed captures include measured 320px
+Reading/settings columns. The receipt retains attempts and execution conditions.
+The fixed 31-module/140-case contract, historical 58-scope snapshots and earlier
+milestones/receipts keep their original identities. Full native/private input,
+physical IME, popout, PDF export and OS dictionary word-write acceptance are not
+renewed by these bounded Markdown workflows.
+
+**Reading list folding** captures original mapped lists/items before plugin
+postprocessors. A button appears only on an eligible item with an original
+direct nested `ul`/`ol` body. Collapsing hides those child lists while retaining
+continuation prose, original DOM nodes/listeners/task inputs and independent
+nested choices. Original root/item order, mappings and owned controls are
+rechecked; removed/replaced structures retire controls and restore only owned
+hidden attributes. Embedded/static/quoted/callout and plugin-created or replaced
+content does not acquire these controls; appended footnote bodies are outside
+the inventory too. `Fold lists` is independent of
+`Fold headings`; both default to enabled, and turning lists off expands their
+bodies and removes list buttons. Fold choices belong to the current render,
+without editing Source text, hidden editor state or history. Navigation expands
+owning heading/list ancestors before revealing heading/block/footnote targets,
+while preserving the destination item's own child fold. Find excludes controls
+and hidden content; any folding visibility change synchronously invalidates
+captured scope, retaining query/options and never expanding hidden matches.
+Recapture explicitly or turn off **In selection**.
+
+List limits are 1,048,576 source UTF-16 units, 65,536 source lines, 2,048 metadata
+items, 4,096 root blocks, an 8,192-entry original structure inventory, 32 nested
+list levels, 1,024 units per source item line and 65,536 total label-line units.
+Unsupported or ambiguous mappings refuse this render's list controls.
+
+**Reading task editing** enables only original leading task inputs with an
+unambiguous source marker in an ordinary list of the current main view. Tight,
+loose, nested, bullet and ordered tasks support pointer/Space activation. Each
+action changes exactly one `[ ]`/`[x]`/`[X]` marker character through the
+existing editor, isolates one Undo step and uses normal dirty/versioned saving;
+paused saving stays paused. Surrounding source, selection, BOM/CRLF/Unicode and
+unrelated dirty prose are retained. A source edit rerenders Reading, retires its
+old Find owner and resets per-render folds. Focus is restored to the fresh
+checkbox only while its owner/document is still current and later user input
+has not superseded that restoration. Hidden, obsolete, changed-source,
+read-only, composing/locked and vault/file-transition actions refuse edits.
+The feature does not enable embedded/static/quoted/callout or plugin-created/
+replacement inputs, or inputs inside appended footnote bodies. Genuine cached
+read-only tasks remain disabled, and forced
+events/direct handlers restore authoritative state without source changes.
+Existing Reading styling can strike through unchecked descendant labels under
+a checked parent. Independent checkbox/source states remain correct; nested
+task label styling remains open.
+
+Task limits are 1,048,576 source UTF-16 units, 65,536 LF/CRLF source lines,
+4,096 metadata items/root children/list items/inputs, 4,096 units per candidate
+task source line, 64 ancestry steps and 160 Unicode codepoints per accessible
+task label. Classic-CR source and ambiguous/unsupported inputs are excluded.
+
+**Automatic Markdown pairs** is an independent Editor switch, defaulting to
+enabled; malformed imports visibly use that default without rewriting them.
+Supported Markdown prose pairs `*` and `_`, grows owned empty pairs through
+strong/triple emphasis, wraps supported single-line selections in their original
+direction, overtypes only owned generated closers and deletes empty pairs
+symmetrically. Bullet/task/rule spacing removes an unused generated closer.
+Escapes, intraword boundaries, code, frontmatter, HTML, links, comments and math
+conservatively use ordinary input. Turning it off keeps existing text and makes
+marker typing/deletion ordinary. Bracket pairing and list/quote continuation
+remain independent; existing/new editor instances, selections, history and
+plugin/completion priority are retained. Undo/non-typing replacements do not
+infer ownership of restored literal markers. Read-only/composing/noneditable
+editors receive no manufactured pairs; cached preferences use the local overlay.
+
+Pairing limits are 262,144 document UTF-16 units, 16,384 syntax nodes, 4,096
+protected contexts, 64 selection ranges, 4,096 units per selected range and
+containing line, 16,384 total selected units, 128 generated pairs and three
+markers per grown pair. The syntax-tree request has a 20ms budget; unavailable
+or oversized contexts decline assistance. Whitespace cleanup accepts at most
+64 space/tab units. Multiline/whitespace-edge selections, malformed Unicode
+and surrogate-interior boundaries also decline assistance. Other Markdown
+delimiters, Vim, exhaustive syntax/native input and persisted Reading fold
+state remain outside this extension.
+
+The supplied **1.15.0** static reference informed independent implementations;
+the pinned **1.12.7** target is unchanged. The [local acceptance receipt](../../.runtime/evidence/markdown-interaction-accepted-2026-11-14/receipt.json) binds
+reports, tests, reviewed captures and retained attempts to this source.
+
+## Editor assistance, 2026-11-14
+
+**Accepted bounded workflows on both hosts.** Source `2dd7e07c26f307b5e888b65e5ee6476951b268cbb623785ca4a22a6f5e65a317` adds
+current-view heading folding in Reading, configurable automatic bracket pairs
+and list/quote continuation, and fuzzy matching for existing note/subpath
+suggestions. Type checking, native Debug, published WASM and static serving pass.
+All **1,780 default/44 GitHub regressions** and **232 focused checks** pass with
+**1,156 unchanged build outputs**. No dependencies were added.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| editor-assistance | 23 | 35 |
+| note-navigation | 42 | 54 |
+| editor-improvements | 18 | 30 |
+| editor-productivity | 17 | 29 |
+| reading-tools | 31 | 43 |
+| reading-discovery | 19 | 31 |
+| renderers | 13 | 25 |
+| math-embeds | 8 | 20 |
+
+Regression hosts disable only the optional Windows EventLog provider for this
+process; Console logging and all real HTTP/status/version/byte assertions remain
+active, with no request retries. Earlier full runs each retained one connection
+reset in a different legacy API test. Restricted diagnostics reproduced logger
+permission aborts, while the original rare outside reset was not reproduced; the
+failed attempts and exact environment are retained in the receipt. The native
+backend is byte-identical to the prior accepted wave. GUI runs use their ordinary
+logging.
+
+All **16 scopes / 438 reported checks** retain strict current
+source/artifact identity, final error audits and clean owned shutdown. Actual
+controls, exact fixture bytes/history, stale owners/targets, restart/reconnection
+and genuine cache-only vaults pass. Reviewed captures include narrow surfaces.
+The fixed 31-module/140-case contract, historical 58-scope snapshots and previous
+receipts retain their original identities. Native/private/popout/physical IME,
+PDF export and OS dictionary word-write acceptance are not renewed here.
+
+Reading fold controls apply to metadata-mapped top-level heading blocks in the
+current Markdown view. Collapsing a heading hides original mapped following
+blocks through the next equal/higher heading, retaining original DOM nodes,
+listeners and nested fold choices. Injected/unmapped root siblings, appended
+footnote sections and plugin-replaced block nodes stay outside that inventory.
+Raw/mismatched headings refuse folding; empty headings have no control. Navigation expands owning ancestors before revealing heading/block/
+footnote destinations. Find excludes controls/hidden blocks. Any folding
+visibility change synchronously invalidates captured scope, including captures
+elsewhere; query/regex options stay intact and Find does not expand hidden
+matches. Recapture explicitly or turn off **In selection**. Turning **Fold headings**
+off expands Reading headings and removes controls. Static renderer fragments,
+embedded/callout/quoted headings and Reading list folding remain separate.
+Ownership and inventory bounds prevent stale controls from hiding a replacement
+view; Source text, hidden editor state and history remain intact. Limits are
+1,048,576 source UTF-16 units, 4,096 top-level blocks, 2,048 metadata headings,
+1,024 units per heading label and 65,536 total label units.
+
+**Automatic bracket pairs** and **Continue lists and quotes** are independent
+Editor controls, both defaulting to enabled. Installed CodeMirror pairing and
+Markdown continuation update through the existing preference compartment.
+Disabling pairing uses ordinary typing/Backspace; disabling continuation uses
+ordinary newline/indent. Existing CodeMirror instances, selections, history,
+plugin/completion precedence, folding and unrelated preferences are retained.
+Cached read-only vaults persist settings only in the existing local overlay;
+typing remains refused. Markdown delimiter pairing, Vim and full native input
+behavior are outside this extension.
+
+Existing note/alias, heading/block and global-heading choices now accept bounded
+noncontiguous queries. Exact/prefix/substring tiers precede fuzzy results;
+boundary/contiguous bonuses and stable tie-breaks order fuzzy candidates. A
+bounded scorer uses code-point-aware case folding, a 256-code-unit query and
+1,024-code-unit value. Fuzzy work has separate 1,048,576-character preprocessing
+and 8,388,608-step budgets, with at most 64 original codepoints of lookahead
+per possible start. Matching keeps a greedy prefix within each window and can
+try later final-character endings; it does not enumerate all subsequences.
+Literal matching continues after either fuzzy budget is exhausted, retaining
+later literal winners.
+Property-key and ordinary same-key value matching stay literal. Canonical
+ancestor/duplicate/addressability proofs and guarded acceptance remain separate
+from ranking. No unresolved/new-note, heading or block-ID creation is added;
+typo-distance matching and complete native ranking remain open.
+
+The supplied **1.15.0** static reference informed independent implementations;
+the pinned **1.12.7** target is unchanged. The [local acceptance receipt](../../.runtime/evidence/editor-assistance-accepted-2026-11-14/receipt.json) binds
+reports, tests, reviewed captures and retained attempts to this source.
+
+## Note navigation, 2026-11-14
+
+**Accepted bounded workflows on both hosts.** Source `b5ffcc1b1b69204af0bd1e49261cee1cccf266f1d280f8afbe263470e0add3f5` adds
+independent Source/Live Preview heading/list folding controls, existing heading/
+block destinations in Properties wiki-link choices, and explicit multi-note
+selection/opening in Files workspace panes. Type checking, native Debug,
+published WASM and static serving pass. All **1,729 default/44 GitHub regressions** and
+**159 focused checks** pass with **1,156 unchanged build outputs**.
+No dependencies were added.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| note-navigation | 42 | 54 |
+| reading-tools | 31 | 43 |
+| editor-productivity | 17 | 29 |
+| file-explorer | 9 | 21 |
+| note-workflows | 21 | 33 |
+| properties | 13 | 25 |
+
+All **12 scopes / 338 reported checks** retain current source/
+artifact identity, final error audits and normal owned exits. Actual controls,
+isolated history, exact fixture bytes, stale owners/targets, restart/reconnection
+and genuine cached read-only workflows pass. Reviewed captures include narrow
+surfaces; synthetic composition checks do not establish physical IME behavior.
+The fixed 31-module/140-case contract, historical 58-scope snapshots and earlier
+receipts keep their original identities. Native PDF/correction and OS dictionary
+word-write acceptance are not renewed here; real custom-word writes remain
+unaccepted, with mutation coverage mocked only.
+
+**Fold headings** and **Fold lists** are independent Editor settings, defaulting
+to enabled. Existing editors reconfigure without losing document, selection,
+plugin state or Undo. Disabled classes immediately expand and lose their gutter
+markers; code/frontmatter and other fold classes remain independent. Source and
+Live Preview gutters, fold commands and saved/direct fold effects respect the
+preferences. Cached read-only notes may fold and unfold; preference changes use
+the existing local configuration overlay. No note/cache blob is rewritten.
+Reading folding and exhaustive nested/private/native fold behavior remain open.
+Markdown fold classification is bounded to 1,048,576 code units and a 50ms
+parse attempt; incomplete classification refuses unknown folds when a class is
+disabled, rather than bypassing its preference.
+
+Properties text/ordinary list add fields now complete existing heading/block
+destinations after explicit whole-field wiki intent, including current-note and
+hierarchical heading choices. The same existing resolver proves exact destination
+positions; unknown/ambiguous targets and heading/block creation are unavailable.
+Alias-based subpaths require a complete bounded uniqueness proof; incomplete
+note/alias inventories or unavailable current text refuse that alias lookup.
+Dirty target text, current source, identity, preferences and deferred owner are
+rechecked before a guarded edit. Existing whole-note/alias choices, same-value
+prefix consumption and the two controlled Properties renderer races are renewed.
+This remains a string-value workflow with existing YAML serialization limits;
+all types, structured link widgets, richer ranking and new target creation remain.
+
+Files has an explicit **Select notes** mode. Visible Markdown rows can be
+selected with pointer/keyboard modifiers and opened through **Open selected
+notes**, after a complete bounded identity/visibility preflight. Normal browsing
+and Ctrl/Meta-click opening retain their existing behavior outside this mode.
+Selections belong to one live pane and are not persisted; hidden/replaced targets
+and disposed owners cannot execute held actions. This provides selected-note
+browsing on both hosts, including cached read-only notes. Batch file mutations,
+file-tree transfers, full private trees and complete native multi-selection
+behavior remain separate.
+At most 64 notes may be selected, and one opening action accepts 1–20 notes.
+Actual cache-only validation exposed a quiet layout-completion race: a live
+Files pane could retain disabled controls after workspace restoration finished.
+An ownership-bound refresh now waits for workspace completion without requiring
+an unrelated event, preserving stale/disposed-pane guards and stable row DOM
+during ordinary pointer activation.
+
+The shipped **1.15.0** static reference informed independent implementations;
+the pinned **1.12.7** target is unchanged. The [local acceptance receipt](../../.runtime/evidence/note-navigation-accepted-2026-11-14/receipt.json) binds
+reports, tests, reviewed captures and retained attempts to this source.
+
+## Reading tools, 2026-11-14
+
+**Accepted bounded workflows on both hosts.** Source
+`56bcecfbfc770331ac3f44eaa158a84bd36be98fe96254a0ba077cf29519c4cd` adds opt-in fixed-width regex to Reading Find, ten more
+local code languages and whole-field known-note/alias wiki-link choices in
+Properties text and list add fields. Type checking, native Debug, published WASM
+and static verification pass. All **1,690 default/44 GitHub regressions** and
+**202 focused checks** pass; final inputs and **1,156 build outputs**
+remain unchanged. No dependencies were added.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| reading-tools | 31 | 43 |
+| note-workflows | 21 | 33 |
+| reading-discovery | 19 | 31 |
+| editor-improvements | 18 | 30 |
+| properties | 13 | 25 |
+
+All **10 scopes / 264 reported checks** retain strict source/artifact,
+final-error and owned-shutdown audits with zero unexpected errors. Native
+processes exit normally; browser helpers acknowledge and drain without force.
+The fixed 31-module/140-case benchmark, historical 58-scope snapshots and earlier
+receipts retain their original sources and counts. This collection renews the
+listed workflows; it does not renew the earlier native correction/PDF export
+acceptance or Windows custom-dictionary word mutations, whose acceptance remains
+explicitly mocked only.
+
+Reading's **Regular expression** option uses the same guarded fixed-width subset as Source Find:
+literals, character classes, dots, captures and anchors, up to 256 code units.
+Quantifiers, alternation, lookarounds and backreferences refuse before execution;
+invalid syntax clears stale matches and reports a visible message. Nonempty
+matches retain case/whole-word options, per-section boundaries, raw UTF-16
+mapping, captured-passage unions and document paint limits. Prose whitespace is
+collapsed; code whitespace is retained, and pattern syntax is never collapsed.
+Zero-width results are skipped; the scan advances by Unicode code point and
+terminates at the terminal boundary without counting or painting empty ranges. Real controls,
+320px layout, scope retention, stale-owner cleanup, independent physical changes,
+restart/reconnection and genuine cache-only search pass without rewriting DOM
+or source. Unrestricted regex and broader grammar/scale remain open.
+
+Reading and public component-owned MarkdownRenderer add **Go, Kotlin, Swift,
+Ruby, Lua, Dockerfile, INI, TOML, diff and XML** using already installed
+CodeMirror legacy-modes 6.5.2. Distinct keyword/string/comment/value ranges,
+diff additions/deletions, source lines, theme colors and exact Unicode/BOM/CRLF
+are checked on both hosts. Registered code processors retain ownership; after
+unregistering, built-in decoration returns. A held real postprocessor, superseded
+by an independent physical edit, cannot decorate its detached stale code after
+release. Unknown/plain and oversized fences retain their full inert source.
+Cached read-only Go/TOML/XML fences highlight without network traffic or blob
+changes. Existing 65,536-character block, 262,144-character/64-block view,
+16,384-span and incremental parse limits are unchanged. INI uses the installed
+properties grammar; XML remains separate from HTML. These are independent
+classifications, not complete Prism or language/dialect equivalence.
+
+In inline Reading/Live Preview Properties and the Properties pane, type **[[**
+at the start of a whole text value or ordinary list add field to choose an
+existing Markdown note or its known alias. Choices store a complete wiki-link
+string, respect shortest/relative/absolute destination-safe link spelling and
+omit existing list destinations. The note-link intent does not apply to tags,
+aliases, numeric/boolean/structured fields, embedded prose, headings/block IDs
+or note creation. Current source, dirty target text/aliases, target identity,
+link preferences and deferred field/file/root ownership are rechecked before
+the guarded property edit. Pointer/keyboard acceptance, isolated Undo/Redo,
+stale/queued refusal, exact fixture saves, restart and cached read-only mutation
+refusal pass. The earlier committed-field and adjacent-focus race workflows are
+renewed. Existing YAML serialization may normalize changed flow-list spacing;
+complete Properties types, structured link widgets, ranking and native/private/
+physical IME equivalence remain open.
+
+The optional shipped **1.15.0** reference informed independent behavior; the
+pinned **1.12.7** target is unchanged. [local acceptance receipt](../../.runtime/evidence/reading-tools-accepted-2026-11-14/receipt.json) binds actual
+reports, reviewed captures, tests and retained attempts to this source.
+[Usage](../Features/APPLICATION.md#finding-in-reading-view) and the roadmap keep
+heading/ID creation, broader grammars/languages/dialects, full Properties UI,
+native/popout/OS dictionary acceptance and other export/platform work separate.
+
+## Note workflows, 2026-11-14
+
+**Accepted bounded workflows on both hosts.** Source
+`7d1039d0999df0221fb4af1622c533745446cd57421a06e7970793f184dcaed4` adds hierarchical heading completion,
+known string-value suggestions in actual Properties fields and selected-passage
+Reading Find. Type checking, native Debug, published WASM and static verification
+pass. All **1,657 default/44 GitHub regressions** and **169 focused checks** pass;
+final inputs and **1,156 build outputs** remain unchanged.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| note-workflows | 21 | 33 |
+| editor-workflows | 16 | 27 |
+| reading-discovery | 19 | 31 |
+| editor-productivity | 17 | 29 |
+| properties | 13 | 25 |
+
+All **10 scopes / 231 reported checks** retain strict source/artifact,
+final-error and owned-shutdown audits with zero unexpected errors. Native
+processes exit normally; browser helpers acknowledge and drain without force.
+The historical 58-scope matrix, fixed 31-module/140-case benchmark and earlier
+acceptances keep their recorded sources and counts. The earlier native
+correction/PDF export acceptance is not renewed by this collection. Windows
+custom-dictionary word writes retain their explicit mocked-only boundary.
+
+Source/Live Preview `[[Note#Parent#Child]]` and `[[#Parent#Child]]` choices
+carry canonical ancestor context and insert a destination-safe known link.
+Each ancestor selects its first normalized match inside the preceding ancestor's
+subtree; a later duplicate ancestor cannot supply a missing child. Existing flat
+whole-name matching, including literal-`#` headings, retains priority, and
+shadowed hierarchy choices are omitted. Chains use at most six segments and
+1,024 code units over a complete inventory of at most 2,048 headings. Actual
+popup/keyboard choices, nonzero clipped Reading destinations, inactive/returned
+carets, stale physical ancestors, dirty targets, isolated Undo/Redo, exact
+BOM/CRLF, restart/reconnection and cached read-only refusal/navigation pass.
+No note, heading or block ID is created.
+
+Visible Properties text fields and list/tags/aliases add fields suggest known
+strings under the same exact key in other indexed Markdown notes, including
+dirty open contributor text. Existing list values are omitted and tags retain
+their validator. Source, contributor, draft, row/file/root, composition,
+mutation barriers and deferred-core ownership are rechecked at acceptance.
+Actual fields, pointer/keyboard choices, isolated Undo/Redo, stale/queued
+refusal, restart and read-only behavior pass. A controlled asynchronous completion
+and rapid-Undo case recreates the committed field from its actual current value;
+the already accepted prefix cannot survive and later overwrite Undo on blur. These edits use the existing YAML
+serializer; changed flow-list spacing may be normalized. This does not claim
+arbitrary lexical preservation or complete property-type/link-value/ranking UI.
+
+Reading Find captures visible selected text. **Use current selection** replaces
+the restriction; **Add selection** builds a sorted, merged union of up to 64
+passages without searching their gaps. Counts/navigation/highlights stay inside
+the union; matches do not cross existing block/widget boundaries. Ordinary
+query focus preserves the capture, foreign/excluded selections clear pending
+capture, and native-selection navigation fallback cannot recapture its own
+match. DOM changes invalidate a restriction until explicit recapture or disabling
+**In selection**. Close/mode/file/owner/document transitions release it; no scope
+is persisted and neither source nor rendered/plugin DOM is rewritten.
+
+The optional local shipped **1.15.0** methods informed independent behavior;
+the pinned **1.12.7** target remains unchanged. [local acceptance receipt](../../.runtime/evidence/note-workflows-accepted-2026-11-14/receipt.json)
+binds actual reports, reviewed captures, tests and retained attempts to this
+source. [Usage](../Features/APPLICATION.md#built-in-link-and-property-completion)
+retains heading creation/new IDs, full Properties types/link values/ranking,
+broader Reading regex/grammar/scale, native/private/popout/physical-IME behavior,
+other export surfaces and platform integration as separate work.
+
+## Editor workflows, 2026-11-14
+
+**Accepted bounded workflows on both hosts.** Source
+`4539c0bf5b346c43e130d4814464f5beffb4eebfbbba02bf9a1b1f83b52c9442` adds Source/Live Preview/Reading
+cursor handoff, multi-range selection-scoped Find/Replace and Windows native
+spelling management. [Usage and limits](../Features/APPLICATION.md#editing-modes-and-ownership)
+retain the broader renderer, search, platform and private-API boundaries.
+Type checking, native Debug, published WASM and static verification pass.
+All **1,606 default / 44 GitHub regressions** and **133 focused checks** pass. Final inputs and
+**1,156 build outputs** remain unchanged.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| editor-workflows | 16 | 27 |
+| reading-discovery | 19 | 31 |
+| editor-productivity | 17 | 29 |
+| note-authoring | 18 | 28 |
+
+All **8 scopes / 185 reported checks** pass strict source/artifact,
+final-error and owned-shutdown audits. Processes exit normally; browser helpers
+acknowledge and drain without force. Declared negative fixtures remain visible
+with zero unexpected errors. The historical 58-scope matrix, fixed
+31-module/140-case benchmark and earlier accepted milestones keep their own
+source identities and counts.
+
+Physical Reading round trips preserve dirty source, multiple selections and
+Undo/Redo without saving. Real far-heading and block links align the clipped
+visible Reading destination with the inactive Source caret and its later
+Source/Live Preview handback. Installed CodeMirror stale native-selection
+attempts and retained cancelled scroll callbacks cannot replace the deliberate
+destination. Shared panes retain independent carets; exact BOM/CRLF bytes,
+restart/reconnection and cache-only read-only navigation/refusal pass. This
+resolves the earlier hidden-Source caret observation for these bounded cases;
+complete native cursor/scroll/history and popout/input equivalence remain open.
+
+Selection search captures the union of up to 64 nonempty CodeMirror selections,
+sorting and merging overlapping/touching ranges. Matches cannot cross a gap;
+outside edits map the bounds and ordinary intersecting edits invalidate the
+capture. Actual controls, wrapped F3 navigation, Replace next/all, fixed-width
+regex, isolated Undo/Redo, explicit recapture/checkbox/Close ownership, narrow
+layout, exact saves and restart pass in Source/Live Preview. Cached notes retain
+Find while mutations refuse and every cached blob stays exact with zero API/raw
+requests. That source did not yet include captured Reading passages; the later
+[note-workflows acceptance](#note-workflows-2026-11-14) adds the bounded union.
+Broader Reading regex/grammar/scale remains open.
+
+Windows **Settings > Editor > Spellcheck languages and dictionary** manages
+app-profile languages across vaults. Real host checks cover list/filter controls,
+language persistence and restart; dictionary additions/removals are implemented
+but their mutation/version/ownership acceptance uses in-memory native-session
+doubles only. Real OS dictionary writes were not performed: Electron documents
+that Windows custom-word changes also affect the
+[OS dictionary](https://www.electronjs.org/docs/latest/api/session#sesaddwordtospellcheckerdictionaryword). Browser spelling controls remain host-owned;
+native macOS/Linux and physical OS-dictionary mutation acceptance remain open.
+Accepted writes drain after Close; expired/stale capabilities, detached controls
+and obsolete replies cannot revive an earlier page. A failed post-write review
+requires Reload and invalidates retained spelling contexts.
+
+The optional local shipped **1.15.0** reference guided independent code; it does
+not change the pinned **1.12.7** target or establish original-runtime equivalence.
+The source-bound reports, reviewed captures and retained attempts are linked from
+the [local acceptance receipt](../../.runtime/evidence/editor-workflows-accepted-2026-11-14/receipt.json).
+Heading creation/new block IDs, broader highlighting grammars, non-Markdown/popout
+export and complete native/private/visual/physical-IME behavior remain separate.
+
+## Reading and discovery, 2026-11-14
+
+**Accepted bounded workflows on both hosts.** Source
+`2278ea1046db255fa7825a88818eaaccabbfb79fae3ba416d780a3238f3f7893` adds Reading search,
+global heading suggestions and ten local code-highlighting grammars.
+[Usage and limits](../Features/APPLICATION.md#finding-in-reading-view) distinguish
+these workflows from full native/private/ranking/grammar equivalence.
+Type checking, native Debug, published WASM and static verification pass.
+All **1,565 default / 44 GitHub regressions** pass without failures,
+skips or cancellations; final inputs and **1,156 build outputs** remain unchanged.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| Reading search, global headings and added code languages | 19 | 31 |
+| Prior Editor preferences, YAML values and selection search | 17 | 29 |
+| Prior highlighting, note/key completion and Find/Replace | 18 | 30 |
+| Renderer/plugin/static ownership and unchanged Admonition | 13 | 25 |
+
+All **eight scopes / 182 reported checks** pass strict source/artifact,
+final-error and owned-shutdown audits with zero unexpected errors. Native
+processes exit normally; browser helpers acknowledge and drain without force.
+Expected conflict/processor-failure fixtures remain visible. The historical
+58-scope matrix, fixed 31-module/140-case benchmark and earlier PDF/spellcheck/
+inline-footnote acceptances retain their own sources and scope.
+
+Reading uses the existing Find/F3/Shift+F3 command IDs and managed hotkeys, with
+literal text, case/whole-word options, current-match counts and wrapping.
+Nonmutating native ranges/CSS Highlights retain plugin DOM and source bytes.
+Checks cover inline prose/code, hard-break/visible-widget barriers, collapsed
+prose whitespace with exact raw positions, actual match scrolling, stale DOM,
+independent pane ownership, mode/clear/document-move cleanup, limits, narrow
+controls, read-only notes and restart/reconnection. Replacement remains a
+Source/Live Preview workflow. Mathematical/media/nested-embed/UI text, cross-block
+matches and full browser/native text-search equivalence remain outside this subset.
+
+Global `[[##query` suggestions select current or cross-note addressable headings
+and insert ordinary destination-safe wiki links. Actual Source/Live Preview
+choices, duplicate-name qualification, first normalized heading selection,
+Reading link navigation, isolated Undo/Redo, exact BOM/CRLF saves and observed
+target/source removal/replacement refusal pass. Scans/dirty parsing/ranking are
+bounded. The later [note workflows](#note-workflows-2026-11-14) add hierarchical
+chains without changing this recorded source; new IDs and complete native
+ranking remain open.
+
+C/C++, C#, Java, Python, Rust, shell, PowerShell, YAML and SQL extend the local
+Reading/static highlighter. Every added grammar retains exact code/source lines,
+inert token DOM, the original limits/plain fallback and registered processor
+precedence. Actual static rendering, C# processor ownership, external refresh,
+restart and cached read-only C#/Python fences pass.
+The pinned **@codemirror/legacy-modes 6.5.2** package uses the existing
+StreamLanguage adapter; its MIT notice is included with both app/Web assets.
+[Upstream package metadata](https://github.com/codemirror/legacy-modes/blob/main/package.json)
+and local `reading-discovery-dependency.json` record its identity. Native Prism,
+all dialects/languages, custom-code Live Preview widgets and full visual parity
+remain separate.
+
+The optional local shipped **1.15.0** reference informed these independent
+implementations; it does not change the pinned **1.12.7** target or establish
+original-runtime equivalence. Static identities/observations are retained in
+`reading-discovery-reference.json`. The first native attempt used a hidden-Source caret navigation assertion; its
+pre-cleanup state was not retained. A later pair passed visible-heading checks,
+then review tightened those checks to the clipped pane/window rather than the
+whole content box. Earlier reports remain in reading-discovery-attempt-1/ and
+reading-discovery-attempt-2/. A retained success snapshot shows an inactive
+Source caret at a prior position during one Live Preview handoff despite the
+correct visible Reading heading. The local reading-discovery-cursor-limit.json
+retains that historical gap. The later [editor-workflows acceptance](#editor-workflows-2026-11-14)
+resolves the observed handoff for its explicit heading/block and stale-selection
+cases; full native cursor/scroll/history equivalence remains unestablished.
+Current UI captures and their visual review
+are retained in `reading-discovery-ui-qa.json`. Exact source-bound outputs/hashes
+and the final receipt are archived in
+`.runtime/evidence/reading-discovery-accepted-2026-11-14/receipt.json`.
+
+## Editor productivity, 2026-11-14
+
+**Accepted bounded workflows on both hosts.** Source
+`cc4189aea0a79760676a882569518010d51b096694b1b335cb73ab66b88ad60f` adds
+[Editor text preferences](../Features/APPLICATION.md#editor-text-preferences),
+[selection-scoped Find/Replace](../Features/APPLICATION.md#find-and-replace-in-the-current-note)
+and [raw YAML property-value completion](../Features/APPLICATION.md#built-in-link-and-property-completion).
+Type checking, native Debug, published WASM and static verification pass.
+All **1,529 default / 44 GitHub regressions** pass without failures,
+skips or cancellations; final inputs and **1,152 build outputs** stay unchanged.
+The focused collection also passes 117 checks.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| Editor preferences, property values and selection search | 17 | 29 |
+| Prior highlighting, Find/Replace and note/key completion | 18 | 30 |
+| Prior heading/block completion, spellcheck and print/PDF | 18 | 28 |
+
+All **six scopes / 140 reported checks** pass source/artifact, final-error and
+owned-shutdown audits. Processes exit normally; browser helpers acknowledge and
+drain without force. Declared conflict fixtures remain visible, with **zero
+unexpected errors**. This renews the listed editor/authoring workflows; the
+previous eight-scope inline-footnote/renderer acceptance below remains attached
+to its own source. The historical 58-scope matrix and fixed 31-module/140-case
+benchmark are unchanged.
+
+Real Editor controls reconfigure existing Source/Live Preview editors, including
+shared/new panes, while preserving document/selection/history/plugin identity.
+Checks cover actual visible/removed line-number gutters, wrapping/horizontal
+overflow, readable-width styles, spaces/tab indentation, mutation barriers,
+external/malformed settings, opaque configuration fields and restart/reconnection.
+Cached GitHub changes stay in a local preference overlay.
+
+Raw YAML checks choose actual scalar, block-list and flow-list suggestions in
+Source and Properties-disabled Live Preview, then verify isolated Undo/Redo and
+exact saved BOM/CRLF bytes. Independently observed contributor changes and newer
+source invalidate held choices. The current note does not contribute its own
+unfinished prefix; only same-key string values from other indexed notes qualify.
+
+Selection search exercises the actual checkbox, explicit recapture, counts,
+F3/Shift+F3, Replace next/all, trusted typing/stale-scope refusal, keyboard Undo,
+320-pixel control layout, exact saves and restart. History ownership prevents
+Undo from reviving a closed scope, overriding a newer range or re-enabling a
+later unchecked control. Genuine cached read-only notes remain searchable while
+source mutations refuse; all three workflows preserve every cached blob through
+local-vault return with zero API/raw requests.
+
+The renewed authoring pair again performs a real native spelling correction and
+Save/PDF generation. Current PDF hashes/content/options/page bounds and all three
+rendered pages are reviewed in `note-authoring-pdf-qa.json`. Browser print/menu
+routing remains the earlier bounded invocation/media fixture, with physical OS
+UI outside that acceptance.
+
+Static observations from the optional local **1.15.0** reference informed the
+independent implementation; the pinned **1.12.7** target is unchanged. The local
+reference identities/observations are retained in
+`.runtime/evidence/editor-productivity-reference.json`.
+That source established single-range Source/Live Preview search, fixed-width
+regex, text-layout/indentation controls and valid single-line string YAML slots.
+Later Reading/discovery and editor-workflows milestones expand search and
+Windows spelling controls without changing this recorded acceptance. Full
+Properties value UI/types/ranking, richer Reading multi-range search/highlighting,
+broader syntax, localization/OS integration and complete
+native/private/visual/physical-IME behavior remain open.
+
+The first host attempt exposed an ambiguous test selector: the replacement input
+and Replace next button share a name. The corrected harness targets the actual
+button and retains exact byte/Undo assertions. Both failed host reports and the
+passing earlier-source regression run remain in
+`.runtime/evidence/editor-productivity-attempt-1/`.
+The final archive/receipt is
+`.runtime/evidence/editor-productivity-accepted-2026-11-14/receipt.json`.
+
+## Note authoring, 2026-11-14
+
+**Accepted bounded workflows on both hosts.** Source
+`a42b10f4a389959fa1c1927c6b12b68a09a600c0e883b4fbb0cb64501e011f2c`
+adds [host spellcheck controls, print/PDF export and heading/block completion](../Features/APPLICATION.md#spellcheck).
+Type checking, both builds/static verification, **1,500 default and 44 GitHub
+regressions** pass, with no failures, skips or cancellations. Final inputs and
+all **1,149 captured build outputs** remain unchanged.
+
+| Complete current-source runtime collection | Desktop checks | Actual-folder WASM checks |
+|---|---:|---:|
+| New note-authoring workflows | 18 | 28 |
+| Previous code highlighting, Find/Replace and wiki/YAML completion | 18 | 30 |
+| Discovery panes, definition authoring and inline footnotes | 20 | 32 |
+| Renderer/plugin/static ownership and unchanged Admonition | 13 | 25 |
+
+All **eight scopes / 184 reported checks** pass strict source/artifact, final
+error-policy and owned-process audits. Every final process exits normally;
+browser helpers acknowledge and drain without force. Declared conflict and
+processor-failure fixtures remain visible; there are **zero unexpected errors**.
+These scopes do not rerun the full historical 58-scope matrix or renew whole-core
+badges or the fixed 31-module/140-case contract.
+
+The authoring pair covers real settings/commands, external preference changes,
+malformed values, retained editor/selection/Undo, current and cross-note
+heading/block destinations, observed stale targets, exact BOM/CRLF saves,
+restart/reconnection and genuine cached read-only refusal/local overlays.
+Cached blobs remain exact through local-vault return, with zero API/raw requests.
+Hidden settings callbacks and superseded native menu requests are generation-fenced.
+
+Native spelling acceptance requires actual dictionary events, a real correction,
+isolated Undo/Redo and stale-control refusal. On this runtime the synchronous
+webFrame probes stayed false while real events supplied `mispelled` / `misspelled`;
+the acceptance gate now uses the actual context menu, following
+[Electron's context-menu interface](https://www.electronjs.org/docs/latest/tutorial/spellchecker#how-do-i-put-the-results-of-the-spellchecker-in-my-context-menu).
+The separate cleanly exited implicit/explicit-language diagnostics and their
+hash audit remain in `.runtime/evidence/spellcheck-native-readiness-audit.json`.
+Browser dictionary UI is host-controlled; only its menu routing was automated.
+
+Native export uses the actual Save dialog and Electron PDF generator. The retained
+171,044-byte PDF has three Letter/landscape pages with 18-point minimal margins.
+Hash/size, text including the unsaved tail, local image, pagination and page bounds
+pass; all three Poppler-rendered pages were visually reviewed. Table, Unicode,
+math, highlighted code, diagram, callout and endnote remain legible, with no app
+chrome, hidden frontmatter/file-name title, clipping or overlap. Browser tests
+exercise the real print-media DOM through an explicit invocation fixture; they do
+not drive a physical browser/printer dialog.
+
+Review fixed an existing-destination change during a final renderer wait, and
+closed-but-draining export owners now remain alive until outstanding work settles.
+New PDFs publish create-only; confirmed replacements are rechecked immediately
+before publication. The final stat/rename cross-process window, unsupported
+filesystems, non-Markdown/popout export and complete theme/plugin/native/visual
+equivalence remain outside acceptance.
+
+Failed attempts retain the switch/input selector mismatch, literal CDP CRLF
+insertion and unsupported UIA filename-field assumptions. The Save driver now
+uses the observed native filename control with bounded readiness and exact text
+readback; its deliberate-failure diagnostic verifies automatic owned Cancel and
+unchanged existing bytes. Original failures survive cleanup errors. Raw reports,
+logs, PDF/PNGs, source/build hashes and the strict final receipt are retained in
+`.runtime/evidence/note-authoring-accepted-2026-11-14/receipt.json`.
+Recovered 1.15.0 editor/export methods were implementation guidance, not a pinned
+1.12.7 parity comparison; no extracted implementation was copied.
+
+This pair also closes the missing final host sign-off for
+[inline footnotes and Reading endnotes](INLINE-FOOTNOTES-2026-11-09.md): all twelve
+workflow flags and cached read-only navigation/refusal/blob checks pass on both
+hosts, alongside the renewed renderer collection. Nested/multiline grammar and
+full private/visual/physical-input equivalence remain open.
+
+## Editor improvements, 2026-11-13
+
+Reading/static code highlighting, Source/Live Preview Find/Replace and bounded
+wiki-link/property-key completion are implemented. The focused host collection is
+`npm run smoke:editor-improvements` and its `:web` counterpart. It exercises
+all three together, including restart/reconnection and a genuine cached read-only
+GitHub vault with unchanged blobs and zero API/raw requests.
+
+**Accepted bounded workflows on both hosts.** Frozen source
+`5721de440a8ee46c0ecfb8b64fca76737d0d11993bf06db3f8737f97177fae3a`
+passes type checking, native/WASM builds, static web verification, **1,464 default
+regressions and 44 GitHub-provider regressions**, without skips or cancellations.
+
+| Current-source runtime collection | Recorded result |
+|---|---|
+| Native desktop | 18 checks; three complete process generations exit normally with code 0. |
+| Standalone WASM | 30 checks against an actual picked folder, with no renderer Node integration and fresh-document folder reconnection; acknowledged/drained helper shutdown exits with code 0 and no force. |
+| Final error audit | Native has no records. WASM retains one declared 409 external-change conflict from the baseline save-refusal scenario; neither host has unexpected records, including teardown. |
+| Input/build binding | Frozen source and 1,146 captured build outputs remain unchanged through validation. |
+
+Raw reports, final logs, screenshots, source inputs, artifact hashes and the
+strict final audit are retained locally in
+`.runtime/evidence/editor-improvements-accepted-2026-11-13/receipt.json`.
+These focused scopes do not rerun the historical 58-scope matrix, renew core
+badges, change the fixed 31-module/140-case requirements or establish full parity.
+
+Actual restart acceptance found a cached Reading render finishing during vault
+restoration. Passive highlighting now follows its generation/root ownership;
+interactive processors/embeds retain the settled-vault guard. The combined checks
+also verify real processor precedence, static rendering, exact BOM/CRLF saves,
+isolated Undo, hotkey overrides and non-overlapping search controls at ordinary
+and 320px widths. Wiki/alias completion works in Source/Live Preview; the visible
+mode menu selects Source for raw YAML keys because normal Live Preview gives
+that range to its Properties editor. Cached read-only checks refuse mutations,
+make zero API/raw requests and preserve all blobs through return to the local vault.
+
+Failed attempts remain separate: a CDP startup timeout, the Reading startup bug,
+typing into hidden Live Preview YAML and an escaped-regex error in the read-only
+test hook. An initial restricted regression run encountered Windows Event Log
+permission errors. A later normal-permission runner stayed CPU-busy after all
+16 autosave cases had reported success; that owned process was stopped and its
+log retained. The unchanged isolated 16-case suite passed immediately, and the
+complete unchanged 1,464-case rerun passed with a 60-second bound per file.
+
+Peer review corrected literal-context/YAML/composition completion bugs and two
+search issues: unrestricted JS regex could stall matching, and CodeMirror's fixed
+keys bypassed application hotkey overrides. The built-in panel now rejects
+non-fixed-width patterns before native matching/counting; ordinary direct query
+effects receive the same guard. Trusted third-party extensions retain their own
+execution semantics, including extender-added queries; this is not an arbitrary
+plugin sandbox. The language/subset limits remain in the
+[application guide](../Features/APPLICATION.md#reading-code-highlighting).
+No extracted reference code was copied into the feature implementation.
+
+## Roadmap status audit, 2026-11-13
+
+The roadmap, feature inventory and README were reconciled against the retained
+source and acceptance records after removing an older local file overwrite.
+The implementation and scenario sources still contain the completed workflows.
+
+Both complete integration receipts were rechecked: `73bd3e73` (November 3) and
+`3af6437b` (November 4), each with 58 required and 58 passing scopes and no
+pending cases. All **116 retained report SHA-256 hashes** match their receipts.
+The current `auditReport` checks also pass for each report's recorded source,
+complete workflow, artifact stability, final error policy and owned-process
+shutdown. The local audit is
+`.runtime/evidence/roadmap-status-audit-2026-11-13.json`; the tracked
+[integration](INTEGRATION-WAVE-2026-11-03.md) and
+[follow-up](CONTINUATION-2026-11-03.md) summaries preserve the original scope.
+
+This closes stale documentation claims that the combined integration, Outline
+reordering, math/note embeds, attachment viewers, marketplace expansion, trusted
+theme resources/watching and reviewed filter subscriptions were still pending
+or missing. The receipts are historical: no full GUI matrix was rerun for this
+audit, and neither the fixed core counts nor current-build badges are promoted.
+
+At this audit, inline footnotes were **implemented, final host acceptance
+pending**: the November 9 record did not include a final frozen pair and its
+referenced reports were absent. Existing code/tests did not substitute for that
+sign-off. The later [November 14 authoring collection](#note-authoring-2026-11-14)
+now closes it with fresh discovery and renderer results; the earlier
+footnote-authoring acceptance retains its separately documented scope.
+
 ## Desktop shutdown and original capture, 2026-11-03
 
 Completed 2026-11-04 on `3af6437b`: 1,377 default/44 GitHub tests, both

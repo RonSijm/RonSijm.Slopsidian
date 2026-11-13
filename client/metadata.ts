@@ -3,7 +3,7 @@ import { requestJson, type FileEntry, type MetadataDocuments, type MetadataIssue
 import { Events } from "./events";
 import { allTags, parseMarkdown, sameValue, type CachedMetadata, type LinkCache } from "./markdown";
 import { createLinkResolver, fileLinktext, linkTextFormat, type LinkDestination } from "./links";
-import { TFile } from "./vault";
+import { TAbstractFile, TFile, TFolder } from "./vault";
 import type { PropertyInfo } from "./property-types";
 
 export interface ResolvedReference {
@@ -27,6 +27,7 @@ export class MetadataCache extends Events {
   unresolvedLinks: Record<string, Record<string, number>> = Object.create(null);
   private readonly documents = new Map<string, IndexedDocument>();
   private observedFiles = new Map<string, { file: TFile; stat: FileEntry["stat"] }>();
+  private observedFolders = new Map<string, TFolder>();
   private resolve: (link: string, source: string, uri?: boolean) => LinkDestination<TFile> | null = () => null;
   private root: string | null = null;
   private revision = -1;
@@ -48,7 +49,25 @@ export class MetadataCache extends Events {
       }
     };
     for (const name of ["create", "modify", "delete", "rename"]) {
-      this.app.vault.on(name, changed);
+      this.app.vault.on(name, (file: unknown, oldPath?: unknown) => {
+        // FileManager emits its own folder events, including while indexing is paused.
+        // Acknowledge only that subtree so a later refresh still sees unrelated changes.
+        if (!this.applying && file instanceof TFolder && !file.isRoot()) {
+          if (name === "delete" || name === "rename") {
+            const source = typeof oldPath === "string" ? oldPath : file.path;
+            for (const [path, folder] of [...this.observedFolders]) {
+              if (path === source || path.startsWith(source + "/")) {
+                this.observedFolders.delete(path);
+                if (name === "rename" && this.app.vault.getFolderByPath(folder.path) === folder) {
+                  this.observedFolders.set(folder.path, folder);
+                }
+              }
+            }
+          }
+          if (name === "create" || name === "rename") { this.observedFolders.set(file.path, file); }
+        }
+        changed();
+      });
     }
   }
 
@@ -60,6 +79,7 @@ export class MetadataCache extends Events {
     this.diskIssues = [];
     this.documents.clear();
     this.observedFiles = new Map(this.app.vault.getFiles().map(file => [file.path, { file, stat: { ...file.stat } }]));
+    this.observedFolders = this.folders();
     this.resolutionIssues.clear();
     this.resolvedLinks = Object.create(null);
     this.unresolvedLinks = Object.create(null);
@@ -72,6 +92,12 @@ export class MetadataCache extends Events {
       }
     }
     this.trigger("finished");
+  }
+
+  private folders(): Map<string, TFolder> {
+    return new Map(this.app.vault.getAllLoadedFiles()
+      .filter((file): file is TFolder => file instanceof TFolder && !file.isRoot())
+      .map(folder => [folder.path, folder]));
   }
 
   async pause(): Promise<void> {
@@ -279,6 +305,7 @@ export class MetadataCache extends Events {
         }
         // Other inventory refreshes must not consume changes before metadata observes them.
         const priorFiles = this.observedFiles;
+        const priorFolders = this.observedFolders;
         const priorDocuments = new Map(this.documents);
         const priorResolved = this.resolvedLinks, priorUnresolved = this.unresolvedLinks;
         this.app.vault.setSnapshot(snapshot);
@@ -304,8 +331,23 @@ export class MetadataCache extends Events {
         this.error = null;
         this.app.workspace.acceptExternalDocuments(payload.documents);
         this.observedFiles = new Map(this.app.vault.getFiles().map(file => [file.path, { file, stat: { ...file.stat } }]));
+        this.observedFolders = this.folders();
         this.applying = true;
         try {
+          // Remove children before parents, including file/folder replacements at one path.
+          const removed: TAbstractFile[] = [
+            ...[...priorFiles].filter(([path, prior]) => this.app.vault.getFileByPath(path) !== prior.file).map(([, prior]) => prior.file),
+            ...[...priorFolders].filter(([path, folder]) => this.observedFolders.get(path) !== folder).map(([, folder]) => folder),
+          ];
+          removed.sort((a, b) => b.path.split("/").length - a.path.split("/").length || a.path.localeCompare(b.path));
+          for (const file of removed) {
+            this.app.vault.trigger("delete", file);
+            if (file instanceof TFile) { this.trigger("deleted", file, priorDocuments.get(file.path)?.cache ?? null); }
+          }
+          // The complete inventory and resolved metadata are ready before any callback runs.
+          const createdFolders = [...this.observedFolders].filter(([path, folder]) => priorFolders.get(path) !== folder).map(([, folder]) => folder);
+          createdFolders.sort((a, b) => a.path.split("/").length - b.path.split("/").length || a.path.localeCompare(b.path));
+          for (const folder of createdFolders) { this.app.vault.notifyFolderCreated(folder); }
           for (const file of this.app.vault.getFiles()) {
             const old = priorFiles.get(file.path);
             if (!old) {
@@ -321,12 +363,6 @@ export class MetadataCache extends Events {
             if (entry && (prior?.text !== entry.text || prior.document.version !== entry.document.version
               || !sameValue(priorResolved[file.path], this.resolvedLinks[file.path]) || !sameValue(priorUnresolved[file.path], this.unresolvedLinks[file.path]))) {
               this.trigger("resolve", file);
-            }
-          }
-          for (const [path, prior] of priorFiles) {
-            if (!(this.app.vault.getAbstractFileByPath(path) instanceof TFile)) {
-              this.app.vault.trigger("delete", prior.file);
-              this.trigger("deleted", prior.file, priorDocuments.get(path)?.cache ?? null);
             }
           }
         } finally {

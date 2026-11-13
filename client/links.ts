@@ -333,6 +333,28 @@ export function resolveSubpath(cache: CachedMetadata, subpath: string): { type: 
     const block = cache.blocks[value.slice(1)];
     return block ? { type: "block", start: block.position.start, end: block.position.end } : null;
   }
-  const heading = cache.headings.find(entry => subpathIdentity(entry.heading) === subpathIdentity(value));
+  const identity = subpathIdentity(value);
+  // Keep established whole-heading links (including literal # characters) first.
+  let heading = cache.headings.find(entry => subpathIdentity(entry.heading) === identity);
+  if (!heading && value.includes("#")) {
+    if (value.length > 4096) { return null; }
+    const parts = value.split("#").map(subpathIdentity);
+    if (parts.length > 6 || parts.some(part => !part || part.startsWith("^"))) { return null; }
+    let start = 0, limit = cache.headings.length;
+    for (const part of parts) {
+      let found = -1;
+      for (let index = start; index < limit; index++) {
+        if (subpathIdentity(cache.headings[index].heading) === part) { found = index; break; }
+      }
+      if (found < 0) { return null; }
+      heading = cache.headings[found];
+      start = found + 1;
+      // Each later component belongs to this exact ancestor's subtree. Do not
+      // fall through to a sibling or retry a later duplicate ancestor.
+      for (let index = start; index < limit; index++) {
+        if (cache.headings[index].level <= heading.level) { limit = index; break; }
+      }
+    }
+  }
   return heading ? { type: "heading", start: heading.position.start, end: heading.position.end } : null;
 }

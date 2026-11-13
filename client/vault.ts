@@ -2,7 +2,8 @@ import { getBrowserHost, requestJson, type AdapterStat, type DeleteVaultFileResu
 import { Events } from "./events";
 import { decodeBinary, encodeBinary } from "./binary";
 import { reportError } from "./dom";
-import { assertVaultWritable } from "./vault-io";
+import { assertVaultWritable, TrashRestoreUnavailableError } from "./vault-io";
+import type { VaultTrashEntry, VaultTrashListing, VaultTrashPreview, VaultTrashRestoreItem, VaultTrashRestoreReview, VaultTrashRestoreResult } from "./contracts";
 
 const configurationDefaults: Readonly<Record<string, unknown>> = Object.freeze({
   newFileLocation: "root", newFileFolderPath: "/", openBehavior: "", newLinkFormat: "shortest", useMarkdownLinks: false, attachmentFolderPath: "/", trashOption: "local",
@@ -188,6 +189,7 @@ export class Vault extends Events {
   private name = "";
   private readonly files = new Map<string, TAbstractFile>();
   private readonly notifications = new Map<string, { kind: "create" | "modify"; version?: string; mtime: number; size: number }>();
+  private readonly createdFolders = new WeakSet<TFolder>();
   private readonly processing = new WeakMap<TFile, Promise<string>>();
   private root = new TFolder(this, "/");
 
@@ -302,6 +304,7 @@ export class Vault extends Events {
   }
 
   get supportsSystemTrash(): boolean { return !this.readOnly && !getBrowserHost(); }
+  get supportsTrashRestore(): boolean { return !this.readOnly && !getBrowserHost(); }
 
   async trash(file: TAbstractFile, system: boolean): Promise<void> {
     this.assertWritable("trash", file.path);
@@ -405,6 +408,48 @@ export class Vault extends Events {
     return result;
   }
 
+  async listTrash(): Promise<VaultTrashListing> {
+    this.assertWritable("browse-local-trash"); const root = this.rootPath;
+    if (!root) { throw new Error("Open a local vault before browsing its trash."); }
+    const result = await requestJson<VaultTrashListing>("/api/files/trash/list?" + new URLSearchParams({ root }));
+    if (this.rootPath !== root || result.root !== root) { throw new Error("The selected vault changed while listing trash."); }
+    return result;
+  }
+  async previewTrash(entry: VaultTrashEntry): Promise<VaultTrashPreview> {
+    this.assertWritable("preview-local-trash", entry.path); const root = this.rootPath;
+    if (!root) { throw new Error("Open a local vault before previewing its trash."); }
+    const result = await requestJson<VaultTrashPreview>("/api/files/trash/preview?" + new URLSearchParams({ root, path: entry.path, token: entry.token }));
+    if (this.rootPath !== root || result.root !== root || result.entry.path !== entry.path || result.entry.token !== entry.token) { throw new Error("The selected trash entry or vault changed while previewing."); }
+    return result;
+  }
+  async readTrashCopy(entry: VaultTrashEntry, expectedVersion: string): Promise<Uint8Array<ArrayBuffer>> {
+    this.assertWritable("download-trash-copy", entry.path); const root = this.rootPath;
+    const preview = await this.previewTrash(entry);
+    if (preview.version !== expectedVersion) { throw new Error("The previewed trash note changed. Refresh and preview it again before downloading."); }
+    const bytes = new TextEncoder().encode((preview.hasBom ? "\ufeff" : "") + preview.content);
+    const version = [...new Uint8Array(await crypto.subtle.digest("SHA-256", bytes))].map(value => value.toString(16).padStart(2, "0")).join("");
+    this.assertWritable("download-trash-copy", entry.path);
+    if (this.rootPath !== root || version !== preview.version) { throw new Error("The selected vault or exact UTF-8 copy changed. Refresh and preview the note again."); }
+    return bytes;
+  }
+  async reviewTrashRestore(entries: readonly VaultTrashEntry[], folder: TFolder): Promise<VaultTrashRestoreReview> {
+    this.assertWritable("review-trash-restore"); const root = this.rootPath;
+    if (!root || folder.vault !== this || this.getFolderByPath(folder.path) !== folder) { throw new Error("Choose an existing folder in the selected local vault."); }
+    const result = await requestJson<VaultTrashRestoreReview>("/api/files/trash/review", "POST", { root, folder: folder.path, entries: entries.map(entry => ({ path: entry.path, token: entry.token })) });
+    if (this.rootPath !== root || result.root !== root || result.folder !== folder.path || result.items.length !== entries.length || result.items.some((item, index) => item.trashPath !== entries[index].path || item.newPath !== (folder.isRoot() ? "" : folder.path + "/") + entries[index].name)) { throw new Error("The reviewed trash selection or destination changed. Review again."); }
+    return result;
+  }
+  async restoreTrashFile(review: VaultTrashRestoreReview, item: VaultTrashRestoreItem, acknowledged?: (file: TFile) => void): Promise<VaultTrashRestoreResult> {
+    this.assertWritable("restore-trash", item.newPath); const root = this.rootPath;
+    if (!this.supportsTrashRestore) { throw new TrashRestoreUnavailableError(); }
+    if (!root || review.root !== root || !review.items.some(candidate => candidate.trashPath === item.trashPath && candidate.newPath === item.newPath && candidate.version === item.version)) { throw new Error("This trash restore review belongs to another selection or vault."); }
+    const result = await requestJson<VaultTrashRestoreResult>("/api/files/trash/restore", "POST", { root, token: review.token, path: item.trashPath });
+    if (this.rootPath !== root || result.snapshot.root !== root) { throw new Error("The note was restored in the previous vault; inspect it before retrying."); }
+    if (result.trashPath !== item.trashPath || result.newPath !== item.newPath || result.document.file.path !== item.newPath || result.document.version !== item.version || !result.snapshot.files.some(file => file.path === item.newPath)) { throw new Error("The host's restored-note acknowledgement could not be verified. Inspect current locations before retrying."); }
+    this.setSnapshot(result.snapshot); const file = this.getFileByPath(item.newPath)!; acknowledged?.(file);
+    this.notifyFileChanged("create", file, result.document.version, true); await this.onFilesChanged(); return result;
+  }
+
   async moveFile(file: TFile, path: string, version: string, edits: readonly VaultFileEdit[]): Promise<RenameVaultFileResult> {
     this.assertWritable("rename", file.path);
     const root = this.rootPath;
@@ -468,14 +513,25 @@ export class Vault extends Events {
     this.assertWritable("mkdir", path);
     const root = this.rootPath;
     if (!root) { throw new Error("Open a vault before creating its folders."); }
+    const known = new Set(this.getAllLoadedFiles());
     const snapshot = await requestJson<VaultSnapshot>("/api/files/folders", "POST", { root, path });
     if (this.rootPath !== root || snapshot.root !== root) { throw new Error("The folder was created in the previous vault, but the selected vault changed."); }
     this.setSnapshot(snapshot);
     const folder = this.getFolderByPath(snapshot.folders?.find(entry => entry.toLowerCase() === path.toLowerCase()) ?? path);
     if (!folder) { throw new Error("The created folder is missing from the returned inventory."); }
-    this.trigger("create", folder);
+    const created: TFolder[] = [];
+    for (let parent: TFolder | null = folder; parent && !parent.isRoot(); parent = parent.parent) {
+      if (!known.has(parent)) { created.push(parent); }
+    }
+    for (const entry of created.reverse()) { this.notifyFolderCreated(entry); }
     await this.onFilesChanged();
     return folder;
+  }
+
+  notifyFolderCreated(folder: TFolder): void {
+    if (this.createdFolders.has(folder)) { return; }
+    this.createdFolders.add(folder);
+    this.trigger("create", folder);
   }
 
   notifyFileChanged(kind: "create" | "modify", file: TFile, version?: string, force = false): void {

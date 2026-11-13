@@ -19,6 +19,8 @@ const { createErrorLog } = require("./error-log.cjs");
 const { createSecretStorage, createSecretIpcHandler } = require("./secret-storage.cjs");
 const { installPopouts } = require("./popout-windows.cjs");
 const { assertBackendExitedCleanly, finishPreparedShutdown } = require("./prepared-shutdown.cjs");
+const { installSpellcheck } = require("./spellcheck.cjs");
+const { installPrintExport } = require("./print-export.cjs");
 
 const root = path.resolve(__dirname, "..");
 const smoke = process.argv.includes("--smoke");
@@ -312,6 +314,8 @@ async function main() {
   });
   // Only the owner's own workspace popouts may open; they share its App/plugin owner.
   const popouts = installPopouts({ owner: window, ipcMain, localUrl, isClosing: () => stopping || allowQuit, log: message => console.error(message) });
+  installSpellcheck({ owner: window, ipcMain, localUrl, popouts, locale: app.getLocale(), languagesPath: path.join(profile, "spellcheck-languages.json"), isClosing: () => stopping || allowQuit });
+  installPrintExport({ window, ipcMain, dialog, isLocalUrl: localUrl, isClosing: () => stopping || allowQuit });
   draftRescuer = createDraftRescuer(captureWithDeadline, snapshot => writeDraftRescue(profile, snapshot));
   installMicrophonePermission(session.defaultSession, window, endpoint, dialog, syntheticAudio);
   window.webContents.on("will-navigate", (event, url) => {

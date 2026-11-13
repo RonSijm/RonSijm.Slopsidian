@@ -3,6 +3,7 @@ import { decodeBinary, encodeBinary, MAX_BINARY_BYTES } from "./binary";
 import { isPluginId, PLUGIN_ID_GUIDANCE } from "./plugin-id";
 import { APPEARANCE_CSS_BYTES, AppearanceError, appearanceThemeFilePath, appearanceName } from "./appearance-model";
 import { verifyThemeFiles } from "./appearance-catalog";
+import { BrowserTrashRecovery } from "./explorer-trash-recovery-browser";
 import { APPEARANCE_ASSET_BYTES, appearanceAssetPath, resolveAppearanceResource, verifyAppearanceAsset } from "./appearance-assets";
 
 declare global {
@@ -243,6 +244,7 @@ async function documentFrom(handle: FileSystemFileHandle, path: string): Promise
 }
 
 export class BrowserVault {
+  private readonly trashRecovery = new BrowserTrashRecovery();
   private readonly selections = new Map<string, FileSystemDirectoryHandle>();
   private recent: SavedVaultHandle[] = [];
   private current: SavedVaultHandle | null = null;
@@ -330,6 +332,14 @@ export class BrowserVault {
   private async dispatch(url: URL, method: string, body: unknown): Promise<HostResponse> {
     const path = url.pathname;
     const ok = (value: unknown): HostResponse => ({ status: 200, value });
+    if (url.pathname.startsWith("/api/files/trash/")) {
+      const data = method === "GET" ? Object.fromEntries(url.searchParams) : object(body, "A trash recovery request is required.");
+      const selected = this.requireRoot(data.root ?? null);
+      if (path === "/api/files/trash/list" && method === "GET") return ok(await this.trashRecovery.list(selected));
+      if (path === "/api/files/trash/preview" && method === "GET") return ok(await this.trashRecovery.preview(selected, data.path, data.token));
+      if (path === "/api/files/trash/review" && method === "POST") return ok(await this.trashRecovery.review(selected, data.entries, data.folder));
+      if (path === "/api/files/trash/restore" && method === "POST") return ok(await this.trashRecovery.restore(selected, data.token, data.path));
+    }
     if (path === "/api/vault" && method === "GET") {
       return ok(this.current ? await this.snapshot(this.current) : { root: null, name: "No vault selected", files: [], folders: [], plugins: [] });
     }

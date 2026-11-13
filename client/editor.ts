@@ -1,24 +1,36 @@
-import { basicSetup } from "codemirror6";
-import { Compartment, EditorSelection, EditorState, Facet, StateField, Text, type ChangeSpec, type Extension, type StateEffect } from "@codemirror/state";
+import { Compartment, EditorSelection, EditorState, Facet, StateField, Text, Transaction, type ChangeSpec, type Extension, type StateEffect } from "@codemirror/state";
 import { EditorView, keymap, type ViewUpdate } from "@codemirror/view";
 import { cursorCharLeft, cursorCharRight, cursorDocEnd, cursorDocStart, cursorGroupLeft, cursorGroupRight, cursorLineDown, cursorLineUp, deleteLine, indentLess, indentMore, insertNewlineAndIndent, isolateHistory, moveLineDown, moveLineUp, redo, undo } from "@codemirror/commands";
 import { MutationLock } from "./editor-barrier";
-import { defaultHighlightStyle, ensureSyntaxTree, foldable, foldedRanges, foldEffect, foldService, foldAll, foldCode, HighlightStyle, language, StreamLanguage, syntaxHighlighting, unfoldAll, unfoldCode, unfoldEffect } from "@codemirror/language";
+import { defaultHighlightStyle, foldedRanges, foldEffect, HighlightStyle, syntaxHighlighting, unfoldAll, unfoldEffect } from "@codemirror/language";
 import { tags } from "@lezer/highlight";
 import type { EditorChange, EditorCommandName, EditorSelectionOrCaret, EditorTransaction } from "obsidian";
 import { reportError } from "./dom";
 import { sourcePositions } from "./markdown";
 import { markdownSupport } from "./editor-language";
 import { markdownTags } from "./live-preview";
+import { canReplaceInEditor, closeSearchPanel, editorSearch, findNext, findPrevious, replaceEditorMatch, searchPanelOpen, showEditorSearch } from "./editor-search";
 import type { MarkdownView } from "./workspace";
+import { editorSpellcheck, editorSpellcheckEnabled, invalidateEditorSpellcheck } from "./editor-spellcheck";
+import { editorBaseSetup, editorPreferences, readEditorPreferences } from "./editor-preferences";
+import { availableEditorFold, foldAllEditor, markdownStreamFolding, toggleEditorFold } from "./editor-folding";
+import { EditorFoldState } from "./editor-fold-state";
+import { foldStatePort } from "./fold-state-storage";
 
 const editorContext = Facet.define<MarkdownView | null, MarkdownView | null>({ combine: values => values[0] ?? null });
 const codeFont = syntaxHighlighting(HighlightStyle.define([...defaultHighlightStyle.specs, { tag: tags.monospace, fontFamily: "var(--font-monospace)" }]), { fallback: true });
+
+/** A hidden Reading-mode editor must not import an obsolete browser selection. */
+export function readingSelectionGuard(reading: () => boolean): Extension {
+  const browserEvents = new Set(["select", "select.pointer", "select.keyboard"]);
+  return EditorState.transactionFilter.of(transaction => reading() && !transaction.docChanged && transaction.selection
+    && browserEvents.has(transaction.annotation(Transaction.userEvent) ?? "") ? [] : transaction);
+}
 const editorCommands: Record<EditorCommandName, (view: EditorView) => boolean> = {
   goUp: cursorLineUp, goDown: cursorLineDown, goLeft: cursorCharLeft, goRight: cursorCharRight,
   goStart: cursorDocStart, goEnd: cursorDocEnd, goWordLeft: cursorGroupLeft, goWordRight: cursorGroupRight,
   indentMore, indentLess, newlineAndIndent: insertNewlineAndIndent, swapLineUp: moveLineUp, swapLineDown: moveLineDown,
-  deleteLine, toggleFold: view => unfoldCode(view) || foldCode(view), foldAll, unfoldAll,
+  deleteLine, toggleFold: toggleEditorFold, foldAll: foldAllEditor, unfoldAll,
 };
 export const editorEditorField = StateField.define<EditorView | null>({
   create: () => null,
@@ -42,17 +54,6 @@ export interface EditorFoldInfo {
   folds: { from: number; to: number }[];
   lines: number;
 }
-
-// A stream highlighter can replace the syntax tree, but vault documents still fold as Markdown.
-const foldingStates = new WeakMap<Text, EditorState>();
-const markdownFolding = foldService.of((state, from, to) => {
-  if (!(state.facet(language) instanceof StreamLanguage)) { return null; }
-  let folding = foldingStates.get(state.doc) ?? EditorState.create({ doc: state.doc, extensions: [markdownSupport] });
-  const tree = ensureSyntaxTree(folding, state.doc.length, 50);
-  folding = folding.update({}).state;
-  foldingStates.set(state.doc, folding);
-  return tree ? foldable(folding, from, to) : null;
-});
 
 function positionOffset(document: Text, position: EditorPosition): number {
   const line = document.line(position.line + 1);
@@ -79,11 +80,16 @@ export class Editor {
   private readonly lineSeparatorCompartment = new Compartment();
   private readonly previewCompartment = new Compartment();
   private readonly themeCompartment = new Compartment();
+  private readonly spellcheckCompartment = new Compartment();
+  private readonly preferencesCompartment = new Compartment();
   private darkMode = !document.body.classList.contains("theme-light");
   private previewExtension: Extension = [];
   private readonly plugins = new Map<string, Extension[]>();
   private synchronizing = false;
   private readonly mutationLock = new MutationLock();
+  private selectionIntentDepth = 0;
+  private foldState: EditorFoldState | null = null;
+  private bindingFolds = false;
 
   constructor(parent: HTMLElement, private readonly onChange: (update: ViewUpdate) => void, private readonly onSave: () => Promise<void>, private readonly onSelectionChange: () => void, private readonly owner?: MarkdownView) {
     this.cm = new EditorView({ parent });
@@ -109,21 +115,24 @@ export class Editor {
       extensions: [
         // Only the first fallback highlighter is used; plugin highlighters still take precedence.
         codeFont,
-        basicSetup,
+        editorSearch(() => this.searchWritable(), { managed: Boolean(this.owner) }),
+        editorBaseSetup,
         editorEditorField.init(() => this.cm),
         editorContext.of(this.owner ?? null),
         editorInfoField,
         editorLivePreviewField,
         markdownSupport,
         this.owner ? markdownTags(this.owner) : [],
-        markdownFolding,
-        EditorView.lineWrapping,
+        markdownStreamFolding,
+        this.preferencesCompartment.of(editorPreferences(readEditorPreferences(this))),
         this.lineSeparatorCompartment.of(EditorState.lineSeparator.of(lineSeparator)),
         this.editableCompartment.of(EditorView.editable.of(editable && !this.owner?.app.vault.readOnly)),
+        readingSelectionGuard(() => this.owner?.getMode?.() === "preview" && !(this.selectionIntentDepth > 0)),
         EditorState.transactionFilter.of(transaction => this.owner?.app.vault.readOnly && transaction.docChanged && !this.synchronizing ? [] : transaction),
         this.mutationLock.extension(),
         this.previewCompartment.of(this.previewExtension),
         EditorView.contentAttributes.of({ "aria-label": "Markdown editor" }),
+        this.spellcheckCompartment.of(editorSpellcheck(this, editorSpellcheckEnabled(this))),
         this.themeCompartment.of(editorTheme(this.darkMode)),
         keymap.of([{ key: "Mod-s", run: () => { Promise.resolve(Editor.commands.save(this)).catch(reportError); return true; } }]),
         EditorView.updateListener.of(update => {
@@ -133,6 +142,7 @@ export class Editor {
           if (update.selectionSet && !this.synchronizing) {
             this.onSelectionChange();
           }
+          if (!this.synchronizing) { this.foldState?.update(update); }
         }),
         this.pluginCompartment.of(this.extensions()),
       ],
@@ -140,11 +150,40 @@ export class Editor {
   }
 
   setDocument(content: string, editable = true): void {
+    this.foldState?.detach(); this.foldState = null;
     this.cm.setState(this.state(content, editable));
+    this.bindFoldState(!this.owner?.session?.dirty);
+  }
+
+  /** Local view preferences restore after the real file/session has been installed. */
+  bindFoldState(restore = true): void {
+    this.foldState?.detach(); this.foldState = null;
+    const owner = this.owner, file = owner?.file, session = owner?.session, root = owner?.app.vault.rootPath;
+    if (!owner || !file || !session || !root || session.text !== this.getValue()) { return; }
+    const current = (path: string): boolean => owner.file === file && file.path === path && owner.session === session
+      && owner.app.vault.rootPath === root && owner.app.vault.getFileByPath(path) === file && owner.leaf.view === owner
+      && session.originRoot === root && (this.bindingFolds || owner.isLoaded && owner.getMode() === "source"
+        && !owner.app.changingVault && !owner.leaf.workspace.isChangingFiles && !session.isReloading && this.cm.dom.getClientRects().length > 0);
+    this.foldState = new EditorFoldState(this.cm, foldStatePort(owner.app, "editor"), current);
+    this.bindingFolds = true;
+    try { this.foldState.bind(file.path, this.getValue(), restore); }
+    finally { this.bindingFolds = false; }
+  }
+
+  /** Restoring a location must reveal every saved selection, including secondary carets. */
+  revealFoldedSelections(): void {
+    const state = this.cm.state, effects: StateEffect<unknown>[] = [];
+    foldedRanges(state).between(0, state.doc.length, (from, to) => {
+      if (state.selection.ranges.some(range => range.empty ? range.head > from && range.head < to : range.from < to && range.to > from)) {
+        effects.push(unfoldEffect.of({ from, to }));
+      }
+    });
+    if (effects.length) { this.cm.dispatch({ effects, annotations: Transaction.addToHistory.of(false) }); }
   }
 
   /** Reinstates a previously stashed state (with its undo history) and refreshes the settings that may have changed meanwhile. */
   restoreState(state: EditorState, editable: boolean): void {
+    this.foldState?.detach(); this.foldState = null;
     this.cm.setState(state);
     this.cm.dispatch({ effects: [
       this.editableCompartment.reconfigure(EditorView.editable.of(editable && !this.owner?.app.vault.readOnly)),
@@ -152,7 +191,10 @@ export class Editor {
       this.themeCompartment.reconfigure(editorTheme(this.darkMode)),
       this.pluginCompartment.reconfigure(this.extensions()),
       this.previewCompartment.reconfigure(this.previewExtension),
+      this.spellcheckCompartment.reconfigure(editorSpellcheck(this, editorSpellcheckEnabled(this))),
+      this.preferencesCompartment.reconfigure(editorPreferences(readEditorPreferences(this))),
     ] });
+    this.bindFoldState(false);
   }
 
   /** Refuses user input and Undo/Redo while a workspace file mutation runs, without touching content or history. */
@@ -160,6 +202,20 @@ export class Editor {
 
   setEditable(editable: boolean): void {
     this.cm.dispatch({ effects: this.editableCompartment.reconfigure(EditorView.editable.of(editable && !this.owner?.app.vault.readOnly)) });
+  }
+
+  /** Apply a preference to this existing editor without discarding its selection or Undo history. */
+  refreshSpellcheck(): void {
+    this.cm.dispatch({ effects: this.spellcheckCompartment.reconfigure(editorSpellcheck(this, editorSpellcheckEnabled(this))) });
+  }
+
+  /** Update text preferences and spelling on the same editor without resetting its history. */
+  refreshPreferences(): void {
+    this.cm.dispatch({ effects: [
+      this.preferencesCompartment.reconfigure(editorPreferences(readEditorPreferences(this))),
+      this.spellcheckCompartment.reconfigure(editorSpellcheck(this, editorSpellcheckEnabled(this))),
+    ] });
+    this.cm.requestMeasure();
   }
 
   setDarkMode(dark: boolean): void {
@@ -181,7 +237,7 @@ export class Editor {
     this.cm.dispatch({ changes: { from: 0, to: this.cm.state.doc.length, insert: Text.of(content.split(/\r\n?|\n/)) } });
   }
 
-  syncValue(content: string): void {
+  syncValue(content: string, preserveHistory = false): void {
     const original = this.getValue();
     if (content === original) {
       return;
@@ -204,6 +260,7 @@ export class Editor {
     try {
       this.cm.dispatch({
         effects: this.lineSeparatorCompartment.reconfigure(EditorState.lineSeparator.of(separator)),
+        ...(preserveHistory ? { annotations: Transaction.addToHistory.of(false) } : {}),
         changes: { from: this.posToOffset(range.start), to: this.posToOffset(range.end), insert },
         ...(!sameSeparator ? { selection: { anchor: Math.min(selection.anchor, insert.length), head: Math.min(selection.head, insert.length) } } : {}),
       });
@@ -211,9 +268,10 @@ export class Editor {
     } finally {
       this.synchronizing = false;
     }
+    this.foldState?.synchronize(this.getValue());
   }
 
-  destroy(): void { this.cm.destroy(); }
+  destroy(): void { this.foldState?.detach(); this.foldState = null; invalidateEditorSpellcheck(this); this.cm.destroy(); }
 
   refresh(): void { this.cm.requestMeasure(); }
 
@@ -255,7 +313,7 @@ export class Editor {
   }
 
   /** Replaces one string-offset range as a single isolated undo step, only while the document still equals `expected`. */
-  replaceExpected(expected: string, from: number, to: number, insert: string): void {
+  replaceExpected(expected: string, from: number, to: number, insert: string, origin = "move.outline"): void {
     const original = this.getValue();
     if (original !== expected || !Number.isInteger(from) || !Number.isInteger(to) || from < 0 || to < from || to > original.length) {
       throw new Error("The note changed; no text was moved.");
@@ -263,8 +321,27 @@ export class Editor {
     const range = sourcePositions(original)(from, to), lineBreak = this.cm.state.lineBreak;
     this.cm.dispatch({
       changes: { from: this.posToOffset(range.start), to: this.posToOffset(range.end), insert: Text.of(insert.split(lineBreak)) },
-      annotations: isolateHistory.of("full"), userEvent: "move.outline",
+      annotations: isolateHistory.of("full"), userEvent: origin,
     });
+  }
+
+  /** Applies disjoint source edits in one isolated Undo step without replacing intervening text. */
+  replaceExpectedChanges(expected: string, changes: readonly { from: number; to: number; insert: string }[], origin: string): void {
+    if (this.getValue() !== expected || !Array.isArray(changes) || !changes.length || changes.length > 32) {
+      throw new Error("The note changed; no text was moved.");
+    }
+    let end = -1;
+    const position = sourcePositions(expected), lineBreak = this.cm.state.lineBreak;
+    const edits = changes.map(change => {
+      if (!Number.isInteger(change.from) || !Number.isInteger(change.to) || change.from < 0 || change.to < change.from
+        || change.to > expected.length || change.from < end || typeof change.insert !== "string") {
+        throw new Error("The note changed; no text was moved.");
+      }
+      end = change.to;
+      const range = position(change.from, change.to);
+      return { from: this.posToOffset(range.start), to: this.posToOffset(range.end), insert: Text.of(change.insert.split(lineBreak)) };
+    });
+    this.cm.dispatch({ changes: edits, annotations: isolateHistory.of("full"), userEvent: origin });
   }
 
   getCursor(which: "from" | "to" | "anchor" | "head" = "head"): EditorPosition {
@@ -306,11 +383,11 @@ export class Editor {
     const ranges = transaction.selections ?? (transaction.selection ? [transaction.selection] : undefined);
     const selection = ranges ? EditorSelection.create(ranges.map(range =>
       EditorSelection.range(positionOffset(document, range.from), positionOffset(document, range.to ?? range.from)))) : undefined;
-    this.cm.dispatch({
+    this.withSelectionIntent(() => this.cm.dispatch({
       ...replacement, changes, ...(selection ? { selection } : {}), userEvent: origin, scrollIntoView: true,
       // Keep an automatic plugin batch with its preceding action, not the next typed edit.
       annotations: origin === undefined ? isolateHistory.of("after") : undefined,
-    });
+    }));
   }
 
   getFoldInfo(): EditorFoldInfo {
@@ -333,7 +410,7 @@ export class Editor {
     foldedRanges(state).between(0, document.length, (from, to) => { effects.push(unfoldEffect.of({ from, to })); });
     for (const fold of [...info?.folds ?? []].sort((left, right) => left.from - right.from || left.to - right.to)) {
       const start = document.line(fold.from + 1), end = document.line(Math.min(fold.to + 1, document.lines));
-      const range = foldable(state, start.from, start.to);
+      const range = availableEditorFold(state, start.from, start.to);
       if (range) { effects.push(foldEffect.of({ from: range.from, to: Math.max(range.to, end.to) })); }
     }
     if (effects.length) { this.cm.dispatch({ effects }); }
@@ -405,7 +482,39 @@ export class Editor {
 
   blur(): void { this.cm.contentDOM.blur(); }
 
+  /** Release only native ranges belonging to Source before its DOM is hidden. State/history stay intact. */
+  releaseReadingSelection(): void {
+    const content = this.cm.contentDOM, selection = content.ownerDocument.getSelection();
+    const owned = selection && (content.contains(selection.anchorNode) || content.contains(selection.focusNode));
+    if (this.cm.hasFocus) { content.blur(); }
+    if (owned) { selection.removeAllRanges(); }
+  }
+
   hasFocus(): boolean { return this.cm.hasFocus; }
+
+  private searchWritable(): boolean {
+    const owner = this.owner;
+    return !owner || Boolean(owner.isLoaded && owner.file && owner.getMode() === "source" && !owner.app.vault.readOnly && !owner.app.changingVault && !owner.leaf.workspace.isChangingFiles);
+  }
+
+  canReplace(): boolean { return canReplaceInEditor(this.cm, () => this.searchWritable()); }
+
+  showSearch(replace = false): boolean {
+    if (this.owner && (!this.owner.isLoaded || !this.owner.file || this.owner.getMode() !== "source")) { return false; }
+    return showEditorSearch(this.cm, replace);
+  }
+
+  closeSearch(): boolean { return closeSearchPanel(this.cm); }
+
+  searchIsOpen(): boolean { return searchPanelOpen(this.cm.state); }
+
+  findNext(): boolean { return findNext(this.cm); }
+
+  findPrevious(): boolean { return findPrevious(this.cm); }
+
+  replaceNext(): boolean { return replaceEditorMatch(this.cm, false, () => this.searchWritable()); }
+
+  replaceAll(): boolean { return replaceEditorMatch(this.cm, true, () => this.searchWritable()); }
 
   undo(): void { if (!this.owner?.app.vault.readOnly) { undo(this.cm); } }
 
@@ -414,7 +523,14 @@ export class Editor {
   exec(command: EditorCommandName): void {
     const action = Object.hasOwn(editorCommands, command) ? editorCommands[command] : undefined;
     if (!action) { throw new Error(`Unknown editor command: ${command}`); }
-    action(this.cm);
+    this.withSelectionIntent(() => action(this.cm));
+  }
+
+  private withSelectionIntent<T>(action: () => T): T {
+    const previous = this.selectionIntentDepth ?? 0;
+    this.selectionIntentDepth = previous + 1;
+    try { return action(); }
+    finally { this.selectionIntentDepth = previous; }
   }
 
   addExtension(id: string, extension: Extension): void {

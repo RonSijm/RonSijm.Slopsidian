@@ -187,6 +187,7 @@
             <h2 id="settings-title">Settings</h2>
             <button class="@(settingsSection == "general" ? "is-active" : "")" @onclick='() => SetSettingsSection("general")'>About this build</button>
             <button id="files-links-tab" class="@(settingsSection == "files" ? "is-active" : "")" @onclick='() => SetSettingsSection("files")'>Files and links</button>
+            <button id="editor-settings-tab" class="@(settingsSection == "editor" ? "is-active" : "")" @onclick='() => SetSettingsSection("editor")'>Editor</button>
             <button id="appearance-tab" class="@(settingsSection == "appearance" ? "is-active" : "")" @onclick='() => SetSettingsSection("appearance")'>Appearance</button>
             <button id="hotkeys-tab" class="@(settingsSection == "hotkeys" ? "is-active" : "")" @onclick='() => SetSettingsSection("hotkeys")'>Hotkeys</button>
             <button id="core-plugins-tab" class="@(settingsSection == "core" ? "is-active" : "")" @onclick='() => SetSettingsSection("core")'>Core plugins</button>
@@ -223,6 +224,11 @@
                 <h2>Appearance</h2>
                 <p class="muted">Preferences are saved in this vault's appearance.json; GitHub vaults keep changes locally. Only select CSS you trust: it changes the entire interface. Self-contained installed themes and top-level snippets are supported; imports and URL/image resources refuse.</p>
                 <div id="appearance-settings-host"></div>
+            </section>
+            <section hidden="@(settingsSection != "editor")">
+                <h2>Editor</h2>
+                <p class="muted">Configure text layout, indentation and spelling while editing notes. Preferences are saved in this vault's app.json; read-only GitHub vaults keep changes locally.</p>
+                <div id="editor-settings-host"></div>
             </section>
             <section hidden="@(settingsSection != "hotkeys")">
                 <h2>Hotkeys</h2>

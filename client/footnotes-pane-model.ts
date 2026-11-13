@@ -34,7 +34,9 @@ export function footnoteEntries(cache: Pick<CachedMetadata, "footnotes" | "footn
   for (const definition of cache.footnotes) {
     if (typeof definition.content !== "string") { throw new Error("A footnote definition needs Markdown content."); }
     const item = entry(definition.id), label = range(definition.labelPosition), body = range(definition.position);
-    if (label.start.offset < body.start.offset || label.end.offset > body.end.offset || !definition.inline && text.slice(label.start.offset, label.end.offset) !== "[^" + definition.id + "]") { throw new Error("The footnote definition no longer matches its source."); }
+    if (label.start.offset < body.start.offset || label.end.offset > body.end.offset || (definition.inline
+      ? label.start.offset !== body.start.offset || label.end.offset !== body.end.offset || /[\r\n]/.test(definition.content) || text.slice(body.start.offset, body.end.offset) !== "^[" + definition.content + "]"
+      : text.slice(label.start.offset, label.end.offset) !== "[^" + definition.id + "]")) { throw new Error("The footnote definition no longer matches its source."); }
     item.definitions.push({ ...definition, labelPosition: label, position: body });
   }
   for (const reference of cache.footnoteRefs) {

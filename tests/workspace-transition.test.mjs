@@ -37,6 +37,47 @@ function fixture(respond = async () => ({ status: 204 })) {
 }
 
 const originalSource = () => ({ root: "vault-A", id: "workspace", version: "original-version", data: { main: { id: "main", type: "split", direction: "vertical", children: [{ id: "tabs", type: "tabs", children: [{ id: "leaf", type: "leaf", state: { type: "empty", state: {} } }] }] }, active: "leaf" } });
+
+test("saved layout completion refreshes guarded pane controls after releasing the layout guard", async () => {
+  const { workspace } = fixture(), hold = gate(), observed = [];
+  let inert = false;
+  workspace.trigger = event => { if (event === "layout-change") { inert = workspace.isChangingLayout; observed.push(inert); } };
+  workspace.applyLayout = async () => { workspace.trigger("layout-change"); await hold.promise; };
+  const transition = workspace.changeLayout({});
+  await tick();
+  assert.equal(inert, true, "the pane remains protected while the layout is being replaced");
+  await assert.rejects(workspace.changeLayout({}), /applying a saved layout/);
+  assert.deepEqual(observed, [true], "a refused competing transition emits no completion");
+  hold.release(); await transition;
+  assert.equal(workspace.isChangingLayout, false);
+  assert.equal(inert, false, "current panes must observe the guard release before the transition resolves");
+  assert.deepEqual(observed, [true, false]);
+});
+
+test("failed saved layout application refreshes restored panes and preserves the original error", async () => {
+  const { workspace } = fixture(), problem = Error("Expected layout rollback"), observed = [];
+  workspace.trigger = event => { if (event === "layout-change") { observed.push(workspace.isChangingLayout); } };
+  workspace.applyLayout = async () => { workspace.trigger("layout-change"); throw problem; };
+  await assert.rejects(workspace.changeLayout({}), error => error === problem);
+  assert.deepEqual(observed, [true, false], "restored panes receive an interactive completion after rollback");
+  assert.equal(workspace.isChangingLayout, false);
+  workspace.applyLayout = async () => {};
+  await workspace.changeLayout({});
+  assert.deepEqual(observed, [true, false, false], "the failure does not leave a permanent busy guard");
+});
+
+test("a pending layout write failure releases and notifies without applying another layout", async () => {
+  const { workspace } = fixture(), problem = Error("Expected pending checkpoint failure"), observed = [];
+  let applied = 0;
+  workspace.layoutWrite = Promise.reject(problem);
+  workspace.trigger = event => { if (event === "layout-change") { observed.push(workspace.isChangingLayout); } };
+  workspace.applyLayout = async () => { applied++; };
+  await assert.rejects(workspace.changeLayout({}), error => error === problem);
+  assert.equal(applied, 0);
+  assert.equal(workspace.isChangingLayout, false);
+  assert.deepEqual(observed, [false]);
+});
+
 test("cancelled explicit import never saves buffers, rereads the source or replaces the current layout", async () => {
   const { workspace, calls } = fixture(async () => ({ status: 200, value: originalSource() })); let installed = 0;
   workspace.changeLayout = async () => { installed++; };

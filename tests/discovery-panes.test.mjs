@@ -7,12 +7,15 @@ import { join, relative } from "node:path";
 import { parseMarkdown } from "../client/markdown.ts";
 import { root } from "./host.mjs";
 
-let directory, tagsPaneState, tagNodes, footnotesPaneState, footnoteEntries, mergeSearchQuery;
+let directory, tagsPaneState, tagNodes, footnotesPaneState, footnoteEntries, planFootnoteEdit, FootnotesPaneView, mergeSearchQuery;
 before(async () => {
   await mkdir(join(root, ".runtime"), { recursive: true }); directory = await mkdtemp(join(root, ".runtime", "discovery-panes-tests-"));
   const outfile = join(directory, "models.cjs");
-  await build({ stdin: { contents: 'export { tagsPaneState, tagNodes } from "./client/tags-pane-model"; export { footnotesPaneState, footnoteEntries } from "./client/footnotes-pane-model"; export { mergeSearchQuery } from "./client/search-pane-model";', resolveDir: root }, outfile, bundle: true, platform: "node", format: "cjs", logLevel: "silent" });
-  ({ tagsPaneState, tagNodes, footnotesPaneState, footnoteEntries, mergeSearchQuery } = createRequire(import.meta.url)(outfile));
+  await build({ stdin: { contents: 'export { tagsPaneState, tagNodes } from "./client/tags-pane-model"; export { footnotesPaneState, footnoteEntries } from "./client/footnotes-pane-model"; export { planFootnoteEdit } from "./client/footnote-edit"; export { mergeSearchQuery } from "./client/search-pane-model";', resolveDir: root }, outfile, bundle: true, platform: "node", format: "cjs", logLevel: "silent" });
+  ({ tagsPaneState, tagNodes, footnotesPaneState, footnoteEntries, planFootnoteEdit, mergeSearchQuery } = createRequire(import.meta.url)(outfile));
+  const view = join(directory, "footnotes.cjs");
+  await build({ entryPoints: [join(root, "client/footnotes-pane-view.ts")], outfile: view, bundle: true, platform: "node", format: "cjs", logLevel: "silent" });
+  ({ FootnotesPaneView } = createRequire(import.meta.url)(view));
 });
 after(async () => { if (directory) { assert.match(relative(root, directory).replaceAll("\\", "/"), /^\.runtime\/discovery-panes-tests-[^/]+$/); await rm(directory, { recursive: true }); } });
 const tags = (counts, state = {}) => tagNodes(counts, tagsPaneState(state));
@@ -97,4 +100,110 @@ test("large repeated-reference inventories keep exact detached positions without
   const text = Array(10000).fill("[^many]").join(" ") + "\n\n[^many]: One note.\n", result = footnotes(text);
   assert.equal(result.length, 1); assert.equal(result[0].references.length, 10000);
   const last = result[0].references.at(-1).position; assert.equal(text.slice(last.start.offset, last.end.offset), "[^many]");
+});
+
+test("footnote editing preserves literal labels, prefix spacing, BOM, CRLF and every byte outside one definition", () => {
+  const text = "\ufeff---\r\nprecise: 9007199254740993 # keep\r\n---\r\nReference [^a λ] and [^other].\r\n\r\n  [^a λ]:\tFirst.\r\n\tContinued 中文.\r\n\r\n[^other]: Unchanged **other**.\r\n";
+  const definition = parseMarkdown(text).footnotes[0], before = structuredClone(definition), plan = planFootnoteEdit(text, definition, "**Edited**.\nNext λ.\n\nLast paragraph.", "\r\n");
+  assert.equal(plan.text, text.replace("  [^a λ]:\tFirst.\r\n\tContinued 中文.", "  [^a λ]:\t**Edited**.\r\n\tNext λ.\r\n\t\r\n\tLast paragraph."));
+  assert.equal(plan.text.slice(0, plan.from), text.slice(0, definition.position.start.offset));
+  assert.equal(plan.text.slice(plan.from + plan.insert.length), text.slice(definition.position.end.offset));
+  assert.deepEqual(definition, before);
+  assert.deepEqual(parseMarkdown(plan.text).footnoteRefs.map(item => item.id), ["a λ", "other"]);
+});
+test("unchanged footnote drafts preserve mixed whitespace and line endings without a replacement", () => {
+  const text = "[^a]:   First\r\n    Second\n\tThird\n", definition = parseMarkdown(text).footnotes[0];
+  const plan = planFootnoteEdit(text, definition, "First\r\nSecond\rThird", "\r\n");
+  assert.equal(plan.text, text); assert.equal(plan.insert, text.slice(plan.from, plan.to));
+});
+test("footnote edits can grow and shrink multiline bodies without consuming adjacent definitions or references", () => {
+  const text = "Text [^a] [^b].\n\n[^a]: One\n    Two\n\n[^b]: Other\nAfter\n", definition = parseMarkdown(text).footnotes[0];
+  for (const content of ["Short", "First\nSecond\n\nThird\n", "", "**Unicode λ 中文**"]) {
+    const plan = planFootnoteEdit(text, definition, content, "\n"), cache = parseMarkdown(plan.text);
+    assert.equal(cache.footnotes[0].content, content); assert.equal(cache.footnotes[1].content, "Other");
+    assert.deepEqual(cache.footnoteRefs.map(item => item.id), ["a", "b"]); assert.ok(plan.text.endsWith("\n\n[^b]: Other\nAfter\n"));
+  }
+});
+test("footnote editing retains existing continuation prefixes for unchanged and modified lines", () => {
+  const text = "[^a]: One\n\tTwo\n    Three\n", definition = parseMarkdown(text).footnotes[0];
+  assert.equal(planFootnoteEdit(text, definition, "Changed\nTwo\nFourth", "\n").text, "[^a]: Changed\n\tTwo\n    Fourth\n");
+});
+test("stale footnote content, positions and identities refuse before a replacement plan exists", () => {
+  const text = "Reference [^a].\n\n[^a]: Current\n", original = parseMarkdown(text).footnotes[0];
+  for (const change of [
+    item => { item.id = "other"; }, item => { item.content = "Stale"; }, item => { item.inline = true; },
+    item => { item.position.start.offset++; }, item => { item.position.end.line++; }, item => { item.labelPosition.start.ch++; },
+  ]) { const definition = structuredClone(original); change(definition); assert.throws(() => planFootnoteEdit(text, definition, "New", "\n"), /changed|duplicate/); }
+  assert.throws(() => planFootnoteEdit("Inserted\n" + text, original, "New", "\n"), /changed/);
+});
+test("duplicate, inline and missing definitions cannot be edited ambiguously", () => {
+  const text = "[^a]: First\n[^a]: Second\n", definition = parseMarkdown(text).footnotes[0];
+  assert.throws(() => planFootnoteEdit(text, definition, "New", "\n"), /duplicate/);
+  assert.throws(() => planFootnoteEdit("No definition", definition, "New", "\n"), /changed/);
+});
+test("footnote edits refuse syntax that swallows other definitions or cannot round-trip the requested body", () => {
+  const text = "[^a]: First\n\n[^b]: Other\n", definition = parseMarkdown(text).footnotes[0];
+  for (const content of ["<!--", "  Leading spaces are part of this draft"]) { assert.throws(() => planFootnoteEdit(text, definition, content, "\n"), /parses/); }
+  assert.throws(() => planFootnoteEdit(text, definition, "New", "\r"), /line ending/);
+  assert.throws(() => planFootnoteEdit(text, definition, null, "\n"), /Markdown text/);
+});
+
+// Exercise the real pane's Apply method with recording editor/session boundaries; live CodeMirror/history is covered by the UI scenario.
+function editFixture() {
+  const path = "Note.md", text = "Text [^a].\n\n[^a]: First\n    Second\n", file = { path };
+  const state = { text, current: true, live: true, changes: [], reads: 0, refreshed: 0 };
+  const definition = parseMarkdown(text).footnotes[0], snapshot = { id: 1, path, file, text };
+  const session = { originRoot: "fixture", document: { file: { path }, version: "v1" }, isReloading: false };
+  const view = { file, session, isLoaded: true, isSaving: false, editor: {
+    cm: { state: { lineBreak: "\n" } }, getValue: () => state.text,
+    replaceExpected(expected, from, to, insert, origin) { assert.equal(state.text, expected); state.changes.push({ from, to, insert, origin }); state.text = state.text.slice(0, from) + insert + state.text.slice(to); },
+  } };
+  const files = new Map([[path, file]]), app = {
+    vault: { rootPath: "fixture", readOnly: false, getFileByPath: path => files.get(path), readDocument: async () => { state.reads++; return { version: "v1" }; } },
+    workspace: { sessions: new Map([[path, session]]) }, metadataCache: { updateOpenDocuments() { state.refreshed++; } },
+  };
+  const owner = { app, sourceRoot: "fixture", snapshot, file, interactive: () => state.live && app.vault.rootPath === "fixture", source: () => view, schedule() {}, noteView: null };
+  return { state, owner, app, view, session, snapshot, files, file, apply: (content = "Changed\nNext") => FootnotesPaneView.prototype.applyDefinition.call(owner, snapshot, definition, content, () => state.current) };
+}
+test("Footnotes Apply commits one isolated source-editor replacement after a version read and refreshes metadata", async () => {
+  const fixture = editFixture(); await fixture.apply();
+  assert.equal(fixture.state.text, "Text [^a].\n\n[^a]: Changed\n    Next\n");
+  assert.equal(fixture.state.reads, 1); assert.equal(fixture.state.changes.length, 1); assert.equal(fixture.state.changes[0].origin, "input.footnote");
+  assert.equal(fixture.state.refreshed, 1); assert.equal(fixture.owner.noteView, fixture.view);
+});
+test("unchanged Footnotes Apply validates ownership/version without creating a history transaction", async () => {
+  const fixture = editFixture(); await fixture.apply("First\nSecond");
+  assert.equal(fixture.state.reads, 1); assert.deepEqual(fixture.state.changes, []); assert.equal(fixture.state.refreshed, 0);
+});
+test("read-only, closed, replaced and busy Footnotes sources refuse before a version read or editor transaction", async () => {
+  for (const mutate of [
+    fixture => { fixture.app.vault.readOnly = true; }, fixture => { fixture.state.current = false; },
+    fixture => { fixture.state.live = false; }, fixture => { fixture.app.vault.rootPath = "other"; },
+    fixture => { fixture.owner.snapshot = null; }, fixture => { fixture.files.set("Note.md", { path: "Note.md" }); },
+    fixture => { fixture.view.isLoaded = false; }, fixture => { fixture.app.workspace.sessions.clear(); },
+    fixture => { fixture.view.isSaving = true; }, fixture => { fixture.session.isReloading = true; },
+  ]) {
+    const fixture = editFixture(); mutate(fixture); await assert.rejects(fixture.apply(), /changed|saving|reloading/);
+    assert.equal(fixture.state.reads, 0); assert.deepEqual(fixture.state.changes, []);
+  }
+});
+test("cancellation, owner/root/file/session changes, edits and new save/reload operations while reading cannot apply a stale footnote", async () => {
+  for (const mutate of [
+    fixture => { fixture.state.current = false; }, fixture => { fixture.owner.snapshot = { ...fixture.snapshot, id: 2 }; },
+    fixture => { fixture.app.vault.rootPath = "other"; }, fixture => { fixture.files.delete("Note.md"); },
+    fixture => { fixture.view.session = { ...fixture.session }; }, fixture => { fixture.session.originRoot = "other"; },
+    fixture => { fixture.session.document.version = "newer"; }, fixture => { fixture.state.text += "Other edit"; },
+    fixture => { fixture.view.isSaving = true; }, fixture => { fixture.session.isReloading = true; },
+  ]) {
+    const fixture = editFixture(), arrived = Promise.withResolvers(), release = Promise.withResolvers();
+    fixture.app.vault.readDocument = async () => { arrived.resolve(); await release.promise; return { version: "v1" }; };
+    const applying = fixture.apply(); await arrived.promise; mutate(fixture); release.resolve();
+    await assert.rejects(applying, /changed|saving|reloading/); assert.deepEqual(fixture.state.changes, []); assert.equal(fixture.state.refreshed, 0);
+  }
+});
+test("unobserved disk replacements and editor transaction refusal retain the draft without metadata acknowledgement", async () => {
+  const external = editFixture(); external.app.vault.readDocument = async () => ({ version: "external" });
+  await assert.rejects(external.apply(), /changed/); assert.deepEqual(external.state.changes, []);
+  const blocked = editFixture(); blocked.view.editor.replaceExpected = () => {};
+  await assert.rejects(blocked.apply(), /did not accept/); assert.equal(blocked.state.refreshed, 0); assert.equal(blocked.state.text, blocked.snapshot.text);
 });

@@ -327,7 +327,7 @@ export async function checkMarkdownProcessors(tools) {
   assert.deepEqual(await evaluate("app.workspace.getLeavesOfType('markdown').map(leaf=>leaf.id)"), leavesBefore);
   await evaluate(`(async()=>{for(const saved of ${JSON.stringify(pins)}){const leaf=app.workspace.getLeafById(saved.id);await leaf.setViewState({...leaf.getViewState(),pinned:saved.pinned})}document.querySelector("#client-errors").replaceChildren()})()`);
   await click('[data-markdown-api-output] a[data-slopsidian-link="Context#Renderer context"]');
-  await wait(`app.workspace.getActiveFile()?.path===${JSON.stringify(note)}`, "static-rendered link opens the actual vault target");
+  await wait(`app.workspace.getActiveFile()?.path===${JSON.stringify(note)}&&!${JSON.stringify(leavesBefore)}.includes(app.workspace.activeLeaf.id)&&app.workspace.activeLeaf.view.getMode?.()==="preview"`, "static-rendered link finishes opening its actual target in a new Reading tab");
   assert.equal(await evaluate("app.markdownView.getMode()"), "preview");
   await mode("source");
   pass("Real MarkdownRenderer.render and deprecated renderMarkdown append independently owned formatted fragments without replacing prior DOM or opening hidden leaves, await actual handlers, provide null fragment-section context, sanitize note HTML and resolve a decoded vault image plus working source-relative link.");

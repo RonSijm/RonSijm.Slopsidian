@@ -273,6 +273,11 @@ public partial class Home() : IAsyncDisposable
             await InvokeAsync(StateHasChanged);
             await Client.InvokeVoidAsync("showAppearanceSettings");
         }
+        else if (section == "editor")
+        {
+            await InvokeAsync(StateHasChanged);
+            await Client.InvokeVoidAsync("showEditorSettings");
+        }
         else if (section == "hotkeys")
         {
             await InvokeAsync(StateHasChanged);
@@ -297,6 +302,11 @@ public partial class Home() : IAsyncDisposable
             {
                 await InvokeAsync(StateHasChanged);
                 await Client.InvokeVoidAsync("showAppearanceSettings");
+            }
+            else if (section == "editor")
+            {
+                await InvokeAsync(StateHasChanged);
+                await Client.InvokeVoidAsync("showEditorSettings");
             }
             else if (section == "hotkeys")
             {

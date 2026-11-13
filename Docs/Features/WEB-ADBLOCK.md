@@ -55,8 +55,8 @@ The first cumulative attempt stopped on the test helper's assumption that reopen
 
 Eight network-policy regressions exercise actual bundled rules, explicit exceptions, request types/party/source domains, URL-guard precedence, count/reset/coalescing, invalid IPC values, initialization races, load failure/retry and modified/oversized list refusal. The native settings API also checks the default without writing an absent settings file, Boolean validation, unknown data and persisted false across restart.
 
-The pinned comparison scope includes the `enableAdblocking` default and broader native subscription settings. The independent offline snapshot does not reproduce subscription management, and original-runtime or visual/private-API equivalence has not been established.
+The pinned comparison scope includes the `enableAdblocking` default and broader native subscription settings. The earlier offline-only milestone did not supply subscription management; the reviewed subset above now has combined desktop acceptance. Original-runtime and visual/private-API equivalence remain unestablished.
 
 ## Remaining scope
 
-Cosmetic hiding, empty-slot collapse, scriptlets, filter-supplied redirects, CSP/HTML rewriting, custom subscription URLs, automatic refresh/frequency settings, regional/privacy lists, per-site exceptions, rule-inspection controls, original native IPC/private APIs and original-runtime/visual equivalence remain unclaimed. Network blocking alone cannot remove every advertisement. Broader page/performance/OS and exhaustive filter-language acceptance remain separate.
+Bounded static cosmetic CSS and explicit reviewed subscription downloads are accepted above. Broader cosmetic/empty-slot behavior, scriptlets, filter-supplied redirects, CSP/HTML rewriting, automatic refresh/frequency settings, richer list/exception/inspection controls, original native IPC/private APIs and original-runtime/visual equivalence remain unclaimed. Network blocking alone cannot remove every advertisement. Broader page/performance/OS and exhaustive filter-language acceptance remain separate.

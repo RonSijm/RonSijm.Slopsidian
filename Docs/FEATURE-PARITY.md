@@ -1,6 +1,6 @@
 # Slopsidian: Features, Scope and Live Parity Status
 
-**Last reviewed:** 2026-11-04
+**Last reviewed:** 2026-11-15
 
 **Reference application:** Obsidian 1.12.7, Windows desktop  
 **Project:** Slopsidian, namespace root `RonSijm.Slopsidian`  
@@ -13,10 +13,151 @@ and what is still missing. Update the affected pages alongside implementation
 changes, not only when a release is prepared.
 
 The [README](../README.md) contains launch and development instructions.
+The [current roadmap status](Project/ROADMAP.md#current-status-after-the-local-version-reconciliation)
+separates completed bounded workflows and remaining parity work. Inline
+footnotes' missing final acceptance is closed by the November 14 host collection.
+The November 13 documentation audit
+rechecked both retained 58-scope integration runs; it did not rerun the GUI
+matrix or renew benchmark counts. [Audit details](Engineering/EVIDENCE.md#roadmap-status-audit-2026-11-13).
+
 The [fixed core-plugin contract](../shared/core-plugins.json) contains the
 machine-readable benchmark. This documentation covers the wider product as well:
 passing that benchmark alone would not prove complete application, API, plugin,
 or visual parity.
+
+**Structured recovery and multiline Properties, 2026-11-15.** Multiline Properties editing, bounded read-only nested YAML inspection, corrected CRLF metadata/authoring after raw HTML, and safe saved-Markdown trash recovery are implemented. Windows supports reviewed in-vault restoration; the browser offers exact-byte Download copy and retains trash originals. 22 source-bound desktop/browser collections / 606 checks, 2,310 full default tests in 161 modules and 44 GitHub regressions pass. Type checking, native Debug, published WASM and static serving pass. The current native DLL starts successfully without a policy change by this work; desktop renewal closes the earlier Application Control validation gap for these collections. [Behavior, evidence and remaining scope](Engineering/STRUCTURED-RECOVERY-2026-11-15.md). Earlier pending-native milestone descriptions below retain their historical status; these renewed collections now pass on both hosts.
+
+**Workflow controls, 2026-11-15.** Labelled Properties wiki completion/creation, unique-alias heading destinations, active-mode Fold all/Unfold all with local Reading intent, and explicit reviewed selected-note vault/system/permanent removal are implemented. Browser permanent/vault removal is verified; actual new system-trash execution awaits native validation. 10 source-bound browser collections / 330 checks pass. Type checking, native Debug, published WASM and static serving pass; 1,938 selected default tests in 130 non-native modules and 44 GitHub regressions pass. The 26 native-dependent default modules and native GUI validation remain pending Windows Application Control. [Behavior, evidence and remaining scope](Engineering/WORKFLOW-CONTROLS-2026-11-15.md).
+
+**Properties, Files and Reading, 2026-11-15.** Same-note Properties heading/chain creation, existing string-list editing and stored wiki navigation, cross-pane reviewed drops/hover expansion, and original-main Reading callout preferences/temporary reveal are implemented and browser verified. 9 current-source browser collections / 292 checks pass. Type checking, native Debug, published WASM and static serving pass; 1,887 selected default tests in 127 non-native modules and 44 GitHub regressions pass. The 26 native-dependent default modules and native GUI acceptance remain pending Windows Application Control. [Behavior, evidence and remaining scope](Engineering/PROPERTIES-READING-2026-11-15.md).
+
+**Authoring and transfers, 2026-11-15.** Setext/mixed heading ancestors, whole-callout IDs, explicit cross-note Properties headings and reviewed same-pane selected-note folder drops are implemented and browser verified. Seven current-source browser collections / 221 checks pass. Type checking, native Debug and published WASM/static builds pass; 464 focused and 44 GitHub regressions pass. Desktop runtime sign-off and a passing full default suite remain blocked by Windows Application Control. The full suite has 1,977 passes and 151 native startup failures under that policy, with no other failures. [Behavior, evidence and pending native acceptance](Engineering/AUTHORING-TRANSFERS-2026-11-15.md).
+
+**Note management, 2026-11-15.** Explicit missing ATX ancestor chains, whole fenced-code/table IDs, reviewed in-place selected-Markdown rename and versioned saved-note vault trash now have acceptance on both hosts. 12 source-bound host collections / 278 checks, 2,091 default/44 GitHub regressions and 401 overlapping focused checks pass. Exact source/history, physical trash bytes, link updates, stale/collision/partial-result guards and genuine cached refusal are retained. [Delivered scope and remaining work](Engineering/NOTE-MANAGEMENT-2026-11-15.md). Earlier milestones keep their original source-bound acceptance.
+
+**Authoring and organization, 2026-11-15.** Explicit destination heading creation, whole top-level list/task/quote IDs and reviewed moves of 1–20 selected Markdown notes now have acceptance on both hosts. Julia/Groovy/Pascal/Visual Basic finish runtime acceptance. 10 source-bound host collections, 2,045 default/44 GitHub tests and 407 overlapping focused checks pass. The reported Windows CI attachment DOS-path failure is fixed locally; remote rerun remains pending. [Delivered scope and remaining work](Engineering/AUTHORING-ORGANIZATION-2026-11-15.md).
+
+**Link authoring, 2026-11-15.** Source/Live Preview gains explicit missing-heading links
+without target heading creation and block-ID authoring for supported unlabelled
+top-level prose. Properties text/list add fields gain an intentional **Create
+note** extension. All 20 host scopes, 1,997 default/44 GitHub regressions and 309
+focused checks pass. [validation and limits](Engineering/EVIDENCE.md#link-authoring-2026-11-15) and the [local acceptance receipt](../.runtime/evidence/link-authoring-accepted-2026-11-15/receipt.json) retain
+same-note versus cross-note Undo, acknowledged-target/partial-update boundaries,
+cache-only refusal and broader creation/native/private work.
+
+**Note continuity, 2026-11-15.** Exact-source Source/Live Preview folds and original-main
+Reading heading/list choices now persist through bounded local app-profile
+state. Reading keeps explicit intent across temporary reveals; Source remembers
+its actual visible fold state. Explicit **Create note** completion validates
+the full supported missing target and inserts a preferences-correct link after
+create acknowledgement, keeping the source open. All 18 host scopes,
+1,920 default/44 GitHub regressions and 306 focused checks pass. [validation and limits](Engineering/EVIDENCE.md#note-continuity-2026-11-15)
+and the [local acceptance receipt](../.runtime/evidence/note-continuity-accepted-2026-11-15/receipt.json) retain acknowledged-file/no-link failures,
+cache-only isolation, richer creation/folding and full native/private limits.
+
+**Markdown polish, 2026-11-14.** Original Reading task completion color/line-through
+stays on each task's inline label across main, quoted, embedded, static and
+read-only rendering, with main-only editing guards unchanged. Existing Markdown
+pair preferences add adapted inline `~~`/`==` triggers and directional selected
+wrapping; ten more local Reading/static languages retain bounded inert tokens.
+All 16 source-bound host scopes, 1,862 default/44 GitHub regressions and 298
+focused checks pass. [validation and limits](Engineering/EVIDENCE.md#markdown-polish-2026-11-14) and the [local acceptance receipt](../.runtime/evidence/markdown-polish-accepted-2026-11-14/receipt.json)
+keep third-party theme/plugin styling, fuller grammar and native/private/input
+limits explicit. Earlier milestone bodies and their known gaps remain recorded.
+
+**Markdown interactions, 2026-11-14.** Original main Reading lists fold nested child lists
+while continuation prose remains visible, supported main Reading task inputs
+edit exact markers through normal source history/saving, and the independent
+default-true **Automatic Markdown pairs** setting configures supported `*`/`_`
+input in Source/Live Preview. All 16 source-bound host scopes,
+1,836 default/44 GitHub regressions and 272 focused checks pass. [validation and limits](Engineering/EVIDENCE.md#markdown-interactions-2026-11-14)
+and the [local acceptance receipt](../.runtime/evidence/markdown-interaction-accepted-2026-11-14/receipt.json) retain embedded/static/quoted/callout/plugin
+renderings, persisted folds and wider Markdown/native/private/input gaps.
+Earlier acceptance milestones and fixed benchmarks retain their own evidence.
+
+**Editor assistance, 2026-11-14.** Reading heading folds, configurable automatic bracket
+pairs/list continuation and fuzzy existing-target suggestions pass 16
+source-bound host scopes, 1,780 default/44 GitHub regressions and 232 focused checks.
+[validation and limits](Engineering/EVIDENCE.md#editor-assistance-2026-11-14) and the [local acceptance receipt](../.runtime/evidence/editor-assistance-accepted-2026-11-14/receipt.json) retain Reading list/
+embedded folding, new targets/IDs, full ranking/input/private/native behavior as
+remaining work. Earlier fixed benchmarks and acceptance epochs are unchanged.
+
+**Note navigation, 2026-11-14.** Independent Source/Live Preview heading/list folding,
+existing Properties heading/block wiki destinations and explicit Files selected-
+note browsing pass 12 source-bound host scopes, 1,729 default/44 GitHub regressions and
+159 focused checks. [validation and limits](Engineering/EVIDENCE.md#note-navigation-2026-11-14) and the
+[local acceptance receipt](../.runtime/evidence/note-navigation-accepted-2026-11-14/receipt.json) retain Reading folding, new headings/IDs, complete
+Properties widgets/ranking, file-tree transfers/batch mutation and full native/
+private/physical behavior as remaining work. Earlier evidence keeps its sources.
+
+**Reading tools, 2026-11-14.** [Reading fixed-width regex, ten more local code languages
+and Properties known-note/alias wiki-link choices](Features/APPLICATION.md#finding-in-reading-view)
+pass 10 source-bound host scopes, 1,690 default/44 GitHub regressions and 202
+focused checks. Real controls, exact bytes/history, stale-job/target/deferred-owner
+refusal, restart/reconnection and cache-only search/highlighting with mutation
+refusal pass. [validation and limits](Engineering/EVIDENCE.md#reading-tools-2026-11-14) and the [local acceptance receipt](../.runtime/evidence/reading-tools-accepted-2026-11-14/receipt.json) retain
+unrestricted regex, broader languages/dialects, heading/ID creation, complete
+Properties types/structured links/ranking, native/popout/physical behavior and
+the earlier native PDF/OS dictionary acceptance boundaries. Historical fixed
+core and 58-scope integration sources/counts are unchanged.
+
+**Note workflows, 2026-11-14.** [Hierarchical known-heading chains, Properties string
+choices and selected-passage Reading Find](Features/APPLICATION.md#built-in-link-and-property-completion)
+pass 10 source-bound host scopes, 1,657 default/44 GitHub regressions and 169
+focused checks. Actual controls, clipped destinations, isolated history,
+fresh deferred ownership, restart/reconnection and cached read-only refusal
+retain their bounded scope. Properties edits use the existing serializer;
+changed flow-list spacing may normalize. [validation and limits](Engineering/EVIDENCE.md#note-workflows-2026-11-14) and the
+[local acceptance receipt](../.runtime/evidence/note-workflows-accepted-2026-11-14/receipt.json) retain heading creation/new IDs, full property types/link
+values/ranking, wider Reading grammar/scale and native/private/popout/physical
+behavior. Earlier PDF/correction and mocked-only dictionary-write evidence keep
+their own acceptance; historical core and integration counts are unchanged.
+
+**Editor workflows, 2026-11-14.** [Cursor handoff, multi-range selection search and
+Windows native spelling controls](Features/APPLICATION.md#editing-modes-and-ownership)
+pass 8 source-bound host scopes, 1,606 default/44 GitHub regressions and 133
+focused checks. Exact bytes, isolated history, stale-owner refusal and
+restart/cache-only workflows pass. Languages and dictionary list/filter have
+real-host coverage; custom-word writes use mocked native sessions only because
+[Electron also updates the Windows OS dictionary](https://www.electronjs.org/docs/latest/api/session#sesaddwordtospellcheckerdictionaryword).
+[validation and limits](Engineering/EVIDENCE.md#editor-workflows-2026-11-14) and the [local acceptance receipt](../.runtime/evidence/editor-workflows-accepted-2026-11-14/receipt.json) retain the earlier Reading boundary, later expanded by selected passages;
+heading creation, native macOS/Linux, actual OS
+word-write acceptance and non-Markdown/popout export work. Historical core and
+58-scope matrix counts are unchanged.
+
+**Reading and discovery, 2026-11-14.** [Reading search, global heading suggestions
+and ten additional code grammars](Features/APPLICATION.md#finding-in-reading-view)
+pass both hosts with exact bytes, owned DOM/highlight cleanup, guarded target
+choices, restart/reconnection and cache-only browsing. All 1,565 default/44
+GitHub tests and eight source-bound collections pass. [Evidence and limits](Engineering/EVIDENCE.md#reading-and-discovery-2026-11-14)
+retain richer search/heading/grammar and full native/private/visual parity.
+
+**Editor productivity, 2026-11-14.** [Editor text preferences, raw YAML values and
+selection-scoped Find/Replace](Features/APPLICATION.md#editor-text-preferences)
+pass both hosts, including exact bytes, Undo/stale-owner protection,
+restart/reconnection and cached read-only/local overlays. All 1,529 default/44
+GitHub tests and six source-bound runtime collections pass. [Evidence and limits](Engineering/EVIDENCE.md#editor-productivity-2026-11-14)
+record that earlier single-range scope; later editor workflows extend it.
+Broader Reading multi-range highlighting/search, value/settings UI and full
+private parity remain.
+
+**Note authoring, 2026-11-14.** [Heading/block completion, spellcheck and print/PDF export](Features/APPLICATION.md#spellcheck) pass both hosts within their documented bounds. Actual native correction and Save/PDF generation, browser menu/print routing, read-only behavior, prior editor workflows and final inline-footnote/renderer acceptance pass eight current-source scopes. All 1,500 default/44 GitHub regressions pass; [evidence and limits](Engineering/EVIDENCE.md#note-authoring-2026-11-14) retain browser OS-dialog, wider grammar/view/filesystem and private parity work.
+
+**Editor improvements, 2026-11-13.** Built-in [Reading code highlighting, note Find/Replace and wiki/property-key completion](Features/APPLICATION.md#reading-code-highlighting) pass the combined native/WASM workflow collection, including restart/reconnection, exact saves, Undo and cached read-only refusal. YAML keys use raw Source frontmatter; [validation and limits](Engineering/EVIDENCE.md#editor-improvements-2026-11-13) retain the remaining scope and fixed benchmark counts.
+
+**Inline footnotes and Reading, 2026-11-09.** [Inline/Reading support](Features/DISCOVERY.md#inline-footnotes-and-reading)
+adds generated single-line definitions, mixed named/inline numbering, exact Source
+targets, guarded editing and owned Reading endnotes/back links. Markdown/math
+bodies share the existing sanitization and rendering pipeline. Final both-host
+sign-off completed 2026-11-14. Broader grammar,
+native private/visual equivalence, groups and scale remain separate.
+[Validation and limits](Engineering/INLINE-FOOTNOTES-2026-11-09.md).
+
+**Footnotes definition authoring, 2026-11-09.** [Guarded editing](Features/DISCOVERY.md#editing-a-footnote-definition)
+adds local Markdown drafts, Apply/Cancel, source-preserving edits, source-editor
+Undo/Redo, exact saving and stale/read-only/cancelled-owner refusal. It does not
+establish full native editable-embed UI/private API equivalence or renew the
+whole-core badges. [Validation and limits](Engineering/FOOTNOTE-EDITING-2026-11-09.md).
 
 **Completed desktop shutdown and capture follow-up — Codex, 2026-11-04.**
 Prepared native windows close before host drain, with save/native vetoes and
@@ -130,7 +271,7 @@ Both hosts pass restart/reconnection and cache-only GitHub workflows on the
 isolated accepted-Outline baseline; it does not retroactively accept the
 then-separate Backlinks implementation, now covered above.
 
-[Outline workspace panes](Features/OUTLINE.md) now restore imported main/sidebar leaves with independent note following/fixing, filters/folds and exact Source/Reading navigation. Both hosts exercise dirty/external updates, old read/click refusal, provider cleanup, persistence and cached GitHub navigation. Source-preserving heading drag/reorder and keyboard/menu alternatives are newly integrated but not yet actual-host accepted; complete private trees remain separate.
+[Outline workspace panes](Features/OUTLINE.md) restore imported main/sidebar leaves with independent note following/fixing, filters/folds and exact Source/Reading navigation. Both hosts also have recorded acceptance for source-preserving heading drag, keyboard/menu reorder, one-step Undo/Redo, exact saves, restart and conflict/read-only refusal. These workflows pass the combined integration collection; complete private trees, physical IME and scale remain separate.
 
 [Search workspace panes](Features/DISCOVERY.md#search-workspace-panes) now restore imported main/sidebar Search leaves with independent query/case/sort/context/fold state, exact source selection and owned workers. Both hosts cover live metadata, stale callbacks, provider cleanup, persistence and cached GitHub text; complete private trees and original Search presentation remain separate.
 
@@ -380,30 +521,35 @@ cases and unchanged denominator.
 | Standalone browser application | Runnable Blazor WASM application with direct, permissioned local-folder access in Chrome/Edge. It does not need a remote application server. |
 | Markdown source editing | Working CodeMirror editor, shared document buffers, explicit saves, undo/redo and conflict protection. Actual plugin transactions, primary/multiple selections and Source folds now pass unchanged Templater workflows; full editing parity remains. |
 | Reading view | Working separate Reading renderer and navigation; it is distinct from the in-place Live Preview editor. Full Markdown/embedding parity remains. |
+| Math and Markdown embeds | Recorded combined desktop/WASM acceptance covers sanitized local MathML and owned note/heading/block embeds in Reading and Live Preview, explicit errors/cycle limits and supported refresh. Full grammar, richer document transclusion and native/private equivalence remain. [Scope](Features/APPLICATION.md#editing-markdown-and-rendering). |
+| Missing-heading links / prose block IDs / Properties Create | Source-only missing-heading completion retains known destination priority and never creates target headings. Supported top-level prose ID authoring has one combined same-note Undo or a guarded other-note target write before source insertion; source Undo keeps another note's marker. Properties creation is an explicit Slopsidian extension with reviewed placement, guarded wiki-value insertion and acknowledged-file retention. Target heading creation, broader block/property widgets and non-atomic native/private behavior remain separate. [validation and limits](Engineering/EVIDENCE.md#link-authoring-2026-11-15). |
+| Local fold preferences / explicit Create note | Exact-source app-profile Source/Live Preview ranges and original-main Reading heading/list intent restore across panes/restart with source/history, stale/hidden ownership, confirmed rename migration and read-only cache isolation. Explicit supported missing-note completion uses existing placement and acknowledged preferences-correct link insertion without navigation; Undo affects only insertion. Broader heading/ID/Properties creation, other renderers/plugin folds, durability and native/private parity remain separate. [validation and limits](Engineering/EVIDENCE.md#note-continuity-2026-11-15). |
+| Task completion labels / extra pairs / local languages | Bounded task-label styling retains independent child completion and original inline/checkbox/list identities; automatic inline tilde/equal doubles and selected wrapping use the existing Markdown preference/guards; ten added Reading/static grammars retain exact source and registered processor priority. Third-party theme/plugin output and full native syntax/input remain separate. [validation and limits](Engineering/EVIDENCE.md#markdown-polish-2026-11-14). |
+| Main Reading list/task interaction | Verified bounded original-source subset on both hosts: original mapped nested lists fold without replacing DOM or hiding continuation prose; supported main-view task checkboxes edit one source marker with normal save/history and read-only/hidden/stale guards. Embedded/static/quoted/callout/plugin renderings and complete native interaction remain separate. [validation and limits](Engineering/EVIDENCE.md#markdown-interactions-2026-11-14). |
 | Live Preview / Editor status | Ten shared editor-chrome/mode groups pass on both hosts. Actual selection-aware formatting, task edits, local image/table/Mermaid widgets, checked status/menu controls, per-leaf/shared state, dirty/undo/conflict guards and restart/reconnect are exercised. [Supported subset and remaining gaps](Features/APPLICATION.md#editing-modes-and-ownership). |
 | Markdown / Properties tags | Five shared groups per host compare native-shaped Reading/Source/Live Preview pills, hash-free Properties chips and real mode-specific tag search with the supplied UI bundle. Editable text/undo/exact bytes survive renderer reload/reconnect. Full Properties editor, metadata grammar, arbitrary themes/plugin highlighters and private APIs remain separate. [Scope](Features/APPLICATION.md#tag-rendering). |
 | Mermaid diagrams | Four shared desktop/WASM groups cover ten examples in Reading/previews/Slides; editing-mode scenarios additionally decode/reveal/clean up an actual Live Preview flowchart. [Scope](Features/MERMAID.md): broader fixtures, public rendering APIs, interaction/external assets and full native behavior remain. |
 | Core-plugin benchmark | The preceding lifecycle renewal's strict aggregation passes **132/140 cases and 29/31 candidate-complete modules**, across 134 native checks, 44 process sessions and 54 stable artifact hashes. All four Web viewer cases pass. Eight Publish/Sync cases remain untested. [Evidence](Engineering/EVIDENCE.md) separates this score from later tag work and broader runtime renewal. |
-| Complete shared-host integration | The preceding full native and actual-folder WASM scopes pass 134/150 checks, but their thirteen-scope epoch remains incomplete. The new sixteen-scope plugin-focused renewal also passes native community; it does not renew the entire core epoch or retroactively change old reports. Both six-release Excalidraw settings corpora remain failed. Older immutable epochs remain historical. |
+| Complete shared-host integration | The November 3 integration and November 4 follow-up each record 58/58 serial desktop/browser/offline scopes passing, with source/artifact bindings, final error audits and clean owned exits. [Recorded acceptance](Engineering/INTEGRATION-WAVE-2026-11-03.md). The November 13 audit rechecked all 116 retained reports; it is not a fresh GUI run. Earlier incomplete epochs and exact-release Excalidraw settings failures retain their own scope. |
 | Discovery core features | Search, Tags, Backlinks and Footnotes retain their fixed candidate contracts. Real imported Search, Backlinks, Tags and Footnotes panes add independent state, owned lifecycle and restart/read-only workflows on both hosts. [Backlinks](Features/BACKLINKS.md) also renews combined compilation and dependent pane/discovery scopes. Native editable footnote embeds, complete private views/APIs and original-runtime equivalence remain missing. |
 | Quick switcher | Three Boolean settings, registered attachment/unresolved filtering, literal alias owners, real empty-query recent order and nested bookmark dispatch pass actual desktop/browser workflows, including stale controls, restart/reconnection and cache-only GitHub. Exact native ranking/ignored-file/result-limit behavior, full viewers and original-runtime comparison remain. [Navigation scope](Features/DISCOVERY.md#quick-switcher-recent-files-and-bookmarks). |
-| Outline / Word count | Metadata-backed heading hierarchy/folding and active Source/Reading navigation; selection/frontmatter/script-aware and UTF-16 counts pass four shared workflow groups on each host. Exhaustive native Unicode, richer controls/state and core-view/API parity remain. |
+| Outline / Word count | [Outline](Features/OUTLINE.md) has both-host acceptance for independent imported panes, navigation, source-preserving drag/keyboard/menu reorder, Undo/Redo, exact saving, conflict/read-only refusal and restart. Word count retains its selection/frontmatter/script-aware subset. Private trees, exhaustive Unicode/native behavior, physical IME and scale remain. |
 | Plugin-owned views | Shared View/ItemView/FileView and editable TextFileView, main/sidedock panes, guarded saves/reloads, file-extension registration, native unload-before-close order, separate preflight vetoes and saved/ephemeral reconstruction. Disposed models cannot overwrite preflight-saved text. Not complete synchronous/native/private view compatibility. |
-| Raster image leaves / attachment links | Actual readonly PNG panes, fit/zoom/scroll, external refresh/error recovery, rename, resource cleanup and restart/reconnect pass shared desktop/WASM workflows. Outgoing/Reading open registered file views. Other formats depend on the host decoder; PDF/SVG/video viewers remain missing. [Scope](Features/APPLICATION.md#raster-image-leaves). |
-| Organization and file management | Organized Bookmarks, named Workspaces, typed Properties and guarded file/folder creation, file moves and vault trash have real shared implementations and runtime scenarios. Inline Live Preview/Reading property edits/cancellation now update real Dataview metadata. Full native property UI/API, folder rename/trash and general binary adapters remain missing. |
+| Raster image leaves / attachment links | The recorded combined desktop/WASM viewer collection covers raster/SVG/video and bounded local PDF navigation, owned resources, external changes and restart, with additional AVIF/seekable VP9 and cache-only read-only proofs. Outgoing/Reading open registered viewers. Streaming, editing/export, full PDF features and codec/native equivalence remain. [Scope](Features/ATTACHMENTS.md#attachment-viewers). |
+| Organization and file management | Bookmarks, named Workspaces, typed Properties, guarded file/folder/binary operations, folder rename/move/delete, attachment imports and Windows system trash have recorded shared-host acceptance. Properties numeric/control guards also pass the combined collection. Full native property/adapter APIs, external rename identity, wider concurrency and crash-durable cross-file transactions remain. |
 | App vault-local storage | Actual falsy/detached JSON, invalid-save preservation and null removal survive native process restart or browser reconnect. Native uses stable profile SQLite; browser keeps ordinary localStorage. Direct window storage/IndexedDB and migration of older port-scoped values are not covered. |
-| Plugin configuration / creation / processing | Real cached/cloned `app.json`, Markdown root/current/folder placement, guarded basename rename, serialized version-guarded text processing and owned startup/hooks pass unchanged Templater workflows on both hosts. Actual-file permanent deletion also supports real syntax/runtime failed-creation cleanup. [Boundaries](Compatibility/PLUGIN-API.md#configuration-processing-and-creation-boundary): full settings/defaults, native inline-title/adapter behavior, folder/root deletion and wider recovery remain. |
-| Imported link generation | Shared MetadataCache/FileManager APIs honor shortest/relative/absolute paths and Markdown/wiki preference without rewriting configuration; real Reading navigation and planned Note composer replacements pass both hosts. Pure generation works read-only. Safe prefixes/stricter escaping intentionally differ; generic settings UI/watchers and other independent link writers remain separate. [Scope](Features/DISCOVERY.md#link-generation-preferences). |
+| Plugin configuration / creation / processing | Cached/cloned configuration, versioned Files and links controls, supported app/core external polling/setters, common Markdown placement and guarded processing/rename have recorded both-host acceptance. Owned startup/hooks and failed-creation cleanup retain their exact Templater scope. [Boundaries](Compatibility/PLUGIN-API.md#configuration-processing-and-creation-boundary): unsupported settings/defaults, specialized creators, native inline-title/root/adapter semantics and wider recovery remain. |
+| Imported link generation | Shared APIs honor shortest/relative/absolute paths and Markdown/wiki preference, with real Reading/composer workflows, versioned Files and links controls and pure read-only generation. Supported configuration lifecycle polling/setters have separate both-host acceptance. Unsupported settings/writers and full native resolver/escaping equivalence remain. [Scope](Features/DISCOVERY.md#link-generation-preferences). |
 | Original named Workspaces and active layout | Reviewed named-profile exchange and first-open active-layout import pass desktop/WASM workflows, preserving original bytes, opaque view state and independent preferences. Explicit replacement also imports the genuinely observed one-window floating shape, retaining its active Live Preview editor and stable bounds across native restart/browser reconnection. [Scope](Features/WORKSPACES.md): missing providers, stacking/group variants, first-open/named-profile floating combinations, multiple/maximized/zoomed windows and broader native APIs remain. |
 | Graph and Canvas | Real independently authored views, workers/models, document interaction and persistence. All eight observed Canvas options and six modifier-drag creation actions pass actual desktop and real-folder browser workflows. [Supported settings and remaining differences](Features/CORE-PLUGINS.md#canvas-settings-and-interaction); private/native rendering parity is not claimed. |
 | Page preview | Four shared desktop/WASM groups pass for Markdown note/heading/block hover, live target changes, source/modifier settings and owned plugin hover popovers. |
 | Slides and Slash commands | Four actual shared editor/presentation groups passed on desktop and permissioned-folder WASM, including keyboard/pointer input and restart/reconnect. Not full native Reveal.js, rendering or private-API equivalence. |
 | Format converter | Seven opt-in legacy transformations with actual preview/cancel, confirmed guarded apply, inverse undo and conflict/lifecycle/restart acceptance on both hosts. Not native sequential/bulk-undo or link-format-preference equivalence. |
-| Desktop Web viewer | One hundred and sixty-five focused groups pass together: six browsing, seven history, six [Reader](Features/WEB-READER.md), six [article-clipping](Features/WEB-CLIPPING.md), six [zoom](Features/WEB-ZOOM.md), six [network-ad-blocking](Features/WEB-ADBLOCK.md), six [Reader font/width](Features/WEB-READER.md#font-and-article-width), six [reading-progress](Features/WEB-READER.md#reading-progress), six [visit-menu](Features/WEB-VIEWER.md#visit-context-menu), two [copy-link](Features/WEB-VIEWER.md#copy-link-address), four [ordered-list clipping](Features/WEB-CLIPPING.md#ordered-list-numbering), four [merged-table clipping](Features/WEB-CLIPPING.md#merged-cell-tables), four [selected-text clipping](Features/WEB-CLIPPING.md#selected-text) and four [clipping-properties](Features/WEB-CLIPPING.md#note-properties) groups, plus four [clipping-defaults](Features/WEB-CLIPPING.md#property-defaults), four [Reader font-size/spacing](Features/WEB-READER.md#font-size-and-line-spacing), four [Reader selected-text](Features/WEB-CLIPPING.md#reader-selection), four [paragraph-spacing](Features/WEB-READER.md#paragraph-spacing), four [letter-spacing](Features/WEB-READER.md#letter-spacing), four [custom-width](Features/WEB-READER.md#custom-article-width), four [custom-font](Features/WEB-READER.md#custom-font-family), four [per-article progress](Features/WEB-READER.md#per-article-progress-history), four [matching-removal](Features/WEB-VIEWER.md#remove-matching-visits), four [history date-range](Features/WEB-VIEWER.md#history-date-range-filters), four [history selection](Features/WEB-VIEWER.md#select-and-remove-visits), four [history undo](Features/WEB-VIEWER.md#undo-a-history-removal), four [history redo](Features/WEB-VIEWER.md#redo-a-history-removal), four [history archive](Features/WEB-VIEWER.md#save-shown-history-to-a-note), four [selected history archive](Features/WEB-VIEWER.md#save-selected-history-to-a-note) and four [history ordering](Features/WEB-VIEWER.md#history-order) and four [automatic age retention](Features/WEB-VIEWER.md#automatic-age-retention) and four [visit-limit](Features/WEB-VIEWER.md#visit-limit) and four [history favicon](Features/WEB-VIEWER.md#site-icons) and four [per-site zoom](Features/WEB-ZOOM.md#site-preferences) and four [full-page Markdown](Features/WEB-CLIPPING.md#full-page-markdown) and four [selected-history tab opening](Features/WEB-VIEWER.md#open-selected-visits) and four [title/address ordering](Features/WEB-VIEWER.md#title-and-address-order) groups. Includes source fallback, guarded note/history edits, scaling, typography/progress, network rules and restart/vault restoration. Original private APIs, wider history actions and additional icon formats, richer clipping/media, cosmetic filtering/subscription updates, font-file imports/semantic anchors and original comparison remain. WASM is explicitly unavailable. |
+| Desktop Web viewer | One hundred and sixty-five focused groups pass together: six browsing, seven history, six [Reader](Features/WEB-READER.md), six [article-clipping](Features/WEB-CLIPPING.md), six [zoom](Features/WEB-ZOOM.md), six [network-ad-blocking](Features/WEB-ADBLOCK.md), six [Reader font/width](Features/WEB-READER.md#font-and-article-width), six [reading-progress](Features/WEB-READER.md#reading-progress), six [visit-menu](Features/WEB-VIEWER.md#visit-context-menu), two [copy-link](Features/WEB-VIEWER.md#copy-link-address), four [ordered-list clipping](Features/WEB-CLIPPING.md#ordered-list-numbering), four [merged-table clipping](Features/WEB-CLIPPING.md#merged-cell-tables), four [selected-text clipping](Features/WEB-CLIPPING.md#selected-text) and four [clipping-properties](Features/WEB-CLIPPING.md#note-properties) groups, plus four [clipping-defaults](Features/WEB-CLIPPING.md#property-defaults), four [Reader font-size/spacing](Features/WEB-READER.md#font-size-and-line-spacing), four [Reader selected-text](Features/WEB-CLIPPING.md#reader-selection), four [paragraph-spacing](Features/WEB-READER.md#paragraph-spacing), four [letter-spacing](Features/WEB-READER.md#letter-spacing), four [custom-width](Features/WEB-READER.md#custom-article-width), four [custom-font](Features/WEB-READER.md#custom-font-family), four [per-article progress](Features/WEB-READER.md#per-article-progress-history), four [matching-removal](Features/WEB-VIEWER.md#remove-matching-visits), four [history date-range](Features/WEB-VIEWER.md#history-date-range-filters), four [history selection](Features/WEB-VIEWER.md#select-and-remove-visits), four [history undo](Features/WEB-VIEWER.md#undo-a-history-removal), four [history redo](Features/WEB-VIEWER.md#redo-a-history-removal), four [history archive](Features/WEB-VIEWER.md#save-shown-history-to-a-note), four [selected history archive](Features/WEB-VIEWER.md#save-selected-history-to-a-note) and four [history ordering](Features/WEB-VIEWER.md#history-order) and four [automatic age retention](Features/WEB-VIEWER.md#automatic-age-retention) and four [visit-limit](Features/WEB-VIEWER.md#visit-limit) and four [history favicon](Features/WEB-VIEWER.md#site-icons) and four [per-site zoom](Features/WEB-ZOOM.md#site-preferences) and four [full-page Markdown](Features/WEB-CLIPPING.md#full-page-markdown) and four [selected-history tab opening](Features/WEB-VIEWER.md#open-selected-visits) and four [title/address ordering](Features/WEB-VIEWER.md#title-and-address-order) groups. Includes source fallback, guarded note/history edits, scaling, typography/progress, network rules and restart/vault restoration. Original private APIs, wider history actions and additional icon formats, richer clipping/media, unsupported cosmetic rules/scriptlets and automatic subscription refresh, font-file imports/semantic anchors and original comparison remain. WASM is explicitly unavailable. |
 | Bases | Four table and four summary groups pass on each host: actual `.base` queries/edits, whole-result/group summaries, bounded custom expressions, opaque YAML/note preservation, conflicts and restarts. [Scope](Features/BASES.md): other views, embeds, full functions/types/plugin APIs and original comparison remain. |
 | File recovery | Four actual workflow groups pass on each host for durable saved-text snapshots, interval/retention settings, searchable history/previews, guarded restore/recreation and lifecycle/restarts. Unsaved drafts, native database import/storage parity, visual diffs, broader APIs and abrupt-failure acceptance remain. |
 | Audio recorder | Four actual groups pass on each host using synthetic audio for explicit recording/preview, exact binary attachment saving, guarded note insertion, playback, conflicts and lifecycle/restarts. Physical devices/OS permissions, duration/seek parity, full APIs and original comparison remain. |
-| Community plugins | [Official catalog and reviewed package management](Features/COMMUNITY-PLUGINS.md) work on desktop and writable actual-folder WASM, including separate enablement, data-preserving update and confirmed uninstall. WASM uses selected release files when direct downloads fail CORS; no relay. Read-only GitHub package mutations refuse. Earlier ten-/six-release results retain their exact host/version boundaries, including Node restrictions and Excalidraw 2.22.3's settings failure; full plugin/marketplace equivalence remains unclaimed. |
+| Community plugins | [Reviewed catalog/package management](Features/COMMUNITY-PLUGINS.md) and [marketplace statistics/sorting, inert README, selected bulk updates and dotted IDs](Features/COMMUNITY-PLUGINS.md#expanded-marketplace-workflows) pass recorded desktop/actual-folder WASM workflows. Separate enablement, data-preserving updates, CORS file fallback and cache-only mutation refusal remain explicit. Exact plugin host/version limits and broader marketplace/plugin equivalence remain. |
 | Templater / Excalidraw | Unchanged Templater 2.20.6 passes fifteen bounded groups per host, including real syntax/runtime failed-creation cleanup; native-path/highlighter guards remain. Separate unchanged Excalidraw 2.29.0 passes ten real drawing/PNG/persistence/lifecycle/Reading-embed groups per host. Full settings/media/import/export/native equivalence remain; reported 2.22.3 is not silently upgraded. [Full plugin scope](Compatibility/PLUGIN-API.md). |
 | Original core-module ports | No original bundled core module is loaded by Slopsidian. Current features are independent implementations. |
 | Custom-domain deployment | Source configuration targets `https://slopsidian.md/` at base `/`, with a published `CNAME`. Local publication/asset checks succeeded; this is not proof that the live site has been redeployed. |

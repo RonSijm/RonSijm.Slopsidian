@@ -32,6 +32,13 @@ import { AudioRecorder } from "./audio-recorder";
 import { registerImageView } from "./image-view";
 import { EditorStatus } from "./editor-status";
 import { EditorSuggestions } from "./suggestions";
+import { registerBuiltinSuggestions } from "./builtin-suggestions";
+import { registerEditorSearchCommands } from "./editor-search-commands";
+import { registerEditorFoldCommands } from "./editor-fold-commands";
+import { registerEditorSpellcheck } from "./editor-spellcheck";
+import { refreshEditorPreferences } from "./editor-preferences";
+import { ReadingView } from "./reading";
+import { registerPrintExportCommands } from "./print-export";
 import { Cli } from "./cli";
 import { ObsidianProtocolRegistry } from "./protocol";
 import { EmbedRegistry } from "./markdown-embed";
@@ -236,6 +243,11 @@ export class App {
     new FileRecovery(this).register(this.core);
     new AudioRecorder(this).register(this.core);
     new EditorStatus(this).register(this.core);
+    registerBuiltinSuggestions(this);
+    registerEditorSearchCommands(this);
+    registerEditorFoldCommands(this);
+    registerEditorSpellcheck(this);
+    registerPrintExportCommands(this);
     this.vault.on("modify", file => {
       const session = file instanceof TFile ? this.workspace.sessions.get(file.path) : undefined;
       if (session && !session.dirty && !session.isSaving) {
@@ -320,7 +332,13 @@ export class App {
     if (snapshot.root) {
       await this.configuration.read("app");
       // Keep getConfig current even when no settings page is subscribed.
-      this.configuration.watch("app", () => {});
+      this.configuration.watch("app", () => {
+        refreshEditorPreferences(this);
+        for (const leaf of this.workspace.getLeavesOfType("markdown")) {
+          const mode = (leaf.view as MarkdownView).currentMode;
+          if (mode instanceof ReadingView) { mode.refreshFolding(); }
+        }
+      });
       try { await this.hotkeyManager.load(); }
       catch (error) { reportError(new Error("This vault's hotkeys could not be loaded; defaults are active and the file was not overwritten.", { cause: error })); }
       try { await this.appearance.restore(); }

@@ -461,7 +461,7 @@ export abstract class EditorSuggest<T> extends PopoverSuggest<T> {
   }
 }
 
-interface RegisteredSuggestion { instance: object; trigger: (view: MarkdownFileInfo) => boolean; close: () => void; current: () => boolean }
+interface RegisteredSuggestion { instance: object; trigger: (view: MarkdownFileInfo) => boolean; close: () => void; current: () => boolean; fallback: boolean }
 
 export class EditorSuggestions {
   private readonly registrations: RegisteredSuggestion[] = [];
@@ -478,13 +478,15 @@ export class EditorSuggestions {
     }
   }
 
-  register<T>(owner: string, suggestion: EditorSuggest<T>): () => void {
+  register<T>(owner: string, suggestion: EditorSuggest<T>, options: { fallback?: boolean } = {}): () => void {
     if (!(suggestion instanceof EditorSuggest) || suggestion.app !== this.app || this.registrations.some(registration => registration.instance === suggestion)) {
       throw new Error("Register a distinct EditorSuggest from this application's shared API.");
     }
     suggestion.containerEl.dataset.pluginSuggest = owner;
-    const registration = { instance: suggestion, trigger: (view: MarkdownFileInfo) => suggestion.trigger(view), close: () => suggestion.close(), current: () => Boolean(suggestion.context && this.app.workspace.activeEditor?.editor === suggestion.context.editor) };
-    this.registrations.push(registration);
+    const registration = { instance: suggestion, trigger: (view: MarkdownFileInfo) => suggestion.trigger(view), close: () => suggestion.close(), current: () => Boolean(suggestion.context && this.app.workspace.activeEditor?.editor === suggestion.context.editor), fallback: options.fallback === true };
+    const firstFallback = this.registrations.findIndex(value => value.fallback);
+    if (!registration.fallback && firstFallback >= 0) { this.registrations.splice(firstFallback, 0, registration); }
+    else { this.registrations.push(registration); }
     if (this.registrations.length === 1) {
       this.app.workspace.addEditorExtension(this.extensionId, EditorView.updateListener.of(update => {
         if (update.docChanged || update.selectionSet || update.focusChanged) { this.schedule(); }

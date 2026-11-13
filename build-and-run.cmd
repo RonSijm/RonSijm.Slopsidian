@@ -1,5 +1,6 @@
 @echo off
 setlocal
+call "%~dp0tools\local-environment.cmd"
 pushd "%~dp0" || exit /b 1
 
 if exist "node_modules\.bin\esbuild.cmd" goto :runtime

@@ -226,6 +226,16 @@ export function sourcePositions(content: string): (from: number, to: number) => 
   return (from, to) => ({ start: location(from), end: location(to) });
 }
 
+/**
+ * Lezer treats CR as content, even on otherwise blank CRLF lines. Its logical
+ * parse view uses equal-width whitespace so HTML/code/list boundaries see an
+ * ordinary blank line while every node offset still indexes the original text.
+ * Only the grammar reads this view; cache values, ranges and writes use source.
+ */
+export function markdownParseSource(content: string): string {
+  return content.includes("\r\n") ? content.replace(/\r(?=\n)/g, " ") : content;
+}
+
 function frontmatter(content: string): Frontmatter | null {
   const opening = /^\uFEFF?---[ \t]*\r?\n/.exec(content);
   if (!opening) {
@@ -260,7 +270,7 @@ export function markdownSlides(content: string): string[] {
   const body = content.slice(frontmatter(content)?.to ?? 0);
   const rules: SourceRange[] = [];
   const definitions: string[] = [];
-  for (let node = markdownLanguage.parser.parse(body).topNode.firstChild; node; node = node.nextSibling) {
+  for (let node = markdownLanguage.parser.parse(markdownParseSource(body)).topNode.firstChild; node; node = node.nextSibling) {
     if (node.name === "HorizontalRule") { rules.push({ from: node.from, to: node.to }); }
     else if (node.name === "LinkReference") { definitions.push(body.slice(node.from, node.to)); }
   }
@@ -301,7 +311,7 @@ export function composerTemplate(content: string, template: string, fromTitle: s
 function composerDefinitions(content: string): Map<string, { from: number; to: number; text: string }> {
   const definitions = new Map<string, { from: number; to: number; text: string }>();
   const ignored = parseMarkdown(content).ignored;
-  markdownLanguage.parser.parse(content).iterate({ enter(node) {
+  markdownLanguage.parser.parse(markdownParseSource(content)).iterate({ enter(node) {
     if (node.name !== "LinkReference" || overlaps(ignored, node.from, node.to)) { return; }
     const label = node.node.getChild("LinkLabel");
     if (!label) { return; }
@@ -825,6 +835,61 @@ function wikiTarget(value: string): { target: string; alias?: string } {
   return { target: value };
 }
 
+export interface InlineFootnote extends SourceRange { content: string; }
+
+function merged(ranges: readonly SourceRange[]): SourceRange[] {
+  const result: SourceRange[] = [];
+  for (const range of [...ranges].sort((a, b) => a.from - b.from || b.to - a.to)) {
+    const previous = result.at(-1);
+    if (previous && range.from <= previous.to) { previous.to = Math.max(previous.to, range.to); }
+    else { result.push({ ...range }); }
+  }
+  return result;
+}
+
+/** Single-line, balanced ^[...] notes. Literal spans are opaque; nested inline notes stay literal. */
+export function scanInlineFootnotes(text: string, literalRanges: readonly SourceRange[], openerRanges: readonly SourceRange[] = []): InlineFootnote[] {
+  const literal = merged(literalRanges), protectedOpeners = merged(openerRanges), result: InlineFootnote[] = [];
+  const brackets: number[] = [], linkLabels: SourceRange[] = [];
+  let ignored = 0, protectedIndex = 0, start = -1, depth = 0, nested = false;
+  for (let index = 0; index < text.length; index++) {
+    while (ignored < literal.length && literal[ignored].to <= index) { ignored++; }
+    while (protectedIndex < protectedOpeners.length && protectedOpeners[protectedIndex].to <= index) { protectedIndex++; }
+    const range = literal[ignored];
+    if (range && range.from <= index) {
+      if (start >= 0 && /[\r\n]/.test(text.slice(index, range.to))) { start = -1; }
+      index = range.to - 1; continue;
+    }
+    const protectedRange = protectedOpeners[protectedIndex];
+    if (start < 0 && protectedRange && protectedRange.from <= index) { index = protectedRange.to - 1; continue; }
+    const character = text[index];
+    if (character === "\r" || character === "\n") { start = -1; brackets.length = 0; continue; }
+    if (character === "\\") { if (text[index + 1] !== "\r" && text[index + 1] !== "\n") { index++; } continue; }
+    if (start < 0) {
+      if (character === "^" && text[index + 1] === "[") { start = index; depth = 1; nested = false; index++; }
+      else if (character === "[") { brackets.push(index); }
+      else if (character === "]") {
+        const from = brackets.pop();
+        if (from !== undefined && (text[index + 1] === "(" || text[index + 1] === "[")) { linkLabels.push({ from, to: index + 1 }); }
+      }
+      continue;
+    }
+    if (character === "^" && text[index + 1] === "[") { nested = true; }
+    if (character === "[") { depth++; }
+    else if (character === "]" && --depth === 0) {
+      const content = text.slice(start + 2, index);
+      if (!nested && content.trim()) { result.push({ from: start, to: index + 1, content }); }
+      start = -1;
+    }
+  }
+  const labels = merged(linkLabels);
+  let label = 0;
+  return result.filter(note => {
+    while (label < labels.length && labels[label].to <= note.from) { label++; }
+    return !labels[label] || labels[label].from > note.from;
+  });
+}
+
 function readFootnotes(content: string, position: (from: number, to: number) => Pos, excluded: readonly SourceRange[]): FootnoteDefinition[] {
   const result: FootnoteDefinition[] = [];
   const definitions = /^[ \t]{0,3}\[\^([^\]\r\n]+)\]:[ \t]*(.*)\r?$/gm;
@@ -859,6 +924,7 @@ function readFootnotes(content: string, position: (from: number, to: number) => 
 export function parseMarkdown(content: string): CachedMetadata {
   const position = sourcePositions(content);
   const cache: CachedMetadata = { headings: [], links: [], embeds: [], tags: [], blocks: Object.create(null), frontmatterLinks: [], footnotes: [], footnoteRefs: [], sections: [], listItems: [], ignored: [], literal: [], math: [], errors: [] };
+  const topLevelSections: CachedMetadata["sections"] = [];
   const header = frontmatter(content);
   const excluded: SourceRange[] = header ? [{ from: header.from, to: header.to }] : [];
   for (const comment of content.matchAll(/<!--[\s\S]*?(?:-->|$)/g)) {
@@ -872,8 +938,22 @@ export function parseMarkdown(content: string): CachedMetadata {
       cache.errors.push(error instanceof Error ? error.message : String(error));
     }
   }
-  const source = header ? content.slice(0, header.to).replace(/[^\r\n]/g, " ") + content.slice(header.to) : content;
+  const source = markdownParseSource(header ? content.slice(0, header.to).replace(/[^\r\n]/g, " ") + content.slice(header.to) : content);
   const tree = markdownLanguage.parser.parse(source);
+  // The GFM extension rejects a delimiter's final pipe followed by whitespace.
+  // For table ownership only, use its equivalent optional-pipe spelling and
+  // equal-width spaces. Ordinary syntax keeps its logical-line tree.
+  const tableSource = source.includes("|") ? source.replace(/^[ \t|:-]+$/gm, line => {
+      let end = line.length;
+      while (end > 0 && (line[end - 1] === " " || line[end - 1] === "\t")) { end--; }
+      return end < line.length && line[end - 1] === "|" && line.includes("-")
+        ? line.slice(0, end - 1) + " " + line.slice(end) : line;
+    }) : source;
+  const tableTree = tableSource === source ? tree : markdownLanguage.parser.parse(tableSource);
+  const tables: SourceRange[] = [];
+  tableTree.iterate({ enter(node) {
+    if (node.name === "Table" && node.node.parent?.name === "Document") { tables.push({ from: node.from, to: node.to }); return false; }
+  } });
   const code: SourceRange[] = [];
   tree.iterate({
     enter(node) {
@@ -934,7 +1014,9 @@ export function parseMarkdown(content: string): CachedMetadata {
   tree.iterate({
     enter(node) {
       if (["FencedCode", "CodeBlock"].includes(node.name) && node.from >= (header?.to ?? 0)) {
-        cache.sections.push({ type: "code", position: position(node.from, node.to) });
+        const section = { type: "code", position: position(node.from, node.to) };
+        cache.sections.push(section);
+        if (node.node.parent?.name === "Document") { topLevelSections.push(section); }
       }
       if (overlaps(cache.ignored, node.from)) {
         return;
@@ -944,11 +1026,13 @@ export function parseMarkdown(content: string): CachedMetadata {
         const text = content.slice(node.from, node.to).replace(/\r$/, "");
         const value = node.name.startsWith("ATX")
           ? text.replace(/^#{1,6}[ \t]*/, "").replace(/[ \t]+#+[ \t]*$/, "").trim()
-          : text.replace(/\r?\n[=-]+[ \t]*$/, "").replace(/\r?\n/g, " ").trim();
+          : text.replace(/\r?\n {0,3}[=-]+[ \t]*$/, "").replace(/\r?\n/g, " ").trim();
         cache.headings.push({ heading: value, level: Number(heading[1]), position: position(node.from, node.to) });
       }
       if (["Paragraph", "FencedCode", "CodeBlock", "Blockquote", "BulletList", "OrderedList"].includes(node.name) || heading) {
-        cache.sections.push({ type: heading ? "heading" : node.name === "Paragraph" ? "paragraph" : node.name.endsWith("Code") || node.name === "CodeBlock" ? "code" : node.name.toLowerCase(), position: position(node.from, node.to) });
+        const section = { type: heading ? "heading" : node.name === "Paragraph" ? "paragraph" : node.name.endsWith("Code") || node.name === "CodeBlock" ? "code" : node.name.toLowerCase(), position: position(node.from, node.to) };
+        cache.sections.push(section);
+        if (node.node.parent?.name === "Document") { topLevelSections.push(section); }
       }
       if (node.name === "ListItem") {
         const task = /^[*+-][ \t]+\[([ xX])\]/.exec(content.slice(node.from, node.to));
@@ -998,6 +1082,29 @@ export function parseMarkdown(content: string): CachedMetadata {
       (node.name === "Image" ? cache.embeds : cache.links).push(entry);
     },
   });
+  const ordinaryTables = tables.filter(table => !overlaps(cache.ignored, table.from)
+    && !cache.footnotes.some(note => note.position.start.offset < table.to && note.position.end.offset > table.from));
+  if (ordinaryTables.length) {
+    const tableParagraph = (section: CachedMetadata["sections"][number]): boolean => {
+      if (section.type !== "paragraph") { return false; }
+      let low = 0, high = ordinaryTables.length;
+      while (low < high) {
+        const middle = (low + high) >> 1;
+        if (ordinaryTables[middle].from <= section.position.start.offset) { low = middle + 1; } else { high = middle; }
+      }
+      return low > 0 && ordinaryTables[low - 1].to >= section.position.end.offset;
+    };
+    // CRLF table source is a Paragraph in the unprojected tree. Give its whole
+    // source one canonical table owner, shared by metadata and ID authoring.
+    cache.sections = cache.sections.filter(section => !tableParagraph(section));
+    for (let index = topLevelSections.length - 1; index >= 0; index--) { if (tableParagraph(topLevelSections[index])) { topLevelSections.splice(index, 1); } }
+    for (const table of ordinaryTables) {
+      const section = { type: "table", position: position(table.from, table.to) };
+      cache.sections.push(section); topLevelSections.push(section);
+    }
+    cache.sections.sort((left, right) => left.position.start.offset - right.position.start.offset);
+    topLevelSections.sort((left, right) => left.position.start.offset - right.position.start.offset);
+  }
   for (const match of content.matchAll(/#[\p{L}\p{N}_/-]+/gu)) {
     const previous = Array.from(content.slice(Math.max(0, match.index - 2), match.index)).at(-1) ?? "";
     if (validTag(match[0].slice(1)) && !/[\p{L}\p{N}_/#(]/u.test(previous) && !isEscaped(content, match.index) && !overlaps(cache.ignored, match.index, match.index + match[0].length)) {
@@ -1014,7 +1121,13 @@ export function parseMarkdown(content: string): CachedMetadata {
     }
     const lineStart = content.lastIndexOf("\n", from - 1) + 1;
     const ownLine = !content.slice(lineStart, from).trim();
-    const section = cache.sections.filter(entry => ownLine ? entry.position.end.offset <= lineStart : entry.position.start.offset <= from && entry.position.end.offset >= from).at(-1);
+    // A standalone marker follows a complete top-level block. The final nested
+    // paragraph of a list/quote is later in the preorder section cache, but it
+    // does not own a marker outside that container. Inline IDs keep their
+    // established innermost-section behavior.
+    const section = ownLine
+      ? topLevelSections.filter(entry => entry.position.end.offset <= lineStart).at(-1)
+      : cache.sections.filter(entry => entry.position.start.offset <= from && entry.position.end.offset >= from).at(-1);
     const start = section?.position.start.offset ?? lineStart;
     const end = section?.position.end.offset ?? from;
     cache.blocks[match[1]] = { id: match[1], position: position(start, end), idPosition: position(from, from + match[1].length + 1) };
@@ -1024,6 +1137,30 @@ export function parseMarkdown(content: string): CachedMetadata {
       cache.footnoteRefs.push({ id: match[1], position: position(match.index, match.index + match[0].length) });
     }
   }
+  const inlineLiterals: SourceRange[] = [...cache.ignored, ...cache.footnotes.map(note => ({ from: note.position.start.offset, to: note.position.end.offset }))];
+  const inlineOpeners: SourceRange[] = [...wikiRanges];
+  tree.iterate({ enter(node) {
+    if (["URL", "Autolink", "LinkReference"].includes(node.name)) { inlineLiterals.push({ from: node.from, to: node.to }); }
+    if (["Link", "Image"].includes(node.name)) { inlineOpeners.push({ from: node.from, to: node.to }); }
+  } });
+  const inlineCommentLiterals = mergeRanges(inlineLiterals);
+  let inlineComment = -1;
+  for (const marker of content.matchAll(/%%/g)) {
+    if (isEscaped(content, marker.index) || overlaps(inlineCommentLiterals, marker.index, marker.index + 2)) { continue; }
+    if (inlineComment < 0) { inlineComment = marker.index; }
+    else { inlineLiterals.push({ from: inlineComment, to: marker.index + 2 }); inlineComment = -1; }
+  }
+  if (inlineComment >= 0) { inlineLiterals.push({ from: inlineComment, to: content.length }); }
+  const reservedFootnotes = new Set([...cache.footnotes.map(note => note.id), ...cache.footnoteRefs.map(note => note.id)]);
+  for (const inline of scanInlineFootnotes(content, inlineLiterals, inlineOpeners)) {
+    const prefix = "inline:" + inline.from;
+    let id = prefix;
+    for (let index = 1; reservedFootnotes.has(id); index++) { id = prefix + ":" + index; }
+    reservedFootnotes.add(id);
+    const span = position(inline.from, inline.to);
+    cache.footnotes.push({ id, content: inline.content, position: span, labelPosition: span, inline: true });
+  }
+  cache.footnotes.sort((a, b) => a.position.start.offset - b.position.start.offset);
   if (header && cache.frontmatter) {
     const visited = new WeakSet<object>();
     const collect = (value: unknown, path: (string | number)[]): void => {

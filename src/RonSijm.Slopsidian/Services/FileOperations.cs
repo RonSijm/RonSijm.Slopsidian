@@ -9,6 +9,15 @@ public sealed record RenameVaultFileRequest(string? Root, string Path, string Ne
 public sealed record RenameVaultFileResult(VaultSnapshot Snapshot, string OldPath, string NewPath, IReadOnlyList<VaultDocument> Documents);
 public sealed record TrashVaultFileRequest(string? Root, string Path, string? Version, IReadOnlyList<VaultFileEdit>? Edits = null);
 public sealed record TrashVaultFileResult(VaultSnapshot Snapshot, string Path, string TrashPath, IReadOnlyList<VaultDocument> Documents);
+public sealed record VaultTrashEntry(string Path, string Name, long Size, long Mtime, string Token);
+public sealed record VaultTrashListing(string Root, IReadOnlyList<VaultTrashEntry> Entries, int Ignored, bool CanRestore);
+public sealed record VaultTrashPreview(string Root, VaultTrashEntry Entry, string Content, string Version, bool HasBom);
+public sealed record VaultTrashSelection(string Path, string Token);
+public sealed record VaultTrashReviewRequest(string? Root, string Folder, IReadOnlyList<VaultTrashSelection>? Entries);
+public sealed record VaultTrashRestoreItem(string TrashPath, string NewPath, string Version);
+public sealed record VaultTrashRestoreReview(string Root, string Token, string Folder, IReadOnlyList<VaultTrashRestoreItem> Items);
+public sealed record VaultTrashRestoreRequest(string? Root, string Token, string Path);
+public sealed record VaultTrashRestoreResult(VaultSnapshot Snapshot, string TrashPath, string NewPath, VaultDocument Document);
 public sealed record SystemTrashVaultFileRequest(string? Root, string Path, string? Version);
 public sealed record SystemTrashVaultFileResult(VaultSnapshot Snapshot, string Path, string? RecycledPath);
 public sealed record SystemTrashVaultFolderRequest(string? Root, string Path, IReadOnlyList<FolderManifestEntry>? Manifest);
@@ -33,6 +42,10 @@ public static class VaultFileOperationEndpoints
         app.MapPost("/api/files/edit", (EditVaultFilesRequest request, VaultService vault, CancellationToken cancellationToken) => vault.EditFilesAsync(request, cancellationToken));
         app.MapPost("/api/files/rename", (RenameVaultFileRequest request, VaultService vault, CancellationToken cancellationToken) => vault.RenameFileAsync(request, cancellationToken));
         app.MapPost("/api/files/trash", (TrashVaultFileRequest request, VaultService vault, CancellationToken cancellationToken) => vault.TrashFileAsync(request, cancellationToken));
+        app.MapGet("/api/files/trash/list", (string? root, VaultService vault, CancellationToken cancellationToken) => vault.ListTrashAsync(root, cancellationToken));
+        app.MapGet("/api/files/trash/preview", (string? root, string path, string token, VaultService vault, CancellationToken cancellationToken) => vault.PreviewTrashAsync(root, path, token, cancellationToken));
+        app.MapPost("/api/files/trash/review", (VaultTrashReviewRequest request, VaultService vault, CancellationToken cancellationToken) => vault.ReviewTrashRestoreAsync(request, cancellationToken));
+        app.MapPost("/api/files/trash/restore", (VaultTrashRestoreRequest request, VaultService vault, CancellationToken cancellationToken) => vault.RestoreTrashAsync(request, cancellationToken));
         app.MapPost("/api/files/system-trash", (SystemTrashVaultFileRequest request, VaultService vault, CancellationToken cancellationToken) => vault.SystemTrashFileAsync(request, cancellationToken));
         app.MapPost("/api/files/folders/system-trash", (SystemTrashVaultFolderRequest request, VaultService vault, CancellationToken cancellationToken) => vault.SystemTrashFolderAsync(request, cancellationToken));
         app.MapPost("/api/files/delete", (DeleteVaultFileRequest request, VaultService vault, CancellationToken cancellationToken) => vault.DeleteFileAsync(request, cancellationToken));

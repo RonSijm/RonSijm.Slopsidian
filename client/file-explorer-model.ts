@@ -12,6 +12,57 @@ export interface ExplorerState {
 export interface ExplorerEntry { path: string; folder: boolean; mtime?: number; ctime?: number; }
 export interface ExplorerNode extends ExplorerEntry { name: string; children: ExplorerNode[]; visible: boolean; matchingFiles: number; }
 
+export const MAX_EXPLORER_SELECTION = 64;
+export const MAX_EXPLORER_OPEN = 20;
+export interface ExplorerSelectionItem<T extends object> { path: string; file: T }
+export interface ExplorerOpenSelection<T extends object> { revision: number; items: readonly ExplorerSelectionItem<T>[] }
+
+/** Transient visible-note selection. Paths alone never authorize a recreated file. */
+export class ExplorerSelection<T extends object> {
+  private readonly selected = new Map<string, T>();
+  private anchor: ExplorerSelectionItem<T> | null = null;
+  private revision = 0;
+  get size(): number { return this.selected.size; }
+  has(path: string, file: T): boolean { return this.selected.get(path) === file; }
+  clear(): void {
+    if (this.selected.size || this.anchor) { this.selected.clear(); this.anchor = null; this.revision++; }
+  }
+  reconcile(visible: readonly ExplorerSelectionItem<T>[]): void {
+    const current = new Map(visible.map(item => [item.path, item.file]));
+    let changed = false;
+    for (const [path, file] of this.selected) { if (current.get(path) !== file) { this.selected.delete(path); changed = true; } }
+    if (this.anchor && current.get(this.anchor.path) !== this.anchor.file) { this.anchor = null; changed = true; }
+    if (changed) { this.revision++; }
+  }
+  choose(visible: readonly ExplorerSelectionItem<T>[], item: ExplorerSelectionItem<T>, toggle = false, range = false): string | null {
+    this.reconcile(visible);
+    const index = visible.findIndex(current => current.path === item.path && current.file === item.file);
+    if (index < 0) { return "Select a visible Markdown note in this Files pane."; }
+    const next = toggle ? new Map(this.selected) : new Map<string, T>();
+    if (range) {
+      const anchor = this.anchor ? visible.findIndex(current => current.path === this.anchor!.path && current.file === this.anchor!.file) : -1;
+      for (const current of visible.slice(Math.min(anchor < 0 ? index : anchor, index), Math.max(anchor < 0 ? index : anchor, index) + 1)) { next.set(current.path, current.file); }
+    } else if (toggle && next.get(item.path) === item.file) { next.delete(item.path); }
+    else { next.set(item.path, item.file); }
+    if (next.size > MAX_EXPLORER_SELECTION) { return `Select up to ${MAX_EXPLORER_SELECTION} visible Markdown notes.`; }
+    this.selected.clear(); for (const [path, file] of next) { this.selected.set(path, file); }
+    if (!range || !this.anchor) { this.anchor = { ...item }; }
+    this.revision++; return null;
+  }
+  plan(visible: readonly ExplorerSelectionItem<T>[]): ExplorerOpenSelection<T> | string {
+    const revision = this.revision;
+    this.reconcile(visible);
+    if (revision !== this.revision) { return "The selected notes changed. Review the visible selection before opening."; }
+    if (!this.size || this.size > MAX_EXPLORER_OPEN) { return `Choose 1–${MAX_EXPLORER_OPEN} visible Markdown notes to open in new tabs.`; }
+    return { revision: this.revision, items: visible.filter(item => this.has(item.path, item.file)).map(item => ({ ...item })) };
+  }
+  current(plan: ExplorerOpenSelection<T>, visible: readonly ExplorerSelectionItem<T>[]): boolean {
+    if (plan.revision !== this.revision || plan.items.length !== this.size) { return false; }
+    const items = visible.filter(item => this.has(item.path, item.file));
+    return items.length === plan.items.length && items.every((item, index) => item.path === plan.items[index].path && item.file === plan.items[index].file);
+  }
+}
+
 function relativePath(value: unknown): value is string {
   return typeof value === "string" && value.length > 0 && value.length <= 4096
     && !/[\\\x00-\x1f]/.test(value) && value.split("/").every(part => part.length > 0 && !part.startsWith("."));

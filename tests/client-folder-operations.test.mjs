@@ -9,16 +9,19 @@ import { root, startHost } from "./host.mjs";
 
 // Real Vault + FileManager + BrowserVault over in-memory directory handles; workspace/metadata are recording stand-ins.
 let directory, BrowserVault, Vault, FileManager, TFolder, configureBrowserHost, parseMarkdown, linkDestination, definitions;
-let current = null;
+let current = null, planSelectedNoteMoves, moveSelectedNotes, planSelectedNoteRenames, renameSelectedNotes, reviewSelectedNoteTrash, trashSelectedNotes;
 before(async () => {
   await mkdir(join(root, ".runtime"), { recursive: true });
   directory = await mkdtemp(join(root, ".runtime", "client-folder-tests-"));
   const entry = join(directory, "client.mjs");
   await build({
-    stdin: { contents: 'export { BrowserVault } from "./client/browser-vault"; export { Vault, TFolder } from "./client/vault"; export { FileManager } from "./client/file-manager"; export { configureBrowserHost } from "./client/contracts"; export { parseMarkdown } from "./client/markdown"; export { linkDestination } from "./client/links";', resolveDir: root, loader: "ts" },
+    stdin: { contents: 'export { BrowserVault } from "./client/browser-vault"; export { Vault, TFolder } from "./client/vault"; export { FileManager } from "./client/file-manager"; export { configureBrowserHost } from "./client/contracts"; export { parseMarkdown } from "./client/markdown"; export { linkDestination } from "./client/links"; export { planSelectedNoteMoves, moveSelectedNotes } from "./client/explorer-move"; export { planSelectedNoteRenames, renameSelectedNotes } from "./client/explorer-rename"; export { reviewSelectedNoteTrash, trashSelectedNotes } from "./client/explorer-trash";', resolveDir: root, loader: "ts" },
     outfile: entry, bundle: true, platform: "node", format: "esm", packages: "external", logLevel: "silent",
   });
   ({ BrowserVault, Vault, FileManager, TFolder, configureBrowserHost, parseMarkdown, linkDestination } = await import(pathToFileURL(entry).href));
+  ({ planSelectedNoteMoves, moveSelectedNotes } = await import(pathToFileURL(entry).href));
+  ({ planSelectedNoteRenames, renameSelectedNotes } = await import(pathToFileURL(entry).href));
+  ({ reviewSelectedNoteTrash, trashSelectedNotes } = await import(pathToFileURL(entry).href));
   configureBrowserHost({ request: (...args) => current.request(...args), chooseDirectory: async () => null, getVaultChoices: () => ({}) });
   const host = await startHost();
   try { definitions = (await (await host.request("/api/core")).json()).plugins.map(plugin => ({ ...plugin, defaultOn: plugin.configuredEnabled })); }
@@ -96,7 +99,7 @@ async function fixture(files, options = {}) {
   assert.equal((await host.request("/api/vault/open", "POST", { path: id })).status, 200);
   current = host;
   const log = { renames: [], trashStages: [], rollbacks: [], commits: [], mutations: [], events: [], saved: 0 };
-  const app = { changingVault: false };
+  const app = { changingVault: false, core: { busy: false, isEnabled: id => id === "file-explorer" } };
   const vault = new Vault(async () => {}, { renameFile: (file, path) => app.fileManager.renameFile(file, path, true), trashFile: (file, system) => app.fileManager.trashFile(file, system), deleteFile: file => app.fileManager.deleteFile(file), createFolder: path => app.fileManager.createFolder(path) });
   app.vault = vault;
   vault.setSnapshot((await host.request("/api/vault")).value);
@@ -146,6 +149,238 @@ function resolutions(texts, tree, moves = new Map()) {
   }
   return result;
 }
+
+const selectedFiles = { "From/α.md": "\ufeff# α\r\n\r\n[peer](β.md)\r\n", "From/β.md": "# β\n", "Dest/kept.md": "keep\n", "Outside.md": "[[From/α]] [[From/β]]\n" };
+
+test("reviewed renames reject parser-unsafe destination names before any real save, rename or link rewrite", async () => {
+  const original = "\ufeff[[In/Old#Target|label]]\r\n[ref](./In/Old.md#Target)\r\n";
+  const context = await fixture({ "In/Old.md": "\ufeff# Target\r\n", "Outside.md": original }), before = dump(context.folder), saved = context.log.saved;
+  for (const replace of ["New]name", "New`code`name", " New", "New ", "New(name", "New)name"]) {
+    assert.throws(() => planSelectedNoteRenames(context.vault.rootPath, [context.vault.getFileByPath("In/Old.md")], { find: "Old", replace, prefix: "", suffix: "" }, context.vault.getAllLoadedFiles().map(file => file.path)), /unsupported link name/);
+    assert.deepEqual(dump(context.folder), before); assert.equal(context.log.saved, saved);
+  }
+});
+
+test("reviewed real renames preserve reparsed wiki, embed and Markdown destinations for supported punctuation", async () => {
+  for (const replace of ["New[name", "New [[name", "New # ^ % $ λ 😀", "New(name)", "New((name))"]) {
+    const original = "\ufeff[[In/Old#Target λ|label]]\r\n![[In/Old]]\r\n[ref](./In/Old.md#Target%20%CE%BB)\r\n";
+    const context = await fixture({ "In/Old.md": "\ufeff# Target λ\r\n", "Outside.md": original });
+    const plan = planSelectedNoteRenames(context.vault.rootPath, [context.vault.getFileByPath("In/Old.md")], { find: "Old", replace, prefix: "", suffix: "" }, context.vault.getAllLoadedFiles().map(file => file.path));
+    const result = await renameSelectedNotes(context.app, plan, true, () => true); assert.equal(result.error, null, replace);
+    const rewritten = await context.vault.readDocument("Outside.md"), cache = parseMarkdown(rewritten.content), references = [...cache.links, ...cache.embeds];
+    assert.equal(references.length, 3, replace); assert.equal(rewritten.hasBom, true); assert.ok(!/(?<!\r)\n/.test(rewritten.content));
+    assert.ok(rewritten.content.includes("|label]]"));
+    for (const reference of references) { assert.equal(linkDestination(context.vault.getFiles(), reference, "Outside.md")?.file.path, "In/" + replace + ".md", reference.original); }
+    assert.equal(lookup(context.folder, "In/Old.md"), null); assert.equal(Buffer.from(lookup(context.folder, "In/" + replace + ".md").bytes).toString("utf8"), "\ufeff# Target λ\r\n");
+  }
+});
+
+const trashReview = context => reviewSelectedNoteTrash(context.app, ["From/α.md", "From/β.md"].map(path => context.vault.getFileByPath(path)), () => true);
+
+test("vault-trash review reads exact versions without SaveAll or physical mutations and rejects unsupported selections", async () => {
+  const context = await fixture({ ...selectedFiles, "image.png": "asset" }), before = dump(context.folder), saved = context.log.saved;
+  const plan = await trashReview(context);
+  assert.equal(context.log.saved, saved); assert.deepEqual(dump(context.folder), before); assert.equal(lookup(context.folder, ".trash"), null);
+  assert.ok(Object.isFrozen(plan) && Object.isFrozen(plan.items) && plan.items.every(Object.isFrozen));
+  for (const item of plan.items) assert.equal(item.version, (await context.vault.getFileInfo(item.file)).version);
+  for (const files of [[], Array(21).fill(context.vault.getFileByPath("From/α.md")), [context.vault.getFileByPath("image.png")], [context.vault.getFileByPath("From/α.md"), context.vault.getFileByPath("From/α.md")]]) {
+    await assert.rejects(reviewSelectedNoteTrash(context.app, files, () => true), /1–20|unsupported|duplicate/);
+  }
+  assert.deepEqual(dump(context.folder), before);
+});
+
+test("vault-trash review refuses dirty/saving/reloading selections, stale visible versions and lost owners", async () => {
+  for (const state of [{ dirty: true }, { isSaving: true }, { isReloading: true }, { document: { version: "old" } }]) {
+    const context = await fixture(selectedFiles), before = dump(context.folder);
+    context.workspace.sessions.set("From/α.md", state);
+    await assert.rejects(trashReview(context), /Save|changed on disk/); assert.deepEqual(dump(context.folder), before);
+  }
+  const context = await fixture(selectedFiles);
+  await assert.rejects(reviewSelectedNoteTrash(context.app, [context.vault.getFileByPath("From/α.md")], () => false), /pane|operation/);
+  Object.defineProperty(context.vault, "readOnly", { value: true }); await assert.rejects(trashReview(context), /pane|operation/);
+});
+
+test("reviewed vault trash stages and closes each normal file owner and preserves exact bytes, references and attachments", async () => {
+  const context = await fixture({ ...selectedFiles, "image.png": new Uint8Array([0, 255, 13, 10]) }), before = dump(context.folder);
+  const plan = await trashReview(context), result = await trashSelectedNotes(context.app, plan, () => true);
+  assert.equal(result.error, null); assert.equal(result.trashed.length, 2); assert.equal(result.remaining.length, 0);
+  for (const item of plan.items) {
+    assert.equal(lookup(context.folder, item.path), null); assert.equal(context.vault.getFileByPath(item.path), null);
+    const hidden = lookup(context.folder, ".trash/" + item.file.name); assert.ok(hidden); assert.equal(Buffer.from(hidden.bytes).toString("latin1"), before[item.path]);
+  }
+  assert.equal(dump(context.folder)["Outside.md"], before["Outside.md"]); assert.equal(dump(context.folder)["image.png"], before["image.png"]);
+  assert.deepEqual(context.log.trashStages, ["From/α.md", "From/β.md"]); assert.deepEqual(context.log.commits, context.log.trashStages); assert.deepEqual(context.log.rollbacks, []);
+  assert.equal(context.log.events.filter(([type]) => type === "delete").length, 2);
+});
+
+test("observed or unobserved physical changes after trash review are never removed", async () => {
+  for (const observed of [false, true]) {
+    const context = await fixture(selectedFiles), plan = await trashReview(context), newer = "\ufeff# External replacement λ 😀\r\n";
+    await put(context.folder, "From/α.md", newer); if (observed) await context.metadataCache.refresh();
+    const result = await trashSelectedNotes(context.app, plan, () => true);
+    assert.equal(result.trashed.length, 0); assert.match(result.error, /reviewed note changed/i); assert.equal(Buffer.from(lookup(context.folder, "From/α.md").bytes).toString("utf8"), newer);
+    assert.equal(lookup(context.folder, ".trash"), null); assert.deepEqual(context.log.trashStages, []);
+  }
+});
+
+test("reviewed trash rechecks ownership after SaveAll and after staged views close, restoring staged owners on refusal", async () => {
+  for (const phase of ["save", "stage", "dirty-stage"]) {
+    const context = await fixture(selectedFiles), plan = await trashReview(context), before = dump(context.folder); let currentOwner = true;
+    if (phase === "save") context.app.saveAll = async () => { currentOwner = false; };
+    else { const stage = context.workspace.stageFileTrash; context.workspace.stageFileTrash = async file => { const result = await stage(file); if (phase === "stage") currentOwner = false; else context.workspace.hasUnsavedChanges = true; return result; }; }
+    const result = await trashSelectedNotes(context.app, plan, () => currentOwner);
+    assert.equal(result.trashed.length, 0); assert.ok(result.error); assert.deepEqual(dump(context.folder), before); assert.equal(lookup(context.folder, ".trash"), null);
+    assert.deepEqual(context.log.rollbacks, phase === "save" ? [] : ["From/α.md"]); assert.deepEqual(context.log.commits, []);
+  }
+});
+
+test("reviewed trash's optimistic backend version refuses a physical replacement after staging", async () => {
+  const context = await fixture(selectedFiles), plan = await trashReview(context), stage = context.workspace.stageFileTrash;
+  const newer = "External after stage Ω\r\n";
+  context.workspace.stageFileTrash = async file => { const result = await stage(file); await put(context.folder, file.path, newer); return result; };
+  const result = await trashSelectedNotes(context.app, plan, () => true);
+  assert.equal(result.trashed.length, 0); assert.ok(result.error); assert.equal(Buffer.from(lookup(context.folder, "From/α.md").bytes).toString("utf8"), newer);
+  assert.deepEqual(context.log.rollbacks, ["From/α.md"]); assert.equal(lookup(context.folder, ".trash"), null);
+});
+
+test("reviewed trash stops on a later close refusal and retains earlier exact vault-trash copies", async () => {
+  const context = await fixture(selectedFiles), plan = await trashReview(context); context.workspace.stageFailure = "From/β.md";
+  const result = await trashSelectedNotes(context.app, plan, () => true);
+  assert.equal(result.trashed.length, 1); assert.equal(result.remaining[0].path, "From/β.md"); assert.match(result.error, /refused to close/);
+  assert.equal(lookup(context.folder, "From/α.md"), null); assert.ok(lookup(context.folder, ".trash/α.md")); assert.ok(lookup(context.folder, "From/β.md"));
+  assert.deepEqual(context.log.commits, ["From/α.md"]);
+});
+
+test("a cleanup error after trash acknowledgement reports the removed note and never trashes a newer replacement", async () => {
+  const context = await fixture(selectedFiles), plan = await trashReview(context);
+  context.app.notifyEditor = async () => { throw new Error("Post-trash cleanup failed"); };
+  const result = await trashSelectedNotes(context.app, plan, () => true);
+  assert.equal(result.trashed.length, 1); assert.equal(result.remaining.length, 1); assert.match(result.error, /Post-trash cleanup failed/);
+  assert.ok(lookup(context.folder, ".trash/α.md")); assert.ok(lookup(context.folder, "From/β.md"));
+  await put(context.folder, "From/α.md", "A newer file"); await context.metadataCache.refresh();
+  const repeated = await trashSelectedNotes(context.app, plan, () => true); assert.equal(repeated.trashed.length, 0); assert.match(repeated.error, /selection|pane/);
+  assert.equal(Buffer.from(lookup(context.folder, "From/α.md").bytes).toString("utf8"), "A newer file");
+});
+
+test("a reviewed note removed externally before the trash request is never counted as acknowledged vault trash", async () => {
+  const context = await fixture(selectedFiles), plan = await trashReview(context);
+  context.app.saveAll = async () => { await lookup(context.folder, "From").removeEntry("α.md"); };
+  const result = await trashSelectedNotes(context.app, plan, () => true);
+  assert.equal(result.trashed.length, 0); assert.equal(result.remaining.length, 2); assert.ok(result.error);
+  assert.equal(lookup(context.folder, ".trash"), null); assert.deepEqual(context.log.commits, []); assert.ok(lookup(context.folder, "From/β.md"));
+});
+
+test("lost vault-trash acknowledgements retain their explicit unknown outcome without inferring a trash receipt from absence", async () => {
+  const context = await fixture(selectedFiles), plan = await trashReview(context), original = context.vault.trashFile.bind(context.vault);
+  context.vault.trashFile = async (...args) => { await original(...args); throw new Error("Transport reply lost after removal"); };
+  const result = await trashSelectedNotes(context.app, plan, () => true);
+  assert.equal(result.trashed.length, 0); assert.equal(result.remaining.length, 2); assert.match(result.error, /could not be confirmed/);
+  assert.ok(lookup(context.folder, ".trash/α.md")); assert.equal(lookup(context.folder, "From/α.md"), null); assert.ok(lookup(context.folder, "From/β.md"));
+});
+
+function selectedPlan(vault, paths = ["From/α.md", "From/β.md"], destination = "Dest") {
+  return planSelectedNoteMoves(vault.rootPath, paths.map(path => vault.getFileByPath(path)), destination ? vault.getFolderByPath(destination) : vault.getRoot(), vault.getAllLoadedFiles().map(file => file.path));
+}
+
+test("selected-note destinations are immutable, bounded, exact and case-insensitively collision checked", async () => {
+  const { vault } = await fixture({ ...selectedFiles, "Else/α.md": "duplicate", "Dest/Α.MD": "occupied", "image.png": new Uint8Array([1, 2]) });
+  assert.throws(() => selectedPlan(vault), /occupied/);
+  assert.throws(() => selectedPlan(vault, ["From/α.md", "Else/α.md"], ""), /duplicated/);
+  assert.throws(() => selectedPlan(vault, ["image.png"]), /unsupported/);
+  assert.throws(() => selectedPlan(vault, ["From/β.md", "From/β.md"]), /duplicate/);
+  assert.throws(() => selectedPlan(vault, ["Dest/kept.md"]), /already/);
+  for (const files of [[], Array(21).fill(vault.getFileByPath("From/β.md"))]) {
+    assert.throws(() => planSelectedNoteMoves(vault.rootPath, files, vault.getRoot(), []), /1–20/);
+  }
+  const plan = selectedPlan(vault, ["From/β.md"]);
+  assert.deepEqual(plan.items.map(({ from, to }) => [from, to]), [["From/β.md", "Dest/β.md"]]);
+  assert.ok(Object.isFrozen(plan) && Object.isFrozen(plan.items) && Object.isFrozen(plan.items[0]));
+});
+
+test("selected-note moves use normal real versioned renames and preserve BOM/CRLF while rewriting links", async () => {
+  const canvas = JSON.stringify({ nodes: [{ id: "ref", type: "file", file: "From/α.md", x: 0, y: 0, width: 20, height: 20 }], edges: [] });
+  const { app, vault, folder, log } = await fixture({ ...selectedFiles, "links.canvas": canvas });
+  const before = dump(folder), plan = selectedPlan(vault);
+  const result = await moveSelectedNotes(app, plan, true, () => true);
+  assert.equal(result.error, null); assert.equal(result.moved.length, 2); assert.equal(result.remaining.length, 0);
+  const after = dump(folder);
+  assert.equal(Buffer.from(after["Dest/α.md"], "latin1").toString("utf8"), "\ufeff# α\r\n\r\n[peer](./%CE%B2.md)\r\n");
+  assert.equal(after["Dest/β.md"], before["From/β.md"]);
+  assert.equal(after["From/α.md"], undefined); assert.equal(after["From/β.md"], undefined);
+  assert.match((await vault.readDocument("Outside.md")).content, /\[\[Dest\/α\]\] \[\[Dest\/β\]\]/);
+  assert.equal(JSON.parse((await vault.readDocument("links.canvas")).content).nodes[0].file, "Dest/α.md");
+  assert.deepEqual(log.renames.map(entry => [entry[1], entry[2]]), [["From/α.md", "Dest/α.md"], ["From/β.md", "Dest/β.md"]]);
+});
+
+test("selected-note moves can explicitly keep link bytes", async () => {
+  const { app, vault, folder } = await fixture(selectedFiles), before = dump(folder);
+  const result = await moveSelectedNotes(app, selectedPlan(vault), false, () => true);
+  assert.equal(result.error, null); assert.equal(dump(folder)["Outside.md"], before["Outside.md"]);
+});
+
+test("selected-note moves refuse stale owners, roots, folders, identities and late collisions before any write", async () => {
+  for (const mutation of [
+    ({ app }) => { app.core.busy = true; },
+    ({ app }) => { app.changingVault = true; },
+    ({ app }) => { app.workspace.isChangingLayout = true; },
+    ({ app }) => { app.workspace.isChangingFiles = true; },
+    ({ app }) => { app.core.isEnabled = () => false; },
+    ({ vault }) => { vault.getFileByPath("From/α.md").path = "Elsewhere.md"; },
+    ({ vault }) => { vault.getFolderByPath("Dest").path = "Changed"; },
+    ({ vault }) => { const original = vault.getFolderByPath.bind(vault); vault.getFolderByPath = path => path === "Dest" ? null : original(path); },
+    async ({ folder, app }) => { await put(folder, "Dest/α.md", "winner"); await app.metadataCache.refresh(); },
+  ]) {
+    const context = await fixture(selectedFiles), plan = selectedPlan(context.vault);
+    await mutation(context);
+    const before = dump(context.folder), result = await moveSelectedNotes(context.app, plan, true, () => true);
+    assert.equal(result.moved.length, 0); assert.equal(result.remaining.length, 2); assert.ok(result.error); assert.deepEqual(dump(context.folder), before);
+  }
+  const { app, vault, folder } = await fixture(selectedFiles), before = dump(folder);
+  const result = await moveSelectedNotes(app, selectedPlan(vault), true, () => false);
+  assert.equal(result.moved.length, 0); assert.deepEqual(dump(folder), before);
+});
+
+test("a reviewed move rechecks its owner after real SaveAll and immediately before the versioned backend rename", async () => {
+  for (const phase of ["save", "read"]) {
+    const { app, vault, folder, log } = await fixture(selectedFiles), plan = selectedPlan(vault), before = dump(folder);
+    let currentOwner = true;
+    if (phase === "save") { app.saveAll = async () => { currentOwner = false; }; }
+    else {
+      const original = vault.readDocument.bind(vault);
+      vault.readDocument = async path => { const doc = await original(path); if (path === "Outside.md") { currentOwner = false; } return doc; };
+    }
+    const result = await moveSelectedNotes(app, plan, true, () => currentOwner);
+    assert.equal(result.moved.length, 0); assert.ok(result.error); assert.equal(log.renames.length, 0); assert.deepEqual(dump(folder), before);
+  }
+});
+
+test("a physical destination created after review is retained and the source stays untouched", async () => {
+  const { app, vault, folder } = await fixture(selectedFiles), plan = selectedPlan(vault);
+  app.saveAll = async () => { await put(folder, "Dest/α.md", "outside writer λ 😀\r\n"); };
+  const result = await moveSelectedNotes(app, plan, true, () => true);
+  assert.equal(result.moved.length, 0); assert.ok(result.error);
+  assert.equal(Buffer.from(lookup(folder, "Dest/α.md").bytes).toString("utf8"), "outside writer λ 😀\r\n");
+  assert.ok(lookup(folder, "From/α.md")); assert.ok(lookup(folder, "From/β.md"));
+});
+
+test("a later failure reports completed moves without rolling back, including an acknowledged move followed by cleanup failure", async () => {
+  for (const afterAcknowledged of [false, true]) {
+    const { app, vault, folder } = await fixture(selectedFiles), plan = selectedPlan(vault);
+    const original = app.fileManager.renameFile.bind(app.fileManager); let calls = 0;
+    app.fileManager.renameFile = async (...args) => {
+      calls++;
+      if (calls === 2 && !afterAcknowledged) { throw new Error("Second move refused"); }
+      await original(...args);
+      if (calls === 2) { throw new Error("Cleanup failed after acknowledgement"); }
+    };
+    const result = await moveSelectedNotes(app, plan, true, () => true);
+    assert.equal(result.moved.length, afterAcknowledged ? 2 : 1); assert.equal(result.remaining.length, afterAcknowledged ? 0 : 1);
+    assert.match(result.error, /completed moves were kept/);
+    assert.match(result.error, afterAcknowledged ? /Cleanup failed/ : /Second move refused/);
+    assert.ok(lookup(folder, "Dest/α.md")); assert.equal(lookup(folder, "From/α.md"), null);
+    assert.ok(lookup(folder, afterAcknowledged ? "Dest/β.md" : "From/β.md"));
+  }
+});
 
 const notes = {
   "Projects/a.md": "# A\n[[Deep/c#Head]] [[Outside]] [Out](../Outside.md#Top) [[c#^blk]] [[#A]] ![[Deep/pic.png]]\n",

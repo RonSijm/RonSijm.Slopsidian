@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { checkInlineFootnotes } from "./inline-footnote-scenarios.mjs";
 import { mkdir, readFile, unlink, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { setCommunityPluginEnabled } from "./community-plugin-test-helpers.mjs";
@@ -84,6 +85,9 @@ export async function checkDiscoveryPanes({ directory, evaluate, command, click,
   assert.deepEqual(await readFile(join(directory, alpha)), alphaBytes); assert.deepEqual(await readFile(join(directory, beta)), betaBytes); await capture("footnotes");
   pass("Footnote definition/reference buttons reveal exact Source ranges in existing note panes, including an explicit Reading-to-Source transition. Follow controls switch or retain a note independently; a pinned sidebar keeps its file and browsing never writes note bytes.");
 
+  await checkFootnoteEditing({ directory, evaluate, command, click, press, wait, report, capture, activate, alpha, alphaText, alphaBytes, beta, betaText, betaBytes });
+  await checkInlineFootnotes({ directory, evaluate, command, click, press, wait, report, restart, capture, activate });
+
   await setCommunityPluginEnabled({ evaluate, click, wait }, "discovery-pane-probe", true); await click(".settings-close"); await palette("Probe discovery pane contracts", "discovery-pane-probe:probe"); await wait("Boolean(globalThis.discoveryPaneProbe)");
   assert.deepEqual(await evaluate("discoveryPaneProbe"), { sameApp: true, tagItem: true, footFile: true, acceptsMarkdown: true, navigation: false, allowNoFile: true, sameProvider: true, sameFile: true, tagFactory: true, footFactory: true });
   for (const [id, invalid] of [["tags-a", { foldedTags: null }], ["foot-a", { followActiveFile: "yes" }]]) {
@@ -131,24 +135,127 @@ export async function checkDiscoveryPanes({ directory, evaluate, command, click,
   await readonlyDiscovery({ evaluate, command, click, press, wait, report, afterReload, capture }); assert.deepEqual(await readFile(originalPath), sourceBytes);
 }
 
+async function checkFootnoteEditing({ directory, evaluate, command, click, press, wait, report, capture, activate, alpha, alphaText, alphaBytes, beta, betaText, betaBytes }) {
+  const pass = text => { report.checks.push(text); console.log("PASS " + text); };
+  const dialog = "[data-footnote-edit-dialog]", draft = dialog + " .cm-content", apply = dialog + ' [data-footnote-edit-action="apply"]', cancel = dialog + ' [data-footnote-edit-action="cancel"]';
+  const noteText = () => evaluate('app.workspace.getLeafById("discovery-alpha").view.editor.getValue()');
+  const draftText = () => evaluate(`Array.from(document.querySelectorAll(${JSON.stringify(dialog + " .cm-line")}),line=>line.textContent).join("\\n")`);
+  const open = async (id = "a", leaf = "foot-a") => {
+    await activate(leaf); await click(`[data-footnotes-pane="${leaf}"] [data-footnote-edit="${id}"]`);
+    await wait(`Boolean(document.querySelector(${JSON.stringify(draft)}))`, "footnote definition editor");
+  };
+  const type = async text => { await click(draft); await press("a", "KeyA", 65, 2); await command("Input.insertText", { text }); };
+  const closed = () => wait(`!document.querySelector(${JSON.stringify(dialog)})`, "footnote editor closed");
+  const saveAlpha = async () => {
+    await activate("discovery-alpha"); await evaluate('app.workspace.getLeafById("discovery-alpha").view.focus()'); await press("s", "KeyS", 83, 2);
+    await wait('!app.workspace.getLeafById("discovery-alpha").view.session.dirty&&!app.workspace.getLeafById("discovery-alpha").view.session.isSaving', "exact note save");
+  };
+  assert.equal(await evaluate('Array.from(document.querySelectorAll(\'[data-footnotes-pane="foot-a"] [data-footnote-edit="twice"]\')).every(button=>button.disabled)'), true);
+  await open(); assert.equal(await draftText(), "A body.\nContinued 中文.");
+  await type("Cancelled draft λ\nOnly local text."); assert.equal(await draftText(), "Cancelled draft λ\nOnly local text.");
+  await press("z", "KeyZ", 90, 2); assert.equal(await draftText(), "A body.\nContinued 中文.");
+  await press("y", "KeyY", 89, 2); assert.equal(await draftText(), "Cancelled draft λ\nOnly local text.");
+  assert.equal(await noteText(), alphaText); assert.deepEqual(await readFile(join(directory, alpha)), alphaBytes);
+  await click(cancel); await closed(); assert.equal(await noteText(), alphaText); assert.deepEqual(await readFile(join(directory, alpha)), alphaBytes);
+  await open(); await click(apply); await closed(); assert.equal(await noteText(), alphaText);
+  pass("Actual Footnotes Edit definition opens a local Markdown editor; Cancel and unchanged Apply preserve the exact note, and duplicate definitions cannot be edited ambiguously.");
+
+  await activate("discovery-alpha");
+  await evaluate('(()=>{const v=app.workspace.getLeafById("discovery-alpha").view,e=v.editor;e.setCursor({line:e.lastLine(),ch:e.getLine(e.lastLine()).length});v.focus()})()');
+  await command("Input.insertText", { text: "Independent dirty edit.\n" });
+  const dirtyText = alphaText + "Independent dirty edit.\r\n";
+  await wait(`app.metadataCache.getDocument(${JSON.stringify(alpha)}).text===${JSON.stringify(dirtyText)}`, "dirty footnote source baseline");
+  await evaluate(`(async()=>{const leaf=app.workspace.getLeaf("tab");await leaf.openFile(app.vault.getFileByPath(${JSON.stringify(alpha)}),{active:false});globalThis.footnoteEditingPeer=leaf})()`);
+  const body = "**Edited** first.\nChanged λ.\n\nA second paragraph.";
+  const edited = dirtyText.replace("[^a]: A body.\r\n    Continued 中文.", "[^a]: **Edited** first.\r\n    Changed λ.\r\n    \r\n    A second paragraph.");
+  await open(); await type(body); await capture("footnote-edit"); await click(apply); await closed();
+  await wait(`app.workspace.getLeafById("discovery-alpha").view.editor.getValue()===${JSON.stringify(edited)}&&footnoteEditingPeer.view.editor.getValue()===${JSON.stringify(edited)}`, "shared definition edit");
+  await activate("discovery-alpha"); await evaluate('app.workspace.getLeafById("discovery-alpha").view.focus()');
+  await press("z", "KeyZ", 90, 2); await wait(`footnoteEditingPeer.view.editor.getValue()===${JSON.stringify(dirtyText)}`, "one-step definition Undo");
+  assert.equal(await noteText(), dirtyText);
+  await press("z", "KeyZ", 90, 2); await wait(`footnoteEditingPeer.view.editor.getValue()===${JSON.stringify(alphaText)}`, "prior dirty edit retained in history");
+  await press("y", "KeyY", 89, 2); await wait(`footnoteEditingPeer.view.editor.getValue()===${JSON.stringify(dirtyText)}`);
+  await press("y", "KeyY", 89, 2); await wait(`footnoteEditingPeer.view.editor.getValue()===${JSON.stringify(edited)}`);
+  await saveAlpha(); assert.deepEqual(await readFile(join(directory, alpha)), Buffer.from("\ufeff" + edited));
+  await press("z", "KeyZ", 90, 2); await press("z", "KeyZ", 90, 2); await wait(`app.workspace.getLeafById("discovery-alpha").view.editor.getValue()===${JSON.stringify(alphaText)}`);
+  await saveAlpha(); await evaluate("footnoteEditingPeer.detach()"); assert.deepEqual(await readFile(join(directory, alpha)), alphaBytes);
+  pass("Applying a multiline Unicode definition preserves BOM/CRLF and its references, refreshes a real shared note peer, and contributes one isolated Undo/Redo step in the source editor without erasing the preceding dirty edit; Ctrl+S saves exact physical bytes.");
+
+  for (const indexed of [false, true]) {
+    if (!indexed) { await evaluate("app.metadataCache.pause()"); }
+    await open("b"); await type("Retained stale draft λ.");
+    const external = alphaText + "External " + indexed + "\r\n";
+    await writeFile(join(directory, alpha), Buffer.from("\ufeff" + external));
+    if (indexed) { await evaluate("app.metadataCache.refresh()"); await wait(`app.workspace.getLeafById("discovery-alpha").view.editor.getValue()===${JSON.stringify(external)}`); }
+    else { assert.equal(await noteText(), alphaText); }
+    await click(apply); await wait(`Boolean(document.querySelector(${JSON.stringify(dialog + " [data-footnote-edit-error]")})?.textContent)`, "stale definition refusal");
+    assert.match(await evaluate(`document.querySelector(${JSON.stringify(dialog + " [data-footnote-edit-error]")}).textContent`), /changed|saving|reloading/i);
+    assert.equal(await draftText(), "Retained stale draft λ."); assert.deepEqual(await readFile(join(directory, alpha)), Buffer.from("\ufeff" + external));
+    await click(cancel); await closed(); await writeFile(join(directory, alpha), alphaBytes); await evaluate("app.metadataCache.refresh();app.metadataCache.resume()");
+    await wait(`app.workspace.getLeafById("discovery-alpha").view.editor.getValue()===${JSON.stringify(alphaText)}`);
+  }
+  pass("Indexed source changes and an unobserved physical external replacement both refuse Apply while retaining the typed draft and exact external bytes; the disk-version check is exercised with metadata polling paused.");
+
+  const holdRead = () => evaluate(`(()=>{const trace=globalThis.footnoteEditRead={held:false,resumed:false,applyDepth:0};globalThis.footnoteEditOriginalRead=app.vault.readDocument;trace.owner=app.workspace.getLeafById("foot-a").view;trace.apply=trace.owner.applyDefinition;trace.owner.applyDefinition=function(...args){trace.applyDepth++;try{return trace.apply.apply(this,args)}finally{trace.applyDepth--}};app.vault.readDocument=async function(path){const selected=trace.applyDepth>0&&path===${JSON.stringify(alpha)},value=await footnoteEditOriginalRead.call(this,path);if(selected&&!trace.held){trace.held=true;await new Promise(resolve=>trace.release=resolve);trace.resumed=true}return value;};})()`);
+  const releaseRead = () => evaluate("app.vault.readDocument=footnoteEditOriginalRead;footnoteEditRead.owner.applyDefinition=footnoteEditRead.apply;footnoteEditRead.release();true");
+  await open("b"); await type("Cancelled held draft."); await holdRead();
+  await click(apply); await wait("footnoteEditRead.held", "held real source version read");
+  await click(draft); await press("z", "KeyZ", 90, 2); await command("Input.insertText", { text: "Blocked edit" });
+  assert.equal(await draftText(), "Cancelled held draft.", "Pending Apply must block draft input and history commands while Cancel stays available.");
+  await click(cancel); await closed(); await releaseRead(); await wait("footnoteEditRead.resumed");
+  assert.equal(await noteText(), alphaText); assert.deepEqual(await readFile(join(directory, alpha)), alphaBytes);
+  pass("Cancel remains available during a held real version read; releasing the cancelled Apply cannot change the note or reopen its disposed draft editor.");
+
+  await open("b"); await type("Disposed owner draft."); await holdRead(); await click(apply); await wait("footnoteEditRead.held");
+  await evaluate('globalThis.footnoteEditingOldOwner=app.workspace.getLeafById("foot-a").view;true');
+  await evaluate('app.core.setEnabled("footnotes",false)'); await closed(); assert.equal(await evaluate("footnoteEditingOldOwner.isLoaded"), false);
+  await releaseRead(); await wait("footnoteEditRead.resumed"); await evaluate('app.core.setEnabled("footnotes",true)');
+  await wait('app.workspace.getLeafById("foot-a").view.getViewType()==="footnotes"&&app.workspace.getLeafById("foot-a").view!==footnoteEditingOldOwner');
+  assert.equal(await noteText(), alphaText); assert.deepEqual(await readFile(join(directory, alpha)), alphaBytes);
+  pass("Disabling Footnotes disposes its real draft editor while Apply is held; a fresh provider cannot be changed by the old callback after re-enabling.");
+
+  await evaluate('app.workspace.getLeafById("discovery-beta").detach()');
+  assert.equal(await evaluate(`app.workspace.getLeavesOfType("markdown").filter(leaf=>leaf.view.file?.path===${JSON.stringify(beta)}).length`), 0);
+  await open("beta", "foot-side"); await type("Revised Beta λ."); await click(apply); await closed();
+  const editedBeta = betaText.replace("**Beta body**.", "Revised Beta λ.");
+  await wait(`app.workspace.getLeavesOfType("markdown").some(leaf=>leaf.view.file?.path===${JSON.stringify(beta)}&&leaf.view.editor.getValue()===${JSON.stringify(editedBeta)})`, "new source note created for Apply");
+  assert.equal(await evaluate('app.workspace.getLeafById("foot-side").view.getViewType()'), "footnotes");
+  await evaluate(`(()=>{const leaf=app.workspace.getLeavesOfType("markdown").find(leaf=>leaf.view.file?.path===${JSON.stringify(beta)});globalThis.footnoteEditingBeta=leaf;app.workspace.setActiveLeaf(leaf);leaf.view.focus()})()`);
+  await press("z", "KeyZ", 90, 2); await wait(`footnoteEditingBeta.view.editor.getValue()===${JSON.stringify(betaText)}`); await press("s", "KeyS", 83, 2);
+  await wait("!footnoteEditingBeta.view.session.dirty&&!footnoteEditingBeta.view.session.isSaving"); assert.deepEqual(await readFile(join(directory, beta)), betaBytes);
+  await activate("discovery-alpha"); await wait(`app.workspace.getLeafById("foot-a").view.getState().file===${JSON.stringify(alpha)}`);
+  report.footnoteEditing = { localDraftCancel: true, unchangedApply: true, sourcePreservation: true, sharedUndoRedo: true, dirtyHistoryRetained: true, exactPhysicalSave: true, indexedAndUnobservedExternalRefusal: true, heldApplyCancellation: true, ownedTeardown: true, unopenedTarget: true };
+  pass("Editing a fixed Footnotes target with no open note creates a real source tab at Apply, retains the Footnotes provider, and supports Undo plus an exact save of the original LF note.");
+}
+
 async function readonlyDiscovery({ evaluate, command, click, press, wait, report, afterReload, capture }) {
   const localRoot = await evaluate("app.vault.rootPath"), pageUrl = await evaluate("location.href");
-  await evaluate('globalThis.localDiscoveryTag=app.workspace.getLeafById("tags-a").view;globalThis.localDiscoveryControl=localDiscoveryTag.contentEl.querySelector("[data-tags-pane-hierarchy]");true');
+  await evaluate('globalThis.localDiscoveryTag=app.workspace.getLeafById("tags-a").view;globalThis.localDiscoveryControl=localDiscoveryTag.contentEl.querySelector("[data-tags-pane-hierarchy]");globalThis.localFootnoteEdit=app.workspace.getLeafById("foot-b").view.contentEl.querySelector("[data-footnote-edit]");true');
   const original = { main: { id: "ro-discovery-main", type: "split", direction: "vertical", children: [
     { id: "ro-tags-tabs", type: "tabs", dimension: 28, children: [{ id: "ro-tags", type: "leaf", state: { type: "tag", state: { showSearch: true, searchQuery: "remote" } } }] },
     { id: "ro-foot-tabs", type: "tabs", dimension: 33, children: [{ id: "ro-foot", type: "leaf", state: { type: "footnotes", state: { file: "Folder/Note.md", followActiveFile: false } } }] },
     { id: "ro-discovery-note-tabs", type: "tabs", dimension: 39, children: [{ id: "ro-discovery-note", type: "leaf", state: { type: "markdown", state: { file: "Folder/Note.md", mode: "source", source: true } } }] },
   ] }, active: "ro-discovery-note" };
-  const fixture = await mountCachedGitHub(evaluate, "readonly-discovery", [["Folder/Note.md", "# Cached discovery\n\n#remote/work [^remote].\n\n[^remote]: **Cached footnote**.\n"], [".obsidian/workspace.json", JSON.stringify(original)], [".obsidian/core-plugins.json", '["tag-pane","footnotes","global-search","command-palette"]'], [".obsidian/community-plugins.json", "[]"]]);
+  const fixture = await mountCachedGitHub(evaluate, "readonly-discovery", [["Folder/Note.md", "# Cached discovery\n\n#remote/work [^remote] and ^[**Cached inline**].\n\n[^remote]: **Cached footnote**.\n"], [".obsidian/workspace.json", JSON.stringify(original)], [".obsidian/core-plugins.json", '["tag-pane","footnotes","global-search","command-palette"]'], [".obsidian/community-plugins.json", "[]"]]);
   await wait(`app.vault.rootPath===${JSON.stringify(fixture.mount.id)}&&!app.changingVault&&Boolean(document.querySelector('[data-tags-pane="ro-tags"] [data-pane-tag="#remote/work"]'))&&Boolean(document.querySelector('[data-footnotes-pane="ro-foot"] [data-pane-footnote-reference="remote"]'))`, "genuine cache-only discovery providers");
   assert.equal(await evaluate("app.vault.readOnly"), true); assert.equal(await evaluate("!localDiscoveryTag.isLoaded"), true);
   await evaluate('localDiscoveryControl.checked=false;localDiscoveryControl.dispatchEvent(new Event("change",{bubbles:true}));true'); assert.equal(await evaluate('app.workspace.getLeafById("ro-tags").view.getState().useHierarchy'), true);
   await click('[data-tags-pane="ro-tags"] [data-pane-tag="#remote/work"]'); await wait('app.workspace.getLeavesOfType("search").some(l=>l.view.getQuery()==="tag:#remote/work"&&l.view.contentEl.querySelector("[data-search-status]").dataset.searchComplete==="true")');
   await click('[data-footnotes-pane="ro-foot"] [data-pane-footnote-reference="remote"]'); await wait('app.workspace.getLeafById("ro-discovery-note").view.editor.getSelection()==="[^remote]"');
   assert.equal(await evaluate('app.workspace.getLeafById("ro-discovery-note").view.editor.cm.contentDOM.contentEditable'), "false");
+  assert.equal(await evaluate('document.querySelector(\'[data-footnotes-pane="ro-foot"] [data-footnote-edit="remote"]\').disabled'), true);
+  assert.equal(await evaluate('document.querySelector(\'[data-footnotes-pane="ro-foot"] [data-inline-footnote] [data-footnote-edit]\').disabled'), true);
+  await evaluate('localFootnoteEdit.click();document.querySelector(\'[data-footnotes-pane="ro-foot"] [data-footnote-edit="remote"]\').click();true');
+  assert.equal(await evaluate('Boolean(document.querySelector("[data-footnote-edit-dialog]"))'), false);
+  await evaluate('(()=>{const view=app.workspace.getLeafById("ro-discovery-note").view;view.setMode("preview",false);view.previewEl.dataset.readonlyInlineFootnote="true"})()');
+  await wait('document.querySelectorAll("[data-readonly-inline-footnote] .footnote-ref").length===2', "read-only inline footnote rendering");
+  await click('[data-readonly-inline-footnote] .footnote-ref[data-footnote-reference="2"] a');
+  assert.equal(await evaluate('document.activeElement.dataset.footnoteNumber'), "2");
+  await click('[data-readonly-inline-footnote] [data-footnote-number="2"] .footnote-backref');
+  assert.equal(await evaluate('document.activeElement.closest("sup")?.dataset.footnoteReference'), "2");
   await click('[data-tags-pane="ro-tags"] [data-tags-pane-action=filter]'); await click('[data-tags-pane="ro-tags"] [data-tags-pane-action=collapse]'); await evaluate("app.workspace.flushLayout()"); assert.deepEqual(await evaluate('app.workspace.getLeafById("ro-tags").view.getState().foldedTags'), ["#remote"]);
   const state = await evaluate("app.githubVaults.state()"); assert.equal(state.counters.api, 0); assert.equal(state.counters.raw, 0); await assertCachedBlobsUnchanged(evaluate, fixture.blobs); await capture("readonly");
   await command("Page.navigate", { url: pageUrl }); await afterReload(); assert.equal(await evaluate("app.vault.rootPath"), localRoot); assert.equal(await evaluate("app.vault.readOnly"), false); await assertCachedBlobsUnchanged(evaluate, fixture.blobs);
-  report.discoveryPanes.readOnly = { genuineCacheOnlyMount: true, actualSearchProvider: true, exactFootnoteSelection: true, localFoldPersistence: true, zeroNetwork: true, allBlobsUnchangedBeforeAndAfterReturn: true };
+  report.discoveryPanes.readOnly = { genuineCacheOnlyMount: true, actualSearchProvider: true, exactFootnoteSelection: true, footnoteEditingDisabled: true, inlineFootnoteEditingDisabled: true, inlineFootnoteNavigation: true, staleLocalEditorControlInert: true, localFoldPersistence: true, zeroNetwork: true, allBlobsUnchangedBeforeAndAfterReturn: true };
   report.checks.push("A genuine cache-only GitHub vault imports both provider types, creates actual Search results and selects an exact read-only footnote. Local fold preferences remain writable, stale local controls are inert, network counters stay zero and every remote blob remains exact before and after return.");
 }

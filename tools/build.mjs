@@ -68,6 +68,7 @@ await build({
   legalComments: "linked",
 });
 await copyFile(join(root, "node_modules", "codemirror", "LICENSE"), join(output, "codemirror-license.txt"));
+await copyFile(join(root, "node_modules", "@codemirror", "legacy-modes", "LICENSE"), join(output, "codemirror-legacy-modes-license.txt"));
 await copyFile(join(hypermd, "LICENSE"), join(output, "hypermd-license.txt"));
 await copyFile(join(root, "node_modules", "katex", "LICENSE"), join(output, "katex-license.txt"));
 await build({

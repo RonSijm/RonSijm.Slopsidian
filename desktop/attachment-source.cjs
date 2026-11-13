@@ -4,10 +4,32 @@ const path = require("node:path");
 const LIMITS = Object.freeze({ depth: 12, entries: 1000, files: 20, fileBytes: 16 * 1024 * 1024, totalBytes: 32 * 1024 * 1024 });
 const refuse = (message, relative) => new Error(message + (relative ? ": " + relative : ""));
 const same = (left, right) => path.normalize(left).toLowerCase() === path.normalize(right).toLowerCase();
+const sameIdentity = (left, right) => left.ino === right.ino && left.dev === right.dev;
+
+async function canonicalRoot(root, rootStat) {
+  const base = await realpath(root), supplied = path.resolve(root);
+  if (same(base, supplied)) { return base; }
+  const invalid = () => refuse("The selected folder path passes through a link, junction or alias", root);
+  if (path.sep !== "\\") { throw invalid(); }
+  // Windows realpath expands DOS 8.3 names (including RUNNER~1 in CI's Temp path).
+  // Prove that every component names the same ordinary directory, without following a parent junction.
+  let current = supplied, resolved = base, info = rootStat;
+  while (true) {
+    const canonical = await lstat(resolved);
+    if (info.isSymbolicLink() || !info.isDirectory() || canonical.isSymbolicLink() || !canonical.isDirectory() || !sameIdentity(info, canonical)) { throw invalid(); }
+    const parent = path.dirname(current);
+    if (parent === current) { break; }
+    const resolvedParent = await realpath(parent);
+    if (!same(path.dirname(resolved), resolvedParent)) { throw invalid(); }
+    current = parent; resolved = resolvedParent; info = await lstat(current);
+  }
+  return base;
+}
 
 /**
  * Enumerate and read one user-selected folder natively. Links, junctions and other non-regular entries are refused
- * (never skipped), every entry must resolve to its own path beneath the selected root, and bytes are read only after
+ * (never skipped), DOS short names for ordinary root directories are canonicalized, every entry must resolve to its
+ * own path beneath the selected root, and bytes are read only after
  * the whole tree and its size limits have been checked. `expected` lists absolute paths the browser claims were
  * selected; any that fall outside the root or the native listing are refused as unselected.
  */
@@ -15,8 +37,7 @@ async function readAttachmentFolder(root, expected = [], hooks = {}) {
   if (typeof root !== "string" || !path.isAbsolute(root) || !Array.isArray(expected)) { throw refuse("Choose a folder by its absolute local path"); }
   const rootStat = await lstat(root);
   if (rootStat.isSymbolicLink() || !rootStat.isDirectory()) { throw refuse("The selected folder is a link or not a directory", root); }
-  const base = await realpath(root);
-  if (!same(base, path.resolve(root))) { throw refuse("The selected folder path passes through a link, junction or alias", root); }
+  const base = await canonicalRoot(root, rootStat);
   const rootName = path.basename(base), files = [];
   let visited = 0, total = 0;
   const walk = async (directory, prefix, depth) => {

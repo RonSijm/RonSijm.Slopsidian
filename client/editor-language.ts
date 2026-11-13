@@ -4,6 +4,7 @@ import { NodeProp } from "@lezer/common";
 export const tokenClassNodeProp = new NodeProp<string>();
 export const markdownSupport = markdown({
   base: markdownLanguage,
+  addKeymap: false,
   extensions: [{
     props: [tokenClassNodeProp.add({
       Link: "link",

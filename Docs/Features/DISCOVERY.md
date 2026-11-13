@@ -2,7 +2,7 @@
 
 [Feature-parity index](../FEATURE-PARITY.md)
 
-**Last reviewed:** 2026-11-02
+**Last reviewed:** 2026-11-09
 
 These features are implemented in `client\discovery-views.ts`, the dedicated
 workspace providers below, the Quick switcher in `client\desktop-ui.ts`, and
@@ -59,7 +59,7 @@ ranking/scale equivalence.
 | Tags | Nested/flat display, sorting/filter/folds/count fixtures, dirty/undo/redo updates, escaped/code/comment exclusions and real plain/modifier click-to-Search behavior. Imported main/sidebar ItemViews add independent state, tree keys, provider cleanup and restart/reconnect. Disabled Search produces an explicit error. | Original counting/case-collision semantics, private filter grammar/trees, shared native fold import, broader scale and original presentation. [Workspace scope](#tags-workspace-panes). |
 | Backlinks | Heading/block/frontmatter/embed references, unlinked aliases, exact selection, dirty/undo/external/rename updates and existing sidebar/in-document rendering. Real imported main/sidebar panes add independent targets, filters, contexts, six sorts, section/group folds, lifecycle and restart/read-only navigation. | Per-note overrides, broader original matching/ranking/split/mode behavior, complete private interfaces and exact native presentation. [Workspace scope](BACKLINKS.md). |
 | Outgoing links | Imported main/sidebar ItemViews, independent follow/fixed notes and section folds, grouped links, exact alias-source selection, heading/block and registered attachment navigation, shared missing-note placement, live metadata, cleanup and restart/reconnection. Genuine cache-only GitHub navigation refuses missing-note creation. | Full private/native views, one-click mention linkification, wider matching/viewers and original presentation. [Workspace scope](#outgoing-links-workspace-panes). |
-| Footnotes | Multiline definitions, repeated references, explicit missing definitions, exact source selection, dirty/undo/redo and external definition updates; pinned state reloads. Imported main/sidebar FileViews add independent follow/fixed targets, numbered Markdown previews, real file APIs and owned async cleanup. | Native editable embeds, generated inline footnotes, grouped following, full note-linked/private APIs, runtime scale and original presentation. [Workspace scope](#footnotes-workspace-panes). |
+| Footnotes | Multiline named definitions and generated single-line inline notes, mixed numbering, repeated references, explicit missing definitions, exact source selection and live updates. Imported FileViews retain independent targets and owned cleanup. Guarded editing adds local drafts, Apply/Cancel, source preservation and source-editor Undo. Reading supplies numbered endnotes and local reference/back navigation with sanitized Markdown/math. | Native editable-embed UI/API equivalence, broader grammar/nested inline notes, grouped following, full note-linked/private APIs, runtime scale and original presentation. [Workspace scope](#footnotes-workspace-panes), [authoring](#editing-a-footnote-definition) and [inline/Reading scope](#inline-footnotes-and-reading). |
 | Quick switcher | Actual Ctrl+O filtering and registered Canvas opening; typed options, unresolved filtering and explicit creation with shared note placement; distinct literal aliases, real empty-query recent files and grouped bookmark targets; live metadata/history/controller refresh, stale-control guards, restart/reconnection and cache-only GitHub. | Exact native ranking, ignored-file policy/result limits, full viewers and private/modal API equivalence. [Recent-file/bookmark scope](#quick-switcher-recent-files-and-bookmarks). |
 | Sidebar integration | New icons, constrained/scrollable tabs, arrow-key tab navigation and Ctrl+Shift+F; native and browser workflow access exercised. | Broader keyboard/screen-reader/overflow edge cases and reference docking behavior. |
 | File-event deduplication | Local saves plus metadata observations notify once, including observation-before-acknowledgement and binary creates. Independent baselines retain external attachment modifications/deletions across explicit inventory refreshes. Exact community regression passes; focused cases preserve explicit identical writes, same-stat A-B-A text versions and file/folder replacement. | Broader concurrency/ordering, same-stat binary changes and complete rename/adapter equivalence; this is not a complete event-contract claim. |
@@ -388,10 +388,84 @@ restart/reconnection restores independent targets and unknown fields. Cached
 GitHub notes permit selection but remain non-editable, with zero network calls
 and unchanged remote blobs.
 
+### Editing a footnote definition
+
+Each unambiguous definition has **Edit definition**. Its dialog contains a real
+Markdown editor for a local draft. **Apply to note**, Ctrl/Cmd+Enter or the
+editor's save shortcut applies that draft; **Cancel**, Escape and closing the
+dialog discard it. Typing in the dialog does not change or autosave the note.
+The draft starts with its own clean Undo/Redo history. Input and history commands
+are locked while Apply awaits validation; Cancel remains available.
+An unchanged Apply does not add an undo transaction. Duplicate definitions
+remain visible but cannot be edited ambiguously; missing definitions still
+require authoring in the note.
+
+Apply preserves the literal label, prefix spacing, existing continuation
+indentation and all surrounding source. New lines use the note's line ending;
+ordinary note saving retains its BOM. The result must parse back as the requested
+definition without consuming other definitions. Apply makes one isolated Undo
+step in a real source editor, retaining its earlier dirty edits; other open
+panes of that note refresh through the shared session. Existing per-editor
+histories are not unified by this change. If the target has no open Markdown
+view, Apply opens a new note tab while retaining the Footnotes pane.
+
+The pane checks current file/root/snapshot ownership, shared session identity,
+source text and a fresh disk version before changing the note. Indexed changes
+and external replacements not yet seen by polling both refuse Apply, retain the
+draft and leave the external bytes intact. Saving/reloading notes also refuse
+Apply until that operation ends. Cancel remains available while the version
+read is pending; its late result cannot apply a cancelled draft. Unloading the
+pane disposes its editor and invalidates pending Apply operations. Read-only
+GitHub vaults disable editing, including stale controls from a previous local
+vault, while definition/reference navigation remains available.
+
+[Authoring validation and remaining limits](../Engineering/FOOTNOTE-EDITING-2026-11-09.md)
+record 12 new regressions and matching final native16/actual-folder WASM28 checks
+separately from the older pane acceptance, with clean final audits and exits.
+
+### Inline footnotes and Reading
+
+Write `^[Inline footnote text]` directly in a line. This follows the caret-outside-
+the-brackets syntax in the [official formatting guide](https://obsidian.md/help/syntax#Footnotes).
+The bounded parser accepts nonempty single-line bodies with balanced ordinary
+brackets, Markdown/wiki links, code, math and escaped brackets. Code, properties,
+HTML/percent comments, math expressions, link/image labels, parsed destinations
+and escaped openers do not generate notes. Nested, empty, unfinished and
+multiline inline forms remain literal. Existing named-definition parsing is
+retained; this does not establish the complete native grammar.
+
+Inline notes receive internal, source-bound identities that cannot capture
+explicit named or missing references. They are numbered together with named
+notes by first reference. Their pane titles say **Inline footnote** rather than
+showing a generated identifier. The Source button selects the exact complete
+`^[...]` token; an inline definition is its own reference, so it is not labelled
+unused. **Edit definition** reuses the guarded draft workflow, preserves the
+wrapper and refuses a multiline, nested or unbalanced replacement. Later
+generated identities may change after an edit, while their content and source
+targets refresh. No generated labels are written to the file.
+
+Reading renders unique named and inline definitions as numbered endnotes.
+Repeated named references get individual return links. Unreferenced unique
+named definitions follow used notes; ambiguous and missing references remain
+literal and remain explicit in the pane. Links stay within their owning Reading
+instance, retain its mode and do not navigate the page URL or create a note.
+Bodies use the shared sanitized Markdown, math, media and plugin-rendering
+pipeline and its existing policies. Heading and source-line mapping retain the
+original note positions even though named definitions move into the endnotes.
+Source and Live Preview retain their ordinary editing behavior; no new Live
+Preview footnote widget is introduced.
+
+Dirty edits, Undo/Redo, external replacements, rename and restart/reconnection
+rebuild generated ranges. Stale controls cannot activate an earlier offset.
+Read-only cached vaults permit Reading reference/back navigation and exact
+Source selection while both named and inline editing stay disabled, without
+API/raw fallback or changes to cached blobs. [Validation and limits](../Engineering/INLINE-FOOTNOTES-2026-11-09.md)
+record these workflows separately from the older authoring acceptance.
+
 The enabled fixture plugin exercises actual FileView/App/file identities,
-provider factories and file-opening contracts. This does **not** implement
-native editable Markdown embeds: the new UI supplies previews and navigation.
-Generated inline `^[...]` footnotes, grouped-note following, complete private
+provider factories and file-opening contracts. Guarded dialog authoring does
+**not** establish native editable Markdown-embed UI or private API equivalence.
+Grouped-note following, complete private
 controllers and native presentation remain separate. The 10,000-reference
 model case is not DOM-scale or virtualization proof; this pane currently has
 no display cap. [Source-bound acceptance](../Engineering/DISCOVERY-PANES-2026-10-28.md)

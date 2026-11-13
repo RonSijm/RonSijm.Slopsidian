@@ -1,0 +1,9 @@
+# Additional code languages, 2026-11-15
+
+Implemented Julia (JULIA/JL), Groovy (GROOVY/GVY), Pascal (PASCAL/PAS), and Visual Basic (VB/VBNET/VISUALBASIC) using already installed CodeMirror stream grammars. Reading and the shared static renderer use the existing inert, source-range highlighting pipeline. No dependencies were added.
+
+Validation: type checking and UI build pass. All 104 focused highlighting, Markdown-postprocessor and Reading-search tests pass, including 60 highlighting tests. The four new grammar fixtures verify exact keyword/string/number/comment ranges, uppercase/info-string aliases, CRLF and Unicode handling. They also participate in existing budget, stale-owner, registered-processor and inert DOM tests.
+
+Reference: inspected the local 1.15.0 app.js postprocessor (lines 42298–42303) and Prism highlightElement (prism.min.js lines 80–99) before implementation. Static reference hashes and observations are retained in the ignored local .runtime/highlighting-followup/reference.json. This adds local grammar support; it does not establish original Prism token equivalence or change the pinned 1.12.7 target.
+
+The later authoring/organization iteration closes the pending runtime acceptance. Both hosts verify all 14 extra Reading languages and the 8-language genuine cached-read-only fixture, public static aliases/processors, exact source/glyphs/tokens, external refresh, late jobs/retired Reading owners, real dark/light controls and restart/reconnect. Type checking, native Debug, published WASM/static serving, 2,045 default/44 GitHub tests and 407 overlapping focused checks pass. [Current source/artifact identity, host counts and retained diagnostics](AUTHORING-ORGANIZATION-2026-11-15.md). Earlier receipts retain their own identities. Further dialects, original Prism/native/private equivalence and broader physical-input coverage remain open.

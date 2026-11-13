@@ -3,6 +3,8 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { crc32, deflateSync } from "node:zlib";
 
+const logicalHeadingText = element => element ? [...element.childNodes].filter(node => node.nodeType !== 1 || !node.matches("button.reading-fold-toggle")).map(node => node.textContent).join("") : null;
+
 export function pixel(width = 1, height = 1) {
   const chunk = (name, data) => {
     const length = Buffer.alloc(4);
@@ -70,8 +72,9 @@ export async function checkReadingView({ directory, evaluate, command, click, pr
   await click(toggle);
   await wait('app.workspace.activeLeaf.view.getMode()==="preview"', "reading view button");
   await wait(`document.querySelectorAll(${JSON.stringify(preview + " img")}).length===2&&[...document.querySelectorAll(${JSON.stringify(preview + " img")})].every(image=>image.complete&&image.naturalWidth===1)`, "actual local Markdown and wiki image pixels");
+  await evaluate("app.workspace.activeLeaf.view.currentMode.whenReady()");
   const rendered = await evaluate(`(()=>{const view=document.querySelector(${JSON.stringify(preview)});return {
-    heading:view.querySelector("h1")?.textContent,bold:view.querySelector("strong")?.textContent,
+    heading:(${logicalHeadingText.toString()})(view.querySelector("h1")),bold:view.querySelector("strong")?.textContent,
     emphasis:view.querySelector("em")?.textContent,removed:view.querySelector("del")?.textContent,
     highlight:view.querySelector("mark")?.textContent,highlightBold:view.querySelector("mark strong")?.textContent,
     literalHighlight:[...view.querySelectorAll("code")].some(code=>code.textContent==="==literal code=="&&!code.querySelector("mark")),
@@ -94,7 +97,9 @@ export async function checkReadingView({ directory, evaluate, command, click, pr
   assert.ok(rendered.code.includes('const example = "<safe>";'));
   assert.equal(rendered.table, "One");
   assert.match(rendered.quote, /A quotation/);
-  assert.ok(rendered.ordered && rendered.task && rendered.taskDisabled && rendered.sourceHidden);
+  assert.ok(rendered.ordered && rendered.task && rendered.sourceHidden);
+  assert.equal(rendered.taskDisabled, false, "current writable Reading tasks use the guarded source editor");
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(preview + ' input[type="checkbox"]')}).hasAttribute("data-reading-task-line")`), true);
   assert.equal(rendered.leakedFrontmatter, false);
   assert.equal(rendered.unsafe, false);
   assert.equal(rendered.unsafeHref, false);
@@ -117,7 +122,7 @@ export async function checkReadingView({ directory, evaluate, command, click, pr
     const state = await evaluate('({clicks:globalThis.readingClicks,path:app.current?.file.path,mode:app.workspace.activeLeaf.view.getMode(),history:app.workspace.activeLeaf.history,errors:document.querySelector("#client-errors")?.textContent,files:app.vault.getFiles().map(file=>({path:file.path,extension:file.extension})),links:[...app.workspace.activeLeaf.containerEl.querySelectorAll("a")].map(link=>({href:link.getAttribute("href"),wiki:link.dataset.slopsidianLink,element:link instanceof Element}))})');
     throw new Error("Reading link navigation failed: " + JSON.stringify(state), { cause: error });
   }
-  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(preview + " h1")}).textContent`), "Destination");
+  assert.equal(await evaluate(`(${logicalHeadingText.toString()})(document.querySelector(${JSON.stringify(preview + " h1")}))`), "Destination");
   await click(active + ' button[aria-label="Back (Alt+Left)"]');
   await wait(`app.current?.file.path===${JSON.stringify(path)}`, "reading link history");
   await visibleClick(preview + " a[data-slopsidian-link]");

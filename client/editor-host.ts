@@ -16,6 +16,7 @@ import { BrowserVaultNavigation, linkedGitHubUrl } from "./browser-vault-navigat
 import { confirmedNativeRoot } from "./native-recents";
 import { FileSettings } from "./file-settings";
 import { HotkeySettings } from "./hotkey-settings";
+import { EditorSpellcheckSettings } from "./editor-spellcheck";
 
 let application: App | null = null;
 let pluginHost: PluginHost | null = null;
@@ -24,6 +25,7 @@ let draftReview: ReturnType<typeof installDraftRescueReview> = null;
 let browserNavigation: BrowserVaultNavigation | null = null;
 let fileSettings: FileSettings | null = null;
 let hotkeySettings: HotkeySettings | null = null;
+let editorSettings: EditorSpellcheckSettings | null = null;
 let newNoteContext: { root: string | null; source: string } | null = null;
 const github = new GitHubVaultHost();
 // Install at module load so initialization failures are recorded too. Resource-load
@@ -84,7 +86,14 @@ function plugins(): PluginHost {
   return pluginHost;
 }
 
-export async function hideSettings(): Promise<void> { await fileSettings?.closeSettings(); await hotkeySettings?.closeSettings(); await application?.appearance.closeSettings(); await plugins().hideSettings(); }
+export async function hideSettings(): Promise<void> { await fileSettings?.closeSettings(); await hotkeySettings?.closeSettings(); await editorSettings?.closeSettings(); await application?.appearance.closeSettings(); await plugins().hideSettings(); }
+export async function showEditorSettings(): Promise<void> {
+  await plugins().hideSettings();
+  if (!editorSettings) { throw new Error("Editor settings have not initialized."); }
+  const container = document.getElementById("editor-settings-host");
+  if (!container) { throw new Error("The Editor settings host is unavailable."); }
+  await editorSettings.open(container);
+}
 export async function showHotkeySettings(): Promise<void> {
   await plugins().hideSettings();
   if (!hotkeySettings) { throw new Error("Hotkey settings have not initialized."); }
@@ -123,6 +132,7 @@ export function initialize(parent: HTMLElement, dotNet: DotNetReference): void {
   pluginHost = new PluginHost(application);
   fileSettings = new FileSettings(application);
   hotkeySettings = new HotkeySettings(application);
+  editorSettings = new EditorSpellcheckSettings(application);
   document.getElementById("settings-dialog")?.addEventListener("close", () => hideSettings().catch(reportError));
   document.getElementById("new-note-dialog")?.addEventListener("close", () => { newNoteContext = null; });
   Object.assign(application, { plugins: pluginHost });
@@ -338,6 +348,7 @@ export async function showSettings(id: string): Promise<void> {
   clearError();
   await fileSettings?.closeSettings();
   await hotkeySettings?.closeSettings();
+  await editorSettings?.closeSettings();
   await plugins().showSettings(id);
 }
 

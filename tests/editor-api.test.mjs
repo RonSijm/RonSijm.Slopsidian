@@ -4,7 +4,7 @@ import { build } from "esbuild";
 import { mkdir, mkdtemp, rm } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { EditorState, Transaction } from "@codemirror/state";
+import { Compartment, EditorState, Transaction } from "@codemirror/state";
 import { history } from "@codemirror/commands";
 import { codeFolding, foldedRanges } from "@codemirror/language";
 import { markdown } from "@codemirror/lang-markdown";
@@ -30,10 +30,10 @@ after(async () => {
 // Exercise the public facade with real CodeMirror documents, changes, folds and
 // history. Rendering/focus/physical scrolling still need the actual-host suite.
 function editor(text, options = {}) {
-  const result = Object.create(Editor.prototype), events = [], lock = new MutationLock();
+  const result = Object.create(Editor.prototype), events = [], lock = new MutationLock(), separator = new Compartment();
   let focused = false, measured = 0;
   const view = {
-    state: EditorState.create({ doc: text, extensions: [EditorState.allowMultipleSelections.of(true), EditorState.lineSeparator.of(options.separator ?? "\n"), history(), markdown(), codeFolding(), lock.extension()] }),
+    state: EditorState.create({ doc: text, extensions: [EditorState.allowMultipleSelections.of(true), separator.of(EditorState.lineSeparator.of(options.separator ?? "\n")), history(), markdown(), codeFolding(), lock.extension()] }),
     scrollDOM: { scrollTop: 12, scrollLeft: 7 },
     contentDOM: { blur() { focused = false; } },
     get hasFocus() { return focused; },
@@ -43,10 +43,21 @@ function editor(text, options = {}) {
     dispatch(...specs) { const transaction = specs.length === 1 && specs[0]?.startState ? specs[0] : this.state.update(...specs); this.state = transaction.state; events.push(transaction); },
   };
   view.dispatch = view.dispatch.bind(view);
-  Object.assign(result, { cm: view, owner: options.owner });
+  Object.assign(result, { cm: view, owner: options.owner, lineSeparatorCompartment: separator });
   return { editor: result, view, events, lock, measurements: () => measured };
 }
 const pos = (line, ch = 0) => ({ line, ch });
+
+test("acknowledged block synchronization maps earlier Redo without making the marker an Undo step", () => {
+  const original = "# Target\r\n\r\nTarget paragraph λ 😀.\r\n", marked = original.replace("λ 😀.", "λ 😀. ^abc123");
+  const { editor: api, events } = editor(original, { separator: "\r\n" });
+  api.replaceRange("History ", pos(2)); api.undo(); assert.equal(api.getValue(), original);
+  api.syncValue(marked, true); assert.equal(api.getValue(), marked);
+  assert.equal(events.at(-1).annotation(Transaction.addToHistory), false);
+  api.redo(); assert.equal(api.getValue(), marked.replace("Target paragraph", "History Target paragraph"));
+  api.undo(); assert.equal(api.getValue(), marked);
+  api.undo(); assert.equal(api.getValue(), marked, "the acknowledged target marker is not an extra user Undo entry");
+});
 
 test("setLine and replacement origins retain destination line endings and actual undo/redo", () => {
   const { editor: api, events } = editor("first\r\nsecond\r\n", { separator: "\r\n" });

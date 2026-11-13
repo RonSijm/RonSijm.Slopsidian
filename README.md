@@ -17,59 +17,175 @@ maintained overview and documentation map. Detailed pages cover the
 [evidence](Docs/Engineering/EVIDENCE.md) and
 [remaining-work roadmap](Docs/Project/ROADMAP.md).
 
-The 2026-11-01 integration wave adds Properties numeric/control improvements,
-workspace docking, guarded folder/binary mutations and parallel native metadata
-reads, math/note embeds, configured hotkeys/protected secrets, persistent drafts,
-Web filter subscriptions and Windows packaging. Local PDF/SVG/video/raster
-viewers, opt-in theme fonts/images and versioned configuration lifecycles are
-also integrated. Full combined desktop/browser acceptance is still pending; parallel
-implementations and retained isolated results are not a completed roadmap.
-Live main-edge/sidebar docking now has its own matching current-main
-native/actual-folder WASM acceptance, retaining dirty editors/history/plugin
-frames, exact rollback and persisted layout/state through restart/reconnection.
-Sidebar/popout edge splits, tear-out and broader native/touch variants remain separate.
-Versioned app/core configuration lifecycle now also has current-main native/WASM
-renewal for real external polling, focused version conflicts, same-root ownership,
-supported async setters and restart/reconnection without replacing the live editor.
-Polling and the remaining native/private settings limits stay explicit.
-The integrated source also adds guarded Windows file/folder system trash,
-directory attachment imports, per-pane navigation history and reviewed
-marketplace statistics/README/bulk updates. Their isolated workflows passed;
-connected main-source renewal and the next local roadmap work remain in progress.
-Canvas/Bases/opt-in plugin text draft providers and source-preserving Outline
-authoring are now integrated as well. Their complete isolated desktop/WASM
-recovery and reorder collections are now renewed on matching current-main
-native/actual-folder WASM artifacts, preserving exact source bytes, shared
-history, guarded review and ownership across restart/reconnection. Wider
-renewal and durability/private/Unicode limits remain in the live documentation.
-Reviewed theme catalog/install/update/watching and linked-pane/popout sources are
-also integrated. The complete isolated desktop/WASM reviewed-theme collection
-passes, and the separate native Reader re-theme scope now passes as well.
-Their recorded isolated epochs do not replace combined main-source renewal.
-Shared mutation/history and cross-document move fixes are integrated. The complete
-native and allowed-popup WASM window scopes now pass on their recorded epochs,
-including real native close veto, fresh Reader construction/guest ownership
-and clean acknowledged browser exit. A separate current Windows scope now
-passes real OS cross-window tab dragging with the same dirty editor/history,
-strict physical ownership guards and restored fixture z-order. Wider
-main-source renewal and native/input/display variants remain separate.
-A later focused native unapproved-close run now preserves live handlers/history,
-dirty tabs and saved-window retry intent through real input and normal return.
-Explicit offline application boot and complete cached-note indexing are also
-integrated, with the complete current-main collection passing all tamper cases,
-late-worker rejection and real A-to-B activation under strict page/exit audits.
-A separate isolated native/actual-folder
-WASM pair now verifies the real index-dialog Prepare/Cancel/Resume, missing/corrupt
-refusal and useful complete-index results. Physical quota enforcement,
-damaged-shell recovery, already-active-worker atomic rollback and combined main
-renewal retain their limits.
-Preparing the app shell is separate from downloading a
-vault; browser eviction and local-folder permission/reconnection still apply.
-Native recent-vault history and chooser entries now pass their bounded native
-UI and full-process restart workflow, using the application profile rather than
-vault files. CLI startup roots are excluded; its matching real-folder WASM
-boundary confirms native-path UI is absent and fixture shutdown is acknowledged,
-drained and exits normally without force.
+The bounded November integration wave is complete. The
+[November 3 acceptance](Docs/Engineering/INTEGRATION-WAVE-2026-11-03.md) and
+[November 4 shutdown/capture follow-up](Docs/Engineering/CONTINUATION-2026-11-03.md)
+each record all 58 required desktop/browser/offline scopes passing. These cover
+Properties numeric/control improvements, docking and groups/popouts, guarded
+folder/binary operations and Windows system trash, math/note embeds, configured
+hotkeys/protected secrets, shared draft providers, attachment imports and
+PDF/SVG/video/raster viewers, per-pane history, expanded marketplace workflows,
+trusted local theme resources and reviewed themes, configuration lifecycles,
+Outline reordering, native recent vaults and offline application boot/indexing.
+Reviewed desktop Web filter subscriptions and Reader appearance also pass.
+Unsigned portable and installed package workflows have separate acceptance.
+
+The November 13 [status audit](Docs/Project/ROADMAP.md#current-status-after-the-local-version-reconciliation)
+rechecked those retained reports and corrected older pending labels. These are
+source-bound historical results, not a fresh full GUI run against every later
+edit. Footnote definition editing and external folder events have their own
+November 9 acceptance records. Inline footnotes and Reading endnotes now also
+have final both-host sign-off in the [November 14 authoring collection](Docs/Engineering/EVIDENCE.md#note-authoring-2026-11-14).
+
+New editor features include local Reading code highlighting, **Ctrl+F / Ctrl+H**
+Find/Replace with isolated Undo and optional **In selection** across captured
+nonempty ranges, and built-in known-note/alias suggestions after
+`[[`, plus known headings and existing block IDs after `[[Note#` / `[[Note#^`.
+Current-note `[[#` / `[[#^` forms and nested `#Parent#Child` heading chains
+are supported; `[[##` finds headings across indexed notes and inserts a known
+destination. New YAML property keys complete
+while editing raw frontmatter in Source; same-key string values complete in
+scalar and flat list slots using other indexed notes.
+See the [editor guide](Docs/Features/APPLICATION.md#reading-code-highlighting)
+for supported languages, matching options and completion limits, and the
+[initial validation](Docs/Engineering/EVIDENCE.md#editor-improvements-2026-11-13).
+
+**Link authoring, 2026-11-15.** Source/Live Preview can link to missing headings without
+creating them and explicitly add local IDs to supported unlabelled top-level
+prose. Same-note ID/link changes share Undo; a guarded other-note target write
+precedes source insertion, and source Undo keeps the other note's marker.
+Properties text/list add fields gain an intentional **Create note** extension
+using reviewed placement and guarded wiki-value insertion. All 1,997 default/44 GitHub
+regressions, 309 focused checks and 20 host scopes pass with
+source/target/history, conflict/stale-owner, restart and cache-only refusal
+coverage. [validation and limits](Docs/Engineering/EVIDENCE.md#link-authoring-2026-11-15) and the [local acceptance receipt](.runtime/evidence/link-authoring-accepted-2026-11-15/receipt.json) retain
+acknowledged-target/partial-update boundaries, heading creation, wider block/Properties
+work and full native/private limits. No dependencies were added; prior dated
+milestones remain historical.
+
+**Note continuity, 2026-11-15.** Source/Live Preview and original main Reading remember
+exact-source folds per vault/file in a bounded local app profile. Reading keeps
+explicit heading/list intent across temporary navigation reveals; Source
+remembers its actual fold state. Built-in wiki-link completion adds explicit
+**Create note** for a complete supported missing target, using existing
+placement and link preferences without navigating away. Undo affects link
+insertion, and acknowledged files remain when later ownership/cleanup prevents
+insertion. All 1,920 default/44 GitHub regressions, 306 focused checks and 18
+host scopes pass, including source/history, confirmed renames, duplicate/stale/
+hidden owners, restart/reconnection and genuine cache-only local folds with
+Create refused. [validation and limits](Docs/Engineering/EVIDENCE.md#note-continuity-2026-11-15) and the [local acceptance receipt](.runtime/evidence/note-continuity-accepted-2026-11-15/receipt.json) retain
+richer creation/folding, durability and full native/private limits. No
+dependencies were added; prior dated evidence remains historical.
+
+**Markdown polish, 2026-11-14.** Reading task completion now styles only its own
+original inline label, so a checked parent leaves unchecked child labels and
+continuation prose normal. Existing **Automatic Markdown pairs** adds bounded
+inline tilde/equal doubles and one-marker-at-a-time selection wrapping. Reading
+and static code renderers add Dart, Clojure, Haskell, R, Perl, Erlang, Scala,
+CMake, Nginx and Objective-C from installed local grammars. All 1,862 default/44 GitHub
+regressions, 298 focused checks and 16 host scopes pass, including
+exact source/history, retained DOM/plugin ownership, default theme controls,
+restart/reconnection and genuine cache-only behavior. See [validation and limits](Docs/Engineering/EVIDENCE.md#markdown-polish-2026-11-14)
+and the [local acceptance receipt](.runtime/evidence/markdown-polish-accepted-2026-11-14/receipt.json). Source/save/read-only guards stay intact;
+third-party theme/plugin styling and full native/private/input/grammar parity
+remain separate. No dependencies were added.
+
+**Markdown interactions, 2026-11-14.** Fold original nested lists in the main Reading view
+without hiding continuation prose, and edit supported Reading task checkboxes
+through the same source history and normal saving. The independent **Automatic
+Markdown pairs** setting defaults to enabled and adds supported asterisk and
+underscore emphasis input in Source/Live Preview. All 1,836 default/44 GitHub regressions,
+272 focused checks and 16 host scopes pass, including exact
+source/history, stale/hidden/readonly refusal, navigation/Find and cache-only
+workflows. See [validation and limits](Docs/Engineering/EVIDENCE.md#markdown-interactions-2026-11-14) and the [local acceptance receipt](.runtime/evidence/markdown-interaction-accepted-2026-11-14/receipt.json).
+Embedded/static/quoted/callout/plugin renderings, persisted folds and full
+Markdown/native/private/input behavior remain outside these bounded controls.
+
+**Editor assistance, 2026-11-14.** Reading headings can now fold without changing note text
+or replacing rendered content. Editor settings configure **Automatic bracket
+pairs** and **Continue lists and quotes**. Existing note/alias/heading/block
+suggestions accept fuzzy abbreviations, with literal matches first and unchanged
+destination proofs. All 1,780 default/44 GitHub regressions, 232 focused checks and
+16 host scopes pass, including exact bytes/history, stale-owner/target
+refusal, navigation/search interaction and cache-only workflows. See
+[validation and limits](Docs/Engineering/EVIDENCE.md#editor-assistance-2026-11-14) and the [local acceptance receipt](.runtime/evidence/editor-assistance-accepted-2026-11-14/receipt.json). Broader folding,
+target creation, full ranking and native/private/input behavior remain open.
+
+**Note navigation, 2026-11-14.** Editor settings independently control **Fold headings**
+and **Fold lists** in Source/Live Preview. Properties wiki choices now include
+existing headings/blocks, including current-note and ancestor chains. Files
+provides explicit **Select notes** and **Open selected notes** while preserving
+ordinary browsing. All 1,729 default/44 GitHub regressions, 159 focused checks and
+12 host scopes pass, including exact bytes/history, stale-owner/target
+refusal, restart/reconnection and genuine cached read-only workflows. See
+[validation and limits](Docs/Engineering/EVIDENCE.md#note-navigation-2026-11-14) and the [local acceptance receipt](.runtime/evidence/note-navigation-accepted-2026-11-14/receipt.json). Full native/private/
+physical behavior, new target creation, richer Properties UI and batch file
+mutations/tree transfers remain open.
+
+**Reading tools, 2026-11-14.** Reading Find now offers **Regular expression**,
+using the same guarded fixed-width regex subset as Source Find, retaining selected-passage boundaries and safely
+skipping empty matches. Local fenced code adds **Go, Kotlin, Swift, Ruby, Lua,
+Dockerfile, INI, TOML, diff and XML**. Start a whole Properties text value or
+ordinary list add field with `[[` to choose a known note/alias wiki-link string.
+All 1,690 default/44 GitHub regressions, 202 focused checks and 10 source-bound
+host scopes pass, including real controls, exact bytes/history, stale-job/target/
+deferred-owner refusal, restart/reconnection and genuine cache-only search,
+highlighting and mutation refusal. No dependencies were added. See
+[validation and limits](Docs/Engineering/EVIDENCE.md#reading-tools-2026-11-14) and the [local acceptance receipt](.runtime/evidence/reading-tools-accepted-2026-11-14/receipt.json). Unrestricted regex,
+broader languages/dialects, heading/ID creation, full Properties types/structured
+links/ranking and native/popout/physical behavior remain; earlier PDF and OS
+dictionary acceptance boundaries are unchanged.
+
+**Note workflows, 2026-11-14.** Known headings now complete nested chains such as
+`[[Note#Parent#Child]]`; actual Properties text/list/tag/alias fields suggest
+same-key known strings, and Reading Find can capture selected passages with
+**Use current selection** and **Add selection**. All 1,657 default/44 GitHub tests,
+169 focused checks and 10 source-bound host scopes pass, including real
+controls/navigation, isolated history, stale-owner refusal, restart and cache-only
+behavior. Changed Properties flow-list spacing may normalize through the existing
+YAML serializer. See [validation and limits](Docs/Engineering/EVIDENCE.md#note-workflows-2026-11-14) and the [local acceptance receipt](.runtime/evidence/note-workflows-accepted-2026-11-14/receipt.json).
+Heading creation/new IDs, full property types/link values/ranking, wider Reading
+regex/grammar/scale and native/private/popout/physical behavior remain open.
+
+**Editor workflows, 2026-11-14.** Reading heading/block navigation now aligns its
+visible destination with the inactive editor and later Source/Live Preview
+handback. Find/Replace can capture the union of multiple selections; Windows
+adds app-profile language controls and custom-dictionary management. All
+1,606 default/44 GitHub tests, 133 focused checks and 8 source-bound host
+scopes pass. Language persistence and dictionary list/filter have real-host
+coverage; custom-word writes use mocked native sessions only because
+[Electron also changes the Windows OS dictionary](https://www.electronjs.org/docs/latest/api/session#sesaddwordtospellcheckerdictionaryword).
+See [validation and limits](Docs/Engineering/EVIDENCE.md#editor-workflows-2026-11-14) and the [local acceptance receipt](.runtime/evidence/editor-workflows-accepted-2026-11-14/receipt.json). Broader Reading
+regex/grammar/scale, heading creation, native macOS/Linux, real OS dictionary
+word-write acceptance and non-Markdown/popout export remain open.
+
+**Reading Find** uses Ctrl+F, literal/case/whole-word and opt-in fixed-width
+regex matching, wrapped F3 navigation and an explicit captured passage union
+without rewriting note or rendered/plugin DOM. Local fenced-code highlighting
+supports C/C++, C#, Java, Python, Rust, shell, PowerShell, YAML and SQL, plus
+Go, Kotlin, Swift, Ruby, Lua, Dockerfile, INI, TOML, diff and XML. [Earlier discovery validation](Docs/Engineering/EVIDENCE.md#reading-and-discovery-2026-11-14)
+passes 1,565 default/44 GitHub tests and eight desktop/browser collections.
+
+**Settings > Editor** now also controls line numbers, wrapping, readable source
+width, tab size and tabs/spaces without replacing text/history/plugins. The
+[earlier editor collection](Docs/Engineering/EVIDENCE.md#editor-productivity-2026-11-14)
+passes 1,529 default/44 GitHub tests and six desktop/browser scopes,
+including exact saves, restart and cached read-only behavior.
+
+**Settings > Editor > Spellcheck** controls host spelling without changing the
+editor's text or history. Native marked-word corrections support Undo; Windows
+**Spellcheck languages and dictionary > Manage** opens the app-profile controls
+described above. Browser spelling menus remain host-controlled. **Print current note** / **Export current
+note to PDF** preview unsaved Markdown, supply page options and save a real native
+PDF or invoke the browser's print dialog. These workflows, prior editor features
+and inline footnotes pass the [earlier eight-scope validation](Docs/Engineering/EVIDENCE.md#note-authoring-2026-11-14),
+with 1,500 default/44 GitHub tests and a visually reviewed three-page PDF.
+
+Full native/private/visual/plugin parity, physical IME/device/quota variants,
+broader concurrency/durability, already-active-worker atomic rollback and wider
+OS/browser behavior remain. Preparing the offline shell is separate from
+downloading a vault; browser eviction and folder reconnection still apply.
+Signing, publication and updates remain release work.
 
 The genuinely captured original 1.12.7 one-window floating layout now imports
 and persists on both hosts, retaining its active Live Preview editor, exact
@@ -91,6 +207,11 @@ Run these commands from the repository root:
 ```powershell
 .\build-and-run.cmd
 ```
+
+Both launch scripts prefer a local .NET SDK in `.runtime\dotnet` when present,
+so .NET 10 can be installed for this checkout alongside another system SDK.
+They also find Node.js in its default Windows installation folder if it is
+missing from the current shell's PATH. These settings apply only to the launch.
 
 `RonSijm.Slopsidian.sln` contains both the desktop and standalone WASM projects.
 Both use the `RonSijm.Slopsidian` namespace root; the application display name
@@ -139,11 +260,11 @@ self-contained themes and ordered CSS snippets on desktop and actual-folder WASM
 Preferences preserve unknown values and support explicit Reload, Disable and
 invalid-value Reset; read-only GitHub changes stay local. Existing editors, text,
 selection and undo are retained. Only enable CSS you trust: it styles the whole
-interface. Resources refuse by default; an integrated but not yet
-current-source-accepted opt-in permits checked local fonts and raster images.
-Imports and remote resources still refuse. Reviewed theme catalog/install/update
-and automatic watching source is integrated but not yet current-host accepted;
-full native themes/DOM/chrome and visual equivalence remain separate.
+interface. Resources refuse by default; an opt-in permits checked local fonts
+and raster images. These resources, reviewed theme catalog/install/update and
+automatic watching pass the recorded combined desktop/WASM collection.
+Imports and remote resources still refuse. Full native themes/DOM/chrome and
+visual equivalence remain separate.
 [Supported Appearance and recovery](Docs/Features/APPLICATION.md#appearance-settings-and-self-contained-css).
 
 Imported **File properties** and **All properties** panes retain independent
@@ -733,12 +854,29 @@ Open a Markdown note and click the **book button** in its pane header to enter
 **Ctrl+E**, **Pane options > Toggle reading view**, and the command palette's
 **Toggle reading view** command do the same thing in both desktop and WASM.
 
-Reading view renders headings, emphasis, strikethrough, lists, read-only task
-checkboxes, blockquotes, tables, and inline/fenced code. Markdown links, heading
+Reading view renders headings, emphasis, strikethrough, lists, task checkboxes,
+blockquotes, tables, and inline/fenced code. Markdown links, heading
 anchors, wiki links and aliases navigate vault notes. Markdown and wiki-image
 syntax display local PNG, JPEG, GIF, WebP and AVIF attachments directly from the
 selected vault. Frontmatter is hidden. Note HTML is sanitized, and remote
 images are not fetched automatically.
+
+Original source-mapped tasks in the current main Reading view can be checked
+with the pointer or Space; one marker changes through the existing editor and
+normal guarded saving, with one-step Undo and exact surrounding source retained.
+Read-only tasks and embedded/static/quoted/callout or plugin-created/replacement
+inputs do not acquire this editing behavior. Original main list fold buttons
+hide nested child lists while leaving continuation prose visible. **Fold lists**
+and **Fold headings** remain independent, enabled-by-default settings; these fold
+choices belong to the current render. [validation and limits](Docs/Engineering/EVIDENCE.md#markdown-interactions-2026-11-14) records the limits.
+
+Task completion color and strike-through apply to each original inline label,
+including nested/loose/bullet/ordered labels in main, quoted, embedded, static
+and read-only Reading renderers. Unchecked children and continuation prose stay
+normal; original formatting, checkbox positions and child lists remain intact.
+This shared styling adds no editing permission to other renderers. Third-party
+theme/plugin CSS and full native presentation remain outside the verified
+default subset. [validation and limits](Docs/Engineering/EVIDENCE.md#markdown-polish-2026-11-14) records those limits.
 
 The rendered text includes unsaved edits without saving or clearing undo/redo.
 Split panes can show the same shared document in different modes; source edits
@@ -746,9 +884,11 @@ and clean external Markdown changes update its reading panes. Each pane's mode
 survives a workspace reload. This Reading renderer is separate from the
 in-place Live Preview editor described above. Ordered asynchronous plugin
 Markdown postprocessors receive real source/frontmatter/section context and
-owned `MarkdownRenderChild` lifecycle. General SVG, note/document embeds, math,
-Reading code highlighting and full renderer/private compatibility remain
-incomplete. Static `MarkdownRenderer.render`/`renderMarkdown` append owned
+owned `MarkdownRenderChild` lifecycle. Reading/static fences now have bounded
+local [code highlighting](Docs/Features/APPLICATION.md#reading-code-highlighting).
+Markdown note/heading/block embeds and math retain their recorded bounded
+workflows; broader document/SVG embedding and full renderer/private compatibility
+remain incomplete. Static `MarkdownRenderer.render`/`renderMarkdown` append owned
 fragments, and real plugin/factory code-block processors run in Reading/static
 output with asynchronous cleanup and preserved source. Custom-code Live Preview
 widgets are not implemented. See the

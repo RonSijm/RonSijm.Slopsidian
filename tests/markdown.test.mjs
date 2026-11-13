@@ -1291,7 +1291,7 @@ test("client saves and metadata observations deliver one event without losing no
   await app.metadataCache.refresh();
   present = true;
   await app.metadataCache.refresh();
-  assert.deepEqual(events.splice(0), ["delete:Note.md", "create:Note.md"], "a folder at the old file path must also clear the file's acknowledgement");
+  assert.deepEqual(events.splice(0), ["delete:Note.md", "create:Note.md", "delete:Note.md", "create:Note.md"], "replacing a file with a folder and back must balance both entities and clear the file's acknowledgement");
   observeBeforeAcknowledgement = false;
   await app.vault.createBinary("Image.png", new Uint8Array([0, 255, 1]).buffer);
   await app.metadataCache.refresh();
@@ -1347,6 +1347,36 @@ test("metadata retains raw CRLF/UTF-16 positions, heading levels, aliases, embed
   assert.equal(resolveSubpath(cache, "#First heading").start.line, 4);
   assert.equal(resolveSubpath(cache, "#^block-id").start.line, 11);
   assert.equal(resolveSubpath(cache, "#absent"), null);
+});
+
+test("Setext metadata strips only actual heading underlines with zero through three spaces and keeps raw resolver positions", () => {
+  for (const ending of ["\n", "\r\n"]) for (const indent of ["", " ", "  ", "   "]) for (const [marker, level] of [["======", 1], ["------", 2]]) {
+    const content = ["\ufeff---", "status: Keep λ 😀", "---", "", "  Parent λ 😀", indent + marker + " \t", "", "### Child Ω", "", "Keep original body.", ""].join(ending);
+    const cache = parseMarkdown(content), heading = cache.headings[0];
+    assert.deepEqual(cache.headings.map(({ heading, level }) => ({ heading, level })), [{ heading: "Parent λ 😀", level }, { heading: "Child Ω", level: 3 }]);
+    assert.deepEqual(heading.position.start, { line: 4, ch: 2, offset: content.indexOf("Parent") });
+    assert.equal(heading.position.end.line, 5); assert.ok(content.slice(heading.position.start.offset, heading.position.end.offset).includes(indent + marker));
+    assert.equal(resolveSubpath(cache, "#PARENT λ 😀").start.offset, content.indexOf("Parent"));
+    assert.equal(resolveSubpath(cache, "#Parent λ 😀#Child Ω").start.offset, content.indexOf("### Child Ω"));
+    const actual = [];
+    markdownLanguage.parser.parse(content).iterate({ enter(node) { if (node.name === "SetextHeading" + level && node.node.parent?.name === "Document" && node.from >= cache.frontmatterPosition.end.offset) actual.push([node.from, node.to]); } });
+    assert.deepEqual(actual, [[heading.position.start.offset, heading.position.end.offset]], "metadata offsets must remain the actual raw syntax-node span");
+  }
+});
+
+test("multiline Setext titles resolve without underline text and four-space code or container text is not promoted", () => {
+  const content = "\ufeffFirst λ\r\nsecond 😀\r\n   ======\r\n\r\n## Child Ω\r\n";
+  const cache = parseMarkdown(content);
+  assert.equal(cache.headings[0].heading, "First λ second 😀");
+  assert.equal(resolveSubpath(cache, "#First λ second 😀#Child Ω").start.offset, content.indexOf("## Child Ω"));
+  for (const text of ["    Parent\n    ======\n", "Parent\n    ======\n", "```md\nParent\n======\n```\n", "Parent\n  ==-==\n"]) {
+    assert.deepEqual(parseMarkdown(text).headings, []); assert.equal(resolveSubpath(parseMarkdown(text), "#Parent"), null);
+  }
+  for (const text of ["> Parent\n> ======\n", "- Parent\n  ======\n"]) {
+    const documentHeadings = [];
+    markdownLanguage.parser.parse(text).iterate({ enter(node) { if (/SetextHeading[12]/.test(node.name) && node.node.parent?.name === "Document") documentHeadings.push(node.from); } });
+    assert.deepEqual(documentHeadings, [], "quote/list syntax never becomes a document-level Setext ancestor");
+  }
 });
 
 test("metadata excludes code, comments, escaped markup and numeric tags, including false headings", () => {

@@ -8,7 +8,10 @@ import { frontmatterPropertyPosition, parseMarkdown, sameValue, validTag } from 
 import { inferPropertyType, parsePropertyValue, propertyName, propertyTypes } from "./property-types";
 import { composingKey, numberText, numericLexemes } from "./properties-lexemes";
 import { propertiesPaneState, propertySorts, sortedProperties } from "./properties-pane-model";
-import { Modal } from "./ui";
+import { assertPropertyValueChoice, createPropertyHeading, createPropertyNote, PropertyValueSuggestions, propertyHeadingCreationChoice, propertyNoteCreationChoice, propertyValueChoices, propertyWikiValue, replacePropertyListValue, type PropertyNoteCreationOptions } from "./property-value-suggestions";
+import { MAX_COMPLETION_RESULTS } from "./builtin-suggestion-model";
+import { checkedMultilineText, createMultilinePropertyEditor, createStructuredPropertyInspector, hasMultilineText, multilineListSupported, preserveMultilinePropertySource, propertyTextControl as textControl, replaceMultilinePropertyValue, structuredPropertySourceSupported, type MultilinePropertyEditor } from "./multiline-properties";
+import { Modal, Notice } from "./ui";
 import { openTagSearch } from "./reading";
 import { TFile } from "./vault";
 import { ItemView } from "./views";
@@ -31,9 +34,12 @@ interface RenderedProperty {
   containerEl: HTMLElement;
   valueEl: HTMLElement;
   source?: string;
+  cleanup?: () => void;
+  linksCurrent?: () => boolean;
+  hasDraft?: () => boolean;
 }
 
-function inlinePropertyRow(properties: Properties, file: TFile, name: string, value: unknown, refresh: (name: string) => void, current: () => boolean, source?: string): RenderedProperty {
+function inlinePropertyRow(properties: Properties, file: TFile, name: string, value: unknown, refresh: (name: string) => void, current: (ownedCreationMutation?: boolean) => boolean, source?: string): RenderedProperty {
   const prior = structuredClone(value);
   const row = document.createElement("div");
   row.className = "metadata-property";
@@ -66,23 +72,28 @@ function inlinePropertyRow(properties: Properties, file: TFile, name: string, va
   const error = document.createElement("div");
   error.className = "metadata-property-error";
   error.setAttribute("role", "alert");
-  const writable = !properties.app.vault.readOnly && editable(value) && propertyTypes.some(type => type === widget);
+  const multilineList = widget === "multitext" && multilineListSupported(value);
+  const writable = !properties.app.vault.readOnly && (editable(value) || multilineList) && propertyTypes.some(type => type === widget);
   let pending = false;
-  const commit = async (next: unknown): Promise<boolean> => {
+  let multilineEditor: MultilinePropertyEditor | null = null, cancelMultiline: ((refresh?: boolean) => void) | null = null, listDraft = false;
+  const commit = async (next: unknown, guard?: (content: string) => void, transform?: (updated: string, original: string) => string): Promise<boolean> => {
     if (pending || !writable || !row.isConnected || !current()) { return false; }
-    if (sameValue(next, value)) { return true; }
+    // A selected suggestion also consumes its draft when it resolves to the
+    // existing value. Keep its guarded queue/row refresh; otherwise a later
+    // blur could save the already-accepted query prefix as a literal value.
+    if (sameValue(next, value) && !guard) { return true; }
     pending = true;
     row.setAttribute("aria-busy", "true");
-    const controls = [...row.querySelectorAll<HTMLInputElement | HTMLButtonElement>("input,button")].map(control => ({ control, disabled: control.disabled, readOnly: control instanceof HTMLInputElement && control.readOnly }));
+    const controls = [...row.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLButtonElement>("input,textarea,button")].map(control => ({ control, disabled: control.disabled, readOnly: textControl(control) && control.readOnly }));
     for (const { control } of controls) {
-      if (control instanceof HTMLInputElement && control.type !== "checkbox") { control.readOnly = true; }
+      if (textControl(control) && control.type !== "checkbox") { control.readOnly = true; }
       else { control.disabled = true; }
     }
     error.textContent = "";
     try {
       await properties.app.core.run(() => {
         if (!row.isConnected || !current()) { throw new Error("This property field belongs to an inactive note or pane."); }
-        return properties.changeValue(file, name, prior, next, widget);
+        return properties.changeValue(file, name, prior, next, widget, guard, transform);
       });
       refresh(name);
       return true;
@@ -93,22 +104,136 @@ function inlinePropertyRow(properties: Properties, file: TFile, name: string, va
       pending = false; row.removeAttribute("aria-busy");
       for (const { control, disabled, readOnly } of controls) {
         control.disabled = disabled;
-        if (control instanceof HTMLInputElement) { control.readOnly = readOnly; }
+        if (textControl(control)) { control.readOnly = readOnly; }
       }
     }
+  };
+  let suggestions: PropertyValueSuggestions | null = null;
+  const suggestionInstances = new Set<PropertyValueSuggestions>();
+  const attachSuggestions = (input: HTMLInputElement, existing: readonly string[], nextValue: (value: string) => unknown, allowCreation = true): PropertyValueSuggestions => {
+    let creatingMutation = false;
+    const instance = new PropertyValueSuggestions({ input, container: valueEl, current: ownedCreationMutation => row.isConnected && current(ownedCreationMutation),
+      choices: query => {
+        const values = propertyValueChoices(properties.app, file, name, widget, existing, query);
+        const create = allowCreation ? propertyHeadingCreationChoice(properties.app, file, name, widget, existing, query) ?? propertyNoteCreationChoice(properties.app, file, name, widget, existing, query) : null;
+        return create ? [...values.slice(0, MAX_COMPLETION_RESULTS - 1), create] : values;
+      },
+      preserveOwnedOnBlur: () => creatingMutation && properties.app.workspace.isChangingFiles,
+      accept: async (choice, query, owned) => {
+        if (choice.kind === "create-note" || choice.kind === "create-heading") {
+          const owner = properties.app.workspace.leaves().find(leaf => leaf.view.containerEl.contains(row)), view = owner?.view;
+          const mode = view instanceof MarkdownView ? view.getMode() : null, editing = view instanceof MarkdownView ? view.getEditingMode() : null;
+          const creationCurrent = (): boolean => owned() && Boolean(owner && view && owner.view === view && properties.app.workspace.getLeafById(owner.id) === owner
+            && view.containerEl.contains(row) && (row.checkVisibility?.() ?? true)
+            && (!(view instanceof MarkdownView) || view.getMode() === mode && view.getEditingMode() === editing));
+          const creationOptions: PropertyNoteCreationOptions = { widget, existing, query, current: creationCurrent,
+            commit: async (candidate, guard, transform) => {
+              if (!creationCurrent()) { return false; }
+              // Creation's inert shell may have blurred this input. Restore its
+              // owned focus so the synchronous editor-change render retains
+              // the pending field and its eventual save error.
+              input.focus({ preventScroll: true });
+              if (!creationCurrent()) { return false; }
+              return commit(nextValue(candidate), guard, transform);
+            },
+            ownMutation: pending => { creatingMutation = pending; },
+            kept: path => { new Notice(choice.kind === "create-heading"
+              ? 'Heading creation in "' + path + '" was confirmed. The property update did not complete; review the current target, property and any unsaved changes.'
+              : 'Created "' + path + '". The property update did not complete. The new note was kept; review the property and any unsaved changes.', 10_000); },
+            acknowledgedFailure: reportError };
+          return choice.kind === "create-heading" ? createPropertyHeading(properties.app, choice, creationOptions) : createPropertyNote(properties.app, choice, creationOptions);
+        }
+        const guard = (content: string): void => {
+          if (!owned()) { throw new Error("This property field closed or changed before its suggestion could be applied."); }
+          assertPropertyValueChoice(properties.app, choice, widget, existing, query, content);
+        };
+        assertPropertyValueChoice(properties.app, choice, widget, existing, query);
+        return commit(nextValue(choice.value), guard);
+      }, error: message => { error.textContent = message; } });
+    suggestionInstances.add(instance);
+    return instance;
+  };
+  const linkProofs: (() => boolean)[] = [];
+  const sourceText = (): string | undefined => properties.app.workspace.sessions.get(file.path)?.text ?? properties.app.metadataCache.getDocument(file.path)?.text;
+  const openMultiline = (text: string, hidden: HTMLElement[], focus: HTMLButtonElement, replace: (text: string) => unknown, index?: number): void => {
+    if (!writable || pending || !row.isConnected || !current()) { return; }
+    try { checkedMultilineText(text); } catch (issue) { error.textContent = issue instanceof Error ? issue.message : String(issue); return; }
+    cancelMultiline?.(false); suggestions?.close();
+    const root = properties.app.vault.rootPath, path = file.path, session = properties.app.workspace.sessions.get(path), baseline = sourceText();
+    if (!root || baseline === undefined) { error.textContent = "Load this note before editing its multiline value."; return; }
+    const owner = properties.app.workspace.leaves().find(leaf => leaf.view.containerEl.contains(row)), view = owner?.view;
+    const mode = view instanceof MarkdownView ? view.getMode() : null, editing = view instanceof MarkdownView ? view.getEditingMode() : null;
+    const container = row.parentElement, focusLabel = focus.getAttribute("aria-label");
+    const locationCurrent = (): boolean => Boolean(owner && view && owner.view === view && properties.app.workspace.getLeafById(owner.id) === owner)
+      && (!(view instanceof MarkdownView) || view.getMode() === mode && view.getEditingMode() === editing);
+    let editor: MultilinePropertyEditor;
+    const owns = (): boolean => editor.active && row.isConnected && current() && !properties.app.vault.readOnly
+      && root === properties.app.vault.rootPath && path === file.path && properties.app.vault.getFileByPath(path) === file
+      && properties.app.workspace.sessions.get(path) === session && (!session || session.originRoot === root && !session.isReloading && !session.isSaving)
+      && locationCurrent() && Boolean(view?.containerEl.contains(row)) && (row.checkVisibility?.() ?? true);
+    const guard = (content: string): void => {
+      if (!owns() || content !== baseline) { throw new Error("The note or multiline property owner changed. Cancel this draft and review the current source before applying it."); }
+    };
+    const close = (repaint = true): void => {
+      editor.dispose(); for (const element of hidden) { element.hidden = false; }
+      if (multilineEditor === editor) { multilineEditor = null; cancelMultiline = null; }
+      if (repaint && row.isConnected && current()) { refresh(name); }
+      if (locationCurrent() && current() && container?.isConnected) {
+        const replacement = [...container.querySelectorAll<HTMLElement>("[data-property-key]")].find(element => element.dataset.propertyKey === name);
+        const target = [...replacement?.querySelectorAll<HTMLButtonElement>("button") ?? []].find(button => button.getAttribute("aria-label") === focusLabel);
+        (target ?? (focus.isConnected ? focus : null))?.focus();
+      }
+    };
+    editor = createMultilinePropertyEditor(row.ownerDocument, { value: text, label: `Edit multiline value in ${name}`, current: owns,
+      apply: candidate => { guard(sourceText() ?? ""); return commit(replace(candidate), guard, (updated, original) => preserveMultilinePropertySource(updated, original, name, index)); },
+      error: message => { error.textContent = message; }, closed: close });
+    multilineEditor = editor; cancelMultiline = close;
+    for (const element of hidden) { element.hidden = true; }
+    valueEl.append(editor.element); editor.input.focus(); editor.input.select();
+  };
+  const wikiAnchor = (value: string, index?: number, draftCurrent: () => boolean = () => true): HTMLAnchorElement | null => {
+    const choice = propertyWikiValue(properties.app, file, name, value, index);
+    linkProofs.push(() => {
+      const fresh = propertyWikiValue(properties.app, file, name, value, index);
+      return choice === null ? fresh === null : fresh?.target === choice.target && fresh.targetPath === choice.targetPath
+        && fresh.linktext === choice.linktext && fresh.label === choice.label;
+    });
+    if (!choice) { return null; }
+    const anchor = document.createElement("a");
+    anchor.href = "#"; anchor.className = "internal-link metadata-property-link"; anchor.textContent = choice.label;
+    anchor.dataset.propertyWikiValue = value; anchor.dataset.propertyWikiTarget = choice.targetPath;
+    anchor.setAttribute("aria-label", "Open " + choice.label); anchor.title = choice.targetPath + " — " + value;
+    anchor.addEventListener("mousedown", event => { if (event.button <= 1) { event.preventDefault(); } });
+    const open = (event: MouseEvent): void => {
+      if (event.button > 1) { return; }
+      event.preventDefault();
+      if (!draftCurrent()) { error.textContent = "Finish or cancel this property draft before opening its stored link."; return; }
+      run(() => {
+        const fresh = propertyWikiValue(properties.app, file, name, value, index);
+        if (!anchor.isConnected || !draftCurrent() || !fresh || fresh.target !== choice.target || fresh.targetPath !== choice.targetPath || fresh.linktext !== choice.linktext) {
+          error.textContent = "This property link or its destination changed. Review the current property before opening it."; return;
+        }
+        return properties.app.workspace.openLinkText(fresh.linktext, file.path, event.button === 1 || event.ctrlKey || event.metaKey ? "tab" : false);
+      });
+    };
+    anchor.addEventListener("click", open); anchor.addEventListener("auxclick", open);
+    return anchor;
   };
   const list = typeof value === "string" ? [value] : Array.isArray(value) && value.every(entry => typeof entry === "string") ? value as string[] : null;
   if (["tags", "multitext", "aliases"].includes(widget) && list) {
     const tags = widget === "tags";
+    let cancelEdit: (() => void) | null = null;
     valueEl.classList.add("metadata-tags", "multi-select-container");
     for (const [index, item] of list.entries()) {
       const text = tags ? item.trim().replace(/^#/, "") : item;
       const pill = document.createElement("span");
       pill.className = "multi-select-pill";
-      const content = document.createElement(tags ? "a" : "span");
-      content.className = "multi-select-pill-content" + (tags ? " metadata-tag" : "");
-      content.textContent = text;
-      if (content instanceof HTMLAnchorElement) {
+      const linked = widget === "multitext" ? wikiAnchor(item, Array.isArray(value) ? index : undefined) : null;
+      const content = linked ?? document.createElement(tags ? "a" : "span");
+      content.className = (linked ? linked.className + " " : "") + "multi-select-pill-content" + (tags ? " metadata-tag" : "");
+      if (!linked) { content.textContent = text; }
+      if (hasMultilineText(item)) { content.classList.add("metadata-multiline-preview"); }
+      if (tags && content instanceof HTMLAnchorElement) {
         content.href = "#" + text;
         content.addEventListener("click", event => { event.preventDefault(); run(() => openTagSearch(properties.app, text)); });
         content.addEventListener("auxclick", event => { if (event.button === 1) { event.preventDefault(); run(() => openTagSearch(properties.app, text)); } });
@@ -121,6 +246,44 @@ function inlinePropertyRow(properties: Properties, file: TFile, name: string, va
       remove.append(icon("close"));
       remove.addEventListener("click", () => { void commit(list.filter((_, position) => position !== index)); });
       pill.append(content, remove);
+      if (widget === "multitext" && Array.isArray(value)) {
+        const editValue = document.createElement("button");
+        editValue.type = "button"; editValue.className = "metadata-value-edit"; editValue.disabled = !writable;
+        editValue.dataset.propertyEditValue = String(index); editValue.setAttribute("aria-label", `Edit value ${index + 1} in ${name}`); editValue.textContent = "Edit";
+        editValue.addEventListener("click", () => {
+          if (!writable || pending || !row.isConnected || !current()) { return; }
+          cancelEdit?.(); cancelMultiline?.(false); suggestions?.close();
+          if (hasMultilineText(item)) { openMultiline(item, [pill], editValue, candidate => replaceMultilinePropertyValue(list, index, candidate), index); return; }
+          const box = document.createElement("div"), draft = document.createElement("input"), apply = document.createElement("button"), cancel = document.createElement("button");
+          box.className = "metadata-list-value-editor"; Object.assign(box.style, { display: "flex", flexWrap: "wrap", gap: "4px", width: "100%" });
+          draft.className = "metadata-input"; draft.value = item; draft.dataset.metadataInput = ""; draft.dataset.propertyEditIndex = String(index); draft.setAttribute("aria-label", `Edit value ${index + 1} in ${name}`);
+          apply.type = cancel.type = "button"; apply.textContent = "Apply value"; cancel.textContent = "Cancel";
+          apply.dataset.propertyApplyValue = String(index); cancel.dataset.propertyCancelValue = String(index);
+          let closed = false, composing = false;
+          const remaining = list.filter((_, position) => position !== index), replace = (candidate: string): string[] => replacePropertyListValue(list, index, candidate);
+          const editorSuggestions = attachSuggestions(draft, remaining, replace, false);
+          const close = (): void => { if (closed) { return; } closed = true; editorSuggestions.dispose(); suggestionInstances.delete(editorSuggestions); box.remove(); pill.hidden = false; cancelEdit = null; listDraft = false; };
+          cancelEdit = close; pill.hidden = true; listDraft = true;
+          const save = (): void => {
+            if (closed || composing || pending || editorSuggestions.suppressBlurCommit) { return; }
+            const candidate = draft.value.trim();
+            if (draft.value === item || !candidate || candidate === item) { close(); editValue.focus(); return; }
+            try { void commit(replace(candidate)); } catch (issue) { error.textContent = issue instanceof Error ? issue.message : String(issue); }
+          };
+          draft.addEventListener("compositionstart", () => { composing = true; }); draft.addEventListener("compositionend", () => { composing = false; });
+          // Existing-value edits require Apply/Enter. Moving focus with Tab
+          // must leave Cancel usable without first committing the draft.
+          draft.addEventListener("keydown", event => {
+            if (composing || composingKey(event)) { return; }
+            if (event.key === "Enter") { event.preventDefault(); save(); }
+            if (event.key === "Escape") { event.preventDefault(); close(); error.textContent = ""; editValue.focus(); }
+          });
+          for (const button of [apply, cancel]) { button.addEventListener("mousedown", event => event.preventDefault()); }
+          apply.addEventListener("click", save); cancel.addEventListener("click", () => { close(); error.textContent = ""; editValue.focus(); });
+          box.append(draft, apply, cancel); valueEl.append(box); draft.focus(); draft.select();
+        });
+        pill.append(editValue);
+      }
       valueEl.append(pill);
     }
     const input = document.createElement("input");
@@ -144,8 +307,16 @@ function inlinePropertyRow(properties: Properties, file: TFile, name: string, va
       if (event.key === "Enter") { event.preventDefault(); add(); }
       if (event.key === "Escape") { event.preventDefault(); input.value = ""; error.textContent = ""; input.blur(); }
     });
-    input.addEventListener("blur", () => { if (!composing) { add(); } });
     valueEl.append(input);
+    suggestions = attachSuggestions(input, list, candidate => [...list, candidate]);
+    input.addEventListener("blur", () => { if (!composing && !suggestions?.suppressBlurCommit) { add(); } });
+  } else if (widget === "text" && hasMultilineText(value)) {
+    const preview = document.createElement("div"), editText = document.createElement("button");
+    preview.className = "metadata-multiline-preview"; preview.dataset.propertyMultilinePreview = ""; preview.textContent = value;
+    editText.type = "button"; editText.className = "metadata-value-edit"; editText.textContent = "Edit text"; editText.dataset.propertyEditMultiline = "";
+    editText.setAttribute("aria-label", `Edit multiline property ${name}`); editText.disabled = !writable;
+    editText.addEventListener("click", () => openMultiline(value, [preview, editText], editText, candidate => candidate));
+    valueEl.append(preview, editText);
   } else if (editable(value) && propertyTypes.some(type => type === widget) && !Array.isArray(value) && (typeof value !== "object" || value === null)) {
     const input = document.createElement("input");
     input.className = "metadata-input";
@@ -165,14 +336,32 @@ function inlinePropertyRow(properties: Properties, file: TFile, name: string, va
     let composing = false;
     input.addEventListener("compositionstart", () => { composing = true; });
     input.addEventListener("compositionend", () => { composing = false; });
-    input.addEventListener(widget === "checkbox" ? "change" : "blur", () => { if (!composing) { save(); } });
+    input.addEventListener(widget === "checkbox" ? "change" : "blur", () => { if (!composing && !suggestions?.suppressBlurCommit) { save(); } });
     input.addEventListener("keydown", event => {
       if (composing || composingKey(event)) { return; }
       if (event.key === "Enter") { event.preventDefault(); save(); }
       if (event.key === "Escape") { event.preventDefault(); input.value = initial; input.checked = value === true; error.textContent = ""; input.blur(); }
     });
     valueEl.append(input);
-  } else { valueEl.textContent = displayValue(value); }
+    if (widget === "text" && (value == null || typeof value === "string" && !/[\r\n]/.test(value))) {
+      suggestions = attachSuggestions(input, [], candidate => candidate);
+      if (typeof value === "string") {
+        const anchor = wikiAnchor(value, undefined, () => input.value === initial && !multilineEditor?.active); if (anchor) { valueEl.append(anchor); }
+        const editText = document.createElement("button"); editText.type = "button"; editText.className = "metadata-value-edit";
+        editText.dataset.propertyEditMultiline = ""; editText.textContent = "Edit text"; editText.setAttribute("aria-label", `Edit multiline property ${name}`); editText.disabled = !writable;
+        editText.addEventListener("mousedown", event => event.preventDefault());
+        editText.addEventListener("click", () => {
+          if (input.value !== initial) { error.textContent = "Finish or cancel the single-line draft before opening multiline editing."; return; }
+          openMultiline(value, [input, editText, ...anchor ? [anchor] : []], editText, candidate => candidate);
+        }); valueEl.append(editText);
+      }
+    }
+  } else {
+    const inspectionAllowed = structuredPropertySourceSupported(sourceText(), name);
+    linkProofs.push(() => structuredPropertySourceSupported(sourceText(), name) === inspectionAllowed);
+    const inspector = createStructuredPropertyInspector(row.ownerDocument, value, name, sourceText());
+    if (inspector) { valueEl.append(inspector); } else { valueEl.textContent = displayValue(value); }
+  }
   const remove = document.createElement("button");
   remove.type = "button";
   remove.className = "clickable-icon metadata-property-remove";
@@ -184,7 +373,12 @@ function inlinePropertyRow(properties: Properties, file: TFile, name: string, va
   remove.addEventListener("click", () => run(() => properties.editDialog(file, name, true)));
   edit.disabled = properties.app.vault.readOnly || !editable(value) || !propertyTypes.some(type => type === widget);
   row.append(label, valueEl, remove, error);
-  return { entry: { key: name, value: prior }, containerEl: row, valueEl, source };
+  return { entry: { key: name, value: prior }, containerEl: row, valueEl, source,
+    // The mutation shell may blur an accepted creator. A target acknowledgement
+    // must not replace that row before its still-guarded source queue completes.
+    linksCurrent: () => pending || [...suggestionInstances].some(instance => instance.accepting) || linkProofs.every(proof => proof()),
+    hasDraft: () => Boolean(multilineEditor?.active || listDraft),
+    cleanup: () => { multilineEditor?.dispose(); multilineEditor = null; cancelMultiline = null; listDraft = false; for (const instance of suggestionInstances) { instance.dispose(); } suggestionInstances.clear(); } };
 }
 
 export class MetadataEditor {
@@ -195,7 +389,7 @@ export class MetadataEditor {
   private values: Record<string, unknown> | null = null;
 
   constructor(private readonly properties: Properties, private readonly getFile: () => TFile | null, private readonly options: {
-    isCurrent?: () => boolean;
+    isCurrent?: (ownedCreationMutation?: boolean) => boolean;
     entries?: (values: Record<string, unknown>) => [string, unknown][];
   } = {}) {
     this.contentEl.className = "metadata-container";
@@ -215,10 +409,10 @@ export class MetadataEditor {
     });
   }
 
-  private current(file: TFile): boolean {
+  private current(file: TFile, ownedCreationMutation = false): boolean {
     return this.getFile() === file && this.properties.app.vault.getFileByPath(file.path) === file
       && !this.properties.app.changingVault && !this.properties.app.core.busy && !this.properties.busy
-      && this.properties.app.core.isEnabled("properties") && (this.options.isCurrent?.() ?? true);
+      && this.properties.app.core.isEnabled("properties") && (this.options.isCurrent?.(ownedCreationMutation) ?? true);
   }
 
   render(force = false, committed?: string): void {
@@ -232,12 +426,13 @@ export class MetadataEditor {
         && sameValue(property.entry.value, values[property.entry.key])
         && property.source === numerics.get(property.entry.key)
         && property.valueEl.dataset.propertyType === (this.properties.app.metadataTypeManager.getAssignedWidget(property.entry.key) ?? inferPropertyType(values[property.entry.key]))
-        && property.containerEl.dataset.readOnly === String(this.properties.app.vault.readOnly);
+        && property.containerEl.dataset.readOnly === String(this.properties.app.vault.readOnly)
+        && property.linksCurrent?.() !== false;
       if (!force && this.file === file && this.values && sameValue(this.values, values) && this.rendered.every(current)) { return; }
       const focused = this.file === file && this.contentEl.contains(document.activeElement) ? document.activeElement : null;
       const focusedKey = focused?.closest<HTMLElement>("[data-property-key]")?.dataset.propertyKey;
       const focusedLabel = focused?.getAttribute("aria-label");
-      const draft = focused instanceof HTMLInputElement && focusedKey !== committed ? { value: focused.value, checked: focused.checked, from: focused.selectionStart, to: focused.selectionEnd } : null;
+      const draft = textControl(focused) && focusedKey !== committed ? { value: focused.value, checked: "checked" in focused && focused.checked, from: focused.selectionStart, to: focused.selectionEnd } : null;
       const previous = this.file === file ? this.rendered : [];
       this.file = file;
       this.values = structuredClone(values);
@@ -246,11 +441,19 @@ export class MetadataEditor {
         // Keep the focused row and its original comparison value together.
         // Recreating a field while retaining its draft would silently rebase
         // that draft onto someone else's newer value.
-        return existing && (name === focusedKey && name !== committed || current(existing)) ? existing
-          : inlinePropertyRow(this.properties, file, name, value, key => this.render(true, key), () => this.current(file), numerics.get(name));
+        // An accepted draft is consumed even if Undo has already returned the
+        // source to its prior value while an asynchronous save/index finishes.
+        // Reusing that row would leave its accepted query to save again on blur.
+        return existing && name !== committed && (name === focusedKey || existing.hasDraft?.() || current(existing)) ? existing
+          : inlinePropertyRow(this.properties, file, name, value, key => this.render(true, key), ownedCreationMutation => this.current(file, ownedCreationMutation), numerics.get(name));
       }) : [];
-      const removedFocused = previous.find(property => property.entry.key === focusedKey && property.entry.key !== committed);
-      if (removedFocused && !Object.hasOwn(values, removedFocused.entry.key)) { rows.push(removedFocused); }
+      for (const property of previous) {
+        if (property.entry.key !== committed && (property.entry.key === focusedKey || property.hasDraft?.()) && !Object.hasOwn(values, property.entry.key)) { rows.push(property); }
+      }
+      // Remove obsolete rows before ordering their replacements. Leaving them
+      // interleaved would move unchanged later rows around them, blurring a
+      // focused field and revoking a valid queued choice in another property.
+      for (const property of this.rendered) { if (!rows.includes(property)) { property.cleanup?.(); property.containerEl.remove(); } }
       this.rendered.splice(0, this.rendered.length, ...rows);
       const heading = this.contentEl.querySelector<HTMLElement>(":scope > .metadata-properties-heading") ?? document.createElement("div");
       heading.className = "metadata-properties-heading";
@@ -263,16 +466,17 @@ export class MetadataEditor {
       while (this.contentEl.children.length > children.length) { this.contentEl.lastElementChild?.remove(); }
       if (focused && !focused.isConnected && focusedKey) {
         const row = this.rendered.find(property => property.entry.key === focusedKey)?.containerEl;
-        const input = row?.querySelector<HTMLInputElement>(focusedLabel ? `input[aria-label="${CSS.escape(focusedLabel)}"]` : "input");
-        const target = input ?? row?.querySelector<HTMLInputElement>("[data-metadata-input]");
+        const input = row?.querySelector<HTMLInputElement | HTMLTextAreaElement>(focusedLabel ? `input[aria-label="${CSS.escape(focusedLabel)}"],textarea[aria-label="${CSS.escape(focusedLabel)}"]` : "input,textarea");
+        const target = input ?? row?.querySelector<HTMLInputElement | HTMLTextAreaElement>("[data-metadata-input]");
         if (target) {
-          if (draft) { target.value = draft.value; target.checked = draft.checked; }
+          if (draft) { target.value = draft.value; if ("checked" in target) { target.checked = draft.checked; } }
           target.focus();
           if (draft?.from != null && draft.to != null && target.type !== "checkbox") { target.setSelectionRange(draft.from, draft.to); }
         }
       }
     } catch (error) {
       this.values = null;
+      for (const property of this.rendered) { property.cleanup?.(); }
       this.rendered.length = 0;
       const status = document.createElement("p");
       status.className = "plugin-error";
@@ -288,13 +492,13 @@ export class Properties extends Events {
   private modal: Modal | null = null;
   busy = false;
   constructor(readonly app: App) { super(); }
-  async changeValue(file: TFile, name: string, prior: unknown, next: unknown, widget?: string): Promise<void> {
+  async changeValue(file: TFile, name: string, prior: unknown, next: unknown, widget?: string, guard?: (content: string) => void, transform?: (updated: string, original: string) => string): Promise<void> {
     if (!this.app.core.isEnabled(this.id)) { throw new Error("Enable Properties before editing a value."); }
     await this.app.fileManager.processFrontMatter(file, values => {
       if (!Object.hasOwn(values, name) || !sameValue(values[name], prior)) { throw new Error("This property changed while you were editing. Reopen the note to review its current value."); }
       if (widget !== undefined && widget !== (this.app.metadataTypeManager.getAssignedWidget(name) ?? inferPropertyType(values[name]))) { throw new Error("The property type changed while you were editing. Reopen the note to use its current type."); }
       Object.defineProperty(values, name, { value: next, enumerable: true, configurable: true, writable: true });
-    });
+    }, undefined, guard, transform);
   }
   get options(): Record<string, unknown> { return this.app.core.state(this.id).settings; }
 
@@ -532,7 +736,7 @@ class PropertiesView extends ItemView {
     this.status.className = "discovery-status"; this.status.setAttribute("role", "status"); this.status.dataset.propertiesStatus = "";
     this.list.className = "properties-pane-list";
     this.metadataEditor = local ? new MetadataEditor(properties, () => this.file, {
-      isCurrent: () => this.interactive(),
+      isCurrent: ownedCreationMutation => this.interactive(ownedCreationMutation),
       entries: values => {
         const catalog = this.app.metadataTypeManager.getAllProperties();
         return sortedProperties(Object.entries(values).map(([name, value]) => ({ name, value, occurrences: catalog[name.toLowerCase()]?.occurrences ?? 1 })), this.options.query, this.options.sort).map(entry => [entry.name, entry.value]);
@@ -604,9 +808,9 @@ class PropertiesView extends ItemView {
     this.syncTarget(); this.schedule();
   }
   private owned(): boolean { return this.isLoaded && Boolean(this.sourceRoot) && this.sourceRoot === this.app.vault.rootPath && this.leaf.view === this && this.containerEl.isConnected; }
-  private interactive(): boolean {
+  private interactive(ownedCreationMutation = false): boolean {
     return this.owned() && !this.app.changingVault && !this.app.core.busy && !this.properties.busy && this.app.core.isEnabled("properties")
-      && !this.app.workspace.isChangingFiles && !this.app.workspace.isChangingLayout;
+      && (ownedCreationMutation || !this.app.workspace.isChangingFiles) && !this.app.workspace.isChangingLayout;
   }
   private run(action: () => unknown): void {
     if (!this.interactive()) { return; }

@@ -1,14 +1,16 @@
 import { copyViewData, type ViewStateResult } from "./contracts";
 import { reportError } from "./dom";
 import { footnoteEntries, footnotesPaneState, type FootnoteEntry } from "./footnotes-pane-model";
-import { parseMarkdown, type Pos } from "./markdown";
+import { planFootnoteEdit } from "./footnote-edit";
+import { FootnoteEditModal } from "./footnote-edit-modal";
+import { parseMarkdown, type FootnoteDefinition, type Pos } from "./markdown";
 import { Component } from "./plugin";
 import { createMarkdownRenderer } from "./reading";
 import { TFile } from "./vault";
 import { FileView } from "./views";
 import { MarkdownView, type WorkspaceLeaf } from "./workspace";
 
-interface FootnotesSnapshot { id: number; file: TFile; path: string; text: string; entries: FootnoteEntry[]; targets: Map<string, Pos>; }
+interface FootnotesSnapshot { id: number; file: TFile; path: string; text: string; entries: FootnoteEntry[]; targets: Map<string, Pos>; definitions: Map<string, FootnoteDefinition>; }
 
 export class FootnotesPaneView extends FileView {
   override icon = "file";
@@ -30,6 +32,7 @@ export class FootnotesPaneView extends FileView {
   private settingState = false;
   private grouped = false;
   private message = "";
+  private editModal: FootnoteEditModal | null = null;
 
   constructor(leaf: WorkspaceLeaf) {
     super(leaf); this.sourceRoot = this.app.vault.rootPath; this.renderer = createMarkdownRenderer(this.app);
@@ -46,6 +49,8 @@ export class FootnotesPaneView extends FileView {
     }));
     this.registerDomEvent(this.list, "click", event => {
       if (!(event instanceof MouseEvent) || !(event.target instanceof Element)) { return; }
+      const edit = event.target.closest<HTMLElement>("[data-footnote-edit-target]");
+      if (edit) { this.run(() => this.editDefinition(edit.dataset.footnoteEditTarget!, Number(edit.dataset.footnotesGeneration))); return; }
       const target = event.target.closest<HTMLElement>("[data-footnote-target]");
       if (target) { this.run(() => this.navigate(target.dataset.footnoteTarget!, Number(target.dataset.footnotesGeneration), event.ctrlKey || event.metaKey)); }
     });
@@ -69,7 +74,7 @@ export class FootnotesPaneView extends FileView {
     this.registerEvent(this.app.core.on("changed", () => { this.updateControls(); this.schedule(); }));
     this.registerEvent(this.app.workspace.on("layout-ready", () => this.schedule()));
     this.registerEvent(this.app.workspace.on("layout-change", () => { this.updateControls(); this.schedule(); }));
-    this.register(() => { this.request++; this.snapshot = null; this.noteView = null; this.clearRender(); });
+    this.register(() => { this.request++; this.snapshot = null; this.noteView = null; this.editModal?.close(); this.clearRender(); });
   }
 
   getViewType(): string { return "footnotes"; }
@@ -121,6 +126,7 @@ export class FootnotesPaneView extends FileView {
     this.follow.title = this.leaf.pinned ? "Unpin this tab to follow the active note." : this.grouped ? "Linked-group following is not implemented; this pane retains its saved note." : "Follow the active note";
     this.caption.textContent = this.options.file || "No note selected"; this.list.setAttribute("aria-disabled", String(!enabled));
     this.list.querySelectorAll<HTMLButtonElement>("[data-footnote-target]").forEach(button => { button.disabled = !enabled; });
+    this.list.querySelectorAll<HTMLButtonElement>("[data-footnote-edit]").forEach(button => { button.disabled = !enabled || this.app.vault.readOnly || button.dataset.footnoteEditBlocked === "true"; });
   }
   private async refresh(): Promise<void> {
     this.updateControls(); if (!this.interactive()) { return; }
@@ -138,7 +144,7 @@ export class FootnotesPaneView extends FileView {
     if (!this.interactive() || token !== this.request || this.options.file !== path || this.file !== file || this.app.vault.getFileByPath(path) !== file) { return; }
     if (this.snapshot?.file === file && this.snapshot.path === path && this.snapshot.text === text) { return; }
     const current = this.app.metadataCache.getDocument(path), cache = current && !current.missing && current.text === text ? current.cache : parseMarkdown(text);
-    this.snapshot = { id: ++this.revision, file, path, text, entries: footnoteEntries(cache, text), targets: new Map() }; this.render();
+    this.snapshot = { id: ++this.revision, file, path, text, entries: footnoteEntries(cache, text), targets: new Map(), definitions: new Map() }; this.render();
   }
   private render(): void {
     const snapshot = this.snapshot; if (!snapshot) { return; }
@@ -149,16 +155,23 @@ export class FootnotesPaneView extends FileView {
     };
     for (const item of snapshot.entries) {
       const group = document.createElement("article"); group.className = "footnotes-pane-entry"; group.dataset.footnotesEntry = item.id; group.setAttribute("role", "listitem");
-      const title = document.createElement("p"); title.className = "footnotes-pane-title"; title.textContent = (item.number === null ? "?" : String(item.number)) + ". [^" + item.id + "]";
+      const inline = item.definitions.some(definition => definition.inline);
+      if (inline) { group.dataset.inlineFootnote = "true"; }
+      const title = document.createElement("p"); title.className = "footnotes-pane-title"; title.textContent = (item.number === null ? "?" : String(item.number)) + (inline ? ". Inline footnote" : ". [^" + item.id + "]");
       group.append(title);
       if (!item.definitions.length) { const missing = document.createElement("p"); missing.className = "footnotes-pane-warning"; missing.textContent = "Missing definition"; group.append(missing); }
       if (item.definitions.length > 1) { const duplicate = document.createElement("p"); duplicate.className = "footnotes-pane-warning"; duplicate.textContent = item.definitions.length + " definitions share this identifier."; group.append(duplicate); }
       for (const [index, definition] of item.definitions.entries()) {
-        group.append(target(item, "definition", index, definition.labelPosition, "Definition" + (item.definitions.length > 1 ? " " + (index + 1) : "") + " - line " + (definition.labelPosition.start.line + 1)));
+        group.append(target(item, "definition", index, definition.labelPosition, (definition.inline ? "Inline footnote" : "Definition" + (item.definitions.length > 1 ? " " + (index + 1) : "")) + " - line " + (definition.labelPosition.start.line + 1)));
+        const key = JSON.stringify([item.id, "definition", index]), edit = document.createElement("button");
+        edit.type = "button"; edit.textContent = "Edit definition"; edit.dataset.footnoteEdit = item.id; edit.dataset.footnoteEditTarget = key; edit.dataset.footnotesGeneration = String(snapshot.id);
+        edit.dataset.footnoteEditBlocked = String(item.definitions.length !== 1);
+        edit.title = this.app.vault.readOnly ? "Definitions cannot be edited in a read-only vault." : item.definitions.length !== 1 ? "Resolve duplicate definitions before editing this footnote." : "Edit this definition without changing its label or references.";
+        snapshot.definitions.set(key, definition); group.append(edit);
         const preview = document.createElement("div"); preview.className = "footnotes-pane-preview"; preview.dataset.paneFootnoteContent = item.id; group.append(preview); previews.push({ element: preview, text: definition.content });
       }
       for (const [index, reference] of item.references.entries()) { group.append(target(item, "reference", index, reference.position, `Reference ${index + 1} - line ${reference.position.start.line + 1}`)); }
-      if (!item.references.length) { const unused = document.createElement("p"); unused.className = "footnotes-pane-unused"; unused.textContent = "No references"; group.append(unused); }
+      if (!item.references.length && !inline) { const unused = document.createElement("p"); unused.className = "footnotes-pane-unused"; unused.textContent = "No references"; group.append(unused); }
       fragment.append(group);
     }
     this.list.append(fragment); this.status.textContent = this.message || (snapshot.entries.length ? `${snapshot.entries.filter(item => item.definitions.length).length} footnotes.` + (snapshot.entries.some(item => !item.definitions.length) ? " Missing definitions are listed below." : "") : "No footnotes in this note.");
@@ -174,6 +187,41 @@ export class FootnotesPaneView extends FileView {
     const views = this.app.workspace.getLeavesOfType("markdown").map(leaf => leaf.view).filter((view): view is MarkdownView => view instanceof MarkdownView && view.file === this.file && view.isLoaded);
     const active = this.app.workspace.getActiveViewOfType(MarkdownView);
     return active && views.includes(active) ? active : this.noteView && views.includes(this.noteView) ? this.noteView : views[0] ?? null;
+  }
+  private editDefinition(key: string, generation: number): void {
+    if (this.app.vault.readOnly) { throw new Error("This vault is read-only. Footnote definitions cannot be edited."); }
+    const snapshot = this.snapshot, definition = snapshot?.definitions.get(key);
+    if (!snapshot || generation !== snapshot.id || !definition || this.file !== snapshot.file || this.app.vault.getFileByPath(snapshot.path) !== snapshot.file) { this.schedule(); return; }
+    // Validate uniqueness and the exact source before opening a draft, without opening or saving a note.
+    planFootnoteEdit(snapshot.text, definition, definition.content, "\n");
+    this.editModal?.close();
+    const modal = new FootnoteEditModal(this.app, snapshot.path, definition.id, definition.content,
+      (content, current) => this.applyDefinition(snapshot, definition, content, current),
+      () => { if (this.editModal === modal) { this.editModal = null; } }, definition.inline === true);
+    this.editModal = modal; modal.open();
+  }
+  private async applyDefinition(snapshot: FootnotesSnapshot, definition: FootnoteDefinition, content: string, current: () => boolean): Promise<void> {
+    const stale = (): boolean => !current() || !this.interactive() || this.app.vault.readOnly || this.snapshot !== snapshot
+      || this.file !== snapshot.file || this.app.vault.getFileByPath(snapshot.path) !== snapshot.file;
+    const refuse = (): never => { throw new Error("The note, Footnotes pane or vault changed. This draft was not applied; reopen the definition after saving or reloading the note."); };
+    if (stale()) { return refuse(); }
+    let view = this.source();
+    if (!view) { const leaf = this.app.workspace.getLeaf("tab"); await leaf.openFile(snapshot.file); view = leaf.view instanceof MarkdownView ? leaf.view : null; }
+    const session = view?.session;
+    const ready = (): boolean => !stale() && Boolean(view?.isLoaded && view.file === snapshot.file && session && view.session === session
+      && this.app.workspace.sessions.get(snapshot.path) === session && session.originRoot === this.sourceRoot && session.document.file.path === snapshot.path);
+    if (!ready() || !view || !session) { return refuse(); }
+    if (view.isSaving || session.isReloading) { throw new Error("The note is saving or reloading. Wait for it to finish before applying this draft."); }
+    const disk = await this.app.vault.readDocument(snapshot.path);
+    if (!ready() || session.document.version !== disk.version || view.editor.getValue() !== snapshot.text) { return refuse(); }
+    if (view.isSaving || session.isReloading) { throw new Error("The note is saving or reloading. Wait for it to finish before applying this draft."); }
+    const plan = planFootnoteEdit(snapshot.text, definition, content, view.editor.cm.state.lineBreak);
+    if (plan.text !== snapshot.text) {
+      view.editor.replaceExpected(snapshot.text, plan.from, plan.to, plan.insert, "input.footnote");
+      if (view.editor.getValue() !== plan.text) { throw new Error("The editor did not accept the definition exactly. Review the note and use Undo if needed; this draft was retained."); }
+      this.noteView = view; this.message = (definition.inline ? "Edited inline footnote." : "Edited [^" + definition.id + "].") + " Undo in the note restores its previous definition.";
+      this.app.metadataCache.updateOpenDocuments(); this.schedule();
+    }
   }
   private async navigate(key: string, generation: number, tab: boolean): Promise<void> {
     const snapshot = this.snapshot, position = snapshot?.targets.get(key);

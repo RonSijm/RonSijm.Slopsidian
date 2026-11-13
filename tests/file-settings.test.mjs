@@ -53,3 +53,41 @@ test("Files and links settings validate exact choices and safe attachment/note f
     ["attachmentFolderPath", "../outside"], ["attachmentFolderPath", undefined], ["other", true],
   ]) { assert.throws(() => validateFileSetting(key, value)); }
 });
+
+function reviewedCreation(settings = { newFileLocation: "current" }) {
+  const manager = fixture(settings), app = manager.app, writes = [];
+  let release, saving;
+  app.workspace.withFileMutation = async action => action();
+  app.saveAll = async () => { if (saving) await saving; };
+  app.metadataCache = { refresh: async () => {}, pause() {}, resume() {} };
+  app.vault.refresh = async () => {};
+  app.vault.create = async (path, content) => { writes.push({ path, content }); return { path }; };
+  return { manager, writes, settings, hold() { saving = new Promise(resolve => { release = resolve; }); }, release() { release(); } };
+}
+
+test("reviewed linked-note creation rechecks placement after held saving before creating any file", async () => {
+  const f = reviewedCreation(); f.hold();
+  const pending = f.manager.createLinkedNote("Fresh", "Notes/Source.md", { expectedPath: "Notes/Fresh.md", guard: () => true });
+  f.settings.newFileLocation = "root"; f.release();
+  await assert.rejects(pending, /destination changed/); assert.deepEqual(f.writes, []);
+});
+test("a stale completion review refuses creation after the real mutation preflight", async () => {
+  const f = reviewedCreation(); let current = true; f.hold();
+  const pending = f.manager.createLinkedNote("Fresh", "Notes/Source.md", { expectedPath: "Notes/Fresh.md", guard: () => current });
+  current = false; f.release(); await assert.rejects(pending, /changed before creation/); assert.deepEqual(f.writes, []);
+});
+test("an unchanged reviewed destination creates exactly one empty Markdown note", async () => {
+  const f = reviewedCreation();
+  const file = await f.manager.createLinkedNote("Fresh", "Notes/Source.md", { expectedPath: "Notes/Fresh.md", guard: () => true });
+  assert.equal(file.path, "Notes/Fresh.md"); assert.deepEqual(f.writes, [{ path: "Notes/Fresh.md", content: "" }]);
+});
+test("linked-note acknowledgement precedes a postwrite refresh failure and never invents a collision receipt", async () => {
+  const f = reviewedCreation(); let refresh = 0, receipt;
+  f.manager.app.metadataCache.refresh = async () => { if (++refresh === 2) throw Error("postwrite refresh failed"); };
+  await assert.rejects(f.manager.createLinkedNote("Fresh", "Notes/Source.md", { expectedPath: "Notes/Fresh.md", guard: () => true, created: file => { receipt = file; } }), /postwrite refresh failed/);
+  assert.equal(receipt.path, "Notes/Fresh.md"); assert.equal(f.writes.length, 1);
+  const collision = reviewedCreation(); let reported = false;
+  collision.manager.app.vault.create = async () => { throw Error("already exists"); };
+  await assert.rejects(collision.manager.createLinkedNote("Fresh", "Notes/Source.md", { expectedPath: "Notes/Fresh.md", guard: () => true, created: () => { reported = true; } }), /already exists/);
+  assert.equal(reported, false);
+});
