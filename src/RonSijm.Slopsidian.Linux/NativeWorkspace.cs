@@ -22,9 +22,13 @@ public sealed partial class NativeWorkspace : IDisposable
     {
         vault = new VaultService(NullLogger<VaultService>.Instance, watch);
         Tabs = new ReadOnlyObservableCollection<NativeTab>(tabs);
+        Recovery = new NativeFileRecovery(this);
     }
 
     public VaultService Vault => vault;
+    public NativeFileRecovery Recovery { get; }
+    public long VaultEpoch { get; private set; }
+    public event Action<string>? FileObserved;
     public VaultSnapshot Snapshot { get; private set; } = new(null, "No vault selected", [], []);
     public ReadOnlyObservableCollection<NativeTab> Tabs { get; }
     public IReadOnlyList<NativeTabState> OrphanedDrafts => orphanedDrafts;
@@ -53,6 +57,7 @@ public sealed partial class NativeWorkspace : IDisposable
             throw new InvalidOperationException("Save or discard the open drafts before switching vaults.");
         }
         Snapshot = await Task.Run(() => vault.OpenAsync(System.IO.Path.GetFullPath(directory)));
+        VaultEpoch++;
         tabs.Clear();
         orphanedDrafts.Clear();
         metadata = new Dictionary<string, NativeMetadata>();
@@ -73,9 +78,11 @@ public sealed partial class NativeWorkspace : IDisposable
         if (existing is not null)
         {
             ActiveTab = existing;
+            FileObserved?.Invoke(path);
             return existing;
         }
         var document = await vault.ReadAsync(path, expectedRoot: RequireRoot());
+        FileObserved?.Invoke(path);
         var tab = new NativeTab(document);
         tabs.Add(tab);
         ActiveTab = tab;
@@ -120,11 +127,13 @@ public sealed partial class NativeWorkspace : IDisposable
         }
         var saved = await vault.WriteAsync(new WriteFileRequest(tab.Path, tab.Text, tab.Document.Version, RequireRoot()), false);
         tab.AcceptSaved(saved);
+        FileObserved?.Invoke(tab.Path);
     }
 
     public async Task ReloadTabAsync(NativeTab tab, bool discardDraft = false)
     {
         var document = await vault.ReadAsync(tab.Path, expectedRoot: RequireRoot());
+        FileObserved?.Invoke(tab.Path);
         if (tab.IsDirty && !discardDraft)
         {
             tab.ExternalChange = document.Version != tab.Document.Version;
@@ -153,6 +162,7 @@ public sealed partial class NativeWorkspace : IDisposable
             path += ".md";
         }
         var document = await vault.WriteAsync(new WriteFileRequest(path, content, null, RequireRoot()), true);
+        FileObserved?.Invoke(path);
         var tab = new NativeTab(document);
         tabs.Add(tab);
         ActiveTab = tab;
@@ -160,7 +170,15 @@ public sealed partial class NativeWorkspace : IDisposable
         return tab;
     }
 
-    public async Task RefreshAsync() => Snapshot = await Task.Run(() => vault.GetSnapshotAsync());
+    public async Task RefreshAsync()
+    {
+        var previous = Snapshot.Files.ToDictionary(file => file.Path, StringComparer.Ordinal);
+        Snapshot = await Task.Run(() => vault.GetSnapshotAsync());
+        foreach (var file in Snapshot.Files.Where(file => !previous.TryGetValue(file.Path, out var before) || before.Stat != file.Stat))
+        {
+            FileObserved?.Invoke(file.Path);
+        }
+    }
 
     public void DiscardEdits()
     {
@@ -266,5 +284,5 @@ public sealed partial class NativeWorkspace : IDisposable
             throw new InvalidOperationException("Save or discard the current changes first.");
         }
     }
-    public void Dispose() => watch.Dispose();
+    public void Dispose() { Recovery.Dispose(); watch.Dispose(); }
 }
