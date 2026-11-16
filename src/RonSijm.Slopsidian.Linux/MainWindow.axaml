@@ -1,78 +1,195 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:edit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        xmlns:local="using:RonSijm.Slopsidian.Linux"
         x:Class="RonSijm.Slopsidian.Linux.MainWindow"
-        Icon="/Assets/tux-notebook.png" Title="Slopsidian Native" Width="1220" Height="820" MinWidth="760" MinHeight="520">
-  <Grid RowDefinitions="Auto,Auto,*,Auto">
-    <Border Grid.Row="0" Background="{StaticResource SidebarBrush}" Padding="16,10">
+        Icon="/Assets/tux-notebook.png" Title="Slopsidian" Width="1400" Height="950" MinWidth="760" MinHeight="520">
+  <Window.DataTemplates>
+    <DataTemplate DataType="local:NoteResult">
+      <StackPanel Spacing="3" Margin="0,4">
+        <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+        <TextBlock Text="{Binding Path}" Classes="muted" FontSize="12" TextTrimming="CharacterEllipsis" />
+        <TextBlock Text="{Binding Snippet}" IsVisible="{Binding HasSnippet}" Classes="muted" TextWrapping="Wrap" FontSize="12" MaxHeight="38" />
+      </StackPanel>
+    </DataTemplate>
+    <DataTemplate DataType="local:NativeLocation">
+      <StackPanel Spacing="3" Margin="0,5">
+        <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+        <TextBlock Text="{Binding Context}" Classes="muted" TextWrapping="Wrap" FontSize="12" MaxHeight="38" />
+      </StackPanel>
+    </DataTemplate>
+  </Window.DataTemplates>
+  <Grid RowDefinitions="Auto,*,Auto">
+    <Border Name="ErrorPanel" IsVisible="False" Background="{DynamicResource ErrorSurfaceBrush}" Padding="14,9">
       <Grid ColumnDefinitions="*,Auto">
-        <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
-          <TextBlock Text="Slopsidian" FontSize="19" FontWeight="SemiBold" VerticalAlignment="Center" />
-          <TextBlock Name="VaultName" Text="No vault selected" Classes="muted" VerticalAlignment="Center" MaxWidth="280" TextTrimming="CharacterEllipsis" />
-        </StackPanel>
-        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8">
-          <Button Name="OpenVaultButton" Content="Open vault" Click="ChooseVault" ToolTip.Tip="Open a local folder (Ctrl+O)" />
-          <Button Name="NewNoteButton" Classes="create" Click="NewNote" IsEnabled="False" ToolTip.Tip="Create a Markdown note (Ctrl+N)">
-            <StackPanel Orientation="Horizontal" Spacing="7">
-              <PathIcon Data="M7,0 L9,0 L9,7 L16,7 L16,9 L9,9 L9,16 L7,16 L7,9 L0,9 L0,7 L7,7 Z" Width="14" Height="14" />
-              <TextBlock Text="New note" />
-            </StackPanel>
-          </Button>
-          <Button Name="SaveButton" Content="Save" Click="Save" IsEnabled="False" ToolTip.Tip="Save changes (Ctrl+S)" />
-        </StackPanel>
+        <TextBlock Name="ErrorText" Classes="error" TextWrapping="Wrap" VerticalAlignment="Center" />
+        <Button Grid.Column="1" Classes="icon dismiss" Click="DismissError" AutomationProperties.Name="Dismiss error" ToolTip.Tip="Dismiss error"><local:NativeIcon Kind="close" /></Button>
       </Grid>
     </Border>
-    <Border Grid.Row="1" Name="ErrorPanel" IsVisible="False" Background="#3c2929" Padding="16,10">
-      <TextBlock Name="ErrorText" Classes="error" TextWrapping="Wrap" />
-    </Border>
-    <Grid Grid.Row="2" ColumnDefinitions="260,4,*">
-      <Border Background="{StaticResource SidebarBrush}" Padding="12,16,12,8">
-        <Grid RowDefinitions="Auto,Auto,Auto,*">
-          <Grid ColumnDefinitions="*,Auto" Margin="4,0,0,12">
-            <TextBlock Text="Notes" FontWeight="SemiBold" VerticalAlignment="Center" />
-            <Button Grid.Column="1" Name="RefreshButton" Content="Refresh" Click="Refresh" IsEnabled="False" Padding="8,4" ToolTip.Tip="Refresh files and recheck the current note (F5)" />
-          </Grid>
-          <TextBox Grid.Row="1" Name="SearchBox" Watermark="Search notes and text" TextChanged="SearchChanged" IsEnabled="False" />
-          <TextBlock Grid.Row="2" Name="SearchStatus" Text="Open a vault to see its notes." Classes="muted" Margin="4,10,4,8" TextWrapping="Wrap" />
-          <ListBox Grid.Row="3" Name="NoteList" SelectionChanged="NoteSelected" Background="Transparent" BorderThickness="0">
-            <ListBox.ItemTemplate>
-              <DataTemplate>
-                <StackPanel Margin="0,5" Spacing="3">
-                  <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
-                  <TextBlock Text="{Binding Path}" Classes="muted" FontSize="12" TextTrimming="CharacterEllipsis" />
-                  <TextBlock Text="{Binding Snippet}" IsVisible="{Binding HasSnippet}" Classes="muted" FontSize="12" TextTrimming="CharacterEllipsis" />
+    <Grid Grid.Row="1" Name="WorkspaceGrid" ColumnDefinitions="44,260,4,*,4,260">
+      <Border Background="{DynamicResource RibbonBrush}" Padding="4,6">
+        <DockPanel LastChildFill="True">
+          <StackPanel DockPanel.Dock="Bottom" Spacing="8" Margin="0,12,0,0">
+            <Button Name="OpenVaultButton" Classes="icon ribbon" Click="ChooseVault" AutomationProperties.Name="Open or create a vault" ToolTip.Tip="Open or create a vault"><local:NativeIcon Kind="folder" /></Button>
+            <Button Classes="icon ribbon" Click="OpenSettings" AutomationProperties.Name="Settings (Ctrl+,)" ToolTip.Tip="Settings (Ctrl+,)"><local:NativeIcon Kind="settings" /></Button>
+          </StackPanel>
+          <StackPanel Spacing="8">
+            <Button Classes="icon ribbon" Click="ToggleLeft" AutomationProperties.Name="Toggle left sidebar" ToolTip.Tip="Toggle left sidebar"><local:NativeIcon Kind="panel-left" /></Button>
+            <Button Classes="icon ribbon" Click="QuickSwitcher" AutomationProperties.Name="Quick switcher (Ctrl+O)" ToolTip.Tip="Quick switcher (Ctrl+O)"><local:NativeIcon Kind="search" /></Button>
+            <Button Classes="icon ribbon" Click="CommandPalette" AutomationProperties.Name="Command palette (Ctrl+P)" ToolTip.Tip="Command palette (Ctrl+P)"><local:NativeIcon Kind="command" /></Button>
+            <Button Classes="icon ribbon" Click="OpenGraph" AutomationProperties.Name="Open graph view" ToolTip.Tip="Open graph view"><local:NativeIcon Kind="git-fork" /></Button>
+            <Button Classes="icon ribbon" Click="OpenDailyNote" AutomationProperties.Name="Open today's daily note" ToolTip.Tip="Open today's daily note"><local:NativeIcon Kind="calendar" /></Button>
+            <Button Classes="icon ribbon" Click="InsertTemplate" AutomationProperties.Name="Insert template" ToolTip.Tip="Insert template"><local:NativeIcon Kind="file" /></Button>
+          </StackPanel>
+        </DockPanel>
+      </Border>
+      <Border Grid.Column="1" Name="LeftSidebar" Background="{DynamicResource SidebarBrush}">
+        <Grid RowDefinitions="*,Auto">
+          <TabControl Name="NavigationTabs" Classes="sidebar-tabs">
+            <TabItem AutomationProperties.Name="Files" ToolTip.Tip="Files">
+              <TabItem.Header><local:NativeIcon Kind="folder" /></TabItem.Header>
+              <Grid RowDefinitions="Auto,*">
+                <StackPanel Orientation="Horizontal" Spacing="3" Margin="8,8,8,4">
+                  <Button Name="NewNoteButton" Classes="icon create" Click="NewNote" IsEnabled="False" AutomationProperties.Name="New note (Ctrl+N)" ToolTip.Tip="New note (Ctrl+N)"><local:NativeIcon Kind="new-note" /></Button>
+                  <Button Classes="icon create" Click="NewFolder" AutomationProperties.Name="New folder" ToolTip.Tip="New folder"><local:NativeIcon Kind="folder" /></Button>
+                  <Button Classes="icon" Click="FileActions" AutomationProperties.Name="Current file actions" ToolTip.Tip="Current file actions"><local:NativeIcon Kind="more" /></Button>
+                  <Button Name="RefreshButton" Classes="icon" Click="Refresh" IsEnabled="False" AutomationProperties.Name="Refresh files (F5)" ToolTip.Tip="Refresh files (F5)"><local:NativeIcon Kind="refresh" /></Button>
+                  <Button Classes="icon" Click="CollapseFolders" AutomationProperties.Name="Collapse all folders" ToolTip.Tip="Collapse all folders"><local:NativeIcon Kind="collapse" /></Button>
                 </StackPanel>
+                <TreeView Grid.Row="1" Name="FileTree" SelectionChanged="FileSelected" Background="Transparent" BorderThickness="0" Margin="8,0,8,8">
+                  <TreeView.ItemTemplate>
+                    <TreeDataTemplate DataType="local:NativeFileNode" ItemsSource="{Binding Children}">
+                      <StackPanel Orientation="Horizontal" Spacing="7" Margin="0,3">
+                        <local:NativeIcon Kind="{Binding Icon}" Width="15" Height="15" Foreground="{DynamicResource MutedBrush}" />
+                        <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+                      </StackPanel>
+                    </TreeDataTemplate>
+                  </TreeView.ItemTemplate>
+                </TreeView>
+              </Grid>
+            </TabItem>
+            <TabItem AutomationProperties.Name="Search" ToolTip.Tip="Search">
+              <TabItem.Header><local:NativeIcon Kind="search" /></TabItem.Header>
+              <Grid RowDefinitions="Auto,Auto,*" Margin="12">
+                <TextBox Name="SearchBox" Watermark="Search notes and text" TextChanged="SearchChanged" IsEnabled="False" />
+                <TextBlock Grid.Row="1" Name="SearchStatus" Text="Open a vault to search." Classes="muted" Margin="0,12,0,8" TextWrapping="Wrap" />
+                <ListBox Grid.Row="2" Name="NoteList" SelectionChanged="NoteSelected" Background="Transparent" BorderThickness="0" />
+              </Grid>
+            </TabItem>
+            <TabItem AutomationProperties.Name="Bookmarks" ToolTip.Tip="Bookmarks">
+              <TabItem.Header><local:NativeIcon Kind="book" /></TabItem.Header>
+              <Grid RowDefinitions="Auto,*" Margin="12">
+                <Button Content="Bookmark current note" Click="BookmarkCurrent" HorizontalAlignment="Left" Margin="0,0,0,12" />
+                <ListBox Grid.Row="1" Name="BookmarkList" SelectionChanged="BookmarkSelected" Background="Transparent" BorderThickness="0" />
+              </Grid>
+            </TabItem>
+          </TabControl>
+          <Button Grid.Row="1" Click="ChooseVault" Classes="vault-switcher" HorizontalContentAlignment="Stretch" Padding="12,10">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+              <local:NativeIcon Kind="chevron" Width="14" Height="14" Margin="0,0,8,0" />
+              <TextBlock Grid.Column="1" Name="VaultName" Text="Open a vault" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+              <TextBlock Grid.Column="2" Text="Slopsidian" Classes="muted" FontSize="11" Margin="8,0,0,0" VerticalAlignment="Center" />
+            </Grid>
+          </Button>
+        </Grid>
+      </Border>
+      <GridSplitter Grid.Column="2" Name="LeftSplitter" ResizeDirection="Columns" Background="{DynamicResource DividerBrush}" />
+      <Grid Grid.Column="3" RowDefinitions="Auto,Auto,*">
+        <Grid Background="{DynamicResource SidebarBrush}" ColumnDefinitions="*,Auto">
+          <ListBox Name="DocumentTabs" Classes="document-tabs" SelectionChanged="DocumentTabSelected" Height="40" Background="Transparent" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <ListBox.ItemsPanel><ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate></ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+              <DataTemplate DataType="local:NativeTab">
+                <Grid ColumnDefinitions="Auto,*,Auto" MinWidth="130" MaxWidth="240" Margin="4,0">
+                  <local:NativeIcon Kind="file" Width="13" Height="13" Margin="0,0,7,0" Foreground="{DynamicResource MutedBrush}" />
+                  <TextBlock Grid.Column="1" Text="{Binding Header}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" />
+                  <Button Grid.Column="2" Classes="icon tab-close dismiss" Tag="{Binding}" Click="CloseDocumentTab" AutomationProperties.Name="Close tab" ToolTip.Tip="Close tab" Margin="8,0,0,0"><local:NativeIcon Kind="close" Width="13" Height="13" /></Button>
+                </Grid>
               </DataTemplate>
             </ListBox.ItemTemplate>
           </ListBox>
+          <Button Grid.Column="1" Classes="icon create" Click="NewNote" AutomationProperties.Name="New note" ToolTip.Tip="New note"><local:NativeIcon Kind="plus" /></Button>
         </Grid>
-      </Border>
-      <GridSplitter Grid.Column="1" ResizeDirection="Columns" Background="#383838" />
-      <Grid Grid.Column="2" RowDefinitions="Auto,*">
-        <Border Padding="24,14" BorderBrush="#383838" BorderThickness="0,0,0,1">
-          <TextBlock Name="NoteTitle" Text="Your notes, in their own space" FontSize="17" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+        <Border Grid.Row="1" BorderBrush="{DynamicResource DividerBrush}" BorderThickness="0,0,0,1" Padding="12,5">
+          <Grid ColumnDefinitions="Auto,Auto,*,Auto,Auto,Auto">
+            <Button Classes="icon" Click="NavigateBack" AutomationProperties.Name="Go back (Alt+Left)" ToolTip.Tip="Go back (Alt+Left)"><local:NativeIcon Kind="arrow-left" Width="16" Height="16" /></Button>
+            <Button Grid.Column="1" Classes="icon" Click="NavigateForward" AutomationProperties.Name="Go forward (Alt+Right)" ToolTip.Tip="Go forward (Alt+Right)"><local:NativeIcon Kind="arrow-right" Width="16" Height="16" /></Button>
+            <TextBlock Grid.Column="2" Name="NoteTitle" Text="No file open" Classes="muted" VerticalAlignment="Center" Margin="12,0" TextTrimming="CharacterEllipsis" />
+            <Button Grid.Column="3" Classes="icon" Click="BookmarkCurrent" AutomationProperties.Name="Bookmark current note" ToolTip.Tip="Bookmark current note"><local:NativeIcon Kind="book" Width="16" Height="16" /></Button>
+            <Button Grid.Column="4" Classes="icon" Click="SplitEditor" AutomationProperties.Name="Split right" ToolTip.Tip="Split right"><local:NativeIcon Kind="panel-right" Width="16" Height="16" /></Button>
+            <Button Grid.Column="5" Classes="icon" Click="FileActions" AutomationProperties.Name="File actions" ToolTip.Tip="File actions"><local:NativeIcon Kind="more" Width="16" Height="16" /></Button>
+          </Grid>
         </Border>
-        <StackPanel Grid.Row="1" Name="EmptyPanel" Margin="40,64" Spacing="16" MaxWidth="540" HorizontalAlignment="Left">
-          <TextBlock Name="EmptyTitle" Text="Start with a vault" FontSize="28" FontWeight="SemiBold" />
-          <TextBlock Name="EmptyDescription" Text="Open a folder of Markdown notes. Your notes stay in that folder, ready to use with Slopsidian or Obsidian." TextWrapping="Wrap" FontSize="16" LineHeight="26" />
-          <TextBlock Name="EmptyHint" Text="Choose Open vault above, then select a note or create a new one." Classes="muted" TextWrapping="Wrap" LineHeight="24" />
-        </StackPanel>
-        <TabControl Grid.Row="1" Name="EditorTabs" IsVisible="False" Margin="16,8,16,12" SelectionChanged="ModeChanged">
-          <TabItem Header="Write">
-            <edit:TextEditor Name="Editor" ShowLineNumbers="True" WordWrap="True" FontFamily="DejaVu Sans Mono, monospace" FontSize="15" Background="{StaticResource SurfaceBrush}" Foreground="#dadada" Padding="8,16" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" />
+        <Grid Grid.Row="2" Name="EditorArea" ColumnDefinitions="*,0,0">
+          <Grid>
+            <StackPanel Name="EmptyPanel" Margin="64,72" Spacing="16" MaxWidth="540" HorizontalAlignment="Left">
+              <TextBlock Name="EmptyTitle" Text="No file is open" FontSize="26" FontWeight="SemiBold" />
+              <TextBlock Name="EmptyDescription" Text="Open a vault to start working with your notes." TextWrapping="Wrap" FontSize="16" LineHeight="26" Classes="muted" />
+              <TextBlock Name="EmptyHint" Text="Ctrl+O opens the quick switcher. Ctrl+P opens commands." Classes="muted" TextWrapping="Wrap" LineHeight="24" />
+            </StackPanel>
+            <TabControl Name="EditorTabs" Classes="editor-modes" IsVisible="False" Margin="24,8,24,12" SelectionChanged="ModeChanged">
+              <TabItem Header="Source">
+                <edit:TextEditor Name="Editor" ShowLineNumbers="True" WordWrap="True" FontFamily="DejaVu Sans Mono, monospace" FontSize="16" Background="{DynamicResource SurfaceBrush}" Foreground="{DynamicResource TextBrush}" Padding="12,20" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" />
+              </TabItem>
+              <TabItem Header="Reading">
+                <ScrollViewer Name="ReadingScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                  <StackPanel Name="ReadingContent" Margin="32,24,32,48" MaxWidth="800" HorizontalAlignment="Stretch" Spacing="14" />
+                </ScrollViewer>
+              </TabItem>
+            </TabControl>
+          </Grid>
+          <GridSplitter Grid.Column="1" Name="SplitDivider" Background="{DynamicResource DividerBrush}" ResizeDirection="Columns" IsVisible="False" />
+          <Border Grid.Column="2" Name="SplitPane" IsVisible="False" Padding="20,12">
+            <Grid RowDefinitions="Auto,*">
+              <TextBlock Name="SplitTitle" FontWeight="SemiBold" Margin="0,0,0,16" />
+              <ScrollViewer Grid.Row="1"><StackPanel Name="SplitContent" Spacing="14" /></ScrollViewer>
+            </Grid>
+          </Border>
+        </Grid>
+      </Grid>
+      <GridSplitter Grid.Column="4" Name="RightSplitter" ResizeDirection="Columns" Background="{DynamicResource DividerBrush}" />
+      <Border Grid.Column="5" Name="RightSidebar" Background="{DynamicResource SidebarBrush}">
+        <TabControl Name="InspectorTabs" Classes="sidebar-tabs" SelectionChanged="InspectorChanged">
+          <TabItem AutomationProperties.Name="Outline" ToolTip.Tip="Outline">
+            <TabItem.Header><local:NativeIcon Kind="outline" /></TabItem.Header>
+            <Grid RowDefinitions="Auto,*" Margin="12,14">
+              <TextBlock Text="Outline" FontWeight="SemiBold" Margin="0,0,0,12" />
+              <ListBox Grid.Row="1" Name="OutlineList" SelectionChanged="OutlineSelected" Background="Transparent" BorderThickness="0">
+                <ListBox.ItemTemplate><DataTemplate><TextBlock Text="{Binding Title}" Margin="{Binding Indent}" TextWrapping="Wrap" /></DataTemplate></ListBox.ItemTemplate>
+              </ListBox>
+            </Grid>
           </TabItem>
-          <TabItem Header="Read">
-            <ScrollViewer Name="ReadingScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-              <StackPanel Name="ReadingContent" Margin="24,24,32,48" MaxWidth="800" HorizontalAlignment="Stretch" Spacing="14" />
-            </ScrollViewer>
+          <TabItem AutomationProperties.Name="Backlinks" ToolTip.Tip="Backlinks">
+            <TabItem.Header><local:NativeIcon Kind="links" /></TabItem.Header>
+            <Grid RowDefinitions="Auto,*" Margin="12,14"><TextBlock Text="Backlinks" FontWeight="SemiBold" Margin="0,0,0,12" /><ListBox Grid.Row="1" Name="BacklinkList" SelectionChanged="LocationSelected" Background="Transparent" BorderThickness="0" /></Grid>
+          </TabItem>
+          <TabItem AutomationProperties.Name="Outgoing links" ToolTip.Tip="Outgoing links">
+            <TabItem.Header><local:NativeIcon Kind="arrow-up" /></TabItem.Header>
+            <Grid RowDefinitions="Auto,*" Margin="12,14"><TextBlock Text="Outgoing links" FontWeight="SemiBold" Margin="0,0,0,12" /><ListBox Grid.Row="1" Name="OutgoingList" SelectionChanged="LocationSelected" Background="Transparent" BorderThickness="0" /></Grid>
+          </TabItem>
+          <TabItem AutomationProperties.Name="Tags" ToolTip.Tip="Tags">
+            <TabItem.Header><local:NativeIcon Kind="tag" /></TabItem.Header>
+            <Grid RowDefinitions="Auto,*" Margin="12,14"><TextBlock Text="Tags" FontWeight="SemiBold" Margin="0,0,0,12" /><ListBox Grid.Row="1" Name="TagList" SelectionChanged="TagSelected" Background="Transparent" BorderThickness="0" /></Grid>
+          </TabItem>
+          <TabItem AutomationProperties.Name="Properties" ToolTip.Tip="Properties">
+            <TabItem.Header><local:NativeIcon Kind="settings" /></TabItem.Header>
+            <ScrollViewer><StackPanel Name="PropertyFields" Margin="16" Spacing="12" /></ScrollViewer>
+          </TabItem>
+          <TabItem AutomationProperties.Name="Footnotes" ToolTip.Tip="Footnotes">
+            <TabItem.Header><local:NativeIcon Kind="file" /></TabItem.Header>
+            <Grid RowDefinitions="Auto,*" Margin="12,14"><TextBlock Text="Footnotes" FontWeight="SemiBold" Margin="0,0,0,12" /><ListBox Grid.Row="1" Name="FootnoteList" SelectionChanged="FootnoteSelected" Background="Transparent" BorderThickness="0" /></Grid>
           </TabItem>
         </TabControl>
-      </Grid>
+      </Border>
     </Grid>
-    <Border Grid.Row="3" BorderBrush="#383838" BorderThickness="0,1,0,0" Padding="16,7">
-      <Grid ColumnDefinitions="*,Auto">
-        <TextBlock Name="VaultPath" Text="Local Markdown workspace" Classes="muted" FontSize="12" TextTrimming="CharacterEllipsis" Margin="0,0,16,0" />
-        <TextBlock Grid.Column="1" Name="EditorStatus" Text="No note open" Classes="muted" FontSize="12" />
+    <Border Grid.Row="2" BorderBrush="{DynamicResource DividerBrush}" BorderThickness="0,1,0,0" Padding="12,3">
+      <Grid ColumnDefinitions="*,Auto,Auto,Auto,Auto,Auto">
+        <TextBlock Name="VaultPath" Text="Slopsidian Native" Classes="muted" FontSize="11" TextTrimming="CharacterEllipsis" Margin="0,0,16,0" VerticalAlignment="Center" />
+        <TextBlock Grid.Column="1" Name="MetadataStatus" Classes="muted" FontSize="12" Margin="0,0,16,0" VerticalAlignment="Center" />
+        <TextBlock Grid.Column="2" Name="EditorStatus" Text="No note open" Classes="muted" FontSize="12" Margin="0,0,12,0" VerticalAlignment="Center" />
+        <Button Grid.Column="3" Classes="icon" Click="ReloadCurrent" AutomationProperties.Name="Reload current note" ToolTip.Tip="Reload current note"><local:NativeIcon Kind="refresh" Width="15" Height="15" /></Button>
+        <Button Grid.Column="4" Name="SaveButton" Classes="icon" Click="Save" IsEnabled="False" AutomationProperties.Name="Save (Ctrl+S)" ToolTip.Tip="Save (Ctrl+S)"><local:NativeIcon Kind="save" Width="15" Height="15" /></Button>
+        <Button Grid.Column="5" Classes="icon" Click="ToggleRight" AutomationProperties.Name="Toggle right sidebar" ToolTip.Tip="Toggle right sidebar"><local:NativeIcon Kind="panel-right" Width="15" Height="15" /></Button>
       </Grid>
     </Border>
   </Grid>

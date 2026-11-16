@@ -12,12 +12,14 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            var window = new MainWindow();
+            var profileArgument = desktop.Args?.FirstOrDefault(value => value.StartsWith("--profile=", StringComparison.Ordinal));
+            var profilePath = profileArgument is null ? NativeProfile.DefaultDirectory : Path.GetFullPath(profileArgument["--profile=".Length..]);
+            var window = new MainWindow(new NativeProfile(profilePath));
             desktop.MainWindow = window;
             window.Opened += async (_, _) =>
             {
                 var argument = desktop.Args?.FirstOrDefault(value => value.StartsWith("--vault=", StringComparison.Ordinal));
-                if (argument is not null) await window.OpenVaultAsync(argument["--vault=".Length..]);
+                await window.InitializeAsync(argument?["--vault=".Length..]);
             };
         }
         base.OnFrameworkInitializationCompleted();

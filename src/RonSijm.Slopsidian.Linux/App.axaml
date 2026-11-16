@@ -2,39 +2,100 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="RonSijm.Slopsidian.Linux.App" RequestedThemeVariant="Dark">
   <Application.Resources>
-    <SolidColorBrush x:Key="SurfaceBrush">#1e1e1e</SolidColorBrush>
-    <SolidColorBrush x:Key="SidebarBrush">#262626</SolidColorBrush>
-    <SolidColorBrush x:Key="MutedBrush">#a3a3a3</SolidColorBrush>
-    <SolidColorBrush x:Key="AccentBrush">#a68af9</SolidColorBrush>
-    <SolidColorBrush x:Key="ErrorBrush">#f28b82</SolidColorBrush>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Dark">
+          <SolidColorBrush x:Key="SurfaceBrush">#1e1e1e</SolidColorBrush>
+          <SolidColorBrush x:Key="SidebarBrush">#262626</SolidColorBrush>
+          <SolidColorBrush x:Key="RibbonBrush">#242424</SolidColorBrush>
+          <SolidColorBrush x:Key="DividerBrush">#383838</SolidColorBrush>
+          <SolidColorBrush x:Key="TextBrush">#dadada</SolidColorBrush>
+          <SolidColorBrush x:Key="MutedBrush">#a3a3a3</SolidColorBrush>
+          <SolidColorBrush x:Key="AccentBrush">#a68af9</SolidColorBrush>
+          <SolidColorBrush x:Key="ErrorBrush">#f28b82</SolidColorBrush>
+          <SolidColorBrush x:Key="ErrorSurfaceBrush">#3c2929</SolidColorBrush>
+          <SolidColorBrush x:Key="CreateBrush">#a3d9b1</SolidColorBrush>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Light">
+          <SolidColorBrush x:Key="SurfaceBrush">#ffffff</SolidColorBrush>
+          <SolidColorBrush x:Key="SidebarBrush">#f2f2f2</SolidColorBrush>
+          <SolidColorBrush x:Key="RibbonBrush">#e8e8e8</SolidColorBrush>
+          <SolidColorBrush x:Key="DividerBrush">#d4d4d4</SolidColorBrush>
+          <SolidColorBrush x:Key="TextBrush">#222222</SolidColorBrush>
+          <SolidColorBrush x:Key="MutedBrush">#646464</SolidColorBrush>
+          <SolidColorBrush x:Key="AccentBrush">#7051a8</SolidColorBrush>
+          <SolidColorBrush x:Key="ErrorBrush">#a32e25</SolidColorBrush>
+          <SolidColorBrush x:Key="ErrorSurfaceBrush">#ffebe9</SolidColorBrush>
+          <SolidColorBrush x:Key="CreateBrush">#216b36</SolidColorBrush>
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+    </ResourceDictionary>
   </Application.Resources>
   <Application.Styles>
     <FluentTheme>
       <FluentTheme.Palettes>
         <ColorPaletteResources x:Key="Dark" Accent="#8c70c9" />
+        <ColorPaletteResources x:Key="Light" Accent="#7051a8" />
       </FluentTheme.Palettes>
     </FluentTheme>
     <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />
+    <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
     <Style Selector="Window">
-      <Setter Property="Background" Value="{StaticResource SurfaceBrush}" />
-      <Setter Property="Foreground" Value="#dadada" />
+      <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+      <Setter Property="FontFamily" Value="Segoe UI, Noto Sans, sans-serif" />
       <Setter Property="FontSize" Value="14" />
     </Style>
     <Style Selector="Button">
       <Setter Property="Padding" Value="12,7" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
+    <Style Selector="Button.icon">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="7" />
+      <Setter Property="MinWidth" Value="28" />
+      <Setter Property="MinHeight" Value="28" />
+      <Setter Property="Foreground" Value="{DynamicResource MutedBrush}" />
+    </Style>
     <Style Selector="Button.create">
-      <Setter Property="Foreground" Value="#a3d9b1" />
+      <Setter Property="Foreground" Value="{DynamicResource CreateBrush}" />
+    </Style>
+    <Style Selector="Button.dismiss">
+      <Setter Property="Foreground" Value="{DynamicResource ErrorBrush}" />
+    </Style>
+    <Style Selector="Button.tab-close">
+      <Setter Property="Padding" Value="4" />
+      <Setter Property="MinWidth" Value="22" />
+      <Setter Property="MinHeight" Value="22" />
+    </Style>
+    <Style Selector="Button.vault-switcher">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0,1,0,0" />
+      <Setter Property="BorderBrush" Value="{DynamicResource DividerBrush}" />
     </Style>
     <Style Selector="TextBlock.muted">
-      <Setter Property="Foreground" Value="{StaticResource MutedBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource MutedBrush}" />
     </Style>
     <Style Selector="TextBlock.error">
-      <Setter Property="Foreground" Value="{StaticResource ErrorBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource ErrorBrush}" />
     </Style>
-    <Style Selector="ListBoxItem:selected TextBlock.muted">
-      <Setter Property="Foreground" Value="#ffffff" />
+    <Style Selector="TabItem">
+      <Setter Property="FontSize" Value="13" />
+      <Setter Property="Padding" Value="10,8" />
+    </Style>
+    <Style Selector="TabControl.sidebar-tabs TabItem">
+      <Setter Property="Padding" Value="10,10" />
+    </Style>
+    <Style Selector="ListBox.document-tabs ListBoxItem">
+      <Setter Property="Padding" Value="8,6" />
+      <Setter Property="Margin" Value="0,3,2,0" />
+      <Setter Property="CornerRadius" Value="5,5,0,0" />
+      <Setter Property="MinHeight" Value="36" />
+    </Style>
+    <Style Selector="ListBox.document-tabs ListBoxItem:selected">
+      <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
     </Style>
   </Application.Styles>
 </Application>
