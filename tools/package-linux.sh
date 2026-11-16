@@ -12,7 +12,7 @@ case "${1:-$(uname -m)}" in
   aarch64|linux-arm64) rid=linux-arm64; deb_arch=arm64 ;;
   *) echo "Usage: tools/package-linux.sh [linux-x64|linux-arm64]" >&2; exit 1 ;;
 esac
-version=0.1.0
+version=0.2.0
 work_dir="$repo_dir/.runtime/native-linux/$rid"
 publish_dir="$work_dir/publish"
 bundle="Slopsidian-Native-$version-$rid"
@@ -39,7 +39,7 @@ tar -C "$work_dir" -czf "$out_dir/$bundle.tar.gz" "$bundle"
 if command -v dpkg-deb >/dev/null 2>&1; then
   deb_dir="$work_dir/deb"
   mkdir -p "$deb_dir/DEBIAN" "$deb_dir/usr/lib/slopsidian-native" "$deb_dir/usr/bin" \
-    "$deb_dir/usr/share/applications" "$deb_dir/usr/share/icons/hicolor/scalable/apps" \
+    "$deb_dir/usr/share/applications" "$deb_dir/usr/share/icons/hicolor/256x256/apps" \
     "$deb_dir/usr/share/doc/slopsidian-native"
   cp -a "$publish_dir/." "$deb_dir/usr/lib/slopsidian-native/"
   cat > "$deb_dir/usr/bin/slopsidian-native" <<'LAUNCHER'
@@ -48,7 +48,7 @@ exec /usr/lib/slopsidian-native/RonSijm.Slopsidian.Linux "$@"
 LAUNCHER
   chmod 755 "$deb_dir/usr/bin/slopsidian-native"
   cp tools/linux/slopsidian-native.desktop "$deb_dir/usr/share/applications/"
-  cp tools/linux/slopsidian-native.svg "$deb_dir/usr/share/icons/hicolor/scalable/apps/"
+  cp tools/linux/slopsidian-native.png "$deb_dir/usr/share/icons/hicolor/256x256/apps/"
   cp tools/linux/THIRD-PARTY-NOTICES.txt "$deb_dir/usr/share/doc/slopsidian-native/copyright"
   cp -a tools/linux/licenses "$deb_dir/usr/share/doc/slopsidian-native/licenses"
   cat > "$deb_dir/DEBIAN/control" <<CONTROL

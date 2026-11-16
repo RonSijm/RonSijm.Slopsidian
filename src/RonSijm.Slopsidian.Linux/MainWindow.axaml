@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:edit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
         x:Class="RonSijm.Slopsidian.Linux.MainWindow"
-        Title="Slopsidian Native" Width="1220" Height="820" MinWidth="760" MinHeight="520">
+        Icon="/Assets/tux-notebook.png" Title="Slopsidian Native" Width="1220" Height="820" MinWidth="760" MinHeight="520">
   <Grid RowDefinitions="Auto,Auto,*,Auto">
     <Border Grid.Row="0" Background="{StaticResource SidebarBrush}" Padding="16,10">
       <Grid ColumnDefinitions="*,Auto">
