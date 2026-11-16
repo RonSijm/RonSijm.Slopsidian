@@ -14,8 +14,8 @@ namespace RonSijm.Slopsidian.Linux;
 public static class NativeMarkdown
 {
     private static readonly MarkdownPipeline Pipeline = CreatePipeline();
-    private static readonly IBrush Muted = Brush.Parse("#a3a3a3");
-    private static readonly IBrush Accent = Brush.Parse("#a68af9");
+    private static IBrush Muted => NativePalette.Brush("MutedBrush");
+    private static IBrush Accent => NativePalette.Brush("AccentBrush");
 
     private static MarkdownPipeline CreatePipeline()
     {
@@ -30,11 +30,18 @@ public static class NativeMarkdown
         // Work on a bounded reading view; editing and saving always retain the entire document.
         if (markdown.Length > 1_000_000)
         {
-            target.Children.Add(new TextBlock { Text = "This note is too large for the reading view. Use Write to edit it.", TextWrapping = TextWrapping.Wrap });
+            target.Children.Add(new TextBlock { Text = "This note is too large for the reading view. Use Source to edit it.", TextWrapping = TextWrapping.Wrap });
             return;
         }
-        foreach (var block in Markdown.Parse(markdown, Pipeline)) target.Children.Add(RenderBlock(block, navigate));
-        if (target.Children.Count == 0) target.Children.Add(new TextBlock { Text = "This note is empty. Start writing in the Write tab.", Foreground = Muted });
+        foreach (var block in Markdown.Parse(markdown, Pipeline))
+        {
+            target.Children.Add(RenderBlock(block, navigate));
+        }
+
+        if (target.Children.Count == 0)
+        {
+            target.Children.Add(new TextBlock { Text = "This note is empty. Start writing in the Source tab.", Foreground = Muted });
+        }
     }
 
     private static Control RenderBlock(Block block, Action<string> navigate)
@@ -53,29 +60,23 @@ public static class NativeMarkdown
             case CodeBlock code:
                 return new Border
                 {
-                    Background = Brush.Parse("#262626"), CornerRadius = new CornerRadius(4), Padding = new Thickness(16),
+                    Background = NativePalette.Brush("SidebarBrush"),
+                    CornerRadius = new CornerRadius(4),
+                    Padding = new Thickness(16),
                     Child = new SelectableTextBlock { Text = code.Lines.ToString(), FontFamily = new FontFamily("DejaVu Sans Mono, monospace"), FontSize = 14, TextWrapping = TextWrapping.Wrap }
                 };
             case QuoteBlock quote:
                 var quoted = new StackPanel { Spacing = 10, Margin = new Thickness(16, 0, 0, 0) };
-                foreach (var child in quote) quoted.Children.Add(RenderBlock(child, navigate));
+                foreach (var child in quote)
+                {
+                    quoted.Children.Add(RenderBlock(child, navigate));
+                }
+
                 return quoted;
             case ListBlock list:
-                var items = new StackPanel { Spacing = 8 };
-                var number = int.TryParse(list.OrderedStart, out var start) ? start : 1;
-                foreach (var item in list.OfType<ListItemBlock>())
-                {
-                    var row = new Grid { ColumnDefinitions = new ColumnDefinitions("28,*") };
-                    row.Children.Add(new TextBlock { Text = list.IsOrdered ? $"{number++}." : "•", Foreground = Muted, FontSize = 16 });
-                    var contents = new StackPanel { Spacing = 8 };
-                    Grid.SetColumn(contents, 1);
-                    foreach (var child in item) contents.Children.Add(RenderBlock(child, navigate));
-                    row.Children.Add(contents);
-                    items.Children.Add(row);
-                }
-                return items;
+                return RenderList(list, navigate);
             case ThematicBreakBlock:
-                return new Border { Height = 1, Background = Brush.Parse("#383838"), Margin = new Thickness(0, 12) };
+                return new Border { Height = 1, Background = NativePalette.Brush("DividerBrush"), Margin = new Thickness(0, 12) };
             case HtmlBlock html:
                 // Raw HTML is visible text; never execute or fetch it.
                 return new SelectableTextBlock { Text = html.Lines.ToString(), Foreground = Muted, TextWrapping = TextWrapping.Wrap };
@@ -84,10 +85,35 @@ public static class NativeMarkdown
         }
     }
 
+    private static StackPanel RenderList(ListBlock list, Action<string> navigate)
+    {
+        var items = new StackPanel { Spacing = 8 };
+        var number = int.TryParse(list.OrderedStart, out var start) ? start : 1;
+        foreach (var item in list.OfType<ListItemBlock>())
+        {
+            var row = new Grid { ColumnDefinitions = new ColumnDefinitions("28,*") };
+            row.Children.Add(new TextBlock { Text = list.IsOrdered ? $"{number++}." : "•", Foreground = Muted, FontSize = 16 });
+            var contents = new StackPanel { Spacing = 8 };
+            Grid.SetColumn(contents, 1);
+            foreach (var child in item)
+            {
+                contents.Children.Add(RenderBlock(child, navigate));
+            }
+
+            row.Children.Add(contents);
+            items.Children.Add(row);
+        }
+        return items;
+    }
+
     private static SelectableTextBlock Text(ContainerInline? source, Action<string> navigate)
     {
         var text = new SelectableTextBlock { FontSize = 16, LineHeight = 26, TextWrapping = TextWrapping.Wrap };
-        if (source is not null) AddInlines(text.Inlines!, source, navigate);
+        if (source is not null)
+        {
+            AddInlines(text.Inlines!, source, navigate);
+        }
+
         return text;
     }
 
@@ -103,8 +129,11 @@ public static class NativeMarkdown
                 case WikiLinkInline wiki:
                     var wikiButton = new Button
                     {
-                        Content = wiki.Label, Foreground = Accent, Padding = new Thickness(0),
-                        Background = Brushes.Transparent, BorderThickness = new Thickness(0)
+                        Content = wiki.Label,
+                        Foreground = Accent,
+                        Padding = new Thickness(0),
+                        Background = Brushes.Transparent,
+                        BorderThickness = new Thickness(0)
                     };
                     ToolTip.SetTip(wikiButton, wiki.Target);
                     wikiButton.Click += (_, _) => navigate(wiki.Target);
@@ -114,12 +143,19 @@ public static class NativeMarkdown
                     destination.Add(new Run("\n"));
                     break;
                 case CodeInline code:
-                    destination.Add(new Run(code.Content) { FontFamily = new FontFamily("DejaVu Sans Mono, monospace"), Background = Brush.Parse("#303030") });
+                    destination.Add(new Run(code.Content) { FontFamily = new FontFamily("DejaVu Sans Mono, monospace"), Background = NativePalette.Brush("SidebarBrush") });
                     break;
                 case EmphasisInline emphasis:
                     var span = new Span();
-                    if (emphasis.DelimiterCount >= 2) span.FontWeight = FontWeight.Bold;
-                    else span.FontStyle = FontStyle.Italic;
+                    if (emphasis.DelimiterCount >= 2)
+                    {
+                        span.FontWeight = FontWeight.Bold;
+                    }
+                    else
+                    {
+                        span.FontStyle = FontStyle.Italic;
+                    }
+
                     AddInlines(span.Inlines, emphasis, navigate);
                     destination.Add(span);
                     break;
@@ -159,11 +195,23 @@ public static class NativeMarkdown
 
         public override bool Match(InlineProcessor processor, ref StringSlice slice)
         {
-            if (slice.CurrentChar != '[' || slice.PeekChar(1) != '[') return false;
+            if (slice.CurrentChar != '[' || slice.PeekChar(1) != '[')
+            {
+                return false;
+            }
+
             var end = slice.Text.IndexOf("]]", slice.Start + 2, StringComparison.Ordinal);
-            if (end < 0 || end > slice.End) return false;
+            if (end < 0 || end > slice.End)
+            {
+                return false;
+            }
+
             var value = slice.Text[(slice.Start + 2)..end];
-            if (value.Length == 0 || value.IndexOfAny(['\n', '\r', '[', ']']) >= 0) return false;
+            if (value.Length == 0 || value.IndexOfAny(['\n', '\r', '[', ']']) >= 0)
+            {
+                return false;
+            }
+
             var parts = value.Split('|', 2);
             processor.Inline = new WikiLinkInline(parts[0], parts.Length == 2 ? parts[1] : parts[0]);
             slice.Start = end + 2;

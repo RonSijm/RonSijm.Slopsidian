@@ -100,5 +100,6 @@ public partial class MainWindow
         RightSidebar.IsVisible = true;
         AdaptSidebars();
         if (EditorTabs.SelectedIndex == 1) { RenderReading(); }
+        if (SplitPane.IsVisible) { RenderSplit(); }
     }
 }

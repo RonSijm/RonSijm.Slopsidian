@@ -213,7 +213,7 @@ public partial class MainWindow
         LoadEditor();
     });
 
-    private async void Navigate(string link) => await NavigateAsync(link);
+    private void Navigate(string link) => _ = NavigateAsync(link);
 
     private Task NavigateAsync(string link) => RunAsync(async () =>
     {
