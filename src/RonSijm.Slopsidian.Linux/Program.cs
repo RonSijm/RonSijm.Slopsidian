@@ -7,9 +7,14 @@ internal static class Program
     [STAThread]
     public static int Main(string[] args)
     {
+        if (args.Contains("--version"))
+        {
+            Console.WriteLine(NativeVersion.Current);
+            return 0;
+        }
         if (args.Contains("--help"))
         {
-            Console.WriteLine("Slopsidian Native — standalone Linux Markdown editor\nUsage: slopsidian-native [--vault=/absolute/path]");
+            Console.WriteLine($"Slopsidian Native {NativeVersion.Current} — native Linux workspace\nUsage: slopsidian-native [--vault=/absolute/path] [--profile=/absolute/path] [--version]");
             return 0;
         }
         return BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);

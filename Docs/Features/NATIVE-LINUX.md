@@ -77,6 +77,13 @@ The lint command checks formatting, recommended .NET analyzers and
 SonarAnalyzer C#, then treats build warnings as errors. Analyzer scope is the
 native project; existing host code is not blanket-reformatted.
 
+## Client version
+
+The Linux client has an independent SemVer release line. Its project file is the
+single version source for About, `--version`, archives and Debian packages.
+Development builds use a prerelease such as `0.2.0-preview.1`; Linux tags use
+`linux-v<version>`. See `NATIVE-LINUX-VERSIONING.md` for the release conventions.
+
 ## Packages
 
 ```sh
@@ -85,14 +92,14 @@ native project; existing host code is not blanket-reformatted.
 ```
 
 Outputs under `.runtime/native-linux/<runtime>/out/` include a self-contained
-`Slopsidian-Native-0.2.0-<runtime>.tar.gz`, a Debian package when `dpkg-deb` is
+`Slopsidian-Native-<version>-<runtime>.tar.gz`, a Debian package when `dpkg-deb` is
 available, and SHA-256 checksums. The package includes its .NET runtime. Linux
 desktop libraries are still required. Build on Ubuntu 22.04 or newer for the
 declared glibc baseline; Alpine/musl is not a supported target.
 
 Extract the archive and run `./slopsidian-native`, optionally with `--vault` and
 `--profile`. On Debian/Ubuntu install the package with
-`sudo apt install ./slopsidian-native_0.2.0_amd64.deb`, then launch Slopsidian Native
+`sudo apt install ./slopsidian-native_0.2.0~preview.1_amd64.deb`, then launch Slopsidian Native
 from the application menu. Removing the package retains vaults and profiles.
 The packaging script stages publish outputs, notices and launchers only.
 

@@ -3,6 +3,7 @@ name: Native Linux client
 on:
   push:
     branches: [main]
+    tags: [linux-v*]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -36,7 +37,10 @@ jobs:
       - name: Check package entry point and contents
         shell: bash
         run: |
-          .runtime/native-linux/${{ matrix.runtime }}/publish/RonSijm.Slopsidian.Linux --help
+          expected_version="$(dotnet msbuild src/RonSijm.Slopsidian.Linux -nologo -getProperty:Version)"
+          executable=".runtime/native-linux/${{ matrix.runtime }}/publish/RonSijm.Slopsidian.Linux"
+          test "$("$executable" --version)" = "$expected_version"
+          "$executable" --help
           dpkg-deb --info .runtime/native-linux/${{ matrix.runtime }}/out/*.deb
           test -z "$(find .runtime/native-linux/${{ matrix.runtime }}/publish -iname '*electron*' -o -iname '*chromium*')"
       - uses: actions/upload-artifact@v4

@@ -225,6 +225,7 @@ public sealed class NativeSettingsWindow : Window
     private void AboutPage()
     {
         page.Children.Add(new TextBlock { Text = "Slopsidian Native", FontSize = 20, FontWeight = FontWeight.SemiBold });
+        page.Children.Add(new TextBlock { Text = "Linux client version " + NativeVersion.Current, Classes = { "muted" } });
         page.Children.Add(new TextBlock { Text = "A native .NET/Avalonia port of Slopsidian. The interface uses native widgets, with no Electron, Blazor or WebView.", TextWrapping = TextWrapping.Wrap });
         page.Children.Add(new TextBlock { Text = "The full native port is in progress. Settings from the shared core catalog do not establish that a native workflow has been ported or verified.", Classes = { "muted" }, TextWrapping = TextWrapping.Wrap });
     }
