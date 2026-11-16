@@ -24,8 +24,8 @@ public sealed class SessionTests : IDisposable
         await workspace.SaveAsync();
         Assert.False(first.IsDirty);
         Assert.True(second.IsDirty);
-        Assert.Equal("First draft", await File.ReadAllTextAsync(Path.Combine(directory, "first.md")));
-        Assert.Equal("Second saved", await File.ReadAllTextAsync(Path.Combine(directory, "second.md")));
+        Assert.Equal("First draft", await File.ReadAllTextAsync(Path.Combine(directory, "first.md"), cancellationToken: TestContext.Current.CancellationToken));
+        Assert.Equal("Second saved", await File.ReadAllTextAsync(Path.Combine(directory, "second.md"), cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]
@@ -35,7 +35,7 @@ public sealed class SessionTests : IDisposable
         await workspace.CreateTabAsync("note.md", "Original");
         workspace.Text = "Recovered draft";
         var session = workspace.CaptureSession();
-        await File.WriteAllTextAsync(Path.Combine(directory, "note.md"), "Changed externally");
+        await File.WriteAllTextAsync(Path.Combine(directory, "note.md"), "Changed externally", cancellationToken: TestContext.Current.CancellationToken);
         using var restarted = new NativeWorkspace();
         await restarted.OpenVaultAsync(directory);
         await restarted.RestoreSessionAsync(session);
@@ -43,7 +43,7 @@ public sealed class SessionTests : IDisposable
         Assert.True(restarted.ActiveTab!.ExternalChange);
         var error = await Assert.ThrowsAsync<VaultException>(restarted.SaveAsync);
         Assert.Equal(409, error.StatusCode);
-        Assert.Equal("Changed externally", await File.ReadAllTextAsync(Path.Combine(directory, "note.md")));
+        Assert.Equal("Changed externally", await File.ReadAllTextAsync(Path.Combine(directory, "note.md"), cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]
@@ -93,10 +93,10 @@ public sealed class SessionTests : IDisposable
         using (var profile = new NativeProfile(profileDirectory))
         {
             profile.State = profile.State with { Session = new NativeSession("/a/vault", note.Path, [note]) };
-            await profile.SaveAsync();
+            await profile.SaveAsync(cancellationToken: TestContext.Current.CancellationToken);
         }
         using var loaded = new NativeProfile(profileDirectory);
-        await loaded.LoadAsync();
+        await loaded.LoadAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.Equal(note, Assert.Single(loaded.State.Session!.Tabs));
         Assert.Single(Directory.GetFiles(profileDirectory));
         if (OperatingSystem.IsLinux())
@@ -114,10 +114,10 @@ public sealed class SessionTests : IDisposable
         var profileDirectory = Path.Combine(directory, "invalid-profile");
         Directory.CreateDirectory(profileDirectory);
         var file = Path.Combine(profileDirectory, "state.json");
-        await File.WriteAllTextAsync(file, json);
+        await File.WriteAllTextAsync(file, json, cancellationToken: TestContext.Current.CancellationToken);
         using var profile = new NativeProfile(profileDirectory);
-        await Assert.ThrowsAsync<InvalidDataException>(() => profile.LoadAsync());
-        Assert.Equal(json, await File.ReadAllTextAsync(file));
+        await Assert.ThrowsAsync<InvalidDataException>(() => profile.LoadAsync(cancellationToken: TestContext.Current.CancellationToken));
+        Assert.Equal(json, await File.ReadAllTextAsync(file, cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]
@@ -143,7 +143,7 @@ public sealed class SessionTests : IDisposable
         await workspace.ReloadTabAsync(tab);
         Assert.False(tab.ExternalChange);
         Assert.Equal("Draft", tab.Text);
-        await File.WriteAllTextAsync(Path.Combine(directory, "Draft.md"), "External");
+        await File.WriteAllTextAsync(Path.Combine(directory, "Draft.md"), "External", cancellationToken: TestContext.Current.CancellationToken);
         await workspace.ReloadTabAsync(tab);
         Assert.True(tab.ExternalChange);
         Assert.Equal("Draft", tab.Text);

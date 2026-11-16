@@ -22,7 +22,7 @@ public sealed class RenameTests : IDisposable
         Assert.Contains("[text](Folder/Renamed.md#Heading)", link.Text);
         Assert.Contains("`[[Original]]`", link.Text);
         Assert.Contains("\\[[Original]]", link.Text);
-        Assert.Equal(link.Text, await File.ReadAllTextAsync(Path.Combine(directory, "Links.md")));
+        Assert.Equal(link.Text, await File.ReadAllTextAsync(Path.Combine(directory, "Links.md"), cancellationToken: TestContext.Current.CancellationToken));
         link.Text = "Keep draft";
         await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.RenameAsync(source, "Again.md", true));
         Assert.Equal("Keep draft", link.Text);

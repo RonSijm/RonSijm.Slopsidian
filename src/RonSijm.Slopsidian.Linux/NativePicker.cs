@@ -10,7 +10,7 @@ public sealed record NativeChoice(string Name, string Detail, string Value);
 public sealed class NativePicker : Window
 {
     private readonly NativeChoice[] choices;
-    private readonly TextBox query = new() { Watermark = "Type to search" };
+    private readonly TextBox query = new() { PlaceholderText = "Type to search" };
     private readonly ListBox results = new() { BorderThickness = new Thickness(0) };
 
     public NativePicker(string title, IEnumerable<NativeChoice> items)

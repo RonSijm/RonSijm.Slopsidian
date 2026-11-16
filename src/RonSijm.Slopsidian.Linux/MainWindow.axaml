@@ -72,7 +72,7 @@
               <TabItem.Header><local:NativeIcon Kind="search" /></TabItem.Header>
               <Grid RowDefinitions="Auto,Auto,*" Margin="12">
                 <StackPanel Spacing="8">
-                  <TextBox Name="SearchBox" Watermark="Search notes…" TextChanged="SearchChanged" IsEnabled="False" />
+                  <TextBox Name="SearchBox" PlaceholderText="Search notes…" TextChanged="SearchChanged" IsEnabled="False" />
                   <CheckBox Name="SearchMatchCase" Content="Match case" IsCheckedChanged="SearchOptionChanged" />
                 </StackPanel>
                 <TextBlock Grid.Row="1" Name="SearchStatus" Text="Open a vault to search." Classes="muted" Margin="0,12,0,8" TextWrapping="Wrap" />

@@ -20,8 +20,8 @@ public sealed class FileRecoveryTests : IDisposable
         await workspace.Vault.CreateBinaryAsync(new("Note.md", Convert.ToBase64String(original), directory), CancellationToken.None);
         var tab = await workspace.OpenTabAsync("Note.md");
         tab.Text = "Unsaved draft";
-        Assert.Equal(NativeCaptureResult.Added, await workspace.Recovery.CaptureAsync(tab.Path, force: true));
-        var old = Assert.Single((await workspace.Recovery.ListAsync()).Snapshots);
+        Assert.Equal(NativeCaptureResult.Added, await workspace.Recovery.CaptureAsync(tab.Path, force: true, cancellationToken: TestContext.Current.CancellationToken));
+        var old = Assert.Single((await workspace.Recovery.ListAsync(cancellationToken: TestContext.Current.CancellationToken)).Snapshots);
         Assert.Equal("Café\r\nSaved\r\n", old.Content);
         Assert.True(old.HasBom);
         tab.Reload(tab.Document);
@@ -29,10 +29,10 @@ public sealed class FileRecoveryTests : IDisposable
         await workspace.SaveAsync();
         using var reopened = new NativeWorkspace();
         await reopened.OpenVaultAsync(directory);
-        var plan = await reopened.Recovery.ReviewAsync(old.Id);
-        await reopened.Recovery.RestoreAsync(plan);
-        Assert.Equal(original, await File.ReadAllBytesAsync(Path.Combine(directory, "Note.md")));
-        var history = await reopened.Recovery.ListAsync();
+        var plan = await reopened.Recovery.ReviewAsync(old.Id, cancellationToken: TestContext.Current.CancellationToken);
+        await reopened.Recovery.RestoreAsync(plan, cancellationToken: TestContext.Current.CancellationToken);
+        Assert.Equal(original, await File.ReadAllBytesAsync(Path.Combine(directory, "Note.md"), cancellationToken: TestContext.Current.CancellationToken));
+        var history = await reopened.Recovery.ListAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.Contains(history.Snapshots, snapshot => snapshot.Content == "Replacement\n" && snapshot.Reason == "before-restore");
     }
 
@@ -40,11 +40,11 @@ public sealed class FileRecoveryTests : IDisposable
     public async Task RestoreRefusesExternalChangesAfterReviewAndRetainsTheirBytes()
     {
         var snapshot = await CreateSnapshotAsync();
-        var plan = await workspace.Recovery.ReviewAsync(snapshot.Id);
+        var plan = await workspace.Recovery.ReviewAsync(snapshot.Id, cancellationToken: TestContext.Current.CancellationToken);
         var external = Encoding.UTF8.GetBytes("External\r\n");
-        await File.WriteAllBytesAsync(Path.Combine(directory, "Note.md"), external);
-        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.RestoreAsync(plan));
-        Assert.Equal(external, await File.ReadAllBytesAsync(Path.Combine(directory, "Note.md")));
+        await File.WriteAllBytesAsync(Path.Combine(directory, "Note.md"), external, cancellationToken: TestContext.Current.CancellationToken);
+        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.RestoreAsync(plan, cancellationToken: TestContext.Current.CancellationToken));
+        Assert.Equal(external, await File.ReadAllBytesAsync(Path.Combine(directory, "Note.md"), cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]
@@ -52,41 +52,41 @@ public sealed class FileRecoveryTests : IDisposable
     {
         var snapshot = await CreateSnapshotAsync();
         File.Delete(Path.Combine(directory, "Note.md"));
-        var plan = await workspace.Recovery.ReviewAsync(snapshot.Id);
+        var plan = await workspace.Recovery.ReviewAsync(snapshot.Id, cancellationToken: TestContext.Current.CancellationToken);
         Assert.Null(plan.Before);
-        await File.WriteAllTextAsync(Path.Combine(directory, "Note.md"), "Appeared later");
-        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.RestoreAsync(plan));
-        Assert.Equal("Appeared later", await File.ReadAllTextAsync(Path.Combine(directory, "Note.md")));
+        await File.WriteAllTextAsync(Path.Combine(directory, "Note.md"), "Appeared later", cancellationToken: TestContext.Current.CancellationToken);
+        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.RestoreAsync(plan, cancellationToken: TestContext.Current.CancellationToken));
+        Assert.Equal("Appeared later", await File.ReadAllTextAsync(Path.Combine(directory, "Note.md"), cancellationToken: TestContext.Current.CancellationToken));
         File.Delete(Path.Combine(directory, "Note.md"));
-        await workspace.Recovery.RestoreAsync(await workspace.Recovery.ReviewAsync(snapshot.Id));
-        Assert.Equal(snapshot.Content, await File.ReadAllTextAsync(Path.Combine(directory, "Note.md")));
+        await workspace.Recovery.RestoreAsync(await workspace.Recovery.ReviewAsync(snapshot.Id, cancellationToken: TestContext.Current.CancellationToken), cancellationToken: TestContext.Current.CancellationToken);
+        Assert.Equal(snapshot.Content, await File.ReadAllTextAsync(Path.Combine(directory, "Note.md"), cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]
     public async Task ChangingTheSelectedSnapshotInvalidatesRestoreIncludingUnknownFields()
     {
         var snapshot = await CreateSnapshotAsync();
-        var plan = await workspace.Recovery.ReviewAsync(snapshot.Id);
-        var configuration = await workspace.Vault.ReadConfigurationAsync(NativeRecoveryHistory.ConfigurationId, directory);
+        var plan = await workspace.Recovery.ReviewAsync(snapshot.Id, cancellationToken: TestContext.Current.CancellationToken);
+        var configuration = await workspace.Vault.ReadConfigurationAsync(NativeRecoveryHistory.ConfigurationId, directory, cancellationToken: TestContext.Current.CancellationToken);
         var changed = JsonNode.Parse(configuration.Data.GetRawText())!.AsObject();
         changed["snapshots"]!.AsArray()[0]!["unknown"] = "Changed after review";
-        await workspace.Vault.WriteConfigurationAsync(NativeRecoveryHistory.ConfigurationId, new(directory, configuration.Version, JsonSerializer.SerializeToElement(changed)));
-        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.RestoreAsync(plan));
-        Assert.Equal("Original", await File.ReadAllTextAsync(Path.Combine(directory, "Note.md")));
+        await workspace.Vault.WriteConfigurationAsync(NativeRecoveryHistory.ConfigurationId, new(directory, configuration.Version, JsonSerializer.SerializeToElement(changed)), cancellationToken: TestContext.Current.CancellationToken);
+        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.RestoreAsync(plan, cancellationToken: TestContext.Current.CancellationToken));
+        Assert.Equal("Original", await File.ReadAllTextAsync(Path.Combine(directory, "Note.md"), cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]
     public async Task DirtyTabsAndOldVaultSessionsInvalidateRestore()
     {
         var snapshot = await CreateSnapshotAsync();
-        var plan = await workspace.Recovery.ReviewAsync(snapshot.Id);
+        var plan = await workspace.Recovery.ReviewAsync(snapshot.Id, cancellationToken: TestContext.Current.CancellationToken);
         workspace.Text = "Keep this draft";
-        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.RestoreAsync(plan));
+        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.RestoreAsync(plan, cancellationToken: TestContext.Current.CancellationToken));
         Assert.Equal("Keep this draft", workspace.Text);
         workspace.DiscardEdits();
         await workspace.OpenVaultAsync(directory);
-        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.RestoreAsync(plan));
-        Assert.Equal("Original", await File.ReadAllTextAsync(Path.Combine(directory, "Note.md")));
+        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.RestoreAsync(plan, cancellationToken: TestContext.Current.CancellationToken));
+        Assert.Equal("Original", await File.ReadAllTextAsync(Path.Combine(directory, "Note.md"), cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]
@@ -94,26 +94,26 @@ public sealed class FileRecoveryTests : IDisposable
     {
         await workspace.OpenVaultAsync(directory);
         await workspace.CreateTabAsync("Note.md", "Original");
-        await workspace.Vault.SetCoreEnabledAsync("file-recovery", new(directory, false));
-        Assert.Null(await workspace.Recovery.CaptureAsync("Note.md"));
-        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.CaptureAsync("Note.md", force: true));
+        await workspace.Vault.SetCoreEnabledAsync("file-recovery", new(directory, false), cancellationToken: TestContext.Current.CancellationToken);
+        Assert.Null(await workspace.Recovery.CaptureAsync("Note.md", cancellationToken: TestContext.Current.CancellationToken));
+        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.CaptureAsync("Note.md", force: true, cancellationToken: TestContext.Current.CancellationToken));
         Assert.False(File.Exists(Path.Combine(directory, ".obsidian", NativeRecoveryHistory.ConfigurationId + ".json")));
-        await workspace.Vault.SetCoreEnabledAsync("file-recovery", new(directory, true));
-        Assert.Equal(NativeCaptureResult.Added, await workspace.Recovery.CaptureAsync("Note.md"));
+        await workspace.Vault.SetCoreEnabledAsync("file-recovery", new(directory, true), cancellationToken: TestContext.Current.CancellationToken);
+        Assert.Equal(NativeCaptureResult.Added, await workspace.Recovery.CaptureAsync("Note.md", cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]
     public async Task ClearRefusesHistoryThatChangedSinceConfirmation()
     {
         await CreateSnapshotAsync();
-        var review = await workspace.Recovery.ListAsync();
+        var review = await workspace.Recovery.ListAsync(cancellationToken: TestContext.Current.CancellationToken);
         workspace.Text = "Second saved version";
         await workspace.SaveAsync();
-        await workspace.Recovery.CaptureAsync("Note.md", force: true);
-        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.ClearAsync(review));
-        Assert.Equal(2, (await workspace.Recovery.ListAsync()).Snapshots.Count);
-        await workspace.Recovery.ClearAsync(await workspace.Recovery.ListAsync());
-        Assert.Empty((await workspace.Recovery.ListAsync()).Snapshots);
+        await workspace.Recovery.CaptureAsync("Note.md", force: true, cancellationToken: TestContext.Current.CancellationToken);
+        await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.Recovery.ClearAsync(review, cancellationToken: TestContext.Current.CancellationToken));
+        Assert.Equal(2, (await workspace.Recovery.ListAsync(cancellationToken: TestContext.Current.CancellationToken)).Snapshots.Count);
+        await workspace.Recovery.ClearAsync(await workspace.Recovery.ListAsync(cancellationToken: TestContext.Current.CancellationToken), cancellationToken: TestContext.Current.CancellationToken);
+        Assert.Empty((await workspace.Recovery.ListAsync(cancellationToken: TestContext.Current.CancellationToken)).Snapshots);
     }
 
     [Fact]
@@ -121,9 +121,9 @@ public sealed class FileRecoveryTests : IDisposable
     {
         var snapshot = await CreateSnapshotAsync();
         byte[] invalidUtf8 = [0xff, 0xfe, 0x61];
-        await File.WriteAllBytesAsync(Path.Combine(directory, "Note.md"), invalidUtf8);
-        await Assert.ThrowsAsync<DecoderFallbackException>(() => workspace.Recovery.ReviewAsync(snapshot.Id));
-        Assert.Equal(invalidUtf8, await File.ReadAllBytesAsync(Path.Combine(directory, "Note.md")));
+        await File.WriteAllBytesAsync(Path.Combine(directory, "Note.md"), invalidUtf8, cancellationToken: TestContext.Current.CancellationToken);
+        await Assert.ThrowsAsync<DecoderFallbackException>(() => workspace.Recovery.ReviewAsync(snapshot.Id, cancellationToken: TestContext.Current.CancellationToken));
+        Assert.Equal(invalidUtf8, await File.ReadAllBytesAsync(Path.Combine(directory, "Note.md"), cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]
@@ -132,12 +132,12 @@ public sealed class FileRecoveryTests : IDisposable
         var snapshot = await CreateSnapshotAsync();
         workspace.Text = "Replacement";
         await workspace.SaveAsync();
-        var plan = await workspace.Recovery.ReviewAsync(snapshot.Id);
+        var plan = await workspace.Recovery.ReviewAsync(snapshot.Id, cancellationToken: TestContext.Current.CancellationToken);
         var historyPath = Path.Combine(directory, ".obsidian", NativeRecoveryHistory.ConfigurationId + ".json");
         File.Delete(historyPath);
         Directory.CreateDirectory(historyPath);
-        await Assert.ThrowsAsync<VaultException>(() => workspace.Recovery.RestoreAsync(plan));
-        Assert.Equal("Replacement", await File.ReadAllTextAsync(Path.Combine(directory, "Note.md")));
+        await Assert.ThrowsAsync<VaultException>(() => workspace.Recovery.RestoreAsync(plan, cancellationToken: TestContext.Current.CancellationToken));
+        Assert.Equal("Replacement", await File.ReadAllTextAsync(Path.Combine(directory, "Note.md"), cancellationToken: TestContext.Current.CancellationToken));
     }
 
     private async Task<NativeRecoverySnapshot> CreateSnapshotAsync()

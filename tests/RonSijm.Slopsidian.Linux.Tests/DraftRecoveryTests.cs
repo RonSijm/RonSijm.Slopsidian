@@ -24,15 +24,15 @@ public sealed class DraftRecoveryTests
             await restarted.RestoreSessionAsync(session);
             var draft = Assert.Single(restarted.OrphanedDrafts);
             Assert.True(draft.HasBom);
-            await File.WriteAllTextAsync(Path.Combine(directory, "Missing.md"), "External file");
+            await File.WriteAllTextAsync(Path.Combine(directory, "Missing.md"), "External file", cancellationToken: TestContext.Current.CancellationToken);
             var error = await Assert.ThrowsAsync<VaultException>(() => restarted.RecoverDraftAsync(draft, "Missing.md"));
             Assert.Equal(409, error.StatusCode);
             Assert.Single(restarted.OrphanedDrafts);
-            Assert.Equal("External file", await File.ReadAllTextAsync(Path.Combine(directory, "Missing.md")));
+            Assert.Equal("External file", await File.ReadAllTextAsync(Path.Combine(directory, "Missing.md"), cancellationToken: TestContext.Current.CancellationToken));
             var recovered = await restarted.RecoverDraftAsync(draft, "Recovered draft.md");
             Assert.Empty(restarted.OrphanedDrafts);
             var expected = new byte[] { 0xef, 0xbb, 0xbf }.Concat(Encoding.UTF8.GetBytes("Café draft\r\nKeep every line\r\n")).ToArray();
-            Assert.Equal(expected, await File.ReadAllBytesAsync(Path.Combine(directory, recovered.Path)));
+            Assert.Equal(expected, await File.ReadAllBytesAsync(Path.Combine(directory, recovered.Path), cancellationToken: TestContext.Current.CancellationToken));
             Assert.Equal(draft.Draft, recovered.Text);
             Assert.Equal(4, recovered.Caret);
             Assert.False(recovered.IsDirty);

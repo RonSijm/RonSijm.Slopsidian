@@ -18,11 +18,11 @@ internal static class NativeCanvasCardDialog
         var geometry = new Grid { ColumnDefinitions = new ColumnDefinitions("*,*,*,*"), ColumnSpacing = 12 };
         AddGeometry(geometry, "X", x, 0); AddGeometry(geometry, "Y", y, 1); AddGeometry(geometry, "Width", width, 2); AddGeometry(geometry, "Height", height, 3);
         fields.Children.Add(geometry);
-        var color = new TextBox { Text = card.Color ?? "", Watermark = "Default, preset 1–6, or a hexadecimal color" };
+        var color = new TextBox { Text = card.Color ?? "", PlaceholderText = "Default, preset 1–6, or a hexadecimal color" };
         Field(fields, "Color", color);
         var text = new TextBox { Text = card.Text, AcceptsReturn = card.Type == "text", TextWrapping = TextWrapping.Wrap, MinHeight = card.Type == "text" ? 220 : 32 };
         var target = new TextBox { Text = card.Target };
-        var subpath = new TextBox { Text = card.Subpath, Watermark = "#Heading or #^block" };
+        var subpath = new TextBox { Text = card.Subpath, PlaceholderText = "#Heading or #^block" };
         var background = new TextBox { Text = card.Background };
         var backgroundStyle = new TextBox { Text = card.BackgroundStyle };
         switch (card.Type)

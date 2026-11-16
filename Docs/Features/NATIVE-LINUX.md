@@ -1,6 +1,11 @@
 # Native Linux client
 
-Slopsidian Native ports the existing workspace to .NET 10/Avalonia widgets.
+Slopsidian Native ports the existing workspace to .NET 10/Avalonia 12 widgets.
+Avalonia 12.1.6, AvaloniaEdit 12.0.0 and DataGrid 12.1.2 use their `net10.0`
+assemblies. The self-contained Linux package includes the .NET 10 runtime.
+Some transitive shaping/D-Bus libraries retain compatible `net8.0`/`net9.0`
+assemblies; those do not require installing an older .NET runtime.
+
 The ribbon, file tree, editor, tabs, dialogs and reading view run in the desktop
 process without Electron, Chromium, Blazor, a WebView or a local HTTP server.
 The native and web hosts share the existing vault services through
@@ -78,7 +83,7 @@ Profile files use owner-only permissions on Linux. Vault configuration controls
 write the corresponding `.obsidian` configuration files through the shared
 version-guarded APIs; native sessions do not overwrite Obsidian workspace.json.
 
-The headless xUnit suite exercises temporary vaults and real Avalonia controls,
+The headless xUnit v3 suite exercises temporary vaults and real Avalonia controls,
 including tab Undo/caret retention, stale-save refusal, exact text, metadata,
 rename transactions and identity-checked trash recovery. It does not replace
 full workflow acceptance or the existing browser/desktop tests.

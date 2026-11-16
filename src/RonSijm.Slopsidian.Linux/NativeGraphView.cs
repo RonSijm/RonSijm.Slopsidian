@@ -12,7 +12,7 @@ public sealed record NativeGraphEdge(string Source, string Target);
 public sealed class NativeGraphView : UserControl
 {
     private readonly GraphSurface surface;
-    private readonly TextBox filter = new() { Watermark = "Filter notes", Width = 250 };
+    private readonly TextBox filter = new() { PlaceholderText = "Filter notes", Width = 250 };
     private readonly TextBlock status = new() { Classes = { "muted" }, VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center };
     private readonly NativeGraphNode[] nodes;
     private readonly NativeGraphEdge[] edges;

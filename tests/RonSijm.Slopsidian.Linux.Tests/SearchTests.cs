@@ -81,13 +81,13 @@ public sealed class SearchTests
             var first = await workspace.CreateTabAsync("First.md", "Saved first");
             first.Text = "---\nstatus: Open\n---\nDraft keyword";
             await workspace.CreateTabAsync("Second.md", "Saved second");
-            var result = Assert.Single(await workspace.SearchAsync("[status:Open] keyword"));
+            var result = Assert.Single(await workspace.SearchAsync("[status:Open] keyword", cancellationToken: TestContext.Current.CancellationToken));
             Assert.Equal("First.md", result.Path);
             Assert.Equal(first.Text.IndexOf("keyword", StringComparison.Ordinal), result.Offset);
             Assert.Equal("Second.md", workspace.ActiveTab!.Path);
-            Assert.Equal("Saved first", await File.ReadAllTextAsync(Path.Combine(directory, "First.md")));
+            Assert.Equal("Saved first", await File.ReadAllTextAsync(Path.Combine(directory, "First.md"), cancellationToken: TestContext.Current.CancellationToken));
             Assert.True(first.IsDirty);
-            await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.SearchAsync("tag:"));
+            await Assert.ThrowsAsync<InvalidOperationException>(() => workspace.SearchAsync("tag:", cancellationToken: TestContext.Current.CancellationToken));
         }
         finally { Directory.Delete(directory, true); }
     }

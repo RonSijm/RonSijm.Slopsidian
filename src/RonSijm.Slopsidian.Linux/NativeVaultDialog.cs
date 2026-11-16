@@ -10,9 +10,9 @@ public sealed record NativeVaultChoice(string Path, string? CreateName = null);
 
 public sealed class NativeVaultDialog : Window
 {
-    private readonly TextBox openPath = new() { Watermark = "/home/you/Notes" };
-    private readonly TextBox createName = new() { Watermark = "My vault", MaxLength = 255 };
-    private readonly TextBox createParent = new() { Watermark = "Choose the parent folder" };
+    private readonly TextBox openPath = new() { PlaceholderText = "/home/you/Notes" };
+    private readonly TextBox createName = new() { PlaceholderText = "My vault", MaxLength = 255 };
+    private readonly TextBox createParent = new() { PlaceholderText = "Choose the parent folder" };
     private readonly TextBlock error = new() { Classes = { "error" }, TextWrapping = TextWrapping.Wrap };
 
     public NativeVaultDialog(IReadOnlyList<string> recent)

@@ -89,12 +89,12 @@ public sealed class NativeSettingsWindow : Window
             var document = await vault.ReadConfigurationAsync("app", (await vault.GetSnapshotAsync()).Root);
             var settings = NativeFileSettings.Read(document.Data);
             var location = Choice("Default location for new notes", ["Vault root", "Same folder as the current note", "Specified folder"], Array.IndexOf(NoteLocationKeys, settings.NewFileLocation));
-            var folder = new TextBox { Text = settings.NewFileFolderPath, Watermark = "/" };
+            var folder = new TextBox { Text = settings.NewFileFolderPath, PlaceholderText = "/" };
             AddField("New note folder", folder);
             var link = Choice("New link format", ["Shortest path when possible", "Relative path to file", "Absolute path in vault"], Array.IndexOf(LinkFormatKeys, settings.NewLinkFormat));
             var markdown = new CheckBox { Content = "Use Markdown links", IsChecked = settings.UseMarkdownLinks };
             page.Children.Add(markdown);
-            var attachment = new TextBox { Text = settings.AttachmentFolderPath, Watermark = "/, ./, ./Attachments or a vault folder" };
+            var attachment = new TextBox { Text = settings.AttachmentFolderPath, PlaceholderText = "/, ./, ./Attachments or a vault folder" };
             AddField("Attachment folder", attachment);
             var trash = Choice("Deleted files", ["Move to vault trash", "System trash (requires a supported host)"], settings.TrashOption == "system" ? 1 : 0);
             var actions = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 12 };

@@ -367,7 +367,7 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
         args.Handled = true;
     }
 
-    protected override void OnLostFocus(RoutedEventArgs e) { base.OnLostFocus(e); holdingSpace = false; }
+    protected override void OnLostFocus(FocusChangedEventArgs e) { base.OnLostFocus(e); holdingSpace = false; }
 
     protected override void OnKeyUp(KeyEventArgs e) { base.OnKeyUp(e); if (e.Key == Key.Space) { holdingSpace = false; } }
 

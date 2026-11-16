@@ -16,14 +16,14 @@ public sealed class WorkspaceTests : IDisposable
     public async Task EditSaveAndReopenPreserveUtf8BomAndCrLf()
     {
         var original = new UTF8Encoding(true).GetPreamble().Concat(Encoding.UTF8.GetBytes("# Café\r\nText\r\n")).ToArray();
-        await File.WriteAllBytesAsync(Path.Combine(directory, "note.md"), original);
+        await File.WriteAllBytesAsync(Path.Combine(directory, "note.md"), original, cancellationToken: TestContext.Current.CancellationToken);
         await workspace.OpenVaultAsync(directory);
         await workspace.OpenNoteAsync("note.md");
         Assert.False(workspace.IsDirty);
         workspace.Text += "More\r\n";
         await workspace.SaveAsync();
         Assert.False(workspace.IsDirty);
-        Assert.Equal(original.Concat(Encoding.UTF8.GetBytes("More\r\n")), await File.ReadAllBytesAsync(Path.Combine(directory, "note.md")));
+        Assert.Equal(original.Concat(Encoding.UTF8.GetBytes("More\r\n")), await File.ReadAllBytesAsync(Path.Combine(directory, "note.md"), cancellationToken: TestContext.Current.CancellationToken));
         await workspace.OpenNoteAsync("note.md");
         Assert.EndsWith("More\r\n", workspace.Text);
     }
@@ -31,16 +31,16 @@ public sealed class WorkspaceTests : IDisposable
     [Fact]
     public async Task ExternalEditRefusesSaveAndRetainsBothVersions()
     {
-        await File.WriteAllTextAsync(Path.Combine(directory, "note.md"), "Original");
+        await File.WriteAllTextAsync(Path.Combine(directory, "note.md"), "Original", cancellationToken: TestContext.Current.CancellationToken);
         await workspace.OpenVaultAsync(directory);
         await workspace.OpenNoteAsync("note.md");
         workspace.Text = "My draft";
-        await File.WriteAllTextAsync(Path.Combine(directory, "note.md"), "External change");
+        await File.WriteAllTextAsync(Path.Combine(directory, "note.md"), "External change", cancellationToken: TestContext.Current.CancellationToken);
         var error = await Assert.ThrowsAsync<VaultException>(workspace.SaveAsync);
         Assert.Equal(409, error.StatusCode);
         Assert.True(workspace.IsDirty);
         Assert.Equal("My draft", workspace.Text);
-        Assert.Equal("External change", await File.ReadAllTextAsync(Path.Combine(directory, "note.md")));
+        Assert.Equal("External change", await File.ReadAllTextAsync(Path.Combine(directory, "note.md"), cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]
@@ -76,9 +76,9 @@ public sealed class WorkspaceTests : IDisposable
         await workspace.SaveAsync();
         await workspace.CreateNoteAsync("Inbox");
         workspace.Text = "An unsaved keyword.";
-        var result = Assert.Single(await workspace.SearchAsync("searchable"));
+        var result = Assert.Single(await workspace.SearchAsync("searchable", cancellationToken: TestContext.Current.CancellationToken));
         Assert.Equal("projects/Plan.md", result.Path);
-        Assert.Equal("Inbox.md", Assert.Single(await workspace.SearchAsync("keyword")).Path);
+        Assert.Equal("Inbox.md", Assert.Single(await workspace.SearchAsync("keyword", cancellationToken: TestContext.Current.CancellationToken)).Path);
         Assert.Equal("Inbox.md", workspace.Document!.File.Path);
         Assert.True(workspace.IsDirty);
     }
@@ -91,7 +91,7 @@ public sealed class WorkspaceTests : IDisposable
         workspace.Text = "Keep me";
         await workspace.SaveAsync();
         await Assert.ThrowsAsync<VaultException>(() => workspace.CreateNoteAsync("note.md"));
-        Assert.Equal("Keep me", await File.ReadAllTextAsync(Path.Combine(directory, "note.md")));
+        Assert.Equal("Keep me", await File.ReadAllTextAsync(Path.Combine(directory, "note.md"), cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Fact]

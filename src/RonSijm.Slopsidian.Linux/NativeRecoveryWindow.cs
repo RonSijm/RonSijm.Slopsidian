@@ -4,6 +4,7 @@ using Avalonia;
 using Avalonia.Automation;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
+using Avalonia.Input.Platform;
 using Avalonia.Layout;
 using Avalonia.Media;
 
@@ -12,7 +13,7 @@ namespace RonSijm.Slopsidian.Linux;
 public sealed class NativeRecoveryWindow : Window
 {
     private readonly NativeWorkspace workspace;
-    private readonly TextBox search = new() { Name = "RecoverySearch", Watermark = "Search file history" };
+    private readonly TextBox search = new() { Name = "RecoverySearch", PlaceholderText = "Search file history" };
     private readonly ListBox files = new() { Name = "RecoveryFiles" };
     private readonly ListBox versions = new() { Name = "RecoveryVersions" };
     private readonly TextBox preview = Preview("Snapshot preview", "RecoveryPreview");

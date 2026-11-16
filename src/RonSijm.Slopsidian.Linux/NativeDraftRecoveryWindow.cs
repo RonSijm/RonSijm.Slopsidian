@@ -13,7 +13,7 @@ public sealed class NativeDraftRecoveryWindow : Window
     private readonly Func<Task> persist;
     private readonly ListBox drafts = new() { Name = "DraftRecoveryList" };
     private readonly TextBox preview = new() { Name = "DraftRecoveryPreview", IsReadOnly = true, AcceptsReturn = true, TextWrapping = TextWrapping.Wrap, FontFamily = new FontFamily("DejaVu Sans Mono, monospace") };
-    private readonly TextBox destination = new() { Name = "DraftRecoveryDestination", Watermark = "New file path inside the vault" };
+    private readonly TextBox destination = new() { Name = "DraftRecoveryDestination", PlaceholderText = "New file path inside the vault" };
     private readonly TextBlock status = new() { Name = "DraftRecoveryStatus", TextWrapping = TextWrapping.Wrap, Classes = { "muted" } };
     private readonly StackPanel confirmation = new() { Spacing = 10, IsVisible = false };
     private readonly Button save;

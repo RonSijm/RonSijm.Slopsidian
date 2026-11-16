@@ -10,12 +10,12 @@
   </PropertyGroup>
   <ItemGroup>
     <AssemblyMetadata Include="LinuxClientVersion" Value="$(Version)" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.3.23" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.23" />
-    <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.3.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.1.6" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.6" />
+    <PackageReference Include="Avalonia.AvaloniaEdit" Version="12.0.0" />
     <PackageReference Include="Markdig" Version="0.41.3" />
     <PackageReference Include="YamlDotNet" Version="16.3.0" />
-    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.0" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="12.1.2" />
     <ProjectReference Include="../RonSijm.Slopsidian.Core/RonSijm.Slopsidian.Core.csproj" />
     <AvaloniaResource Include="Assets/tux-notebook.png" />
     <AvaloniaResource Include="../RonSijm.Slopsidian/wwwroot/icons.svg" Link="Assets/icons.svg" />
