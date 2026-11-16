@@ -13,8 +13,7 @@
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.23" />
     <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.3.0" />
     <PackageReference Include="Markdig" Version="0.41.3" />
-    <!-- Reuse the current guarded vault service in-process; no web host is started. -->
-    <ProjectReference Include="../RonSijm.Slopsidian/RonSijm.Slopsidian.csproj" />
+    <ProjectReference Include="../RonSijm.Slopsidian.Core/RonSijm.Slopsidian.Core.csproj" />
   </ItemGroup>
   <Target Name="PrepareNativePublish" AfterTargets="Publish" Condition="'$(SelfContained)' == 'true'">
     <!-- The reference supplies services, not a second runnable web application. -->

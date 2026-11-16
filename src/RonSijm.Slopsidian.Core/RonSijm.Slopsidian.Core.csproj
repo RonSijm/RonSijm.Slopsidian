@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.13" />
+    <PackageReference Include="Microsoft.JSInterop" Version="10.0.13" />
+    <Using Include="Microsoft.Extensions.Logging" />
+    <Using Include="RonSijm.Slopsidian.Services.VaultStatusCodes" Alias="StatusCodes" />
+    <Compile Include="../RonSijm.Slopsidian/Services/*.cs" Exclude="../RonSijm.Slopsidian/Services/FileOperations.cs" Link="Services/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../shared/core-plugins.json" LogicalName="RonSijm.Slopsidian.CorePlugins.json" />
+  </ItemGroup>
+</Project>

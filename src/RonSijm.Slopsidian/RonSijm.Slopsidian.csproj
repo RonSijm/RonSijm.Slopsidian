@@ -11,7 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="..\..\shared\core-plugins.json" LogicalName="RonSijm.Slopsidian.CorePlugins.json" />
+    <Compile Remove="Services/*.cs" />
+    <Compile Include="Services/FileOperations.cs" />
+    <ProjectReference Include="../RonSijm.Slopsidian.Core/RonSijm.Slopsidian.Core.csproj" />
   </ItemGroup>
 
 </Project>
