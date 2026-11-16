@@ -211,36 +211,28 @@ public sealed partial class NativeWorkspace : IDisposable
         ActiveTab = tabs.FirstOrDefault(tab => tab.Path == session.Active) ?? tabs.FirstOrDefault();
     }
 
-    public async Task<IReadOnlyList<NoteResult>> SearchAsync(string query, CancellationToken cancellationToken = default)
+    public Task<IReadOnlyList<NoteResult>> SearchAsync(string query, CancellationToken cancellationToken) => SearchAsync(query, false, cancellationToken);
+
+    public async Task<IReadOnlyList<NoteResult>> SearchAsync(string query, bool matchCase = false, CancellationToken cancellationToken = default)
     {
         var root = Snapshot.Root;
         var notes = Notes.ToArray();
         var drafts = tabs.ToDictionary(tab => tab.Path, tab => tab.Text, StringComparer.Ordinal);
-        query = query.Trim();
+        if (string.IsNullOrWhiteSpace(query)) { return []; }
+        var compiled = NativeSearchQuery.Parse(query, matchCase);
+        return await Task.Run(() => SearchSnapshotAsync(notes, drafts, root, compiled, cancellationToken), cancellationToken);
+    }
+
+    private async Task<List<NoteResult>> SearchSnapshotAsync(VaultFile[] notes, Dictionary<string, string> drafts, string? root, NativeSearchQuery query, CancellationToken cancellationToken)
+    {
         var results = new List<NoteResult>();
         foreach (var file in notes)
         {
             cancellationToken.ThrowIfCancellationRequested();
-            if (query.Length == 0 || file.Path.Contains(query, StringComparison.OrdinalIgnoreCase))
-            {
-                results.Add(new NoteResult(file.Path));
-                continue;
-            }
-            if (file.Stat.Size > 4 * 1024 * 1024)
-            {
-                continue;
-            }
             try
             {
-                var content = drafts.TryGetValue(file.Path, out var draft) ? draft : (await vault.ReadAsync(file.Path, cancellationToken, root)).Content;
-                var index = content.IndexOf(query, StringComparison.OrdinalIgnoreCase);
-                if (index < 0)
-                {
-                    continue;
-                }
-                var start = Math.Max(0, index - 35);
-                var snippet = content.Substring(start, Math.Min(120, content.Length - start)).Replace('\r', ' ').Replace('\n', ' ');
-                results.Add(new NoteResult(file.Path, snippet, index));
+                var result = await SearchFileAsync(file, drafts.GetValueOrDefault(file.Path), root, query, cancellationToken);
+                if (result is not null) { results.Add(result); }
             }
             catch (VaultException exception) when (exception.StatusCode == 404)
             {
@@ -248,6 +240,19 @@ public sealed partial class NativeWorkspace : IDisposable
             }
         }
         return results;
+    }
+
+    private async Task<NoteResult?> SearchFileAsync(VaultFile file, string? draft, string? root, NativeSearchQuery query, CancellationToken cancellationToken)
+    {
+        if (query.RequiresContents && (draft?.Length ?? file.Stat.Size) > 4 * 1024 * 1024) { return null; }
+        var content = "";
+        if (query.RequiresContents) { content = draft ?? (await vault.ReadAsync(file.Path, cancellationToken, root)).Content; }
+        var parsed = query.RequiresMetadata ? NativeMetadata.Parse(file.Path, content) : new NativeMetadata(file.Path, [], [], [], [], [], [], null);
+        var match = query.Match(new NativeSearchDocument(file.Path, content, parsed));
+        if (!match.Success) { return null; }
+        var start = Math.Max(0, match.Offset - 35);
+        var snippet = content.Substring(start, Math.Min(120, content.Length - start)).Replace('\r', ' ').Replace('\n', ' ');
+        return new NoteResult(file.Path, snippet, match.Offset);
     }
 
     public string ResolveNoteLink(string link)

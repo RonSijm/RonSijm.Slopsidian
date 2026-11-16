@@ -31,13 +31,9 @@ public sealed class WindowTests
             await window.OpenVaultAsync(directory);
             Avalonia.Threading.Dispatcher.UIThread.RunJobs();
             window.UpdateLayout();
-            var notes = window.FindControl<ListBox>("NoteList")!;
-            for (var attempt = 0; notes.ItemCount == 0 && attempt < 500; attempt++) await Task.Delay(10);
-            Assert.True(notes.ItemCount > 0, window.FindControl<TextBlock>("ErrorText")!.Text + " files=" + window.Workspace.Snapshot.Files.Count + " status=" + window.FindControl<TextBlock>("SearchStatus")!.Text);
-            notes.SelectedIndex = 0;
-            // The async selection handler completes via the dispatcher.
-            for (var attempt = 0; window.Workspace.Document is null && attempt < 500; attempt++) await Task.Delay(10);
-            Assert.True(window.Workspace.Document is not null, window.FindControl<TextBlock>("ErrorText")!.Text + " selected=" + notes.SelectedIndex);
+            var tree = window.FindControl<TreeView>("FileTree")!;
+            tree.SelectedItem = tree.ItemsSource!.Cast<NativeFileNode>().Single();
+            await WaitForAsync(() => window.Workspace.Document is not null);
             var editor = window.FindControl<TextEditor>("Editor")!;
             window.UpdateLayout();
             Assert.True(editor.TextArea.Focus());

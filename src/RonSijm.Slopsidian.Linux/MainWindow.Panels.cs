@@ -67,21 +67,29 @@ public partial class MainWindow
         {
             if (debounce) { await Task.Delay(250, cancellation.Token); }
             SearchStatus.Text = "Searching…";
-            var results = await Workspace.SearchAsync(query, cancellation.Token);
+            var results = await Workspace.SearchAsync(query, SearchMatchCase.IsChecked == true, cancellation.Token);
             cancellation.Token.ThrowIfCancellationRequested();
             selecting = true;
             NoteList.ItemsSource = results;
             RestoreSelection();
             selecting = false;
-            SearchStatus.Text = results.Count == 0 ? "No matching notes." : results.Count + " matching notes";
+            SearchStatus.Text = query.Length == 0 ? "Enter a search query." : results.Count + " matching notes";
         }
         catch (OperationCanceledException) { /* A newer query owns the result list. */ }
-        catch (Exception exception) { if (!cancellation.IsCancellationRequested) { ShowError(exception); } }
+        catch (Exception exception)
+        {
+            if (!cancellation.IsCancellationRequested) { SearchStatus.Text = exception.Message; NoteList.ItemsSource = Array.Empty<NoteResult>(); }
+        }
         finally
         {
             selecting = false;
             if (ReferenceEquals(search, cancellation)) { search = null; }
         }
+    }
+
+    private async void SearchOptionChanged(object? sender, RoutedEventArgs args)
+    {
+        if (SearchBox is not null && Workspace.Snapshot.Root is not null) { await UpdateSearchAsync(); }
     }
 
     private void RestoreSelection()
@@ -177,7 +185,7 @@ public partial class MainWindow
     {
         if (TagList.SelectedItem is not NativeTag tag) { return; }
         NavigationTabs.SelectedIndex = 1;
-        SearchBox.Text = tag.Name;
+        SearchBox.Text = "tag:" + tag.Name;
         await UpdateSearchAsync();
     }
 

@@ -34,12 +34,13 @@ public partial class MainWindow : Window
         InitializeComponent();
         DocumentTabs.ItemsSource = Workspace.Tabs;
         Editor.TextChanged += EditorChanged;
-        previewTimer.Tick += (_, _) =>
+        previewTimer.Tick += async (_, _) =>
         {
             previewTimer.Stop();
             UpdateInspector();
             if (EditorTabs.SelectedIndex == 1) { RenderReading(); }
             if (SplitPane.IsVisible) { RenderSplit(); }
+            if (!string.IsNullOrWhiteSpace(SearchBox.Text)) { await UpdateSearchAsync(); }
         };
         profileTimer.Tick += async (_, _) => { profileTimer.Stop(); await PersistProfileSafelyAsync(); };
         autosaveTimer.Tick += async (_, _) => await AutosaveAsync();

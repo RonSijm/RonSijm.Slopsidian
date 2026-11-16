@@ -17,7 +17,11 @@ public sealed record NativeHeading(string Title, int Level, int Offset)
 }
 public sealed record NativeLink(string Target, int Offset, bool Embedded, int TargetOffset = -1, int TargetLength = 0, bool Markdown = false);
 public sealed record NativeFootnote(string Id, string Text, int Offset);
-public sealed record NativeProperty(string Key, string Value, string Kind, string Raw);
+public sealed record NativePropertyValue(string Text, bool Plain);
+public sealed record NativeProperty(string Key, string Value, string Kind, string Raw)
+{
+    public IReadOnlyList<NativePropertyValue> Values { get; init; } = [];
+}
 public sealed record NativeLocation(string Name, string Path, int Offset, string Context = "");
 
 public sealed record NativeMetadata(
@@ -190,7 +194,26 @@ public sealed class NativeFrontmatter
             YamlScalarNode scalar when scalar.Style == ScalarStyle.Plain && double.TryParse(scalar.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out _) => "Number",
             _ => "Text"
         };
-        return new NativeProperty(key.Value ?? "", text, kind, raw);
+        return new NativeProperty(key.Value ?? "", text, kind, raw)
+        {
+            Values = PropertyValues(value, new HashSet<YamlNode>(ReferenceEqualityComparer.Instance)).ToArray()
+        };
+    }
+
+    private static IEnumerable<NativePropertyValue> PropertyValues(YamlNode node, HashSet<YamlNode> seen)
+    {
+        if (!seen.Add(node)) { yield break; }
+        if (node is YamlScalarNode scalar)
+        {
+            var plain = scalar.Style == ScalarStyle.Plain && (scalar.Tag.IsEmpty || scalar.Tag.Value != "tag:yaml.org,2002:str");
+            yield return new NativePropertyValue(scalar.Value ?? "", plain);
+            yield break;
+        }
+        IEnumerable<YamlNode> children = node switch { YamlSequenceNode sequence => sequence.Children, YamlMappingNode mapping => mapping.Children.Values, _ => [] };
+        foreach (var child in children)
+        {
+            foreach (var value in PropertyValues(child, seen)) { yield return value; }
+        }
     }
 
     private static (Dictionary<string, (int Start, int End)> Spans, int? Closing) PropertySpans(string yaml)
