@@ -124,12 +124,12 @@ public sealed partial class NativeWorkspace : IDisposable
 
     public async Task ReloadTabAsync(NativeTab tab, bool discardDraft = false)
     {
+        var document = await vault.ReadAsync(tab.Path, expectedRoot: RequireRoot());
         if (tab.IsDirty && !discardDraft)
         {
-            tab.ExternalChange = true;
+            tab.ExternalChange = document.Version != tab.Document.Version;
             return;
         }
-        var document = await vault.ReadAsync(tab.Path, expectedRoot: RequireRoot());
         if (document.Version != tab.Document.Version || discardDraft)
         {
             tab.Reload(document);

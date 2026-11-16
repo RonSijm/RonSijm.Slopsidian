@@ -133,6 +133,21 @@ public sealed class SessionTests : IDisposable
         Assert.Empty(workspace.MetadataFor("Note.md").Headings);
     }
 
+    [Fact]
+    public async Task UnrelatedVaultRefreshDoesNotMarkAnUnchangedDirtyNoteAsConflicted()
+    {
+        await workspace.OpenVaultAsync(directory);
+        var tab = await workspace.CreateTabAsync("Draft.md", "Saved");
+        tab.Text = "Draft";
+        await workspace.ReloadTabAsync(tab);
+        Assert.False(tab.ExternalChange);
+        Assert.Equal("Draft", tab.Text);
+        await File.WriteAllTextAsync(Path.Combine(directory, "Draft.md"), "External");
+        await workspace.ReloadTabAsync(tab);
+        Assert.True(tab.ExternalChange);
+        Assert.Equal("Draft", tab.Text);
+    }
+
     public void Dispose()
     {
         workspace.Dispose();
