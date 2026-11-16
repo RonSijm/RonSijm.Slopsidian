@@ -81,6 +81,7 @@ public partial class MainWindow
         new("file:reload", "Reload current file", "", ReloadCurrentAsync),
         new("daily-notes:open", "Daily notes: Open today's note", "", OpenDailyNoteAsync),
         new("templates:insert", "Templates: Insert template", "", InsertTemplateAsync),
+        new("file-explorer:trash-recovery", "Vault trash: Preview and restore deleted notes", "", OpenVaultTrashAsync),
         new("draft-recovery:open", "Recover unsaved drafts for missing files", "", OpenDraftRecoveryAsync),
         new("file-recovery:open", "File recovery: Open saved versions", "", OpenRecoveryAsync),
         new("file-recovery:snapshot-current", "File recovery: Save recovery snapshot", "", SaveRecoverySnapshotAsync),
@@ -288,6 +289,7 @@ public partial class MainWindow
             new NativeChoice("Save a copy", "Create a new note without overwriting an existing file", "copy"),
             new NativeChoice("Copy relative path", Workspace.Document.File.Path, "path"),
             new NativeChoice("Show in file manager", "Open the containing folder", "reveal"),
+            new NativeChoice("Open vault trash", "Preview and restore deleted Markdown notes", "trash-recovery"),
             new NativeChoice("File recovery", "Preview and restore saved versions", "recovery"),
             new NativeChoice("Reload from disk", "Reopen the saved version", "reload")
         };
@@ -299,6 +301,7 @@ public partial class MainWindow
             case "trash": await TrashCurrentAsync(); break;
             case "reload": await ReloadCurrentAsync(); break;
             case "recovery": await OpenRecoveryAsync(); break;
+            case "trash-recovery": await OpenVaultTrashAsync(); break;
             case "path": if (Clipboard is not null) { await Clipboard.SetTextAsync(Workspace.Document.File.Path); } break;
             case "reveal": Process.Start(new ProcessStartInfo(System.IO.Path.GetDirectoryName(System.IO.Path.Combine(Workspace.Snapshot.Root!, Workspace.Document.File.Path))!) { UseShellExecute = true }); break;
             case "copy": await SaveCopyAsync(); break;

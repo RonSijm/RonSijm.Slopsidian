@@ -57,6 +57,14 @@ public partial class MainWindow
         await PersistProfileAsync();
     });
 
+    private Task OpenVaultTrashAsync() => RunAsync(async () =>
+    {
+        if (Workspace.Snapshot.Root is null) { return; }
+        await new NativeTrashWindow(Workspace).ShowDialog(this);
+        await RefreshWorkspaceAsync();
+        await PersistProfileAsync();
+    });
+
     private Task OpenRecoveryAsync() => RunAsync(async () =>
     {
         if (Workspace.Snapshot.Root is null) { return; }

@@ -79,7 +79,8 @@ public sealed class NativeDraftRecoveryWindow : Window
         drafts.ItemsSource = workspace.OrphanedDrafts.ToArray();
         drafts.SelectedIndex = drafts.ItemCount > 0 ? 0 : -1;
         SelectDraft();
-        status.Text = drafts.ItemCount == 0 ? "All retained drafts have been handled." : drafts.ItemCount + " retained drafts. Existing files will never be overwritten.";
+        var countLabel = drafts.ItemCount == 1 ? "1 retained draft" : drafts.ItemCount + " retained drafts";
+        status.Text = drafts.ItemCount == 0 ? "All retained drafts have been handled." : countLabel + ". Existing files will never be overwritten.";
     }
 
     private void SelectDraft()

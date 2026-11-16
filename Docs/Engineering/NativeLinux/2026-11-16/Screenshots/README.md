@@ -18,3 +18,5 @@ generation prompt is retained with that asset.
 Saved-file recovery captures show native version selection and an explicit restore review. The demo history was created by the real native recovery commands on the same isolated display. Restore behavior is covered by the 114-test regression suite; strict lint/Release build passed with zero warnings/errors.
 
 The retained-draft screenshot follows real native editor input with autosave disabled, an application restart after removing the synthetic original, and opening Recover drafts. The recovered copy was then saved through the native window and its persisted profile state verified. No user files or desktop input were involved.
+
+Vault-trash screenshots show real native previews, multiple selection and review of the selected destination folder. Both synthetic notes were then restored through the reviewed native action and their saved contents/location checked. External-change refusal and partial success are exercised by headless widget tests.

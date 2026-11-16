@@ -124,7 +124,8 @@ public sealed class NativeRecoveryWindow : Window
     {
         index = await workspace.Recovery.ListAsync();
         FilterFiles();
-        status.Text = index.Snapshots.Count == 0 ? "No snapshots yet. Open or save a file, or save a snapshot manually." : index.Snapshots.Count + " saved versions. Select a file and version to preview.";
+        var countLabel = index.Snapshots.Count == 1 ? "1 saved version" : index.Snapshots.Count + " saved versions";
+        status.Text = index.Snapshots.Count == 0 ? "No snapshots yet. Open or save a file, or save a snapshot manually." : countLabel + ". Select a file and version to preview.";
     }
 
     private void FilterFiles()

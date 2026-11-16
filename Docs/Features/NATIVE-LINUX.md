@@ -34,8 +34,10 @@ workflows in `Docs/Project/NATIVE-PORT.md` have been implemented and accepted.
 - Create nested notes and folders; use the configured default note location.
 - Rename/move a note and update its Markdown, wiki and YAML references in one
   guarded transaction. Move notes to vault-local `.trash` without overwriting
-  colliding trash entries. Reviewed trash restoration is tested in the shared
-  service; its native screen is still pending.
+  colliding trash entries. Open Vault trash from the command palette or file
+  actions to preview UTF-8 Markdown notes up to 1 MiB, select up to 20 notes,
+  choose an existing destination folder and review their restore paths. Changed
+  files/folders and collisions are refused; partial outcomes are reported.
 - Read basic Markdown with native controls and follow links. HTTP(S) links open
   in the system browser; unsupported URI schemes are refused.
 - Use Outline, Backlinks, Outgoing links, Tags, Footnotes and a native YAML
