@@ -26,7 +26,8 @@ public sealed partial class VaultService
             RequireCoreRoot(request.Root);
             var path = Resolve(request.Path);
             if (Path.Exists(path)) { throw new VaultException("A file or folder already exists at that path.", StatusCodes.Status409Conflict); }
-            await AtomicWriteAsync(path, bytes, false, cancellationToken);
+            try { await AtomicWriteAsync(path, bytes, false, cancellationToken); }
+            catch (WritePreconditionException) { throw new VaultException("A file appeared at the attachment destination. Nothing was overwritten.", StatusCodes.Status409Conflict); }
             return new VaultFileInfo(RequireRoot(), Describe(RequireRoot(), path), Version(bytes));
         }
         finally { gate.Release(); }
@@ -56,7 +57,8 @@ public sealed partial class VaultService
             {
                 throw new VaultException("This file changed on disk. Reload it before saving binary content.", StatusCodes.Status409Conflict);
             }
-            await AtomicWriteAsync(path, bytes, true, cancellationToken);
+            try { await AtomicWriteAsync(path, bytes, true, cancellationToken, existing); }
+            catch (WritePreconditionException) { throw new VaultException("The file changed while saving binary content. The current file was retained.", StatusCodes.Status409Conflict); }
             return new VaultFileInfo(RequireRoot(), Describe(RequireRoot(), path), Version(bytes));
         }
         finally { gate.Release(); }

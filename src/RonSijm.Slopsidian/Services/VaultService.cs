@@ -217,7 +217,14 @@ public sealed partial class VaultService(ILogger<VaultService> logger, VaultWatc
             byte[] bytes = existing.AsSpan().StartsWith(Encoding.UTF8.Preamble)
                 ? [.. Encoding.UTF8.Preamble, .. content]
                 : content;
-            await AtomicWriteAsync(fullPath, bytes, !create, cancellationToken);
+            try
+            {
+                await AtomicWriteAsync(fullPath, bytes, !create, cancellationToken, create ? null : existing);
+            }
+            catch (WritePreconditionException)
+            {
+                throw new VaultException("The file changed while saving. Your unsaved text and the current file were retained; reload before retrying.", StatusCodes.Status409Conflict);
+            }
             return Document(fullPath, bytes);
         }
         finally
