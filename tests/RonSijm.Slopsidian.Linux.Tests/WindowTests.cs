@@ -99,6 +99,42 @@ public sealed class WindowTests
     }
 
     [AvaloniaFact]
+    public async Task EditingAnInactiveNativeBufferUpdatesItsOwnDraftAndRetainsTheActiveEditor()
+    {
+        var directory = Path.Combine(Path.GetTempPath(), "slopsidian-inactive-buffer-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(directory);
+        await File.WriteAllTextAsync(Path.Combine(directory, "First.md"), "First saved");
+        await File.WriteAllTextAsync(Path.Combine(directory, "Second.md"), "Second saved");
+        using var profile = new NativeProfile();
+        profile.State = profile.State with { Preferences = new NativePreferences { Autosave = false } };
+        var window = new MainWindow(profile);
+        try
+        {
+            window.Show();
+            await window.OpenVaultAsync(directory);
+            var tree = window.FindControl<TreeView>("FileTree")!;
+            var files = tree.ItemsSource!.Cast<NativeFileNode>().ToArray();
+            tree.SelectedItem = files.Single(file => file.Path == "First.md");
+            await WaitForAsync(() => window.Workspace.ActiveTab?.Path == "First.md");
+            var editor = window.FindControl<TextEditor>("Editor")!;
+            var firstBuffer = editor.Document;
+            tree.SelectedItem = files.Single(file => file.Path == "Second.md");
+            await WaitForAsync(() => window.Workspace.ActiveTab?.Path == "Second.md");
+            firstBuffer.Insert(firstBuffer.TextLength, " changed by its native view");
+            Assert.Equal("First saved changed by its native view", window.Workspace.Tabs.Single(tab => tab.Path == "First.md").Text);
+            Assert.Equal("Second saved", window.Workspace.Text);
+            Assert.Equal("Second saved", editor.Text);
+            Assert.Equal("First saved", await File.ReadAllTextAsync(Path.Combine(directory, "First.md")));
+        }
+        finally
+        {
+            foreach (var tab in window.Workspace.Tabs) { tab.Reload(tab.Document); }
+            window.Close();
+            Directory.Delete(directory, true);
+        }
+    }
+
+    [AvaloniaFact]
     public void NativeIconButtonsExposeAccessibleNames()
     {
         var window = new MainWindow();

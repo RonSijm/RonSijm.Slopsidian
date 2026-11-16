@@ -33,7 +33,6 @@ public partial class MainWindow : Window
         profile = appProfile;
         InitializeComponent();
         DocumentTabs.ItemsSource = Workspace.Tabs;
-        Editor.TextChanged += EditorChanged;
         previewTimer.Tick += async (_, _) =>
         {
             previewTimer.Stop();
@@ -117,10 +116,10 @@ public partial class MainWindow : Window
         await PersistProfileAsync();
     }
 
-    private void EditorChanged(object? sender, EventArgs args)
+    private void EditorChanged(NativeTab tab, TextDocument buffer)
     {
         if (loadingDocument) { return; }
-        Workspace.Text = Editor.Text;
+        tab.Text = buffer.Text;
         UpdateStatus();
         RestartTimer(previewTimer);
         RestartTimer(profileTimer);
@@ -201,6 +200,8 @@ public partial class MainWindow : Window
                 if (!buffers.TryGetValue(tab, out var buffer))
                 {
                     buffer = new TextDocument(tab.Text);
+                    var trackedBuffer = buffer;
+                    buffer.TextChanged += (_, _) => EditorChanged(tab, trackedBuffer);
                     buffers.Add(tab, buffer);
                 }
                 else if (buffer.Text != tab.Text)
