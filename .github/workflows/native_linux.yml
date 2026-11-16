@@ -29,6 +29,8 @@ jobs:
           global-json-file: global.json
       - name: Test native workspace and UI
         run: dotnet test tests/RonSijm.Slopsidian.Linux.Tests --configuration Release --nologo
+      - name: Lint and analyze native code
+        run: ./tools/lint-native.sh
       - name: Package native client
         run: ./tools/package-linux.sh ${{ matrix.runtime }}
       - name: Check package entry point and contents

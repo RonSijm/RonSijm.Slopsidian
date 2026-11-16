@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'RonSijm.Slopsidian.Linux'">
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- Public application types are exercised directly by the native test host. -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'RonSijm.Slopsidian.Linux'">
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="10.36.0.15337" PrivateAssets="all" />
+  </ItemGroup>
+</Project>
