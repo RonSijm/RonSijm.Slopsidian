@@ -30,7 +30,7 @@ browser acceptance records are not native Linux acceptance records.
 
 Tests must cover observable workflows, failures and retained drafts. Screenshots
 must compare the native structure with the existing app, rather than accepting
-an unrelated design. The initial 14 tests covered the standalone editor. The 83-test suite now also checks independent tabs, recovery sessions, metadata edits, Linux path identity and file transactions. Native acceptance remains separate from this focused regression suite.
+an unrelated design. The initial 14 tests covered the standalone editor. The 114-test suite now also checks independent tabs, recovery sessions, metadata edits, Linux path identity and file transactions. Native acceptance remains separate from this focused regression suite.
 
 Run `./tools/lint-native.sh` for .NET recommended analyzers, SonarAnalyzer C#,
 format verification and a build treating warnings as errors. The native-project
@@ -53,6 +53,7 @@ absence of a row is not evidence of support.
 | Draft recovery/session state | Private atomic profile, per-vault session restore, retained deleted-file drafts and stale-save refusal; tested |
 | Metadata | Native Outline, Backlinks, Outgoing links, Tags, Properties and Footnotes; rich Markdown edge cases still under review |
 | Search | Native Boolean/regex/path/file/tag/property queries, match-case and all-tab draft snapshots; 35 query cases plus shared workflow regression tests |
+| Saved-file recovery | Compatible vault history, automatic/manual saved-text snapshots, retention/disablement and native preview/review/restore; restart, backup and conflict tests pass |
 | File operations | Shared create-folder, rename/reference transaction and vault-trash paths run on Linux; regression tests pass |
 | Tux icon | Generated transparent notebook mascot; embedded window asset and Linux menu PNG |
 | Lint/code smells | Recommended .NET analyzers and SonarAnalyzer configured; strict local gate passed with zero warnings and errors |
@@ -65,7 +66,7 @@ The following are still required before the PR can leave draft:
 - Full Canvas and Bases editors, attachments, slides and audio workflows.
 - Advanced Markdown rendering/editing, previews, search result contexts/sorting, composition and conversion.
 - Complete core-module lifecycles, native hotkey editing, rich bookmark/workspace round-trips and graph controls.
-- Persistent saved-file snapshots and reviewed trash restore UI, including restart and conflict cases.
+- Reviewed vault-trash restore UI and recovery actions for retained deleted-file drafts.
 - Community-plugin screens and a documented native compatibility boundary for plugins that depend on browser DOM/Electron APIs.
 - Fresh Linux screenshots of real workflows, strict lint, package smoke checks and an independent UI review.
 

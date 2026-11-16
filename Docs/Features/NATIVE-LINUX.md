@@ -19,6 +19,12 @@ workflows in `Docs/Project/NATIVE-PORT.md` have been implemented and accepted.
   and line endings are retained.
 - Retain sessions and unsaved drafts in a private atomic application profile.
   Recovery data for a removed note is retained; its recovery UI is still pending.
+- Open File recovery from the command palette or file actions to search saved
+  versions, preview/copy text, save a manual snapshot, or review a restore.
+  Snapshots use the existing `.obsidian/vault-dotnet-recovery.json` format,
+  honor the core plugin's interval/retention settings and never capture drafts.
+  Restores retain exact UTF-8 BOM/line endings, preserve the replaced file in
+  history first, and refuse stale reviews. Disabling File recovery stops capture.
 - Search saved notes and open drafts with Boolean expressions, quoted phrases,
   regex, path/file/tag filters, typed YAML property comparisons and match case.
   Invalid queries report an error. Content search skips notes over 4 MiB;
