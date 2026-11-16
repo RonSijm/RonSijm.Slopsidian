@@ -58,6 +58,72 @@ public sealed class WindowTests
     }
 
     [AvaloniaFact]
+    public async Task SwitchingNativeDocumentTabsRetainsUndoCaretAndIndependentDrafts()
+    {
+        var directory = Path.Combine(Path.GetTempPath(), "slopsidian-tabs-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(directory);
+        await File.WriteAllTextAsync(Path.Combine(directory, "First.md"), "First saved");
+        await File.WriteAllTextAsync(Path.Combine(directory, "Second.md"), "Second saved");
+        using var profile = new NativeProfile();
+        profile.State = profile.State with { Preferences = new NativePreferences { Autosave = false } };
+        var window = new MainWindow(profile);
+        try
+        {
+            window.Show();
+            await window.OpenVaultAsync(directory);
+            var tree = window.FindControl<TreeView>("FileTree")!;
+            var files = tree.ItemsSource!.Cast<NativeFileNode>().ToArray();
+            tree.SelectedItem = files.Single(file => file.Path == "First.md");
+            await WaitForAsync(() => window.Workspace.ActiveTab?.Path == "First.md");
+            var editor = window.FindControl<TextEditor>("Editor")!;
+            var firstBuffer = editor.Document;
+            editor.Document.Insert(editor.Document.TextLength, " draft");
+            editor.CaretOffset = 3;
+            tree.SelectedItem = files.Single(file => file.Path == "Second.md");
+            await WaitForAsync(() => window.Workspace.ActiveTab?.Path == "Second.md");
+            editor.Document.Insert(editor.Document.TextLength, " second draft");
+            var tabs = window.FindControl<ListBox>("DocumentTabs")!;
+            tabs.SelectedItem = window.Workspace.Tabs.Single(tab => tab.Path == "First.md");
+            await WaitForAsync(() => window.Workspace.ActiveTab?.Path == "First.md");
+            Assert.Same(firstBuffer, editor.Document);
+            Assert.Equal("First saved draft", editor.Text);
+            Assert.Equal(3, editor.CaretOffset);
+            editor.Undo();
+            Assert.Equal("First saved", editor.Text);
+            Assert.Equal("Second saved second draft", window.Workspace.Tabs.Single(tab => tab.Path == "Second.md").Text);
+            Assert.Equal("First saved", await File.ReadAllTextAsync(Path.Combine(directory, "First.md")));
+            Assert.Equal("Second saved", await File.ReadAllTextAsync(Path.Combine(directory, "Second.md")));
+        }
+        finally
+        {
+            foreach (var tab in window.Workspace.Tabs) { tab.Reload(tab.Document); }
+            window.Close();
+            Directory.Delete(directory, true);
+        }
+    }
+
+    [AvaloniaFact]
+    public void NativeIconButtonsExposeAccessibleNames()
+    {
+        var window = new MainWindow();
+        try
+        {
+            window.Show();
+            window.UpdateLayout();
+            var buttons = window.GetVisualDescendants().OfType<Button>().Where(button => button.Content is NativeIcon).ToArray();
+            Assert.True(buttons.Length > 5);
+            Assert.All(buttons, button => Assert.False(string.IsNullOrWhiteSpace(Avalonia.Automation.AutomationProperties.GetName(button))));
+        }
+        finally { window.Close(); }
+    }
+
+    private static async Task WaitForAsync(Func<bool> condition)
+    {
+        for (var attempt = 0; !condition() && attempt < 500; attempt++) { await Task.Delay(10); }
+        Assert.True(condition());
+    }
+
+    [AvaloniaFact]
     public void ReadingViewUsesNativeControlsAndDoesNotExecuteHtml()
     {
         var content = new StackPanel();
