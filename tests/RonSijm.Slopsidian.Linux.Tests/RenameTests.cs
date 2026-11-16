@@ -49,6 +49,7 @@ public sealed class RenameTests : IDisposable
         await workspace.CreateTabAsync("Folder/Target.md", "Nested");
         Assert.Equal("Target.md", workspace.ResolveLinkTarget("Folder/Source.md", "/Target"));
         Assert.Equal("Folder/Target.md", workspace.ResolveLinkTarget("Folder/Source.md", "Target"));
+        Assert.Equal("Target.md", workspace.ResolveNoteLink("/Target"));
     }
 
     public void Dispose()

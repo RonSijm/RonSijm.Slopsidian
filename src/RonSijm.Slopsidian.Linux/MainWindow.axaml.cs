@@ -263,11 +263,11 @@ public partial class MainWindow : Window
         if (EditorTabs.SelectedIndex == 1) { RenderReading(); }
     }
 
-    private void RenderReading() => NativeMarkdown.Render(ReadingContent, Workspace.Text, Navigate);
+    private void RenderReading() => NativeMarkdown.Render(ReadingContent, Workspace.Text, Navigate, NavigateMarkdown);
     private void RenderSplit()
     {
         SplitTitle.Text = Workspace.Document?.File.Basename;
-        NativeMarkdown.Render(SplitContent, Workspace.Text, Navigate);
+        NativeMarkdown.Render(SplitContent, Workspace.Text, Navigate, NavigateMarkdown);
     }
 
     private async Task PersistProfileAsync()

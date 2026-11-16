@@ -132,6 +132,15 @@ public sealed class WorkspaceTests : IDisposable
         await Assert.ThrowsAsync<VaultException>(() => workspace.OpenVaultAsync(directory));
     }
 
+    [Fact]
+    public async Task MarkdownPathDecodingPreservesEncodedHashAndLiteralPercentInFilenames()
+    {
+        await workspace.OpenVaultAsync(directory);
+        await workspace.CreateNoteAsync("Symbols/File#100%20.md");
+        await workspace.CreateNoteAsync("Index.md");
+        Assert.Equal("Symbols/File#100%20.md", workspace.ResolveNoteLink("Symbols/File%23100%2520.md", markdown: true));
+    }
+
     public void Dispose()
     {
         workspace.Dispose();

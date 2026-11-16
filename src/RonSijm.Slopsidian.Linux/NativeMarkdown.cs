@@ -19,12 +19,12 @@ public static class NativeMarkdown
 
     private static MarkdownPipeline CreatePipeline()
     {
-        var builder = new MarkdownPipelineBuilder();
+        var builder = new MarkdownPipelineBuilder().UseYamlFrontMatter();
         builder.InlineParsers.Insert(0, new WikiLinkParser());
         return builder.Build();
     }
 
-    public static void Render(Panel target, string markdown, Action<string> navigate)
+    public static void Render(Panel target, string markdown, Action<string> navigate, Action<string>? navigateMarkdown = null)
     {
         target.Children.Clear();
         // Work on a bounded reading view; editing and saving always retain the entire document.
@@ -33,9 +33,10 @@ public static class NativeMarkdown
             target.Children.Add(new TextBlock { Text = "This note is too large for the reading view. Use Source to edit it.", TextWrapping = TextWrapping.Wrap });
             return;
         }
-        foreach (var block in Markdown.Parse(markdown, Pipeline))
+        var navigation = new LinkNavigation(navigate, navigateMarkdown ?? navigate);
+        foreach (var block in Markdown.Parse(markdown, Pipeline).Where(block => block is not Markdig.Extensions.Yaml.YamlFrontMatterBlock))
         {
-            target.Children.Add(RenderBlock(block, navigate));
+            target.Children.Add(RenderBlock(block, navigation));
         }
 
         if (target.Children.Count == 0)
@@ -44,7 +45,7 @@ public static class NativeMarkdown
         }
     }
 
-    private static Control RenderBlock(Block block, Action<string> navigate)
+    private static Control RenderBlock(Block block, LinkNavigation navigate)
     {
         switch (block)
         {
@@ -85,7 +86,7 @@ public static class NativeMarkdown
         }
     }
 
-    private static StackPanel RenderList(ListBlock list, Action<string> navigate)
+    private static StackPanel RenderList(ListBlock list, LinkNavigation navigate)
     {
         var items = new StackPanel { Spacing = 8 };
         var number = int.TryParse(list.OrderedStart, out var start) ? start : 1;
@@ -106,7 +107,7 @@ public static class NativeMarkdown
         return items;
     }
 
-    private static SelectableTextBlock Text(ContainerInline? source, Action<string> navigate)
+    private static SelectableTextBlock Text(ContainerInline? source, LinkNavigation navigate)
     {
         var text = new SelectableTextBlock { FontSize = 16, LineHeight = 26, TextWrapping = TextWrapping.Wrap };
         if (source is not null)
@@ -117,7 +118,7 @@ public static class NativeMarkdown
         return text;
     }
 
-    private static void AddInlines(InlineCollection destination, ContainerInline source, Action<string> navigate)
+    private static void AddInlines(InlineCollection destination, ContainerInline source, LinkNavigation navigate)
     {
         foreach (var inline in source)
         {
@@ -136,7 +137,7 @@ public static class NativeMarkdown
                         BorderThickness = new Thickness(0)
                     };
                     ToolTip.SetTip(wikiButton, wiki.Target);
-                    wikiButton.Click += (_, _) => navigate(wiki.Target);
+                    wikiButton.Click += (_, _) => navigate.Wiki(wiki.Target);
                     destination.Add(new InlineUIContainer(wikiButton));
                     break;
                 case LineBreakInline:
@@ -164,7 +165,7 @@ public static class NativeMarkdown
                     AddInlines(label.Inlines!, link, navigate);
                     var button = new Button { Content = label, Padding = new Thickness(0), Background = Brushes.Transparent, BorderThickness = new Thickness(0), Cursor = new Avalonia.Input.Cursor(Avalonia.Input.StandardCursorType.Hand) };
                     ToolTip.SetTip(button, link.Url);
-                    button.Click += (_, _) => navigate(link.Url ?? "");
+                    button.Click += (_, _) => navigate.Markdown(link.Url ?? "");
                     destination.Add(new InlineUIContainer(button));
                     break;
                 case LinkInline image:
@@ -182,6 +183,8 @@ public static class NativeMarkdown
             }
         }
     }
+
+    private sealed record LinkNavigation(Action<string> Wiki, Action<string> Markdown);
 
     private sealed class WikiLinkInline(string target, string label) : LeafInline
     {

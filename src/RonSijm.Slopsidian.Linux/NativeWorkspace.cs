@@ -255,29 +255,8 @@ public sealed partial class NativeWorkspace : IDisposable
         return new NoteResult(file.Path, snippet, match.Offset);
     }
 
-    public string ResolveNoteLink(string link)
-    {
-        var target = link.Split('#', 2)[0];
-        if (target.Length == 0 && Document is not null)
-        {
-            return Document.File.Path;
-        }
-        var decoded = Uri.UnescapeDataString(target).Replace('\\', '/');
-        var withExtension = decoded.EndsWith(".md", StringComparison.OrdinalIgnoreCase) ? decoded : decoded + ".md";
-        var parent = System.IO.Path.GetDirectoryName(Document?.File.Path ?? "")?.Replace('\\', '/') ?? "";
-        var relative = System.IO.Path.GetRelativePath("/", System.IO.Path.GetFullPath(System.IO.Path.Combine("/", parent, withExtension))).Replace('\\', '/');
-        var notes = Notes.ToArray();
-        var exact = notes.FirstOrDefault(note => note.Path == relative) ?? notes.FirstOrDefault(note => note.Path == withExtension);
-        if (exact is not null)
-        {
-            return exact.Path;
-        }
-        var matches = notes.Where(note => note.Name == withExtension).ToArray();
-        if (matches.Length == 1) { return matches[0].Path; }
-        var message = matches.Length > 1 ? "More than one note has this name. Open it from the file list."
-            : "This note was not found. Refresh the vault or create the note.";
-        throw new InvalidOperationException(message);
-    }
+    public string ResolveNoteLink(string link, bool markdown = false) => ResolveLinkTarget(Document?.File.Path ?? "", link, markdown)
+        ?? throw new InvalidOperationException("This note was not found or its name is ambiguous. Open it from the file tree or create the note.");
 
     private string RequireRoot() => Snapshot.Root ?? throw new InvalidOperationException("Open a vault first.");
     private void RequireClean()

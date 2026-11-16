@@ -46,7 +46,7 @@ public sealed record NativeMetadata(
         var headings = document.Descendants<HeadingBlock>().Select(heading => new NativeHeading(InlineText(heading.Inline), heading.Level, heading.Span.Start)).ToArray();
         var links = WikiLinks.Matches(content).Where(match => OutsideCode(match.Index))
             .Select(match => new NativeLink(match.Groups["target"].Value, match.Index, match.Value.StartsWith('!'), match.Groups["target"].Index, match.Groups["target"].Length)).ToList();
-        links.AddRange(document.Descendants<LinkInline>().Where(link => link.Url is not null && !Uri.TryCreate(link.Url, UriKind.Absolute, out _))
+        links.AddRange(document.Descendants<LinkInline>().Where(link => link.Url is not null && (link.Url.StartsWith('/') || !Uri.TryCreate(link.Url, UriKind.Absolute, out _)))
             .Select(link =>
             {
                 var span = link.Reference?.UrlSpan ?? link.UrlSpan;
@@ -151,9 +151,10 @@ public sealed class NativeFrontmatter
         }
         var newline = content.Contains("\r\n", StringComparison.Ordinal) ? "\r\n" : "\n";
         var frontmatter = Read(content);
+        var quotedKey = System.Text.Json.JsonSerializer.Serialize(key);
         if (frontmatter is null)
         {
-            return "---" + newline + key + ": " + rawValue + newline + "---" + newline + content;
+            return "---" + newline + quotedKey + ": " + rawValue + newline + "---" + newline + content;
         }
         if (frontmatter.Error is not null)
         {
@@ -165,7 +166,6 @@ public sealed class NativeFrontmatter
             var end = frontmatter.match.Groups["yaml"].Index + span.End;
             return content[..start] + rawValue + content[end..];
         }
-        var quotedKey = System.Text.Json.JsonSerializer.Serialize(key);
         if (frontmatter.flowClosingOffset is { } closing)
         {
             var index = frontmatter.match.Groups["yaml"].Index + closing;

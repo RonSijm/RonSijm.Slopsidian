@@ -66,7 +66,7 @@ public partial class MainWindow
             .Where(link => link.Target is not null).Select(link => new NativeGraphEdge(link.Source, link.Target!)).Distinct().ToArray();
         var graph = new NativeGraphView(nodes, edges, path =>
         {
-            if (Workspace.Snapshot.Root == root) { Navigate(path); }
+            if (Workspace.Snapshot.Root == root) { _ = OpenPathAsync(path); }
         });
         new Window { Title = "Graph view — Slopsidian", Width = 1050, Height = 760, MinWidth = 600, MinHeight = 420, Content = graph }.Show(this);
     });

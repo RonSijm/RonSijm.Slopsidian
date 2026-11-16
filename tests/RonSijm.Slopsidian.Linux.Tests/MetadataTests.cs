@@ -67,4 +67,27 @@ public sealed class MetadataTests
         Assert.Contains(metadata.Properties, property => property.Key == "#status" && property.Value == "done");
         Assert.EndsWith("---\nBody\n", updated);
     }
+    [Theory]
+    [InlineData("#status")]
+    [InlineData("true")]
+    public void FirstPropertyPreservesItsLiteralKeyAndTheNoteBody(string key)
+    {
+        const string body = "# Body\r\nKeep this text\r\n";
+        var updated = NativeFrontmatter.Set(body, key, "done");
+        var metadata = NativeMetadata.Parse("note.md", updated);
+        Assert.Null(metadata.PropertyError);
+        Assert.Equal(key, Assert.Single(metadata.Properties).Key);
+        Assert.Equal("done", metadata.Properties[0].Value);
+        Assert.EndsWith(body, updated);
+    }
+
+    [Fact]
+    public void RootedMarkdownLinksParticipateInVaultMetadata()
+    {
+        var metadata = NativeMetadata.Parse("Source.md", "[Root note](/Folder/Target.md#Heading)\n");
+        var link = Assert.Single(metadata.Links);
+        Assert.Equal("/Folder/Target.md#Heading", link.Target);
+        Assert.True(link.Markdown);
+    }
+
 }

@@ -215,23 +215,32 @@ public partial class MainWindow
 
     private void Navigate(string link) => _ = NavigateAsync(link);
 
-    private Task NavigateAsync(string link) => RunAsync(async () =>
+    private void NavigateMarkdown(string link) => _ = NavigateAsync(link, true);
+
+    private Task NavigateAsync(string link, bool markdown = false) => RunAsync(async () =>
     {
-        if (Uri.TryCreate(link, UriKind.Absolute, out var url))
+        var path = Workspace.ResolveLinkTarget(Workspace.ActiveTab?.Path ?? "", link, markdown);
+        if (path is null && !link.StartsWith('/') && Uri.TryCreate(link, UriKind.Absolute, out var url))
         {
             if (url.Scheme is not ("http" or "https")) { throw new InvalidOperationException("Only web links and vault note links can be opened."); }
             Process.Start(new ProcessStartInfo(url.AbsoluteUri) { UseShellExecute = true });
             return;
         }
-        await Workspace.OpenTabAsync(Workspace.ResolveNoteLink(link));
+        await Workspace.OpenTabAsync(path ?? Workspace.ResolveNoteLink(link, markdown));
         LoadEditor();
+        NavigateToHeading(link, markdown);
+    });
+
+    private void NavigateToHeading(string link, bool markdown)
+    {
         var anchor = link.Split('#', 2);
         if (anchor.Length > 1 && Workspace.Document is not null)
         {
-            var heading = Workspace.MetadataFor(Workspace.Document.File.Path).Headings.FirstOrDefault(item => item.Title.Equals(Uri.UnescapeDataString(anchor[1]).Replace('-', ' '), StringComparison.OrdinalIgnoreCase));
+            var fragment = markdown ? Uri.UnescapeDataString(anchor[1]) : anchor[1];
+            var heading = Workspace.MetadataFor(Workspace.Document.File.Path).Headings.FirstOrDefault(item => item.Title.Equals(fragment, StringComparison.OrdinalIgnoreCase) || item.Title.Replace(' ', '-').Equals(fragment, StringComparison.OrdinalIgnoreCase));
             if (heading is not null) { JumpToOffset(heading.Offset); }
         }
-    });
+    }
 
     private void AddNavigation(string path)
     {

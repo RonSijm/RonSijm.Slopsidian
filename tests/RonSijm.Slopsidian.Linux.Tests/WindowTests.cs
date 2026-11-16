@@ -130,6 +130,33 @@ public sealed class WindowTests
     }
 
     [AvaloniaFact]
+    public void ReadingRendersTheBodyWithoutTurningYamlPropertiesIntoMarkdown()
+    {
+        var content = new StackPanel();
+        NativeMarkdown.Render(content, "---\nstatus: Draft\npriority: 3\n---\n# Visible body\n", _ => { });
+        var heading = Assert.IsType<SelectableTextBlock>(Assert.Single(content.Children));
+        Assert.Equal("Visible body", Assert.IsType<Run>(Assert.Single(heading.Inlines!)).Text);
+        Assert.Equal(30, heading.FontSize);
+    }
+
+    [AvaloniaTheory]
+    [InlineData("[Note](Folder/Note%2520name.md)", "Folder/Note%2520name.md", true)]
+    [InlineData("[[Folder/Note%20name]]", "Folder/Note%20name", false)]
+    [InlineData("[Web](https://example.test/?q=a%26b)", "https://example.test/?q=a%26b", true)]
+    public void ReadingKeepsLinkKindsAndEncodedTargetsForTheNavigator(string markdown, string expected, bool markdownLink)
+    {
+        string? target = null;
+        var fromMarkdown = false;
+        var content = new StackPanel();
+        NativeMarkdown.Render(content, markdown, link => target = link, link => { target = link; fromMarkdown = true; });
+        var paragraph = Assert.IsType<SelectableTextBlock>(Assert.Single(content.Children));
+        var link = Assert.Single(paragraph.Inlines!.OfType<InlineUIContainer>());
+        Assert.IsType<Button>(link.Child).RaiseEvent(new Avalonia.Interactivity.RoutedEventArgs(Button.ClickEvent));
+        Assert.Equal(expected, target);
+        Assert.Equal(markdownLink, fromMarkdown);
+    }
+
+    [AvaloniaFact]
     public void WikiLinksAreClickableNativeControlsAndCodeRemainsLiteral()
     {
         string? target = null;
