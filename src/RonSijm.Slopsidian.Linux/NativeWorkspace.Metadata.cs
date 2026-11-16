@@ -43,7 +43,7 @@ public sealed partial class NativeWorkspace
         {
             foreach (var link in MetadataFor(entry.Path).Links)
             {
-                if (ResolveLinkTarget(entry.Path, link.Target) == target)
+                if (ResolveLinkTarget(entry.Path, link.Target, link.Markdown) == target)
                 {
                     result.Add(new NativeLocation(entry.Basename, entry.Path, link.Offset, link.Target));
                 }
@@ -52,9 +52,10 @@ public sealed partial class NativeWorkspace
         return result;
     }
 
-    public string? ResolveLinkTarget(string sourcePath, string link)
+    public string? ResolveLinkTarget(string sourcePath, string link, bool markdown = false)
     {
-        var target = Uri.UnescapeDataString(link.Split('#', 2)[0]).Replace('\\', '/');
+        var raw = link.Split('#', 2)[0];
+        var target = (markdown ? Uri.UnescapeDataString(raw) : raw).Trim().Replace('\\', '/').TrimStart('/');
         if (target.Length == 0)
         {
             return sourcePath;
@@ -62,11 +63,15 @@ public sealed partial class NativeWorkspace
         var path = System.IO.Path.HasExtension(target) ? target : target + ".md";
         var parent = System.IO.Path.GetDirectoryName(sourcePath)?.Replace('\\', '/') ?? "";
         var relative = System.IO.Path.GetRelativePath("/", System.IO.Path.GetFullPath(System.IO.Path.Combine("/", parent, path))).Replace('\\', '/');
-        var file = Snapshot.Files.FirstOrDefault(item => item.Path == relative) ?? Snapshot.Files.FirstOrDefault(item => item.Path == path);
+        var explicitRelative = target.StartsWith("./", StringComparison.Ordinal) || target.StartsWith("../", StringComparison.Ordinal);
+        var file = explicitRelative ? Snapshot.Files.FirstOrDefault(item => item.Path == relative)
+            : target.Contains('/') ? Snapshot.Files.FirstOrDefault(item => item.Path == path) ?? Snapshot.Files.FirstOrDefault(item => item.Path == relative)
+            : Snapshot.Files.FirstOrDefault(item => item.Path == relative) ?? Snapshot.Files.FirstOrDefault(item => item.Path == path);
         if (file is not null)
         {
             return file.Path;
         }
+        if (explicitRelative || target.Contains('/')) { return null; }
         var matches = Snapshot.Files.Where(item => item.Name == path || MetadataFor(item.Path).Aliases.Contains(target, StringComparer.Ordinal)).ToArray();
         return matches.Length == 1 ? matches[0].Path : null;
     }

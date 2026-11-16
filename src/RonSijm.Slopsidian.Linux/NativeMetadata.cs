@@ -15,7 +15,7 @@ public sealed record NativeHeading(string Title, int Level, int Offset)
 {
     public Thickness Indent => new((Level - 1) * 12, 4, 0, 4);
 }
-public sealed record NativeLink(string Target, int Offset, bool Embedded);
+public sealed record NativeLink(string Target, int Offset, bool Embedded, int TargetOffset = -1, int TargetLength = 0, bool Markdown = false);
 public sealed record NativeFootnote(string Id, string Text, int Offset);
 public sealed record NativeProperty(string Key, string Value, string Kind, string Raw);
 public sealed record NativeLocation(string Name, string Path, int Offset, string Context = "");
@@ -25,7 +25,7 @@ public sealed record NativeMetadata(
     IReadOnlyList<string> Tags, IReadOnlyList<string> Aliases,
     IReadOnlyList<NativeFootnote> Footnotes, IReadOnlyList<NativeProperty> Properties, string? PropertyError)
 {
-    private static readonly MarkdownPipeline Pipeline = new MarkdownPipelineBuilder().UsePreciseSourceLocation().UseYamlFrontMatter().UseAdvancedExtensions().Build();
+    private static readonly MarkdownPipeline Pipeline = new MarkdownPipelineBuilder().UsePreciseSourceLocation().EnableTrackTrivia().UseYamlFrontMatter().UseAdvancedExtensions().Build();
     private static readonly Regex WikiLinks = new(@"!?\[\[(?<target>[^\]\r\n|]+)(?:\|[^\]\r\n]*)?\]\]", RegexOptions.CultureInvariant, TimeSpan.FromMilliseconds(200));
     private static readonly Regex TagsPattern = new(@"(?<![\p{L}\p{N}_/#])#(?<tag>[\p{L}\p{N}_/-]+)", RegexOptions.CultureInvariant, TimeSpan.FromMilliseconds(200));
     private static readonly Regex FootnotesPattern = new(@"(?m)^\[\^(?<id>[^\]\r\n]+)\]:[ \t]*(?<text>[^\r\n]*)", RegexOptions.CultureInvariant, TimeSpan.FromMilliseconds(200));
@@ -33,22 +33,34 @@ public sealed record NativeMetadata(
     public static NativeMetadata Parse(string path, string content)
     {
         var document = Markdown.Parse(content, Pipeline);
-        var ignored = document.Descendants<CodeBlock>().Select(block => block.Span)
+        var ignored = document.Descendants<CodeBlock>().Where(block => block is not Markdig.Extensions.Yaml.YamlFrontMatterBlock).Select(block => block.Span)
             .Concat(document.Descendants<CodeInline>().Select(inline => inline.Span))
             .Concat(document.Descendants<HtmlBlock>().Select(block => block.Span)).ToArray();
         var frontmatter = NativeFrontmatter.Read(content);
-        bool Visible(int offset) => !ignored.Any(span => offset >= span.Start && offset <= span.End) && (frontmatter is null || offset >= frontmatter.End);
+        bool OutsideCode(int offset) => !ignored.Any(span => offset >= span.Start && offset <= span.End) && !Escaped(content, offset);
+        bool Visible(int offset) => OutsideCode(offset) && (frontmatter is null || offset >= frontmatter.End);
         var headings = document.Descendants<HeadingBlock>().Select(heading => new NativeHeading(InlineText(heading.Inline), heading.Level, heading.Span.Start)).ToArray();
-        var links = WikiLinks.Matches(content).Where(match => Visible(match.Index))
-            .Select(match => new NativeLink(match.Groups["target"].Value.Trim(), match.Index, match.Value.StartsWith('!'))).ToList();
+        var links = WikiLinks.Matches(content).Where(match => OutsideCode(match.Index))
+            .Select(match => new NativeLink(match.Groups["target"].Value, match.Index, match.Value.StartsWith('!'), match.Groups["target"].Index, match.Groups["target"].Length)).ToList();
         links.AddRange(document.Descendants<LinkInline>().Where(link => link.Url is not null && !Uri.TryCreate(link.Url, UriKind.Absolute, out _))
-            .Select(link => new NativeLink(Uri.UnescapeDataString(link.Url!), link.Span.Start, link.IsImage)));
+            .Select(link =>
+            {
+                var span = link.Reference?.UrlSpan ?? link.UrlSpan;
+                return new NativeLink(link.Url!, link.Span.Start, link.IsImage, span.Start, span.Length, true);
+            }));
         var tags = TagsPattern.Matches(content).Where(match => Visible(match.Index)).Select(match => match.Groups["tag"].Value)
             .Concat(frontmatter?.Values("tags") ?? []).Distinct(StringComparer.OrdinalIgnoreCase).Order(StringComparer.OrdinalIgnoreCase).ToArray();
         var footnotes = FootnotesPattern.Matches(content).Where(match => Visible(match.Index))
             .Select(match => new NativeFootnote(match.Groups["id"].Value, match.Groups["text"].Value, match.Index)).ToArray();
         return new NativeMetadata(path, headings, links, tags, frontmatter?.Values("aliases") ?? [], footnotes,
             frontmatter?.Properties ?? [], frontmatter?.Error);
+    }
+
+    private static bool Escaped(string content, int offset)
+    {
+        var count = 0;
+        while (offset > 0 && content[--offset] == '\\') { count++; }
+        return count % 2 != 0;
     }
 
     private static string InlineText(ContainerInline? container)
