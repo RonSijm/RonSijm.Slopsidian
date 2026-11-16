@@ -30,7 +30,7 @@ browser acceptance records are not native Linux acceptance records.
 
 Tests must cover observable workflows, failures and retained drafts. Screenshots
 must compare the native structure with the existing app, rather than accepting
-an unrelated design. The initial 14 tests covered the standalone editor. The 120-test suite now also checks independent tabs, recovery sessions, metadata edits, Linux path identity and file transactions. Native acceptance remains separate from this focused regression suite.
+an unrelated design. The initial 14 tests covered the standalone editor. The 152-test xUnit v3 suite now also checks independent tabs, recovery sessions, metadata edits, Linux path identity, file transactions and native Canvas editing. Native acceptance remains separate from this focused regression suite.
 
 Run `./tools/lint-native.sh` for .NET recommended analyzers, SonarAnalyzer C#,
 format verification and a build treating warnings as errors. The native-project
@@ -55,6 +55,8 @@ absence of a row is not evidence of support.
 | Search | Native Boolean/regex/path/file/tag/property queries, match-case and all-tab draft snapshots; 35 query cases plus shared workflow regression tests |
 | Saved-file recovery | Compatible vault history, automatic/manual saved-text snapshots, retention/disablement and native preview/review/restore; restart, backup and conflict tests pass |
 | File operations | Shared create-folder, rename/reference transaction and vault-trash paths run on Linux; native trash preview, multi-selection and reviewed restore reuse identity-bound tickets |
+| Canvas | Validated source-preserving model, native card widgets, pan/zoom, selection, move/resize, connection drawing and shared source Undo/Redo; edge editing, embedded previews and remaining parity acceptance are still in progress |
+| Framework | .NET 10 with Avalonia 12.1.6, AvaloniaEdit 12.0.0 and DataGrid 12.1.2; their selected assemblies target net10.0 |
 | Tux icon | Generated transparent notebook mascot; embedded window asset and Linux menu PNG |
 | Lint/code smells | Recommended .NET analyzers and SonarAnalyzer configured; strict local gate passed with zero warnings and errors |
 | Remaining core/plugin workflows | Port and acceptance still required |
