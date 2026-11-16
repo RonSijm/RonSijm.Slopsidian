@@ -37,7 +37,7 @@ public sealed class NativeCanvasDocument
         CardText(node), Target(node), Tint(node), FileSubpath(node), GroupText(node, "background"), GroupText(node, "backgroundStyle"))).ToArray();
 
     public IReadOnlyList<NativeCanvasConnection> GetConnections() => Edges(data).Select(edge => new NativeCanvasConnection(Text(edge, "id"), Text(edge, "fromNode"), Text(edge, "toNode"),
-        Option(edge, "fromSide", Sides, "right"), Option(edge, "toSide", Sides, "left"), Option(edge, "fromEnd", Ends, "none"), Option(edge, "toEnd", Ends, "arrow"), Tint(edge), Text(edge, "label", true))).ToArray();
+        Option(edge, "fromSide", Sides, ""), Option(edge, "toSide", Sides, ""), Option(edge, "fromEnd", Ends, ""), Option(edge, "toEnd", Ends, ""), Tint(edge), Text(edge, "label", true))).ToArray();
 
     public string AddCard(string type, string text, int x, int y)
     {

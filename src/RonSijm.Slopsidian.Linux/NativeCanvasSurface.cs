@@ -51,7 +51,8 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
         {
             if (IsInteractive(args.Source) || holdingSpace) { return; }
             var hit = Hit(World(args.GetPosition(this)));
-            if (hit is not null) { EditRequested?.Invoke(hit.Id); args.Handled = true; }
+            if (SelectedConnectionId is { } edge) { ConnectionEditRequested?.Invoke(edge); args.Handled = true; }
+            else if (hit is not null) { EditRequested?.Invoke(hit.Id); args.Handled = true; }
         };
         SizeChanged += (_, _) => { if (needsFit) { Fit(); } else { SyncVisible(); } };
     }
@@ -59,11 +60,13 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
     public bool SnapToGrid { get; set; } = true;
     public bool WheelZoom { get; set; }
     public double Zoom => zoom;
+    public string? SelectedConnectionId { get; private set; }
     public Point InsertionPoint => insertion;
     public Point ViewCenter => World(new Point(Bounds.Width / 2, Bounds.Height / 2));
     public event Action? SelectionChanged;
     public event Action? CameraChanged;
     public event Action<string>? EditRequested;
+    public event Action<string>? ConnectionEditRequested;
     public event Action<IReadOnlyList<string>, int, int>? CardsMoved;
     public event Action<string, int, int>? CardResized;
     public event Action? DeleteRequested;
@@ -79,7 +82,9 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
         cards = nextCards.ToArray();
         cardIndex = cards.ToDictionary(card => card.Id, StringComparer.Ordinal);
         selected.IntersectWith(cards.Select(card => card.Id));
+        if (!nextConnections.Any(edge => edge.Id == SelectedConnectionId)) { SelectedConnectionId = null; }
         edgeLayer.SetConnections(nextConnections);
+        edgeLayer.Select(SelectedConnectionId);
         ClearFrames();
         if (needsFit && Bounds.Width > 0 && Bounds.Height > 0) { Fit(); }
         else { SyncVisible(); }
@@ -88,8 +93,18 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
 
     public void Select(IEnumerable<string> ids)
     {
+        SelectedConnectionId = null;
         selected.Clear();
         selected.UnionWith(ids.Where(cardIndex.ContainsKey));
+        UpdateSelection();
+    }
+
+    public void SelectConnection(string id)
+    {
+        if (!edgeLayer.Contains(id)) { return; }
+        CancelGesture();
+        selected.Clear();
+        SelectedConnectionId = id;
         UpdateSelection();
     }
 
@@ -215,6 +230,7 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
             Focus(); drag = DragKind.Pan; previousPointer = point; args.Pointer.Capture(this); args.Handled = true; return;
         }
         var hit = Hit(insertion);
+        if (SelectConnectionAt(hit, args)) { return; }
         if (buttons.IsRightButtonPressed) { if (hit is not null && !selected.Contains(hit.Id)) { Select([hit.Id]); } return; }
         if (!buttons.IsLeftButtonPressed || IsInteractive(args.Source)) { return; }
         Focus();
@@ -223,6 +239,17 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
         else { BeginCardDrag(hit, args.KeyModifiers, point); }
         args.Pointer.Capture(this);
         args.Handled = true;
+    }
+
+    private bool SelectConnectionAt(NativeCanvasCard? card, PointerPressedEventArgs args)
+    {
+        if (card is { Type: not "group" }) { return false; }
+        var buttons = args.GetCurrentPoint(this).Properties;
+        if (!buttons.IsLeftButtonPressed && !buttons.IsRightButtonPressed) { return false; }
+        var connection = edgeLayer.Hit(insertion, 8 / zoom);
+        if (connection is null) { return false; }
+        Focus(); SelectConnection(connection); args.Handled = true;
+        return true;
     }
 
     private static bool IsInteractive(object? source)
@@ -235,6 +262,7 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
 
     private void BeginRectangle(KeyModifiers modifiers)
     {
+        SelectedConnectionId = null;
         if (!modifiers.HasFlag(KeyModifiers.Shift)) { selected.Clear(); }
         selectionBox = new Rect(dragStart, dragStart);
         drag = DragKind.Rectangle;
@@ -243,6 +271,7 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
 
     private void BeginCardDrag(NativeCanvasCard card, KeyModifiers modifiers, Point point)
     {
+        SelectedConnectionId = null;
         if (zoom >= 0.25 && selected.Count == 1 && selected.Contains(card.Id) && NativeCanvasGeometry.Distance(Screen(Box(card)).BottomRight, point) < 12)
         {
             resizeId = card.Id;
@@ -334,6 +363,7 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
 
     private void UpdateSelection()
     {
+        edgeLayer.Select(SelectedConnectionId);
         foreach (var card in cards) { if (frames.TryGetValue(card.Id, out var frame)) { ColorFrame(card, frame); } }
         overlay.InvalidateVisual();
         SelectionChanged?.Invoke();
@@ -348,9 +378,15 @@ public sealed class NativeCanvasSurface : Grid, IDisposable
         switch (e.Key)
         {
             case Key.Delete: DeleteRequested?.Invoke(); e.Handled = true; break;
-            case Key.Enter: if (selected.FirstOrDefault() is { } id) { EditRequested?.Invoke(id); e.Handled = true; } break;
+            case Key.Enter: RequestEditing(); e.Handled = true; break;
             case Key.Escape: CancelGesture(); Select([]); e.Handled = true; break;
         }
+    }
+
+    private void RequestEditing()
+    {
+        if (SelectedConnectionId is { } edge) { ConnectionEditRequested?.Invoke(edge); }
+        else if (selected.FirstOrDefault() is { } id) { EditRequested?.Invoke(id); }
     }
 
     private void HandleControlKey(KeyEventArgs args)

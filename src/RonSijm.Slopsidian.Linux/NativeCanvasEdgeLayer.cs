@@ -9,10 +9,26 @@ namespace RonSijm.Slopsidian.Linux;
 internal sealed class NativeCanvasEdgeLayer(Func<string, Rect?> bounds) : Control
 {
     private NativeCanvasConnection[] connections = [];
+    private string? selected;
     private Point origin;
     private Rect viewport;
 
     public void SetConnections(IEnumerable<NativeCanvasConnection> value) { connections = value.ToArray(); InvalidateVisual(); }
+    public bool Contains(string id) => connections.Any(edge => edge.Id == id);
+    public void Select(string? id) { selected = id; InvalidateVisual(); }
+
+    public string? Hit(Point point, double tolerance)
+    {
+        foreach (var edge in connections.Reverse())
+        {
+            if (bounds(edge.From) is not { } from || bounds(edge.To) is not { } to) { continue; }
+            var (start, end) = Endpoints(edge, from, to);
+            if (!NativeCanvasGeometry.Between(start, end).Inflate(170 + tolerance).Contains(point)) { continue; }
+            if (NativeCanvasGeometry.DistanceToSegment(point, start, end) <= tolerance) { return edge.Id; }
+            if (edge.Label.Length > 0 && LabelBounds(LabelText(edge.Label), Middle(start, end)).Inflate(tolerance).Contains(point)) { return edge.Id; }
+        }
+        return null;
+    }
     public void SetViewport(Rect viewport)
     {
         this.viewport = viewport;
@@ -34,31 +50,32 @@ internal sealed class NativeCanvasEdgeLayer(Func<string, Rect?> bounds) : Contro
 
     private void DrawConnection(DrawingContext context, NativeCanvasConnection edge, Rect from, Rect to)
     {
-        var start = Endpoint(from, edge.FromSide) - new Vector(origin.X, origin.Y);
-        var end = Endpoint(to, edge.ToSide) - new Vector(origin.X, origin.Y);
-        var distance = Math.Clamp(NativeCanvasGeometry.Distance(start, end) * 0.45, 40, 500);
-        var first = start + Direction(edge.FromSide) * distance;
-        var second = end + Direction(edge.ToSide) * distance;
-        var brush = NativeCanvasPalette.Brush(edge.Color, "MutedBrush");
-        var pen = new Pen(brush, 1.5);
-        var geometry = new StreamGeometry();
-        using (var path = geometry.Open()) { path.BeginFigure(start, false); path.CubicBezierTo(first, second, end); path.EndFigure(false); }
-        context.DrawGeometry(null, pen, geometry);
-        if (edge.FromEnd == "arrow") { Arrow(context, pen, start, Direction(edge.FromSide)); }
-        if (edge.ToEnd == "arrow") { Arrow(context, pen, end, Direction(edge.ToSide)); }
-        if (edge.Label.Length > 0) { DrawLabel(context, edge.Label, BezierMiddle(start, first, second, end)); }
+        var (source, target) = Endpoints(edge, from, to);
+        var start = source - new Vector(origin.X, origin.Y);
+        var end = target - new Vector(origin.X, origin.Y);
+        var brush = selected == edge.Id ? NativePalette.Brush("AccentBrush") : NativeCanvasPalette.Brush(edge.Color, "MutedBrush");
+        var pen = new Pen(brush, selected == edge.Id ? 3 : 1.5);
+        context.DrawLine(pen, start, end);
+        var length = NativeCanvasGeometry.Distance(start, end);
+        var direction = length > 0 ? (end - start) / length : new Vector(1, 0);
+        if (edge.FromEnd == "arrow") { Arrow(context, pen, start, direction); }
+        if (edge.ToEnd != "none") { Arrow(context, pen, end, -direction); }
+        if (edge.Label.Length > 0) { DrawLabel(context, edge.Label, Middle(start, end)); }
     }
 
     private void DrawLabel(DrawingContext context, string label, Point middle)
     {
-        var visible = label.Length > 120 ? label[..120] + "…" : label;
-        var text = new FormattedText(visible, CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
-            new Typeface(TextElement.GetFontFamily(this)), 12, NativePalette.Brush("TextBrush"))
-        { MaxTextWidth = 300, MaxTextHeight = 50, Trimming = TextTrimming.CharacterEllipsis };
-        var point = new Point(middle.X - text.Width / 2, middle.Y - text.Height / 2);
-        context.DrawRectangle(NativePalette.Brush("SurfaceBrush"), null, new Rect(point.X - 4, point.Y - 2, text.Width + 8, text.Height + 4));
-        context.DrawText(text, point);
+        var text = LabelText(label);
+        var box = LabelBounds(text, middle);
+        context.DrawRectangle(NativePalette.Brush("SurfaceBrush"), null, box);
+        context.DrawText(text, new Point(box.X + 4, box.Y + 2));
     }
+
+    private FormattedText LabelText(string label) => new(label.Length > 120 ? label[..120] + "…" : label, CultureInfo.CurrentCulture, FlowDirection.LeftToRight,
+            new Typeface(TextElement.GetFontFamily(this)), 12, NativePalette.Brush("TextBrush"))
+    { MaxTextWidth = 300, MaxTextHeight = 50, Trimming = TextTrimming.CharacterEllipsis };
+
+    private static Rect LabelBounds(FormattedText text, Point middle) => new(middle.X - text.Width / 2 - 4, middle.Y - text.Height - 10, text.Width + 8, text.Height + 4);
 
     private static void Arrow(DrawingContext context, Pen pen, Point tip, Vector direction)
     {
@@ -67,13 +84,32 @@ internal sealed class NativeCanvasEdgeLayer(Func<string, Rect?> bounds) : Contro
         context.DrawLine(pen, tip, tip + direction * 10 - cross * 4);
     }
 
-    private static Point BezierMiddle(Point start, Point first, Point second, Point end) => new((start.X + 3 * first.X + 3 * second.X + end.X) / 8, (start.Y + 3 * first.Y + 3 * second.Y + end.Y) / 8);
+    private static Point Middle(Point start, Point end) => new((start.X + end.X) / 2, (start.Y + end.Y) / 2);
+    private static (Point Start, Point End) Endpoints(NativeCanvasConnection edge, Rect from, Rect to)
+    {
+        var delta = to.Center - from.Center;
+        var horizontal = delta.X > 0 ? "right" : "left";
+        var vertical = delta.Y > 0 ? "bottom" : "top";
+        var automatic = Math.Abs(delta.X) > Math.Abs(delta.Y) ? horizontal : vertical;
+        var fromSide = edge.FromSide.Length > 0 ? edge.FromSide : automatic;
+        var toSide = edge.ToSide.Length > 0 ? edge.ToSide : fromSide switch { "right" => "left", "left" => "right", "top" => "bottom", _ => "top" };
+        return (Endpoint(from, fromSide), Endpoint(to, toSide));
+    }
     private static Point Endpoint(Rect box, string side) => side switch { "top" => new(box.Center.X, box.Top), "bottom" => new(box.Center.X, box.Bottom), "left" => new(box.Left, box.Center.Y), _ => new(box.Right, box.Center.Y) };
-    private static Vector Direction(string side) => side switch { "top" => new(0, -1), "bottom" => new(0, 1), "left" => new(-1, 0), _ => new(1, 0) };
 }
 
 internal static class NativeCanvasGeometry
 {
+    public static Rect Between(Point first, Point second) => new(Math.Min(first.X, second.X), Math.Min(first.Y, second.Y), Math.Abs(first.X - second.X), Math.Abs(first.Y - second.Y));
+    public static double DistanceToSegment(Point point, Point start, Point end)
+    {
+        var direction = end - start;
+        var squared = direction.X * direction.X + direction.Y * direction.Y;
+        if (squared == 0) { return Distance(point, start); }
+        var offset = point - start;
+        var position = Math.Clamp((offset.X * direction.X + offset.Y * direction.Y) / squared, 0, 1);
+        return Distance(point, start + direction * position);
+    }
     public static double Distance(Point first, Point second)
     {
         var x = first.X - second.X;

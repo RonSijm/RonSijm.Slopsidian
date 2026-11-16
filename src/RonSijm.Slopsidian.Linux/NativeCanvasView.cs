@@ -22,10 +22,17 @@ public sealed class NativeCanvasView : UserControl, IDisposable
     private readonly StackPanel error = new() { Spacing = 16, Margin = new Thickness(32), IsVisible = false };
     private readonly TextBlock errorText = new() { TextWrapping = TextWrapping.Wrap, Classes = { "error" } };
     private readonly TextBlock zoom = new() { VerticalAlignment = VerticalAlignment.Center, Classes = { "muted" } };
-    private readonly Button edit;
+    private readonly NativeCanvasInspector inspector;
+    private readonly ContentControl inspectorHost = new();
+    private readonly Grid boardLayout = new() { ColumnDefinitions = new ColumnDefinitions("*,260") };
+    private readonly Flyout inspectorFlyout = new() { Placement = PlacementMode.BottomEdgeAlignedRight };
+    private readonly Button inspectorToggle;
     private NativeCanvasDocument? model;
     private bool disposed;
     private bool stale;
+    private bool compact;
+    private bool changingPanel;
+    private bool? inspectorExpanded;
 
     public NativeCanvasView(NativeWorkspace selectedWorkspace, NativeTab selectedTab, TextDocument document, Action showSource, Action<string> openFile, Action<string, string, bool> navigateLink)
     {
@@ -35,14 +42,16 @@ public sealed class NativeCanvasView : UserControl, IDisposable
         openPath = openFile;
         navigate = navigateLink;
         surface = new NativeCanvasSurface(CardContent) { Name = "CanvasBoard" };
+        inspector = new NativeCanvasInspector(ApplyInspectorChange, surface.SelectConnection);
+        inspectorHost.Content = inspector;
+        inspectorToggle = Button("Inspector", "CanvasInspector", ToggleInspector);
         var layout = new Grid { RowDefinitions = new RowDefinitions("Auto,*,Auto") };
         var toolbar = new WrapPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(12, 8), ItemSpacing = 8, LineSpacing = 8 };
         toolbar.Children.Add(Button("Text card", "CanvasAddText", () => AddCard("text")));
         toolbar.Children.Add(Button("Note", "CanvasAddFile", () => AddCard("file")));
         toolbar.Children.Add(Button("Website", "CanvasAddLink", () => AddCard("link")));
         toolbar.Children.Add(Button("Group", "CanvasAddGroup", () => AddCard("group")));
-        edit = AsyncButton("Edit card…", "CanvasEditCard", EditSelectionAsync);
-        toolbar.Children.Add(edit);
+        toolbar.Children.Add(inspectorToggle);
         toolbar.Children.Add(Button("Connect", "CanvasConnect", ConnectSelection));
         toolbar.Children.Add(Button("Delete", "CanvasDelete", DeleteSelection));
         toolbar.Children.Add(Button("Undo", "CanvasUndo", () => Undo(false)));
@@ -55,7 +64,9 @@ public sealed class NativeCanvasView : UserControl, IDisposable
         error.Children.Add(errorText);
         error.Children.Add(Button("Edit Canvas source", "CanvasInvalidSource", showSource));
         content.Children.Add(error);
-        Grid.SetRow(content, 1); layout.Children.Add(content);
+        boardLayout.Children.Add(content);
+        Grid.SetColumn(inspectorHost, 1); boardLayout.Children.Add(inspectorHost);
+        Grid.SetRow(boardLayout, 1); layout.Children.Add(boardLayout);
         var footer = new Grid { ColumnDefinitions = new ColumnDefinitions("*,Auto,Auto,Auto"), Margin = new Thickness(12, 8), ColumnSpacing = 8 };
         footer.Children.Add(status);
         Grid.SetColumn(zoom, 1); footer.Children.Add(zoom);
@@ -65,14 +76,18 @@ public sealed class NativeCanvasView : UserControl, IDisposable
         Content = layout;
         surface.CardsMoved += (ids, x, y) => Change(current => current.MoveCards(ids, x, y));
         surface.CardResized += (id, width, height) => Change(current => current.UpdateCard(id, node => { node["width"] = width; node["height"] = height; }));
-        surface.SelectionChanged += () => edit.IsEnabled = surface.GetSelection().Count == 1;
+        surface.SelectionChanged += UpdateSelection;
         surface.CameraChanged += () => zoom.Text = Math.Round(surface.Zoom * 100) + "%";
-        surface.EditRequested += async id => await RunAsync(() => EditCardAsync(id));
+        surface.EditRequested += _ => Run(OpenInspector);
+        surface.ConnectionEditRequested += _ => Run(OpenInspector);
         surface.DeleteRequested += () => Run(DeleteSelection);
         surface.CopyRequested += async () => await RunAsync(CopyAsync);
         surface.PasteRequested += async () => await RunAsync(PasteAsync);
         surface.UndoRequested += redo => Run(() => Undo(redo));
         source.TextChanged += SourceChanged;
+        SizeChanged += (_, _) => UpdateInspectorLayout();
+        inspectorFlyout.Opened += (_, _) => { if (!changingPanel) { inspectorExpanded = true; } };
+        inspectorFlyout.Closed += (_, _) => { if (compact && !changingPanel) { inspectorExpanded = false; } };
         AttachedToVisualTree += (_, _) => { if (stale) { ReloadModel(); } };
         ReloadModel();
     }
@@ -81,12 +96,6 @@ public sealed class NativeCanvasView : UserControl, IDisposable
     {
         var result = new Button { Content = text, Name = name };
         result.Click += (_, _) => Run(action);
-        return result;
-    }
-    private Button AsyncButton(string text, string name, Func<Task> action)
-    {
-        var result = new Button { Content = text, Name = name };
-        result.Click += async (_, _) => await RunAsync(action);
         return result;
     }
     private void Run(Action action) { try { Guard(); action(); } catch (Exception exception) { status.Text = exception.Message; } }
@@ -109,6 +118,7 @@ public sealed class NativeCanvasView : UserControl, IDisposable
         catch (InvalidDataException exception)
         {
             model = null;
+            UpdateSelection();
             surface.IsVisible = false; error.IsVisible = true; errorText.Text = exception.Message;
             status.Text = "The original Canvas source is retained.";
         }
@@ -128,7 +138,56 @@ public sealed class NativeCanvasView : UserControl, IDisposable
         if (mutation(current)) { source.Text = current.Source; }
     });
 
-    public void RefreshTheme() => surface.RefreshTheme();
+    public void RefreshTheme() { surface.RefreshTheme(); inspector.RefreshTheme(); }
+
+    private void UpdateSelection()
+    {
+        var selected = surface.GetSelection();
+        var card = selected.Count == 1 ? model?.GetCards().FirstOrDefault(item => item.Id == selected[0]) : null;
+        var edge = model?.GetConnections().FirstOrDefault(item => item.Id == surface.SelectedConnectionId);
+        inspector.Update(card, edge, selected.Count, model?.GetConnections() ?? []);
+    }
+
+    private void ApplyInspectorChange(bool connection, string id, string key, JsonNode? value)
+    {
+        var current = RequireModel();
+        void Apply(JsonObject node) { if (value is null) { node.Remove(key); } else { node[key] = value.DeepClone(); } }
+        var changed = connection ? current.UpdateConnection(id, Apply) : current.UpdateCard(id, Apply);
+        if (changed) { source.Text = current.Source; }
+    }
+
+    private void ToggleInspector()
+    {
+        if (compact) { return; } // The native button's attached flyout owns compact toggling.
+        inspectorExpanded = !(inspectorExpanded ?? true);
+        UpdateInspectorLayout();
+    }
+    private void OpenInspector() { inspectorExpanded = true; UpdateInspectorLayout(); }
+
+    private void UpdateInspectorLayout()
+    {
+        var nextCompact = Bounds.Width < 650;
+        var show = inspectorExpanded ?? !nextCompact;
+        changingPanel = true;
+        try
+        {
+            if (nextCompact != compact)
+            {
+                inspectorFlyout.Hide(); inspectorFlyout.Content = null; inspectorHost.Content = null;
+                compact = nextCompact;
+                inspectorToggle.Flyout = compact ? inspectorFlyout : null;
+                if (compact) { inspectorFlyout.Content = inspector; }
+                else { inspectorHost.Content = inspector; }
+            }
+            inspector.Width = compact ? 260 : double.NaN;
+            inspector.MaxHeight = compact ? Math.Max(150, Bounds.Height - 100) : double.PositiveInfinity;
+            inspectorHost.IsVisible = !compact && show;
+            boardLayout.ColumnDefinitions[1].Width = new GridLength(!compact && show ? 260 : 0);
+            if (compact && show && !inspectorFlyout.IsOpen && TopLevel.GetTopLevel(this) is not null) { inspectorFlyout.ShowAt(inspectorToggle); }
+            else if (!show) { inspectorFlyout.Hide(); }
+        }
+        finally { changingPanel = false; }
+    }
 
     private void AddCard(string type) => _ = RunAsync(() => CreateCardAsync(type));
 
@@ -154,26 +213,6 @@ public sealed class NativeCanvasView : UserControl, IDisposable
             surface.Select([id]);
         });
     }
-    private Task EditSelectionAsync()
-    {
-        var selected = surface.GetSelection();
-        return selected.Count > 0 ? EditCardAsync(selected[0]) : Task.CompletedTask;
-    }
-    private async Task EditCardAsync(string id)
-    {
-        var current = RequireModel();
-        var card = current.GetCards().FirstOrDefault(item => item.Id == id) ?? throw new InvalidOperationException("This Canvas card no longer exists.");
-        var before = source.Text;
-        var owner = TopLevel.GetTopLevel(this) as Window ?? throw new InvalidOperationException("Open the Canvas in a window before editing its cards.");
-        await NativeCanvasCardDialog.EditAsync(owner, card, changed =>
-        {
-            Guard();
-            if (source.Text != before) { throw new InvalidOperationException("The Canvas changed while this card editor was open. Reopen it and review the current card; your input is retained here."); }
-            var latest = RequireModel();
-            latest.UpdateCard(id, node => ApplyCard(node, changed));
-            source.Text = latest.Source;
-        });
-    }
     private static void ApplyCard(JsonObject node, NativeCanvasCard card)
     {
         node["x"] = card.X; node["y"] = card.Y; node["width"] = card.Width; node["height"] = card.Height;
@@ -193,11 +232,12 @@ public sealed class NativeCanvasView : UserControl, IDisposable
         if (selected.Count != 2) { throw new InvalidOperationException("Select two cards to connect them."); }
         var current = RequireModel(); current.Connect(selected[0], selected[1]); source.Text = current.Source;
     }
-    private void DeleteSelection() => Change(current => current.RemoveCards(surface.GetSelection()));
+    private void DeleteSelection() => Change(current => surface.SelectedConnectionId is { } edge ? current.RemoveConnection(edge) : current.RemoveCards(surface.GetSelection()));
     private void Undo(bool redo) { Guard(); if (redo) { source.UndoStack.Redo(); } else { source.UndoStack.Undo(); } }
     private async Task CopyAsync()
     {
         var clipboard = TopLevel.GetTopLevel(this)?.Clipboard;
+        if (surface.GetSelection().Count == 0) { throw new InvalidOperationException("Select cards to copy."); }
         if (clipboard is not null) { await clipboard.SetTextAsync(RequireModel().CopySelection(surface.GetSelection())); }
     }
     private async Task PasteAsync()
@@ -229,5 +269,5 @@ public sealed class NativeCanvasView : UserControl, IDisposable
         }
         return new ScrollViewer { Content = stack, HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Disabled };
     }
-    public void Dispose() { disposed = true; source.TextChanged -= SourceChanged; surface.Dispose(); }
+    public void Dispose() { disposed = true; source.TextChanged -= SourceChanged; inspectorFlyout.Hide(); surface.Dispose(); }
 }
