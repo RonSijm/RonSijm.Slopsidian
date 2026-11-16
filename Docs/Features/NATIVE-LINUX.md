@@ -19,8 +19,10 @@ workflows in `Docs/Project/NATIVE-PORT.md` have been implemented and accepted.
   and line endings are retained.
 - Retain sessions and unsaved drafts in a private atomic application profile.
   Recovery data for a removed note is retained; its recovery UI is still pending.
-- Search paths and note contents, including open drafts. Content search skips
-  notes over 4 MiB; richer search operators are still pending.
+- Search saved notes and open drafts with Boolean expressions, quoted phrases,
+  regex, path/file/tag filters, typed YAML property comparisons and match case.
+  Invalid queries report an error. Content search skips notes over 4 MiB;
+  path-only queries can still match those files.
 - Create nested notes and folders; use the configured default note location.
 - Rename/move a note and update its Markdown, wiki and YAML references in one
   guarded transaction. Move notes to vault-local `.trash` without overwriting
@@ -97,7 +99,7 @@ The packaging script stages publish outputs, notices and launchers only.
 ## Outstanding work
 
 Canvas/Bases widgets, attachments, advanced Markdown/Live Preview, audio,
-slides, preview/composition/conversion workflows, rich search, complete module
+slides, preview/composition/conversion workflows, complete search-pane behavior, complete module
 lifecycles, editable hotkeys, full bookmark/workspace compatibility, saved-file
 snapshot screens and community-plugin compatibility remain under development.
 The current split is a reading preview, not independent editor groups. Basic
