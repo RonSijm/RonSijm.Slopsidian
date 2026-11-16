@@ -24,34 +24,49 @@ public sealed partial class NativeWorkspace
     private async Task<IReadOnlyList<VaultFileEdit>> RenameReferencesAsync(string oldPath, string newPath)
     {
         var edits = new List<VaultFileEdit>();
-        foreach (var note in Notes)
+        foreach (var path in Notes.Select(note => note.Path))
         {
-            var document = await vault.ReadAsync(note.Path, expectedRoot: RequireRoot());
-            var parsed = NativeMetadata.Parse(note.Path, document.Content);
-            if (parsed.PropertyError is not null) { throw new InvalidOperationException("Correct the properties in " + note.Path + " before updating references."); }
-            var nextSource = note.Path == oldPath ? newPath : note.Path;
-            var changes = new Dictionary<int, (int Length, string Text)>();
-            foreach (var link in parsed.Links)
-            {
-                var target = ResolveLinkTarget(note.Path, link.Target, link.Markdown);
-                var movedRelative = nextSource != note.Path && link.Target.Split('#')[0].Length > 0 && !link.Target.StartsWith('/');
-                if (target != oldPath && !movedRelative) { continue; }
-                if (target is null) { throw new InvalidOperationException("Resolve this link before moving its note: " + link.Target); }
-                var destination = target == oldPath ? newPath : target;
-                var suffix = link.Target.Contains('#') ? link.Target[link.Target.IndexOf('#')..] : "";
-                var replacement = link.Markdown ? MarkdownPath(nextSource, destination) : "/" + destination;
-                if (!link.Markdown && !link.Target.Split('#')[0].EndsWith(".md", StringComparison.OrdinalIgnoreCase) && replacement.EndsWith(".md", StringComparison.OrdinalIgnoreCase)) { replacement = replacement[..^3]; }
-                if (link.TargetOffset < 0 || link.TargetLength <= 0) { throw new InvalidOperationException("This reference has no editable source range: " + link.Target); }
-                changes[link.TargetOffset] = (link.TargetLength, replacement + suffix);
-            }
-            var updated = new StringBuilder(document.Content);
-            foreach (var change in changes.OrderByDescending(pair => pair.Key))
-            {
-                updated.Remove(change.Key, change.Value.Length).Insert(change.Key, change.Value.Text);
-            }
-            if (changes.Count > 0) { edits.Add(new VaultFileEdit(note.Path, document.Version, updated.ToString())); }
+            var document = await vault.ReadAsync(path, expectedRoot: RequireRoot());
+            var parsed = NativeMetadata.Parse(path, document.Content);
+            if (parsed.PropertyError is not null) { throw new InvalidOperationException("Correct the properties in " + path + " before updating references."); }
+            var nextSource = path == oldPath ? newPath : path;
+            var updated = RewriteRenameReferences(document, parsed.Links, nextSource, oldPath, newPath);
+            if (updated != document.Content) { edits.Add(new VaultFileEdit(path, document.Version, updated)); }
         }
         return edits;
+    }
+
+    private string RewriteRenameReferences(VaultDocument document, IReadOnlyList<NativeLink> links, string nextSource, string oldPath, string newPath)
+    {
+        var changes = new Dictionary<int, (int Length, string Text)>();
+        foreach (var link in links)
+        {
+            var replacement = RenameLinkReplacement(document.File.Path, nextSource, link, oldPath, newPath);
+            if (replacement is null) { continue; }
+            if (link.TargetOffset < 0 || link.TargetLength <= 0) { throw new InvalidOperationException("This reference has no editable source range: " + link.Target); }
+            changes[link.TargetOffset] = (link.TargetLength, replacement);
+        }
+        var updated = new StringBuilder(document.Content);
+        foreach (var change in changes.OrderByDescending(pair => pair.Key))
+        {
+            updated.Remove(change.Key, change.Value.Length).Insert(change.Key, change.Value.Text);
+        }
+        return updated.ToString();
+    }
+
+    private string? RenameLinkReplacement(string source, string nextSource, NativeLink link, string oldPath, string newPath)
+    {
+        var target = ResolveLinkTarget(source, link.Target, link.Markdown);
+        var pathPart = link.Target.Split('#', 2)[0];
+        var movedRelative = nextSource != source && pathPart.Length > 0 && !link.Target.StartsWith('/');
+        if (target != oldPath && !movedRelative) { return null; }
+        if (target is null) { throw new InvalidOperationException("Resolve this link before moving its note: " + link.Target); }
+        var destination = target == oldPath ? newPath : target;
+        var suffix = link.Target.Contains('#') ? link.Target[link.Target.IndexOf('#')..] : "";
+        if (link.Markdown) { return MarkdownPath(nextSource, destination) + suffix; }
+        var replacement = "/" + destination;
+        if (!pathPart.EndsWith(".md", StringComparison.OrdinalIgnoreCase) && replacement.EndsWith(".md", StringComparison.OrdinalIgnoreCase)) { replacement = replacement[..^3]; }
+        return replacement + suffix;
     }
 
     private static string MarkdownPath(string source, string destination)

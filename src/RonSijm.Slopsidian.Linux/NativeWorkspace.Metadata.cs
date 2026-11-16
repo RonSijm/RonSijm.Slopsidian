@@ -4,7 +4,7 @@ namespace RonSijm.Slopsidian.Linux;
 
 public sealed partial class NativeWorkspace
 {
-    private IReadOnlyDictionary<string, NativeMetadata> metadata = new Dictionary<string, NativeMetadata>();
+    private Dictionary<string, NativeMetadata> metadata = new Dictionary<string, NativeMetadata>();
     private readonly Dictionary<string, (string Text, NativeMetadata Value)> draftMetadata = new(StringComparer.Ordinal);
     public IReadOnlyList<MetadataIssue> MetadataErrors { get; private set; } = [];
     public IReadOnlyDictionary<string, NativeMetadata> Metadata => metadata;
@@ -41,13 +41,8 @@ public sealed partial class NativeWorkspace
         var result = new List<NativeLocation>();
         foreach (var entry in Notes)
         {
-            foreach (var link in MetadataFor(entry.Path).Links)
-            {
-                if (ResolveLinkTarget(entry.Path, link.Target, link.Markdown) == target)
-                {
-                    result.Add(new NativeLocation(entry.Basename, entry.Path, link.Offset, link.Target));
-                }
-            }
+            var references = MetadataFor(entry.Path).Links.Where(link => ResolveLinkTarget(entry.Path, link.Target, link.Markdown) == target);
+            result.AddRange(references.Select(link => new NativeLocation(entry.Basename, entry.Path, link.Offset, link.Target)));
         }
         return result;
     }
@@ -55,7 +50,9 @@ public sealed partial class NativeWorkspace
     public string? ResolveLinkTarget(string sourcePath, string link, bool markdown = false)
     {
         var raw = link.Split('#', 2)[0];
-        var target = (markdown ? Uri.UnescapeDataString(raw) : raw).Trim().Replace('\\', '/').TrimStart('/');
+        var decoded = (markdown ? Uri.UnescapeDataString(raw) : raw).Trim().Replace('\\', '/');
+        var rooted = decoded.StartsWith('/');
+        var target = decoded.TrimStart('/');
         if (target.Length == 0)
         {
             return sourcePath;
@@ -64,14 +61,22 @@ public sealed partial class NativeWorkspace
         var parent = System.IO.Path.GetDirectoryName(sourcePath)?.Replace('\\', '/') ?? "";
         var relative = System.IO.Path.GetRelativePath("/", System.IO.Path.GetFullPath(System.IO.Path.Combine("/", parent, path))).Replace('\\', '/');
         var explicitRelative = target.StartsWith("./", StringComparison.Ordinal) || target.StartsWith("../", StringComparison.Ordinal);
-        var file = explicitRelative ? Snapshot.Files.FirstOrDefault(item => item.Path == relative)
-            : target.Contains('/') ? Snapshot.Files.FirstOrDefault(item => item.Path == path) ?? Snapshot.Files.FirstOrDefault(item => item.Path == relative)
-            : Snapshot.Files.FirstOrDefault(item => item.Path == relative) ?? Snapshot.Files.FirstOrDefault(item => item.Path == path);
+        VaultFile? file;
+        if (rooted) { file = Snapshot.Files.FirstOrDefault(item => item.Path == path); }
+        else if (explicitRelative) { file = Snapshot.Files.FirstOrDefault(item => item.Path == relative); }
+        else if (target.Contains('/'))
+        {
+            file = Snapshot.Files.FirstOrDefault(item => item.Path == path) ?? Snapshot.Files.FirstOrDefault(item => item.Path == relative);
+        }
+        else
+        {
+            file = Snapshot.Files.FirstOrDefault(item => item.Path == relative) ?? Snapshot.Files.FirstOrDefault(item => item.Path == path);
+        }
         if (file is not null)
         {
             return file.Path;
         }
-        if (explicitRelative || target.Contains('/')) { return null; }
+        if (rooted || explicitRelative || target.Contains('/')) { return null; }
         var matches = Snapshot.Files.Where(item => item.Name == path || MetadataFor(item.Path).Aliases.Contains(target, StringComparer.Ordinal)).ToArray();
         return matches.Length == 1 ? matches[0].Path : null;
     }

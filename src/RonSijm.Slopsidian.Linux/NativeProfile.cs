@@ -122,15 +122,17 @@ public sealed class NativeProfile(string? directory = null) : IDisposable
         {
             throw new InvalidDataException("The native profile contains invalid preferences or paths.");
         }
-        foreach (var session in state.Workspaces.Values.Concat(state.VaultSessions.Values).Append(state.Session).Where(session => session is not null))
+        var sessions = state.Workspaces.Values.Concat(state.VaultSessions.Values);
+        if (state.Session is not null) { sessions = sessions.Append(state.Session); }
+        if (sessions.Any(InvalidSession))
         {
-            if (string.IsNullOrWhiteSpace(session!.Root) || session.Tabs is null || session.Tabs.Any(tab => tab is null
-                || string.IsNullOrWhiteSpace(tab.Path) || tab.Version is null || !double.IsFinite(tab.ScrollOffset)))
-            {
-                throw new InvalidDataException("The native profile contains an invalid recovery session. It was not changed.");
-            }
+            throw new InvalidDataException("The native profile contains an invalid recovery session. It was not changed.");
         }
     }
+
+    private static bool InvalidSession(NativeSession? session) => session is null || string.IsNullOrWhiteSpace(session.Root)
+        || session.Tabs is null || session.Tabs.Any(tab => tab is null || string.IsNullOrWhiteSpace(tab.Path)
+            || tab.Version is null || !double.IsFinite(tab.ScrollOffset));
 
     public static string WorkspaceKey(string root, string name) => Convert.ToHexStringLower(SHA256.HashData(Encoding.UTF8.GetBytes(root))) + ":" + name;
     public void Dispose() => gate.Dispose();

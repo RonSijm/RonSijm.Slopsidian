@@ -107,6 +107,7 @@ public sealed class SessionTests : IDisposable
 
     [Theory]
     [InlineData("{\"version\":1,\"preferences\":null}")]
+    [InlineData("{\"version\":1,\"workspaces\":{\"broken\":null}}") ]
     [InlineData("{\"version\":1,\"session\":{\"root\":\"/vault\",\"tabs\":null}}")]
     public async Task InvalidProfileRemainsUntouched(string json)
     {

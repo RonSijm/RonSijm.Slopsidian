@@ -268,9 +268,10 @@ public sealed partial class NativeWorkspace : IDisposable
             return exact.Path;
         }
         var matches = notes.Where(note => note.Name == withExtension).ToArray();
-        return matches.Length == 1 ? matches[0].Path : throw new InvalidOperationException(matches.Length > 1
-            ? "More than one note has this name. Open it from the file list."
-            : "This note was not found. Refresh the vault or create the note.");
+        if (matches.Length == 1) { return matches[0].Path; }
+        var message = matches.Length > 1 ? "More than one note has this name. Open it from the file list."
+            : "This note was not found. Refresh the vault or create the note.";
+        throw new InvalidOperationException(message);
     }
 
     private string RequireRoot() => Snapshot.Root ?? throw new InvalidOperationException("Open a vault first.");

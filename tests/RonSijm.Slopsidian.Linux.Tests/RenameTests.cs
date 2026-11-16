@@ -41,6 +41,16 @@ public sealed class RenameTests : IDisposable
         Assert.Contains("[[/100%20]]", source.Text);
     }
 
+    [Fact]
+    public async Task VaultRootLinksDoNotResolveToSameNamedNotesInTheCurrentFolder()
+    {
+        await workspace.OpenVaultAsync(directory);
+        await workspace.CreateTabAsync("Target.md", "Root");
+        await workspace.CreateTabAsync("Folder/Target.md", "Nested");
+        Assert.Equal("Target.md", workspace.ResolveLinkTarget("Folder/Source.md", "/Target"));
+        Assert.Equal("Folder/Target.md", workspace.ResolveLinkTarget("Folder/Source.md", "Target"));
+    }
+
     public void Dispose()
     {
         workspace.Dispose();
