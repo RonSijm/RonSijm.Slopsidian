@@ -201,7 +201,7 @@ public sealed class NativeGraphView : UserControl
                 {
                     var delta = positions[nodes[left].Path] - positions[nodes[right].Path];
                     var distance = Math.Max(15, Distance(delta));
-                    var force = delta * (900 / (distance * distance * distance));
+                    var force = delta * (50_000 / (distance * distance * distance));
                     forces[nodes[left].Path] += force;
                     forces[nodes[right].Path] -= force;
                 }
