@@ -131,13 +131,16 @@
               <TextBlock Name="EmptyHint" Text="Ctrl+O opens the quick switcher. Ctrl+P opens commands." Classes="muted" TextWrapping="Wrap" LineHeight="24" />
             </StackPanel>
             <TabControl Name="EditorTabs" Classes="editor-modes" IsVisible="False" Margin="24,8,24,12" SelectionChanged="ModeChanged">
-              <TabItem Header="Source">
+              <TabItem Name="SourceModeTab" Header="Source">
                 <edit:TextEditor Name="Editor" ShowLineNumbers="True" WordWrap="True" FontFamily="DejaVu Sans Mono, monospace" FontSize="16" Background="{DynamicResource SurfaceBrush}" Foreground="{DynamicResource TextBrush}" Padding="12,20" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" />
               </TabItem>
-              <TabItem Header="Reading">
+              <TabItem Name="ReadingModeTab" Header="Reading">
                 <ScrollViewer Name="ReadingScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                   <StackPanel Name="ReadingContent" Margin="32,24,32,48" MaxWidth="800" HorizontalAlignment="Stretch" Spacing="14" />
                 </ScrollViewer>
+              </TabItem>
+              <TabItem Name="CanvasModeTab" Header="Canvas" IsVisible="False">
+                <ContentControl Name="CanvasHost" />
               </TabItem>
             </TabControl>
           </Grid>

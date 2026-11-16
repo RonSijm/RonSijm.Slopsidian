@@ -93,6 +93,7 @@ public partial class MainWindow : Window
     private async Task FinishVaultOpenAsync()
     {
         pendingRecovery.Clear();
+        DisposeCanvasViews();
         buffers.Clear();
         displayedTab = null;
         navigation.Clear();
@@ -185,7 +186,7 @@ public partial class MainWindow : Window
         if (displayedTab is null) { return; }
         displayedTab.Caret = Editor.CaretOffset;
         displayedTab.ScrollOffset = Editor.VerticalOffset;
-        displayedTab.Reading = EditorTabs.SelectedIndex == 1;
+        displayedTab.ViewMode = CurrentViewMode();
     }
 
     private void LoadEditor()
@@ -212,12 +213,14 @@ public partial class MainWindow : Window
                 Editor.Document = buffer;
                 Editor.CaretOffset = Math.Clamp(tab.Caret, 0, buffer.TextLength);
                 Editor.ScrollToVerticalOffset(tab.ScrollOffset);
-                EditorTabs.SelectedIndex = tab.Reading ? 1 : 0;
+                ConfigureDocumentView(tab, buffer);
                 NoteTitle.Text = tab.Path;
                 AddNavigation(tab.Path);
             }
             else
             {
+                CanvasHost.Content = null;
+                CanvasModeTab.IsVisible = false;
                 Editor.Document = new TextDocument();
                 NoteTitle.Text = "No file open";
             }
@@ -240,6 +243,7 @@ public partial class MainWindow : Window
     private void UpdateStatus()
     {
         Title = (Workspace.IsDirty ? "* " : "") + (Workspace.Document?.File.Basename ?? "Slopsidian") + " — Slopsidian Native";
+        CanvasHost.IsEnabled = !busy;
         SaveButton.IsEnabled = !busy && Workspace.IsDirty;
         NewNoteButton.IsEnabled = !busy && Workspace.Snapshot.Root is not null;
         RefreshButton.IsEnabled = !busy && Workspace.Snapshot.Root is not null;
@@ -264,8 +268,9 @@ public partial class MainWindow : Window
 
     private void ModeChanged(object? sender, SelectionChangedEventArgs args)
     {
-        if (loadingDocument || EditorTabs is null || ReadingContent is null) { return; }
-        if (Workspace.ActiveTab is not null) { Workspace.ActiveTab.Reading = EditorTabs.SelectedIndex == 1; }
+        if (!ReferenceEquals(args.Source, EditorTabs) || loadingDocument || EditorTabs is null || ReadingContent is null) { return; }
+        if (Workspace.ActiveTab is not null) { Workspace.ActiveTab.ViewMode = CurrentViewMode(); }
+        UpdateModeMargin();
         if (EditorTabs.SelectedIndex == 1) { RenderReading(); }
     }
 
@@ -376,6 +381,7 @@ public partial class MainWindow : Window
         StopTimers();
         search?.Cancel();
         search?.Dispose();
+        DisposeCanvasViews();
         Workspace.Dispose();
         profile.Dispose();
     }

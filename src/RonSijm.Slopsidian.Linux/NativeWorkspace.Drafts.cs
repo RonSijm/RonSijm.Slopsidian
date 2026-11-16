@@ -22,7 +22,7 @@ public sealed partial class NativeWorkspace
         {
             Caret = Math.Clamp(draft.Caret, 0, draft.Draft.Length),
             ScrollOffset = draft.ScrollOffset,
-            Reading = draft.Reading,
+            ViewMode = draft.ViewMode ?? (draft.Reading ? "reading" : NativeTab.InitialMode(created.File.Extension)),
             Pinned = draft.Pinned
         };
         tabs.Add(tab);

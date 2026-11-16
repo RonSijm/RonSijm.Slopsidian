@@ -39,6 +39,7 @@ public partial class MainWindow
         {
             if (!await ConfirmTabEditsAsync(tab)) { return; }
             Workspace.CloseTab(tab);
+            DisposeCanvasView(tab);
             buffers.Remove(tab);
             LoadEditor();
             await PersistProfileAsync();

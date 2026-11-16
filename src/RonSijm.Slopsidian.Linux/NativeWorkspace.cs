@@ -125,6 +125,7 @@ public sealed partial class NativeWorkspace : IDisposable
         {
             throw new InvalidOperationException("This tab is no longer open.");
         }
+        if (tab.Document.File.Extension.Equals("canvas", StringComparison.OrdinalIgnoreCase)) { _ = new NativeCanvasDocument(tab.Text); }
         var saved = await vault.WriteAsync(new WriteFileRequest(tab.Path, tab.Text, tab.Document.Version, RequireRoot()), false);
         tab.AcceptSaved(saved);
         FileObserved?.Invoke(tab.Path);
@@ -191,7 +192,7 @@ public sealed partial class NativeWorkspace : IDisposable
     public NativeSession CaptureSession()
     {
         var states = tabs.Select(tab => new NativeTabState(tab.Path, tab.Caret, tab.ScrollOffset, tab.Reading, tab.Pinned,
-            tab.IsDirty ? tab.Text : null, tab.Document.Version, tab.Document.HasBom)).ToArray();
+            tab.IsDirty ? tab.Text : null, tab.Document.Version, tab.Document.HasBom, tab.ViewMode)).ToArray();
         return new NativeSession(RequireRoot(), ActiveTab?.Path, states.Concat(orphanedDrafts).ToArray());
     }
 
@@ -214,10 +215,7 @@ public sealed partial class NativeWorkspace : IDisposable
                 continue;
             }
             var tab = await OpenTabAsync(saved.Path);
-            tab.Caret = Math.Clamp(saved.Caret, 0, saved.Draft?.Length ?? tab.Text.Length);
-            tab.ScrollOffset = Math.Max(0, saved.ScrollOffset);
-            tab.Reading = saved.Reading;
-            tab.Pinned = saved.Pinned;
+            RestoreTabView(tab, saved);
             if (saved.Draft is not null)
             {
                 var changed = saved.Version != tab.Document.Version;
@@ -227,6 +225,14 @@ public sealed partial class NativeWorkspace : IDisposable
             }
         }
         ActiveTab = tabs.FirstOrDefault(tab => tab.Path == session.Active) ?? tabs.FirstOrDefault();
+    }
+
+    private static void RestoreTabView(NativeTab tab, NativeTabState saved)
+    {
+        tab.Caret = Math.Clamp(saved.Caret, 0, saved.Draft?.Length ?? tab.Text.Length);
+        tab.ScrollOffset = Math.Max(0, saved.ScrollOffset);
+        tab.ViewMode = saved.ViewMode ?? (saved.Reading ? "reading" : NativeTab.InitialMode(tab.Document.File.Extension));
+        tab.Pinned = saved.Pinned;
     }
 
     public Task<IReadOnlyList<NoteResult>> SearchAsync(string query, CancellationToken cancellationToken) => SearchAsync(query, false, cancellationToken);

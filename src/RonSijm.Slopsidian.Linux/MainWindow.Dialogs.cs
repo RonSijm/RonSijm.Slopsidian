@@ -91,6 +91,7 @@ public partial class MainWindow
         {
             Application.Current.RequestedThemeVariant = preferences.Theme switch { "light" => ThemeVariant.Light, "system" => ThemeVariant.Default, _ => ThemeVariant.Dark };
         }
+        foreach (var view in canvasViews.Values) { view.RefreshTheme(); }
         Editor.FontSize = Math.Clamp(preferences.FontSize, 10, 32);
         Editor.ShowLineNumbers = preferences.LineNumbers;
         Editor.WordWrap = preferences.WordWrap;

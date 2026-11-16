@@ -74,6 +74,7 @@ public partial class MainWindow
 
     private IReadOnlyList<NativeCommand> Commands() =>
     [
+        new("canvas:new-file", "Canvas: Create new Canvas", "", NewCanvasAsync),
         new("file:new", "Create a new note", "Ctrl+N", NewNoteAsync),
         new("vault:open", "Open or create a vault", "Ctrl+Shift+O", ChooseVaultAsync),
         new("switcher:open", "Quick switcher: Open another note", "Ctrl+O", QuickSwitcherAsync),
@@ -221,9 +222,9 @@ public partial class MainWindow
 
     private void NavigateMarkdown(string link) => _ = NavigateAsync(link, true);
 
-    private Task NavigateAsync(string link, bool markdown = false) => RunAsync(async () =>
+    private Task NavigateAsync(string link, bool markdown = false, string? sourcePath = null) => RunAsync(async () =>
     {
-        var path = Workspace.ResolveLinkTarget(Workspace.ActiveTab?.Path ?? "", link, markdown);
+        var path = Workspace.ResolveLinkTarget(sourcePath ?? Workspace.ActiveTab?.Path ?? "", link, markdown);
         if (path is null && !link.StartsWith('/') && Uri.TryCreate(link, UriKind.Absolute, out var url))
         {
             if (url.Scheme is not ("http" or "https")) { throw new InvalidOperationException("Only web links and vault note links can be opened."); }
@@ -329,6 +330,7 @@ public partial class MainWindow
         var choice = await ConfirmAsync("Move to vault trash?", "Move " + tab.Path + " to the vault's .trash folder?", "Move to trash");
         if (choice != "Move to trash") { return; }
         await Workspace.TrashAsync(tab);
+        DisposeCanvasView(tab);
         buffers.Remove(tab);
         FileTree.ItemsSource = NativeFileNode.FromSnapshot(Workspace.Snapshot);
         LoadEditor();

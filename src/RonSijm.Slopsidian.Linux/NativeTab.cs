@@ -10,6 +10,7 @@ public sealed class NativeTab : INotifyPropertyChanged
     {
         Document = document;
         text = document.Content;
+        ViewMode = InitialMode(document.File.Extension);
     }
 
     public VaultDocument Document { get; private set; }
@@ -32,7 +33,9 @@ public sealed class NativeTab : INotifyPropertyChanged
     public string Header => Name + (IsDirty ? " *" : "");
     public int Caret { get; set; }
     public double ScrollOffset { get; set; }
-    public bool Reading { get; set; }
+    public string ViewMode { get; set; }
+    public bool Reading { get => ViewMode == "reading"; set => ViewMode = value ? "reading" : "source"; }
+    public static string InitialMode(string extension) => extension.Equals("canvas", StringComparison.OrdinalIgnoreCase) ? "canvas" : "source";
     public bool Pinned { get; set; }
     public bool ExternalChange { get; set; }
     public event PropertyChangedEventHandler? PropertyChanged;

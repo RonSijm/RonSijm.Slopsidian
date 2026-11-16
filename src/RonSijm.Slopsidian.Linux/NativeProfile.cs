@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace RonSijm.Slopsidian.Linux;
 
-public sealed record NativeTabState(string Path, int Caret, double ScrollOffset, bool Reading, bool Pinned, string? Draft, string Version, bool HasBom = false);
+public sealed record NativeTabState(string Path, int Caret, double ScrollOffset, bool Reading, bool Pinned, string? Draft, string Version, bool HasBom = false, string? ViewMode = null);
 public sealed record NativeSession(string Root, string? Active, IReadOnlyList<NativeTabState> Tabs);
 public sealed record NativePreferences
 {
