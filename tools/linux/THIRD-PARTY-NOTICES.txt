@@ -3,6 +3,14 @@ Slopsidian Native uses the existing Slopsidian vault services and these dependen
 Avalonia 11.3.23 — MIT, Copyright AvaloniaUI OÜ and contributors
 https://github.com/AvaloniaUI/Avalonia/blob/11.3.23/licence.md
 
+Avalonia.Controls.DataGrid 11.3.0 — MIT, Copyright The AvaloniaUI Project
+https://github.com/AvaloniaUI/Avalonia.Controls.DataGrid
+See licenses/Avalonia-MIT.txt.
+
+YamlDotNet 16.3.0 — MIT, Copyright Antoine Aubry and contributors
+https://github.com/aaubry/YamlDotNet
+See licenses/YamlDotNet-MIT.txt.
+
 AvaloniaEdit 11.3.0 — MIT, Copyright (c) 2017 Eli Arbel and contributors
 https://github.com/AvaloniaUI/AvaloniaEdit/blob/11.3.0/LICENSE
 

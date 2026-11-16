@@ -14,8 +14,11 @@
     <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.3.0" />
     <PackageReference Include="Markdig" Version="0.41.3" />
     <PackageReference Include="YamlDotNet" Version="16.3.0" />
-    <AvaloniaResource Include="Assets/tux-notebook.png" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.0" />
     <ProjectReference Include="../RonSijm.Slopsidian.Core/RonSijm.Slopsidian.Core.csproj" />
+    <AvaloniaResource Include="Assets/tux-notebook.png" />
+    <AvaloniaResource Include="../RonSijm.Slopsidian/wwwroot/icons.svg" Link="Assets/icons.svg" />
+    <Content Include="../RonSijm.Slopsidian/wwwroot/icons-LICENSE.txt" Link="licenses/Slopsidian-Icons.txt" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
   <Target Name="PrepareNativePublish" AfterTargets="Publish" Condition="'$(SelfContained)' == 'true'">
     <!-- The reference supplies services, not a second runnable web application. -->
