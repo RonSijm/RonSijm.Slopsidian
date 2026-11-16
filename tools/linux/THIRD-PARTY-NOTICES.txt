@@ -5,7 +5,7 @@ https://github.com/AvaloniaUI/Avalonia/blob/11.3.23/licence.md
 
 Avalonia.Controls.DataGrid 11.3.0 — MIT, Copyright The AvaloniaUI Project
 https://github.com/AvaloniaUI/Avalonia.Controls.DataGrid
-See licenses/Avalonia-MIT.txt.
+See licenses/Avalonia-DataGrid-MIT.txt.
 
 YamlDotNet 16.3.0 — MIT, Copyright Antoine Aubry and contributors
 https://github.com/aaubry/YamlDotNet
