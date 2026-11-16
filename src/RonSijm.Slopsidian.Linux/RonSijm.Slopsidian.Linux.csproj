@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Product>Slopsidian Native</Product>
+    <Version>0.1.0</Version>
+    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.23" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.23" />
+    <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.3.0" />
+    <PackageReference Include="Markdig" Version="0.41.3" />
+    <!-- Reuse the current guarded vault service in-process; no web host is started. -->
+    <ProjectReference Include="../RonSijm.Slopsidian/RonSijm.Slopsidian.csproj" />
+  </ItemGroup>
+  <Target Name="PrepareNativePublish" AfterTargets="Publish" Condition="'$(SelfContained)' == 'true'">
+    <!-- The reference supplies services, not a second runnable web application. -->
+    <RemoveDir Directories="$(PublishDir)wwwroot" />
+    <ItemGroup>
+      <UnusedWebHost Include="$(PublishDir)RonSijm.Slopsidian;$(PublishDir)RonSijm.Slopsidian.exe;$(PublishDir)RonSijm.Slopsidian.runtimeconfig.json;$(PublishDir)RonSijm.Slopsidian.deps.json;$(PublishDir)*.staticwebassets.*.json" />
+    </ItemGroup>
+    <Delete Files="@(UnusedWebHost)" />
+    <Copy SourceFiles="%(ResolvedRuntimePack.PackageDirectory)/LICENSE.TXT"
+          DestinationFiles="$(PublishDir)licenses/%(ResolvedRuntimePack.NuGetPackageId)/LICENSE.txt"
+          Condition="Exists('%(ResolvedRuntimePack.PackageDirectory)/LICENSE.TXT')" />
+    <Copy SourceFiles="%(ResolvedRuntimePack.PackageDirectory)/THIRD-PARTY-NOTICES.TXT"
+          DestinationFiles="$(PublishDir)licenses/%(ResolvedRuntimePack.NuGetPackageId)/THIRD-PARTY-NOTICES.txt"
+          Condition="Exists('%(ResolvedRuntimePack.PackageDirectory)/THIRD-PARTY-NOTICES.TXT')" />
+  </Target>
+</Project>

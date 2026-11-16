@@ -1,0 +1,24 @@
+Slopsidian Native uses the existing Slopsidian vault services and these dependencies:
+
+Avalonia 11.3.23 — MIT, Copyright AvaloniaUI OÜ and contributors
+https://github.com/AvaloniaUI/Avalonia/blob/11.3.23/licence.md
+
+AvaloniaEdit 11.3.0 — MIT, Copyright (c) 2017 Eli Arbel and contributors
+https://github.com/AvaloniaUI/AvaloniaEdit/blob/11.3.0/LICENSE
+
+Markdig 0.41.3 — BSD-2-Clause, Copyright Alexandre Mutel
+https://github.com/xoofx/markdig/blob/0.41.3/license.txt
+
+.NET 10 — MIT and third-party notices
+Bundled runtime notices are in app/licenses/Microsoft.*.App.Runtime.*/
+(or the installation's /usr/lib/slopsidian-native/licenses directory).
+
+SkiaSharp and HarfBuzzSharp — MIT and upstream third-party licenses
+https://github.com/mono/SkiaSharp/blob/main/LICENSE.md
+https://github.com/mono/SkiaSharp/tree/main/license
+
+The native client does not bundle Electron, Chromium, the JavaScript editor,
+community plugins, vaults or application profiles.
+
+Full dependency license texts are in the accompanying licenses directory.
+Tmds.DBus.Protocol 0.21.3 uses the MIT license (see licenses/Tmds-DBus-MIT.txt).

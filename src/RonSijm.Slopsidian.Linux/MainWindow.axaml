@@ -1,0 +1,79 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:edit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
+        x:Class="RonSijm.Slopsidian.Linux.MainWindow"
+        Title="Slopsidian Native" Width="1220" Height="820" MinWidth="760" MinHeight="520">
+  <Grid RowDefinitions="Auto,Auto,*,Auto">
+    <Border Grid.Row="0" Background="{StaticResource SidebarBrush}" Padding="16,10">
+      <Grid ColumnDefinitions="*,Auto">
+        <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+          <TextBlock Text="Slopsidian" FontSize="19" FontWeight="SemiBold" VerticalAlignment="Center" />
+          <TextBlock Name="VaultName" Text="No vault selected" Classes="muted" VerticalAlignment="Center" MaxWidth="280" TextTrimming="CharacterEllipsis" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8">
+          <Button Name="OpenVaultButton" Content="Open vault" Click="ChooseVault" ToolTip.Tip="Open a local folder (Ctrl+O)" />
+          <Button Name="NewNoteButton" Classes="create" Click="NewNote" IsEnabled="False" ToolTip.Tip="Create a Markdown note (Ctrl+N)">
+            <StackPanel Orientation="Horizontal" Spacing="7">
+              <PathIcon Data="M7,0 L9,0 L9,7 L16,7 L16,9 L9,9 L9,16 L7,16 L7,9 L0,9 L0,7 L7,7 Z" Width="14" Height="14" />
+              <TextBlock Text="New note" />
+            </StackPanel>
+          </Button>
+          <Button Name="SaveButton" Content="Save" Click="Save" IsEnabled="False" ToolTip.Tip="Save changes (Ctrl+S)" />
+        </StackPanel>
+      </Grid>
+    </Border>
+    <Border Grid.Row="1" Name="ErrorPanel" IsVisible="False" Background="#3c2929" Padding="16,10">
+      <TextBlock Name="ErrorText" Classes="error" TextWrapping="Wrap" />
+    </Border>
+    <Grid Grid.Row="2" ColumnDefinitions="260,4,*">
+      <Border Background="{StaticResource SidebarBrush}" Padding="12,16,12,8">
+        <Grid RowDefinitions="Auto,Auto,Auto,*">
+          <Grid ColumnDefinitions="*,Auto" Margin="4,0,0,12">
+            <TextBlock Text="Notes" FontWeight="SemiBold" VerticalAlignment="Center" />
+            <Button Grid.Column="1" Name="RefreshButton" Content="Refresh" Click="Refresh" IsEnabled="False" Padding="8,4" ToolTip.Tip="Refresh files and recheck the current note (F5)" />
+          </Grid>
+          <TextBox Grid.Row="1" Name="SearchBox" Watermark="Search notes and text" TextChanged="SearchChanged" IsEnabled="False" />
+          <TextBlock Grid.Row="2" Name="SearchStatus" Text="Open a vault to see its notes." Classes="muted" Margin="4,10,4,8" TextWrapping="Wrap" />
+          <ListBox Grid.Row="3" Name="NoteList" SelectionChanged="NoteSelected" Background="Transparent" BorderThickness="0">
+            <ListBox.ItemTemplate>
+              <DataTemplate>
+                <StackPanel Margin="0,5" Spacing="3">
+                  <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+                  <TextBlock Text="{Binding Path}" Classes="muted" FontSize="12" TextTrimming="CharacterEllipsis" />
+                  <TextBlock Text="{Binding Snippet}" IsVisible="{Binding HasSnippet}" Classes="muted" FontSize="12" TextTrimming="CharacterEllipsis" />
+                </StackPanel>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </Grid>
+      </Border>
+      <GridSplitter Grid.Column="1" ResizeDirection="Columns" Background="#383838" />
+      <Grid Grid.Column="2" RowDefinitions="Auto,*">
+        <Border Padding="24,14" BorderBrush="#383838" BorderThickness="0,0,0,1">
+          <TextBlock Name="NoteTitle" Text="Your notes, in their own space" FontSize="17" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+        </Border>
+        <StackPanel Grid.Row="1" Name="EmptyPanel" Margin="40,64" Spacing="16" MaxWidth="540" HorizontalAlignment="Left">
+          <TextBlock Name="EmptyTitle" Text="Start with a vault" FontSize="28" FontWeight="SemiBold" />
+          <TextBlock Name="EmptyDescription" Text="Open a folder of Markdown notes. Your notes stay in that folder, ready to use with Slopsidian or Obsidian." TextWrapping="Wrap" FontSize="16" LineHeight="26" />
+          <TextBlock Name="EmptyHint" Text="Choose Open vault above, then select a note or create a new one." Classes="muted" TextWrapping="Wrap" LineHeight="24" />
+        </StackPanel>
+        <TabControl Grid.Row="1" Name="EditorTabs" IsVisible="False" Margin="16,8,16,12" SelectionChanged="ModeChanged">
+          <TabItem Header="Write">
+            <edit:TextEditor Name="Editor" ShowLineNumbers="True" WordWrap="True" FontFamily="DejaVu Sans Mono, monospace" FontSize="15" Background="{StaticResource SurfaceBrush}" Foreground="#dadada" Padding="8,16" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" />
+          </TabItem>
+          <TabItem Header="Read">
+            <ScrollViewer Name="ReadingScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+              <StackPanel Name="ReadingContent" Margin="24,24,32,48" MaxWidth="800" HorizontalAlignment="Stretch" Spacing="14" />
+            </ScrollViewer>
+          </TabItem>
+        </TabControl>
+      </Grid>
+    </Grid>
+    <Border Grid.Row="3" BorderBrush="#383838" BorderThickness="0,1,0,0" Padding="16,7">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock Name="VaultPath" Text="Local Markdown workspace" Classes="muted" FontSize="12" TextTrimming="CharacterEllipsis" Margin="0,0,16,0" />
+        <TextBlock Grid.Column="1" Name="EditorStatus" Text="No note open" Classes="muted" FontSize="12" />
+      </Grid>
+    </Border>
+  </Grid>
+</Window>

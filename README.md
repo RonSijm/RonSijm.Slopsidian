@@ -1,5 +1,12 @@
 # Slopsidian
 
+**Native Linux client:** a separate .NET/Avalonia desktop app now provides local
+Markdown vault browsing, editing, search and a native reading view, without
+Electron or a WebView. Run `./build-and-run-linux.sh`; see
+[native Linux workflows, packages and current limitations](Docs/Features/NATIVE-LINUX.md).
+This initial client does not yet provide the full Blazor/Electron feature set
+or JavaScript plugin compatibility.
+
 An independent .NET 10/Blazor application targeting the Obsidian 1.12.7
 Windows desktop workflow, with an Electron/JavaScript bridge for existing plugins.
 A separate standalone Blazor WebAssembly host shares the UI and editor.
@@ -193,9 +200,10 @@ fixture/note bytes and measured outer bounds across native restart or browser
 document/reconnection. Wider floating, maximization, zoom, startup/profile and
 browser-policy variants remain outside [that acceptance](Docs/Features/WORKSPACES.md#linked-groups-and-popout-windows).
 
-The native desktop host targets Windows. The browser host supports local folders
-in Chrome/Edge over HTTPS or localhost. Native Linux/macOS and mobile hosts remain
-out of scope. Official Obsidian-hosted Sync/Publish services are not supplied by
+The existing Electron desktop host targets Windows. The browser host supports local folders
+in Chrome/Edge over HTTPS or localhost. The separate [native Linux client](Docs/Features/NATIVE-LINUX.md)
+provides an initial local Markdown workflow; native macOS/mobile hosts and full
+Linux feature parity remain outside this implementation. Official Obsidian-hosted Sync/Publish services are not supplied by
 rewriting the desktop client. Their client workflows remain required,
 currently unimplemented core-benchmark entries with account/service dependencies.
 

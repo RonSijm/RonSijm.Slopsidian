@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Slopsidian Native
+Comment=Edit local Markdown vaults
+Exec=slopsidian-native
+Icon=slopsidian-native
+Terminal=false
+Categories=Utility;TextEditor;
+Keywords=Markdown;Notes;Obsidian;Vault;
+StartupWMClass=Slopsidian Native

@@ -13,6 +13,10 @@ and what is still missing. Update the affected pages alongside implementation
 changes, not only when a release is prepared.
 
 The [README](../README.md) contains launch and development instructions.
+The separate [native Linux client](Features/NATIVE-LINUX.md) provides an initial
+Avalonia local Markdown workflow. The existing desktop/browser acceptance counts
+on this page do not establish native Linux feature parity; its workflows, tests
+and remaining limits are documented separately.
 The [current roadmap status](Project/ROADMAP.md#current-status-after-the-local-version-reconciliation)
 separates completed bounded workflows and remaining parity work. Inline
 footnotes' missing final acceptance is closed by the November 14 host collection.

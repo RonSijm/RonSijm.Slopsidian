@@ -11,6 +11,7 @@
 | TypeScript/JavaScript client | Workspace objects, CodeMirror integration, Markdown rendering, metadata, core features and plugin facade. |
 | CodeMirror 6 | Real source editor objects and shared extension instances used by supported plugins. |
 | Electron desktop host | Windows window, local .NET process and native Node/Electron capabilities. |
+| Native Linux host | Separate Avalonia window and AvaloniaEdit editor, native Markdown reading controls and direct in-process calls to the existing vault service; no JavaScript plugin host. See [native workflows and limits](../Features/NATIVE-LINUX.md). |
 | Standalone WASM host | Browser .NET runtime, static assets, File System Access handles and local browser transport instead of HTTP application endpoints. |
 
 The design is intentionally hybrid. "Written in .NET" does not mean removing

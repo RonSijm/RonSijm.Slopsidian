@@ -1,0 +1,44 @@
+name: Native Linux client
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-linux:
+    strategy:
+      matrix:
+        include:
+          - runner: ubuntu-22.04
+            runtime: linux-x64
+          - runner: ubuntu-24.04-arm
+            runtime: linux-arm64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Test native workspace and UI
+        run: dotnet test tests/RonSijm.Slopsidian.Linux.Tests --configuration Release --nologo
+      - name: Package native client
+        run: ./tools/package-linux.sh ${{ matrix.runtime }}
+      - name: Check package entry point and contents
+        shell: bash
+        run: |
+          .runtime/native-linux/${{ matrix.runtime }}/publish/RonSijm.Slopsidian.Linux --help
+          dpkg-deb --info .runtime/native-linux/${{ matrix.runtime }}/out/*.deb
+          test -z "$(find .runtime/native-linux/${{ matrix.runtime }}/publish -iname '*electron*' -o -iname '*chromium*')"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: slopsidian-native-${{ matrix.runtime }}
+          path: .runtime/native-linux/${{ matrix.runtime }}/out/*
+          if-no-files-found: error

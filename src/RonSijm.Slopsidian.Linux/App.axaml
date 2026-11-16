@@ -1,0 +1,40 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="RonSijm.Slopsidian.Linux.App" RequestedThemeVariant="Dark">
+  <Application.Resources>
+    <SolidColorBrush x:Key="SurfaceBrush">#1e1e1e</SolidColorBrush>
+    <SolidColorBrush x:Key="SidebarBrush">#262626</SolidColorBrush>
+    <SolidColorBrush x:Key="MutedBrush">#a3a3a3</SolidColorBrush>
+    <SolidColorBrush x:Key="AccentBrush">#a68af9</SolidColorBrush>
+    <SolidColorBrush x:Key="ErrorBrush">#f28b82</SolidColorBrush>
+  </Application.Resources>
+  <Application.Styles>
+    <FluentTheme>
+      <FluentTheme.Palettes>
+        <ColorPaletteResources x:Key="Dark" Accent="#8c70c9" />
+      </FluentTheme.Palettes>
+    </FluentTheme>
+    <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />
+    <Style Selector="Window">
+      <Setter Property="Background" Value="{StaticResource SurfaceBrush}" />
+      <Setter Property="Foreground" Value="#dadada" />
+      <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style Selector="Button">
+      <Setter Property="Padding" Value="12,7" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.create">
+      <Setter Property="Foreground" Value="#a3d9b1" />
+    </Style>
+    <Style Selector="TextBlock.muted">
+      <Setter Property="Foreground" Value="{StaticResource MutedBrush}" />
+    </Style>
+    <Style Selector="TextBlock.error">
+      <Setter Property="Foreground" Value="{StaticResource ErrorBrush}" />
+    </Style>
+    <Style Selector="ListBoxItem:selected TextBlock.muted">
+      <Setter Property="Foreground" Value="#ffffff" />
+    </Style>
+  </Application.Styles>
+</Application>

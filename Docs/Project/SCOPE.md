@@ -36,10 +36,12 @@ The public npm API declarations currently used by development fixtures are
 **1.14.4**. Those declarations are not the application runtime, and their version
 does not change the pinned reference or prove API implementation.
 
-Windows desktop and the standalone browser host are the active targets.
-Native Linux/macOS builds and mobile applications are not currently in scope.
-Running a compatible browser on another OS is not evidence of a native host for
-that OS.
+Windows desktop and the standalone browser host retain the existing shared UI.
+The separate [native Linux client](../Features/NATIVE-LINUX.md) adds an initial
+Avalonia local Markdown workflow without Electron. Full native Linux feature
+parity, native macOS builds and mobile applications remain outside this
+implementation. Running a compatible browser on another OS is not evidence of
+a native host for that OS.
 
 Official Obsidian Sync and Publish are still included in the core benchmark.
 Their authorized account, service and second-client/site requirements are
