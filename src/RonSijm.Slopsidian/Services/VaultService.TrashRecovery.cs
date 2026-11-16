@@ -30,9 +30,18 @@ public sealed partial class VaultService
     private static VaultException TrashChanged(string message) => new(message + " Refresh vault trash and review again.", StatusCodes.Status409Conflict);
     private static FileIdentity TrashIdentity(string path)
     {
-        if (!OperatingSystem.IsWindows()) throw new VaultException("Identity-bound native trash recovery is supported by the Windows host only.", StatusCodes.Status501NotImplemented);
         EnsureNotLinked(path);
-        return SystemTrash.IdentityOfPath(path) ?? throw TrashChanged("The file or folder identity could not be verified.");
+        FileIdentity? identity;
+        if (OperatingSystem.IsLinux()) { identity = LinuxFileIdentity.OfPath(path); }
+        else if (OperatingSystem.IsWindows()) { identity = SystemTrash.IdentityOfPath(path); }
+        else { throw new VaultException("Identity-bound trash recovery is not available on this platform.", StatusCodes.Status501NotImplemented); }
+        return identity ?? throw TrashChanged("The file or folder identity could not be verified.");
+    }
+    private static FileIdentity? TrashHandleIdentity(FileStream stream)
+    {
+        if (OperatingSystem.IsLinux()) { return LinuxFileIdentity.OfHandle(stream.SafeFileHandle); }
+        if (OperatingSystem.IsWindows()) { return SystemTrash.IdentityOf(stream.SafeFileHandle); }
+        return null;
     }
     private TrashTicket RequireTrashTicket(string root, string path, string token)
     {
@@ -47,7 +56,7 @@ public sealed partial class VaultService
         if (TrashIdentity(Path.Combine(root, ".trash")) != ticket.TrashIdentity || TrashIdentity(path) != ticket.Identity) throw TrashChanged("The trash folder or note was replaced.");
         RequireFileOperationFile(path);
         await using var stream = OpenFileOperationStream(path, false);
-        if (OperatingSystem.IsWindows() && SystemTrash.IdentityOf(stream.SafeFileHandle) != ticket.Identity) throw TrashChanged("The trash note was replaced before its checked handle opened.");
+        if (TrashHandleIdentity(stream) != ticket.Identity) throw TrashChanged("The trash note was replaced before its checked handle opened.");
         var size = stream.Length; var mtime = new DateTimeOffset(File.GetLastWriteTimeUtc(stream.SafeFileHandle)).ToUnixTimeMilliseconds();
         if (size != ticket.Entry.Size || mtime != ticket.Entry.Mtime || size > TrashRecoveryBytes) throw TrashChanged("The listed trash note changed.");
         var bytes = await ReadFileOperationBytesAsync(stream, cancellationToken);
@@ -64,7 +73,7 @@ public sealed partial class VaultService
             if (!Path.Exists(trash)) return new(root, [], 0, true);
             if (!Directory.Exists(trash)) throw TrashChanged("The vault .trash path is not a folder.");
             ValidateFileOperationDirectory(trash); var trashIdentity = TrashIdentity(trash);
-            var entries = new List<VaultTrashEntry>(); var ignored = 0; var count = 0; var names = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var entries = new List<VaultTrashEntry>(); var ignored = 0; var count = 0; var names = new HashSet<string>(VaultPathRules.Comparer);
             foreach (var path in Directory.EnumerateFileSystemEntries(trash))
             {
                 cancellationToken.ThrowIfCancellationRequested();
@@ -100,7 +109,7 @@ public sealed partial class VaultService
             ValidateFileOperationDirectory(selectedFolder);
             if (!Directory.Exists(selectedFolder)) throw TrashChanged("Choose an existing restore folder.");
             var items = new Dictionary<string, (TrashTicket, VaultTrashRestoreItem)>(StringComparer.Ordinal);
-            var destinations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var destinations = new HashSet<string>(VaultPathRules.Comparer);
             foreach (var entry in request.Entries)
             {
                 var ticket = RequireTrashTicket(root, entry.Path, entry.Token); var preview = await ReadTrashTicketAsync(ticket, cancellationToken);
@@ -136,8 +145,7 @@ public sealed partial class VaultService
             {
                 // A path can be replaced after the original stream closes for rename. Verify the
                 // actual reopened moved handle, rather than accepting same-byte replacement files.
-                if (!OperatingSystem.IsWindows()) throw new VaultException("Identity-bound native trash recovery is supported by the Windows host only.", StatusCodes.Status501NotImplemented);
-                if (SystemTrash.IdentityOf(stream.SafeFileHandle) != selected.Ticket.Identity || TrashIdentity(destination) != selected.Ticket.Identity
+                if (TrashHandleIdentity(stream) != selected.Ticket.Identity || TrashIdentity(destination) != selected.Ticket.Identity
                     || TrashIdentity(root) != review.RootIdentity || TrashIdentity(destinationFolder) != review.FolderIdentity
                     || TrashIdentity(Path.Combine(root, ".trash")) != selected.Ticket.TrashIdentity) throw TrashChanged("The actual moved note or its containing folder no longer has the reviewed identity.");
             }
