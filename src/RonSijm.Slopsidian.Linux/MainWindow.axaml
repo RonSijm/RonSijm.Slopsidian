@@ -186,12 +186,13 @@
       </Border>
     </Grid>
     <Border Grid.Row="2" BorderBrush="{DynamicResource DividerBrush}" BorderThickness="0,1,0,0" Padding="12,3">
-      <Grid ColumnDefinitions="*,Auto,Auto,Auto,Auto,Auto">
+      <Grid ColumnDefinitions="*,Auto,Auto,Auto,Auto,Auto,Auto">
         <TextBlock Name="VaultPath" Text="Slopsidian Native" Classes="muted" FontSize="11" TextTrimming="CharacterEllipsis" Margin="0,0,16,0" VerticalAlignment="Center" />
         <TextBlock Grid.Column="1" Name="MetadataStatus" Classes="muted" FontSize="12" Margin="0,0,16,0" VerticalAlignment="Center" />
         <TextBlock Grid.Column="2" Name="EditorStatus" Text="No note open" Classes="muted" FontSize="12" Margin="0,0,12,0" VerticalAlignment="Center" />
         <Button Grid.Column="3" Classes="icon" Click="ReloadCurrent" AutomationProperties.Name="Reload current note" ToolTip.Tip="Reload current note"><local:NativeIcon Kind="refresh" Width="15" Height="15" /></Button>
         <Button Grid.Column="4" Name="SaveButton" Classes="icon" Click="Save" IsEnabled="False" AutomationProperties.Name="Save (Ctrl+S)" ToolTip.Tip="Save (Ctrl+S)"><local:NativeIcon Kind="save" Width="15" Height="15" /></Button>
+        <Button Grid.Column="6" Name="DraftRecoveryButton" Content="Recover drafts" Click="OpenDraftRecovery" IsVisible="False" Margin="8,0,0,0" />
         <Button Grid.Column="5" Classes="icon" Click="ToggleRight" AutomationProperties.Name="Toggle right sidebar" ToolTip.Tip="Toggle right sidebar"><local:NativeIcon Kind="panel-right" Width="15" Height="15" /></Button>
       </Grid>
     </Border>

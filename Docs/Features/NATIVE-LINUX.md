@@ -18,7 +18,9 @@ workflows in `Docs/Project/NATIVE-PORT.md` have been implemented and accepted.
   Conflicts retain the editor draft and the external file. Existing UTF-8 BOM
   and line endings are retained.
 - Retain sessions and unsaved drafts in a private atomic application profile.
-  Recovery data for a removed note is retained; its recovery UI is still pending.
+  Removed-file drafts are accessible through the Recover drafts button or the
+  command palette. Preview and save a recovered copy to a free vault path;
+  existing files are retained. New profiles also retain the draft’s BOM flag.
 - Open File recovery from the command palette or file actions to search saved
   versions, preview/copy text, save a manual snapshot, or review a restore.
   Snapshots use the existing `.obsidian/vault-dotnet-recovery.json` format,

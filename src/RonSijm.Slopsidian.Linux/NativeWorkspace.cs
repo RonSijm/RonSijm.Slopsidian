@@ -191,7 +191,7 @@ public sealed partial class NativeWorkspace : IDisposable
     public NativeSession CaptureSession()
     {
         var states = tabs.Select(tab => new NativeTabState(tab.Path, tab.Caret, tab.ScrollOffset, tab.Reading, tab.Pinned,
-            tab.IsDirty ? tab.Text : null, tab.Document.Version)).ToArray();
+            tab.IsDirty ? tab.Text : null, tab.Document.Version, tab.Document.HasBom)).ToArray();
         return new NativeSession(RequireRoot(), ActiveTab?.Path, states.Concat(orphanedDrafts).ToArray());
     }
 
@@ -221,7 +221,7 @@ public sealed partial class NativeWorkspace : IDisposable
             if (saved.Draft is not null)
             {
                 var changed = saved.Version != tab.Document.Version;
-                tab.AcceptSaved(tab.Document with { Version = saved.Version });
+                tab.AcceptSaved(tab.Document with { Version = saved.Version, HasBom = saved.HasBom });
                 tab.Text = saved.Draft;
                 tab.ExternalChange = changed;
             }

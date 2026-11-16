@@ -47,6 +47,16 @@ public partial class MainWindow
         catch (Exception exception) { ShowError(exception); }
     }
 
+    private async void OpenDraftRecovery(object? sender, Avalonia.Interactivity.RoutedEventArgs args) => await OpenDraftRecoveryAsync();
+
+    private Task OpenDraftRecoveryAsync() => RunAsync(async () =>
+    {
+        if (Workspace.Snapshot.Root is null) { return; }
+        await new NativeDraftRecoveryWindow(Workspace, PersistProfileAsync).ShowDialog(this);
+        await RefreshWorkspaceAsync();
+        await PersistProfileAsync();
+    });
+
     private Task OpenRecoveryAsync() => RunAsync(async () =>
     {
         if (Workspace.Snapshot.Root is null) { return; }

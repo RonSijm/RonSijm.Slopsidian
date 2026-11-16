@@ -81,6 +81,7 @@ public partial class MainWindow
         new("file:reload", "Reload current file", "", ReloadCurrentAsync),
         new("daily-notes:open", "Daily notes: Open today's note", "", OpenDailyNoteAsync),
         new("templates:insert", "Templates: Insert template", "", InsertTemplateAsync),
+        new("draft-recovery:open", "Recover unsaved drafts for missing files", "", OpenDraftRecoveryAsync),
         new("file-recovery:open", "File recovery: Open saved versions", "", OpenRecoveryAsync),
         new("file-recovery:snapshot-current", "File recovery: Save recovery snapshot", "", SaveRecoverySnapshotAsync),
         new("graph:open", "Graph view: Open graph", "", OpenGraphAsync),

@@ -243,6 +243,7 @@ public partial class MainWindow : Window
         NewNoteButton.IsEnabled = !busy && Workspace.Snapshot.Root is not null;
         RefreshButton.IsEnabled = !busy && Workspace.Snapshot.Root is not null;
         SearchBox.IsEnabled = Workspace.Snapshot.Root is not null;
+        DraftRecoveryButton.IsVisible = Workspace.OrphanedDrafts.Count > 0;
         var state = Workspace.IsDirty ? "Unsaved changes" : "Saved";
         if (Workspace.ActiveTab?.ExternalChange == true) { state = "Changed on disk · draft retained"; }
         EditorStatus.Text = Workspace.Document is null ? "No note open" : state + "  ·  " + CountWords(Workspace.Text) + " words";
