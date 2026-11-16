@@ -106,7 +106,7 @@ public sealed partial class VaultService
 
     private void RequireCoreRoot(string? expected)
     {
-        if (!string.Equals(expected, RequireRoot(), StringComparison.OrdinalIgnoreCase))
+        if (!string.Equals(expected, RequireRoot(), VaultPathRules.Comparison))
         {
             throw new VaultException("The selected vault changed. Reload before saving or performing file operations.", StatusCodes.Status409Conflict);
         }

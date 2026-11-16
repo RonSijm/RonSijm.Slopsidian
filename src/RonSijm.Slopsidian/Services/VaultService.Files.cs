@@ -130,7 +130,7 @@ public sealed partial class VaultService
             }
 
             var moved = await MoveFileOperationAsync(source, destination, request.Version, request.Edits ?? [], cancellationToken);
-            var documents = moved.Documents.Where(document => !string.Equals(document.File.Path, moved.NewPath, StringComparison.OrdinalIgnoreCase)).ToArray();
+            var documents = moved.Documents.Where(document => !string.Equals(document.File.Path, moved.NewPath, VaultPathRules.Comparison)).ToArray();
             return new TrashVaultFileResult(moved.Snapshot, moved.OldPath, moved.NewPath, documents);
         }
         finally
@@ -168,7 +168,7 @@ public sealed partial class VaultService
 
                 var identity = SystemTrash.IdentityOf(stream.SafeFileHandle) ?? throw new VaultException("The file's identity could not be read. Nothing was moved to the Recycle Bin.", StatusCodes.Status409Conflict);
                 snapshot = Scan(directory);
-                var matches = snapshot.Files.Where(file => string.Equals(file.Path, path, StringComparison.OrdinalIgnoreCase)).ToArray();
+                var matches = snapshot.Files.Where(file => string.Equals(file.Path, path, VaultPathRules.Comparison)).ToArray();
                 var entry = matches.FirstOrDefault(file => string.Equals(file.Path, path, StringComparison.Ordinal));
                 if (entry is null && matches.Length == 1)
                 {
@@ -319,7 +319,7 @@ public sealed partial class VaultService
 
                 // Validate the inventory before committing the irreversible, handle-bound deletion.
                 snapshot = Scan(directory);
-                var matches = snapshot.Files.Where(file => string.Equals(file.Path, path, StringComparison.OrdinalIgnoreCase)).ToArray();
+                var matches = snapshot.Files.Where(file => string.Equals(file.Path, path, VaultPathRules.Comparison)).ToArray();
                 var entry = matches.FirstOrDefault(file => string.Equals(file.Path, path, StringComparison.Ordinal));
                 if (entry is null && matches.Length == 1)
                 {
@@ -370,7 +370,7 @@ public sealed partial class VaultService
     private string RequireFileOperationRoot(string? expected)
     {
         var directory = RequireRoot();
-        if (!string.Equals(expected, directory, StringComparison.OrdinalIgnoreCase))
+        if (!string.Equals(expected, directory, VaultPathRules.Comparison))
         {
             throw new VaultException("The selected vault changed. Reload its files before continuing.", StatusCodes.Status409Conflict);
         }
@@ -417,7 +417,7 @@ public sealed partial class VaultService
 
             foreach (var edit in edits)
             {
-                if (!string.Equals(edit.Key, sourcePath, StringComparison.OrdinalIgnoreCase))
+                if (!string.Equals(edit.Key, sourcePath, VaultPathRules.Comparison))
                 {
                     inputs.Add(await ReadFileOperationInputAsync(edit.Key, edit.Value.Version, edit.Value, cancellationToken));
                 }
@@ -514,7 +514,7 @@ public sealed partial class VaultService
             throw new VaultException("A file operation supports up to " + FileOperationEditLimit + " Markdown/Canvas edits.");
         }
 
-        var result = new Dictionary<string, VaultFileEdit>(StringComparer.OrdinalIgnoreCase);
+        var result = new Dictionary<string, VaultFileEdit>(VaultPathRules.Comparer);
         foreach (var edit in edits)
         {
             if (edit is null || edit.Content is null)
@@ -544,8 +544,8 @@ public sealed partial class VaultService
                 throw new VaultException("A note cannot be edited more than once in a file operation.", StatusCodes.Status409Conflict);
             }
 
-            var isSource = string.Equals(path, source, StringComparison.OrdinalIgnoreCase);
-            if ((!isSource && source is not null && FileOperationPathsOverlap(path, source)) || (!isSource && destination is not null && FileOperationPathsOverlap(path, destination)) || result.Keys.Any(other => !string.Equals(other, path, StringComparison.OrdinalIgnoreCase) && FileOperationPathsOverlap(path, other)))
+            var isSource = string.Equals(path, source, VaultPathRules.Comparison);
+            if ((!isSource && source is not null && FileOperationPathsOverlap(path, source)) || (!isSource && destination is not null && FileOperationPathsOverlap(path, destination)) || result.Keys.Any(other => !string.Equals(other, path, VaultPathRules.Comparison) && FileOperationPathsOverlap(path, other)))
             {
                 throw new VaultException("Reference edits must not overlap the moved file, its destination, or another edit.", StatusCodes.Status409Conflict);
             }
@@ -576,7 +576,7 @@ public sealed partial class VaultService
 
     private void ValidateFileOperationDestination(string source, string destination)
     {
-        var caseOnly = string.Equals(source, destination, StringComparison.OrdinalIgnoreCase);
+        var caseOnly = string.Equals(source, destination, VaultPathRules.Comparison);
         if ((!caseOnly && Path.Exists(destination)) || Directory.Exists(destination))
         {
             throw new VaultException("A file or folder already exists at the destination.", StatusCodes.Status409Conflict);
@@ -593,9 +593,9 @@ public sealed partial class VaultService
 
     private static bool FileOperationPathsOverlap(string first, string second)
     {
-        return string.Equals(first, second, StringComparison.OrdinalIgnoreCase)
-            || first.StartsWith(second + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase)
-            || second.StartsWith(first + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase);
+        return string.Equals(first, second, VaultPathRules.Comparison)
+            || first.StartsWith(second + Path.DirectorySeparatorChar, VaultPathRules.Comparison)
+            || second.StartsWith(first + Path.DirectorySeparatorChar, VaultPathRules.Comparison);
     }
 
     private static bool IsFileOperationText(string path)
@@ -794,7 +794,7 @@ public sealed partial class VaultService
         RequireFileOperationFile(source.CurrentPath);
         ValidateFileOperationDirectory(Path.GetDirectoryName(destination)!);
         EnsureNotLinked(destination);
-        var caseOnly = string.Equals(source.CurrentPath, destination, StringComparison.OrdinalIgnoreCase);
+        var caseOnly = string.Equals(source.CurrentPath, destination, VaultPathRules.Comparison);
         if (caseOnly)
         {
             EnsureNotLinked(transaction.Directory);

@@ -678,7 +678,7 @@ public sealed partial class VaultService(ILogger<VaultService> logger, VaultWatc
         var segments = path.Replace('\\', '/').Split('/');
         if (Path.IsPathRooted(path) || segments.Any(segment => InvalidPathSegment(segment, allowHidden)))
         {
-            throw new VaultException("Use a valid relative Windows vault path without hidden, reserved, or traversal segments.");
+            throw new VaultException("Use a valid relative vault path without hidden, reserved, or traversal segments.");
         }
 
         var result = directory;
@@ -818,7 +818,7 @@ public sealed partial class VaultService(ILogger<VaultService> logger, VaultWatc
         EnsureNotLinked(destination);
         for (var directory = Path.GetDirectoryName(Path.GetFullPath(destination)); directory is not null; directory = Path.GetDirectoryName(directory))
         {
-            if (string.Equals(Path.TrimEndingDirectorySeparator(directory), vaultRoot, StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(Path.TrimEndingDirectorySeparator(directory), vaultRoot, VaultPathRules.Comparison))
             {
                 return;
             }

@@ -85,7 +85,7 @@ public sealed class VaultWatch(ILogger<VaultWatch> logger) : IDisposable
     {
         lock (sync)
         {
-            if (!string.Equals(directory, path, StringComparison.OrdinalIgnoreCase))
+            if (!string.Equals(directory, path, VaultPathRules.Comparison))
             {
                 throw new VaultException("Filesystem observation does not belong to the selected vault.", StatusCodes.Status409Conflict);
             }

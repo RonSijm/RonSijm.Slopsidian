@@ -20,7 +20,7 @@ public sealed partial class VaultService
             var source = Resolve(request.Path);
             var destination = Resolve(request.NewPath);
             RequireFolder(source);
-            var caseOnly = string.Equals(source, destination, StringComparison.OrdinalIgnoreCase);
+            var caseOnly = string.Equals(source, destination, VaultPathRules.Comparison);
             if (string.Equals(source, destination, StringComparison.Ordinal))
             {
                 throw new VaultException("Choose a different destination path.");
@@ -230,7 +230,7 @@ public sealed partial class VaultService
 
         try
         {
-            var inverse = applied.Select(document => originals.First(original => string.Equals(original.Path, document.File.Path, StringComparison.OrdinalIgnoreCase)) with { Version = document.Version }).ToArray();
+            var inverse = applied.Select(document => originals.First(original => string.Equals(original.Path, document.File.Path, VaultPathRules.Comparison)) with { Version = document.Version }).ToArray();
             await ExecuteFileOperationAsync(null, null, null, inverse, CancellationToken.None);
             return null;
         }
@@ -288,7 +288,7 @@ public sealed partial class VaultService
             throw new VaultException("Folder operations support at most " + FolderOperationFileLimit + " files.", StatusCodes.Status413PayloadTooLarge);
         }
 
-        var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var seen = new HashSet<string>(VaultPathRules.Comparer);
         foreach (var entry in manifest)
         {
             if (entry is null || string.IsNullOrEmpty(entry.Version) || string.IsNullOrEmpty(entry.Path) || !entry.Path.StartsWith(folder + "/", StringComparison.Ordinal) || !seen.Add(entry.Path))

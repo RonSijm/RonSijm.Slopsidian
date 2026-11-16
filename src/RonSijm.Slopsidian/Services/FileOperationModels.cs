@@ -32,4 +32,3 @@ public sealed record RenameVaultFolderResult(VaultSnapshot Snapshot, string OldP
 public sealed record DeleteVaultFolderRequest(string? Root, string Path, IReadOnlyList<FolderManifestEntry>? Manifest);
 public sealed record DeleteVaultFolderResult(VaultSnapshot Snapshot, string Path, IReadOnlyList<string> DeletedFiles, IReadOnlyList<string> DeletedFolders);
 public sealed record ModifyBinaryRequest(string Path, string Base64, string? Root, string? Version);
-
