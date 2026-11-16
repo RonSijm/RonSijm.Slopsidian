@@ -48,9 +48,12 @@ workflows in `Docs/Project/NATIVE-PORT.md` have been implemented and accepted.
 - Use Outline, Backlinks, Outgoing links, Tags, Footnotes and a native YAML
   property editor. Property edits preserve unrelated content and comments.
 - Open Canvas documents with native Markdown cards, groups and drawn connections.
-  Select/move/resize cards, pan/zoom/Fit, edit card fields, connect two cards, and
-  copy/paste cards. Canvas and Source share Undo/Redo; unknown JSON fields are
-  retained and invalid source is refused at save. Full Canvas parity is pending.
+  Select/move/resize cards, pan/zoom/Fit, connect two cards, and copy/paste cards.
+  A native selection inspector edits card fields and connection labels, colors,
+  ends and automatic/explicit sides. It becomes a native popup on narrow views;
+  a keyboard-accessible connection picker also selects edges. Canvas and Source
+  share Undo/Redo; unknown JSON fields and invalid field input are retained, and
+  invalid source is refused at save. Full Canvas parity is pending.
 - Open the interactive native graph, insert templates, create daily notes,
   bookmark notes and save/load native named workspaces. These workflows still
   require complete parity acceptance against the original client.

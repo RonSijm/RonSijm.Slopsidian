@@ -12,6 +12,8 @@ Slopsidian demo vault. The native port is still in progress.
 | settings.png | Native Files and links controls |
 | canvas-dark.png | Native Canvas cards, group and connection on Avalonia 12, dark theme |
 | canvas-light.png | The same native Canvas after changing the theme through Settings |
+| canvas-inspector-dark.png | Native connection selection and editable fields in the dark theme |
+| canvas-inspector-light.png | The native connection inspector in the light theme |
 
 UI source: aaf4058. The demo contains no personal notes. The application logo is
 maintained in `src/RonSijm.Slopsidian.Linux/Assets/tux-notebook.png` and its exact
@@ -28,7 +30,8 @@ assemblies selected by restore. The same private-display run verified native
 editor input, save bytes, Undo/Redo and copying a historical snapshot to the
 isolated X11 clipboard. A 760×520 window was inspected, including wrapped Canvas
 actions and Fit. These captures demonstrate the current Canvas implementation;
-embedded file previews, edge editing and full Canvas acceptance remain open.
+embedded file previews, edge editing and full Canvas acceptance were still open
+in that revision.
 The upgraded xUnit v3 suite passes all 152 tests.
 
 Upgrade validation completed locally:
@@ -48,3 +51,18 @@ Some transitive libraries still select compatible older target assemblies. The
 application and selected Avalonia stack use .NET 10; an older .NET runtime does
 not need to be installed. ARM64 runtime execution and remote CI were not
 asserted by this local x64 check.
+
+The selection-inspector captures use UI source `8921964`. A connection was
+selected with the native keyboard-accessible picker, its label was edited with
+real keyboard input, and Ctrl+S persisted that exact label in the synthetic
+Canvas JSON. The native inspector was also opened as a popup at 760×520, closed
+with Escape and restored as an inline panel after resizing. Both themes were
+inspected through the real Settings flow. The global Outline sidebar was hidden
+with its existing command to give this Canvas workspace more room.
+
+All 155 Release tests pass after this addition, including selection without
+source changes, connection properties, unknown-data preservation, invalid input,
+Undo/Redo, saving/deleting an edge, automatic vertical endpoints inside a group,
+zoom-independent hit targets, focused card typing and stale-vault refusal. The
+Release analyzer build and full format verification pass without warnings or
+errors. Embedded previews and the remaining full Canvas acceptance stay open.
