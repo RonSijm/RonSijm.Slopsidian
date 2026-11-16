@@ -43,6 +43,9 @@ public partial class MainWindow : Window
             if (!string.IsNullOrWhiteSpace(SearchBox.Text)) { await UpdateSearchAsync(); }
         };
         profileTimer.Tick += async (_, _) => { profileTimer.Stop(); await PersistProfileSafelyAsync(); };
+        Workspace.FileObserved += QueueRecovery;
+        recoveryTimer.Tick += async (_, _) => await CaptureRecoveryAsync();
+        recoveryTimer.Start();
         autosaveTimer.Tick += async (_, _) => await AutosaveAsync();
         refreshTimer.Tick += async (_, _) =>
         {
@@ -90,6 +93,7 @@ public partial class MainWindow : Window
 
     private async Task FinishVaultOpenAsync()
     {
+        pendingRecovery.Clear();
         buffers.Clear();
         displayedTab = null;
         navigation.Clear();
@@ -294,7 +298,7 @@ public partial class MainWindow : Window
         if (clearError) { ErrorPanel.IsVisible = false; }
         OpenVaultButton.IsEnabled = false;
         UpdateStatus();
-        try { await operation(); }
+        try { await recoveryTask; await operation(); }
         catch (Exception exception) { ShowError(exception); }
         finally
         {
@@ -350,6 +354,7 @@ public partial class MainWindow : Window
         else
         {
             refreshTimer.Start();
+            recoveryTimer.Start();
             if (profile.State.Preferences.Autosave) { RestartTimer(autosaveTimer); }
             RestartTimer(profileTimer);
         }
@@ -361,6 +366,7 @@ public partial class MainWindow : Window
         previewTimer.Stop();
         profileTimer.Stop();
         autosaveTimer.Stop();
+        recoveryTimer.Stop();
     }
 
     private void OnClosed(object? sender, EventArgs args)
